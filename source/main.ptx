@@ -6,7 +6,7 @@
 
   <book xml:id="euc_vec_spaces">
     <title>Euclidean vector spaces</title>
-    <subtitle>An introduction to linear algebra</subtitle>
+    <!-- <subtitle>An introduction to linear algebra</subtitle> -->
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
@@ -43,12 +43,11 @@
         <title>Sage examples</title>
         <list-of elements="project" divisions="section" />
     </appendix>
-
-      <appendix xml:id="appendix-mantras">
+      <appendix xml:id="appendix-figures">
         <title>Figures and video examples</title>
         <list-of elements="figure" divisions="section" />
       </appendix>
-      <appendix xml:id="appendix-vids">
+      <appendix xml:id="appendix-matnras">
         <title>Mantras and fiats</title>
         <list-of elements="principle assumption"  />
       </appendix>
