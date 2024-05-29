@@ -1,0 +1,297 @@
+<exercises xml:id="s_span_independence_ex">
+  <subexercises>
+    <title>WeBWork Exercises</title>
+    <exercise>
+      <!-- another similar problem: Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.2.62.pg -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.2.61.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- another similar problem: Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.2.64.pg -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.2.63.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- several similar multiple questions from 2.3.45 to 2.3.52 -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.3.45.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- several similar multiple questions from 2.3.45 to 2.3.52 -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.3.46.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- span of polynomials -->
+      <webwork source="Library/NAU/setLinearAlgebra/P3span.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- linear independence of polynomials -->
+      <webwork source="Library/TCNJ/TCNJ_BasesLinearlyIndependentSet/problem10.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- linear independence of vectors -->
+      <webwork source="Library/Rochester/setLinearAlgebra9Dependence/ur_la_9_1b.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- span of matrices -->
+      <webwork source="Library/NAU/setLinearAlgebra/span.pg" />
+    </exercise>
+  </subexercises>
+  <exercisegroup>
+  <introduction>
+  <p>
+  A subset <m>S</m> of a vector space is given in each exercise below. Determine whether the given elements are elements of <m>\Span S</m>. Justify your answer by either providing a linear combination of <m>S</m> yielding the given element, or else showing that no such linear combination exists.
+  </p>
+  </introduction>
+  <exercise>
+    <statement>
+      <p>
+        <m>V=\R^3</m>, <m>S=\{(1,0,1),(1,1,1), (1,2,1) \}</m>
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>\boldv=(0,0,0)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\boldw=(1,2,1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\boldu=(7,1,0)</m>
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>V=M_{22}</m>, <m>S=\{A, B, C\}</m>, where
+        <me>
+A = \begin{bmatrix}4\amp 0\\ -2\amp -2 \end{bmatrix} \hspace{5pt}, B = \begin{bmatrix}1\amp -1\\ 2\amp 3 \end{bmatrix} \hspace{5pt}, C= \begin{bmatrix}0\amp 2\\ 1\amp 4 \end{bmatrix}
+        </me>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>A_1=\begin{bmatrix}6\amp -8\\ -1\amp -8 \end{bmatrix}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A_2=\begin{bmatrix}-1\amp 5\\ 7\amp 1 \end{bmatrix}</m>
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+      <m>V=C(\R)</m>, <m>S=\{f_1(x)=\cos^2 x, f_2(x)=\sin^2 x\}</m>
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>f(x)=x</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(x)=\cos 2x</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>h(x)=\sin x</m>
+          </p>
+        </li>
+      </ol>
+    </statement>
+
+  </exercise>
+  </exercisegroup>
+<exercise>
+  <statement>
+    <p>
+      Determine whether <m>S</m> is a spanning set of <m>V</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          <m>V=\R^3</m>, <m>S=\{(1,-1,1),(0,1,-2), (1,0,1)\} </m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>V=\R^3</m>, <m>S=\{(1,-1,1), (0,1,-2), (-3,2,-1)\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>V=P_2</m>, <m>S=\{ x^2-1, x^2+1, x^2+2x \}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>V=\R_{>0}</m> (see <xref ref="ex_vs_positivereals"/>), <m>S=\{3\}</m>
+        </p>
+      </li>
+
+    </ol>
+  </statement>
+
+</exercise>
+<exercisegroup>
+<introduction>
+<p>
+In each exercise, determine whether the given subset <m>S</m> of the vector space <m>V</m> is linearly independent. Justify your answer.
+</p>
+</introduction>
+<exercise>
+  <statement>
+    <p>
+      <m>V=\R^4</m>, <m>S=\{(3,8,7,-3), (1,5,3,-1), (2,-1,2,6), (4,2,6,4)\}</m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+    <m>V=P_2</m>, <m>S=\{2x^2-x-1, x^2-2x+1, x^2+x+1 \}</m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>V=C([0,1])</m>, <m>S=\{f(x)=x, g(x)=2\val{x} \}</m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>V=C([-1,1])</m>, <m>S=\{f(x)=x, g(x)=2\val{x} \}</m>
+    </p>
+  </statement>
+</exercise>
+</exercisegroup>
+<exercise>
+  <statement>
+    <p>
+      Let <m>V=M_{22}</m> and let <m>S=\{ A_1, A_2, A_3\}</m>, where
+      <me>
+        A_1=\begin{bmatrix}1\amp 0\\ 1\amp c \end{bmatrix},  A_2=\begin{bmatrix}-1\amp 0\\ c\amp 1 \end{bmatrix},  A_3=\begin{bmatrix}2\amp 0\\ 1\amp 3 \end{bmatrix}
+      </me>.
+      Determine all values <m>c\in \R</m> for which <m>S</m> is linearly independent.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>V=M_{22}</m>,
+      and define <m>A_1=\begin{bmatrix}1\amp 1\\1\amp 1 \end{bmatrix}</m>,
+      <m>A_2=\begin{bmatrix}0\amp 1\\1\amp 0 \end{bmatrix}</m>,
+      <m>A_3=\begin{bmatrix}1\amp 1\\ 1\amp 0 \end{bmatrix}</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Compute <m>W=\Span(\{A_1,A_2,A_3\})</m>,
+          identifying it as a certain <em>familiar</em> set of matrices.
+        </p>
+      </li>
+      <li>
+        <p>
+          Decide whether <m>S=\{A_1,A_2,A_3\}</m> is independent.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</exercise>
+<exercise xml:id="ex_linear_independence_arbitrary">
+  <statement>
+    <p>
+      Let <m>V</m> be a vector space, and let <m>S=\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m> be a subset of distinct vectors. Assume <m>S</m> is linearly independent. Show that any subset <m>T\subseteq S</m> is linearly independent.
+    </p>
+  </statement>
+  <hint>
+    <p>
+      The empty set <m>T=\{\, \}</m> is trivially linearly independent. Let <m>T=\{\boldv_{i_1}, \boldv_{i_2}, \dots, \boldv_{i_k}\}</m> represent an arbitrary nonempty set of distinct elements of <m>S</m>. You can show <m>T</m> is linearly independent by <em>extending</em> linear combinations of the elements of <m>T</m> to a linear combination of the elements of <m>S</m> in a certain way.
+    </p>
+  </hint>
+</exercise>
+<exercise xml:id="ex_span_independence_inveribility">
+  <title>Span, independence, and invertibility</title>
+
+  <statement>
+    <p>
+      In this exercise we identify elements of <m>V=\R^n</m> with <m>n\times 1</m> column vectors.
+    </p>
+    <p> Let <m>S=\{\boldv_1,\boldv_2,\dots, \boldv_n\}</m> be a subset of <m>\R^n</m>, and let <m>A</m> be the <m>n\times n</m> matrix whose <m>j</m>-th column is <m>\boldv_j</m>: <ie />,
+      <me>
+      A=\begin{bmatrix}\vert \amp \vert \amp \cdots \amp \vert\\ \boldv_1\amp \boldv_2\amp  \amp \boldv_n\\ \vert \amp \vert \amp \cdots \amp \vert \end{bmatrix}
+      </me>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Prove: <m>\Span S=\R^n</m> if and only if <m>A</m> is invertible.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove: <m>S</m> is linearly independent if and only if <m>A</m> is invertible.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <hint>
+    <p>
+      Use the column method (<xref ref="th_column_method"/>) and the invertibility theorem (<xref ref="th_invertibility_expanded"/>)
+    </p>
+  </hint>
+</exercise>
+<exercise xml:id="ex_span_independence_transform">
+  <title>Linear transformations, span, and independence</title>
+  <statement>
+    <p>
+      Suppose <m>T\colon V\rightarrow W</m> is a linear transformation.   Let <m>S=\{\boldv_1,\boldv_2,\dots ,\boldv_r\}</m> be a subset of <m>V</m>, and let <m>S'</m> be the image of <m>S</m> under <m>T</m>: <ie />,
+      <me>
+        S'=T(S)=\{T(\boldv_1), T(\boldv_2),\dots, T(\boldv_r)\}
+      </me>.
+      Assume <m>\boldv_i\ne \boldv_j</m> and <m>T(\boldv_i)\ne T(\boldv_j)</m> for all <m>i\ne j</m>.
+    </p>
+    <p>
+      Answer true or false: if true, provide a proof; if false, provide an explicit counterexample. Note: for a complete counterexample you need to specify <m>T\colon V\rightarrow W</m>, and <m>S</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+        If <m>S</m> is linearly independent, then <m>S'</m> is linearly independent.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>S'</m> is linearly independent, then <m>S</m> is linearly independent.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>S</m> is a spanning set for <m>V</m>, then <m>S'</m> is a spanning set for <m>\im T</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</exercise>
+</exercises>

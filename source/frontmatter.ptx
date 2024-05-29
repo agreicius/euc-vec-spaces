@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This frontmatter division will contain all content before the -->
+<!-- first chapter. Fill in and comment/uncomment to see how this -->
+<!-- works. -->
+
+<frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="frontmatter">
+  <titlepage>
+    <author>
+      <personname>Aaron Greicius</personname>
+      <department>Department of Mathematics</department>
+      <institution>Northwestern University</institution>
+    </author>
+    <date>
+      <today />
+    </date>
+  </titlepage>
+
+  <colophon>
+
+    <website>
+      <url href="https://pretextbook.org">My Website</url>
+    </website>
+
+    <copyright>
+      <year>2020<ndash />2024</year>
+      <holder>Aaron Greicius</holder>
+      <shortlicense> This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <url href="http://creativecommons.org/licenses/by-sa/4.0/" visual="creativecommons.org/licenses/by-sa/4.0"> CreativeCommons.org</url>
+      </shortlicense>
+    </copyright>
+  </colophon>
+  <acknowledgement>
+    <p>Work on this text was supported by an Open Educational Resource Faculty Grant awarded to the author in 2020 by Northwestern University's Affordable Instructional Resources (AIR) initiative. The OER grants are funded by Northwestern's Office of the Provost and University Libraries. Special thanks are due to Lauren McKeen McDonald (Open Education Librarian) and Chris Diaz (Digital Publishing Librarian)  for their constant strategic and technical support.
+    </p>
+  </acknowledgement>
+</frontmatter>
+

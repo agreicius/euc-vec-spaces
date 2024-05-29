@@ -1,0 +1,185 @@
+<section xml:id="ss_further">
+  <title>Further properties</title>
+  <subsection>
+  <title><xref ref="c_det"></xref>. <xref ref="ss_further"></xref>: further properties of the determinant</title>
+  <p>
+    Our analysis of how the determinant changes with row operations leads to a number of very important theorems.
+  </p>
+  <theorem xml:id="th_detmult">
+    <title>Determinant is multiplicative</title>
+    <statement>
+      <p>
+        Let <m>A,B</m> be <m>n\times n</m>.
+        Then
+        <me>
+          \det(AB)=\det(A)\det(B)
+        </me>.
+      </p>
+    </statement>
+  </theorem>
+  <subsection>
+    <title>Comment:</title>
+    <p>
+      please observe, the same is NOT true of addition!
+    </p>
+  </subsection>
+  <me>
+    \det(A+B)\alert{\ne}\det(A)+\det(B)
+  </me>.
+  <proof>
+    <p>
+      Your instructor will do this in class.
+    </p>
+  </proof>
+  </subsection>
+  <theorem xml:id="th_detinv">
+    <title>Determinant and invertibility</title>
+    <statement>
+      <p>
+        Let <m>A</m> be <m>n\times n</m>.
+        Then <m>A</m> is invertible if and only if <m>\det(A)\ne 0</m>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <subsection>
+      <title>(<m>\Rightarrow</m>)</title>
+      <p>
+        I'll prove this direction as a chain of implications.
+      </p>
+    </subsection>
+    <md>
+      <mrow>A \text{ invertible } \amp \Rightarrow AA^{-1}=I_n \text{ for some matrix \(A^{-1}\)}</mrow>
+      <mrow>\amp \Rightarrow \det(AA^{-1})=\det I_n</mrow>
+      <mrow>\amp \Rightarrow \det(AA^{-1})=1 \amp \text{ (since \(\det I_n=1\)) }</mrow>
+      <mrow>\amp \Rightarrow \det A\ \det A^{-1}=1 \amp \text{ (by Th. <xref ref="th_detmult"></xref>) }</mrow>
+      <mrow>\amp \Rightarrow \det A\ne 0 \amp \text{ (otherwise product would be \(0\)) }</mrow>
+    </md>
+    <subsection>
+      <title><m>(\Leftarrow)</m></title>
+      <p>
+        I'll prove the <em>contrapositive</em> of this direction:
+        that is, if <m>A</m> is not invertible, then <m>\det A=0</m>.
+      </p>
+    </subsection>
+    <p>
+      Suppose <m>A</m> is not invertible,
+      and suppose <m>A</m> reduces to the <em>reduced</em>
+      row echelon matrix <m>U</m>.
+      By the invertibility theorem,
+      <m>U</m> is not the identity matrix.
+      Thus one of its diagonal entries must be 0, and hence <m>\det U=0</m>.
+    </p>
+    <p>
+      This means we have <m>E_rE_{r-1}\cdots E_1A=U</m>,
+      for some elementary matrices <m>E_i</m>,
+      in which case <m>\det E_r\det E_{r-1} \cdots \det E_1\det A=\det U=0</m>,
+      since <m>\det</m> is multiplicative.
+      Since the <m>E_i</m> are invertible, <m>\det E_i\ne 0</m>
+      (as shown above).
+      It follows that <m>\det A=0</m>.
+    </p>
+  </proof>
+  <subsection>
+    <title>Adjoint formula for $A^{-1}$</title>
+    <p>
+      Its worth recording also that we can use the determinant to give an actual formula for computing the inverse of a matrix!
+    </p>
+    <p>
+      We all love formulas,
+      but keep in mind that it is faster to use our Gaussian elimination algorithm for computing <m>A^{-1}</m>.
+    </p>
+    <theorem>
+      <title>Adjoint formula</title>
+      <statement>
+        <p>
+          Let <m>A</m> be <m>n\times n</m>,
+          and suppose <m>\det(A)\ne 0</m>.
+        </p>
+        <p>
+          We define the <term>adjoint matrix</term> of <m>A</m> as
+          <me>
+            \adjoint(A)=\left([C_{ij}]\right)^T;
+          </me>
+          that is, the <m>ij</m>-th entry of the adjoint matrix is the <m>ji</m>-th cofactor of <m>A</m>.
+        </p>
+        <p>
+          Then
+          <me>
+            A^{-1}=\frac{1}{\det(A)}\adjoint(A)
+          </me>.
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        Let <m>B=\adjoint A</m>, and let <m>c=\det A</m>.
+        Using the definition of <m>\adjoint A</m> and properties of the determinant,
+        you can in fact show directly that
+        <me>
+          AB=c I_n
+        </me>.
+      </p>
+      <p>
+        It follows that <m>A^{-1}=\frac{1}{c}B=\frac{1}{\det A}\adjoint A</m>.
+      </p>
+    </proof>
+  </subsection>
+  <subsection>
+    <title>Our growing invertibility theorem</title>
+    <p>
+      Thanks to <xref ref="th_detinv">Theorem</xref>,
+      our invertibility theorem has grown by one statement.
+    </p>
+    <theorem>
+      <title>Invertibility theorem</title>
+      <statement>
+        <p>
+          Let <m>A</m> be <m>n\times n</m>.
+          The following statements are equivalent.
+          <ol>
+            <li>
+              <p>
+                <m>A</m> is invertible.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A\boldx=\boldzero</m> has a unique solution
+                (the trivial one).
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A</m> is row equivalent to <m>I_n</m>,
+                the <m>n\times n</m> identity matrix.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A</m> is a product of elementary matrices.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A\boldx=\boldb</m> has a solution for every
+                <m>n\times 1</m> column vector <m>\boldb</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A\boldx=\boldb</m> has a <em>unique</em>
+                solution for every <m>n\times 1</m> column vector <m>\boldb</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\det(A)\ne 0</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+  </subsection>
+</section>

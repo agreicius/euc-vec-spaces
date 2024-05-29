@@ -1,0 +1,6 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="c_det">
+  <title>The determinant</title>
+  <xi:include  href="s_det.ptx"/>
+  <xi:include  href="s_rowops.ptx"/>
+  <xi:include  href="s_further.ptx"/>
+</chapter>

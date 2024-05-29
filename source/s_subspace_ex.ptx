@@ -1,0 +1,180 @@
+<exercises xml:id="s_subspace_ex">
+  <subexercises>
+    <title>WeBWork Exercises</title>
+    <exercise>
+      <!-- subspaces of polynomials -->
+      <webwork source="Library/TCNJ/TCNJ_VectorSpaces/problem6.pg" />
+    </exercise>
+  </subexercises>
+  
+<exercisegroup>
+<introduction>
+<p>
+For each subset <m>W</m> of <m>\R^2</m> described below: (a) sketch <m>W</m> as a region of <m>\R^2</m>, and (b) determine whether <m>W</m> is a subspace. Justify your answer either with a proof or explicit counterexample.
+</p>
+</introduction>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{(x,y)\in \R^2\colon 2x+3y=0\}</m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{(x,y)\in \R^2\colon \val{x}\geq \val{y}\}</m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{(x,y)\in \R^2\colon x^2+2y^2\leq 1\}</m>
+    </p>
+  </statement>
+</exercise>
+</exercisegroup>
+<exercisegroup>
+<introduction>
+<p>
+Determine whether the subset <m>W</m> of <m>M_{nn}</m> described is a subspace of <m>M_{nn}</m>. Justify your answer either with a proof or explicit counterexample.
+</p>
+</introduction>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{A\in M_{nn}\colon \det A=0\}</m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{A\in M_{nn}\colon A_{11}=A_{nn}\}</m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Fix a matrix <m>B\in M_{nn}</m> and define <m>W=\{A\in M_{nn}\colon AB=BA\}</m>, the set of matrices that <em>commute</em> with <m>B</m>.
+    </p>
+  </statement>
+</exercise>
+</exercisegroup>
+<exercisegroup>
+<introduction>
+<p>
+Determine whether the subset <m>W</m> of <m>P_2</m> is a subspace. Justify your answer either with a proof or explicit counterexample.
+</p>
+</introduction>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{f(x)=ax^2+bx+c \colon c=0\}</m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{f(x)=ax^2+bx+c \colon abc=0\}</m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{f(x)\in P_2 \colon xf'(x)=f(x)</m>
+    </p>
+  </statement>
+</exercise>
+</exercisegroup>
+<exercisegroup>
+<introduction>
+<p>
+Determine whether the subset <m>W</m> of <m>C(\R)</m> described is a subspace. Justify your answer either with a proof or explicit counterexample.
+</p>
+</introduction>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{f\in C(\R)\colon f(4)=0\} </m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{f\in C(\R)\colon f(0)=4\} </m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{f\in C(\R)\colon f(x)=f(-x)\} </m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{f\in C(\R)\colon f(x+\pi)=f(x)\} </m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{f\in C(\R)\colon f\in P \text{ and } \deg f=5\}. </m>
+    </p>
+  </statement>
+</exercise>
+</exercisegroup>
+<exercisegroup>
+<introduction>
+<p>
+For each given subset <m>W\subseteq \R^n</m>: (a) show that <m>W</m> is a subspace by identifying it with the set of solutions to a matrix equation, and (b) give a parametric description of <m>W</m>.
+</p>
+</introduction>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{(x,y,z)\colon 2x+y-z=0\}</m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{(x_1,x_2,x_3,x_4)\colon x_1-x_4=x_2+x_3=x_1+x_2+x_3=0\}\subseteq \R^4</m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{(x,y)\colon x+3y=-x+2y=0\}\subseteq \R^2</m>
+    </p>
+  </statement>
+</exercise>
+</exercisegroup>
+
+  <exercise>
+    <statement>
+      <p>
+        Prove <xref ref="th_subspace_intersection"/>.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ex_matrix_subspaces">
+    <statement>
+      <p>
+        Prove (1)-(6) of <xref ref="th_matrix_subspaces"/>.
+      </p>
+    </statement>
+  </exercise>
+</exercises>

@@ -1,0 +1,241 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_sets_functions">
+  <title>Sets</title>
+
+
+  <introduction>
+    <p>
+      We will gradually make our way to definitions of the vector spaces and linear transformations mentioned in this text's title. For now it will suffice to observe that a vector space is a certain kind of <em>set</em>, and a linear transformation is a special type of <em>function</em>. Accordingly we gather here some notions about sets and (in the next section) functions that will come in handy once we meet the two main players of linear algebra.
+    </p>
+  </introduction>
+
+  <definition xml:id="d_sets">
+    <idx><h>sets</h></idx>
+    <idx><h>sets</h><h>empty sets</h></idx>
+    <idx><h>sets</h><h>membership</h></idx>
+    <notation>
+      <usage> <m>x\in A</m> </usage>
+      <description>set membership</description>
+    </notation>
+      <title>Sets</title>
+      <statement>
+        <p>
+        A <term>set</term> is a collection of objects.
+        An object <m>x</m> is a  <term>member</term> (or <term>element</term>) of a set <m>A</m> if <m>A</m> contains <m>x</m>. In this case, we write <m>x \in A</m>. If <m>x</m> is not a member of <m>A</m>, we write <m>x \notin A</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      We use curly braces to describe the contents of a set. For example, <m>A=\{1,2,3\}</m> is the set containing the first three positive integers, and <m>B=\{1,2,3,\dots\}</m> is the set of all positive integers. The defining property of sets is that they are completely determined by their members, and nothing more. In particular, when describing sets as above, it does not matter in what order the elements are listed, nor if they are repeated: <eg />, <m>\{1,2,3\}</m>, <m>\{2,1,3\}</m>, and <m>\{2,1,1,3,2\}</m> are three descriptions of the same set. This somewhat slippery notion is made perfectly clear by specifying exactly what it means for two sets to be equal, as we do below.
+    </p>
+    <definition xml:id="d_set_equality">
+      <title>Set equality</title>
+      <idx><h>sets</h><h>equality</h></idx>
+      <statement>
+        <p>
+        Sets <m>A</m> and <m>B</m> are <term>equal</term>, denoted <m>A=B</m>, if they have precisely the same elements:  <ie />, if for any object <m>x</m>, we have <m>x\in A</m> if and only if <m>x\in B</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Set membership naturally extends to a notion of one set <q>lying</q> within another.
+    </p>
+    <definition xml:id="d_set_inclusion">
+      <title>Set inclusion (subsets)</title>
+      <idx><h>sets</h><h>subset</h></idx>
+      <idx><h>sets</h><h>inclusion</h></idx>
+      <notation>
+        <usage><m>A\subseteq B</m></usage>
+        <description>set inclusion</description>
+      </notation>
+      <statement>
+        <p>
+        A set <m>A</m> is a <term>subset</term> of a set <m>B</m>, denoted <m>A \subseteq B</m>, if every member of <m>A</m> is a member of <m>B</m>:  <ie />, <m>x\in A</m> implies <m>x\in B</m> for any object <m>x</m>. The relation <m>A\subseteq B</m> is called <term>set inclusion</term>.
+        </p>
+      </statement>
+    </definition>
+        <remark xml:id="rm_equal_subset_logic">
+      <statement>
+        <p>
+          The definitions of set equality and the subset relation make use of two important logical operations: namely, the <q>if and only if</q> (or <q>iff</q> for short) and <q>if-then</q> operations. We describe these notions in more detail in <xref ref="s_logic" text="title"/>, and we outline techniques for proving <q>if and only if</q> and <q>if-then</q> statements, including statements about set equality and the subset relation, in <xref ref="s_proof_technique" text="title"/>.
+        </p>
+      </statement>
+    </remark>
+    <p>
+      With the fundamental notions of membership, equality, and subset in place, we now introduce means of building new sets from existing ones. The first is a manner of carving out a subset of a given set using a specified property.
+    </p>
+    <definition xml:id="d_set_builder_notation">
+      <title>Set-builder notation</title>
+      <idx><h>sets</h><h>set builder notation</h></idx>
+      <statement>
+        <p>
+        Let <m>A</m> be a set, and let <m>P</m> be a property that elements of <m>A</m> either satisfy or do not satisfy. For an element <m>x\in A</m>, let <m>P(x)</m> denote the statement that <m>x</m> satisfies <m>P</m>.  The set of all elements of <m>A</m> satisfying <m>P</m> is denoted
+        <me>
+          \{x \in A \colon P(x) \}
+        </me>.
+        </p>
+      </statement>
+    </definition>
+    <remark xml:id="rm_set_builder">
+      <statement>
+        <p>
+          Set builder notation <sq><m>\{x \in A\colon P(x)\}</m></sq> is parsed from left to right as follows:
+          <ul>
+            <li>
+              <p>
+                <sq><m>\{</m></sq> is read as <q>the set of</q>
+              </p>
+            </li>
+              <li>
+                <p>
+                  <sq><m>x\in A</m></sq> is read as <q>elements of <m>A</m></q>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <sq><m>\colon</m></sq> is read as <q>such that</q>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <sq><m>P(x)</m></sq> is read as <q><m>P(x)</m> is true </q>.
+                </p>
+              </li>
+          </ul>
+          Taken altogether we get: <q>The set of elements of <m>A</m> such that <m>P(x)</m> is true</q>.
+        </p>
+      </statement>
+    </remark>
+    <example xml:id="ex_set_builder">
+      <statement>
+        <p>
+          Let <m>A=\{0,1,2,\dots \}</m> be the set of nonnegative integers. The subset <m>B=\{0,2,4,\dots\}</m> of <em>even</em> positive integers can be described using set-builder notation as
+          <me>
+            B=\{x\in A\colon x \text{ is even}\}
+          </me>,
+          or alternatively,
+          <me>
+            B=\{x\in A\colon x=2k \text{ for some integer } k\}
+          </me>.
+            </p>
+      </statement>
+    </example>
+    <p>
+      Next we use set builder notation, the set membership relation, and some basic logic to define the union, intersection, and difference of sets.
+    </p>
+    <definition xml:id="d_set_operations">
+      <title>Union, intersection, difference, and complement</title>
+      <idx><h>sets</h><h>union</h></idx>
+      <idx><h>sets</h><h>intersection</h></idx>
+      <notation>
+        <usage><m>A\cup B</m></usage>
+        <description>set union</description>
+      </notation>
+      <notation>
+        <usage><m>A^c</m></usage>
+        <description>set complement</description>
+      </notation>
+      <notation>
+        <usage><m>A\cap B</m></usage>
+        <description>set intersection</description>
+      </notation>
+      <idx><h>sets</h><h>complement</h></idx>
+      <idx><h>sets</h><h>difference</h></idx>
+      <notation>
+        <usage> <m>A-B</m>  </usage>
+        <description>set difference</description>
+      </notation>
+      <statement>
+        <p>
+        Let <m>A</m> and <m>B</m> be subsets of a common set <m>X</m>.
+        </p>
+        <ul>
+          <li>
+              <title>Set union</title>
+            <p>
+              The <term>union</term> <m>A \cup B</m> of <m>A</m> and <m>B</m> is defined as
+              <me>
+                A\cup B=\{x\in X\colon x\in A\text{ or } x\in B\}
+              </me>.
+              More generally, the union <m>A_1\cup A_2\dots \cup A_n</m> of a collection of subsets of <m>A_i\subseteq X</m> is defined as
+              <me>
+                A_1\cup A_2\dots \cup A_n=\{x\in X\colon x\in A_i \text{ for some } 1\leq i\leq n\}
+              </me>.
+
+            </p>
+          </li>
+          <li>
+              <title>Set intersection</title>
+            <p>
+              The <term>intersection</term> <m>A \cap B</m> of <m>A</m> and <m>B</m> is defined as
+              <me>
+                A\cap B=\{x\in X\colon x\in A\text{ and } x\in B\}
+              </me>.
+              More generally, the intersection <m>A_1\cap A_2\dots \cap A_n</m> of a collection of subsets of <m>A_i\subseteq X</m> is defined as
+              <me>
+                A_1\cap A_2\dots \cap A_n=\{x\in X\colon x\in A_i \text{ for all } 1\leq i\leq n\}.
+              </me>
+            </p>
+          </li>
+          <li>
+              <title>Set difference</title>
+            <p>
+              The <term>difference</term> <m>A-B</m> is defined as
+              <me>
+                A-B=\{x\in X\colon x\in A\text{ and } x\notin B\}
+              </me>.
+            </p>
+          </li>
+          <li>
+            <title>Set complement</title>
+            <p>
+              The <term>complement</term> of <m>A</m> in <m>X</m> is defined as <m>X-A</m>. In contexts where there is clear what the larger set <m>X</m> is, we denote the complement of <m>A</m> in <m>X</m> as <m>A^c</m>.
+            </p>
+          </li>
+        </ul>
+
+      </statement>
+    </definition>
+<p>
+  With the help of these set operations, we can now describe some common sets used in mathematics.
+</p>
+<definition xml:id="d_common_sets">
+  <idx><h>sets</h><h>empty set</h></idx>
+  <notation>
+    <usage><m>\{\ \}, \emptyset</m> </usage>
+    <description>the empty set</description>
+  </notation>
+  <idx><h>real numbers</h></idx>
+  <notation>
+    <usage><m>\mathbb{R}</m></usage>
+    <description>the real numbers</description>
+  </notation>
+  <idx><h>integers</h></idx>
+  <notation>
+    <usage><m>\mathbb{Z}</m></usage>
+    <description>the integers</description>
+  </notation>
+  <idx><h>rational numbers</h></idx>
+  <notation>
+    <usage><m>\mathbb{Q}</m></usage>
+    <description>the rational numbers</description>
+  </notation>
+  <title>Common mathematical sets</title>
+  <statement>
+    <p>
+      We denote by <m>\mathbb{R}</m> the set of all real numbers. The <term>integers</term> <m>\Z</m> and <term>rational numbers</term> <m>\mathbb{Q}</m> are the subsets of <m>\R</m> defined as
+      <md>
+        <mrow>\mathbb{Z} \amp =\{0,1,2,3,\dots\}\cup \{-1,-2,-3,\dots\} </mrow>
+        <mrow> \mathbb{Q} \amp = \{x\in\mathbb{R}\colon x=\tfrac{m}{n} \text{ for some } m,n\in\Z\}  </mrow>
+      </md>.
+      This yields the following chain of subsets:
+      <men xml:id="eq_chain_numbersystems">
+        \mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}
+      </men>.
+      The <term>empty set</term> is the set containing no objects, denoted <m>\{\ \}</m> or <m>\emptyset</m>.
+    </p>
+  </statement>
+</definition>
+
+<xi:include href="s_sets_functions_ex.ptx"/>
+
+</section>

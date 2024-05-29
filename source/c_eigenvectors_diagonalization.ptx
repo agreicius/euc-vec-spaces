@@ -1,0 +1,10 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="c_transbasis">
+  <title>Eigenvectors and diagonalization</title>
+  <xi:include  href="s_coordinatevectors.ptx"/>
+  <xi:include  href="s_matrixreps.ptx"/>
+  <xi:include  href="s_changeofbasis.ptx"/>
+  <xi:include  href="s_eigenvectors.ptx"/>
+  <xi:include  href="s_diagonalization.ptx"/>
+  
+
+</chapter>

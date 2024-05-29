@@ -1,0 +1,556 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_systems">
+  <title>Systems of linear equations</title>
+  <introduction>
+    <p>
+     Computing and studying solutions to equations, and <em>systems of equations</em>, unquestionably plays an important role in mathematics; though we hasten to add that this is not all that mathematicians do! In this chapter we will develop an essentially complete theory of a particularly simple family of mathematical equations: namely, <em>linear equations</em>.  This will serve as a somewhat indirect introduction to our study of linear algebra, as lurking below our parametric descriptions of solutions to linear systems lie vector space notions like subspace, span, and linear independence. Furthermore, we will meet one of the most important computational tools of linear algebra: <xref ref="d_GE" text="custom">Gaussian elimination</xref>.  
+  </p>
+  </introduction>
+  <subsection xml:id="ss_linear_equations">
+  <title>Systems of linear equations</title>
+    <definition xml:id="d_lin-equation" >
+    <title>Linear equations</title>
+    <idx><h>linear equation</h></idx>
+    <statement>
+      <p>
+        A <term>linear expression</term> in the <m>n</m> unknowns
+        (or variables)
+        <m>x_1,x_2,\dots x_n</m> is an expression of the form
+        <me>
+          a_1x_1+a_2x_2+\cdots +a_nx_n
+        </me>,
+        where <m>a_1,a_2,\dots, a_n</m> are fixed real numbers.
+      </p>
+      <p>A <term>linear equation</term> in the unknowns <m>x_1,x_2,\dots, x_n</m> is an equation that can be simplified, using only addition and subtraction, to an equation of the form
+        <men xml:id="eq_std_form">
+          a_1x_1+a_2x_2+\cdots a_nx_n=b,
+        </men>
+        which we call its <term>standard form </term>. An equation in the unknowns <m>x_1,x_2,\dots, x_n</m> is <term>nonlinear</term> if it cannot be simplified to the form <xref ref="eq_std_form"/> using only addition and subtraction.
+      </p>
+      <p>
+        Given a linear equation with standard form <xref ref="eq_std_form"/>, the equation is called <term>homogeneous</term> if <m>b=0</m>, and <term>nonhomogeneous</term> if <m>b\ne 0</m>.
+      </p>
+    </statement>
+  </definition>
+  <example>
+    <title>Linear and nonlinear equations</title>
+    <statement>
+      <p>
+        <ol>
+        <li>
+          <p>
+            Consider <m>\sqrt{3}x+\sin(5)=2z-e^4y</m>.
+            This is a linear equation in the unknowns <m>x,y,z</m>. Its standard form is <m>\sqrt{3}x+e^4y-2z=-\sin(5)</m>.
+            Since the right-hand side is nonzero, we see that the equation is nonhomogeneous.
+          </p>
+        </li>
+        <li>
+          <p>
+            The equation <m>x^2+y^2=1</m> is a <em> nonlinear</em>
+            equation in the unknowns <m>x</m> and <m>y</m>.
+          </p>
+        </li>
+      </ol>
+      </p>
+    </statement>
+  </example>
+
+  <definition xml:id="d_lin-sys">
+    <title>Systems of linear equations</title>
+    <idx><h>linear system</h></idx>
+    <statement>
+      <p>
+        A <term>system of linear equations</term>
+        (or <term>linear system</term>)
+        is a set of linear equations.
+      </p>
+      <p>
+        A <term>homogeneous</term> linear system is a set of homogeneous linear equations.
+
+      </p>
+
+    </statement>
+  </definition>
+  <p>
+  When displaying a system of <m>m</m> equations in the <m>n</m> unknowns <m>x_1,x_2,\dots x_n</m>, we typically write each equation in standard form and align the corresponding terms of each equation into columns:
+    <me>
+      \eqsys
+    </me>
+A homogeneous system is thus typically written as:
+<me>
+  \homsys.
+</me>
+</p>
+<remark>
+    <p>
+      You will want to get comfortable with the double-indexing used to display linear systems as quickly as possible. Here is a good way to orient yourself:
+    
+  <ul>
+    <li>
+      <p>
+        The <m>i</m> appearing in <m>a_{ij}</m> and <m>b_i</m> indicates the <m>i</m>-th row in our displayed system, or equivalently, the <m>i</m>-th equation.
+      </p>
+    </li>
+    <li>
+      <p>
+        The <m>j</m> appearing in <m>a_{ij}</m>
+        indicates the <m>j</m>-th column in our displayed system, which is associated to the <m>j</m>-th variable, for <m>1\leq j\leq n</m>.
+      </p>
+    </li>
+  </ul>
+  </p>
+</remark>
+    <definition xml:id="d_lin-sys-sols">
+      <title>Solutions to linear systems</title>
+      <idx><h>solutions to linear systems</h></idx>
+      <statement>
+        <p>
+          A <term>solution to a linear equation</term>
+          <me>
+            a_1x_1+a_2x_2+\cdots a_nx_n=b
+          </me>
+          is an <m>n</m>-tuple
+          <m>(s_1,s_2,\dots,
+          s_n)</m> of real numbers for which the variable assignment <m>x_1=s_1, x_2=s_2,\dots, x_n=s_n</m> makes the equation true.
+          We say <m>(s_1,\dots ,s_n)</m> <term>solves the equation</term> in this case.
+        </p>
+        <p>
+          A <term>solution to a system of linear equations</term>
+          <me>
+            \eqsys
+          </me>
+          is an <m>n</m>-tuple <m>(s_1,s_2,\dots,s_n)</m> that is a solution to each of the system's <m>m</m> equations.
+          We say <m>(s_1,s_2,\dots,
+          s_n)</m> <term>solves the system</term> in this case.
+        </p>
+      </statement>
+    </definition>
+  <p>
+    Given a linear system we will seek to find the set of
+    <em>all</em> solutions to the system.
+    As we will soon see, this set of solutions will take one of three qualitative forms:
+    <ol>
+      <li>
+        <p>
+          The solution set is empty; i.e., there are no solutions.
+          We say the system is <term>inconsistent</term> in this case.
+          Otherwise a system is called <term>consistent</term>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The solution set contains a single element;
+          i.e., there is exactly one solution.
+        </p>
+      </li>
+      <li>
+        <p>
+          The solution set contains infinitely many elements;
+          i.e., there are infinitely solutions.
+        </p>
+      </li>
+    </ol>
+  </p>
+  <example xml:id="s_systems_eg_2eqns2varss">
+    <title>Solutions to elementary systems</title>
+
+    <statement>
+    <p>
+    For each system, compute the set of solutions.
+    
+    <ol>
+      <li>
+        <me>\begin{linsys}{2} x\amp -\amp y\amp =\amp 0\\ x\amp -\amp y\amp =\amp 1\end{linsys}</me>
+      </li>
+      <li>
+        <me>\begin{linsys}{2} x\amp -\amp y\amp =\amp 0\\ x\amp +\amp y\amp =\amp 1\end{linsys}</me>
+      </li>
+      <li>
+        <me>\begin{linsys}{2} x\amp -\amp y\amp =\amp 1\\ 2x\amp -\amp 2y\amp =\amp 2\end{linsys}</me>
+      </li>
+    </ol>
+    </p>
+    </statement>
+   <solution>
+    <p>
+     <ol>
+      <li><p>The first equation implies <m>x=y</m>.
+    Substituting <m>y</m> for <m>x</m> in the second equation, we would then have <m>0=1</m>, a contradiction.
+    Thus there are no solutions: i.e., <m>S</m> is the empty set, denoted <m>S=\{ \ \}</m> or <m>S=\emptyset</m>.
+    </p>
+      </li>
+      <li>
+        <p>
+          The first equation implies <m>x=y</m>.
+          Making this substitution in the second equation yields <m>2x=1</m>, or <m>x=1/2</m>.
+          Thus <m>(x,y)=(1/2,1/2)</m> is the unique solution,
+          and <m>S=\{ (1/2,1/2)\}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The second equation is just twice the first. It follows that both equations have the exact same set of solutions, and
+          so we need only find all solutions to <m>x-y=1</m>.
+          Note that we can set <m>x=t</m> for <em>any</em>
+          real number <m>t \in\R</m>.
+          Solving for <m>y</m> in terms of <m>t</m> we get
+          <m>(x,y)=(t,t-1)</m> for any <m>t\in\R</m>,
+          and thus <m>S=\{(t,t-1)\colon t\in\R\}</m>, an infinite set!
+        </p>
+      </li>
+  </ol> 
+    </p>
+  </solution>
+
+</example>
+<p>
+  As you may recall, a (nontrivial) linear equation in two unknowns defines a line in <m>\R^2</m>; and a (nontrivial) equation in three unknowns defines a plane in <m>\R^3</m>. This observation allows us to bring powerful geometric intuition to the analysis of systems of linear equations in two or three unknowns. As lines and planes will also serve as a rich source of examples in this course, we recall below some of their basic notions. 
+</p>
+<example xml:id="eg_lines_planes_review">
+  <title>Lines and planes review</title>
+  <p>
+        Below we define lines (in <m>\R^2</m>) and planes (in <m>\R^3</m>) as sets of solutions of linear equations in two or three unknowns. Recall that the <term>graph</term> of an equation is the set of all solutions to the equation.
+        <ul>
+          <li>
+            <title>Lines</title>
+            <p>
+              A <term>line</term> in <m>\R^2</m> is the set of solutions (or graph) <m>\ell</m> of a linear equation of the form <m>ax+by=c</m>, where <m>a, b, c\in\R</m> are fixed constants, and at least one of <m>a</m> and <m>b</m> is nonzero: <ie />,
+              <me>
+                \ell=\{(x,y)\in\R^2\colon ax+by=c\}.
+              </me>
+            </p>
+          </li>
+          <li>
+            <title>Planes</title>
+            <p>
+              A <term>plane</term> in <m>\R^3</m> is the set of solutions (or graph) <m>\mathcal{P}</m> of a linear equation of the form <m>ax+by+cz=d</m>, where <m>a, b, c, d\in\R</m> are fixed constants, and at least one of <m>a, b, c</m> is nonzero: <ie />,
+              <me>
+                \mathcal{P}=\{(x,y,z)\in\R^3\colon ax+by+cz=d\}.
+              </me>
+            </p>
+          </li>
+        </ul>
+      We often use the abbreviated notation
+      <md>
+        <mrow>\ell \amp\colon ax+by=c \amp \mathcal{P}\amp\colon ax+by+cz=d</mrow>
+      </md>
+      to introduce the line <m>\ell</m> with defining equation <m>ax+by=c</m> or plane <m>\mathcal{P}</m> with defining equation <m>ax+by+cz=d</m>.
+      </p>
+      <p>
+        Given a plane <m>\mathcal{P}\colon ax+by+cz=d</m>, we call <m>\boldn=(a,b,c)</m> a <term>normal vector</term> of <m>\mathcal{P}</m>. Equipped with the normal vector <m>\boldn</m> and a single point <m>P=(x_0,y_0,z_0)</m> lying on <m>\mathcal{P}</m>, we can quickly visualize <m>\mathcal{P}</m> as the set of all points <m>Q=(x,y,z)</m> such that the vector <m>\overrightarrow{PQ}=(x-x_0, y-y_0, z-z_0)</m> is orthogonal to <m>\mathcal{n}</m>. This allows us to envision <m>\mathcal{P}</m> as <q>the plane passing through <m>P</m> and orthogonal to <m>\boldn</m></q>. The customizable Sage Cell below nicely demonstrates this method of visualization.
+      </p>
+      <figure width="100%" xml:id="fig_visualize_plane">
+        <title>Using Sage to visualize <m>\mathcal{P}\colon ax+by+cz=d</m> via normal vector <m>\boldn=(a,b,c)</m></title>
+        <caption>Using Sage to visualize <m>\mathcal{P}\colon ax+by+cz=d</m> via normal vector <m>\boldn=(a,b,c)</m></caption>
+        <image xml:id="im_plane">
+  <description>A plane and its normal vector</description>
+  <sageplot variant="3d" aspect="1.0">
+a=-8
+b=3
+c=10
+d=3
+#Following finds two points, P and Q on plane
+n=matrix([a,b,c])
+NS=n.right_kernel()
+P=vector(n.solve_right(matrix([d])))
+Q=NS.basis()[0].normalized()
+#The rest produces graphics and labels
+Pt1=point(P, color="blue", size=10)
+Pt2=point(vector(P)+2*NS.basis()[0].normalized(), color="red", size=10)
+Ar1=arrow3d(P,P+2*Q, color="green")
+Ar2=arrow3d(P,P+2*vector(n).normalized(), color="red")
+T1=text3d("P",P+vector([0,0,.25]),color="black",fontsize=20)
+T2=text3d("Q",P+2*Q+vector([0,0,.25]),color="black",fontsize=20)
+T3=text3d("n",P+vector(n).normalized()+vector([0,0,.25]),color="black",fontsize=20)
+var("x y z")
+Plane=implicit_plot3d(a*x+b*y+c*z-d,(x,P[0]-2,P[0]+2),(y,P[1]-2,P[1]+2),(z,P[2]-2,P[2]+2), color="green", opacity=".1")
+Pt1+Pt2+Ar1+Ar2+T1+T2+T3+Plane
+</sageplot>
+
+</image>
+
+      </figure>
+  
+</example>
+
+
+<example xml:id="eg_system_of_lines">
+<title>Solutions to elementary systems (again)</title>
+<statement>
+  <p>
+  For each system in <xref ref="s_systems_eg_2eqns2varss"/>, use a geometric argument to determine <em>how many</em> solutions there are.  
+</p>
+</statement>
+<solution>
+  <p>
+    We proceed geometrically by observing that each equation in a given system defines a line, that a pair <m>(x,y)</m> is a solution to the given equation if and only if it is a point on the corresponding line, and thus that a pair <m>(x,y)</m> is a solution to both equations if and only if it is a point lying on both lines. Thus, geometrically speaking, the set of solutions to a given system is equal to the intersection of the two corresponding lines. 
+    <ol>
+      <li>
+        <p>
+          In this case the two lines <m>\ell_1\colon x-y=0</m> and <m>\ell_2\colon x-y=1</m> are parallel (and not equal to one another). It follows that their intersection is empty. We conclude that there are no solutions to the system. 
+        </p>
+      </li>
+      <li>
+        <p>
+          In this case the two lines <m>\ell_1\colon x-y=0</m> and <m>\ell_2\colon x+y=1</m> are nonparallel. It follows that they intersect in a single point. We conclude that the system has a unique solution.  
+        </p>
+      </li>
+      <li>
+        <p>
+          In this case the two equations <m>x-y=1</m> and <m>2x-2y=2</m> define the same line <m>\ell</m>, and thus that their intersection is also equal to <m>\ell</m>. The set of solutions to the system is then equal to the set of points of <m>\ell</m>, which is infinite. 
+        </p>
+      </li>
+    </ol>
+  </p>
+</solution>
+</example>
+</subsection>
+  <subsection xml:id="ss_row_equivalence">
+   <title>Row operations</title>
+   <p>
+  In <xref ref="s_systems_eg_2eqns2varss"/> we were able to combine some simple logic and arithmetic to solve each system completely.  Of course, things get more complicated as the number of equations and/or unknowns in the system increases.
+</p>
+<p>
+  For example, consider the system
+    <men xml:id="s_systems_eq_runningexample">
+      \begin{linsys}{3} 2x\amp -\amp y\amp -\amp z\amp =\amp 3\\ x\amp \amp \amp -\amp z\amp =\amp 2 \\ x\amp -\amp y\amp \amp \amp =\amp 1 \end{linsys}
+    </men>
+  Observe first that the triple <m>(5,2,5)</m> is not a solution to the system; one easily checks that is satisfies the first and second equations, but not the third. Similarly, it is easy to verify that <m>(4,2,3)</m> and <m>(0,-1,2)</m> are both solutions to the system. The question remains: How do we find <em>all</em> solutions to the linear system in a systematic way?
+</p>
+<remark>
+  <p>Notice the somewhat funny spacing in <xref ref="s_systems_eq_runningexample"/>. This is in force in order to align the unknowns in separate columns. In general, when handed a linear system in the wild, your first step should be to write each equation in standard form, and make sure the unknowns are aligned vertically in this manner.
+</p>
+</remark>
+  <paragraphs xml:id="pars-">
+    <title>Some systems are easier to solve than others</title>
+    <p>Below you find two systems of three equations in three unknowns.
+    <me>
+      \begin{array}{ccc} \text{ System } L \amp \hspace{5pt}\amp \text{ System } L' \\ \hline \begin{linsys}{3} 2x\amp +\amp 3y\amp +\amp -z\amp =\amp 18\\ x\amp +\amp 2y\amp -\amp 2z\amp =\amp 8\\ -\frac{1}{2}x\amp +\amp -\frac{1}{2}y\amp +\amp \frac{1}{2}z\amp =\amp -3 \end{linsys} \amp  \amp \begin{linsys}{3} x\amp +\amp y\amp +\amp z\amp =\amp 10\\ \amp \amp y\amp -\amp 3z\amp =\amp -2\\ \amp \amp \amp \amp z\amp =\amp 2 \end{linsys} \end{array}
+    </me>
+  The staircase pattern of <m>L'</m> allows us to solve easily by
+    <em>backwards substitution</em>. In more detail:
+  <ol>
+    <li>
+      <p>
+        Equation 3 in <m>L'</m> tells us that <m>z=2</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+      Now substitute <m>z=2</m> into Equation 2 of <m>L'</m> and solve for <m>y</m> to get <m>y=4</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+      Finally, substitute <m>y=4</m> and <m>z=2</m> into Equation 1 of <m>L'</m>and solve for <m>x</m> to get <m>x=4</m>.
+      We conclude that <m>(x,y,z)=(4,4,2)</m> is a solution to <m>L'</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Furthermore, since at each step we had no choice in the matter (<m>z</m> must be equal to 2, <m>y</m> then must be equal to 4, etc.), we see that in fact <m>(4,4,2)</m> is the <em>only</em> solution to <m>L'</m>.
+      </p>
+    </li>
+  </ol>
+    Our method for solving a more complicated system,
+    like <m>L</m> above, will be to <em>transform</em>
+    it to a simpler system like <m>L'</m>.
+  </p>
+  <p>
+    <em>Key point</em>. In order for this method to work,
+    we need to make sure that the transformed system has <em>exactly</em>
+    the same solutions as the original system!
+    To this end we will restrict our permissible transformations to the <em>elementary  operations</em> define below.
+  </p>
+  <definition xml:id="d_eqops">
+    <title>Elementary operations on linear systems</title>
+    <idx><h>elementary operations</h><h>linear systems</h></idx>
+    <idx><h>elementary operations</h><h>linear systems</h><h>scalar multiplication</h></idx>
+    <idx><h>elementary operations</h><h>linear systems</h><h>equation swap</h></idx>
+    <idx><h>elementary operations</h><h>linear systems</h><h>equation addition</h></idx>
+    <idx><h>row reduction</h><h>of systems</h></idx>
+    <statement>
+      <p>
+        An <term>elementary operation</term> (or <term>elementary row operation</term>) is one of the three types of operations on linear systems described below.
+        <dl>
+          <li xml:id="d_eq_scale">
+            <title>Scalar multiplication</title>
+              <p> Multiply an equation by a <em>nonzero</em> number <m>c\ne 0</m>:
+              i.e., replace the <m>i</m>-th equation <m>e_i</m> of the system with <m>c\cdot e_i</m> for <m>c\ne 0</m>. Note: <m>c\cdot e_i</m> is the result of multiplying the left and right sides of equation <m>e_i</m> by <m>c</m>.
+            </p>
+          </li>
+          <li xml:id="d_eq_swap">
+            <title>Equation swap</title>
+            <p>
+              Swap the <m>i</m>-th and <m>j</m>-th equations of the system, <m>i\ne j</m>: i.e.,
+              replace equation <m>e_i</m> of the system with <m>e_j</m>, and replace equation <m>e_j</m> with <m>e_i</m>.
+            </p>
+          </li>
+          <li xml:id="d_eq_add">
+            <title>Equation addition</title>
+            <p>
+              Add a multiple of one equation to another: i.e.,
+              replace <m>e_i</m> with <m>e_i+ce_j</m> for some <m>c</m>, <m>i</m>, and <m>j</m>.
+            </p>
+          </li>
+        </dl>
+      The act of transforming a system of equations using elementary operations is called <term>reduction</term> (or <term>row reduction</term>).
+    </p>
+    </statement>
+  </definition>
+    <p>
+      After reducing a linear system <m>L</m> using elementary operations, we are left with a new system <m>L'</m>. The systems <m>L</m> and <m>L'</m> will generally look very different from one another. Note, however, that the two systems will have the same <em>number</em> of equations, and the same <em>number</em> of variables. More importantly, the two systems will have identical sets of solutions; that is, the set of solutions of the new system <m>L'</m> is identical to the set of solutions to <m>L</m>!
+    </p>
+    <p> To convince ourselves of this last assertion, it suffices to show that the application of any one of these elementary row operations produces a new system <m>L'</m> with exactly the same set of solutions as <m>L</m>; if this is so, then performing any finite sequence of elementary row operations must also preserve the set of solutions in this sense. <xref ref="s_systems_th_rowops"/> makes this argument official. First we introduce the notion of <em>equivalent linear systems</em>, mainly to spare ourselves from the mouthful that is <q>obtained by applying a finite sequence of elementary row operations</q>.
+  </p>
+  <definition xml:id="d_rowequivalent">
+    <title>Row equivalent linear systems</title>
+    <statement>
+      <p>
+        We say two systems of linear equations are
+        <term>row equivalent</term> 
+        if the one can be obtained from the other by a finite sequence of elementary operations.
+      </p>
+    </statement>
+  </definition>
+  <theorem xml:id="s_systems_th_rowops">
+    <title>Row equivalence theorem</title>
+    <statement>
+      <p>
+        Row equivalent systems of linear equations have identical sets of solutions.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        We prove by induction that if system <m>L'</m> is the result of applying <m>n</m> elementary operations to system <m>L</m>, <m>n\geq 0</m>, then <m>L</m> and <m>L'</m> have the same set of solutions.
+      </p>
+      <case>
+        <title> Base case: <m>n=0</m></title>
+        <p>
+          In this case <m>L=L'</m> (we have applied no operations) and the statement is obvious.
+        </p>
+      </case>
+      <case>
+        <title>Induction step</title>
+        <p>Assume that applying a sequence of <m>n</m> elementary operations to a linear system preserves the set of solutions.
+      </p>
+      <p>
+        Suppose <m>L'</m> is the result of applying <m>n+1</m> elementary operations to the system <m>L</m>. Let <m>L''</m> be the result of applying the first <m>n</m> of these operations. By the induction hypothesis, systems <m>L</m> and <m>L''</m> have the same set of solutions.
+      </p>
+      <p>
+        Since the system <m>L'</m> is obtained from <m>L''</m> by applying exactly one elementary operation, it now suffices to show that applying a single row operation does not change the set of solutions to a linear system. This is the result of <xref ref="ex_row_ops_preserve"/>. (Note that a solution is provided to that exercise.)
+      </p>
+      <p>
+        We conclude that <m>L</m> and <m>L'</m> have the same set of solutions, as desired.
+      </p>
+      </case>
+    </proof>
+  </theorem>
+  </paragraphs>
+  <example xml:id="eg_systems_eg_long">
+    <title>Complete example</title>
+    <p>
+      Consider again the linear system
+      <me>
+        \begin{linsys}{3} 2x\amp +\amp 3y\amp +\amp -z\amp =\amp 18\\ x\amp +\amp 2y\amp -\amp 2z\amp =\amp 8\\ -\frac{1}{2}x\amp +\amp -\frac{1}{2}y\amp +\amp \frac{1}{2}z\amp =\amp -3 \end{linsys}
+      </me>
+    </p>
+    <p>
+      We transform the system as as follows:
+      <md>
+        <mrow>\begin{linsys}{3} 2x\amp +\amp 3y\amp +\amp -z\amp =\amp 18\\ x\amp +\amp 2y\amp -\amp 2z\amp =\amp 8\\ -\frac{1}{2}x\amp +\amp -\frac{1}{2}y\amp +\amp \frac{1}{2}z\amp =\amp -3 \end{linsys}
+        \amp \xrightarrow[\hspace{15pt}]{2e_3}\amp \begin{linsys}{3} 2x\amp +\amp 3y\amp +\amp -z\amp =\amp 18\\
+        x\amp +\amp 2y\amp -\amp 2z\amp =\amp 8\\
+        -x\amp +\amp -y\amp +\amp z\amp =\amp -6 \end{linsys}</mrow>
+        <mrow>  \amp </mrow>
+        <mrow>\amp \xrightarrow[\hspace{10pt}]{e_1-e_2}\amp \begin{linsys}{3} x\amp +\amp y\amp +\amp z\amp =\amp 10</mrow>
+        <mrow>x\amp +\amp 2y\amp -\amp 2z\amp =\amp 8</mrow>
+        <mrow>-x\amp +\amp -y\amp +\amp z\amp =\amp -6 \end{linsys}</mrow>
+        <mrow>  \amp </mrow>
+        <mrow>\amp \xrightarrow[\hspace{10pt}]{e_2-e_1}\amp  \begin{linsys}{3} x\amp +\amp y\amp +\amp z\amp =\amp 10</mrow>
+        <mrow>\amp \amp y\amp -\amp 3z\amp =\amp -2</mrow>
+        <mrow>\amp \amp \amp \amp 2z\amp =\amp 4 \end{linsys}</mrow>
+        <mrow>  \amp </mrow>
+        <mrow>\amp \xrightarrow[\hspace{10pt}]{e_3+e_1}\amp  \begin{linsys}{3} x\amp +\amp y\amp +\amp z\amp =\amp 10</mrow>
+        <mrow>\amp \amp y\amp -\amp 3z\amp =\amp -2</mrow>
+        <mrow>\amp \amp \amp \amp 2z\amp =\amp 4 \end{linsys}</mrow>
+        <mrow>  \amp </mrow>
+        <mrow>\amp \xrightarrow[]{\frac{1}{2}e_3}\amp  \begin{linsys}{3} x\amp +\amp y\amp +\amp z\amp =\amp 10</mrow>
+        <mrow>\amp \amp y\amp -\amp 3z\amp =\amp -2</mrow>
+        <mrow>\amp \amp \amp \amp z\amp =\amp 2 \end{linsys}</mrow>
+      </md>
+    </p>
+    <p>
+      Now put the logic together. Our original linear system <m>L</m> was transformed by a sequence of elementary row operations to a new system <m>L'</m>:
+      <md>
+        <mrow>\begin{linsys}{3} 2x\amp +\amp 3y\amp +\amp -z\amp =\amp 18</mrow>
+        <mrow>x\amp +\amp 2y\amp -\amp 2z\amp =\amp 8</mrow>
+        <mrow>-x\amp +\amp -y\amp +\amp z\amp =\amp -6 \end{linsys} \amp \xrightarrow[]{\text{ row op.'s } }\amp \begin{linsys}{3} x\amp +\amp y\amp +\amp z\amp =\amp 10</mrow>
+        <mrow>\amp \amp y\amp -\amp 3z\amp =\amp -2</mrow>
+        <mrow>\amp \amp \amp \amp z\amp =\amp 2 \end{linsys}</mrow>
+      </md>
+    </p>
+    <p>
+      We saw already that the second system has exactly one solution,
+      namely the triple <m>(x,y,z)=(4,4,2)</m>.
+    </p>
+    <p>
+      Since transforming a system by row operations preserves solutions,
+      the first and second systems have
+      <em>exactly the same solutions</em>.
+    </p>
+    <p>
+      Thus <m>(x,y,z)=(4,4,2)</m> is the only solution to the original system!
+    </p>
+  </example>
+  <remark xml:id="s_systems_notation_rowops">
+ <title>Notation</title>
+ <p>
+  As we will see later, keeping track of the exact sequence of row operations is important in some situations. The notation used in the last example is useful for this bookkeeping. Let's explicate the notation somewhat.
+ </p>
+ <p>
+   The notation
+   <me>
+     L\xrightarrow{c\, e_i}L'
+   </me>
+   indicates that system <m>L'</m> is obtained from <m>L</m> by replacing equation <m>e_i</m> with <m>c\, e_i</m>.
+
+ </p>
+ <p>
+   The notation
+   <me>
+     L\xrightarrow{e_i\leftrightarrow e_j}L'
+   </me>
+   indicates that system <m>L'</m> is obtained from <m>L</m> by swapping rows <m>e_i</m> and <m>e_j</m>.
+ </p>
+ <p>
+   The notation
+   <me>
+     L\xrightarrow{e_i+c\,e_j}L'
+   </me>
+   indicates that system <m>L'</m> is obtained from <m>L</m> by replacing equation <m>e_i</m> with <m>e_i+c\,e_i</m>.
+
+ </p>
+
+  </remark>
+  <remark xml:id="s_systems_rm_oneoperation">
+    <title>Mandate</title>
+
+
+<p>
+  You may be tempted to do multiple operations in a single step during this procedure. Resist this temptation for now until we have a better understanding of things.
+</p>
+<p>
+  Furthermore, if later on you do give in to this temptation, make sure that the two (or more row operations) you perform are independent of one another. For example, do not swap <m>e_2</m> with <m>e_1</m> and replace <m>e_3</m> with <m>e_3-5e_2</m> in the same step.
+</p>
+  </remark>
+  
+   
+    
+  </subsection>
+
+
+
+
+  <xi:include  href="s_systems_ex.ptx"/>
+
+</section>

@@ -1,0 +1,886 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_transformation">
+  <title>Linear transformations</title>
+  <introduction>
+    <p>
+    As detailed in <xref ref="d_linear_transform"/> a <em>linear transformation</em> is a special type of function between two vector spaces: one that <em>respects</em> in some sense the vector operations of both spaces.
+    </p>
+    <p>
+      This manner of theorizing is typical in mathematics:
+      first we introduce a special class of objects defined axiomatically, then we introduce special functions or maps between these objects. Since the original objects of study (e.g. vector spaces) come equipped with special structural properties (e.g. vector operations), the functions we wish to study are the ones that somehow acknowledge this structure.
+    </p>
+    <p>
+      You have already seen this principle at work in your study of calculus.
+      First we give <m>\R</m> some structure by defining a notion of proximity (i.e., <m>x</m> is close to <m>y</m> if <m>\val{x-y}</m> is small),
+      then we introduce a special family of functions that somehow respects this structure:
+      these are precisely the <em>continuous</em> functions!
+    </p>
+    <p>
+      As you will see, linear transformations are not just interesting objects of study in their own right, they also serve as invaluable tools in our continued exploration of the intrinsic properties of vector spaces.
+    </p>
+    <p>
+      In the meantime rejoice in the fact that we can now give a succinct definition of linear algebra:
+      it is the theory of vector spaces and the linear transformations between them. Go shout it from the rooftops!
+    </p>
+  </introduction>
+  <subsection xml:id="ss_linear_transform">
+    <title>Linear transformations</title>
+    <p>
+       First and foremost, a linear transformation is a function. Before continuing on in this section, you may want to reacquaint yourself with the basic function concepts and notation outlined in <xref ref="s_functions">Section</xref>.
+    </p>
+     
+  <definition xml:id="d_linear_transform">
+    <title>Linear transformations</title>
+
+    <statement>
+      <p>
+        Let <m>V</m> and <m>W</m> be vector spaces.
+        A function <m>T\colon V\rightarrow W</m> is a <term>linear transformation</term> (or <term>linear</term>)
+        if it satisfies the following properties:
+        <ol marker="i">
+          <li>
+            <p>
+              For all <m>\boldv_1, \boldv_2\in V</m>, we have <m>T(\boldv_1+\boldv_2)=T(\boldv_1)+T(\boldv_2)</m>.
+            </p>
+          </li>
+          <li>
+            <p> For all <m>c\in \R</m> and <m>\boldv\in V</m> we have
+              <m>T(c\boldv)=cT(\boldv)</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>
+        If a function between vector spaces is <term>nonlinear</term> if it is not a linear transformation.
+      </p>
+    </statement>
+  </definition>
+  <remark>
+    <p>
+      How precisely does a linear transformation <q>respect</q> vector space structure?
+      In plain English: the image of a sum is the sum of the images,
+      and the image of a scalar multiple is the scalar multiple of the image.
+    </p>
+</remark>
+  <p>
+    As our first examples of linear transformations, we define the <em>zero transformation</em> and <em>identity transformation</em> on a vector space.
+  </p>
+  <definition xml:id="d_transform_zero_identity">
+    <title>Zero and identity transformation</title>
+    <idx><h>linear transformation</h><h>zero transformation</h></idx>
+    <idx><h>linear transformation</h><h>identity transformation</h></idx>
+    <statement>
+        <p>
+        Let <m>V</m> and <m>W</m> be vector spaces.
+      </p>
+      <p>
+        The <term>zero transformation from <m>V</m> to <m>W</m></term>, denoted <m>T_0</m>, is defined as follows:
+        <md>
+          <mrow>T_0\colon V \amp\rightarrow W  </mrow>
+          <mrow> \boldv \amp\mapsto T_0(\boldv)=\boldzero_W</mrow>
+        </md>,
+        where <m>\boldzero_W</m> is the zero vector of <m>W</m>. In other words, <m>T_0</m> is the function that maps all elements of <m>V</m> to the zero vector of <m>W</m>.
+      </p>
+      <p>
+        The <term>identity transformation of <m>V</m></term>, denoted <m>\id_V</m>, is defined as follows:
+        <md>
+          <mrow> \id_V\colon V \amp\rightarrow V </mrow>
+          <mrow> \boldv \amp\mapsto \id_V(\boldv)=\boldv</mrow>
+        </md>.
+        In other words, <m>\id_V(\boldv)=\boldv</m> for all <m>\boldv\in V</m>.
+      </p>
+    </statement>
+  </definition>
+  <example xml:id="rm_transform_zero_identity">
+  <title>Model of linear transformation proof</title>
+    <p>
+    Let's show that the zero and identity functions are indeed linear transformations.
+    </p>
+    <p>
+    Let <m>V</m> and <m>W</m> be vector spaces, and let <m>T_0\colon V\rightarrow W</m> be the zero function. We verify each defining property separately.
+    <ol marker="i">
+      <li>
+        <p>
+          Given <m>\boldv, \boldw\in V</m>, we have
+          <md>
+            <mrow>T_0(\boldv_1+\boldv_2)\amp =\boldzero_W  \amp (\text{by def.}) </mrow>
+            <mrow> \amp =\boldzero_W+\boldzero_W </mrow>
+            <mrow>  \amp = T_0(\boldv_1)+T_0(\boldv_2) \amp (\text{by def.})</mrow>
+          </md>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Given <m>c\in \R</m> and <m>\boldv\in V</m>, we have
+          <md>
+            <mrow>T_0(c\boldv) \amp = \boldzero_W \amp (\text{by def.})</mrow>
+            <mrow> \amp = c\boldzero_W \amp (<xref ref="th_vectorspace_props" text="global"/>) </mrow>
+            <mrow>  \amp = cT_0(\boldv) \amp (\text{by def.})</mrow>
+          </md>.
+        </p>
+      </li>
+    </ol>
+    This proves that <m>T_0\colon V\rightarrow W</m> is a linear transformation.
+    </p>
+    <p>
+    Now let <m>V</m> be a vector spaces, and let <m>\id_V\colon V\rightarrow V</m> be the identity function.
+    <ol marker="i">
+      <li>
+        <p>
+          Given <m>\boldv, \boldw\in V</m>, we have
+          <md>
+            <mrow>\id_V(\boldv_1+\boldv_2)\amp =\boldv_1+\boldv_2  \amp (\text{by def.})</mrow>
+            <mrow> \amp = \id_V(\boldv_1)+\id_V(\boldv_2) \amp (\text{by def.})</mrow>
+          </md>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Given <m>c\in \R</m> and <m>\boldv\in V</m>, we have
+          <md>
+            <mrow>\id_V(c\boldv) \amp = c\boldv \amp (\text{by def.})</mrow>
+            <mrow> \amp = c\id_V(\boldv) \amp (\text{by def.}) </mrow>
+          </md>.
+        </p>
+      </li>
+    </ol>
+    This proves that <m>\id_V\colon V\rightarrow V</m> is a linear transformation.
+    </p>
+</example>
+<theorem xml:id="th_transform_basic_props">
+  <title>Basic properties of linear transformations</title>
+  <statement>
+    <p>
+      Let <m>T\colon V\rightarrow W</m> be a linear transformation. Let <m>\boldzero_V</m> and <m>\boldzero_W</m> be the zero vectors of <m>V</m> and <m>W</m>, respectively.
+    <ol>
+      <li>
+        <p>
+          We have <m>T(\boldzero_V)=\boldzero_W</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For all <m>\boldv\in V</m>, we have <m>T(-\boldv)=-T(\boldv)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For any linear combination
+          <me>\boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n\in V</me>
+          we have
+          <me>
+            T(\boldv)=T(c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n)=c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots +c_nT(\boldv_n)
+          </me>.
+        </p>
+      </li>
+    </ol>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      <ol>
+        <li>
+          <p>
+            We employ some similar trickery to what was done in the proof of <xref ref="th_vectorspace_props"/>. Assuming <m>T</m> is linear:
+            <md>
+              <mrow>T(\boldzero_V)  \amp= T(\boldzero_V+\boldzero_V)</mrow>
+              <mrow> \amp =T(\boldzero_V)+T(\boldzero_V) \amp (<xref ref="d_linear_transform"/>) </mrow>
+            </md>.
+            Thus, whatever <m>T(\boldzero_V)\in W</m> may be, it satisfies
+            <me>
+              T(\boldzero_V)=T(\boldzero_V)+T(\boldzero_V)
+            </me>.
+            Canceling <m>T(\boldzero_V)</m> on both sides using <m>-T(\boldzero_V)</m>, we conclude
+            <me>
+              \boldzero_W=T(\boldzero_V)
+            </me>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The argument is similar:
+            <md>
+              <mrow>\boldzero_W \amp= T(\boldzero_V) \amp (\text{by (1)})</mrow>
+              <mrow> \amp =T(-\boldv+\boldv)</mrow>
+              <mrow>  \amp = T(-\boldv)+T(\boldv)</mrow>
+            </md>.
+            Since <m>\boldzero_W=T(-\boldv)+T(\boldv)</m>, adding <m>-T(\boldv)</m> to both sides of the equation yields
+            <me>
+              -T(\boldv)=T(-\boldv)
+            </me>.
+
+          </p>
+        </li>
+        <li>
+          <p>
+            This is an easy proof by induction using the two defining properties of a linear transformation in tandem.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </proof>
+</theorem>
+  <remark xml:id="rm_transform_dist">
+  <p>
+  Statement (3) of <xref ref="th_transform_basic_props"/> provides a more algebraic interpretation of how linear transformations preserve vector space structure: namely, they <em>distribute</em> over linear combinations of vectors.
+  </p>
+</remark>
+
+    <algorithm xml:id="proc_transform_onestep">
+  <title>The one-step linear transformation proof</title>
+  <statement>
+    <p>
+    As a sort of converse to (3) in <xref ref="th_transform_basic_props"/>, observe that if <m>T\colon V\rightarrow W</m> satisfies
+    <me>
+      T(c\boldv_1+d\boldv_2)=cT(\boldv_1)+dT(\boldv_2)
+    </me>
+    for all <m>c, d\in \R</m> and <m>\boldv_1,\boldv_2\in V</m>, and <m>\boldw\in W</m>, then <m>T</m> is linear. Indeed, taking the special case <m>c=d=1</m> yields (1) of <xref ref="d_linear_transform"/>; and choosing <m>d=0</m> yields (2) of <xref ref="d_linear_transform"/>.
+    </p>
+    <p>
+      This observation gives rise to an alternate one-step technique for proving linearity: given <m>T\colon V\rightarrow W</m>, show that
+      <me>
+        T(c\boldv_1+d\boldv_2)=cT(\boldv_1)+dT(\boldv_2)
+      </me>
+      for all <m>c, d\in \R</m> and <m>\boldv_1,\boldv_2\in V</m>.
+    </p>
+  </statement>
+</algorithm>
+
+</subsection>
+
+<subsection xml:id="ss_matrix_transforms">
+  <title>Matrix transformations</title>
+  <p>
+    We now describe what turns out to be an entire family of examples of linear transformations: so-called <em>matrix transformations</em> of the form <m>T_A\colon \R^n\rightarrow \R^m</m>, where <m>A</m> is a given <m>m\times n</m> matrix. This is a good place to recall the <xref ref="princ_matrix_mantra" text='custom'> matrix mantra </xref>. Not only can a matrix represent a system of linear equations, it can represent a linear transformation. These are two very different concepts, and the <xref ref="princ_matrix_mantra" text='custom'> matrix mantra </xref> helps us to not confuse the two. In the end a matrix is just a matrix: a mathematical tool that can be employed to diverse ends. Observe that the definition of matrix multiplication marks the first point where <xref ref="declaration_tuples_columns"/> comes into play.
+  </p>
+  <definition xml:id="d_matrix_transform">
+    <title>Matrix transformations</title>
+    <idx><h>matrix transformation</h></idx>
+    <notation>
+      <usage><m>T_A</m></usage>
+      <description>the matrix transformation associated to <m>A</m></description>
+    </notation>
+    <statement>
+      <p>
+      Let <m>A</m> be an <m>m\times n</m> matrix. The <term>matrix transformation associated to <m>A</m></term> is the function <m>T_A</m> defined as follows:
+      <md>
+        <mrow>T_A\colon \R^n \amp\rightarrow \R^m </mrow>
+        <mrow> \boldx\amp\mapsto T_A(\boldx)=A\boldx </mrow>
+      </md>.
+      In other words, given input <m>\boldx\in \R^n</m>, the output <m>T(\boldx)</m> is defined as <m>A\boldx</m>. 
+      </p>
+    </statement>
+  </definition>
+  <theorem xml:id="th_matrix_transform_i">
+    <title>Matrix transformations I</title>
+    <statement>
+      <p>
+        Let <m>A</m> be an <m>m\times n</m> matrix. The function <m>T_A\colon \R^n\rightarrow \R^m</m> is a linear transformation.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        We use the one-step technique. For any <m>c,d\in \R</m> and <m>\boldx_1, \boldx_2\in \R^n</m>, we have
+        <md>
+          <mrow>T_A(c\boldx_1+d\boldx_2) \amp =A(c\boldx_1+d\boldx_2)</mrow>
+          <mrow> \amp =A(c\boldx_1)+A(d\boldx_2) \amp (<xref ref="th_matrix_alg_props"/>) </mrow>
+          <mrow>  \amp =cA\boldx_1+dA\boldx_2 \amp (<xref ref="th_matrix_alg_props"/>)</mrow>
+          <mrow>  \amp =cT_A(\boldx_1)+dT_A(\boldx_2)</mrow>
+        </md>.
+        This proves <m>T_A</m> is a linear transformation.
+      </p>
+    </proof>
+
+  </theorem>
+    <remark xml:id="rm_matrix_transform">
+  <p>
+    As the title of <xref ref="th_matrix_transform_i"/> suggests, there is a follow-up result (<xref ref="cor_matrix_transformations"/>), and this states that in fact <em>any</em> linear transformation <m>T\colon\R^n\rightarrow\R^m </m> is of the form <m>T=T_A</m> for some <m>m\times n</m> matrix <m>A</m>. In other words, all linear transformations from <m>\R^n</m> to <m>\R^m</m> are matrix transformations.
+  </p>
+  <p>
+    As general as these two results are, mark well the <em>restriction</em> that remains: they apply only to functions with domain and codomain equal to a vector spaces of tuples. They say nothing for example about functions from <m>\R^\infty</m> to <m>F([0,1],\R)</m>.
+  </p>
+</remark>
+    <remark xml:id="rm_matrix_transform_example">
+  <p>
+  <xref ref="th_matrix_transform_i"/> gives rise to an alternative technique for showing a function <m>T\colon \R^n\rightarrow \R^m</m> is a linear transformation: show that <m>T=T_A</m> for some matrix <m>A</m>.
+  </p>
+  <p>
+    As an example, consider the function
+    <md>
+      <mrow>T\colon \R^2 \amp\rightarrow  \R^3 </mrow>
+      <mrow> (x,y)\amp\mapsto (7x+2y, -y, x) </mrow>
+    </md>.
+  Conflating tuples with column vectors as described in <xref ref="d_matrix_transform"/> we see that <m>T=T_A</m> where
+  <me>
+    A=\begin{amatrix}[rr]7\amp 2\\ 0\amp -1\\ 1\amp 0  \end{amatrix}
+  </me>.
+  In other words, the original formula is just a description in terms of tuples of the function
+  <me>
+    \begin{amatrix}[c]x\\ y  \end{amatrix}\mapsto A\begin{amatrix}[c]x\\ y  \end{amatrix}=\begin{amatrix}[c]7x+2y\\ -y\\ x  \end{amatrix}
+  </me>.
+  It follows from <xref ref="th_matrix_transform_i"/> that <m>T=T_A</m> is linear.
+  </p>
+</remark>
+</subsection>
+<subsection xml:id="ss_rotations_reflections">
+  <title>Rotations, reflections, and orthogonal projections</title>
+<p>
+  We now introduce a number of geometric examples of linear transformations of <m>\R^2</m> and <m>\R^3</m>: namely, rotations, reflections, and orthogonal projections. These operations are described in detail below; we will use <xref ref="th_matrix_transform_i"/> to prove these operations are in fact linear transformations.Our definitions of these operations will be very geometric in nature. As such we will go back and forth between point and arrow interpretations of elements of <m>\R^n</m>. (See <xref ref="rm_points_arrows"/>.)  In particular, we will interpret an <m>n</m>-tuple <m>(a_1,a_2,\dots, a_n)</m> both as the point <m>P=(a_1,a_2,\dots, a_n)</m> and as the position vector <m>\overrightarrow{OP}</m>.   
+ </p>
+<definition xml:id="d_rotation">
+  <title>Rotation in the plane</title>
+  <idx><h>rotation</h><h>as linear transformation</h></idx>
+  <notation>
+    <usage><m>\rho_\alpha</m></usage>
+    <description>rotation by <m>\alpha</m> in the plane</description>
+  </notation>
+  <statement>
+    <p>
+        Fix an angle <m>\alpha</m> and define
+        <me>\rho_\alpha\colon \R^2\rightarrow \R^2
+        </me>
+        to be the function that takes an input vector <m>\boldx=(x_1,x_2)</m>, considered as the position vector <m>\overrightarrow{OP}</m> of the point <m>P=(x_1,x_2)</m>, and returns the output <m>\boldy=(y_1,y_2)</m> obtained by rotating the vector <m>\boldx</m> by an angle of <m>\alpha</m> about the origin.
+        The function <m>\rho_\alpha</m> is called <term>rotation about the origin </term> by the angle <m>\alpha</m>.
+      </p>
+      <p>
+      We can extract a formula from the rule defining <m>\rho_\alpha</m> by using polar coordinates: if <m>\boldx</m> has polar coordinates <m>(r,\theta)</m>, then <m>\boldy=\rho_\alpha(\boldx)</m> has polar coordinates <m>(r,\theta+\alpha)</m>.
+      </p>
+  </statement>
+</definition>
+<theorem xml:id="th_transform_rotation">
+  <title>Rotation is a linear transformation</title>
+  <statement>
+    <p>
+    Fix an angle <m>\alpha</m>. The rotation function <m>\rho_{\alpha}\colon \R^2\rightarrow \R^2</m> is a linear transformation. In fact, we have <m>\rho_\alpha=T_A</m>, where
+    <men xml:id="eq_rotation_matrix_2">
+      A=\begin{amatrix}[rr]
+        \cos\alpha\amp -\sin\alpha\\ \sin\alpha \amp \cos\alpha
+    \end{amatrix}
+    </men>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      By  <xref ref="rm_matrix_transform_example"/>, we need only show that <m>\rho_\alpha=T_A</m> for the matrix indicated.
+    </p>
+    <p>
+    If the vector <m>\boldx=(x,y)</m> has polar coordinates <m>(r,\theta)</m> (so that <m>x_1=r\cos\theta</m> and <m>x_2=r\sin\theta</m>), then its image <m>\boldy=\rho_{\alpha}(P)</m> under our rotation has polar coordinates <m>(r,\theta+\alpha)</m>. Translating back to rectangular coordinates, we see that
+    <md>
+      <mrow> \rho_\alpha(\boldx)\amp= \boldy </mrow>
+      <mrow>  \amp =\left(r\cos(\theta+\alpha),r\sin(\theta+\alpha)\right)</mrow>
+      <mrow> \amp =(r\cos\theta\cos\alpha-r\sin\theta\sin\alpha, r\sin\theta\cos\alpha+r\cos\theta\sin\alpha)
+      \amp (\text{trig. identities}) </mrow>
+      <mrow>  \amp=(\cos\alpha\, x_1-\sin\alpha\, x_2, \sin\alpha\, x_1+\cos\alpha\, x_2)
+      \amp (\text{since } x_1=r\cos\theta, x_2=r\sin\theta) </mrow>
+    </md>.
+    It follows that <m>\rho_{\alpha}=T_A</m>, where
+    <me>
+      A=\begin{amatrix}[rr]
+        \cos\alpha\amp -\sin\alpha\\ \sin\alpha \amp \cos\alpha
+    \end{amatrix}
+    </me>,
+    as claimed.
+    </p>
+  </proof>
+</theorem>
+    <remark xml:id="rm_rotation_matrix">
+  <p>
+      Observe that it is not at all obvious geometrically that the rotation operation is <em>linear</em>: <ie />, that it preserves addition and scalar multiplication of vectors in <m>\R^2</m>. Indeed, our proof does not even show this directly, but instead first gives a matrix formula for rotation and then uses <xref ref="th_matrix_transform_i"/>.
+    </p>
+    <p>
+    Since matrices of the form
+    <me>
+    \begin{amatrix}[rr]
+      \cos\alpha\amp -\sin\alpha\\ \sin\alpha \amp \cos\alpha
+  \end{amatrix}
+    </me>
+    can be understood as defining rotations of the plane, we call them <term>rotation matrices</term>.
+    </p>
+</remark>
+<example>
+  <title>Rotation matrices</title>
+  <statement>
+    <p>
+      Find formulas for <m>\rho_\pi\colon \R^2\rightarrow \R^2</m> and <m>\rho_{2\pi/3}\colon \R^2\rightarrow \R^2</m>, expressing your answer in terms of pairs (as opposed to column vectors).
+    </p>
+  </statement>
+  <solution>
+    <p>
+    The rotation matrix corresponding to <m>\alpha=\pi</m> is
+    <me>
+      A=\begin{amatrix}[rr]\cos\pi\amp -\sin\pi\\ \sin\pi \amp \cos\pi  \end{amatrix}=
+      \begin{amatrix}[rr]-1\amp 0\\ 0 \amp -1  \end{amatrix}
+    </me>.
+    Thus <m>\rho_\pi=T_A</m> has formula
+    <me>
+      \rho_{\pi}(x,y)=(-x,-y)=-(x,y)
+    </me>.
+    Note: this is as expected! Rotating by 180 degrees produces the inverse vector.
+    </p>
+    <p>
+    The rotation matrix corresponding to <m>\alpha=2\pi/3</m> is
+    <me>
+      B=\begin{amatrix}[rr]\cos(2\pi/3)\amp -\sin(2\pi/3)\\ \sin(2\pi/3) \amp \cos(2\pi/3)  \end{amatrix}=
+      \begin{amatrix}[rr]-\frac{1}{2}\amp -\frac{\sqrt{3}}{2}\\ \frac{\sqrt{3}}{2} \amp -\frac{1}{2}  \end{amatrix}
+    </me>.
+    Thus <m>\rho_{2\pi/3}=T_B</m> has formula
+    <me>
+      \rho_{2\pi/3}(x,y)=\frac{1}{2}(-x-\sqrt{3}y, \sqrt{3}x-y)
+    </me>.
+    Let's check our formula for <m>\rho_{2\pi/3}</m>for the vectors <m>(1,0)</m> and <m>(0,1)</m>:
+    <md>
+      <mrow>\rho_{2\pi/3}(1,0) \amp =(-1/2, \sqrt{3}/2) </mrow>
+      <mrow>\rho_{2\pi/3}(0,1) \amp =(-\sqrt{3}/2, -1/2) </mrow>
+    </md>.
+    Confirm for yourself geometrically that these are the vectors you get by rotating the vectors <m>(1,0)</m> and <m>(0,1)</m> by an angle of <m>2\pi/3</m> about the origin.
+    </p>
+
+  </solution>
+</example>
+<p>
+  A second example of a geometric linear transformation is furnished by reflection through a line in <m>\R^2</m>.
+</p>
+<definition xml:id="d_reflection">
+  <title>Reflection through a line</title>
+    <idx><h>reflection</h><h>through a line</h></idx>
+  <statement>
+      <p>
+      Fix an angle <m>\alpha</m> with <m>0\leq \alpha \leq \pi </m>, and let <m>\ell_\alpha</m> be the line through the origin that makes an angle of <m>\alpha</m> with the positive <m>x</m>-axis.
+      </p>
+      <p>
+        Define <m>r_\alpha\colon \R^2\rightarrow \R^2</m> to be the function that takes an input <m>\boldx=(x_1,x_2)</m>, considered as a point <m>P</m>, and returns the coordinates <m>\boldy=(y_1,y_2)</m> of the point <m>P'</m> obtained by reflecting <m>P</m> through the line <m>\ell_\alpha</m>. In more detail: if <m>P</m> lies on <m>\ell_\alpha</m>, then <m>P'=P</m>; otherwise, <m>P'</m> is obtained by drawing the perpendicular through <m>\ell_\alpha</m> that passes through <m>P</m> and taking the point on the other side of this line whose distance to <m>\ell_\alpha</m> is equal to the distance from <m>P</m> to <m>\ell_\alpha</m>.
+      </p>
+    <p>
+      The function <m>r_{\alpha}</m> is called <term>reflection through the line</term> <m>\ell_\alpha</m>.
+    </p>
+  </statement>
+</definition>
+<theorem xml:id="th_transform_reflection">
+  <title>Reflection is a linear transformation</title>
+  <statement>
+    <p>
+      Fix an angle <m>0\leq \alpha\leq \pi</m>. The reflection <m>r_\alpha\colon \R^2\rightarrow\R^2</m> is a linear transformation. In fact we have <m>r_{\alpha}=T_A</m>, where
+      <men xml:id="eq_reflection_matrix_2">
+        A=\begin{amatrix}[rr]
+          \cos 2\alpha\amp\sin 2\alpha \\
+          \sin 2\alpha \amp -\cos 2\alpha
+      \end{amatrix}
+      </men>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      See <xref ref="ex_transformation_reflection"/>.
+    </p>
+  </proof>
+</theorem>
+
+<example xml:id="eg_rot_refl">
+  <title>Visualizing reflection and rotation</title>
+  <statement>
+    <p>
+      The <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url> interactive below helps visualize rotations and reflections in <m>\R^2</m> (thought of as operations on points) by showing how they act on the triangle <m>\triangle ABC</m>.
+      <ul>
+        <li>
+          <p>
+            Move or alter the triangle as you see fit.
+          </p>
+        </li>
+        <li>
+          <p>
+            Check the box of the desired operation, rotation or reflection.
+          </p>
+        </li>
+        <li>
+          <p>
+            If rotation is selected, the slider adjusts the angle <m>\alpha</m> of rotation.
+          </p>
+        </li>
+        <li>
+          <p>
+            If reflection is selected, the slider adjusts the angle <m>\alpha</m> determining the line <m>\ell_\alpha</m> of reflection. Click the <q>Draw perps</q> box to see the the perpendicular lines used to define the reflections of vertices <m>A, B, C</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <figure xml:id="fig_rot_refl">
+      <title>Visualizing reflection and rotation</title>
+      <interactive xml:id="geogebra_rot_refl" platform="geogebra" width="100%" aspect="4:3">
+        <slate surface="geogebra" material="bwnxf7b9" aspect="4:3" marker="train-distance">
+        enableLabelDrags(false);
+        </slate>
+      </interactive>
+      <caption>Visualizing reflection and rotation. Made with <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url>.</caption>
+    </figure>
+  </statement>
+</example>
+
+<p>
+  Next we consider the operation of orthogonally projecting a vector onto a line (in <m>\R^2</m> or <m>\R^3</m>) or a plane in <m>\R^3</m>. See <xref ref="eg_lines_planes_review"/> for a refresher on lines and planes in <m>\R^2</m> and <m>\R^3</m>. 
+</p>
+<definition xml:id="d_projection_onto_line">
+  <title>Projection onto a line</title>
+  <statement>
+    <p>
+      Let <m>\boldv=(a_1,a_2,\dots, a_n)</m> be a fixed nonzero vector in <m>\R^n</m>, where <m>n=2</m> or <m>n=3</m>. The set of all scalar multiples of <m>\boldv</m> defines a line <m>\ell</m> in <m>\R^n</m> passing through the origin: we call <m>\boldv</m> the <term>direction vector</term> of this line. Given a point <m>P=(x_1,x_2,\dots, x_n)\in \R^n</m> there is a unique point <m>Q\in \ell</m> such that the vector 
+      <me>\overrightarrow{QP}=(x_1-y_1,x_2-y_2,\dots, x_n-y_n)
+      </me> is orthogonal to <m>\boldv</m>: <ie/>, there is a unique <m>Q\in \ell</m> such that 
+      <me>\overrightarrow{QP}\cdot \boldv=0
+      </me>. 
+      The point <m>Q</m> is called the <term>orthogonal projection</term> of <m>P</m> onto the line <m>\ell</m>. We define <term>orthogonal projection onto <m>\ell</m></term> to be the function <m>\operatorname{proj}_{\ell}\colon \R^n\rightarrow \R^n</m> that maps a point <m>P</m> to its orthogonal projection <m>Q=\proj{P}{\ell}</m> onto <m>\ell</m>.    
+    </p>
+  </statement>
+</definition>
+<theorem xml:id="th_proj_line_linear">
+  <title>Orthogonal projection onto a line</title>
+  <statement>
+    <p>
+      Fix a nonzero vector <m>\boldv\in \R^n</m>, where <m>n=2</m> or <m>n=3</m>, and let <m>\ell</m> be the line obtained by taking all scalar multiples of <m>\boldv</m>. The orthogonal projection function <m>\operatorname{proj}_\ell\colon \R^n\rightarrow \R^n</m> is a linear transformation. In fact, we have <m>\operatorname{proj}_\ell=T_A</m> where <m>A</m> is the <m>n\times n</m> matrix described below for each case (<m>n=2</m> and <m>n=3</m>). 
+      <ul>
+        <li>
+          <title>Case: <m>n=2</m></title>
+          <p>
+            Assume <m>\boldv=(a,b)\ne (0,0)</m>. We have <m>\operatorname{proj}_\ell=T_A</m>, where 
+            <men xml:id="eq_ortho_proj_line_matrix_2">
+              A=\frac{1}{a^2+b^2}\begin{bmatrix}a^2\amp ab \\ ab \amp b^2 \end{bmatrix}
+            </men>.            
+          </p>
+        </li>
+         <li>
+          <title>Case: <m>n=3</m></title>
+          <p>
+            Assume <m>\boldv=(a,b,c)\ne (0,0,0)</m>. We have <m>\operatorname{proj}_\ell=T_A</m>, where 
+            <men xml:id="eq_ortho_proj_line_matrix_3">
+              A=\frac{1}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ ab \amp b^2 \amp bc \\ ac\amp bc\amp c^2 \end{bmatrix}
+            </men>.            
+          </p>
+        </li>
+      </ul>  
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We prove the matrix formula in the case <m>n=3</m>. (The case <m>n=2</m> is exactly similar.) Let <m>\boldv=(a,b,c)</m>. In multivariable calculus we learn that given a point with position vector <m>\boldx=(x,y,z)</m>, its orthogonal projection onto <m>\ell</m> is the point <m>Q</m> whose position vector is 
+      <md>
+        <mrow> \overrightarrow{OQ}\amp=\left(\frac{\boldx\cdot \boldv}{\boldv\cdot \boldv}\right)\boldv </mrow>
+        <mrow> \amp = \frac{ax+by+cz}{a^2+b^2+c^2}(a,b,c)</mrow>
+        <mrow> \amp = \frac{1}{a^2+b^2+c^2}(a^2x+aby+acz, abx+b^2y+bcz, acx+bcy+c^2z)</mrow>
+        <mrow> \amp = \frac{1}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ ab \amp b^2 \amp bc \\ ac\amp bc\amp c^2 \end{bmatrix}\colvec{x\\ y\\ z}</mrow>
+      </md>.
+      This proves that 
+      <me>
+        \proj{\boldx}{\ell}=A\boldx
+      </me>,
+      where 
+      <me>
+        A=\frac{1}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ ab \amp b^2 \amp bc \\ ac\amp bc\amp c^2 \end{bmatrix}
+      </me>,
+      as desired. 
+    </p>
+  </proof>
+</theorem>
+<example xml:id="eg_projection_line_specific">
+  <title>Orthogonal projection onto line</title>
+  <statement>
+    <p>
+    Let <m>T\colon \R^2\rightarrow \R^2</m> be orthogonal projection onto the line <m>\ell</m> passing through the origin with direction vector <m>\boldv=(1,1,1)</m>.  Find the matrix <m>A</m> such that <m>T=T_A</m>. Use <m>A</m> to compute the orthogonal projection of  <m>(-1,3,2)</m> onto <m>\ell</m>. 
+  </p>
+  </statement>
+  <solution>
+    <p>
+      Using the formula for <m>A</m> in <xref ref="th_proj_line_linear"/>, where <m>(a,b,c)=(1,1,1)</m>, we see that 
+      <me>
+        A=\frac{1}{3}\begin{bmatrix}1\amp 1 \amp 1 \\ 1\amp 1\amp 1\\ 1\amp 1\amp 1\end{bmatrix}
+      </me>
+      and hence for any <m>\boldx=(x,y,z)</m> we have 
+      <me>
+        \proj{\boldx}{\ell}=A\boldx=\frac{1}{3}(x+y+z,x+y+z, x+y+z)
+      </me>.
+      In particular, we have <m>\proj{(-1,3,2)}{\ell}=(4/3, 4/3, 4/3)</m>. Let's check that this truly is the orthogonal projection of <m>P=(-1,3,2)</m> onto <m>\ell</m>. Letting <m>Q=(4/3,4/3,4/3)</m>, we have <m>\overrightarrow{QP}=(-7/3,5/3, 2/3)</m>, which is indeed orthogonal to <m>\boldv=(1,1,1)</m>: 
+      <me>
+        \boldv\cdot \overrightarrow{QP}=\frac{1}{3}(-7+5+2)=0
+        </me>.
+        The formula really works! In case you need more convincing, here is a Sage Cell that computes the projections and produces a diagram. 
+    </p>
+    <figure xml:id="fig_proj_onto_line">
+    <title>Orthogonal projection onto a line</title>
+    <caption>Orthogonal projection onto the line passing through the origin with direction vector <m>\boldv=(1,1,1)</m></caption>
+    <image width="75%" xml:id="im_ortho_proj_line">
+      <description>Orthogonal projection onto a line</description>
+      <sageplot variant="3d" aspect="1.0">
+v=vector((1,1,1))
+w=vector((-1,3,2))
+u=vector((4/3,4/3,4/3))
+O=vector((0,0,0))
+P=point(w,color="blue", size="10")
+l=line3d([[0,0,0],[2,2,2]], color="red", radius=.015)
+A1=arrow(O,w, color="blue")
+A2=arrow(O,v, color="red")
+A3=arrow(u,w, color="green")
+T1=text3d("P=(-1,3,2)", (1.1)*w, color="black", fontsize="20")
+T2=text3d("Q=(4/3,4/3,4/3)", (1.1)*u+vector((.1,0,.1)), color="black", fontsize="20")
+T3=text3d("v=(1,1,1)", .5*v+vector((.2,.1,-.4)), color="black", fontsize="20")
+P=point(w, size="10", color="blue")
+Q=point(u, size="10", color="blue")
+A1+A2+A3+l+P+Q+T1+T2+T3
+      </sageplot>
+    </image>
+    
+      
+    </figure>
+  </solution>
+  
+</example>
+<definition xml:id="d_ortho_proj_plane">
+<title>Orthogonal projection onto a plane</title>
+  <statement>
+    <p>
+      Let <m>\boldn=(a,b,c)</m> be a nonzero vector in <m>\R^3</m>, and let <m>W</m> be the plane passing through the origin with normal vector <m>\boldn</m>: <ie/>, <m>W</m> is the plane with equation 
+      <me>
+        ax+by+cz=0
+      </me>.
+      Given a point <m>P=(x,y,z)\in \R^3</m>, there is a unique point <m>Q\in W</m> such that <m>\overrightarrow{QP}</m> is orthogonal to <m>W</m>. We call <m>Q</m> the <term>orthogonal projection</term> of <m>P</m> onto <m>W</m>. We define <term>orthogonal projection onto <m>W</m></term> to be the function <m>\operatorname{proj}_W\colon \R^3\rightarrow \R^3</m> that maps a point <m>P\in \R^3</m> to its orthogonal projection <m>Q=\proj{P}{W}</m> in <m>W</m>. 
+    </p>
+  </statement>
+</definition>
+<theorem xml:id="th_ortho_proj_plane_linear">
+  <title>Orthogonal projection onto a plane</title>
+  <statement>
+    <p>
+      Let <m>\boldn=(a,b,c)</m> be a nonzero vector of <m>\R^3</m>, and let <m>W</m> be the plane passing through the origin with normal vector <m>\boldn</m>. The orthogonal projection map <m>\operatorname{proj}_W\colon \R^3\rightarrow \R^3</m> is a linear transformation. In fact, we have <m>\operatorname{proj}_W=T_A</m> where  
+  <men xml:id="eq_ortho_proj_plane_matrix">
+    A=\frac{1}{a^2+b^2+c^2}\begin{amatrix}[rrr]
+        b^2+c^2\amp -ab \amp -ac \\ 
+        -ab \amp a^2+c^2 \amp -bc \\
+        -ac \amp -bc \amp a^2+b^2
+        \end{amatrix}
+  </men>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Let <m>\ell</m> be the line passing through the origin with direction vector <m>\boldn</m>. Given any <m>\boldx=(x,y,z)\in \R^3</m>, let <m>P</m> be the point with coordinates <m>(x,y,z)</m>. The orthogonal projection <m>R=\proj{P}{\ell}</m> of <m>P</m> onto <m>\ell</m> satisfies 
+      <me>
+        \overrightarrow{RP}\cdot \boldn=0
+      </me>.
+      Let <m>Q</m> be the point of <m>\R^3</m> with position vector <m>\overrightarrow{OQ}</m> satisfying 
+      <mdn>
+      <mrow> \overrightarrow{OQ}\amp = \overrightarrow{RP} </mrow>
+      <mrow xml:id="eq_vec_diff"> \amp=\overrightarrow{OP}-\overrightarrow{OR}</mrow>
+      <mrow xml:id="eq_vec_formula"> \amp=(x,y,z)-\proj{P}{\ell} </mrow>
+      </mdn> so that 
+      <men xml:id="eq_ortho_decomp_P">
+        \overrightarrow{OP}=\overrightarrow{OQ}+\overrightarrow{OR}
+      </men>.
+      Since 
+      <md>
+        <mrow>\overrightarrow{OQ}\cdot \boldn\amp = \overrightarrow{RP}\cdot \boldn \amp <xref ref="eq_vec_formula"/> </mrow>
+        <mrow> \amp = 0 \amp (\text{def. of } R=\proj{P}{\ell})</mrow>
+      </md>,
+      the point <m>Q</m> lies in the plane <m>W</m>. (See <xref ref="eg_lines_planes_review"/>.) Furthermore, we have  
+      <md>
+        <mrow>\overrightarrow{QP} \amp =\overrightarrow{OP}-\overrightarrow{OQ}</mrow>
+        <mrow> \amp = \overrightarrow{OR} \amp <xref ref="eq_vec_diff"/></mrow>
+      </md>.
+      Since <m>R</m> is the orthogonal projection of <m>P</m> onto <m>\ell</m>, we have <m>R\in \ell</m> by definition, which means <m>\overrightarrow{OR}</m> is a scalar multiple of <m>\boldn</m>. Since <m>\boldn</m> is a normal vector to <m>W</m>, we conclude that <m>\overrightarrow{QP}=\overrightarrow{OR}</m> is orthogonal to <m>W</m>. We have shown that <m>Q</m>  lies in <m>W</m> and that <m>\overrightarrow{QP}</m> is orthogonal to <m>W</m>. We conclude that <m>Q</m> is the orthogonal projection of <m>P</m> onto <m>W</m>. Thus, using <xref ref="eq_vec_formula"/> we have 
+      <me>
+        \proj{\boldx}{W}=\boldx-\proj{\boldx}{\ell}
+      </me>.
+      Since <m>\proj{\boldx}{\ell}=B\boldx</m>, where 
+      <me>
+        B=\frac{1}{a^2+b^2+c^2}\begin{bmatrix}
+        a^2\amp ab\amp ac \\ ab\amp b^2\amp bc \\ ac\amp bc\amp c^2\end{bmatrix}
+      </me>
+      by <xref ref="th_proj_line_linear"/>, we have 
+      <md>
+        <mrow>\proj{\boldx}{W} \amp = \boldx-B\boldx</mrow>
+        <mrow> \amp = I\boldx-B\boldx</mrow>
+        <mrow> \amp = (I-B)\boldx</mrow>
+        <mrow> \amp = 
+        \frac{1}{a^2+b^2+c^2}\begin{amatrix}[rrr]
+        b^2+c^2\amp -ab \amp -ac \\ 
+        -ab \amp a^2+c^2 \amp -bc \\
+        -ac \amp -bc \amp a^2+b^2
+        \end{amatrix}\boldx
+        </mrow>
+      </md>.
+      We conclude that <m>\operatorname{proj}_W=T_A</m> where 
+      <me>
+        A=\frac{1}{a^2+b^2+c^2}\begin{amatrix}[rrr]
+        b^2+c^2\amp -ab \amp -ac \\ 
+        -ab \amp a^2+c^2 \amp -bc \\
+        -ac \amp -bc \amp a^2+b^2
+        \end{amatrix}
+      </me>,
+      as desired. 
+    </p>
+  </proof>
+</theorem>
+<example xml:id="eg_visualizing_ortho_projs">
+<title>Visualizing orthogonal projection</title>
+<p>
+  In the course of the proof of <xref ref="th_ortho_proj_plane_linear"/> we discovered an illuminating relationship between orthogonal projection onto a line and orthogonal projection onto the plane orthogonal to this line. In more detail, let <m>\boldn=(a,b,c)</m> be a nonzero vector, <m>\ell</m> the line passing through the origin with <m>\boldn</m> as a direction vector, and <m>W</m> the plane passing through the origin with normal vector <m>\boldn</m>. From our argument in the proof of <xref ref="th_ortho_proj_plane_linear"/> we see that 
+  <men xml:id="eq_proj_plane_line">
+    \proj{\boldx}{W}=\boldx-\proj{\boldx}{\ell}
+  </men>,
+  or 
+  <men xml:id="eq_ortho_decomp_x">
+    \boldx=\proj{\boldx}{\ell}+\proj{\boldx}{W}
+  </men>.
+  Equation <xref ref="eq_proj_plane_line"/> indicates how we can derive the orthogonal projection onto <m>W</m> from the orthogonal projection onto <m>\ell</m> (and conversely). Equation <xref ref="eq_ortho_decomp_x"/> shows how every vector <m>\boldx</m> can be <q>decomposed</q> as a sum of two orthogonal vectors: one pointing parallel to <m>\ell</m> and the other pointing parallel to <m>W</m>. 
+</p>  
+<p>
+  The <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url> interactive below helps visualize these two orthogonal projections, understood as operations on <m>\R^3</m>. 
+  <ul>
+    <li>
+      <p>
+        Drag the point <m>Q</m> to change the normal vector <m>\boldn</m>, and hence also the plane <m>W</m>. 
+      </p>
+    </li>
+    <li>
+      <p>
+        Drag the point <m>P</m> to change the input of the transformations <m>\operatorname{proj}_\ell</m> and <m>\operatorname{proj}_W</m>. 
+      </p>
+    </li>
+    <li>
+      <p>
+        In keeping with our dual interpretation of vectors in <m>\R^3</m>, all the relevant vectors (<m>P</m>, <m>\proj{P}{\ell}</m>, <m>\proj{P}{W}</m>) are rendered here both as points and the corresponding position vectors of these points.
+      </p>
+    </li>
+  </ul>
+</p>
+<figure xml:id="fig_ortho_proj_line_plane">
+  <title>Orthogonal projection onto plane and normal line</title>
+  <interactive xml:id="geogebra_ortho_proj_line_plane" platform="geogebra" width="100%" aspect="4:3">
+    <slate surface="geogebra" material="f3v85wmx" aspect="4:3" marker="train-distance">
+    enableLabelDrags(true);
+    </slate>
+  </interactive>
+  <caption>Orthogonal projection onto plane and normal line. Made with <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url>. </caption>
+</figure>
+
+</example>
+
+</subsection>
+<subsection xml:id="ss_transform_exotic_examples">
+<title>Additional examples</title>
+<p>
+  We now proceed to some examples involving our more exotic vector spaces.
+</p>
+<example xml:id="eg_transform_transpose">
+  <title>Transposition is linear</title>
+  <statement>
+    <p>
+    Fix <m>m,n\geq 1</m>. Define the function <m>f\colon M_{mn}\rightarrow M_{nm}</m> as follows:
+    <me>
+      f(A)=A^T
+    </me>.
+    In other words, <m>f</m> maps a matrix to its transpose.
+  </p>
+  <p>
+    Show that <m>f</m> is a linear transformation.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We must show <m>f(cA+dB)=cf(A)+df(B)</m> for all scalars
+      <m>c,d\in\R</m> and all matrices <m>A, B\in M_{mn}</m>.
+      This follows easily from properties of transpose:
+      <md>
+        <mrow>f(cA+dB)\amp =(cA+dB)^T \amp \text{ (by def.) }</mrow>
+        <mrow>\amp =(cA)^T+(dB)^T \amp (<xref ref="th_trans_props"/>)</mrow>
+        <mrow>\amp =cA^T+dB^T \amp (<xref ref="th_trans_props"/>)</mrow>
+        <mrow>\amp =cf(A)+df(B)</mrow>
+      </md>
+    </p>
+  </solution>
+</example>
+<example>
+  <title>Left-shift transformation</title>
+
+  <statement>
+    <p>
+    Define the <term>left-shift operation</term>, <m>T_\ell\colon \R^\infty \rightarrow R^{\infty}</m> as follows:
+    <me>
+      T_\ell\left( (a_{i})_{i=1}^\infty\right)= (a_{i+1})_{i=1}^\infty
+    </me>.
+    In other words, we have
+    <me>
+      T_\ell \left( (a_1,a_2,a_3,\dots)\right)=(a_2,a_3,\dots)
+    </me>.
+    Show that <m>T_\ell</m> is a linear transformation.
+    </p>
+  </statement>
+  <solution>
+    <p>
+    Let <m>\boldv=(a_i)_{i=1}^\infty</m> and <m>\boldw=(b_i)_{i=1}^\infty</m> be two infinite sequences in <m>\R^\infty</m>. For any <m>c,d\in\R</m> we have
+    <md>
+      <mrow>T_\ell(c\boldv+d\boldw) \amp=T_\ell\left((ca_i+db_i)_{i=1}^\infty \right)\amp (<xref ref="ex_vs_infinitesequences"/>) </mrow>
+      <mrow> \amp= (ca_{i+1}+db_{i+1})_{i=1}^\infty \amp (\text{by def.})</mrow>
+      <mrow>  \amp=c(a_{i+1})_{i=1}^\infty+d(b_{i+1})_{i=1}^\infty \amp (<xref ref="ex_vs_infinitesequences"/>)</mrow>
+      <mrow>  \amp=cT_\ell(\boldv)+dT_\ell(\boldw)\amp (\text{by def.}) </mrow>
+    </md>.
+    This proves <m>T_\ell</m> is a linear transformation.
+    </p>
+  </solution>
+</example>
+
+</subsection>
+<paragraphs xml:id="ss_transormation_video_examples">
+  <title>Video examples: deciding if <m>T</m> is linear</title>
+<p>
+  <figure>
+    <title>Video: deciding if <m>T</m> is linear</title>
+  <caption>Video: deciding if <m>T</m> is linear</caption>
+  <video xml:id="vid_transform_1" youtube="STYVF5cprEU" />
+  </figure>
+  <figure>
+    <title>Video: deciding if <m>T</m> is linear</title>
+  <caption>Video: deciding if <m>T</m> is linear</caption>
+  <video xml:id="vid_transform_2" youtube="weETKP8p7cE" />
+  </figure>
+</p>
+</paragraphs>
+<subsection xml:id="ss_transform_composition">
+  <title>Composition of linear transformations and matrix multiplication</title>
+<p>
+  We end by making good on a promise we made long ago to <em>retroactively</em> make sense of the definition of matrix multiplication. The key connecting concept, as it turns out, is composition of functions. We first need a result showing that composition preserves linearity.
+</p>
+<theorem xml:id="th_transform_composition">
+  <title>Composition of linear transformations</title>
+  <statement>
+    <p>
+    Let <m>V, W, U</m> be vector spaces, and suppose <m>T\colon W\rightarrow U</m> and <m>S\colon V\rightarrow W</m> are linear transformations. Then the composition
+    <me>
+      T\circ S\colon V\rightarrow U
+    </me>
+    is a linear transformation.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Exercise.
+    </p>
+  </proof>
+</theorem>
+<p>
+  Turning now to matrix multiplication, suppose <m>A</m> is <m>m\times n</m> and <m>B</m> is <m>n\times r</m>. Let <m>C=AB</m> be their product. These matrices give rise to linear transformations
+  <md>
+    <mrow>T_A\colon \R^n \amp\rightarrow \R^m \amp T_B\colon \R^r \amp\rightarrow \R^n \amp T_C\colon \R^r \amp\rightarrow \R^m  </mrow>
+  </md>.
+  According to <xref ref="th_transform_composition"/> the composition <m>T_A\circ T_B</m> is a linear transformation from <m>\R^r</m> (the domain of <m>T_B</m>) to <m>\R^m</m> (the codomain of <m>T_A</m>). We claim that <m>T_A\circ T_B=T_C</m>. Indeed, identifying elements of <m>\R^r</m> with column vectors, for all <m>\boldx\in \R^n</m> we have
+  <md>
+    <mrow> T_A\circ T_B(\boldx) \amp = T_A(T_B(\boldx)) \amp (<xref ref="d_function_composition"/>) </mrow>
+    <mrow> \amp =T_A(B\boldx) \amp (<xref ref="d_matrix_transform"/>)</mrow>
+    <mrow> \amp= A(B\boldx) \amp (<xref ref="d_matrix_transform"/>)</mrow>
+    <mrow>  \amp = (AB)\boldx \amp (\text{assoc.})</mrow>
+    <mrow>  \amp = T_C(\boldx) \amp (\text{since } C=AB)</mrow>
+  </md>.
+Thus, we can now understand the definition of matrix multiplication as being chosen precisely to encode how to compute the composition of two matrix transformations. The restriction on the dimension of the ingredient matrices is now understood as guaranteeing that the corresponding matrix transformations can be composed!
+</p>
+
+</subsection>
+
+<xi:include href="./s_transformation_ex.ptx"/>
+
+
+   </section>

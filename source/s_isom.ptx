@@ -1,0 +1,217 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_isom">
+<title>Isomorphisms</title>
+<introduction>
+  In this section we utilize bases, dimension, and the <xref ref="th_rank-nullity" text="custom">rank-nullity theorem</xref> to investigate properties of linear transformations. The main focus will be the notion of an <em>isomorphism</em>, which is simply a linear transformation that is invertible when considered as a function. We begin, however, with an enlightening discussion relating linear transformations and bases.
+</introduction>
+
+<subsection xml:id="ss_isomorphisms">
+  <title>Isomorphisms</title>
+  <p>
+    We spoke of the coordinate vector map as a means of <q>translating</q> questions about an abstract vector space <m>V</m> to equivalent ones about the more familiar vector space <m>\R^n</m>.  Properties (1)-(3) of <xref ref="th_coordinates"/> are what guarantee that nothing is lost in this translation. Axiomitizing these properties, we obtain an important family of linear transformations called <em>isomorphisms</em>. The word <q>isomorphism</q> is derived from the Greek terms <foreign>iso</foreign>, meaning <q>same</q>, and <foreign>morphe</foreign>, meaning <q>form</q>. As we will see, isomorphic vector spaces <m>V</m> and <m>W</m> are essentially the same creature, at least as far as linear algebraic properties are concerned. Furthermore, an isomorphism <m>T\colon V\rightarrow W</m> provides a one-to-one correspondence between them: a dictionary that allows us to translate statements about <m>V</m> to statements about <m>W</m>, and vice versa.
+  </p>
+  <p>
+    Before getting to the definition, recall that by definition a function <m>f\colon X\rightarrow Y</m> is <em>bijective</em> if it is injective and surjective (<xref ref="d_injective_surjective_bijective" text="global"/>)
+  </p>
+  <definition xml:id="d_isomorphism">
+    <title>Isomorphism</title>
+    <idx><h>isomorphism</h></idx>
+    <idx><h>invertible</h><h>linear transformation</h></idx><statement>
+      <p>
+        Let <m>V</m> and <m>W</m> be vector spaces. An <term>isomorphism</term> from <m>V</m> to <m>W</m> is a bijective linear transformation <m>T\colon V\rightarrow W</m>.
+        Vector spaces <m>V</m> and <m>W</m> are <term>isomorphic</term> if there is an isomorphism from <m>V</m> to <m>W</m>.
+      </p>
+    </statement>
+  </definition>
+  <remark>
+  <title>Proving <m>T</m> is an isomorphism</title>
+  <p>
+    According to <xref ref="d_isomorphism"/>, to prove a function <m>T\colon V\rightarrow W</m> is an isomorphism, we must show that
+    <ol marker="i">
+      <li>
+        <p>
+          <m>T</m> is linear, and
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>T</m> is invertible.
+        </p>
+      </li>
+    </ol>
+    Since being invertible is equivalent to being bijective, there are two main approaches to proving that (ii) holds for a linear transformation <m>T\colon V\rightarrow W</m>:
+    <ol marker="a">
+      <li>
+        <p>
+          we can show directly that <m>T</m> is invertible by providing an inverse <m>T^{-1}\colon W\rightarrow V</m>;
+        </p>
+      </li>
+      <li>
+        <p>
+          we can show that <m>T</m> is bijective (i.e., injective and surjective).
+        </p>
+      </li>
+    </ol>
+    Which approach, (a) or (b), is more convenient depends on the linear transformation <m>T</m> in question.
+  </p>
+   </remark>
+
+
+  <remark xml:id="rm_isomorphism_inverse">
+    <title>Inverse of isomorphism is an isomorphism</title>
+     <statement>
+       <p>
+         Let <m>T\colon V\rightarrow W</m> be an isomorphism. Since <m>T</m> is invertible, there is an inverse function <m>T^{-1}\colon W\rightarrow V</m>. Not surprisingly, <m>T^{-1}</m> is itself a linear transformation, though of course this requires proof. (See <xref provisional="ex_isomorphism_inverse"/>.) Since <m>T^{-1}</m> is also invertible (<m>T</m> is its inverse), it follows that <m>T^{-1}</m> is itself an isomorphism.
+       </p>
+     </statement>
+   </remark>
+   <theorem xml:id="th_bijective_transformation">
+     <title>Isomorphism equivalence</title>
+     <statement>
+       <p>
+         Let <m>T\colon V\rightarrow W</m> be a linear transformation. The following are equivalent.
+         <ol>
+           <li>
+             <p>
+               <m>T</m> is an isomorphism;
+             </p>
+           </li>
+           <li>
+             <p>
+               <m>\NS T=\{\boldzero_V\}</m> and <m>\im T=W</m>.
+             </p>
+           </li>
+         </ol>
+       </p>
+     </statement>
+   </theorem>
+<p>
+  We mentioned in the introduction that two isomorphic vector spaces are, for all linear algebraic intents and purposes, essentially the same thing. The next theorem provides some evidence for this claim. It also illustrates how a given isomorphism <m>T\colon V\rightarrow W</m> can translate back and forth between two isomorphic vector spaces. Recall (<xref ref="d_image"/>) that for a subset <m>S\subseteq V</m>, the image <m>T(S)</m> of <m>S</m> under <m>T</m> is the set
+  <me>
+    T(S)=\{\boldw\in W\colon \boldw=T(\boldv) \text{ for some } \boldv\in S\}=\{T(\boldv)\colon \boldv\in S\}
+  </me>.
+</p>
+<theorem xml:id="th_isomorphism_preserves">
+  <title>Properties preserved by isomorphisms</title>
+  <statement>
+    <p>
+      Let <m>T\colon V\rightarrow W</m> be an isomorphism. The following properties hold:
+      <ol marker="i">
+        <li>
+          <p>
+            <m>S\subseteq V</m> is linearly independent if and only if <m>T(S)\subseteq W</m> is linearly independent;
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>S\subseteq V</m> spans <m>V</m> if and only if <m>T(S)\subseteq W</m> spans <m>W</m>;
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>S\subseteq V</m> is a basis of <m>V</m> if and only if <m>T(S)\subseteq W</m> is a basis of <m>W</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dim V=\dim W</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</theorem>
+<p>
+  The following omnibus result is useful for deciding whether a linear transformation is an isomorphism, and lists a few of the properties of a vector space that are preserved by isomorphisms: namely, dimension, span, and linear independence.
+</p>
+<theorem xml:id="th_isomorphisms">
+  <title>Isomorphism compendium</title>
+  <statement>
+    <p>
+      Let <m>T\colon V\rightarrow W</m> be a linear transformation.
+    </p>
+    <ol>
+      <li>
+        <p>
+          <m>T</m> is injective if and only if <m>\NS T=\{\boldzero\}.</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Assume <m>T</m> is an isomorphism, let <m>S\subseteq V</m>, and let <m>T(S)=\{T(\boldv)\colon \boldv\in S\}</m>, the set of images of <m>S</m> under <m>T</m>.
+          <ol>
+            <li>
+              <p>
+                The inverse function <m>T^{-1}\colon W\rightarrow V</m> is a linear transformation.
+              </p>
+            </li>
+            <li>
+              <p>
+                The set <m>S</m> spans <m>V</m> if and only if <m>T(S)</m> spans <m>W</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The set <m>S</m> is linearly independent if and only if <m>T(S)</m> is linearly independent.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          Assume <m>\dim V=n</m>. Then the following are equivalent:
+          <ol marker="i">
+            <li>
+              <p>
+                <m>T</m> is an isomorphism;
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\dim W=n</m> and <m>\NS T=\{\boldzero\}</m>;
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\dim W=n</m> and <m>\im T=W</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+
+    </ol>
+  </statement>
+  <proof>
+      <ol>
+        <li>
+          <p>
+            Assume <m>T</m> is injective. Then
+            <md>
+              <mrow> T(\boldv)=\boldzero_W\amp \implies T(\boldv)=T(\boldzero_V) </mrow>
+              <mrow> \amp\implies \boldv=\boldzero_V </mrow>
+            </md>.
+            It follows that <m>\NS T=\{\boldzero_V\}</m>.
+          </p>
+          <p>
+            Now assume <m>\NS T=\{\boldzero_V\}</m>. Then
+            <md>
+              <mrow> T(\boldv)=T(\boldv') \amp\implies T(\boldv)-T(\boldv')=\boldzero_W </mrow>
+              <mrow> \amp\implies T(\boldv-\boldv')=\boldzero_W </mrow>
+              <mrow>  \amp \implies \boldv-\boldv'\in \NS T=\{\boldzero_V\}</mrow>
+              <mrow>  \amp\implies \boldv-\boldv'=\boldzero_V </mrow>
+              <mrow>  \amp \implies \boldv=\boldv'</mrow>
+            </md>.
+            Thus <m>T</m> is injective.
+          </p>
+        </li>
+      </ol>
+
+  </proof>
+
+</theorem>
+</subsection>
+
+
+
+</section>

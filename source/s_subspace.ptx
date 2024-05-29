@@ -1,0 +1,640 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_subspace">
+  <title>Subspaces</title>
+  <introduction>
+    <p>
+      The definition of a <em>subspace</em> of a vector space <m>V</m> is very much in the same spirit as our definition of linear transformations. It is a subset of <m>V</m> that in some sense respects the vector space structure: in the language of <xref ref="d_subspace"/>, it is a subset that is <em>closed under addition</em> and <em>closed under scalar multiplication</em>.
+    </p>
+    <p>
+      In fact the connection between linear transformations and subspaces goes deeper than this. As we will see in <xref ref="d_nullspace_image"/>, a linear transformation <m>T\colon V\rightarrow W</m> naturally gives rise to two important subspaces: the <em>null space of <m>T</m></em> and the <em>image of <m>T</m></em>.
+    </p>
+  </introduction>
+  <subsection xml:id="ss_subspace">
+    <title>Definition of subspace</title>
+
+    <definition xml:id="d_subspace">
+      <title>Subspace</title>
+      <idx><h>subspace</h></idx>
+      <idx><h>vector space</h><h>subspace</h></idx>
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space.
+          A subset <m>W\subseteq V</m> is a
+          <term>subspace</term> of <m>V</m> if the following conditions hold:
+        <ol marker="i">
+          <li>
+            <title><m>W</m> contains the zero vector</title>
+            <p>
+              We have <m>\boldzero\in W</m>.
+            </p>
+          </li>
+          <li>
+            <title><m>W</m> is closed under addition</title>
+            <p> For all <m>\boldv_1,\boldv_2\in V</m>, if <m>\boldv_1,\boldv_2\in W</m>, then <m>\boldv_1+\boldv_2\in W</m>. Using logical notation:
+            <me>
+            \boldv_1,\boldv_2\in W\implies \boldv_1+\boldv_2\in W
+            </me>.
+          </p>
+        </li>
+        <li>
+          <title><m>W</m> is closed under scalar multiplication</title>
+          <p> For all <m>c\in \R</m> and <m>\boldv\in V</m>, if <m>\boldv\in W</m>, then <m>c\boldv\in W</m>. In logical notation:
+          <me>\boldv\in W\Rightarrow c\boldv\in W</me>.
+        </p>
+      </li>
+    </ol>
+    </p>
+  </statement>
+</definition>
+<example>
+  <statement>
+    <p>
+      Let <m>V=\R^2</m> and let
+      <me>W=\{(t,t)\in\R^2 \colon t\in\R\}
+      </me>.
+      Prove that <m>W</m> is a subspace.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We must show properties (i)-(iii) hold for <m>W</m>.
+    <ol marker="i">
+      <li>
+        <p>
+          The zero element of <m>V</m> is <m>\boldzero=(0,0)</m>,
+          which is certainly of the form <m>(t,t)</m>.
+          Thus <m>\boldzero\in W</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          We must prove the implication <m>\boldv_1, \boldv_2\in W\Rightarrow \boldv_1+\boldv_2\in W</m>.
+          <md>
+          <mrow>\boldv_1,\boldv_2\in W\amp \Rightarrow\amp  \boldv_1=(t,t), \boldv_2=(s,s) \text{ for some \(t,s\in\R\) }</mrow>
+          <mrow>\amp \Rightarrow\amp \boldv_1+\boldv_2=(t+s,t+s)</mrow>
+          <mrow>\amp \Rightarrow\amp \boldv_1+\boldv_2\in W</mrow>
+          </md>.
+        </p>
+      </li>
+      <li>
+        <p>
+          We must prove the implication <m>\boldv\in W\Rightarrow c\boldv\in W</m>, for any <m>c\in \R</m>. We have
+          <md>
+          <mrow>\boldv\in W\amp \Rightarrow\amp  \boldv=(t,t)</mrow>
+          <mrow>\amp \Rightarrow\amp  c\boldv=(ct,ct)</mrow>
+          <mrow>\amp \Rightarrow\amp  c\boldv\in W</mrow>
+          </md>
+        </p>
+      </li>
+    </ol>
+    </p>
+  </solution>
+</example>
+<example>
+  <statement>
+    <p>
+      Let <m>V=\R^n</m> and let
+      <me>
+      W=\{(x,y)\in \R^2\colon x, y\geq 0\}
+      </me>.
+      Is <m>W</m> a vector space? Decide which of the of properties (i)-(iii) in <xref ref="d_subspace"/> (if any) are satisfied by <m>W</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <ol marker="i">
+      <li>
+        <p>
+          Clearly <m>\boldzero=(0,0)\in W</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Suppose <m>\boldv_1=(x_1,y_1), \boldv_2=(x_2,y_2)\in W</m>. Then <m>x_1, x_2, y_1, y_2\geq 0</m>, in which case <m>x_1+x_2, y_1+y_2\geq 0</m>, and hence <m>\boldv_1+\boldv_2\in W</m>. Thus <m>W</m> is closed under addition.
+        </p>
+      </li>
+      <li>
+        <p>
+          The set <m>W</m> is <em>not</em> closed under scalar multiplication. Indeed, let <m>\boldv=(1,1)\in W</m>. Then <m>(-2)\boldv=(-2,-2)\notin W</m>.
+        </p>
+      </li>
+    </ol>
+    </p>
+    
+  </solution>
+</example>
+
+<algorithm xml:id="proc_twostep_proof">
+  <title>Two-step proof for subspaces</title>
+  <statement>
+    <p>
+      As with proofs regarding linearity of functions, we can merge conditions (ii)-(iii) of <xref ref="d_subspace"/> into a single statement about linear combinations, deriving the following two-step method for proving a set <m>W</m> is a subspace of a vector space <m>V</m>.
+    <ol marker="i">
+      <li>
+        <p>
+          Show <m>\boldzero_V\in W</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Show that
+          <me>
+          \boldv_1, \boldv_2\in W\implies c\boldv_1+d\boldv_2\in W
+          </me>,
+          for all <m>c,d\in\R</m>.
+        </p>
+      </li>
+    </ol>
+    </p>
+  </statement>
+</algorithm>
+<paragraphs xml:id="ss_vid_eg_subspace1">
+  <title>Video example: deciding if <m>W\subseteq V</m> is a subspace</title>
+  <figure xml:id="fig_vid_subspace1">
+    <title>Video: deciding if <m>W\subseteq V</m> is a subspace</title>
+    <caption>Video: deciding if <m>W\subseteq V</m> is a subspace</caption>
+    <video xml:id="vid_subspace1" youtube="y1t5ijAopz4" />
+  </figure>
+
+  <figure xml:id="fig_vid_subspace2">
+    <title>Video: deciding if <m>W\subseteq V</m> is a subspace</title>
+    <caption>Video: deciding if <m>W\subseteq V</m> is a subspace</caption>
+    <video xml:id="vid_subspace2" youtube="Sup7AxtjZDw" />
+  </figure>
+</paragraphs>
+
+<remark xml:id="rm_subspace_is_vectorspace">
+  <title>Subspaces are vector spaces</title>
+  <p>
+    If <m>W</m> is a subspace of a vector space <m>V</m>, then it <em>inherits</em> a vector space structure from <m>V</m> by simply  <em>restricting</em> the vector operations defined on <m>V</m> to the subset <m>W</m>.
+  </p>
+  <p>
+    It is important to understand how conditions (ii)-(iii) of <xref ref="d_subspace"/> come into play here. Without them we would not be able to say that restricting the vector operations of <m>V</m> to elements of <m>W</m> actually gives rise to well-defined operations on <m>W</m>. To be well-defined the operations must output elements that lie not just in <m>V</m>, but in <m>W</m> itself. This is precisely what being closed under addition and scalar multiplication guarantees.
+  </p>
+  <p>
+    Once we know restriction gives rise to well-defined operations on <m>W</m>, verifying the axioms of  <xref ref="d_vector_space"/> mostly amounts to observing that if a condition is true for all <m>\boldv</m> in <m>V</m>, it is certainly true for all <m>\boldv</m> in the subset <m>W</m>.
+  </p>
+  <p>
+    The <q>existential axioms</q> (iii) and (iv) of <xref ref="d_vector_space"/>, however, require special consideration. By definition, a subspace <m>W</m> contains the zero vector of <m>V</m>, and clearly this still acts as the zero vector when we restrict the vector operations to <m>W</m>. What about vector inverses? We know that for any <m>\boldv\in W</m> there is a vector inverse <m>-\boldv</m> lying somewhere in <m>V</m>. We must show that in fact <m>-\boldv</m> lies in <m>W</m>: <ie /> we need to show that the operation of taking the vector inverse is well-defined on <m>W</m>. We prove this as follows:
+    <md>
+    <mrow>\boldv\in W \amp\implies (-1)\boldv\in W \amp (<xref ref="d_subspace"/>, \text{(iii) } )</mrow>
+    <mrow> \amp\implies -\boldv\in W \amp (<xref ref="th_vectorspace_props"/>, (iii)) </mrow>
+    </md>.
+  </p>
+</remark>
+<p>
+  We now know how to determine whether a given subset of a vector space is in fact a subspace. We are also interested in means of constructing subspaces from some given ingredients. The result below tells us that taking the intersection of a given collection of subspaces results in a subspace. In <xref ref="ss_nullspace_image"/> we see how a linear transformation automatically gives rise to two subspaces.
+</p>
+<theorem xml:id="th_subspace_intersection">
+  <title>Intersection of subspaces</title>
+
+  <statement>
+    <p>
+      Let <m>V</m> be a vector space. Given a collection <m>W_1, W_2,\dots, W_r</m>, where each <m>W_i</m> is a subspace of <m>V</m>, the intersection
+      <me> W=W_1\cap W_2\cdots \cap W_r</me>
+      is a subspace.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Exercise.
+    </p>
+  </proof>
+</theorem>
+<remark xml:id="rm_subspace_union">
+  <title>Unions of subspaces</title>
+  <p>
+    While the intersection of subspaces is again a subspace, the same is not true for unions of subspaces.
+  </p>
+  <p>
+    For example, take <m>V=\R^2</m>,
+    <m>W_1=\{(t,t)\colon t\in\R\}</m> and <m>W_2=\{(t,-t)\colon t\in\R\}</m>.
+    Then each <m>W_i</m> is a subspace,
+    but their union <m>W_1\cup W_2</m> is not.
+  </p>
+  <p>
+    Indeed, observe that <m>\boldw_1=(1,1)\in W_1\subset W_1\cup W_2</m> and <m>\boldw_2=(1,-1)\in W_2\subset W_1\cup W_2</m>,
+    but <m>\boldw_1+\boldw_2=(2,0)\notin W_1\cup W_2</m>. Thus <m>W_1\cup W_2</m> is not closed under addition. (Interestingly, it is closed under scalar multiplication.)
+  </p>
+</remark>
+</subsection>
+<subsection xml:id="ss_subspaces_tuples">
+  <title>Subspaces of <m>\R^n</m></title>
+  <p>
+    The following theorem gives a convenient method of producing a subspace <m>W</m> of <m>\R^n</m>: namely, given any <m>m\times n</m> matrix <m>A</m>, the subset <m>W</m> defined as
+    <me>
+    W=\{\boldx\in \R^n\colon A\boldx=\boldzero\}
+    </me>
+    is guaranteed to be a subspace of <m>\R^n</m>. We will see in <xref ref="s_nullspace_image"/> that this construction is just one example of a more general subspace-building operation (see <xref ref="d_nullspace_image" text="global"/> and <xref ref="th_nullspace_image" text="global"/>). We introduce the special case here for two reasons: (a) the construction allows us to easily provide examples of subspaces of <m>\R^n</m>, and (b) the proof of <xref ref="th_subspace_matrix_solutions"/> is a nice example of the two-step technique.
+  </p>
+  <theorem xml:id="th_subspace_matrix_solutions">
+    <title>Solutions to <m>A\boldx=\boldzero</m> form a subspace</title>
+    <statement>
+      <p>
+        Let <m>A</m> be an <m>m\times n</m> matrix. The set
+        <me>
+        W=\{\boldx\in \R^n\colon A\boldx=\boldzero\}
+        </me>
+        of solutions to the homogeneous matrix equation <m>A\boldx=\boldzero</m> is a subspace of <m>\R^n</m>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Following the two-step technique, we first show that <m>\boldzero_n
+        \in W</m>. This is clear, since <m>A\boldzero_n=\boldzero_m</m>. (We introduce the subscripts to distinguish between the zero vectors of the domain <m>\R^n</m> and <m>\R^m</m>.)
+      </p>
+      <p>
+        Next, we show that for any <m>\boldx_1, \boldx_2\in \R^n</m> and any <m>c_1, c_2\in \R</m> we have
+        <me>
+        \boldx_1, \boldx_2\in W\implies c_1\boldw_1+c_2\boldw_2\in W
+        </me>.
+        If <m>\boldx_1, \boldx_2\in W</m>, then we have <m>A\boldx_1=A\boldx_2=\boldzero_m</m>, by definition of <m>W</m>. It the follows that the vector <m>c_1\boldx_1+c_2\boldx_2</m> satisfies
+        <md>
+        <mrow> A(c_1\boldx_1+c_2\boldx_2)  \amp= c_1A\boldx_1+c_2A\boldx_2 \amp (<xref ref="th_matrix_alg_props" text="global"/>) </mrow>
+        <mrow> \amp c_1A\boldzero_m+c_2\boldzero_m \amp  (\boldx_1, \boldx_2\in W) </mrow>
+        <mrow>  \amp = \boldzero_m</mrow>
+        </md>.
+        Thus <m>c_1\boldx_1+c_2\boldx_2\in W</m>, as desired.
+      </p>
+    </proof>
+  </theorem>
+      <remark xml:id="rm_subspace_matrix_solution">
+      <title>Solutions to homogeneous linear systems form a subspace</title>
+    <p>
+      Recall from <xref ref="ss_systems_to_matrix_eqns" text="title"/> that the set of solutions to a matrix equation <m>A\boldx=\boldb</m> is the same thing as the set of solutions to the system of linear equations with augmented matrix <m>\begin{amatrix}[c|c] A\amp \boldb  \end{amatrix}</m>. Thus, <xref ref="th_subspace_matrix_solutions"/> implies that the set of solutions to a homogeneous system of linear equations forms a subspace.
+    </p>
+  </remark>
+    <remark xml:id="rm_subspace_alt">
+  <title>Alternative subspace method</title>
+    <p>
+        <xref ref="th_subspace_matrix_solutions"/> provides an alternative way of showing that a subset <m>W\subseteq \R^n</m>: namely, find an <m>m\times n</m> matrix <m>A</m> for which we have <m>W=\{\boldx\in \R^n\colon A\boldx=\boldzero\}</m>. This is often much faster than using the two-step technique.
+    </p>
+</remark>
+  <example>
+    <statement>
+      <p>
+        Define the subset <m>W</m> of <m>\R^3</m> as
+        <me>
+        W=\{(x,y,z)\in \R^3\colon x+2y+3z=x-y-z=0\}
+        </me>.
+        <ol>
+          <li>
+            <p>
+              Prove that <m>W</m> is a subspace by identifying it as the set of solutions to a homogeneous matrix equation.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use (a) and Gaussian elimination to compute a parametric description of <m>W</m>.
+            </p>
+          </li>
+        </ol>
+
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+        <li>
+          <p>
+            It is easy to see that
+            <me>
+              W=\{\boldx\in \R^n\colon A\boldx=\boldzero\}
+            </me>
+            where
+            <me>
+              A=\begin{amatrix}[rrr]1\amp 2\amp 3\\ 1\amp -1\amp -1  \end{amatrix}
+            </me>.
+            We conclude <m>W</m> is a subspace.
+          </p>
+        </li>
+        <li>
+          <p>
+The augmented matrix <m>\begin{amatrix}[c|c]A\amp\boldzero \end{amatrix}</m> row reduces to
+<me>
+  U=\begin{amatrix}[rrr|r]\boxed{1}\amp 2\amp 3\amp 0\\ 0 \amp \boxed{1}\amp 1\amp 0  \end{amatrix}
+</me>.
+Following <xref ref="proc_solveSystem"/> we conclude that
+<me>
+  W=\{(-t,-2t,t)\colon t\in \R\}
+</me>.
+Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> with direction vector <m>(1,2,-1)</m>.
+          </p>
+        </li>
+      </ol>
+      </p>
+
+    </solution>
+  </example>
+  <example xml:id="eg_lines_planes">
+    <title>Lines and planes</title>
+    <statement>
+      <p>
+        Recall that a line <m>\ell</m> in <m>\R^2</m> that <em>passes through the origin </em> can be expressed as the set of solutions
+        <m>(x_1,x_2)\in\R^2</m> to an equation of the form
+        <me>
+        \ell\colon  ax_1+bx_2=0
+        </me>.
+        Similarly, a plane <m>\mathcal{P}</m> in <m>\R^3</m> that <em>passes through the origin</em> can be expressed as the the set of solutions
+        <m>(x_1,x_2,x_3)</m> to an equation of the form
+        <me>
+        \mathcal{P}\colon ax_1+bx_2+cx_3=0
+        </me>.
+        (See <xref ref="eg_lines_planes_review"/>.)
+        We see immediately that both objects can be described as the set of solutions to a certain homogenous matrix equation <m>A\boldx=\boldzero</m>: 
+        <md>
+          <mrow> \ell \amp =\{\boldx=(x,y)\in \R^2\colon \rowvec{a \amp b]\boldx=\boldzero\}</mrow>
+          <mrow>\mathcal{P} \amp = {\boldx=(x,y,z)\in \R^3\colon \rowvec{a\amp b\amp c}\boldx=\boldzero\} </mrow>
+        </md>.
+        We conclude from <xref ref="th_subspace_matrix_solutions"/>
+        that lines in <m>\R^2</m>, and planes in <m>\R^3</m>, are subspaces, <em>as long as they pass through the origin</em>.
+      </p>
+      <p>
+        On the other hand, a line or plane that does <em>not</em>
+        pass through the origin is not a subspace,
+        since it does not contain the zero vector.
+      </p>
+      <p>
+        Question: How do we classify <em>all</em> subspaces of <m>\R^2</m> of <m>\R^3</m>? We will be able to answer this easily with dimension theory. (See <xref ref="s_dimension"/>.)
+      </p>
+    </statement>
+  </example>
+</subsection>
+<subsection xml:id="ss_subspace_matrices">
+  <title>Important subspaces of <m>M_{nn}</m></title>
+  <p>
+    In <xref ref="s_invertibility_theorem" text="title"/> we met three families of square matrices: namely, the diagonal, upper triangular, and lower triangular matrices. (See <xref ref="d_diagonal_triangular"/>). We now introduce three more naturally occurring families. Before doing so, we give an official definition of the trace function. (See <xref ref="ex_transformation_trace"/>.)
+  </p>
+  <definition xml:id="d_trace">
+  <title>Trace of a matrix</title>
+    <idx><h>trace of a matrix</h></idx>
+    <notation>
+      <usage><m>\tr A</m></usage>
+      <description>the trace of <m>A</m></description>
+    </notation>
+    
+    <statement>
+      <p>
+        Let <m>A=[a_{ij}]</m> be an <m>n\times n</m> matrix. The <term>trace</term> of <m>A</m>, denoted <m>\tr A</m> is defined as the sum of the diagonal entries of <m>A</m>: <ie />,
+        <me>
+          \tr A=a_{11}+a_{22}+\cdots +a_{nn}
+        </me>.
+      </p>
+    </statement>
+  </definition>
+  <definition xml:id="d_tracezero_symmetric_skewsymmetric">
+  <title>Trace-zero, symmetric, and skew-symmetric</title>
+    <idx><h>trace-zero matrix</h></idx>
+    <idx><h>symmetric matrix</h></idx>
+    <idx><h>skew-symmetric matrix</h></idx>
+    <statement>
+      <p>
+        Fix an integer <m>n\geq 1</m>.
+      
+      <ol>
+        <li>
+          <p>
+            A matrix <m>A\in M_{nn}</m> is said to be a <term>trace-zero</term> matrix if <m>\tr A=0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            A matrix <m>A\in M_{nn}</m> is <term>symmetric</term> if <m>A^T=A</m>: equivalently, if <m>[A]_{ij}=[A]_{ji}</m> for all <m>1\leq i,j\leq n</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            A matrix <m>A\in M_{nn}</m> is <term>skew-symmetric</term> if <m>A^T=-A</m>: equivalently, if <m>[A]_{ij}=-[A]_{ji}</m> for all <m>1\leq i,j\leq n</m>.
+          </p>
+        </li>
+      </ol>
+      </p>
+    </statement>
+  </definition>
+  <example>
+    <title>Trace-zero symmetric, and skew-symmetric <m>2\times 2</m> matrices</title>
+    <statement>
+      <p>
+        The set <m>W_1</m> of all trace-zero <m>2\times 2</m> matrices can be described as
+        <me>
+          W_1=\left\{ \begin{amatrix}[rr]a\amp b\\ c\amp -a  \end{amatrix}\colon a,b,c\in \R\right\}
+        </me>.
+        The set <m>W_2</m> of all symmetric <m>2\times 2</m> matrices can be described as
+        <me>
+          W_2=\left\{ \begin{amatrix}[rr]a\amp b\\ b\amp c  \end{amatrix}\colon a,b,c\in \R\right\}
+        </me>.
+        The set <m>W_3</m> of all skew-symmetric <m>2\times 2</m> matrices can be described as
+        <me>
+          W_3=\left\{ \begin{amatrix}[rr]0\amp a\\ -a\amp 0  \end{amatrix}\colon a,b\in \R\right\}
+        </me>.
+      </p>
+    </statement>
+  </example>
+      <remark xml:id="rm_skew-symmetric">
+    <p>
+      Assume <m>A</m> is a skew-symmetric <m>n\times n</m> matrix. By definition, for all <m>1\leq i\leq n</m> we must have <m>[A]_{ii}=-[A]_{ii}</m>. It follows that <m>[A]_{ii}=0</m> for all <m>1\leq i\leq n</m>. Thus the diagonal entries of a skew-symmetric matrix are always equal to 0.
+    </p>
+  </remark>
+  <p>
+    It will come as no surprise that all of the afore mentioned matrix families are in fact subspaces of <m>M_{nn}</m>.
+  </p>
+  <theorem xml:id="th_matrix_subspaces">
+    <title>Matrix subspaces</title>
+    
+    
+    <statement>
+      <p>
+      Fix an integer <m>n\geq 1</m>.  Each of the following subsets of <m>M_{nn}</m> is a subspace.
+  
+      <ol>
+        <li>
+          <title>Diagonal matrices</title>
+          <p>
+            <m>W=\{A\in M_{nn}\colon A\text{ is diagonal}\}</m>
+          </p>
+        </li>
+        <li>
+          <title>Upper triangular matrices</title>
+          <p>
+            <m>W=\{A\in M_{nn}\colon A\text{ is upper triangular}\}</m>
+          </p>
+        </li>
+        <li>
+          <title>Lower triangular matrices</title>
+          <p>
+            <m>W=\{A\in M_{nn}\colon A\text{ is lower triangular}\}</m>
+          </p>
+        </li>
+        <li>
+          <title>Trace-zero matrix</title>
+          <p>
+            <m>W=\{A\in M_{nn}\colon \tr A=\boldzero \}</m>
+          </p>
+        </li>
+        <li>
+          <title>Symmetric matrices</title>
+          <p>
+            <m>W=\{A\in M_{nn}\colon A^T=A \}</m>
+          </p>
+        </li>
+        <li>
+          <title>Skew-symmetric matrices</title>
+          <p>
+            <m>W=\{A\in M_{nn}\colon A^T=-A \}</m>
+          </p>
+        </li>
+      </ol>
+      </p>
+    </statement>
+    <proof>
+      <p>
+        See <xref ref="ex_matrix_subspaces"/>
+      </p>
+    </proof>
+
+  </theorem>
+
+
+</subsection>
+<subsection xml:id="ss_subspace_functions">
+  <title>Important subspaces of <m>F(I,\R)</m></title>
+  <p>
+    Let <m>I</m> be an <em>nondegenerate</em> interval of <m>\R</m>: <ie />, an interval containing at least two elements. Recall that <m>F(I,\R)</m> is the set of <em>all</em> functions from <m>I</m> to <m>\R</m>. This is a pretty unwieldy vector space, containing some pathological characters, and when studying functions on an interval we will often restrict our attention to certain more well-behaved subsets: <eg />, continuous, differentiable, or infinitely differentiable functions. Not surprisingly, these subsets turn out to be subspaces of <m>F(I,\R)</m>.
+  </p>
+  <definition xml:id="d_subspace_functions">
+  <title>Function subspaces</title>
+    <idx><h>function space</h><h>continuous</h></idx>
+    <idx><h>function space</h><h><m>C^n</m></h></idx>
+    <idx><h>function space</h><h>infinitely differentiable</h></idx>
+    <idx><h>function space</h><h>polynomial</h></idx>
+    <idx><h>polynomial</h></idx>
+    <statement>
+      <p>
+        Let <m>I\subseteq \R</m> be a nondegenerate interval.
+      <ol>
+        <li>
+          <p>
+            We denote by <m>C(I)</m> the set of all continuous functions on <m>I</m>: <ie />,
+            <me>
+            C(I)=\{f\in F(I,\R)\colon f \text{ is continuous on } I\}
+            </me>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Fix <m>n\geq 1</m>. A function <m>f\in F(I,\R)</m> is <term><m>C^n</m> on I</term> if <m>f</m> is <m>n</m>-times differentiable on <m>I</m> and its <m>n</m>-th derivative <m>f^{(n)}(x)</m> is continuous. The set of all <m>C^n</m> functions on <m>I</m> is denoted <m>C^n(I)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            A function <m>f\in F(I,\R)</m> is <term><m>C^\infty</m> on I</term> if <m>f</m> is infinitely differentiable on <m>I</m>. The set of all <m>C^\infty</m> functions on <m>I</m> is denoted <m>C^\infty(I)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            A <term>polynomial on <m>I</m> of degree at most <m>n</m></term> is a polynomial of the form <m>f(x)=\anpoly</m>, where <m>a_i\in \R</m>. (See <xref ref="s_polynomials"/>, and in particular <xref ref="d_polynomials"/> for more details about polynomials.) Recall that if <m>a_n\ne 0</m>, we call <m>n</m> the the degree of <m>f</m>, denoted <m>\deg f</m>.
+          </p>
+          <p>
+            The set of polynomials of degree at most <m>n</m> on <m>I</m> is denoted <m>P_n(I)</m>; the set of all polynomials on <m>I</m> is denoted <m>P(I)</m>. When <m>I=\R</m>, we shorten the notation to <m>P_n</m> and <m>P</m>.
+          </p>
+        </li>
+      </ol>
+      </p>
+    </statement>
+  </definition>
+  <theorem xml:id="th_subspace_functions">
+    <title>Function subspaces</title>
+    <statement>
+      <p>
+        Let <m>I\subseteq \R</m> be an interval. The sets <m>C(I), C^n(I), C^\infty(I), P_n(I), P(I)</m> are all subspaces of <m>F(I,\R)</m>. Thus we have the following chain of subspaces:
+        <me>
+        P_n(I)\subseteq P(I)\subseteq C^\infty(I)\subseteq C^n(I)\subseteq C(I)\subseteq F(I,\R)
+        </me>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        The proof amounts to the following observations:
+        <ul>
+          <li>
+            <p>
+              The zero function <m>0_I\colon I\rightarrow \R</m> is an element of all of these sets: <ie /> the zero function is continuous, <m>C^n</m>, <m>C^\infty</m>, a polynomial, <etc />.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>f</m> and <m>g</m> both satisfy one of these properties (continuous, <m>C^n</m>, <m>C^\infty</m>, polynomial, <etc />), then so does <m>cf+dg</m> for any <m>c,d\in \R</m>.
+            </p>
+          </li>
+        </ul>
+        The second, <q>closed under linear combinations</q> observation is easily seen for <m>P(I)</m> and <m>P_n(I)</m> (<ie />, the sum of two polynomials of degree at most <m>n</m> is clearly a polynomial of degree at most <m>n</m>); for the other spaces, this is a result of calculus properties to the effect that adding and scaling functions preserves continuity and differentiability.
+      </p>
+      <p>
+        Lastly, that each subset relation holds in the given chain follows from similar observations: polynomials are infinitely differentiable, differentiable functions are continuous, <etc />.
+      </p>
+    </proof>
+  </theorem>
+      <p>
+         When working within the polynomial spaces <m>P_n(I)</m> or <m>P(I)</m>, we will constantly make use of the fact that a polynomial <m>f(x)=\anpoly</m> is completely determined by its coefficients <m>a_i</m>, and that equality between polynomials can be decided by comparing their coefficients. This is the content of <xref ref="cor_poly_equality"/>. We restate the result here in a more convenient form. 
+      </p>
+      <theorem xml:id="th_poly_equality">
+        <title>Polynomial equality</title>
+        <statement>
+          <p>
+            Let <m>I\subseteq \R</m> be a nondegenerate interval, and let
+            <md>
+              <mrow>f(x) \amp =\anpoly \amp g(x)\amp=\bnpoly</mrow>
+            </md>
+            be polynomials on <m>I</m>. 
+            <ol>
+        <li xml:id="th_f_is_g">
+          <p>
+            We have <m>f=g</m> if and only if <m>a_i=b_i</m> for all <m>1\leq i\leq n</m>. 
+          </p>
+        </li>
+        <li xml:id="th_f_is_0">
+          <p>
+            In particular, <m>f=\boldzero</m> if and only if <m>a_i=0</m> for all <m>1\leq i\leq n</m>.
+          </p>
+        </li>
+      </ol>
+          </p>
+        </statement>
+      </theorem>
+      
+  <remark xml:id="rm_subspaces_derivatives">
+    <title>Differential operators</title>
+    <p>
+      Let <m>I\subseteq \R</m> be an interval. Define <m>T_1\colon C^1(I)\rightarrow C(I)</m> as <m>T_1(f)=f'</m>: <ie />, <m>T_1</m> takes as input a <m>C^1</m> function on the interval <m>I</m>, and returns its (first) derivative. Note that the definition of <m>C^1</m> ensures that <m>f'</m> exists and is continuous on <m>I</m>: hence <m>f'
+      \in C(I)</m>, as claimed.
+    </p>
+    <p>
+      The operator <m>T_1</m> is a linear transformation. Indeed, given <m>c,d\in \R</m> and <m>f,g\in C^1(I)</m>, we have
+      <md>
+      <mrow>T_1(cf+dg)   \amp = (cf+dg)' \amp \text{(by def.)} </mrow>
+      <mrow> \amp =(cf)'+(dg)' \amp \text{(derivative prop.)} </mrow>
+      <mrow>  \amp =cf'+dg' \amp \text{(derivative prop.)}</mrow>
+      <mrow>  \amp = cT_1(f)+dT_1(g)</mrow>
+      </md>.
+    </p>
+    <p>
+      Since taking <m>n</m>-th derivatives amounts to <em>composing</em> the derivative operator <m>T_1</m> with itself <m>n</m> times, it follows from <xref ref="th_transform_composition"/> that for any <m>n\geq 1</m> the  map
+      <md>
+      <mrow>T_n\colon C^n(I) \amp \rightarrow C(I) </mrow>
+      <mrow> f \amp\mapsto f^{(n)} </mrow>
+      </md>,
+      which takes a function <m>f</m> to its <m>n</m>-th derivative, is also linear. (Note that we are careful to pick the domain <m>C^n(I)</m> to guarantee this operation is well-defined!)
+    </p>
+    <p>
+      Lastly, by <xref ref="ex_transformation_add_scale"/>, we can add and scale these various operators to obtain more general linear transformations of the form
+      <me>
+      T(f)=c_nf^{(n)}+c_{n-1}f^{(n-1)}+\cdots c_1f'+c_0f
+      </me>.
+      We call such a function a <em>linear differential operator</em>. Understanding the linear algebraic properties of these operators is crucial to the theory of linear differential equations, as <xref ref="eg_diff_eq_ex"/> illustrates.
+    </p>
+  </remark>
+
+</subsection>
+
+<xi:include href="./s_subspace_ex.ptx"/>
+
+</section>

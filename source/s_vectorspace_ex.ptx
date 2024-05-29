@@ -1,0 +1,181 @@
+<exercises xml:id="s_vectorspace_ex">
+
+  <subexercises>
+    <title>WeBWork Exercises</title>
+
+    <exercise>
+      <webwork source="Library/NAU/setLinearAlgebra/shiftedSpace.pg" />
+    </exercise>
+
+    <exercise>
+      <webwork source="Library/NAU/setLinearAlgebra/shiftedSpace2.pg" />
+    </exercise>
+
+    <exercise>
+      <webwork source="Library/NAU/setLinearAlgebra/shiftedSpace3.pg" />
+    </exercise>
+  </subexercises>
+
+<exercise xml:id="ex_verify_Rinfty">
+  <statement>
+    <p>
+      Verify that <m>\R^\infty</m> along with the vector operations defined as in <xref ref="ex_vs_infinitesequences"/>
+    satisfies the axioms of a vector space.
+    </p>
+  </statement>
+</exercise>
+<exercise xml:id="ex_verify_functions">
+  <statement>
+    <p>
+      Let <m>I</m> be an interval in the real line. Verify that <m>F(I,\R)</m> along with the vector operations defined as in <xref ref="ex_vs_functions"/>
+    satisfies the axioms of a vector space.
+    </p>
+  </statement>
+</exercise>
+
+<exercise>
+    <statement>
+      <p>
+        Verify that <m>\R_{>0}=\{a\in \R\colon a>0\}=(0,\infty)</m>, along with the proposed vector operations
+        <md>
+          <mrow> c\odot a\amp=a^c </mrow>
+          <mrow> a\oplus b \amp =ab </mrow>
+        </md>,
+      satisfies the defining axioms of a vector space.
+      </p>
+      <p>
+        Note: we use the funny symbols <m>\odot</m> and <m>\oplus</m> for scalar multiplication and vector addition to prevent confusion between the vector operations of <m>\R_{>0}</m> and real number arithmetic operations.
+      </p>
+    </statement>
+</exercise>
+<exercisegroup>
+<title>Failed vector spaces</title>
+<introduction>
+<p>
+In each exercise below, the provided set, along with proposed vector operations, does <em>not</em> constitute a vector space. Identify <em>all</em> details of the vector space definition that <em>fail</em> to be satisfied. In addition to checking the axioms, you should also ask whether the proposed vector operations are well-defined. Provide explicit counterexamples for each failed property.
+</p>
+</introduction>
+<exercise>
+  <statement>
+    <p>
+      Let <m>V=\R^n</m>.
+      Define vector addition on <m>V</m> to be the usual <m>n</m>-tuple vector addition,
+      but define scalar multiplication as
+      <me>
+        c(a_1,a_2,\dots ,a_n)=(c^2a_1,c^2a_2,\dots, c^2a_n)
+      </me>.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>V=\R^2</m>.
+      Define vector addition on <m>V</m> to be the usual <m>n</m>-tuple vector addition,
+      but define scalar multiplication as
+      <me>
+        c(a_1,a_2)=(ca_1,0)
+      </me>.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let
+      <me>V=\{A\in M_{nn}\colon A \text{ is invertible}\}
+      </me>.
+      Define scalar multiplication and vector addition to be the usual matrix scalar multiplication and matrix addition.
+    </p>
+  </statement>
+</exercise>
+</exercisegroup>
+<exercisegroup>
+  <title>Verifying vector space axioms</title>
+
+
+<introduction>
+<p>
+In each exercise below the provided set, along with proposed vector operations, does constitute a vector space. Verify the indicated axioms.
+</p>
+</introduction>
+<exercise>
+  <statement>
+    <p>
+      Let <m>x</m> be a variable. Define <m>V=\{ax+1\colon a\in\R\}</m>, the set of all linear polynomials <m>f(x)=ax+1</m> with constant coefficient equal to one.
+      Define the vector operations as follows:
+      <md>
+        <mrow> c(ax+1) \amp= cax+1 </mrow>
+        <mrow> (ax+1)(bx+1)\amp=(ax+1)(bx+1)-abx^2 </mrow>
+      </md>.
+      Verify axioms (iii)-(vi).
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>V=\{(a,b)\in\R^2\colon a>0, \ b\lt 0\}</m>:
+      i.e., <m>V</m> is the set of pairs whose first entry is positive
+      and whose second entry is negative.
+      <md>
+        <mrow> c(a, b) \amp= (a^c, -\lvert b\rvert^c) </mrow>
+        <mrow> (a_1,b_1)+(a_2,b_2)\amp=(a_1a_2,-b_1b_2) </mrow>
+      </md>.
+      Verify axioms (iii)-(v), and axiom (viii).
+    </p>
+  </statement>
+</exercise>
+</exercisegroup>
+
+<exercise>
+  <statement>
+    <p>
+      Prove statements (2)-(4) of <xref ref="th_vectorspace_props"/>. When treating a specific part you may assume the results of any part that has already been proven, including statement (1).
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>V</m> be a vector space.
+    <ol>
+      <li>
+        <p>
+          Show that the zero vector of <m>V</m> is unique: <ie />, show that if <m>\boldw\in V</m> satisfies <m>\boldw+\boldv=\boldv</m> for all <m>\boldv\in V</m>, then <m>\boldw=\boldzero</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Fix <m>\boldv\in V</m>. Show that the vector inverse of <m>\boldv</m> is unique: <ie />, show that if <m>\boldw+\boldv=\boldzero</m>, then <m>\boldw=-\boldv</m>.
+        </p>
+      </li>
+    </ol>
+    Thus we may speak of <em>the</em> zero vector of a vector space, and <em>the</em> vector inverse of a vector <m>\boldv</m>.
+  </p>
+  </statement>
+
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>V</m> be a vector space.
+      Prove:
+      <me>\boldu + \boldw = \boldv + \boldw \iff \boldu=\boldv</me>.
+    </p>
+  </statement>
+</exercise>
+<exercise xml:id="ex_vs_zero_or_infinite">
+  <statement>
+    <p>
+      Let <m>V</m> be a vector space. Prove that either <m>V=\{\boldzero\}</m> (<ie />, <m>V</m> is the zero space) or <m>V</m> is infinite. In other words, a vector space contains either exactly one element or infinitely many elements.
+    </p>
+  </statement>
+  <hint>
+    <p>
+      Assume <m>V</m> contains a nonzero vector <m>\boldv\ne\boldzero</m>. Show that if <m>c\ne d</m>, then <m>c\boldv\ne d\boldv</m>. You assume the results of <xref ref="th_vectorspace_props"/>.
+    </p>
+  </hint>
+</exercise>
+
+</exercises>

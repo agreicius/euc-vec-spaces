@@ -1,0 +1,267 @@
+<exercises xml:id="s_nullspace_image_ex">
+  <subexercises>
+    <title>WeBWork Exercises</title>
+    <exercise>
+      <!-- true/false -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.34.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- true/false -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.36.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- true/false -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.48.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- true/false -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.35.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- true/false -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.49.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- injective dimensions -->
+      <webwork source="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem16.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- surjective dimensions -->
+      <webwork source="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem25.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- abstract vectors -->
+      <webwork source="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem17.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- abstract vectors -->
+      <webwork source="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem23.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- definitions -->
+      <webwork source="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem22.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- row-echelon -->
+      <webwork source="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem26.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- find vector in image -->
+      <webwork source="Library/TCNJ/TCNJ_IntroLinearTransformations/problem23.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- find preimage -->
+      <webwork source="Library/TCNJ/TCNJ_IntroLinearTransformations/problem11.pg" />
+    </exercise>
+
+    <!-- <exercise>
+              transformation of matrices
+              this problem uses basis
+              should come in a later chapter
+              <webwork source="Library/NAU/setLinearAlgebra/LinTransImage.pg" />
+            </exercise> -->
+  </subexercises>
+  <subexercises>
+  <title>Written Exercises</title>
+  <exercisegroup>
+  <title>Computing <m>\NS T</m> and <m>\im T</m> parametrically</title>
+    <introduction>
+      <p>
+        For each linear transformation <m>T</m> give parametric descriptions of <m>\NS T</m> and <m>\im T</m>. To do so you will want to relate each computation to a system of linear equations. (See <xref ref="eg_subspace_image"/> for an example of computing an image.)
+      </p>
+    </introduction>
+    <exercise>
+      <statement>
+        <p>
+          <md>
+            <mrow>T\colon \R^4 \amp \rightarrow \R^3 </mrow>
+            <mrow> (x,y,z,w)\amp\mapsto (x+z+w, x-y-z,-2x+y-w) </mrow>
+          </md>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <md>
+            <mrow> T\colon M_{22}\amp \rightarrow M_{22} </mrow>
+            <mrow> A \amp\mapsto \begin{amatrix}[rr]1\amp 1\\ 1\amp 1  \end{amatrix}A </mrow>
+          </md>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <md>
+            <mrow> T\colon P_2\amp \rightarrow P_2 </mrow>
+            <mrow> f \amp\mapsto f(x)+f'(x)</mrow>
+          </md>
+        </p>
+      </statement>
+    </exercise>
+  </exercisegroup>
+
+  <exercisegroup>
+  <title>Identifying <m>\im T</m></title>
+  <introduction>
+  <p>
+  For the given linear transformation <m>T</m> prove the claim about <m>\im T</m>.
+  </p>
+  </introduction>
+  <exercise>
+    <statement>
+      <p>
+        <md>
+          <mrow>T\colon \R^\infty \amp \rightarrow \R^\infty </mrow>
+          <mrow> s=(a_1,a_2,\dots)\amp\mapsto T(s)=(a_2,a_3,\dots) </mrow>
+        </md>.
+        Claim: <m>\im T=\R^\infty</m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <md>
+          <mrow>T\colon C(\R) \amp \rightarrow C(\R) </mrow>
+          <mrow> f(x)\amp\mapsto g(x)=f(x)+f(-x)</mrow>
+        </md>.
+        Claim: <m>\im T</m> is the set of all continuous symmetric functions. In other words,
+        <me>
+          \im T=\{f\in C(\R)\colon f(-x)=f(x)\}.
+        </me>
+      </p>
+    </statement>
+  </exercise>
+  </exercisegroup>
+<exercise>
+  <statement>
+    <p>
+      Define <m>T\colon P_5\rightarrow \R^3</m> as <m>T(p(x))=(p(-2), p(3), p(7))</m>: <ie />, the value of <m>T</m> at the input polynomial <m>p(x)\in P_5</m> is computed by evaluating <m>p</m> at the inputs <m>x=-2,3,7</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Prove: <m>T</m> is a linear transformation.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove: the <m>W=\{p(x)\in P_5\colon p(-2)=p(3)=p(7)=0\}</m> is a subspace of <m>P_5</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <hint>
+    <p>
+      Use <xref ref="proc_subspace_nullspace"/>.
+    </p>
+  </hint>
+</exercise>
+<exercisegroup>
+<title>Identifying <m>W</m> as a null space</title>
+<introduction>
+<p>
+For each subset <m>W\subseteq V</m> show <m>W</m> is a subspace by identifying it with the null space of a linear transformation <m>T</m>. You may use any of the examples from <xref ref="s_transformation"/>, and any of the results from the exercises in <xref ref="s_transformation_ex"/>.
+</p>
+</introduction>
+<exercise>
+  <statement>
+    <p>
+      <me>
+        W=\{A\in M_{nn}\colon \tr A=0\}
+      </me>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <me>
+        W=\{A\in M_{nn}\colon A^T=-A\}
+      </me>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <me>
+        W=\{f\in C^2(\R)\colon f''=2f'-3f\}
+      </me>
+    </p>
+  </statement>
+</exercise>
+</exercisegroup>
+<exercisegroup>
+<title>Nonhomogeneous solutions related to homogeneous solutions</title>
+<introduction>
+<p>
+For each <m>m\times n</m> matrix <m>A</m> and vector <m>\boldb\in \R^m</m>:
+<ol>
+  <li>
+    <p>
+      Find a <em>particular</em> solution <m>\boldx_p</m> to <m>A\boldx=\boldb</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      Find all solutions to the corresponding homogeneous matrix equation <m>A\boldx=\boldzero</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      Use (a), (b), and <xref ref="cor_matrix_equations"/> to describe <em>all</em> solutions to <m>A\boldx=\boldb</m>.
+    </p>
+  </li>
+</ol>
+</p>
+</introduction>
+<exercise>
+  <statement>
+    <p>
+      <me>
+        A=\begin{amatrix}[rrrr]1\amp 2\amp 1\amp 1\\ 1\amp 1\amp 2\amp 3  \end{amatrix},
+        \boldb=(3,2)
+      </me>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <me>
+        A=\begin{amatrix}[rrr]1\amp 1\amp -3 \\ 3\amp -1\amp -1 \\
+        1\amp 0\amp -1  \end{amatrix},
+        \boldb=(2,1,-4)
+      </me>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <me>
+        A=\begin{amatrix}[rrr]1\amp 2\amp 1 \\ 1\amp 1\amp -3 \\ 1\amp 0\amp -1  \end{amatrix},
+        \boldb=(1,1,1)
+      </me>
+    </p>
+  </statement>
+</exercise>
+</exercisegroup>
+</subexercises>
+
+</exercises>

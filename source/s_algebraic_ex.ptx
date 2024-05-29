@@ -1,0 +1,219 @@
+<exercises xml:id="s_algebraic_ex">
+<subexercises>
+<title>WeBWork Exercises</title>
+<exercise>
+      <!-- true false multiple types of products -->
+      <webwork source="Contrib/MountAllison/1-3_Matrices_and_Matrix_Operations/true_false.pg" />
+    </exercise>
+
+    <!-- WeBWork Exercises about transpose -->
+
+  <exercise>
+    <!-- write down the dimensions of the transpose matrix -->
+    <webwork source="Library/Utah/Business_Algebra/set10_Matrices/p17.pg" />
+  </exercise>
+  
+  <exercise>
+    <!-- computation problem involving transposes and addition of matrices -->
+    <webwork source="Library/Utah/Business_Algebra/set10_Matrices/p21.pg" />
+  </exercise>
+
+</subexercises>
+<subexercises>
+<title>Written Exercises</title>
+<exercise>
+  <statement>
+    <p>
+      In this exercise you will complete the proof of <xref ref="th_matrix_alg_props"/>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Prove <xref ref="th_matrix_comm"/>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove <xref ref="th_matrixadd_assoc"/>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove <xref ref="th_matrix_leftdist"/>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove <xref ref="th_matrix_rightdist"/>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove <xref ref="th_matrixscale_dist"/>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove <xref ref="th_matrixscale_dist2"/>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove <xref ref="th_matrixscale_assoc"/>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove <xref ref="th_matrixscale_comm"/>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li>
+            <p>
+              We  need both <m>A</m> and <m>B</m> to be <m>m\times n </m> for the expression to make sense. It is easy to see that <m>A+B</m> and <m>B+A</m> are both <m>m\times n</m> matrices. We must show <m>(A+B)_{ij}=(B+A)_{ij}</m> for all <m>1\leq i\leq m</m>, <m>1\leq j\leq n</m>. We have
+              <md>
+                <mrow>(A+B)_{ij} \amp =(A)_{ij}+(B)_{ij}\amp (<xref ref="d_matrix_add_subtract"/>) </mrow>
+                <mrow> \amp =(B)_{ij}+(A)_{ij}\amp \text{(real addition is comm.)} </mrow>
+                <mrow>  \amp =(B+A)_{ij} \amp (<xref ref="d_matrix_add_subtract"/> </mrow>
+              </md>.
+            </p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Prove all three statements of <xref ref="th_matrix_add_mult_ident"/>.
+    </p>
+  </statement>
+
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      In this exercise you will complete the proof of <xref ref="th_trans_props"/>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Prove <xref ref="th_trans_scale"/>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove <xref ref="th_trans_prod"/>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove <xref ref="th_trans_owninverse"/>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>
+      Let <m>A</m> an <m>n\times n</m> matrix.
+      We define its <term>square</term> <m>A^2</m>
+      as <m>A^2=AA</m>.
+    </p>
+      <ol>
+        <li>
+          <p>
+            In real number algebra we know that <m>a^2=0\implies a=0</m>. By contrast, show
+            that there are infinitely many <m>2\times 2</m> matrices <m>A</m> satisfying <m>A^2=\boldzero_{2\times 2}</m>.
+          </p>
+          <p>
+            Optional: can you describe in a parametric manner the set of <em>all</em> matrices <m>A</m> satisfying <m>A^2=\boldzero_{2\times 2}</m>?
+          </p>
+
+        </li>
+        <li>
+          <p>
+            In real number algebra we know that <m>a^2=a\implies a=0 \text{ or } a=1</m>. By contrast, show
+            that there are infinitely many <m>2\times 2</m> matrices <m>A</m> satisfying <m>A^2=A</m>.
+          </p>
+
+        </li>
+        <li>
+          <p>
+            In real number algebra we have the identity <m>(x+y)^2=x^2+2xy+y^2</m>. Show that two <m>n\times n</m> matrices <m>A</m>, <m>B</m> satisfy
+            <me>
+              (A+B)^2=A^2+2AB+B^2
+            </me>
+            if and only if <m>AB=BA</m>.
+          </p>
+        </li>
+      </ol>
+  </statement>
+  <hint>
+    <p>
+       For (a) set <m>A=\abcdmatrix{a}{b}{c}{d}</m>, compute <m>A^2</m>, set this matrix equal to <m>\boldzero_{2\times 2}</m>, and try and find some solutions to the corresponding (nonlinear) system of four equations in the unknowns <m>a,b,c,d</m>.
+    </p>
+    <p>
+      Similar hint for (b), only now set <m>A^2=A</m>.
+    </p>
+  </hint>
+</exercise>
+<exercise>
+    <introduction>
+      <p>
+      Consider the matrix equation
+      <m>A\, \begin{bmatrix}
+        1\amp 1\\ 1\amp 1
+      \end{bmatrix}=\begin{bmatrix}
+        1\amp 1\\ 1\amp 1
+      \end{bmatrix}</m>.
+    </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+     The following chain of implications is invalid.
+      <md>
+        <mrow> A\, \begin{bmatrix}
+          1\amp 1\\ 1\amp 1
+        \end{bmatrix}=\begin{bmatrix}
+          1\amp 1\\ 1\amp 1
+        \end{bmatrix}\amp\implies A\, \begin{bmatrix}
+          1\amp 1\\ 1\amp 1
+        \end{bmatrix}=I_2\, \begin{bmatrix}
+          1\amp 1\\ 1\amp 1
+        \end{bmatrix} </mrow>
+        <mrow> \amp\implies A=I_2 </mrow>
+      </md>.
+    For each implication in the chain, explain why it is valid or invalid.
+    </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+      Find all <m>A</m> satisfying <me>A\, \begin{bmatrix}
+        1\amp 1\\ 1\amp 1
+      \end{bmatrix}=\begin{bmatrix}
+        1\amp 1\\ 1\amp 1
+      \end{bmatrix}</me>.
+      </p>
+      </statement>
+      <hint>
+        <p>
+          Write <m>A=\begin{bmatrix}
+            a\amp b\\ c\amp d
+          \end{bmatrix}</m> and set up a system of linear equations in the unknowns <m>a,b,c,d</m>.
+        </p>
+      </hint>
+    </task>
+</exercise>
+</subexercises>
+</exercises>
