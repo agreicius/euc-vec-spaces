@@ -174,7 +174,7 @@
       <men xml:id="eq_vis_plane">
         ax+by+cz=d
       </men>. 
-      Later in the course we will describe an alternative approach to visualizing <m>\mathcal{P}</m> in terms of its <q>normal vector</q> <m>\boldn=(a,b,c)</m>. For now we recall a more elementary approach. Namely, simply find by insepction three <em>non-colinear</em> points <m>P,Q,R</m> satisfying <xref ref="eq_vis_plane"/>, sketch the triangle in <m>\R^3</m> they define, and then envision <m>\mathcal{P}</m> as the plane in <m>\R^3</m> containing this triangle. In practice we can find three such points by picking arbitrary values for two of the three variables, and solving for the third variable using <xref ref="eq_vis_plane"/>.
+      Later we will describe an approach to visualizing <m>\mathcal{P}</m> in terms of its <q>normal vector</q> <m>\boldn=(a,b,c)</m>. For now we recall a more elementary approach. Namely, simply find by inspection three <em>non-colinear</em> points <m>P,Q,R</m> satisfying <xref ref="eq_vis_plane"/>, sketch the triangle in <m>\R^3</m> they define, and then envision <m>\mathcal{P}</m> as the plane in <m>\R^3</m> containing this triangle. In practice we can find three such points by picking arbitrary values for two of the three variables, and solving for the third variable using <xref ref="eq_vis_plane"/>.
     </p>
     <p>
       For example, if <m>\mathcal{P}</m> is the plane with equation <m>x+y+z=2</m>, we see easily that <m>P=(2,0,0), Q=(0,2,0), R=(0,0,2)</m> lie on <m>\mathcal{P}</m>, allowing us to produce the graph in <xref ref="fig_visualize_plane"/>. 
