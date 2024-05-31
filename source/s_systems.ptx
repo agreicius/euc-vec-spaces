@@ -2,8 +2,8 @@
   <title>Systems of linear equations</title>
   <introduction>
     <p>
-     Computing and studying solutions to equations, and <em>systems of equations</em>, unquestionably plays an important role in mathematics; though we hasten to add that this is not all that mathematicians do! In this chapter we will develop an essentially complete theory of a particularly simple family of mathematical equations: namely, <em>linear equations</em>.  This will serve as a somewhat indirect introduction to our study of linear algebra, as lurking below our parametric descriptions of solutions to linear systems lie vector space notions like subspace, span, and linear independence. Furthermore, we will meet one of the most important computational tools of linear algebra: <xref ref="d_GE" text="custom">Gaussian elimination</xref>.  
-  </p>
+      Computing and studying solutions to equations, and <em>systems of equations</em>, unquestionably plays an important role in mathematics; though we hasten to add that this is not all that mathematicians do! In this chapter we will develop an essentially complete theory of a particularly simple family of mathematical equations: namely, <em>linear equations</em>.  This will serve as a somewhat indirect introduction to our study of linear algebra, as lurking below our parametric descriptions of solutions to linear systems lie vector space notions like subspace, span, and linear independence. Furthermore, we will introduce one of the most important computational tools of linear algebra: <xref ref="d_GE" text="custom">Gaussian elimination</xref>.  
+   </p>
   </introduction>
   <subsection xml:id="ss_linear_equations">
   <title>Systems of linear equations</title>
@@ -45,15 +45,200 @@
         </li>
         <li>
           <p>
-            The equation <m>x^2+y^2=1</m> is a <em> nonlinear</em>
+            The equation <m>x^2+y^2=1</m> is a nonlinear
             equation in the unknowns <m>x</m> and <m>y</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The equation 
+            <me>
+              \frac{3}{x+2y+z}=1
+            </me>
+            is nonlinear. Interestingly, however, the set of solutions to this equation is equal to the set of solutions to the linear equation 
+            <me>
+              x+2y+z=3
+            </me>.
+            This illustrates that <xref ref="d_lin-equation"/> is concerned strictly with the form of an equation, and not with the solutions to that equation. 
           </p>
         </li>
       </ol>
       </p>
     </statement>
   </example>
+  <p>
+    We next provide a precise definition of a solution of a linear equation. This definition will involve <m>n</m>-tuples <m>(s_1,s_2,\dots, s_n)</m> of real numbers. Tuples are treated in more detail in <xref ref="s_tuples"/>. In short, as defined in <xref ref="d_tuple"/>, an <m>n</m>-tuple is an <em>ordered sequence</em> of elements. The defining property of tuples is that they are ordered objects, as opposed to unordered. This is captured by the notion of equality between tuples: we have 
+    <me>
+      (s_1,s_2,\dots, s_n)=(t_1,t_2,\dots, t_n)
+    </me>
+    if and only if <m>s_i=t_i</m> for all <m>1\leq i\leq n</m>.
+  </p>
+  <definition xml:id="d_lin_eq_sol">
+    <title>Solutions to linear equations</title>
+    <statement>
+      <p>
+        A <term>solution to a linear equation</term>
+        <me>
+          a_1x_1+a_2x_2+\cdots a_nx_n=b
+        </me>
+        is an <m>n</m>-tuple
+        <m>(s_1,s_2,\dots,
+        s_n)</m> of real numbers for which the variable assignment <m>x_1=s_1, x_2=s_2,\dots, x_n=s_n</m> makes the equation true: <ie/>, the tuple <m>(s_1,s_2,\dots, s_n)</m> satisfies  
+        <me>
+          a_1s_1+a_2s_2+\cdots a_ns_n=b
+        </me>.
+        We say <m>(s_1,\dots ,s_n)</m> <term>solves the equation</term> in this case.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Given a linear equation <xref ref="eq_std_form"/>, we will be interested in finding and describing the set 
+    <me>S</me> of all of its solutions. These solutions define a subset of the set of all <m>n</m>-tuples of real numbers, which is denoted <m>\R^n</m>.
+  </p>
+  <definition xml:id="d_Rn">
+  <title>Real <m>n</m>-tuples</title>
+    <notation>
+      <usage><m>R^n</m></usage>
+      <description>set of real <m>n</m>-tuples</description>
+    </notation>
+    <statement>
+      <p>
+        Let <m>n</m> be a positive integer. The set of all real <m>n</m>-tuples is denoted <m>\R^n</m>: <ie/>,
+        <me>
+          \R^n=\{(a_1,a_2,\dots, a_n)\colon a_i\in \R\}
+        </me>. 
+      </p>
+    </statement>
+  </definition>
+  <p>
+    As you may recall, a (nontrivial) linear equation in two unknowns defines a line in <m>\R^2</m>, and a (nontrivial) equation in three unknowns defines a plane in <m>\R^3</m>. These types of subsets (of <m>\R^2</m> and <m>\R^3</m>, respectively) have distinctive geometric properties that we will elucidate in coming sections. Generalizing this notion to an arbitrary number of unknowns leads to the notion of a <em>hyperplane</em>. 
+  </p>
+  <definition xml:id="d_hyperplane">
+    <title>Hyperplane</title>
+    <statement>
+      <p> A linear equation 
+        <men xml:id="eq_hyper">a_1x_1+a_2x_2+\cdots a_nx_n=b</men> 
+        is <term>nontrivial</term> if <m>a_i\ne 0</m> for some <m>1\leq i\leq n</m>. Given a nontrivial equation <xref ref="eq_hyper"/>, the set of solutions 
+      <me>
+        S=\{(s_1,s_2,\dots, s_n)\in \R^n\colon a_1s_1+\cdots+a_ns_n=b \}
+      </me>
+      is called a <term>hyperplane</term> in <m>\R^n</m>. We have the two following special cases, corresponding to <m>n=2</m> and <m>n=3</m>:
+      <ul>
+        <li>
+          <p>
+            A hyperplane in <m>\R^2</m> is the set of solutions to a nontrivial equation <m>ax+by=c</m>, and is called a <term>line</term>.
+          </p>
+        </li>
+        <li>
+          <p>
+            A hyperplane in <m>\R^3</m> is the set of solutions to a nontrivial equation <m>ax+by+cz=d</m>, and is called a <term>plane</term>. 
+          </p>
+        </li>
+      </ul>
+    </p> 
+    </statement>
+  </definition>
+  <example xml:id="eg_vis_lines_R2">
+    <title>Visualizing lines in <m>\R^2</m></title>
+    <p>
+      Let <m>\ell\subseteq \R^2</m> be a line: <ie/>, <m>\ell</m> is the solution to some nontrivial linear equation <m>ax+by=c</m>. Since the equation is nontrivial, we have <m>a\ne 0</m> or <m>b\ne 0</m>. If <m>b\ne 0</m>, we may put the equation in the form 
+      <me>
+        y=-\frac{a}{b}x+\frac{c}{b}
+      </me>, 
+      in which case we recognize <m>m=-a/b</m> as the slope of <m>\ell</m> and <m>c/b</m> as the <m>y</m>-intercept. If <m>b=0</m>, then <m>a\ne 0</m>, and the equation can be solved as <m>x=c/a</m>, which we recognize as the vertical line passing through the point <m>(c/a,0)</m>.
+    </p>
+    <p>
+      It is easy to see that the equation defining <m>\ell</m> is homogenous if and only if <m>(0,0)</m> is a point on <m>\ell</m>: <ie/>, <m>\ell</m> is defined by a homogeneous equation if and only if it passes through the origin. 
+    </p>
+    <figure xml:id="fig_lines">
+      <caption>Lines in <m>\R^2</m></caption>
+      <image xml:id="im_lines_R2" width="50%">
+        <shortdescription>Lines in R2</shortdescription>
+        <sageplot>
+          g(t)=(3/4,t)
+          l1=plot(-x+1/2,(x,-1/2,1),color='red', ticks=[[],[]],aspect_ratio=1)
+          l3=plot(x/1.5,(-1/2,1),color="green")
+          l2=parametric_plot(g(t),(t,-1/2,1), color='blue')
+          t1=text(r'$ax+by=c$',(-.35,.6),fontsize=12,color='black')
+          t2=text(r'$ax=c$',(.6,.7),fontsize=12,color='black')
+          t3=text(r'$ax+by=0$',(-.35,-.4),fontsize=12,color='black')
+          l1+l2+t1+t2+l3+t3
+        </sageplot>
+      </image>
+    </figure>
+  </example>
+  <example xml:id="eg_vis_plane">
+    <title>Visualizing planes in <m>\R^3</m></title>
+    <p>
+      Let <m>\mathcal{P}\subseteq \R^3</m> be a plane defined by the nontrivial equation 
+      <men xml:id="eq_vis_plane">
+        ax+by+cz=d
+      </men>. 
+      Later in the course we will describe an alternative approach to visualizing <m>\mathcal{P}</m> in terms of its <q>normal vector</q> <m>\boldn=(a,b,c)</m>. For now we recall a more elementary approach. Namely, simply find by insepction three <em>non-colinear</em> points <m>P,Q,R</m> satisfying <xref ref="eq_vis_plane"/>, sketch the triangle in <m>\R^3</m> they define, and then envision <m>\mathcal{P}</m> as the plane in <m>\R^3</m> containing this triangle. In practice we can find three such points by picking arbitrary values for two of the three variables, and solving for the third variable using <xref ref="eq_vis_plane"/>.
+    </p>
+    <p>
+      For example, if <m>\mathcal{P}</m> is the plane with equation <m>x+y+z=2</m>, we see easily that <m>P=(2,0,0), Q=(0,2,0), R=(0,0,2)</m> lie on <m>\mathcal{P}</m>, allowing us to produce the graph in <xref ref="fig_visualize_plane"/>. 
+    </p>
+    <p>
+      As with lines, it is easy to see that the equation <xref ref="eq_vis_plane"/> defining <m>\mathcal{P}</m> is homogeneous if and only if <m>\mathcal{P}</m> passes through the origin <m>(0,0,0)</m>. 
+    </p>
+    <figure xml:id="fig_visualize_plane">
+      <title>Using Sage to visualize <m>\mathcal{P}\colon ax+by+cz=d</m> via normal vector <m>\boldn=(a,b,c)</m></title>
+      <caption>Visualizing <m>\mathcal{P}\colon x+y+z=2</m></caption>
+      <image xml:id="im_plane" width="75%">
+        <sageplot variant="3d" aspect="1.0">
+x,y,z=var('x y z')
+from sage.plot.plot3d.plot3d import axes
+a=axes(2,1/2,color='black',ticks=[(0,1,2),(0,1,2),(0,1,2)])
+P=implicit_plot3d(x+y+z==2,(x,-1,2),(y,-1,2),(z,-1,2),color='green', opacity=.3)
+p1=point3d((2,0,0),size=10)
+p2=point3d((0,2,0),size=10)
+p3=point3d((0,0,2),size=10)
+T1=text3d("P=(2,0,0)",[2.1,0,.1],color="black",fontsize=15)
+T2=text3d("Q=(0,2,0)",[0,2.1,.1],color="black",fontsize=15)
+T3=text3d("R=(0,0,2)",[0,0,2.1],color="black",fontsize=15)
+T=polygon3d([[2,0,0],[0,2,0],[0,0,2]], color='green', opacity=.3, frame=False)
+T+p1+p2+p3+T1+T2+T3+a
+        </sageplot>
+      </image>
+    </figure>
+      <!-- Since the equation <m>ax+by+cz=d</m> is nontrivial, one of the coefficients <m>a,b,c</m> is nonzero, allowing us to solve for its corresponding variable in terms of the others. For example, if the equation is <m>2x+0y+</m>  the vector <m>\boldn=(a,b,c)</m> is nonzero. We call <m>\boldn</m> a normal vector to the plane <m>\mathcal{P}</m>. Given any point <m>P=(x_0,y_0,z_0)\in \mathcal{P}</m>, we visualize <m>\mathcal{P}</m> as the set of all points <m>Q=(x,y,z)</m> such that the vector <m>\overrightarrow{PQ}=(x-x_0, y-y_0, z-z_0)</m> is orthogonal to <m>\mathcal{n}</m>. This allows us to envision <m>\mathcal{P}</m> as <q>the plane passing through <m>P</m> and orthogonal to <m>\boldn</m></q>.
+    </p>
+    <p>
+      As with lines, the equation defining a plane <m>\mathcal{P}</m> is homogeneous if and only if the plane passes through the origin. 
+    </p>
+    <figure xml:id="fig_visualize_plane">
+      <title>Using Sage to visualize <m>\mathcal{P}\colon ax+by+cz=d</m> via normal vector <m>\boldn=(a,b,c)</m></title>
+      <caption>Visualizing <m>\mathcal{P}\colon ax+by+cz=d</m> via normal vector <m>\boldn=(a,b,c)</m></caption>
+      <image xml:id="im_plane" width="75%">
+<shortdescription>A plane and its normal vector</shortdescription>
+<sageplot variant="3d" aspect="1.0">
+a=-8
+b=3
+c=10
+d=3
+#Following finds two points, P and Q on plane
+n=matrix([a,b,c])
+NS=n.right_kernel()
+P=vector(n.solve_right(matrix([d])))
+Q=NS.basis()[0].normalized()
+#The rest produces graphics and labels
+Pt1=point(P, color="blue", size=10)
+Pt2=point(vector(P)+2*NS.basis()[0].normalized(), color="red", size=10)
+Ar1=arrow3d(P,P+2*Q, color="green")
+Ar2=arrow3d(P,P+2*vector(n).normalized(), color="red")
+T1=text3d("P",P+vector([0,0,.25]),color="black",fontsize=20)
+T2=text3d("Q",P+2*Q+vector([0,0,.25]),color="black",fontsize=20)
+T3=text3d("n",P+vector(n).normalized()+vector([0,0,.25]),color="black",fontsize=20)
+var("x y z")
+Plane=implicit_plot3d(a*x+b*y+c*z-d,(x,P[0]-2,P[0]+2),(y,P[1]-2,P[1]+2),(z,P[2]-2,P[2]+2), color="green", opacity=".3")
+Pt1+Pt2+Ar1+Ar2+T1+T2+T3+Plane
+</sageplot>
 
+</image>
+    </figure> -->
+  </example>
+  
   <definition xml:id="d_lin-sys">
     <title>Systems of linear equations</title>
     <idx><h>linear system</h></idx>
@@ -65,7 +250,6 @@
       </p>
       <p>
         A <term>homogeneous</term> linear system is a set of homogeneous linear equations.
-
       </p>
 
     </statement>
@@ -202,75 +386,7 @@ A homogeneous system is thus typically written as:
   </solution>
 
 </example>
-<p>
-  As you may recall, a (nontrivial) linear equation in two unknowns defines a line in <m>\R^2</m>; and a (nontrivial) equation in three unknowns defines a plane in <m>\R^3</m>. This observation allows us to bring powerful geometric intuition to the analysis of systems of linear equations in two or three unknowns. As lines and planes will also serve as a rich source of examples in this course, we recall below some of their basic notions. 
-</p>
-<example xml:id="eg_lines_planes_review">
-  <title>Lines and planes review</title>
-  <p>
-        Below we define lines (in <m>\R^2</m>) and planes (in <m>\R^3</m>) as sets of solutions of linear equations in two or three unknowns. Recall that the <term>graph</term> of an equation is the set of all solutions to the equation.
-        <ul>
-          <li>
-            <title>Lines</title>
-            <p>
-              A <term>line</term> in <m>\R^2</m> is the set of solutions (or graph) <m>\ell</m> of a linear equation of the form <m>ax+by=c</m>, where <m>a, b, c\in\R</m> are fixed constants, and at least one of <m>a</m> and <m>b</m> is nonzero: <ie />,
-              <me>
-                \ell=\{(x,y)\in\R^2\colon ax+by=c\}.
-              </me>
-            </p>
-          </li>
-          <li>
-            <title>Planes</title>
-            <p>
-              A <term>plane</term> in <m>\R^3</m> is the set of solutions (or graph) <m>\mathcal{P}</m> of a linear equation of the form <m>ax+by+cz=d</m>, where <m>a, b, c, d\in\R</m> are fixed constants, and at least one of <m>a, b, c</m> is nonzero: <ie />,
-              <me>
-                \mathcal{P}=\{(x,y,z)\in\R^3\colon ax+by+cz=d\}.
-              </me>
-            </p>
-          </li>
-        </ul>
-      We often use the abbreviated notation
-      <md>
-        <mrow>\ell \amp\colon ax+by=c \amp \mathcal{P}\amp\colon ax+by+cz=d</mrow>
-      </md>
-      to introduce the line <m>\ell</m> with defining equation <m>ax+by=c</m> or plane <m>\mathcal{P}</m> with defining equation <m>ax+by+cz=d</m>.
-      </p>
-      <p>
-        Given a plane <m>\mathcal{P}\colon ax+by+cz=d</m>, we call <m>\boldn=(a,b,c)</m> a <term>normal vector</term> of <m>\mathcal{P}</m>. Equipped with the normal vector <m>\boldn</m> and a single point <m>P=(x_0,y_0,z_0)</m> lying on <m>\mathcal{P}</m>, we can quickly visualize <m>\mathcal{P}</m> as the set of all points <m>Q=(x,y,z)</m> such that the vector <m>\overrightarrow{PQ}=(x-x_0, y-y_0, z-z_0)</m> is orthogonal to <m>\mathcal{n}</m>. This allows us to envision <m>\mathcal{P}</m> as <q>the plane passing through <m>P</m> and orthogonal to <m>\boldn</m></q>. The customizable Sage Cell below nicely demonstrates this method of visualization.
-      </p>
-      <figure width="100%" xml:id="fig_visualize_plane">
-        <title>Using Sage to visualize <m>\mathcal{P}\colon ax+by+cz=d</m> via normal vector <m>\boldn=(a,b,c)</m></title>
-        <caption>Using Sage to visualize <m>\mathcal{P}\colon ax+by+cz=d</m> via normal vector <m>\boldn=(a,b,c)</m></caption>
-        <image xml:id="im_plane">
-  <description>A plane and its normal vector</description>
-  <sageplot variant="3d" aspect="1.0">
-a=-8
-b=3
-c=10
-d=3
-#Following finds two points, P and Q on plane
-n=matrix([a,b,c])
-NS=n.right_kernel()
-P=vector(n.solve_right(matrix([d])))
-Q=NS.basis()[0].normalized()
-#The rest produces graphics and labels
-Pt1=point(P, color="blue", size=10)
-Pt2=point(vector(P)+2*NS.basis()[0].normalized(), color="red", size=10)
-Ar1=arrow3d(P,P+2*Q, color="green")
-Ar2=arrow3d(P,P+2*vector(n).normalized(), color="red")
-T1=text3d("P",P+vector([0,0,.25]),color="black",fontsize=20)
-T2=text3d("Q",P+2*Q+vector([0,0,.25]),color="black",fontsize=20)
-T3=text3d("n",P+vector(n).normalized()+vector([0,0,.25]),color="black",fontsize=20)
-var("x y z")
-Plane=implicit_plot3d(a*x+b*y+c*z-d,(x,P[0]-2,P[0]+2),(y,P[1]-2,P[1]+2),(z,P[2]-2,P[2]+2), color="green", opacity=".1")
-Pt1+Pt2+Ar1+Ar2+T1+T2+T3+Plane
-</sageplot>
 
-</image>
-
-      </figure>
-  
-</example>
 
 
 <example xml:id="eg_system_of_lines">

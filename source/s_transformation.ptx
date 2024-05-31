@@ -50,7 +50,7 @@
         </ol>
       </p>
       <p>
-        If a function between vector spaces is <term>nonlinear</term> if it is not a linear transformation.
+        A function between vector spaces is <term>nonlinear</term> if it is not a linear transformation.
       </p>
     </statement>
   </definition>
@@ -233,7 +233,7 @@
     <me>
       T(c\boldv_1+d\boldv_2)=cT(\boldv_1)+dT(\boldv_2)
     </me>
-    for all <m>c, d\in \R</m> and <m>\boldv_1,\boldv_2\in V</m>, and <m>\boldw\in W</m>, then <m>T</m> is linear. Indeed, taking the special case <m>c=d=1</m> yields (1) of <xref ref="d_linear_transform"/>; and choosing <m>d=0</m> yields (2) of <xref ref="d_linear_transform"/>.
+    for all <m>c, d\in \R</m> and <m>\boldv_1,\boldv_2\in V</m>, then <m>T</m> is linear. Indeed, taking the special case <m>c=d=1</m> yields (1) of <xref ref="d_linear_transform"/>; and choosing <m>d=0</m> yields (2) of <xref ref="d_linear_transform"/>.
     </p>
     <p>
       This observation gives rise to an alternate one-step technique for proving linearity: given <m>T\colon V\rightarrow W</m>, show that
