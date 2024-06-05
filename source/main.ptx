@@ -11,6 +11,7 @@
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
     <xi:include href="./c_foundations.ptx"/>
+    <xi:include href="./c_Rn.ptx"/>
     <xi:include href="./c_linear_systems.ptx"/>
     <xi:include href="./c_matrices.ptx"/>
     <!-- <xi:include href="./c_vectorspace.ptx"/> -->

@@ -1,0 +1,206 @@
+<section xml:id="s_Rn">
+    <title>Vector space structure of <m>\R^n</m></title>
+    <introduction>
+        <p>
+            What is a Euclidean vector space? Getting ahead of ourselves somewhat, it is a <em>finite-dimensional vector space</em> over the real numbers along with an <em>inner product</em>. In this chapter we will begin to make sense of some of these notions: specifically, we will define vector spaces and inner products on vector spaces. We will also introduce what will be for us essentially the only example of a Euclidean vector space: namely, <m>\R^n</m> along with its standard vector operations and the dot product. This might strike the reader as a somewhat overly restricted focus: if there are other examples of Euclidean spaces out there, why not invite them in? As it turns out, an <m>\R^n</m>-centered treatment of linear algebra will give us plenty of rich material to deal with in this introductory course. Furthermore, although there are other <q>exotic</q> examples of Euclidean vector spaces, they are all <em>structurally equivalent</em> to <m>\R^n</m> (for some positive integer <m>n</m>) with its usual vector operations and the dot product. More precisely, getting ahead of ourselves once again, any two <m>n</m>-dimensional Euclidean vector spaces are <em>isomorphic</em> to one another. (We will make sense of this notion also, in due time.) As a result, the theory of linear algebra and inner product spaces, as articulated in the specific context of <m>\R^n</m>, can be seen as entirely characteristic of the general theory.  
+        </p>
+    </introduction>
+   <subsection xml:id="ss_nspace">
+    <title>Real <m>n</m>-space</title>
+    <p>
+        Given a positive integer <m>n</m>, we denote by <m>\R^n</m> the set of all <m>n</m>-tuples of real numbers. Tuples are treated in more detail in <xref ref="s_tuples"/>. In short, as defined in <xref ref="d_tuple"/>, an <m>n</m>-tuple is an <em>ordered sequence</em> of elements. The defining property of tuples is that they are ordered objects, as opposed to unordered. This is captured by the notion of equality between tuples: we have 
+        <me>
+          (s_1,s_2,\dots, s_n)=(t_1,t_2,\dots, t_n)
+        </me>
+        if and only if <m>s_i=t_i</m> for all <m>1\leq i\leq n</m>.
+    </p>
+    <p>
+        You have probably encountered <m>\R^2</m> and <m>\R^3</m> as models of physical space (planar and three-dimensional). Perhaps you have even encountered <m>\R^4</m> as a model of relativistic space-time. In keeping with this tradition, we will call <m>\R^n</m> <em>(real) <m>n</m>-space</em>. 
+    </p>
+    <definition xml:id="d_Rn">
+        <title>Real <m>n</m>-space</title>
+          <notation>
+            <usage><m>R^n</m></usage>
+            <description>set of real <m>n</m>-tuples</description>
+          </notation>
+          <statement>
+            <p>
+              Let <m>n</m> be a positive integer. The set of all real <m>n</m>-tuples is called <term>real <m>n</m>-space</term> (or just <term><m>n</m>-space</term>) and is denoted <m>\R^n</m>: <ie/>,
+              <me>
+                \R^n=\{(a_1,a_2,\dots, a_n)\colon a_i\in \R\}
+              </me>. 
+            </p>
+          </statement>
+        </definition>
+   </subsection>
+   <subsection xml:id="ss_Rn_vector_space">
+    <title>Vector operations</title>
+    <p>
+        We now introduce the standard vector operations on <m>\R^n</m>, so called as they give <m>\R^n</m> the structure of a <xref ref="d_vector_space" text="custom">vector space</xref>. 
+    </p>
+    <definition xml:id="d_Rn_vec_ops">
+        <title>Vector operations</title>
+        <statement>
+            <p>
+                Let <m>n</m> be a positive integer. 
+                <ul>
+                    <li xml:id="d_vec_add_Rn">
+                        <title>Vector addition in <m>\R^n</m></title>
+                        <p>
+                            Given elements <m>n</m>-tuples <m>\boldx=(x_1,x_2,\dots, x_n)</m> and <m>\boldy=(y_1,y_2,\dots, y_n)</m>, we define their <term>vector sum</term> <m>\boldx+\boldy</m> as 
+                            <me>
+                                \boldx+\boldy=(x_1+y_1,x_2+y_2,\dots, x_n+y_n)
+                            </me>.
+                            This defines an operation 
+                            <md>
+                                <mrow>\R^n\times \R^n \amp \rightarrow \R^n</mrow>
+                                <mrow>(\boldx, \boldy) \amp \mapsto \boldx+\boldy</mrow>
+                            </md>
+                            called <term>vector addition</term>. 
+                        </p>
+                    </li>
+                    <li xml:id="d_scal_mult_Rn">
+                        <title>Scalar multiplication in <m>\R^n</m></title>
+                        <p>
+                            Given an <m>n</m>-tuple <m>\boldx=(x_1,x_2,\dots, x_n)\in\R^n</m> and a real number <m>c\in \R</m>, the <m>n</m>-tuple <m>c\boldx</m> defined as  
+                            <me>
+                                c\boldx=(cx_1,cx_2,\dots, cx_n)
+                            </me>
+                            is called the <term>scalar multiple</term> of <m>\boldx</m> by <m>c</m>. This defines an operation 
+                            <md>
+                                <mrow>\R\times \R^n \amp \rightarrow \R^n</mrow>
+                                <mrow>(c,\boldx) \amp \mapsto c\boldx</mrow>
+                            </md>
+                            called <term>scalar multiplication</term>. 
+                        </p>
+                    </li>
+                    <li xml:base="d_zero_Rn" >
+                        <title>Zero vector of <m>\R^n</m></title>
+                        <p>
+                            The <term>zero vector</term> of <m>\R^n</m>, denoted <m>\boldzero</m>, is defined as <m>\boldzero=(0,0,\dots, 0)</m>, the <m>n</m>-tuple consisting of all zeros. 
+                        </p>
+                    </li>
+                    <li xml:base="d_vec_inverse_Rn">
+                        <title>Vector inverses in <m>\R^n</m></title>
+                        <p>
+                            The <term>vector inverse</term> <m>-\boldx</m> of an element <m>\boldx=(x_1,x_2,\dots, x_n)\in \R^n</m>, is defined as 
+                            <me>
+                                -\boldx=(-x_1,-x_2,\dots, -x_n)
+                            </me>.
+                            The operation 
+                            <md>
+                                <mrow>\R^n \amp \rightarrow \R^n</mrow>
+                                <mrow>\boldx \amp \mapsto -\boldx</mrow>
+                            </md>
+                            is called the <term>vector inverse</term> operation. 
+                        </p>
+                    </li>
+                </ul>
+            </p>
+        </statement>
+    </definition>
+    <remark>
+    <title>Vector operations input/output</title>
+    <p>
+    It is a good habit, when dealing with a variety of types of mathematical operations, to have in  your mind a qualitative summary of what their inputs and outputs are. For example, vector addition in <m>\R^n</m> takes as input a pair of <m>n</m>-tuples, <m>\boldx</m> and <m>\boldy</m>, and returns as output a third <m>n</m>-tuple <m>\boldx+\boldy</m>. By contrast, scalar multiplication in <m>\R^n</m> is a sort of <em>hybrid</em> operation that takes as input a real number <m>c</m> and <m>n</m>-tuple <m>\boldx</m> and returns as output a new <m>n</m>-tuple <m>c\boldx</m>. 
+    </p>
+    </remark>
+    <p>
+        Before looking at examples of these vector operations and seeing how we can visualize them, we will jump to the heart of the matter. The four structural elements of <m>\R^n</m> defined in <xref ref="d_Rn_vec_ops"/> (viz., vector addition, scalar multiplication, the zero vector, and vector inverses) are the ingredients we need to make it a vector space, as we now define. It remains only to show that these various operations on <m>\R^n</m> are sufficiently well-behaved: <ie/>, they satisfy the <xref ref="d_vector_space" text="custom">vector space axioms</xref>. 
+    </p>
+    <definition xml:id="d_vector_space">
+        <title>Vector space</title>
+        <idx><h>vector space</h><h>definition</h></idx>
+        <idx><h>vector space</h><h>zero vector</h></idx>
+        <idx><h>vector space</h>vector inverse<h></h></idx>
+        <idx><h>vector space</h><h>vector</h></idx>
+          <statement>
+            <p>
+              A <term>real vector space</term> is a set <m>V</m> together with two operations
+              <md>
+                <mrow>V\times V \amp \rightarrow V \amp \R\times V\amp \rightarrow V</mrow>
+                <mrow>(\boldv,\boldw) \amp\mapsto \boldv+\boldw \amp (c,\boldv)\amp \mapsto c\boldv </mrow>
+              </md>, 
+              called respectively <term>vector addition</term> and <term>scalar multiplication</term>, that satify the following <term>vector space axioms</term>. 
+            <ol marker="i">
+              <li>
+                <title>Vector addition is commutative</title>
+                <p>
+                <m>\boldv+\boldw=\boldw+\boldv</m> for all <m>\boldv,\boldw\in V</m>.
+                </p>
+              </li>
+              <li>
+                <title>Vector addition is associative</title>
+                <p>
+                    <m>(\boldu+\boldv)+\boldw=\boldu+(\boldv+\boldw)</m> for all <m>\boldu, \boldv, \boldw\in V</m>.
+                </p>
+              </li>
+              <li>
+                <title>Additive identity</title>
+                <p>
+                  There is an element <m>\boldzero\in V</m> such that for all <m>\boldv\in V</m>, we have
+                  <m>
+                    \boldzero+\boldv=\boldv+\boldzero=\boldv
+                  </m>. We call <m>\boldzero</m> the <term>zero vector</term>  of <m>V</m>.
+                </p>
+              </li>
+              <li>
+                <title>Additive inverses</title>
+                <p>
+                For all <m>\boldv\in V</m>, there is another element <m>-\boldv</m> satisfying
+                <m>
+                  -\boldv+\boldv=\boldv+(-\boldv)=\boldzero
+                </m>.
+                We call <m>-\boldv</m> is called the <term>vector inverse</term>  of <m>\boldv</m>.
+                </p>
+              </li>
+              <li>
+                <title>Distribution over vector addition</title>
+                <p>
+                <m>
+                  c(\boldv+\boldw)=c\boldv+c\boldw
+                </m> for all <m>c\in \R</m> and <m>\boldv, \boldw\in V</m>.
+                </p>
+              </li>
+              <li>
+                <title>Distribution over scalar addition</title>
+                <p>
+                  <m>
+                    (c+d)\boldv=c\boldv+d\boldv
+                  </m>
+                  for all <m>c\in \R</m> and <m>\boldv, \boldw\in V</m>.
+                </p>
+              </li>
+              <li>
+                <title>Scalar multiplication is associative</title>
+                <p>
+                <m>
+                  c(d\boldv)=(cd)\boldv
+                </m>
+                for all <m>c,d\in \R</m> and all <m>\boldv\in V</m>.
+                </p>
+              </li>
+              <li>
+                <title>Scalar multiplication identity</title>
+                <p>
+                    <m>
+                        1\,\boldv=\boldv
+                      </m> for all <m>\boldv\in V</m>.
+                </p>
+              </li>
+            </ol>
+          We call elements of a vector space <term>vectors</term> and the elements of <m>\R</m> <term>scalars</term>. 
+          </p>
+      </statement>
+        </definition>
+        <remark xml:id="rm_vectorspace_real">
+            <title>(Real) vector spaces</title>
+            <statement>
+                <p>
+                    It is possible to define the notion of a vector space over general number systems of a special type: namely, number systems that satisfy the <em>field axioms</em>.  Given such a number system <m>K</m>, we get the definition of a vector space over <m>K</m> simply by replacing every instance of <m>\R</m> in <xref ref="d_vector_space"/> with <m>K</m>. Setting <m>K=\C</m>, for example, we get the definition of a complex vector space. For our purposes, we will deal almost exclusively with real vector spaces, and accordingly will not use the <sq>real</sq> modifier unless necessary.  
+                  </p>
+            </statement>
+          </remark>
+   </subsection>
+
+</section>

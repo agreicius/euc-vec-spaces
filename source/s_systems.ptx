@@ -67,11 +67,7 @@
     </statement>
   </example>
   <p>
-    We next provide a precise definition of a solution of a linear equation. This definition will involve <m>n</m>-tuples <m>(s_1,s_2,\dots, s_n)</m> of real numbers. Tuples are treated in more detail in <xref ref="s_tuples"/>. In short, as defined in <xref ref="d_tuple"/>, an <m>n</m>-tuple is an <em>ordered sequence</em> of elements. The defining property of tuples is that they are ordered objects, as opposed to unordered. This is captured by the notion of equality between tuples: we have 
-    <me>
-      (s_1,s_2,\dots, s_n)=(t_1,t_2,\dots, t_n)
-    </me>
-    if and only if <m>s_i=t_i</m> for all <m>1\leq i\leq n</m>.
+    We next provide a precise definition of a solution of a linear equation. This definition will involve <m>n</m>-tuples <m>(s_1,s_2,\dots, s_n)</m> of real numbers. 
   </p>
   <definition xml:id="d_lin_eq_sol">
     <title>Solutions to linear equations</title>
@@ -95,21 +91,7 @@
     Given a linear equation <xref ref="eq_std_form"/>, we will be interested in finding and describing the set 
     <me>S</me> of all of its solutions. These solutions define a subset of the set of all <m>n</m>-tuples of real numbers, which is denoted <m>\R^n</m>.
   </p>
-  <definition xml:id="d_Rn">
-  <title>Real <m>n</m>-tuples</title>
-    <notation>
-      <usage><m>R^n</m></usage>
-      <description>set of real <m>n</m>-tuples</description>
-    </notation>
-    <statement>
-      <p>
-        Let <m>n</m> be a positive integer. The set of all real <m>n</m>-tuples is denoted <m>\R^n</m>: <ie/>,
-        <me>
-          \R^n=\{(a_1,a_2,\dots, a_n)\colon a_i\in \R\}
-        </me>. 
-      </p>
-    </statement>
-  </definition>
+  
   <p>
     As you may recall, a (nontrivial) linear equation in two unknowns defines a line in <m>\R^2</m>, and a (nontrivial) equation in three unknowns defines a plane in <m>\R^3</m>. These types of subsets (of <m>\R^2</m> and <m>\R^3</m>, respectively) have distinctive geometric properties that we will elucidate in coming sections. Generalizing this notion to an arbitrary number of unknowns leads to the notion of a <em>hyperplane</em>. 
   </p>
