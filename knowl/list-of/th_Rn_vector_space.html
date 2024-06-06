@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="period">.</span>
+</h4>
+<div class="para">Fix a positive integer <span class="process-math">\(n\text{.}\)</span> The set <span class="process-math">\(\R^n\text{,}\)</span> together with the vector addition and scalar multiplication operations defined in <a href="s_Rn.html#d_Rn_vec_ops" class="xref" data-knowl="./knowl/xref/d_Rn_vec_ops.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.1.2: Vector operations">Definition 1.1.2</a>, is a vector space.</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">We will verify axioms (ii), (iii),(iv), and (vi), and leave the rest as an  exercise. In what follows, <span class="process-math">\(\boldx=(x_1,x_2,\dots, x_n), \boldy=(y_1,y_2,\dots, y_n), \boldz=(z_1,z_2,\dots, z_n)\)</span> will denote arbitrary elements of <span class="process-math">\(\R^n\text{,}\)</span> and  <span class="process-math">\(c,d\)</span> will denote arbitrary elements of <span class="process-math">\(\R\text{.}\)</span>
+</div> <article class="case"><h5 class="heading">Axiom (ii).</h5> <div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+(\boldx+\boldy)+\boldz \amp = (x_1+y_1,x_2+y_2,\dots, x_n+y+n)+\boldz \amp \text{(def. of vec. add.)}\\
+\amp = ((x_1+y_1)+z_1,(x_2+y_2)+z_2,\dots, (x_n+y_n)+z_n) \amp \text{(def. of vec. add.)}\\
+\amp = (x_1+(y_1+z_1),\dots, x_n+(y_n+z_n)) \amp \text{(assoc. of real add.)}\\
+\amp =\boldx+(\boldy+\boldz) \text{.}
+\end{align*}
+</div>
+</div></article> <article class="case"><h5 class="heading">Axiom (iii).</h5> <div class="para logical">
+<div class="para">We claim that <span class="process-math">\(\boldzero=(0,0,\dots, 0)\)</span> satisfies <a href="s_Rn.html#eq_d_zero_vector" class="xref" data-knowl="./knowl/xref/eq_d_zero_vector.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.1">(1.1.1)</a>. Indeed, for all <span class="process-math">\(\boldx\in \R^n\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_d_zero_vector.html">
+\begin{align*}
+\boldzero+\boldx \amp = (0+x_1,0+x_2,\dots, 0+x_n)\amp \text{(def. of vec. add.)}\\
+\amp = (x_1,x_2,\dots, x_n)\\
+\amp =\boldx\text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div></article> <article class="case"><h5 class="heading">Axiom (iv).</h5> <div class="para logical">
+<div class="para">We claim that given any <span class="process-math">\(\boldx=(x_1,x_2,\dots, x_n)\text{,}\)</span> the vector <span class="process-math">\(-\boldx=(-x_1,-x_2,\dots, -x_n)\)</span> satisfies <a href="s_Rn.html#eq_d_vec_inverse" class="xref" data-knowl="./knowl/xref/eq_d_vec_inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.1.2">(1.1.2)</a>. Indeed, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_d_vec_inverse.html">
+\begin{align*}
+(-x_1,-x_2,\dots, -x_n)+(x_1,x_2,\dots, x_n) \amp =(-x_1+x_1,-x_2+x_2,\dots, -x_n+x_n) \amp \text{(def. of vec. add.)}\\
+\amp = (0,0,\dots, 0)\\
+\amp = \boldzero\text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div></article> <article class="case"><h5 class="heading">Axiom (vi).</h5> <div class="para logical">
+<div class="para">For all <span class="process-math">\(c,d\in \R\)</span> and <span class="process-math">\(\boldx\in \R^n\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+(c+d)\boldx \amp = ((c+d)x_1,(c+d)x_2,\dots, (c+d)x_n) \amp \text{(def. of sc. mult.)} \\
+\amp =(cx_1+dx_1,cx_2+dx_2,\dots, cx_n+dx_n) \amp \text{(dist. prop. of reals)}\\
+\amp =(cx_1,\dots, cx_n)+(cy_1,\dots, cy_n) \amp \text{(def. of vec. add.)}\\
+\amp =c\boldx+d\boldx \amp \text{(def. of sc. mult.)}\text{.}
+\end{align*}
+</div>
+</div></article></article></details><span class="incontext"><a class="internal" href="s_Rn.html#th_Rn_vector_space">in-context</a></span>
+</body>
+</html>
