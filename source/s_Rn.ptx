@@ -51,12 +51,12 @@
                             <me>
                                 \boldx+\boldy=(x_1+y_1,x_2+y_2,\dots, x_n+y_n)
                             </me>.
-                            This defines an operation 
+                            The operation 
                             <md>
                                 <mrow>\R^n\times \R^n \amp \rightarrow \R^n</mrow>
                                 <mrow>(\boldx, \boldy) \amp \mapsto \boldx+\boldy</mrow>
                             </md>
-                            called <term>vector addition</term>. 
+                            is called <term>vector addition</term>. 
                         </p>
                     </li>
                     <li xml:id="d_scal_mult_Rn">
@@ -66,12 +66,12 @@
                             <me>
                                 c\boldx=(cx_1,cx_2,\dots, cx_n)
                             </me>
-                            is called the <term>scalar multiple</term> of <m>\boldx</m> by <m>c</m>. This defines an operation 
+                            is called the <term>scalar multiple</term> of <m>\boldx</m> by <m>c</m>. The operation 
                             <md>
                                 <mrow>\R\times \R^n \amp \rightarrow \R^n</mrow>
                                 <mrow>(c,\boldx) \amp \mapsto c\boldx</mrow>
                             </md>
-                            called <term>scalar multiplication</term>. 
+                            is called <term>scalar multiplication</term>. 
                         </p>
                     </li>
                     <li xml:base="d_zero_Rn" >
@@ -136,22 +136,22 @@
                 </p>
               </li>
               <li>
-                <title>Additive identity</title>
+                <title>Zero vector</title>
                 <p>
                   There is an element <m>\boldzero\in V</m> such that for all <m>\boldv\in V</m>, we have
-                  <m>
+                  <men xml:id="eq_d_zero_vector">
                     \boldzero+\boldv=\boldv+\boldzero=\boldv
-                  </m>. We call <m>\boldzero</m> the <term>zero vector</term>  of <m>V</m>.
+                  </men>. We call <m>\boldzero</m> the <term>zero vector</term>  of <m>V</m>.
                 </p>
               </li>
               <li>
                 <title>Additive inverses</title>
                 <p>
                 For all <m>\boldv\in V</m>, there is another element <m>-\boldv</m> satisfying
-                <m>
+                <men xml:id="eq_d_vec_inverse">
                   -\boldv+\boldv=\boldv+(-\boldv)=\boldzero
-                </m>.
-                We call <m>-\boldv</m> is called the <term>vector inverse</term>  of <m>\boldv</m>.
+                </men>.
+                We call <m>-\boldv</m> the <term>vector inverse</term>  of <m>\boldv</m>.
                 </p>
               </li>
               <li>
@@ -201,6 +201,132 @@
                   </p>
             </statement>
           </remark>
+          <p>
+            Note that <xref ref="d_vector_space"/> leaves open what exactly the vector operations of a vector space <m>V</m> are, and which element of <m>V</m> plays the role of the zero vector. In general, when introducing a vector space <m>V</m> you must yourself define what vector addition and scalar multiplication are, and then set about verifying that this choice of operations satisfies the vector space axioms. Let's see how to do this with <m>\R^n</m> along with the vector operations defined in <xref ref="d_Rn_vec_ops"/>. 
+          </p>
+          <theorem xml:id="th_Rn_vector_space">
+            <statement>
+                <p>
+                    Fix a positive integer <m>n</m>. 
+                                The set <m>\R^n</m>, together with the vector addition and scalar multiplication operations defined in <xref ref="d_Rn_vec_ops"/>, is a vector space.
+                </p>
+            </statement>
+            <proof>
+                <p>
+                    We will verify axioms (ii), (iii),(iv), and (vi), and leave the rest as an  exercise. In what follows, <m>\boldx=(x_1,x_2,\dots, x_n), \boldy=(y_1,y_2,\dots, y_n), \boldz=(z_1,z_2,\dots, z_n)</m> will denote arbitrary elements of <m>\R^n</m>, and  <m>c,d</m> will denote arbitrary elements of <m>\R</m>.
+                </p>
+                <case>
+                    <title>Axiom (ii)</title>
+                    <p>
+                    We have 
+                    <md>
+                        <mrow>(\boldx+\boldy)+\boldz \amp = (x_1+y_1,x_2+y_2,\dots, x_n+y+n)+\boldz \amp \text{(def. of vec. add.)}</mrow>
+                        <mrow> \amp = ((x_1+y_1)+z_1,(x_2+y_2)+z_2,\dots, (x_n+y_n)+z_n) \amp \text{(def. of vec. add.)}</mrow>
+                        <mrow> \amp = (x_1+(y_1+z_1),\dots, x_n+(y_n+z_n)) \amp \text{(assoc. of real add.)}</mrow>
+                        <mrow> \amp =\boldx+(\boldy+\boldz) </mrow>
+                    </md>.
+                    </p>
+                    </case>
+                    <case>
+                    <title>Axiom (iii)</title>
+                    <p>
+                        We claim that <m>\boldzero=(0,0,\dots, 0)</m> satisfies <xref ref="eq_d_zero_vector"/>. Indeed, for all <m>\boldx\in \R^n</m> we have 
+                        <md>
+                            <mrow>\boldzero+\boldx \amp = (0+x_1,0+x_2,\dots, 0+x_n)\amp \text{(def. of vec. add.)}</mrow>
+                            <mrow> \amp = (x_1,x_2,\dots, x_n)</mrow>
+                            <mrow> \amp =\boldx</mrow>
+                        </md>,
+                        as desired.
+                    </p>
+                    </case>
+                    <case>
+                        <title>Axiom (iv)</title>
+                        <p>
+                            We claim that given any <m>\boldx=(x_1,x_2,\dots, x_n)</m>, the vector <m>-\boldx=(-x_1,-x_2,\dots, -x_n)</m> satisfies <xref ref="eq_d_vec_inverse"/>. Indeed, we have 
+                            <md>
+                                <mrow>(-x_1,-x_2,\dots, -x_n)+(x_1,x_2,\dots, x_n) \amp =(-x_1+x_1,-x_2+x_2,\dots, -x_n+x_n) \amp \text{(def. of vec. add.)}</mrow>
+                                <mrow> \amp = (0,0,\dots, 0)</mrow>
+                                <mrow> \amp = \boldzero</mrow>
+                            </md>,
+                            as desired. 
+                        </p>
+                        </case>
+                        <case>
+                        <title>Axiom (vi)</title>
+                        <p>
+                            For all <m>c,d\in \R</m> and <m>\boldx\in \R^n</m>, we have 
+                            <md>
+                                <mrow> (c+d)\boldx \amp = ((c+d)x_1,(c+d)x_2,\dots, (c+d)x_n) \amp \text{(def. of sc. mult.)} </mrow>
+                                <mrow> \amp =(cx_1+dx_1,cx_2+dx_2,\dots, cx_n+dx_n) \amp \text{(dist. prop. of reals)}</mrow>
+                                <mrow> \amp =(cx_1,\dots, cx_n)+(cy_1,\dots, cy_n) \amp \text{(def. of vec. add.)}</mrow>
+                                <mrow> \amp =c\boldx+d\boldx \amp \text{(def. of sc. mult.)}</mrow>
+                            </md>.
+                        </p>
+                        </case>
+            </proof>
+          </theorem>
+          <p>
+            We will meet a few other examples of vector spaces later. For now, we give two simple examples that illustrate how when introducing a vector space, <em>we</em> get to decide what the vector operations are. 
+          </p>
+          <example>
+            <title>Zero vector space</title>
+            <statement>
+                <p>
+                    Let <m>V=\{\bot\}</m>, a set containing exactly one element. Show that <m>V</m> has a unique vector space structure, with respect to which <m>\bot</m> must be the zero vector of <m>V</m>, and hence that <m>V=\{\bot\}=\{\boldzero\}</m>.  
+                </p>   
+            </statement>
+            <solution>
+                <p>
+                    Since <m>\bot</m> is the only element of <m>V</m>, we must define vector addition and scalar multiplication as follows: 
+                    <md>
+                        <mrow>\bot+\bot \amp = \bot</mrow>
+                        <mrow>c\cdot \bot \amp = \bot \text{ for all } c\in \R</mrow>
+                    </md>.
+                 It is then easy to see that <m>V</m> together with these operations constitutes a vector space.
+                </p>
+                <p>
+                    Indeed, starting with axiom (iii), since <m>V</m> contains only one element, our only possible choice for the zero vector of <m>V</m> is <m>\boldzero=\bot</m>. Furthermore, this choice clearly satisfies <xref ref="eq_d_zero_vector"/>, since for all <m>\boldv\in V</m> we have <m>\boldv=\bot</m> (since <m>V=\{\bot\}</m>) and thus 
+                    <md>
+                        <mrow>\bot+\boldv \amp =\bot+\bot</mrow>
+                        <mrow> \amp = \bot</mrow>
+                        <mrow> \amp =\boldv</mrow>
+                    </md>.
+                    Similarly, to show that vector inverses exist (axiom (iv)) amounts to showing that <m>\bot</m> has a vector inverse. Defining <m>-\bot=\bot</m>, we see that 
+                    <md>
+                        <mrow>-\bot+\bot \amp = \bot+\bot</mrow>
+                        <mrow> \amp = \bot</mrow>
+                        <mrow> \amp = \boldzero</mrow>
+                    </md>,
+                    since <m>\bot=\boldzero</m>, as we have already determined. 
+                </p>
+                <p>
+                    Similarly, the identities of axioms (i)-(ii) and (v)-(viii) are easy to verify, and amount to trivial statements. Consider axiom (vii), for example.  For all <m>\boldv,\boldw\in V</m>, we have <m>\boldv=\boldw=\bot</m>, in which case
+                    <md>
+                        <mrow>c(\boldv+\boldw) \amp =c(\bot+\bot) </mrow>
+                        <mrow> \amp =c\cdot \bot</mrow>
+                        <mrow> \amp = \bot \amp \text{(def. of sc. mult.)}</mrow>
+                    </md> and 
+                    <md>
+                        <mrow>c\boldv+d\boldw \amp =c\cdot \bot+d\cdot \bot</mrow>
+                        <mrow> \amp = \bot+\bot</mrow>
+                        <mrow> \amp =\bot</mrow>. 
+                    </md>
+                    Thus 
+                    <me>
+                        c(\boldv+\boldw)=\bot=c\boldv+d\boldw 
+                    </me>
+                    for all <m>\boldv, \boldw\in V</m>. 
+                </p>
+            </solution>
+          </example>
+          <definition xml:id="d_zero_space">
+            <title>Zero space</title>
+            <statement>
+                <p>
+                    A vecto r space <m>V=\{\boldzero\}</m> consisting of a single vector is called a <term>zero space</term>. 
+                </p>
+            </statement>
+          </definition>
    </subsection>
 
 </section>
