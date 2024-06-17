@@ -108,7 +108,7 @@ window.MathJax = {
 </head>
 <body id="euclideanvectorspaces" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href="http://linear-algebra.northwestern.pub/"><img src="external/images/im_holycomm.svg" alt="Logo image"></a><div class="title-container">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
 <h1 class="heading"><a href="euc_vec_spaces.html"><span class="title">Euclidean vector spaces</span></a></h1>
 <p class="byline">Aaron Greicius</p>
 </div>
@@ -422,13 +422,28 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="c_linear_systems.html" class="internal"><span class="codenumber">1</span> <span class="title">Euclidean <span class="process-math">\(n\)</span>-space</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_Rn.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Vector space structure of <span class="process-math">\(\R^n\)</span></span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_Rn.html#ss_nspace" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Real <span class="process-math">\(n\)</span>-space</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_Rn.html#ss_Rn_vector_space" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Vector operations</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_Rn.html#ss_nspace" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Vector operations on <span class="process-math">\(\R^n\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_Rn.html#ss_vec_spaces" class="internal"><span class="title">Vector spaces</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_Rn.html#ss_Rn_visual" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Visualizing <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_Rn.html#s_Rn_ex" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
-</li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_Rn_dot_product.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Inner product structure of <span class="process-math">\(\R^n\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_Rn_dot_product.html#ss_dot_product" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Dot product and inner products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_Rn_dot_product.html#ss_length_angles" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Length and angles in inner product spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_Rn_dot_product.html#s_Rn_dot_product-5" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Cauchy-Schwarz inequality, triangle inequalities, and angles between vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_Rn_dot_product.html#s_Rn_dot_product-6" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Choosing your inner product</span></a></div></li>
+</ul>
+</li>
+</ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="c_linear_systems.html" class="internal"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a></div>
@@ -533,6 +548,17 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </h4>
 <div>
 <a href="s_proof_technique.html#fig_proof_induction" class="xref" data-knowl="./knowl/list-of/fig_proof_induction.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 0.5.9: Mathematical induction as ladder of propositions">Figure 0.5.9</a> Mathematical induction as ladder of propositions</div>
+<h4 class="heading hide-type" title="Section 1.1: Vector space structure of \R^n">
+<span class="codenumber">1.1</span><span class="space"> </span><span class="title">Vector space structure of <span class="process-math">\(\R^n\)</span></span>
+</h4>
+<div>
+<a href="s_Rn.html#fig_point" class="xref" data-knowl="./knowl/list-of/fig_point.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.17: Point visualization of triple">Figure 1.1.17</a> Point visualization of triple</div>
+<div>
+<a href="s_Rn.html#fig_vec_vis" class="xref" data-knowl="./knowl/list-of/fig_vec_vis.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.18: Vector visualization of triple">Figure 1.1.18</a> Vector visualization of triple</div>
+<div>
+<a href="s_Rn.html#fig_tip_tail" class="xref" data-knowl="./knowl/list-of/fig_tip_tail.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.19: Tip-to-tail visualization of vector addition">Figure 1.1.19</a> Tip-to-tail visualization of vector addition</div>
+<div>
+<a href="s_Rn.html#fig_scal_mult" class="xref" data-knowl="./knowl/list-of/fig_scal_mult.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.1.20: Tip-to-tail visualization of vector addition">Figure 1.1.20</a> Tip-to-tail visualization of vector addition</div>
 <h4 class="heading hide-type" title="Section 2.1: Systems of linear equations">
 <span class="codenumber">2.1</span><span class="space"> </span><span class="title">Systems of linear equations</span>
 </h4>

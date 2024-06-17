@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "pre.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script>
+</head>
+<body class="ignore-math">
+<article class="project project-like"><h4 class="heading">
+<span class="type">Sage example</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Vector operations on <span class="process-math">\(\R^n\)</span>.</span>
+</h4> <div class="para">To create a vector in Sage, use the <code class="code-inline tex2jax_ignore">vector()</code> command. The input should be a sequence of numbers enclosed in brackets. <pre id="sage_vec_ops-2-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v=vector([1,2,3,4])
+v
+</script></pre> You can make use of sequence routines to create special sequences. <pre id="sage_vec_ops-2-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v=vector(range(3))
+w=vector([1,2]*4)
+v,w
+</script></pre> If you prefer the two outputs above to not be listed as a pair, you can use the print() command in sequence. (This is a peculiarity of interactive SageCells, not Sage itself.) <pre id="sage_vec_ops-2-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v=vector(range(3))
+w=vector([1,2]*4)
+print(v)
+print(w)
+</script></pre> The standard vector operations of <span class="process-math">\(\R^n\)</span> are implemented using an intuitive syntax in Sage. <pre id="sage_vec_ops-2-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v=vector([1,2,3,4])
+w=vector([1]*4)
+(-2)*v, v+w, v+2*w
+</script></pre> Once a vector <code class="code-inline tex2jax_ignore">v</code> is created in Sage, various properties of the vector can be computed using the <code class="code-inline tex2jax_ignore">v.foo()</code> syntax. For example, the command <code class="code-inline tex2jax_ignore">v.length()</code> returns the length of the vector <code class="code-inline tex2jax_ignore">v</code>. <pre id="sage_vec_ops-2-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v=vector([1,2,3]*100)
+v.length()
+</script></pre>
+</div></article><span class="incontext"><a class="internal" href="s_Rn.html#sage_vec_ops">in-context</a></span>
+</body>
+</html>

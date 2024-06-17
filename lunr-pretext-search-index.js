@@ -862,7 +862,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.1",
   "title": "Vector space structure of <span class=\"process-math\">\\(\\R^n\\)<\/span>",
-  "body": " Vector space structure of   What is a Euclidean vector space? Getting ahead of ourselves somewhat, it is a finite-dimensional vector space over the real numbers along with an inner product . In this chapter we will begin to make sense of some of these notions: specifically, we will define vector spaces and inner products on vector spaces. We will also introduce what will be for us essentially the only example of a Euclidean vector space: namely, along with its standard vector operations and the dot product. This might strike the reader as a somewhat overly restricted focus: if there are other examples of Euclidean spaces out there, why not invite them in? As it turns out, an -centered treatment of linear algebra will give us plenty of rich material to deal with in this introductory course. Furthermore, although there are other exotic examples of Euclidean vector spaces, they are all structurally equivalent to (for some positive integer ) with its usual vector operations and the dot product. More precisely, getting ahead of ourselves once again, any two -dimensional Euclidean vector spaces are isomorphic to one another. (We will make sense of this notion also, in due time.) As a result, the theory of linear algebra and inner product spaces, as articulated in the specific context of , can be seen as entirely characteristic of the general theory.    Real -space  Given a positive integer , we denote by the set of all -tuples of real numbers. Tuples are treated in more detail in . In short, as defined in , an -tuple is an ordered sequence of elements. The defining property of tuples is that they are ordered objects, as opposed to unordered. This is captured by the notion of equality between tuples: we have if and only if for all .  You have probably encountered and as models of physical space (planar and three-dimensional). Perhaps you have even encountered as a model of relativistic space-time. In keeping with this tradition, we will call  (real) -space .   Real -space    set of real -tuples    Let be a positive integer. The set of all real -tuples is called real -space (or just -space ) and is denoted : , .      Vector operations  We now introduce the standard vector operations on , so called as they give the structure of a vector space .   Vector operations   Let be a positive integer.   Vector addition in  Given elements -tuples and , we define their vector sum  as . The operation is called vector addition .    Scalar multiplication in  Given an -tuple and a real number , the -tuple defined as is called the scalar multiple of by . The operation is called scalar multiplication .    Zero vector of  The zero vector of , denoted , is defined as , the -tuple consisting of all zeros.    Vector inverses in  The vector inverse  of an element , is defined as . The operation is called the vector inverse operation.        Vector operations input\/output  It is a good habit, when dealing with a variety of types of mathematical operations, to have in your mind a qualitative summary of what their inputs and outputs are. For example, vector addition in takes as input a pair of -tuples, and , and returns as output a third -tuple . By contrast, scalar multiplication in is a sort of hybrid operation that takes as input a real number and -tuple and returns as output a new -tuple .   Before looking at examples of these vector operations and seeing how we can visualize them, we will jump to the heart of the matter. The four structural elements of defined in (viz., vector addition, scalar multiplication, the zero vector, and vector inverses) are the ingredients we need to make it a vector space, as we now define. It remains only to show that these various operations on are sufficiently well-behaved: , they satisfy the vector space axioms .   Vector space  vector space definition  vector space zero vector  vector space vector inverse  vector space vector   A real vector space is a set together with two operations , called respectively vector addition and scalar multiplication , that satify the following vector space axioms .   Vector addition is commutative   for all .    Vector addition is associative   for all .    Zero vector  There is an element such that for all , we have . We call the zero vector of .    Additive inverses  For all , there is another element satisfying . We call the vector inverse of .    Distribution over vector addition   for all and .    Distribution over scalar addition   for all and .    Scalar multiplication is associative   for all and all .    Scalar multiplication identity   for all .   We call elements of a vector space vectors and the elements of  scalars .     (Real) vector spaces   It is possible to define the notion of a vector space over general number systems of a special type: namely, number systems that satisfy the field axioms . Given such a number system , we get the definition of a vector space over simply by replacing every instance of in with . Setting , for example, we get the definition of a complex vector space. For our purposes, we will deal almost exclusively with real vector spaces, and accordingly will not use the real modifier unless necessary.    Note that leaves open what exactly the vector operations of a vector space are, and which element of plays the role of the zero vector. In general, when introducing a vector space you must yourself define what vector addition and scalar multiplication are, and then set about verifying that this choice of operations satisfies the vector space axioms. Let's see how to do this with along with the vector operations defined in .    Fix a positive integer . The set , together with the vector addition and scalar multiplication operations defined in , is a vector space.    We will verify axioms (ii), (iii),(iv), and (vi), and leave the rest as an exercise. In what follows, will denote arbitrary elements of , and will denote arbitrary elements of .   Axiom (ii)  We have .    Axiom (iii)  We claim that satisfies . Indeed, for all we have , as desired.    Axiom (iv)  We claim that given any , the vector satisfies . Indeed, we have , as desired.    Axiom (vi)  For all and , we have .     We will meet a few other examples of vector spaces later. For now, we give two simple examples that illustrate how when introducing a vector space, we get to decide what the vector operations are.   Zero vector space   Let , a set containing exactly one element. Show that has a unique vector space structure, with respect to which must be the zero vector of , and hence that .    Since is the only element of , we must define vector addition and scalar multiplication as follows: . It is then easy to see that together with these operations constitutes a vector space.  Indeed, starting with axiom (iii), since contains only one element, our only possible choice for the zero vector of is . Furthermore, this choice clearly satisfies , since for all we have (since ) and thus . Similarly, to show that vector inverses exist (axiom (iv)) amounts to showing that has a vector inverse. Defining , we see that , since , as we have already determined.  Similarly, the identities of axioms (i)-(ii) and (v)-(viii) are easy to verify, and amount to trivial statements. Consider axiom (vii), for example. For all , we have , in which case and Thus for all .     Zero space   A vector space consisting of a single vector is called a zero space .     "
+  "body": " Vector space structure of   What is a Euclidean vector space? Getting ahead of ourselves somewhat, it is a finite-dimensional vector space over the real numbers along with an inner product . In this chapter we will begin to make sense of some of these notions: specifically, we will define vector spaces and inner products on vector spaces. We will also introduce what will be for us essentially the only example of a Euclidean vector space: namely, along with its standard vector operations and the dot product. This might strike the reader as a somewhat overly restricted focus: if there are other examples of Euclidean spaces out there, why not invite them in? As it turns out, an -centered treatment of linear algebra will give us plenty of rich material to deal with in this introductory course. Furthermore, although there are other exotic examples of Euclidean vector spaces, they are all structurally equivalent to (for some positive integer ) with its usual vector operations and the dot product. More precisely, getting ahead of ourselves once again, any two -dimensional Euclidean vector spaces are isomorphic to one another. (We will make sense of this notion also, in due time.) As a result, the theory of linear algebra and inner product spaces, as articulated in the specific context of , can be seen as entirely characteristic of the general theory.    Vector operations on  Given a positive integer , we denote by the set of all -tuples of real numbers. Tuples are treated in more detail in . In short, as defined in , an -tuple is an ordered sequence of elements. The defining property of tuples is that they are ordered objects, as opposed to unordered. This is captured by the notion of equality between tuples: we have if and only if for all .  You have probably encountered and as models of planar and three-dimensional space. Perhaps you have even encountered as a model of relativistic space-time. In keeping with this tradition, we will call  (real) -space .   Real -space    set of real -tuples    Let be a positive integer. The set of all real -tuples is called real -space (or just -space ) and is denoted : , .    We now introduce the standard vector operations on , so called as they give the structure of a vector space .   Vector operations of   Let be a positive integer. We will call the operations below the standard vector operations on .   Vector addition on  Given elements -tuples and , we define their vector sum  as . The operation is called vector addition .    Scalar multiplication on  Given an -tuple and a real number , the -tuple defined as is called the scalar multiple of by . The operation is called scalar multiplication .        Vector operations input\/output  It is a good habit, when dealing with a variety of types of mathematical operations, to have in your mind a qualitative summary of what their inputs and outputs are. For example, vector addition in takes as input a pair of -tuples, and , and returns as output the -tuple . By contrast, scalar multiplication in is a sort of hybrid operation that takes as input a real number and -tuple and returns as output a new -tuple .   The mores of conventional textbook writing dictate that we provide some examples of these vector operations on , as unenlightening as they may be. Instead, we give you an interactive SageCell that will allow you to create and play with examples on your own. The cells in can be evaluated by clicking the Evaluate (Sage) button, or by typing shift+return . You can experiment by editing the code in these cells and then evaluating.   Vector operations on   To create a vector in Sage, use the vector() command. The input should be a sequence of numbers enclosed in brackets. You can make use of sequence routines to create special sequences. If you prefer the two outputs above to not be listed as a pair, you can use the print() command in sequence. (This is a peculiarity of interactive SageCells, not Sage itself.) The standard vector operations of are implemented using an intuitive syntax in Sage. Once a vector v is created in Sage, various properties of the vector can be computed using the v.foo() syntax. For example, the command v.length() returns the length of the vector v .     Vector spaces  We now jump to the heart of the matter, which is that , together with its standard vector operations, constitutes an example of an important type of mathematical object called a vector space , which we now define.    Vector space  vector space definition  vector space zero vector  vector space vector inverse  vector space vector   A real vector space is a set together with two operations , called respectively vector addition and scalar multiplication , that satify the following vector space axioms .   Vector addition is commutative   for all .    Vector addition is associative   for all .    Zero vector  There is an element such that for all , we have . We call the zero vector of .    Vector inverses  For all , there is another element satisfying . We call the vector inverse of .    Distribution over vector addition   for all and .    Distribution over scalar addition   for all and .    Scalar multiplication is associative   for all and all .    Scalar multiplication identity   for all .   We call elements of a vector space vectors and the elements of  scalars .     (Real) vector spaces  It is possible to define the notion of a vector space over number systems other than the real numbers . For example, by replacing every instance of in with , we get the definition of a complex vector space. For our purposes, we will deal almost exclusively with real vector spaces, and accordingly will not use the real modifier unless absolutely necessary.   It is essential to understand the very general nature of . The definition does not specify what the underlying set of the vector space is, or what the vector operations are. Rather, it allows for any set and any choice of operations to be called a vector space, as long as our choices satisfy the vector space axioms. In this sense, the act of establishing a vector space consists of first making a sequence of declarations ( vector addition and scalar multiplication are defined like so , this element is the zero vector of our space , we define the vector inverse of elements like so ), and then verifying that these various choices satisfy the vector axioms. provides a useful model for carrying out these steps.   Verifying vector space axioms   To introduce and verify a vector space, proceed as follows.   Make explicit the underlying set of the vector space.    Define the operations that serve as vector addition and scalar multiplication.    Identify the zero vector of and verify that it satisfies the identity of Axiom .    Define the rule that assigns to each vector its vector inverse and verify that this definition of satisfies the identity of Axiom .    Verify that the vector operations satisfy Axioms i-ii and v-viii.       Note how highlights the special role played by Axioms . These are sometimes called the existential axioms , as they posit the existence of certain special elements of : a vector satisfying the identity of Axiom that is denoted , and for all vectors , a vector inverse denoted that satisfies the identity of Axiom . Note also that our choice of inverse vectors in Axiom depends on our choice of the zero vector in Axiom , as this appears in the defining identity of Axiom .  Let's apply to verify that , together with the vector operations defined in , constitutes a vector space.    Fix a positive integer .   The set , together with the vector addition and scalar multiplication operations defined in , is a vector space.    The zero vector of the vector space is the -tuple consisting of all zeros: , we have .    Given a vector , its inverse vector is : , we have .       The statement itself of the theorem has already taken care of some of the steps of : it has identified the underlying set and proposed vector operations (steps (1)-(2)), and it has identified the zero vector and the rule for computing inverse vectors (steps (3)-(4)). It remains to show that the proposed zero vectors and inverse vectors satisfy the identities of Axioms , and that Axioms (i)-(ii) and (v)-(viii) are satisfied. We first consider Axioms .   Axiom iii  We claim that satisfies the identity of Axiom , and thus that . Indeed, for all we have , as desired.    Axiom iv  We claim that given any , the vector satisfies the identity of Axiom , and thus that . Indeed, we have , as desired.   As for the remaining axioms, we will verify Axioms (ii) and (vi), and leave the rest as an exercise. As you see below, the desired identities here all boil down to a familiar property of real number arithmetic: , commutativity of real number addition, real number distributivity, etc. In what follows, will denote arbitrary elements of , and will denote arbitrary elements of .   Axiom ii  We have .    Axiom vi  For all and , we have .     It should be noted that there are (infinitely) many different ways to define a vector space structure . From now on, however, we will assume without further comment that the vector operations on are the standard ones given in . With respect to these standard operations the zero vector and vector inverses of are as described in . We make this official below.   Vector space terminology for   Fix a positive integer . When treating as a vector space, -tuples are called -vectors .The zero vector of is defined as . Given an -vector , its vector inverse is the vector defined as .    Observe that for all -vectors we have . In other words, the vector inverse of is equal to the scalar multiple . As it turns out, this is not particular to the specific vector space , but rather a general property of all vector spaces, as we see in . In order to prove this and other properties for a general vector space , our arguments must rely only on the vector space axioms. In particular, we cannot assume that along with its standard vector operations, as this is but one example of a vector space.   Basic vector space properties   Let be a vector space.    for all .     for all .     for all .    For all , if , then or . Using logical shorthand: .       We prove (1), leaving (2)-(4) as an exercise.  First observe that , since .  By Axiom (vi) we have . Thus .  Now add , the vector inverse of , to both sides of the last equation: .  Now simplify this equation step by step using the axioms: .    Again, we emphasize that is just one example of a vector space: albeit, the example that we will mostly focus on. For good measure we include a few more examples of vector spaces here. (And we will also meet a few other examples later.) We begin with the simplest of all vector spaces, the zero space . Elementary as this example is, it serves well to illustrate the axiomatic nature of .   Zero space   Let , a set containing exactly one element. There is a unique vector space structure that can be given to , defined as follows.   Vector operations  Vector addition on is defined as ; scalar multiplication on is defined as for all .    Zero vector  The zero vector of is : , .    Vector inverses  The vector inverse of is : , .   Since with respect to this vector space structure, we have . We call a zero space .     makes two claims: that the given operations make into a vector space, and that this is the only way to make into a vector space. As with all claims in mathematics, these need to be proved, but as you will see, the proof is a very light affair.   Proof for  Since only has one item, there is no choice for what vector addition and scalar multiplciation can be. They must be defined in the manner given in . Similarly, we must have and , as once again, is the only element of ! This shows that there can be at most one way of giving a vector space structure.  It is now easy to see that these choices do indeed satisfy the vector space axioms. That satisfies the identity of Axiom defining the zero vector follows from the fact that for all we have (since ), and thus . Thus is the zero vector of the space.  Similarly, to show all elements of have vector inverses amounts to showing that has a vector inverse, since this is the only element of . It is claimed that ( , is its own vector inverse), which follows from the fact that . Lastly, the identities of Axioms i-ii and v-viii in this setting all reduce to trivial statements of the form . Consider Axiom vii, for example. For all , we have , in which case and . Thus for all .  We leave verification of the rest of the axioms to the reader.   We also include two exotic examples of vector spaces. We leave verification of the vector space axioms for these spaces as an exercise. (See and .)   Vector space of infinite sequences    vector space of infinite real sequences    Define to be the set of all infinite sequences: , . Vector addition and scalar multiplication of sequences is defined term-wise , exactly as with . In other words, given sequences and , and scalar , we define . In case you prefer the expanded notation for infinite sequences, we have: . The set together with these operations constitutes the vector space of infinite real sequences .    See .     Vector space of positive reals    vector space of positive real numbers    Define to be the set of all positive real numbers: , . Define vector addition on to be real number multiplication, and define scalar multiplication on to be real number exponentiation: , given vectors and in , and scalar , we define . Note: we have introduced new notation for our vector operations to help distinguish them from familiar real number arithmetic operations.  The set together with these operations constitutes the vector space of positive reals .    See .    Before returning to , we introduce another important notion from general vector spaces: linear combinations. As simple as the idea of a linear combination is, you will see that it plays a crucial role in many concepts to come.   Linear combination   Let be a vector space, and let be a collection of vectors of . A linear combination of the is a vector expression of the form , where for all . The scalars appearing in are called the coefficients of the linear combination. The linear combination is trivial if for all , and nontrivial if for some .  A vector is a linear combination of the if we have for some choice of scalars .     Linear combination   Let . Show that every vector in is a linear combination of the .    Given any vector , we have .     Linear combination   Express as a nontrivial linear combination of and .    Since clearly , we have . This is not the only nontrivial linear combination yielding . In fact we have for any scalar (including ).    It is natural to want to rewrite a linear combination of the form as . But of course this expression doesn't quite make sense. What we are missing is the vector difference operation.   Vector difference   Let be a vector space. Given vectors , we define their difference  as .      Visualizing  We will only explicitly visualize (or graph) elements of for and . However, these special cases bring to light an important point-vector duality in how we conceive of -tuples that carries over into higher values of . Fix for now. We will sometimes conceive of a triple as a point , in which case we will use capital letters to denote the triple ( , ), and will represent the point visually with respect to a coordinate system as the point in -space reached by starting at the origin and moving a directed distance units in the -direction, units in the -direction and units in the -direction.   Point visualization of triple   Point visualization of triple. Made with GeoGebra .   Alternatively, when conceiving of a triple as a vector , we will use lowercase bold letters to denote it ( , or ), and represent it visually as a directed line segment ( , an arrow). In more detail, given the 3-vector , we choose an initial point  and represent as the directed line segment that starts at and ends at the point , the terminal point of . Note that in this manner we get infinitely-many different graphical representations of , one for each choice of starting point . Although these are technically different arrows (they have different starting points), we consider them to be equal as vectors . You can think of each particular choice of arrow-representation as an instance or incarnation of the vector . When the initial point of our arrow representation is chosen to be the origin , we have , where . We call the position vector of the point .   Vector visualization of triple   Vector visualization of triple . Drag to change the vector . Drag to change the initial point of . Made with GeoGebra .   The representation of vectors as arrows gives rise to the so-called tip-to-tail interpretation of vector addition. Let and . Starting with an initial point , we can represent as , where , and , where . But then we have , or alternatively, . In other words, if we choose our arrow representations so that the terminal point (the tip) of is placed at the initial point (the tail) of , then is represented by the arrow whose initial point is , and whose terminal point is reached by first traveling along , and then traveling along .   Tip-to-tail visualization of vector addition   Tip-to-tail visualization of vector addition. Made with GeoGebra .   Next consider scalar multiplication. Given a vector and a scalar , the scalar multiple can be represented as an arrow that starts at and points along the line containing . As we will see in the next section, the length of the resulting arrow is multiplied by the factor , resulting in a stretched arrow if and a shrunk arrow if . Furthermore, if , then the arrow representing points in the same direction as ; if , it points in the opposite direction.   Tip-to-tail visualization of vector addition   Visualization of scalar multiplication. Drag point labeled $k$ to change scalar. Made with GeoGebra .      Vector space examples   Show that the given set together with the given operations constitutes a vector space by verifying that the vector axioms hold. Follow . In particular, explicitly identify what element of the set acts as the zero vector , and how vector inverses of elements are defined.   Infinite sequences  Define to be the set of all infinite sequences: , . Define vector addition and scalar multiplication as follows: . In case you prefer the expanded notation for infinite sequences, we have: .   Positive reals  Define to be the set of all positive real numbers: , . Define vector addition on to be real number multiplication, and define scalar multiplication on to be real number exponentiation: , given vectors and in , and scalar , we define . Note: we have introduced new notation for our vector operations to help distinguish them from familiar real number arithmetic operations.     Prove statements (2)-(4) of . When treating a specific part you may assume the results of any part that has already been proven, including statement (1).    Let be a vector space.   Show that the zero vector of is unique: , show that if satisfies for all , then .    Fix . Show that the vector inverse of is unique: , show that if , then .   Thus we may speak of the zero vector of a vector space, and the vector inverse of a vector .    Let be a vector space. Prove: .    Let be a vector space. Prove that either ( , is the zero space) or is infinite. In other words, a vector space contains either exactly one element or infinitely many elements.   Assume contains a nonzero vector . Show that if , then . You assume the results of .    "
 },
 {
   "id": "d_Rn",
@@ -879,17 +879,26 @@ var ptx_lunr_docs = [
   "url": "s_Rn.html#d_Rn_vec_ops",
   "type": "Definition",
   "number": "1.1.2",
-  "title": "Vector operations.",
-  "body": " Vector operations   Let be a positive integer.   Vector addition in  Given elements -tuples and , we define their vector sum  as . The operation is called vector addition .    Scalar multiplication in  Given an -tuple and a real number , the -tuple defined as is called the scalar multiple of by . The operation is called scalar multiplication .    Zero vector of  The zero vector of , denoted , is defined as , the -tuple consisting of all zeros.    Vector inverses in  The vector inverse  of an element , is defined as . The operation is called the vector inverse operation.      "
+  "title": "Vector operations of <span class=\"process-math\">\\(\\R^n\\)<\/span>.",
+  "body": " Vector operations of   Let be a positive integer. We will call the operations below the standard vector operations on .   Vector addition on  Given elements -tuples and , we define their vector sum  as . The operation is called vector addition .    Scalar multiplication on  Given an -tuple and a real number , the -tuple defined as is called the scalar multiple of by . The operation is called scalar multiplication .      "
 },
 {
-  "id": "ss_Rn_vector_space-4",
+  "id": "ss_nspace-7",
   "level": "2",
-  "url": "s_Rn.html#ss_Rn_vector_space-4",
+  "url": "s_Rn.html#ss_nspace-7",
   "type": "Remark",
   "number": "1.1.3",
   "title": "Vector operations input\/output.",
-  "body": " Vector operations input\/output  It is a good habit, when dealing with a variety of types of mathematical operations, to have in your mind a qualitative summary of what their inputs and outputs are. For example, vector addition in takes as input a pair of -tuples, and , and returns as output a third -tuple . By contrast, scalar multiplication in is a sort of hybrid operation that takes as input a real number and -tuple and returns as output a new -tuple .  "
+  "body": " Vector operations input\/output  It is a good habit, when dealing with a variety of types of mathematical operations, to have in your mind a qualitative summary of what their inputs and outputs are. For example, vector addition in takes as input a pair of -tuples, and , and returns as output the -tuple . By contrast, scalar multiplication in is a sort of hybrid operation that takes as input a real number and -tuple and returns as output a new -tuple .  "
+},
+{
+  "id": "sage_vec_ops",
+  "level": "2",
+  "url": "s_Rn.html#sage_vec_ops",
+  "type": "Sage example",
+  "number": "1.1.1",
+  "title": "Vector operations on <span class=\"process-math\">\\(\\R^n\\)<\/span>.",
+  "body": " Vector operations on   To create a vector in Sage, use the vector() command. The input should be a sequence of numbers enclosed in brackets. You can make use of sequence routines to create special sequences. If you prefer the two outputs above to not be listed as a pair, you can use the print() command in sequence. (This is a peculiarity of interactive SageCells, not Sage itself.) The standard vector operations of are implemented using an intuitive syntax in Sage. Once a vector v is created in Sage, various properties of the vector can be computed using the v.foo() syntax. For example, the command v.length() returns the length of the vector v .   "
 },
 {
   "id": "d_vector_space",
@@ -898,7 +907,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "1.1.4",
   "title": "Vector space.",
-  "body": " Vector space  vector space definition  vector space zero vector  vector space vector inverse  vector space vector   A real vector space is a set together with two operations , called respectively vector addition and scalar multiplication , that satify the following vector space axioms .   Vector addition is commutative   for all .    Vector addition is associative   for all .    Zero vector  There is an element such that for all , we have . We call the zero vector of .    Additive inverses  For all , there is another element satisfying . We call the vector inverse of .    Distribution over vector addition   for all and .    Distribution over scalar addition   for all and .    Scalar multiplication is associative   for all and all .    Scalar multiplication identity   for all .   We call elements of a vector space vectors and the elements of  scalars .   "
+  "body": " Vector space  vector space definition  vector space zero vector  vector space vector inverse  vector space vector   A real vector space is a set together with two operations , called respectively vector addition and scalar multiplication , that satify the following vector space axioms .   Vector addition is commutative   for all .    Vector addition is associative   for all .    Zero vector  There is an element such that for all , we have . We call the zero vector of .    Vector inverses  For all , there is another element satisfying . We call the vector inverse of .    Distribution over vector addition   for all and .    Distribution over scalar addition   for all and .    Scalar multiplication is associative   for all and all .    Scalar multiplication identity   for all .   We call elements of a vector space vectors and the elements of  scalars .   "
 },
 {
   "id": "rm_vectorspace_real",
@@ -907,34 +916,439 @@ var ptx_lunr_docs = [
   "type": "Remark",
   "number": "1.1.5",
   "title": "(Real) vector spaces.",
-  "body": " (Real) vector spaces   It is possible to define the notion of a vector space over general number systems of a special type: namely, number systems that satisfy the field axioms . Given such a number system , we get the definition of a vector space over simply by replacing every instance of in with . Setting , for example, we get the definition of a complex vector space. For our purposes, we will deal almost exclusively with real vector spaces, and accordingly will not use the real modifier unless necessary.   "
+  "body": " (Real) vector spaces  It is possible to define the notion of a vector space over number systems other than the real numbers . For example, by replacing every instance of in with , we get the definition of a complex vector space. For our purposes, we will deal almost exclusively with real vector spaces, and accordingly will not use the real modifier unless absolutely necessary.  "
+},
+{
+  "id": "proc_vector_space",
+  "level": "2",
+  "url": "s_Rn.html#proc_vector_space",
+  "type": "Procedure",
+  "number": "1.1.6",
+  "title": "Verifying vector space axioms.",
+  "body": " Verifying vector space axioms   To introduce and verify a vector space, proceed as follows.   Make explicit the underlying set of the vector space.    Define the operations that serve as vector addition and scalar multiplication.    Identify the zero vector of and verify that it satisfies the identity of Axiom .    Define the rule that assigns to each vector its vector inverse and verify that this definition of satisfies the identity of Axiom .    Verify that the vector operations satisfy Axioms i-ii and v-viii.      "
 },
 {
   "id": "th_Rn_vector_space",
   "level": "2",
   "url": "s_Rn.html#th_Rn_vector_space",
   "type": "Theorem",
-  "number": "1.1.6",
+  "number": "1.1.7",
   "title": "",
-  "body": "  Fix a positive integer . The set , together with the vector addition and scalar multiplication operations defined in , is a vector space.    We will verify axioms (ii), (iii),(iv), and (vi), and leave the rest as an exercise. In what follows, will denote arbitrary elements of , and will denote arbitrary elements of .   Axiom (ii)  We have .    Axiom (iii)  We claim that satisfies . Indeed, for all we have , as desired.    Axiom (iv)  We claim that given any , the vector satisfies . Indeed, we have , as desired.    Axiom (vi)  For all and , we have .    "
+  "body": "  Fix a positive integer .   The set , together with the vector addition and scalar multiplication operations defined in , is a vector space.    The zero vector of the vector space is the -tuple consisting of all zeros: , we have .    Given a vector , its inverse vector is : , we have .       The statement itself of the theorem has already taken care of some of the steps of : it has identified the underlying set and proposed vector operations (steps (1)-(2)), and it has identified the zero vector and the rule for computing inverse vectors (steps (3)-(4)). It remains to show that the proposed zero vectors and inverse vectors satisfy the identities of Axioms , and that Axioms (i)-(ii) and (v)-(viii) are satisfied. We first consider Axioms .   Axiom iii  We claim that satisfies the identity of Axiom , and thus that . Indeed, for all we have , as desired.    Axiom iv  We claim that given any , the vector satisfies the identity of Axiom , and thus that . Indeed, we have , as desired.   As for the remaining axioms, we will verify Axioms (ii) and (vi), and leave the rest as an exercise. As you see below, the desired identities here all boil down to a familiar property of real number arithmetic: , commutativity of real number addition, real number distributivity, etc. In what follows, will denote arbitrary elements of , and will denote arbitrary elements of .   Axiom ii  We have .    Axiom vi  For all and , we have .    "
 },
 {
-  "id": "ss_Rn_vector_space-11",
+  "id": "d_Rn_vector_space",
   "level": "2",
-  "url": "s_Rn.html#ss_Rn_vector_space-11",
-  "type": "Example",
-  "number": "1.1.7",
-  "title": "Zero vector space.",
-  "body": " Zero vector space   Let , a set containing exactly one element. Show that has a unique vector space structure, with respect to which must be the zero vector of , and hence that .    Since is the only element of , we must define vector addition and scalar multiplication as follows: . It is then easy to see that together with these operations constitutes a vector space.  Indeed, starting with axiom (iii), since contains only one element, our only possible choice for the zero vector of is . Furthermore, this choice clearly satisfies , since for all we have (since ) and thus . Similarly, to show that vector inverses exist (axiom (iv)) amounts to showing that has a vector inverse. Defining , we see that , since , as we have already determined.  Similarly, the identities of axioms (i)-(ii) and (v)-(viii) are easy to verify, and amount to trivial statements. Consider axiom (vii), for example. For all , we have , in which case and Thus for all .   "
+  "url": "s_Rn.html#d_Rn_vector_space",
+  "type": "Definition",
+  "number": "1.1.8",
+  "title": "Vector space terminology for <span class=\"process-math\">\\(\\R^n\\)<\/span>.",
+  "body": " Vector space terminology for   Fix a positive integer . When treating as a vector space, -tuples are called -vectors .The zero vector of is defined as . Given an -vector , its vector inverse is the vector defined as .   "
+},
+{
+  "id": "th_vectorspace_props",
+  "level": "2",
+  "url": "s_Rn.html#th_vectorspace_props",
+  "type": "Theorem",
+  "number": "1.1.9",
+  "title": "Basic vector space properties.",
+  "body": " Basic vector space properties   Let be a vector space.    for all .     for all .     for all .    For all , if , then or . Using logical shorthand: .       We prove (1), leaving (2)-(4) as an exercise.  First observe that , since .  By Axiom (vi) we have . Thus .  Now add , the vector inverse of , to both sides of the last equation: .  Now simplify this equation step by step using the axioms: .   "
 },
 {
   "id": "d_zero_space",
   "level": "2",
   "url": "s_Rn.html#d_zero_space",
   "type": "Definition",
-  "number": "1.1.8",
+  "number": "1.1.10",
   "title": "Zero space.",
-  "body": " Zero space   A vector space consisting of a single vector is called a zero space .   "
+  "body": " Zero space   Let , a set containing exactly one element. There is a unique vector space structure that can be given to , defined as follows.   Vector operations  Vector addition on is defined as ; scalar multiplication on is defined as for all .    Zero vector  The zero vector of is : , .    Vector inverses  The vector inverse of is : , .   Since with respect to this vector space structure, we have . We call a zero space .   "
+},
+{
+  "id": "ss_nspace-25",
+  "level": "2",
+  "url": "s_Rn.html#ss_nspace-25",
+  "type": "Proof",
+  "number": "1.1.1.1",
+  "title": "Proof for Definition 1.1.10.",
+  "body": " Proof for  Since only has one item, there is no choice for what vector addition and scalar multiplciation can be. They must be defined in the manner given in . Similarly, we must have and , as once again, is the only element of ! This shows that there can be at most one way of giving a vector space structure.  It is now easy to see that these choices do indeed satisfy the vector space axioms. That satisfies the identity of Axiom defining the zero vector follows from the fact that for all we have (since ), and thus . Thus is the zero vector of the space.  Similarly, to show all elements of have vector inverses amounts to showing that has a vector inverse, since this is the only element of . It is claimed that ( , is its own vector inverse), which follows from the fact that . Lastly, the identities of Axioms i-ii and v-viii in this setting all reduce to trivial statements of the form . Consider Axiom vii, for example. For all , we have , in which case and . Thus for all .  We leave verification of the rest of the axioms to the reader.  "
+},
+{
+  "id": "eg_infinite_sequences",
+  "level": "2",
+  "url": "s_Rn.html#eg_infinite_sequences",
+  "type": "Example",
+  "number": "1.1.11",
+  "title": "Vector space of infinite sequences.",
+  "body": " Vector space of infinite sequences    vector space of infinite real sequences    Define to be the set of all infinite sequences: , . Vector addition and scalar multiplication of sequences is defined term-wise , exactly as with . In other words, given sequences and , and scalar , we define . In case you prefer the expanded notation for infinite sequences, we have: . The set together with these operations constitutes the vector space of infinite real sequences .    See .   "
+},
+{
+  "id": "ss_nspace-28",
+  "level": "2",
+  "url": "s_Rn.html#ss_nspace-28",
+  "type": "Example",
+  "number": "1.1.12",
+  "title": "Vector space of positive reals.",
+  "body": " Vector space of positive reals    vector space of positive real numbers    Define to be the set of all positive real numbers: , . Define vector addition on to be real number multiplication, and define scalar multiplication on to be real number exponentiation: , given vectors and in , and scalar , we define . Note: we have introduced new notation for our vector operations to help distinguish them from familiar real number arithmetic operations.  The set together with these operations constitutes the vector space of positive reals .    See .   "
+},
+{
+  "id": "d_lin_comb",
+  "level": "2",
+  "url": "s_Rn.html#d_lin_comb",
+  "type": "Definition",
+  "number": "1.1.13",
+  "title": "Linear combination.",
+  "body": " Linear combination   Let be a vector space, and let be a collection of vectors of . A linear combination of the is a vector expression of the form , where for all . The scalars appearing in are called the coefficients of the linear combination. The linear combination is trivial if for all , and nontrivial if for some .  A vector is a linear combination of the if we have for some choice of scalars .   "
+},
+{
+  "id": "ss_nspace-31",
+  "level": "2",
+  "url": "s_Rn.html#ss_nspace-31",
+  "type": "Example",
+  "number": "1.1.14",
+  "title": "Linear combination.",
+  "body": " Linear combination   Let . Show that every vector in is a linear combination of the .    Given any vector , we have .   "
+},
+{
+  "id": "ss_nspace-32",
+  "level": "2",
+  "url": "s_Rn.html#ss_nspace-32",
+  "type": "Example",
+  "number": "1.1.15",
+  "title": "Linear combination.",
+  "body": " Linear combination   Express as a nontrivial linear combination of and .    Since clearly , we have . This is not the only nontrivial linear combination yielding . In fact we have for any scalar (including ).   "
+},
+{
+  "id": "d_vec_difference",
+  "level": "2",
+  "url": "s_Rn.html#d_vec_difference",
+  "type": "Definition",
+  "number": "1.1.16",
+  "title": "Vector difference.",
+  "body": " Vector difference   Let be a vector space. Given vectors , we define their difference  as .   "
+},
+{
+  "id": "fig_point",
+  "level": "2",
+  "url": "s_Rn.html#fig_point",
+  "type": "Figure",
+  "number": "1.1.17",
+  "title": "Point visualization of triple",
+  "body": " Point visualization of triple   Point visualization of triple. Made with GeoGebra .  "
+},
+{
+  "id": "ss_Rn_visual-4",
+  "level": "2",
+  "url": "s_Rn.html#ss_Rn_visual-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "initial point terminal point position vector "
+},
+{
+  "id": "fig_vec_vis",
+  "level": "2",
+  "url": "s_Rn.html#fig_vec_vis",
+  "type": "Figure",
+  "number": "1.1.18",
+  "title": "Vector visualization of triple",
+  "body": " Vector visualization of triple   Vector visualization of triple . Drag to change the vector . Drag to change the initial point of . Made with GeoGebra .  "
+},
+{
+  "id": "fig_tip_tail",
+  "level": "2",
+  "url": "s_Rn.html#fig_tip_tail",
+  "type": "Figure",
+  "number": "1.1.19",
+  "title": "Tip-to-tail visualization of vector addition",
+  "body": " Tip-to-tail visualization of vector addition   Tip-to-tail visualization of vector addition. Made with GeoGebra .  "
+},
+{
+  "id": "fig_scal_mult",
+  "level": "2",
+  "url": "s_Rn.html#fig_scal_mult",
+  "type": "Figure",
+  "number": "1.1.20",
+  "title": "Tip-to-tail visualization of vector addition",
+  "body": " Tip-to-tail visualization of vector addition   Visualization of scalar multiplication. Drag point labeled $k$ to change scalar. Made with GeoGebra .  "
+},
+{
+  "id": "ex_infinite_sequences",
+  "level": "2",
+  "url": "s_Rn.html#ex_infinite_sequences",
+  "type": "Exercise",
+  "number": "1.1.3.1",
+  "title": "Infinite sequences.",
+  "body": "Infinite sequences  Define to be the set of all infinite sequences: , . Define vector addition and scalar multiplication as follows: . In case you prefer the expanded notation for infinite sequences, we have: .  "
+},
+{
+  "id": "ex_positive_reals",
+  "level": "2",
+  "url": "s_Rn.html#ex_positive_reals",
+  "type": "Exercise",
+  "number": "1.1.3.2",
+  "title": "Positive reals.",
+  "body": "Positive reals  Define to be the set of all positive real numbers: , . Define vector addition on to be real number multiplication, and define scalar multiplication on to be real number exponentiation: , given vectors and in , and scalar , we define . Note: we have introduced new notation for our vector operations to help distinguish them from familiar real number arithmetic operations.  "
+},
+{
+  "id": "s_Rn_ex-2",
+  "level": "2",
+  "url": "s_Rn.html#s_Rn_ex-2",
+  "type": "Exercise",
+  "number": "1.1.3.3",
+  "title": "",
+  "body": " Prove statements (2)-(4) of . When treating a specific part you may assume the results of any part that has already been proven, including statement (1).  "
+},
+{
+  "id": "s_Rn_ex-3",
+  "level": "2",
+  "url": "s_Rn.html#s_Rn_ex-3",
+  "type": "Exercise",
+  "number": "1.1.3.4",
+  "title": "",
+  "body": " Let be a vector space.   Show that the zero vector of is unique: , show that if satisfies for all , then .    Fix . Show that the vector inverse of is unique: , show that if , then .   Thus we may speak of the zero vector of a vector space, and the vector inverse of a vector .  "
+},
+{
+  "id": "s_Rn_ex-4",
+  "level": "2",
+  "url": "s_Rn.html#s_Rn_ex-4",
+  "type": "Exercise",
+  "number": "1.1.3.5",
+  "title": "",
+  "body": " Let be a vector space. Prove: .  "
+},
+{
+  "id": "ex_vs_zero_or_infinite",
+  "level": "2",
+  "url": "s_Rn.html#ex_vs_zero_or_infinite",
+  "type": "Exercise",
+  "number": "1.1.3.6",
+  "title": "",
+  "body": " Let be a vector space. Prove that either ( , is the zero space) or is infinite. In other words, a vector space contains either exactly one element or infinitely many elements.   Assume contains a nonzero vector . Show that if , then . You assume the results of .  "
+},
+{
+  "id": "s_Rn_dot_product",
+  "level": "1",
+  "url": "s_Rn_dot_product.html",
+  "type": "Section",
+  "number": "1.2",
+  "title": "Inner product structure of <span class=\"process-math\">\\(\\R^n\\)<\/span>",
+  "body": " Inner product structure of   In this section we introduce another operation on called the dot product . As we will see, the dot product is an additional layer added to the vector space structure of that gives rise to a number of useful analytic tools. More generally, the dot product turns out to be just one example of what is called an inner product on a vector space. Inner products imbue vector spaces with valuable geometric content, a few of which are highlighted below.   Distance and angle  A notion of distance and angle between two vectors can be defined relative to a given inner product. These provide a numeric measurement of how close (distance) or closely oriented (angle) two vectors in our space are.    Orthogonality  Two vectors of an inner product space are orthogonal if their inner product is equal to zero. Orthogonality leads to a general notion of orthogonal projection , and is part of the definition of an orthogonal basis . These are two computationally very important concepts in linear algebra that we will take up in earnest later.       Dot product and inner products  We will give a purely arithmetic definition of the dot product on , and will provide retroactive geometric motivation in .   Dot product   Given -vectors and we define their dot product  as . The operation is called the dot product on .  The vector space together with the dot product is called Euclidean -space      Dot product on   Let . Then , and .    As mentioned above, the dot product is just one example of a more general notion called an inner product, which is an additional operation defined on a vector space.   Inner product   Let be a vector space. An inner product on is an operation that takes as input a pair of vectors and outputs a scalar . Using function notation: . Furthermore, this operation must satisfy the following axioms.   Symmetry  For all we have .    Linearity  For all and we have : . It follows by (i) (symmetry) that .    Positive definiteness  For all we have .   An inner product space is a pair , where is a vector space, and is a choice of inner product on .     Inner products of linear combinations   We will have many opportunities to expand out an inner product of two linear combinations of vectors. Using axioms (i) and (ii) in series, this process resembles the procedure for multiplying two polynomials. For example, we have . Note how in the last step we are able to group the cross terms , using the symmetry axiom.  More generally, given linear combinations , the same reasoning shows that . In particular, we have .    Although we will almost exclusively work with the dot product in this treatment of linear algebra, it is worth considering a natural family of inner products on that the dot product fits nicely into: namely, weighted dot products . These examples of inner products are especially important in data science.   Weighted dot product   Let be a list of positive real numbers: , for all . The weighted dot product with weights is the operation defined as on -vectors and as follows: . When for all , the weighted dot product is equal to the dot product.     Weighted dot product   The dot product with weights on is defined as . Let and . We have , and .     Weighted dot product   Let be a list of positive real numbers. The weighted dot product on with weights is an inner product. In particular, the dot product is an inner product.    We verify each axiom in turn. Lastly, we show that axiom (iii) is satisfied if and only if for all . To this end consider the formula . If , then since for all , we have for any , and if and only if for all if and only if .  For the other direction suppose for some . Let , the -th element of the standard basis of . Then : a counterexample to the definiteness property of axiom (iii).      Why the weights must be positive   Consider the operation on defined as where . This operation satisfies axioms (i) and (ii) of . (See proof of .) However, it fails both the positivity and definiteness properties of axiom (iii): .      Length and angles in inner product spaces  As mentioned above, once an inner product is established, we can define further notions like length, distance, and angle in terms of the given inner product. When the inner product in question is the standard dot product on or , then these are precisely the familiar notions you may have met in multivariable calculus.   Length (or norm) of a vector  length (or norm) of a vector    length (or norm) of    Let be an inner product space. Given , its length (or norm ), denoted as . A unit vector is a vector of length one: , a vector satisfying .     Norm with respect to dot product   Consider with the standard dot product. Compute .    We have .     Norm with respect to weighted dot product   Consider equipped with the dot product with weights . Compute .    We have .     Unit vectors   Given any , the vector is a unit vector. To verify this, let and compute .     Unit vectors   For each inner product space and compute the associated unit vector     with dot product,      with dot product with weights ,        The norms of the vectors in each case were computed in . We simply scale to compute the corresponding unit vectors.                Next, we define the distance between two vectors in an inner product space as the length of their vector difference.   distance between two vectors    the distance between and   Distance between vectors   Let be an inner product space. The distance between , denoted , is defined as .      For each inner product space , compute the distance between the given vectors.     with the dot product, ,      with the dot product with weights , ,         We have .    We have .       Basic properties of length and distance   Let be an inner product space.    For all we have , and equality holds if and only if .    For all and we have .    For all we have , and equality holds if and only if .      We prove (2) and leave the rest as an exercise ( ).  Given and we have .      Cauchy-Schwarz inequality, triangle inequalities, and angles between vectors  The famous Cauchy-Schwarz inequality has a knack of cropping up all over the world of science: from properties of covariance in statistics, to the Heisenberg uncertainty principle of quantum mechanics. More directly pertinent to our discussion, the Cauchy-Schwarz inequality implies the triangle inequalities ( ) and ensures that our notion of the angle between two nonzero vectors ( ) is well-defined.   Cauchy-Schwarz inequality   Let be an inner product space. For all we have , and equality holds if and only if for some .     Fix vectors and . For any we have by positivity , where . Since for all the quadratic polynomial has at most one root. Using the quadratic formula we conclude that we must have , since otherwise would have two distinct roots. It follows that , or equivalently . Taking square-roots yields the desired inequality.  The same reasoning shows that the Cauchy-Schwarz inequality is an actual equality if and only if for some if and only if if and only if for some (by positivity).   The following triangle inequalities are more or less direct consequences of the Cauchy-Schwarz inequality.   Triangle Inequalities   Let be an inner product space.   For all we have .    For all we have        This is an elementary exercise of unpacking the definitions of norm and distance in terms of the inner product, and then applying the Cauchy-Schwarz inequality appropriately. The proof is left as an exercise.    Let be an inner product space. For any nonzero vectors , the Cauchy-Schwarz inequality tells us that , or equivalently, . It follows that there is a unique real number satisfying . We call the angle between and .   Angle between vectors  angle between vectors   Let be an inner product space. Given nonzero vectors , the angle between and is defined to be the unique satisfying . Equivalently, we have .     Definition of angle via inner product   Our definition of the angle between two vectors may remind you of the dot product angle formula for vectors in : . Interestingly, whereas is typically treated as a theorem , derived from properties of the dot product and the law of cosines, in a general inner product space the equation is understood as the definition of the angle between two vectors.      Consider along with the dot product. Verify that our definition of the angle between and is consistent with our planar geometry notion of angle.    According to , is the unique element of satisfying . We recognize as the familiar angle , as expected.      Consider with the weighted dot product Compute the angle between and with respect to this inner product    First compute By definition is the unique value in satisfying . We see that is not one of our familiar angles from the unit circle ( , , ) and so express in terms of the function: .      Choosing your inner product  Why, given a fixed vector space , would we prefer one inner product definition to another? One way of understanding a particular choice of inner product is to ask what its corresponding notion of distance measures.   Weighted dot product distance   Consider with a choice of weighted dot product where are fixed positive constants. With respect to this inner product the distance between two vectors and is . Thus is an aggregate measure of the difference between the corresponding entries of and , as weighted by our choice of the constants .  Imagine that each element of is a data point collected by measuring different properties of a sample : , is the measured value of property on for all . Given samples and with corresponding measurement vectors and , the weighted distance is then a quantitative way of saying how close the two samples are to one another. The choice of weights allows us to adjust the relative influence of a given property in determining this closeness. For example, the standard dot product ( for all ) yields a notion of distance that gives each property equal standing.      "
+},
+{
+  "id": "d_dot_product",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#d_dot_product",
+  "type": "Definition",
+  "number": "1.2.1",
+  "title": "Dot product.",
+  "body": " Dot product   Given -vectors and we define their dot product  as . The operation is called the dot product on .  The vector space together with the dot product is called Euclidean -space    "
+},
+{
+  "id": "eg_dot_product",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#eg_dot_product",
+  "type": "Example",
+  "number": "1.2.2",
+  "title": "Dot product on <span class=\"process-math\">\\(\\R^4\\)<\/span>.",
+  "body": " Dot product on   Let . Then , and .   "
+},
+{
+  "id": "d_innerproduct",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#d_innerproduct",
+  "type": "Definition",
+  "number": "1.2.3",
+  "title": "Inner product.",
+  "body": " Inner product   Let be a vector space. An inner product on is an operation that takes as input a pair of vectors and outputs a scalar . Using function notation: . Furthermore, this operation must satisfy the following axioms.   Symmetry  For all we have .    Linearity  For all and we have : . It follows by (i) (symmetry) that .    Positive definiteness  For all we have .   An inner product space is a pair , where is a vector space, and is a choice of inner product on .   "
+},
+{
+  "id": "rm_innerproduct_algebra",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#rm_innerproduct_algebra",
+  "type": "Remark",
+  "number": "1.2.4",
+  "title": "Inner products of linear combinations.",
+  "body": " Inner products of linear combinations   We will have many opportunities to expand out an inner product of two linear combinations of vectors. Using axioms (i) and (ii) in series, this process resembles the procedure for multiplying two polynomials. For example, we have . Note how in the last step we are able to group the cross terms , using the symmetry axiom.  More generally, given linear combinations , the same reasoning shows that . In particular, we have .   "
+},
+{
+  "id": "d_weighted_dot_product",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#d_weighted_dot_product",
+  "type": "Definition",
+  "number": "1.2.5",
+  "title": "Weighted dot product.",
+  "body": " Weighted dot product   Let be a list of positive real numbers: , for all . The weighted dot product with weights is the operation defined as on -vectors and as follows: . When for all , the weighted dot product is equal to the dot product.   "
+},
+{
+  "id": "eg_weigh_dot",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#eg_weigh_dot",
+  "type": "Example",
+  "number": "1.2.6",
+  "title": "Weighted dot product.",
+  "body": " Weighted dot product   The dot product with weights on is defined as . Let and . We have , and .   "
+},
+{
+  "id": "th_weighted_dot_product",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#th_weighted_dot_product",
+  "type": "Theorem",
+  "number": "1.2.7",
+  "title": "Weighted dot product.",
+  "body": " Weighted dot product   Let be a list of positive real numbers. The weighted dot product on with weights is an inner product. In particular, the dot product is an inner product.    We verify each axiom in turn. Lastly, we show that axiom (iii) is satisfied if and only if for all . To this end consider the formula . If , then since for all , we have for any , and if and only if for all if and only if .  For the other direction suppose for some . Let , the -th element of the standard basis of . Then : a counterexample to the definiteness property of axiom (iii).    "
+},
+{
+  "id": "ss_dot_product-12",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#ss_dot_product-12",
+  "type": "Example",
+  "number": "1.2.8",
+  "title": "Why the weights must be positive.",
+  "body": " Why the weights must be positive   Consider the operation on defined as where . This operation satisfies axioms (i) and (ii) of . (See proof of .) However, it fails both the positivity and definiteness properties of axiom (iii): .   "
+},
+{
+  "id": "d_norm",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#d_norm",
+  "type": "Definition",
+  "number": "1.2.9",
+  "title": "Length (or norm) of a vector.",
+  "body": " Length (or norm) of a vector  length (or norm) of a vector    length (or norm) of    Let be an inner product space. Given , its length (or norm ), denoted as . A unit vector is a vector of length one: , a vector satisfying .   "
+},
+{
+  "id": "eg_norm_dot",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#eg_norm_dot",
+  "type": "Example",
+  "number": "1.2.10",
+  "title": "Norm with respect to dot product.",
+  "body": " Norm with respect to dot product   Consider with the standard dot product. Compute .    We have .   "
+},
+{
+  "id": "eg_norm_weighteddot",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#eg_norm_weighteddot",
+  "type": "Example",
+  "number": "1.2.11",
+  "title": "Norm with respect to weighted dot product.",
+  "body": " Norm with respect to weighted dot product   Consider equipped with the dot product with weights . Compute .    We have .   "
+},
+{
+  "id": "rm_unit_vectors",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#rm_unit_vectors",
+  "type": "Remark",
+  "number": "1.2.12",
+  "title": "Unit vectors.",
+  "body": " Unit vectors   Given any , the vector is a unit vector. To verify this, let and compute .   "
+},
+{
+  "id": "eg_unit_vectors",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#eg_unit_vectors",
+  "type": "Example",
+  "number": "1.2.13",
+  "title": "Unit vectors.",
+  "body": " Unit vectors   For each inner product space and compute the associated unit vector     with dot product,      with dot product with weights ,        The norms of the vectors in each case were computed in . We simply scale to compute the corresponding unit vectors.               "
+},
+{
+  "id": "d_distance",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#d_distance",
+  "type": "Definition",
+  "number": "1.2.14",
+  "title": "Distance between vectors.",
+  "body": " distance between two vectors    the distance between and   Distance between vectors   Let be an inner product space. The distance between , denoted , is defined as .   "
+},
+{
+  "id": "eg_distance",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#eg_distance",
+  "type": "Example",
+  "number": "1.2.15",
+  "title": "",
+  "body": "  For each inner product space , compute the distance between the given vectors.     with the dot product, ,      with the dot product with weights , ,         We have .    We have .     "
+},
+{
+  "id": "th_norm_basic_props",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#th_norm_basic_props",
+  "type": "Theorem",
+  "number": "1.2.16",
+  "title": "Basic properties of length and distance.",
+  "body": " Basic properties of length and distance   Let be an inner product space.    For all we have , and equality holds if and only if .    For all and we have .    For all we have , and equality holds if and only if .      We prove (2) and leave the rest as an exercise ( ).  Given and we have .   "
+},
+{
+  "id": "th_Cauchy-Schwarz",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#th_Cauchy-Schwarz",
+  "type": "Theorem",
+  "number": "1.2.17",
+  "title": "Cauchy-Schwarz inequality.",
+  "body": " Cauchy-Schwarz inequality   Let be an inner product space. For all we have , and equality holds if and only if for some .   "
+},
+{
+  "id": "s_Rn_dot_product-5-4",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#s_Rn_dot_product-5-4",
+  "type": "Proof",
+  "number": "1.2.3.1",
+  "title": "",
+  "body": " Fix vectors and . For any we have by positivity , where . Since for all the quadratic polynomial has at most one root. Using the quadratic formula we conclude that we must have , since otherwise would have two distinct roots. It follows that , or equivalently . Taking square-roots yields the desired inequality.  The same reasoning shows that the Cauchy-Schwarz inequality is an actual equality if and only if for some if and only if if and only if for some (by positivity).  "
+},
+{
+  "id": "th_triangle_inequalities",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#th_triangle_inequalities",
+  "type": "Theorem",
+  "number": "1.2.18",
+  "title": "Triangle Inequalities.",
+  "body": " Triangle Inequalities   Let be an inner product space.   For all we have .    For all we have        This is an elementary exercise of unpacking the definitions of norm and distance in terms of the inner product, and then applying the Cauchy-Schwarz inequality appropriately. The proof is left as an exercise.   "
+},
+{
+  "id": "d_angle",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#d_angle",
+  "type": "Definition",
+  "number": "1.2.19",
+  "title": "Angle between vectors.",
+  "body": " Angle between vectors  angle between vectors   Let be an inner product space. Given nonzero vectors , the angle between and is defined to be the unique satisfying . Equivalently, we have .   "
+},
+{
+  "id": "rm_general_angles",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#rm_general_angles",
+  "type": "Remark",
+  "number": "1.2.20",
+  "title": "Definition of angle via inner product.",
+  "body": " Definition of angle via inner product   Our definition of the angle between two vectors may remind you of the dot product angle formula for vectors in : . Interestingly, whereas is typically treated as a theorem , derived from properties of the dot product and the law of cosines, in a general inner product space the equation is understood as the definition of the angle between two vectors.   "
+},
+{
+  "id": "eg_angle_dotproduct",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#eg_angle_dotproduct",
+  "type": "Example",
+  "number": "1.2.21",
+  "title": "",
+  "body": "  Consider along with the dot product. Verify that our definition of the angle between and is consistent with our planar geometry notion of angle.    According to , is the unique element of satisfying . We recognize as the familiar angle , as expected.   "
+},
+{
+  "id": "eg_angle_weighted",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#eg_angle_weighted",
+  "type": "Example",
+  "number": "1.2.22",
+  "title": "",
+  "body": "  Consider with the weighted dot product Compute the angle between and with respect to this inner product    First compute By definition is the unique value in satisfying . We see that is not one of our familiar angles from the unit circle ( , , ) and so express in terms of the function: .   "
+},
+{
+  "id": "eg_why_weightedproduct",
+  "level": "2",
+  "url": "s_Rn_dot_product.html#eg_why_weightedproduct",
+  "type": "Example",
+  "number": "1.2.23",
+  "title": "Weighted dot product distance.",
+  "body": " Weighted dot product distance   Consider with a choice of weighted dot product where are fixed positive constants. With respect to this inner product the distance between two vectors and is . Thus is an aggregate measure of the difference between the corresponding entries of and , as weighted by our choice of the constants .  Imagine that each element of is a data point collected by measuring different properties of a sample : , is the measured value of property on for all . Given samples and with corresponding measurement vectors and , the weighted distance is then a quantitative way of saying how close the two samples are to one another. The choice of weights allows us to adjust the relative influence of a given property in determining this closeness. For example, the standard dot product ( for all ) yields a notion of distance that gives each property equal standing.   "
 },
 {
   "id": "s_systems",
