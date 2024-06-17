@@ -1,5 +1,5 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="c_linear_systems">
   <title>Euclidean <m>n</m>-space</title>
   <xi:include  href="s_Rn.ptx"/>
-  <!-- <xi:include  href="s_Rn_dot_product.ptx"/> -->
+  <xi:include  href="s_Rn_dot_product.ptx"/>
 </chapter>

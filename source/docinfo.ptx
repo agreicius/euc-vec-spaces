@@ -250,6 +250,6 @@
   <rename element="principle">Mantra</rename>
   <rename element="assumption">Fiat</rename>
   <rename element="project">Sage example</rename>
-  <brandlogo url="http://linear-algebra.northwestern.pub/" source="images/im_holycomm.svg" />
+  <!-- <brandlogo url="http://linear-algebra.northwestern.pub/" source="./images/im_holycomm.svg" /> -->
 
 </docinfo>

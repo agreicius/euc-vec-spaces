@@ -1,0 +1,104 @@
+<exercises xml:id="s_Rn_ex">
+
+<exercisegroup>
+    <title>Vector space examples</title>
+    
+    
+    <introduction>
+        <p>
+            Show that the given set together with the given operations constitutes a vector space by verifying that the vector axioms hold. Follow <xref ref="proc_vector_space"/>. In particular, explicitly identify what element of the set acts as the zero vector <m>\boldzero</m>, and how vector inverses of elements are defined. 
+        </p>
+    </introduction>
+    <exercise xml:id="ex_infinite_sequences">
+        <title>Infinite sequences</title>
+        <statement>
+            <p>
+                Define <m>\R^\infty</m> to be the set of all infinite sequences: <ie/>, 
+                <me>
+                    \R^\infty=\{(a_i)_{i=1}^\infty\colon a_i\in \R\}
+                </me>.
+                Define vector addition and scalar multiplication as follows: 
+                <md>
+                    <mrow>(a_i)_{i=1}^\infty+(b_i)_{i=1}^\infty \amp = (a_i+b_i)_{i=1}^\infty </mrow>
+                    <mrow>c(a_i)_{i=1}^\infty \amp = (ca_i)_{i=1}^\infty </mrow>
+                </md>.
+                In case you prefer the expanded notation for infinite sequences, we have: 
+                <md>
+                    <mrow>(a_1,a_2,\dots)+(b_1,b_2,\dots) \amp =(a_1+b_1,a_2+b_2,\dots)</mrow>
+                    <mrow>c(a_1,a_2,\dots) \amp =(ca_1,ca_2,\dots)</mrow>
+                </md>.  
+            </p>
+        </statement>
+        
+    </exercise>
+    <exercise xml:id="ex_positive_reals">
+        <title>Positive reals</title>
+        <statement>
+            <p>
+                Define <m>\R_{&gt; 0}</m> to be the set of all positive real numbers: <ie/>, 
+                <me>
+                    \R_{&gt; 0}=\{r\in \R\colon r&gt; 0\}
+                </me>.
+                Define vector addition on <m>\R_{&gt; 0}</m> to be real number multiplication, and define scalar multiplication on <m>\R_{&gt; 0}</m> to be real number exponentiation: 
+                <ie/>, given vectors <m>\boldv=r</m> and <m>\boldw=s</m> in <m>\R_{&gt; 0}</m>, and scalar <m>c\in \R</m>, we define 
+                <md>
+                    <mrow>\boldv\oplus\boldw \amp = r\, s</mrow>
+                    <mrow>c\odot\boldv \amp = r^c </mrow>
+                </md>.
+                Note: we have introduced new notation for our vector operations to help distinguish them from familiar real number arithmetic operations. 
+            </p>
+        </statement>
+    </exercise>
+
+</exercisegroup>
+<exercise>
+  <statement>
+    <p>
+      Prove statements (2)-(4) of <xref ref="th_vectorspace_props"/>. When treating a specific part you may assume the results of any part that has already been proven, including statement (1).
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>V</m> be a vector space.
+    <ol>
+      <li>
+        <p>
+          Show that the zero vector of <m>V</m> is unique: <ie />, show that if <m>\boldw\in V</m> satisfies <m>\boldw+\boldv=\boldv</m> for all <m>\boldv\in V</m>, then <m>\boldw=\boldzero</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Fix <m>\boldv\in V</m>. Show that the vector inverse of <m>\boldv</m> is unique: <ie />, show that if <m>\boldw+\boldv=\boldzero</m>, then <m>\boldw=-\boldv</m>.
+        </p>
+      </li>
+    </ol>
+    Thus we may speak of <em>the</em> zero vector of a vector space, and <em>the</em> vector inverse of a vector <m>\boldv</m>.
+  </p>
+  </statement>
+
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>V</m> be a vector space.
+      Prove:
+      <me>\boldu + \boldw = \boldv + \boldw \iff \boldu=\boldv</me>.
+    </p>
+  </statement>
+</exercise>
+<exercise xml:id="ex_vs_zero_or_infinite">
+  <statement>
+    <p>
+      Let <m>V</m> be a vector space. Prove that either <m>V=\{\boldzero\}</m> (<ie />, <m>V</m> is the zero space) or <m>V</m> is infinite. In other words, a vector space contains either exactly one element or infinitely many elements.
+    </p>
+  </statement>
+  <hint>
+    <p>
+      Assume <m>V</m> contains a nonzero vector <m>\boldv\ne\boldzero</m>. Show that if <m>c\ne d</m>, then <m>c\boldv\ne d\boldv</m>. You assume the results of <xref ref="th_vectorspace_props"/>.
+    </p>
+  </hint>
+</exercise>
+
+</exercises>
