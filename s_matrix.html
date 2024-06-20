@@ -436,7 +436,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <div class="toc-title-box"><a href="c_linear_systems.html" class="internal"><span class="codenumber">1</span> <span class="title">Euclidean <span class="process-math">\(n\)</span>-space</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_Rn.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Vector space structure of <span class="process-math">\(\R^n\)</span></span></a></div>
+<div class="toc-title-box"><a href="s_Rn.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Vector space structure of Rn</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="s_Rn.html#ss_nspace" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Vector operations on <span class="process-math">\(\R^n\)</span></span></a></div>
@@ -688,9 +688,9 @@ A=\begin{bmatrix}\ -\boldr_{1}- \ \\
 \end{equation*}
 </div>
 <div class="para">The vertical and horizontal lines in <a href="s_matrix.html#eq_columns" class="xref" data-knowl="./knowl/xref/eq_columns.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.2">(3.1.2)</a> and <a href="s_matrix.html#eq_rows" class="xref" data-knowl="./knowl/xref/eq_rows.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1.3">(3.1.3)</a> are used to emphasize that the <span class="process-math">\(\boldc_j\)</span> are columns vectors and the <span class="process-math">\(\boldr_i\)</span> are row vectors.</div>
-</div></article><article class="project project-like" id="sage_matrix_entries_rows_cols"><h4 class="heading">
+</div></article><details id="sage_matrix_entries_rows_cols" class="project project-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Sage example</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix entries, rows, and columns.</span>
-</h4> <div class="para" id="sage_matrix_entries_rows_cols-2">Sage syntax for accessing specific entries of a matrix is similar in spirit to our matrix entry notation. However, as with all things Python, we always count from 0. Thus if <code class="code-inline tex2jax_ignore">A</code> is assigned to a matrix in Sage, <code class="code-inline tex2jax_ignore">A[i,j]</code> is its <span class="process-math">\((i+1),(j+1)\)</span>-th entry.</div> <pre id="sage_matrix_entries_rows_cols-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=Matrix([[1,2,3,4],[5,6,7,8],[9,10,11,12]])
+</h4></summary><article class="project project-like knowl__content"> <div class="para" id="sage_matrix_entries_rows_cols-2">Sage syntax for accessing specific entries of a matrix is similar in spirit to our matrix entry notation. However, as with all things Python, we always count from 0. Thus if <code class="code-inline tex2jax_ignore">A</code> is assigned to a matrix in Sage, <code class="code-inline tex2jax_ignore">A[i,j]</code> is its <span class="process-math">\((i+1),(j+1)\)</span>-th entry.</div> <pre id="sage_matrix_entries_rows_cols-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=Matrix([[1,2,3,4],[5,6,7,8],[9,10,11,12]])
 show(A[0,1])
 show(A[1,2])
 show(A[2,3])
@@ -700,7 +700,7 @@ show(A[1:, 3])
 </script></pre> <div class="para" id="sage_matrix_entries_rows_cols-8">Alternatively, we can obtain a list of all rows or columns of <span class="process-math">\(A\)</span> using the the methods <code class="code-inline tex2jax_ignore">rows()</code> and <code class="code-inline tex2jax_ignore">columns()</code>.</div> <pre id="sage_matrix_entries_rows_cols-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">show(A.columns())
 show(A.rows())
 </script></pre> <div class="para" id="sage_matrix_entries_rows_cols-10">Use the empty cell below to try out some of these commands.</div> <pre id="sage_matrix_entries_rows_cols-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
-</script></pre></article></section><section class="subsection" id="ss_matrix_arithmetic"><h3 class="heading hide-type">
+</script></pre></article></details></section><section class="subsection" id="ss_matrix_arithmetic"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="space"> </span><span class="title">Addition, subtraction and scalar multiplication</span>
 </h3>
 <div class="para" id="ss_matrix_arithmetic-2">We now lay out the various algebraic operations we will use to combine and transform matrices; we refer to the use of these operations loosely as <em class="emphasis">matrix arithmetic</em>. Some of these operations resemble familiar operations from real arithmetic in terms of their notation and definition. Do not be lulled into complacency! These are new operations defined for a new class of mathematical objects, and must be treated carefully. In particular, pay close attention to (a) exactly what type of mathematical objects serve as inputs for each operation (the <em class="emphasis">ingredients</em> of the operation), and (b) what type of mathematical object is outputted.</div>
@@ -966,9 +966,9 @@ T_{AB}=T_A\circ T_B\text{.}
 </div>
 <div class="para">(See <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "th_transform_composition" missing or not unique]</code>.) Under this interpretation, the ponderous restriction on the dimensions of the ingredient matrices ensures that the two functions <span class="process-math">\(T_A\)</span> and <span class="process-math">\(T_B\)</span> can be composed.</div>
 </div>
-<article class="project project-like" id="ss_matrix_mult-12"><h4 class="heading">
+<details id="ss_matrix_mult-12" class="project project-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Sage example</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix arithmetic.</span>
-</h4> <div class="para" id="ss_matrix_mult-12-2">We use <code class="code-inline tex2jax_ignore">+</code> and <code class="code-inline tex2jax_ignore">*</code> for matrix addition and multiplication.</div> <pre id="ss_matrix_mult-12-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=Matrix(4,3,range(12))
+</h4></summary><article class="project project-like knowl__content"> <div class="para" id="ss_matrix_mult-12-2">We use <code class="code-inline tex2jax_ignore">+</code> and <code class="code-inline tex2jax_ignore">*</code> for matrix addition and multiplication.</div> <pre id="ss_matrix_mult-12-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=Matrix(4,3,range(12))
 B=Matrix(4,3,range(12,24))
 C=Matrix(3,5,range(-5,10))
 show(A,B,C)
@@ -977,7 +977,7 @@ show(A*C)
 </script></pre> <div class="para" id="ss_matrix_mult-12-4">As evidence of Sage’s flexibility, the same symbol <code class="code-inline tex2jax_ignore">*</code> is also used for scalar multiplication.</div> <pre id="ss_matrix_mult-12-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">show(5*A*C-2*B*C)
 </script></pre> <div class="para" id="ss_matrix_mult-12-6">Edit the cell below to practice these operations.</div> <pre id="ss_matrix_mult-12-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=matrix([[1,0,-1],[2,-6,6],[4,4,5]])
 B=matrix([[1,2],[2,-4],[0,1]])
-</script></pre></article></section><section class="subsection" id="s_column_row_method"><h3 class="heading hide-type">
+</script></pre></article></details></section><section class="subsection" id="s_column_row_method"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="space"> </span><span class="title">Alternative methods of multiplication</span>
 </h3>
 <div class="para" id="s_column_row_method-2">In addition to the given definition of matrix multiplication, we will make <em class="emphasis">heavy use</em> of two further ways of computing matrix products, called the column and row methods of matrix multiplication.</div>
@@ -1114,9 +1114,9 @@ AB \amp= \begin{amatrix}[c]--\bolda_1\, B--\\ --\bolda_2\, B-- \end{amatrix}\amp
 \end{align*}
 </div>
 </div></li>
-</ol></div></div></details></div></article><article class="project project-like" id="s_column_row_method-7"><h4 class="heading">
+</ol></div></div></details></div></article><details id="s_column_row_method-7" class="project project-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Sage example</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Column and row methods.</span>
-</h4> <div class="para" id="s_column_row_method-7-2">Let’s verify the validity of the column and row methods using Sage in some specific examples. Below we generate random integer matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> of dimension <span class="process-math">\(3\times 5\)</span> and <span class="process-math">\(5\times 4\text{,}\)</span> respectively, and compute their product <span class="process-math">\(C=AB\text{.}\)</span>
+</h4></summary><article class="project project-like knowl__content"> <div class="para" id="s_column_row_method-7-2">Let’s verify the validity of the column and row methods using Sage in some specific examples. Below we generate random integer matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> of dimension <span class="process-math">\(3\times 5\)</span> and <span class="process-math">\(5\times 4\text{,}\)</span> respectively, and compute their product <span class="process-math">\(C=AB\text{.}\)</span>
 </div> <pre id="s_column_row_method-7-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">R=MatrixSpace(ZZ,3,5)
 S=MatrixSpace(ZZ,5,4)
 A=R.random_element()
@@ -1145,7 +1145,7 @@ for j in range(0,4):
   show(x*colsA[0]+y*colsA[1]+z*colsA[2]+w*colsA[3]+u*colsA[4])
 </script></pre> <div class="para" id="s_column_row_method-7-10">Now use the Sage cells below to demonstrate the validity of the row method for the product <span class="process-math">\(C=AB\text{.}\)</span> Simply modify the code in the two cells above to reflect the row method, as opposed to the column method.</div> <pre id="s_column_row_method-7-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
 </script></pre> <pre id="s_column_row_method-7-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
-</script></pre></article><section class="paragraphs" id="ss_matrix_mult_vid"><h4 class="heading"><span class="title">Video example of matrix multiplication.</span></h4> <figure class="figure figure-like" id="fig_vid_matrix_mult_methods"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/Kx4K8TTbl98?&amp;modestbranding=1&amp;rel=0" id="vid_matrix_mult_methods"></iframe></div>
+</script></pre></article></details><section class="paragraphs" id="ss_matrix_mult_vid"><h4 class="heading"><span class="title">Video example of matrix multiplication.</span></h4> <figure class="figure figure-like" id="fig_vid_matrix_mult_methods"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/Kx4K8TTbl98?&amp;modestbranding=1&amp;rel=0" id="vid_matrix_mult_methods"></iframe></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.28<span class="period">.</span></span><span class="space"> </span>Video: three methods of matrix multiplication</figcaption></figure></section></section><section class="subsection" id="s_matrix-7"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="space"> </span><span class="title">Transpose of a matrix</span>
 </h3>
@@ -1171,9 +1171,9 @@ for j in range(0,4):
 </h4>
 <div class="para" id="eg_transpose-2-1">Let <span class="process-math">\(A=\begin{bmatrix}1\amp 2\amp 3\\4\amp 5\amp 6 \end{bmatrix}\text{;}\)</span> then <span class="process-math">\(A^T=\begin{bmatrix}1\amp 4\\2\amp 5\\3\amp 6 \end{bmatrix}\text{.}\)</span>
 </div> <div class="para" id="eg_transpose-2-2">Let <span class="process-math">\(B=\begin{bmatrix}1\\0\\3 \end{bmatrix}\text{,}\)</span> then <span class="process-math">\(B^T=\begin{bmatrix}1\amp 0\amp 3 \end{bmatrix}\text{.}\)</span>
-</div></article><article class="project project-like" id="s_matrix-7-6"><h4 class="heading">
+</div></article><details id="s_matrix-7-6" class="project project-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Sage example</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix transposition.</span>
-</h4> <div class="para" id="s_matrix-7-6-2">Matrix transposition is implemented in Sage as the <code class="code-inline tex2jax_ignore">transpose()</code> method. In the cell below we (a) choose random integers <span class="process-math">\(1\leq m,n\leq 6\text{,}\)</span> (b) choose a random  <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\)</span> with integer entries, and (c) compute the transpose of <span class="process-math">\(A\text{.}\)</span>
+</h4></summary><article class="project project-like knowl__content"> <div class="para" id="s_matrix-7-6-2">Matrix transposition is implemented in Sage as the <code class="code-inline tex2jax_ignore">transpose()</code> method. In the cell below we (a) choose random integers <span class="process-math">\(1\leq m,n\leq 6\text{,}\)</span> (b) choose a random  <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\)</span> with integer entries, and (c) compute the transpose of <span class="process-math">\(A\text{.}\)</span>
 </div> <pre id="s_matrix-7-6-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">    m=ZZ.random_element(1,7)
 n=ZZ.random_element(1,7)
 R=MatrixSpace(ZZ,m,n)
@@ -1182,7 +1182,7 @@ B=A.transpose()
 show(A)
 show(B)
 </script></pre> <div class="para" id="s_matrix-7-6-4">As usual, experiment with the Sage cell below.</div> <pre id="s_matrix-7-6-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
-</script></pre></article></section><section class="exercises" id="s_matrix_ex"><h3 class="heading hide-type">
+</script></pre></article></details></section><section class="exercises" id="s_matrix_ex"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="subexercises" id="s_matrix_ex-1"><h4 class="heading"><span class="title">WeBWork Exercises</span></h4>

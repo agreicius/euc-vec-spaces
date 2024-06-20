@@ -436,7 +436,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <div class="toc-title-box"><a href="c_linear_systems.html" class="internal"><span class="codenumber">1</span> <span class="title">Euclidean <span class="process-math">\(n\)</span>-space</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_Rn.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Vector space structure of <span class="process-math">\(\R^n\)</span></span></a></div>
+<div class="toc-title-box"><a href="s_Rn.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Vector space structure of Rn</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="s_Rn.html#ss_nspace" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Vector operations on <span class="process-math">\(\R^n\)</span></span></a></div>
@@ -764,9 +764,9 @@ AB=\boldzero \amp\implies A^{-1}AB=\boldzero \\
 \end{align*}
 </div>
 <div class="para">which is a contradiction. We have proved that if <span class="process-math">\(ad-bc=0\text{,}\)</span> then <span class="process-math">\(A\)</span> is not invertible.</div>
-</div></article></details><article class="project project-like" id="subsec--16"><h4 class="heading">
+</div></article></details><details id="subsec--16" class="project project-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Sage example</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Invertible matrices.</span>
-</h4> <div class="para logical" id="subsec--16-2">
+</h4></summary><article class="project project-like knowl__content"> <div class="para logical" id="subsec--16-2">
 <div class="para">Sage has a number of useful tools related to invertibility. The boolean function <code class="code-inline tex2jax_ignore">is_invertible()</code> tests for invertibility, and the method <code class="code-inline tex2jax_ignore">inverse()</code> computes the inverse of an invertible matrix. Below we generate a random matrix with rational coefficients, test whether it is invertible, and compute its inverse if it is invertible. The <code class="code-inline tex2jax_ignore">density=0.5</code> ensures that roughly half of the matrix entries are zero; and this in turn increases the likelihood that the matrix is singular, for reasons that will become somewhat clearer later.</div>
 <ul class="disc">
 <li id="subsec--16-2-4-1"><div class="para" id="subsec--16-2-4-1-1">Evaluate the Sage cell below multiple times.</div></li>
@@ -782,7 +782,7 @@ if A.is_invertible():
     print('A^-1=\n')
     print(A.inverse())
 </script></pre> <pre id="subsec--16-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
-</script></pre></article><div class="para" id="subsec--17">The next theorem tells us that invertibility is preserved by matrix multiplication: that is, if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are invertible <span class="process-math">\(n\times n\)</span> matrices, then so is <span class="process-math">\(C=AB\text{.}\)</span>
+</script></pre></article></details><div class="para" id="subsec--17">The next theorem tells us that invertibility is preserved by matrix multiplication: that is, if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are invertible <span class="process-math">\(n\times n\)</span> matrices, then so is <span class="process-math">\(C=AB\text{.}\)</span>
 </div>
 <article class="theorem theorem-like" id="th_invertible_prod"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Products of invertible matrices.</span>
@@ -933,9 +933,9 @@ f(B) \amp=B^2-2B+I_3 \\
 \end{bmatrix}\text{.}
 \end{align*}
 </div>
-</div></div></details></div></article><article class="project project-like" id="s_invertible_matrices-4-8"><h4 class="heading">
+</div></div></details></div></article><details id="s_invertible_matrices-4-8" class="project project-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Sage example</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix polynomials.</span>
-</h4> <div class="para" id="s_invertible_matrices-4-8-2">An integer matrix power <span class="process-math">\(A^n\)</span> is computed in Sage as <code class="code-inline tex2jax_ignore">A^n</code>.</div> <pre id="s_invertible_matrices-4-8-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=Matrix([[1,1,1],[1,2,1],[-1,1,0]])
+</h4></summary><article class="project project-like knowl__content"> <div class="para" id="s_invertible_matrices-4-8-2">An integer matrix power <span class="process-math">\(A^n\)</span> is computed in Sage as <code class="code-inline tex2jax_ignore">A^n</code>.</div> <pre id="s_invertible_matrices-4-8-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=Matrix([[1,1,1],[1,2,1],[-1,1,0]])
 show(A^3)
 show(A^-1)
 show(A^-2)
@@ -947,7 +947,7 @@ show(B^-2)
 show(B^2-3*B+33*identity_matrix(2))
 </script></pre> <div class="para" id="s_invertible_matrices-4-8-8">We took care to heed the warning in <a href="s_invertible_matrices.html#rem_matrix_polynomials" class="xref" data-knowl="./knowl/xref/rem_matrix_polynomials.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 3.3.12">Remark 3.3.12</a>, making sure to include <span class="process-math">\(I_3\)</span> for <span class="process-math">\(f(A)\)</span> (<code class="code-inline tex2jax_ignore">identity_matrix(3)</code>) and <span class="process-math">\(I_2\)</span> for <span class="process-math">\(f(B)\)</span> (<code class="code-inline tex2jax_ignore">identity_matrix(2)</code>). Interestingly, Sage is smart enough to figure out what we mean even if we are sloppy in this regard.</div> <pre id="s_invertible_matrices-4-8-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">show(A^2-3*A+33)
 show(B^2-3*B+33)
-</script></pre></article><article class="theorem theorem-like" id="th_power_rules"><h4 class="heading">
+</script></pre></article></details><article class="theorem theorem-like" id="th_power_rules"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.3.14</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of matrix powers.</span>
 </h4>
 <div class="para logical" id="th_power_rules-2-1">
