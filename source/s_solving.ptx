@@ -472,7 +472,7 @@
           t2=text3d("w",P+.75*w2+vector([0,0,.2]), fontsize=16)
           t3=text3d("P",P+vector([0,0,.2]), fontsize=16)
           t4=text3d("n",P+1.2*vector(n).normalized(), fontsize=16)
-          point3d(P,size=10, opacity=1)+S+a+arrow(P,P+w1, color="red", width=2)+arrow(P,P+w2, color='red', width=2)+gridu+gridv+t1+t2+t3
+          S+point3d(P,size=20)+a+arrow(P,P+w1, color="red", width=1)+arrow(P,P+w2, color='red', width=1)+gridu+gridv+t1+t2+t3
         </sageplot>
       </image>
       

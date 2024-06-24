@@ -227,13 +227,13 @@ Pt1+Pt2+Ar1+Ar2+T1+T2+T3+Plane
         A <term>system of linear equations</term>
         (or <term>linear system</term>)
         is a set of linear equations.
-        <men xml:id="eq_lin_sys">
+        <men xml:id="eq_lin_syst">
           \eqsys
         </men>
-        The linear system <xref ref="eq_lin_sys"/> is <term>homogeneous</term> if each of its equations is homogeneous: <ie/>, if <m>b_i=0</m> for all <m>1\leq i\leq m</m>.
+        The linear system <xref ref="eq_lin_syst"/> is <term>homogeneous</term> if each of its equations is homogeneous: <ie/>, if <m>b_i=0</m> for all <m>1\leq i\leq m</m>.
       </p>
       <p>
-        A <term>solution</term> to the system <xref ref="eq_lin_sys"/>
+        A <term>solution</term> to the system <xref ref="eq_lin_syst"/>
         is an <m>n</m>-tuple <m>(s_1,s_2,\dots,s_n)</m> that is a solution to each of the system's <m>m</m> equations.
         We say <m>(s_1,s_2,\dots,
         s_n)</m> <term>solves the system</term> in this case.
@@ -256,7 +256,7 @@ A homogeneous system is thus typically written as:
 <remark>
   <title>Displaying linear systems</title>
     <p>
-      As indicated in <xref ref="eq_lin_sys"/>, when displaying a system of <m>m</m> equations in the <m>n</m> unknowns <m>x_1,x_2,\dots x_n</m>, we typically write each individual equation in <em>standard form</em> and align the corresponding terms of each equation into columns. The presence of multiple equations and multiple unknowns necessitates the use of double-indexing for the coefficients appearing in the system. The following breakdown will hopefully help you orient yourself with respect to the double-indexing: 
+      As indicated in <xref ref="eq_lin_syst"/>, when displaying a system of <m>m</m> equations in the <m>n</m> unknowns <m>x_1,x_2,\dots x_n</m>, we typically write each individual equation in <em>standard form</em> and align the corresponding terms of each equation into columns. The presence of multiple equations and multiple unknowns necessitates the use of double-indexing for the coefficients appearing in the system. The following breakdown will hopefully help you orient yourself with respect to the double-indexing: 
   <ul>
     <li>
       <p>

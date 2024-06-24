@@ -414,9 +414,9 @@
     </p>
       <p> <term>Matrix multiplication</term> is the operation defined as follows: given an <m>m\times n</m> matrix
         <m>A=[a_{ij}]_{m\times n}</m> and an <m>n\times r</m> matrix <m>B=[b_{ij}]_{n\times r}</m>, we define their <term>product</term> to be the <m>m\times r</m> matrix <m>AB</m> whose <m>ij</m>-th entry is given by the formula
-        <me>
+        <men xml:id="eq_matrix_mult">
           [AB]_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots a_{ir}b_{rj} =\sum_{\ell=1}^ra_{i\ell}b_{\ell j}
-        </me>
+        </men>
         for all <m>1\leq i\leq m</m> and <m>1\leq j\leq r</m>.
       </p>
     </statement>
@@ -523,24 +523,8 @@ DL/.style={
     </p>
   </example>
   <p>
-    The formula for the <m>ij</m>-th entry of a matrix product <m>AB</m> can be succinctly described as the <em>dot product</em> of the <m>i</m>-th row of <m>A</m> with the <m>j</m>-th column of <m>B</m>. You may have already met the dot product in the special case of <m>2</m>- and <m>3</m>-tuples; the definition generalizes easily to <m>n</m>-tuples for any positive integer <m>n</m>. We will have a lot more to say about the dot product and related operations in <xref ref="c_innerproductspaces"/>. For now we will provide an official definition so that we can conveniently describe matrix multiplication in terms of dot products. 
+    Formula <xref ref="eq_matrix_mult"/> for the <m>ij</m>-th entry of a matrix product <m>AB</m> is easily identified as the <xref ref="d_dot_product" text="custom">dot product</xref> of the <m>i</m>-th row of <m>A</m> with the <m>j</m>-th column of <m>B</m>. This gives us a succinct way of describing the entries of the product <m>AB</m> in terms of the dot product. 
   </p>
-  <definition xml:id="d_dot_product">
-  <title>Dot product</title>
-  <idx><h>dot product</h></idx>
-  <notation>
-    <usage><m>\boldx\cdot\boldy</m></usage>
-    <description>dot product</description>
-  </notation>
-    <statement>
-      <p>
-        Given <m>n</m>-tuples <m>\boldx=(x_1,x_2,\dots, x_n)</m> and <m>\boldy=(y_1,y_2,\dots, y_n)</m>, their <term>dot product</term>, denoted <m>\boldx\cdot \boldy</m>, is defined as 
-        <me>
-          \boldx\cdot \boldy=x_1y_1+x_2y_2+\cdots +x_ny_n=\sum_{i=1}^nx_iy_i
-        </me>.        
-      </p>
-    </statement>
-  </definition>
   <theorem xml:id="th_matrix_mult_dot_product">
     <title>Dot product and matrix multiplication</title>
     <statement>
