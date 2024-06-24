@@ -89,11 +89,7 @@
   </definition>
   <p>
     Given a linear equation <xref ref="eq_std_form"/>, we will be interested in finding and describing the set 
-    <me>S</me> of all of its solutions. These solutions define a subset of the set of all <m>n</m>-tuples of real numbers, which is denoted <m>\R^n</m>.
-  </p>
-  
-  <p>
-    As you may recall, a (nontrivial) linear equation in two unknowns defines a line in <m>\R^2</m>, and a (nontrivial) equation in three unknowns defines a plane in <m>\R^3</m>. These types of subsets (of <m>\R^2</m> and <m>\R^3</m>, respectively) have distinctive geometric properties that we will elucidate in coming sections. Generalizing this notion to an arbitrary number of unknowns leads to the notion of a <em>hyperplane</em>. 
+    <m>S</m> of <em>all</em> of its solutions. As you may recall, a (nontrivial) linear equation in two unknowns defines a line in <m>\R^2</m>, and a (nontrivial) equation in three unknowns defines a plane in <m>\R^3</m>. These types of subsets (of <m>\R^2</m> and <m>\R^3</m>, respectively) have distinctive geometric properties that we will elucidate in coming sections. Generalizing this notion to an arbitrary number of unknowns leads to the notion of a <em>hyperplane</em>. 
   </p>
   <definition xml:id="d_hyperplane">
     <title>Hyperplane</title>
@@ -220,7 +216,9 @@ Pt1+Pt2+Ar1+Ar2+T1+T2+T3+Plane
 </image>
     </figure> -->
   </example>
-  
+  <p>
+    Next we introduce <em>linear systems</em>, which are just collections of linear equations. 
+  </p>
   <definition xml:id="d_lin-sys">
     <title>Systems of linear equations</title>
     <idx><h>linear system</h></idx>
@@ -229,11 +227,20 @@ Pt1+Pt2+Ar1+Ar2+T1+T2+T3+Plane
         A <term>system of linear equations</term>
         (or <term>linear system</term>)
         is a set of linear equations.
+        <men xml:id="eq_lin_sys">
+          \eqsys
+        </men>
+        The linear system <xref ref="eq_lin_sys"/> is <term>homogeneous</term> if each of its equations is homogeneous: <ie/>, if <m>b_i=0</m> for all <m>1\leq i\leq m</m>.
       </p>
       <p>
-        A <term>homogeneous</term> linear system is a set of homogeneous linear equations.
+        A <term>solution</term> to the system <xref ref="eq_lin_sys"/>
+        is an <m>n</m>-tuple <m>(s_1,s_2,\dots,s_n)</m> that is a solution to each of the system's <m>m</m> equations.
+        We say <m>(s_1,s_2,\dots,
+        s_n)</m> <term>solves the system</term> in this case.
       </p>
-
+      <p>
+        A linear system is <term>consistent</term> if a solution to the system exists, and <term>inconsistent</term> otherwise. 
+      </p>
     </statement>
   </definition>
   <p>
@@ -247,9 +254,9 @@ A homogeneous system is thus typically written as:
 </me>
 </p>
 <remark>
+  <title>Displaying linear systems</title>
     <p>
-      You will want to get comfortable with the double-indexing used to display linear systems as quickly as possible. Here is a good way to orient yourself:
-    
+      As indicated in <xref ref="eq_lin_sys"/>, when displaying a system of <m>m</m> equations in the <m>n</m> unknowns <m>x_1,x_2,\dots x_n</m>, we typically write each individual equation in <em>standard form</em> and align the corresponding terms of each equation into columns. The presence of multiple equations and multiple unknowns necessitates the use of double-indexing for the coefficients appearing in the system. The following breakdown will hopefully help you orient yourself with respect to the double-indexing: 
   <ul>
     <li>
       <p>
@@ -265,112 +272,90 @@ A homogeneous system is thus typically written as:
   </ul>
   </p>
 </remark>
-    <definition xml:id="d_lin-sys-sols">
-      <title>Solutions to linear systems</title>
-      <idx><h>solutions to linear systems</h></idx>
-      <statement>
-        <p>
-          A <term>solution to a linear equation</term>
-          <me>
-            a_1x_1+a_2x_2+\cdots a_nx_n=b
-          </me>
-          is an <m>n</m>-tuple
-          <m>(s_1,s_2,\dots,
-          s_n)</m> of real numbers for which the variable assignment <m>x_1=s_1, x_2=s_2,\dots, x_n=s_n</m> makes the equation true.
-          We say <m>(s_1,\dots ,s_n)</m> <term>solves the equation</term> in this case.
-        </p>
-        <p>
-          A <term>solution to a system of linear equations</term>
-          <me>
-            \eqsys
-          </me>
-          is an <m>n</m>-tuple <m>(s_1,s_2,\dots,s_n)</m> that is a solution to each of the system's <m>m</m> equations.
-          We say <m>(s_1,s_2,\dots,
-          s_n)</m> <term>solves the system</term> in this case.
-        </p>
-      </statement>
-    </definition>
+<example xml:id="s_systems_eg_2eqns2varss">
+  <title>Solutions to elementary systems</title>
+  <statement>
   <p>
-    Given a linear system we will seek to find the set of
-    <em>all</em> solutions to the system.
-    As we will soon see, this set of solutions will take one of three qualitative forms:
-    <ol>
-      <li>
-        <p>
-          The solution set is empty; i.e., there are no solutions.
-          We say the system is <term>inconsistent</term> in this case.
-          Otherwise a system is called <term>consistent</term>.
-        </p>
-      </li>
-      <li>
-        <p>
-          The solution set contains a single element;
-          i.e., there is exactly one solution.
-        </p>
-      </li>
-      <li>
-        <p>
-          The solution set contains infinitely many elements;
-          i.e., there are infinitely solutions.
-        </p>
-      </li>
-    </ol>
+  For each system, compute the set of solutions.
+  <ol>
+    <li>
+      <me>\begin{linsys}{2} x\amp -\amp y\amp =\amp 0\\ x\amp -\amp y\amp =\amp 1\end{linsys}</me>
+    </li>
+    <li>
+      <me>\begin{linsys}{2} x\amp -\amp y\amp =\amp 0\\ x\amp +\amp y\amp =\amp 1\end{linsys}</me>
+    </li>
+    <li>
+      <me>\begin{linsys}{2} x\amp -\amp y\amp =\amp 1\\ 2x\amp -\amp 2y\amp =\amp 2\end{linsys}</me>
+    </li>
+  </ol>
   </p>
-  <example xml:id="s_systems_eg_2eqns2varss">
-    <title>Solutions to elementary systems</title>
-
-    <statement>
-    <p>
-    For each system, compute the set of solutions.
-    
+  </statement>
+ <solution>
+  <p>
+   <ol>
+    <li><p>The first equation implies <m>x=y</m>.
+  Substituting <m>y</m> for <m>x</m> in the second equation, we would then have <m>0=1</m>, a contradiction.
+  Thus there are no solutions: i.e., <m>S</m> is the empty set, denoted <m>S=\{ \ \}</m> or <m>S=\emptyset</m>.
+  </p>
+    </li>
+    <li>
+      <p>
+        The first equation implies <m>x=y</m>.
+        Making this substitution in the second equation yields <m>2x=1</m>, or <m>x=1/2</m>.
+        Thus <m>(x,y)=(1/2,1/2)</m> is the unique solution,
+        and <m>S=\{ (1/2,1/2)\}</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        The second equation is just twice the first. It follows that both equations have the exact same set of solutions, and
+        so we need only find all solutions to <m>x-y=1</m>.
+        Note that we can set <m>x=t</m> for <em>any</em>
+        real number <m>t \in\R</m>.
+        Solving for <m>y</m> in terms of <m>t</m> we get
+        <m>(x,y)=(t,t-1)</m> for any <m>t\in\R</m>,
+        and thus <m>S=\{(t,t-1)\colon t\in\R\}</m>, an infinite set!
+      </p>
+    </li>
+</ol> 
+  </p>
+</solution>
+</example>
+<p>
+    The solutions to the the three linear systems of <xref ref="s_systems_eg_2eqns2varss"/> can be described <em>qualitatively</em> as follows: nonexistent, unique, and infinite. This turns out to be characteristic more generally of all linear systems. In other words, given a linear system <m>L</m>, the set of solutions <m>S</m> will take one of three qualitative forms:
     <ol>
       <li>
-        <me>\begin{linsys}{2} x\amp -\amp y\amp =\amp 0\\ x\amp -\amp y\amp =\amp 1\end{linsys}</me>
+        <p>
+          <m>S=\emptyset</m>: <ie/>, there are no solutions and the system is inconsistent.
+        </p>
       </li>
       <li>
-        <me>\begin{linsys}{2} x\amp -\amp y\amp =\amp 0\\ x\amp +\amp y\amp =\amp 1\end{linsys}</me>
+        <p>
+          <m>S=\{(s_1,s_2,\dots, s_n)\}</m> contains exactly one element: <ie/>, there is a unique solution.
+        </p>
       </li>
       <li>
-        <me>\begin{linsys}{2} x\amp -\amp y\amp =\amp 1\\ 2x\amp -\amp 2y\amp =\amp 2\end{linsys}</me>
+        <p>
+          <m>S</m> is infinite: <ie/>, there are infinitely many solutions. 
+        </p>
       </li>
     </ol>
-    </p>
-    </statement>
-   <solution>
-    <p>
-     <ol>
-      <li><p>The first equation implies <m>x=y</m>.
-    Substituting <m>y</m> for <m>x</m> in the second equation, we would then have <m>0=1</m>, a contradiction.
-    Thus there are no solutions: i.e., <m>S</m> is the empty set, denoted <m>S=\{ \ \}</m> or <m>S=\emptyset</m>.
-    </p>
-      </li>
-      <li>
-        <p>
-          The first equation implies <m>x=y</m>.
-          Making this substitution in the second equation yields <m>2x=1</m>, or <m>x=1/2</m>.
-          Thus <m>(x,y)=(1/2,1/2)</m> is the unique solution,
-          and <m>S=\{ (1/2,1/2)\}</m>.
-        </p>
-      </li>
-      <li>
-        <p>
-          The second equation is just twice the first. It follows that both equations have the exact same set of solutions, and
-          so we need only find all solutions to <m>x-y=1</m>.
-          Note that we can set <m>x=t</m> for <em>any</em>
-          real number <m>t \in\R</m>.
-          Solving for <m>y</m> in terms of <m>t</m> we get
-          <m>(x,y)=(t,t-1)</m> for any <m>t\in\R</m>,
-          and thus <m>S=\{(t,t-1)\colon t\in\R\}</m>, an infinite set!
-        </p>
-      </li>
-  </ol> 
-    </p>
-  </solution>
-
-</example>
-
-
-
+    We will prove this in full rigor in <xref ref="s_solving"/>. However, we get an inkling of why this should be true in the case of two or three unknowns, where we can put our geometric understanding to work. For example, consider a general system of <m>m</m> equations in just two unknowns <m>x</m> and <m>y</m>: 
+    <men>
+      \begin{linsys}{2} 
+      a_{11}x\amp +\amp a_{12}y\amp =\amp b_1 \\ 
+      a_{21}x\amp +\amp a_{22}y\amp =\amp b_2 \\ 
+      \vdots \amp \amp \vdots \amp \amp \vdots \\
+      a_{m1}x\amp +\amp a_{m2}y\amp =\amp b_m  
+      \end{linsys}
+    </men>
+    Assume for simplicity that each equation in the system is nontrivial, and thus that 
+    for each <m>1\leq i\leq m</m>, the <m>i</m>-th equation of this system defines a line 
+    <men xml:id="eq_sys_line">
+      \ell_i\colon a_{i1}x+a_{i2}y=b_i
+    </men>.
+    A solution <m>P=(s_1,s_2,\dots, s_n)</m> of the system, being a solution of each equation <xref ref="eq_sys_line"/>, must lie on each of the <m>m</m> lines <m>\ell_i</m>. In other words, the set of solutions to the system is precisely the set of points <m>P</m> lying in the common intersection of all of these lines. Thus our qualitative description of the set of solutions to this system amounts to the <em>geometric</em> fact that the intersection of any collection of lines in <m>\R^2</m> is either empty, contains a unique point, or is infinite. <xref ref="ex_solving_sys_geom"/> has you prove this geometric fact, as well as the analogous statement for systems of equations in three unknowns. For now we illustrate this by reexamining <xref ref="s_systems_eg_2eqns2varss"/> from a geometric point of view. 
+  </p>
 <example xml:id="eg_system_of_lines">
 <title>Solutions to elementary systems (again)</title>
 <statement>

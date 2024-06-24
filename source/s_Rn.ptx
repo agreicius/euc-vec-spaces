@@ -344,7 +344,7 @@
                         </p>
                         </case>
                         <p>
-                            As for the remaining axioms, we will verify Axioms (ii) and (vi), and leave the rest as an  exercise. As you see below, the desired identities here all boil down to a familiar property of real number arithmetic: <eg/>, commutativity of real number addition, real number distributivity, etc. In what follows, <m>\boldx=(x_1,x_2,\dots, x_n), \boldy=(y_1,y_2,\dots, y_n), \boldz=(z_1,z_2,\dots, z_n)</m> will denote arbitrary elements of <m>\R^n</m>, and  <m>c,d</m> will denote arbitrary elements of <m>\R</m>.
+                            As for the remaining axioms, we will verify Axioms ii and vi, and leave the rest as an  exercise. As you see below, the desired identities here all boil down to a familiar property of real number arithmetic: <eg/>, commutativity of real number addition, real number distributivity, etc. In what follows, <m>\boldx=(x_1,x_2,\dots, x_n), \boldy=(y_1,y_2,\dots, y_n), \boldz=(z_1,z_2,\dots, z_n)</m> will denote arbitrary elements of <m>\R^n</m>, and  <m>c,d</m> will denote arbitrary elements of <m>\R</m>.
                         </p>
                 <case>
                     <title>Axiom ii</title>
@@ -532,7 +532,7 @@
             </p>
         </proof>
         <p>
-          We also include two <q>exotic</q> examples of vector spaces. We leave verification of the vector space axioms for these spaces as an exercise. (See <xref ref="ex_infinte_sequences"/> and <xref ref="ex_positive_reals"/>.) 
+          We also include two <q>exotic</q> examples of vector spaces. We leave verification of the vector space axioms for these spaces as an exercise. (See <xref ref="ex_infinite_sequences"/> and <xref ref="ex_positive_reals"/>.) 
         </p>
         <example xml:id="eg_infinite_sequences">
           <title>Vector space of infinite sequences</title>

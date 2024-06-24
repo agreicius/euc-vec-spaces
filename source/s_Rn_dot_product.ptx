@@ -194,18 +194,54 @@
             </statement>
             <proof>
                 <p>
-                   We verify each axiom in turn.  
-                       <p>
-                       Lastly, we show that axiom (iii) is satisfied if and only if <m>k_i>0</m> for all <m>i</m>. To this end consider the formula
-                       <me>
-                         \langle \boldx, \boldx \rangle=k_1x_1^2+k_2x_2^2+\cdots k_nx_n^2
-                       </me>.
-                       If <m>k_i>0</m>, then since <m>x_i^2\geq 0</m> for all <m>i</m>, we have <m>\langle \boldx, \boldx \rangle\geq 0</m> for any <m>\boldx</m>, and <m>\langle \boldx, \boldx \rangle=0</m> if and only if <m>x_i=0</m> for all <m>i</m> if and only if <m>\boldx=\boldzero</m>.
-                       </p>
-                       <p>
-                         For the other direction suppose <m>k_i\leq 0</m> for some <m>i</m>. Let <m>\boldx=\bolde_i</m>, the  <m>i</m>-th element of the standard basis of <m>\R^n</m>. Then <m>\langle \boldx, \boldx \rangle=k_i\leq 0</m>: a counterexample to the definiteness property of axiom (iii).
-                       </p>
+                   We verify each axiom in turn. Throughout we assume <m>\boldx=(x_1,x_2,\dots, x_n)</m>, <m>\boldy=(y_1,y_2,\dots, y_n)</m>, and <m>\boldw=(w_1,w_2,\dots, w_n)</m> are arbitrary elements of <m>\R^n</m>. 
                 </p>
+                <case>
+                <title>Axiom i</title>
+                <p>
+                  We have 
+                  <md>
+                    <mrow>\angvec{\boldx,\boldy} \amp = \sum_{k=1}^n k_ix_iy_i \amp \text{(def.)}</mrow>
+                    <mrow> \amp = \sum_{k=1}^n k_iy_ix_i \amp \text{(comm. prop. of real mult.)}</mrow>
+                    <mrow> \amp = \angvec{\boldy,\boldx} \amp \text{(by def.)}</mrow> 
+                  </md>.
+                </p>
+                </case>
+                <case>
+                <title>Axiom ii</title>
+                <p>
+                Given scalars <m>c,d\in \R</m>, we have 
+                <me>
+                  c\boldx+d\boldy=(cx_1+dy_1,cx_2+dy_2,\dots, cx_n+dy_n)
+                </me>,
+                and thus
+                <md>
+                  <mrow>\angvec{c\boldx+d\boldy, \boldw} \amp = \sum_{i=1}^n k_i(cx_i+dy_i)w_i \amp \text{(def.)}</mrow>
+                  <mrow> \amp = \sum_{i=1}^nck_ix_iw_i+dk_iy_iw_i \amp \text{(dist. prop. of reals)}  </mrow>
+                  <mrow> \amp = c\sum_{i=1}^nk_ix_iw_i+d\sum_{i=1}^nk_iy_iw_i \amp \text{(props. of real arith.)} </mrow>
+                  <mrow> \amp = c\angvec{\boldx,\boldw}+d\angvec{\boldy,boldw}</mrow>
+                </md>.
+                </p>
+                </case>
+                <case>
+                <title>Axiom iii</title>
+                <p>
+                We have 
+                <me>
+                  \langle \boldx, \boldx \rangle=k_1x_1^2+k_2x_2^2+\cdots k_nx_n^2
+                </me>.
+                Since <m>k_i&gt; 0</m> and <m>x_i^2\geq 0</m> for all <m>i</m> (squares of real numbers are nonnegative), we have <m>\langle \boldx, \boldx \rangle\geq 0</m> for any <m>\boldx</m>.
+                </p>
+                <p>
+                  We now show that <m>\angvec{\boldx,\boldx}=0</m> if and only if <m>\boldx=\boldzero=(0,0,\dots, 0)</m>. The reverse implication is clear: if <m>x_i=0</m> for all <m>i</m>, then <m>\sum_{i=1}^nk_ix_i^2=\sum_{i=1}^n 0=0</m>. We prove the forward implication by showing that its contrapositive is true: <ie/>, if <m>\boldx\ne \boldzero</m>, then <m>\angvec{\boldx,\boldx} \ne 0</m>. If <m>\boldx\ne \boldzero</m>, then we have <m>x_{i_0}\ne 0</m> for some <m>1\leq i_0\leq n</m>, in which case <m>k_{i_0}x_{i_0}^2 &gt; 0</m>. But then 
+                  <md>
+                    <mrow> \angvec{\boldx,\boldx} \amp = k_{i_0}x_{i_0}^2+\sum_{i\ne i_0}k_ix_i^2 </mrow>
+                    <mrow> \amp \geq k_{i_0}x_{i_0}^2 \amp (k_ix_i^2\geq 0)</mrow>
+                    <mrow> \amp &gt; 0 </mrow>
+                  </md>.
+                  In particular, <m>\angvec{\boldx,\boldx}\ne 0</m>, as desired. 
+                </p>
+                </case>
             </proof>
           </theorem>
           <example xml:base="eg_weights_positive">
@@ -216,7 +252,7 @@
               <me>
                 \langle \boldx, \boldy \rangle =(-1)x_1y_1+2x_2y_2
               </me>
-              where <m>\boldx=(x_1,x_2), \boldy=(y_1,y_2)</m>. This operation satisfies axioms (i) and (ii) of <xref ref="d_innerproduct"/>. (See proof of <xref ref="th_weighted_dotproduct"/>.) However, it fails both the positivity and definiteness properties of axiom (iii):
+              where <m>\boldx=(x_1,x_2), \boldy=(y_1,y_2)</m>. This operation satisfies axioms i-ii of <xref ref="d_innerproduct"/>. (See proof of <xref ref="th_weighted_dot_product"/>.) However, it fails both the positivity and definiteness properties of axiom (iii): <eg/>, 
               <md>
                 <mrow>\langle (3,1), (3,1) \rangle \amp =-9+2=-7\lt 0</mrow>
                 <mrow> \langle (1,1/\sqrt{2}), (1,1/\sqrt{2})\rangle \amp=-1+2/2=0 </mrow>
