@@ -421,7 +421,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="c_linear_systems.html" class="internal"><span class="codenumber">1</span> <span class="title">Euclidean <span class="process-math">\(n\)</span>-space</span></a></div>
+<div class="toc-title-box"><a href="c_Rn.html" class="internal"><span class="codenumber">1</span> <span class="title">Euclidean <span class="process-math">\(n\)</span>-space</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_Rn.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Vector space structure of Rn</span></a></div>
@@ -658,14 +658,14 @@ ax+by+cz=d\text{.}\tag{2.1.3}
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Systems of linear equations.</span>
 </h4>  <div class="para logical" id="d_lin-sys-3-1">
 <div class="para">A <dfn class="terminology">system of linear equations</dfn> (or <dfn class="terminology">linear system</dfn>) is a set of linear equations.</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_lin_sys.html" id="eq_lin_sys">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_lin_syst.html" id="eq_lin_syst">
 \begin{equation}
 \eqsys\tag{2.1.4}
 \end{equation}
 </div>
-<div class="para">The linear system <a href="s_systems.html#eq_lin_sys" class="xref" data-knowl="./knowl/xref/eq_lin_sys.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.4">(2.1.4)</a> is <dfn class="terminology">homogeneous</dfn> if each of its equations is homogeneous: i.e., if <span class="process-math">\(b_i=0\)</span> for all <span class="process-math">\(1\leq i\leq m\text{.}\)</span>
+<div class="para">The linear system <a href="s_systems.html#eq_lin_syst" class="xref" data-knowl="./knowl/xref/eq_lin_syst.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.4">(2.1.4)</a> is <dfn class="terminology">homogeneous</dfn> if each of its equations is homogeneous: i.e., if <span class="process-math">\(b_i=0\)</span> for all <span class="process-math">\(1\leq i\leq m\text{.}\)</span>
 </div>
-</div> <div class="para" id="d_lin-sys-3-2">A <dfn class="terminology">solution</dfn> to the system <a href="s_systems.html#eq_lin_sys" class="xref" data-knowl="./knowl/xref/eq_lin_sys.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.4">(2.1.4)</a> is an <span class="process-math">\(n\)</span>-tuple <span class="process-math">\((s_1,s_2,\dots,s_n)\)</span> that is a solution to each of the system’s <span class="process-math">\(m\)</span> equations. We say <span class="process-math">\((s_1,s_2,\dots,
+</div> <div class="para" id="d_lin-sys-3-2">A <dfn class="terminology">solution</dfn> to the system <a href="s_systems.html#eq_lin_syst" class="xref" data-knowl="./knowl/xref/eq_lin_syst.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.4">(2.1.4)</a> is an <span class="process-math">\(n\)</span>-tuple <span class="process-math">\((s_1,s_2,\dots,s_n)\)</span> that is a solution to each of the system’s <span class="process-math">\(m\)</span> equations. We say <span class="process-math">\((s_1,s_2,\dots,
 s_n)\)</span> <dfn class="terminology">solves the system</dfn> in this case.</div> <div class="para" id="d_lin-sys-3-3">A linear system is <dfn class="terminology">consistent</dfn> if a solution to the system exists, and <dfn class="terminology">inconsistent</dfn> otherwise.</div></article><div class="para logical" id="ss_linear_equations-12">
 <div class="para">When displaying a system of <span class="process-math">\(m\)</span> equations in the <span class="process-math">\(n\)</span> unknowns <span class="process-math">\(x_1,x_2,\dots x_n\text{,}\)</span> we typically write each equation in standard form and align the corresponding terms of each equation into columns:</div>
 <div class="displaymath process-math">
@@ -683,7 +683,7 @@ s_n)\)</span> <dfn class="terminology">solves the system</dfn> in this case.</di
 <article class="remark remark-like" id="ss_linear_equations-13"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Displaying linear systems.</span>
 </h4> <div class="para logical" id="ss_linear_equations-13-2">
-<div class="para">As indicated in <a href="s_systems.html#eq_lin_sys" class="xref" data-knowl="./knowl/xref/eq_lin_sys.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.4">(2.1.4)</a>, when displaying a system of <span class="process-math">\(m\)</span> equations in the <span class="process-math">\(n\)</span> unknowns <span class="process-math">\(x_1,x_2,\dots x_n\text{,}\)</span> we typically write each individual equation in <em class="emphasis">standard form</em> and align the corresponding terms of each equation into columns. The presence of multiple equations and multiple unknowns necessitates the use of double-indexing for the coefficients appearing in the system. The following breakdown will hopefully help you orient yourself with respect to the double-indexing:</div>
+<div class="para">As indicated in <a href="s_systems.html#eq_lin_syst" class="xref" data-knowl="./knowl/xref/eq_lin_syst.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.4">(2.1.4)</a>, when displaying a system of <span class="process-math">\(m\)</span> equations in the <span class="process-math">\(n\)</span> unknowns <span class="process-math">\(x_1,x_2,\dots x_n\text{,}\)</span> we typically write each individual equation in <em class="emphasis">standard form</em> and align the corresponding terms of each equation into columns. The presence of multiple equations and multiple unknowns necessitates the use of double-indexing for the coefficients appearing in the system. The following breakdown will hopefully help you orient yourself with respect to the double-indexing:</div>
 <ul class="disc">
 <li id="ss_linear_equations-13-2-6-1"><div class="para" id="ss_linear_equations-13-2-6-1-1">The <span class="process-math">\(i\)</span> appearing in <span class="process-math">\(a_{ij}\)</span> and <span class="process-math">\(b_i\)</span> indicates the <span class="process-math">\(i\)</span>-th row in our displayed system, or equivalently, the <span class="process-math">\(i\)</span>-th equation.</div></li>
 <li id="ss_linear_equations-13-2-6-2"><div class="para" id="ss_linear_equations-13-2-6-2-1">The <span class="process-math">\(j\)</span> appearing in <span class="process-math">\(a_{ij}\)</span> indicates the <span class="process-math">\(j\)</span>-th column in our displayed system, which is associated to the <span class="process-math">\(j\)</span>-th variable, for <span class="process-math">\(1\leq j\leq n\text{.}\)</span>
