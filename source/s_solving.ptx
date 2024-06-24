@@ -91,8 +91,8 @@
       </men>
       Alternatively, we can describe the solutions to <m>L</m> with the <em>parametric equations</em>
       <men xml:id="s_solving_eq_parametric">
-        x_1=7-2s-3t, x_2=s, x_3=1, x_4=t, x_5=2, \ t,s\in\R.
-      </men>
+        x_1=7-2s-3t, x_2=s, x_3=1, x_4=t, x_5=2, \ t,s\in\R
+      </men>.
     </p>
 </example>
 
@@ -253,21 +253,26 @@
       </p>
     </case>
   </proof>
-  <paragraphs xml:id="ss_GE_video_examples">
-    <title>Video examples of solving linear systems</title>
+  <example xml:id="vid_eg_GE1" >
+    <title>Video: solving linear systems</title>
     <p>
       <figure>
         <title>Video: solving linear systems</title>
       <caption>Video: solving linear systems</caption>
       <video xml:id="vid_GE_solving_1" youtube="ocmtUODkMQQ" />
       </figure>
+    </p>
+  </example>
+  <example xml:id="vid_eg_GE2">
+    <title>Video: solving linear systems</title>
+    <p>
       <figure>
         <title>Video: solving linear systems 2</title>
       <caption>Video: solving linear systems 2</caption>
       <video xml:id="vid_GE_solving_2" youtube="PQ2lJWdTEAY" />
       </figure>
     </p>
-  </paragraphs>
+  </example>
   <project xml:id="sage_solve_system">
     <title>Solving linear systems</title>
     <p>
@@ -371,14 +376,6 @@
   <caption>Decision tree for the number of solutions to a linear system with augmented matrix <m>U</m> in row echelon form. </caption>
   <image xml:id="im_decision_tree" source="./images/im_decision_tree.svg"/>
 </figure> -->
-
-
-
-
-</subsection>
-
-<paragraphs xml:id="ss_homogeneous">
-  <title>Solutions to homogeneous systems</title>
   <p>
     Consider the special case of a homogeneous system
     <me>
@@ -410,7 +407,80 @@
       </statement>
     </corollary>
 
-  </paragraphs>
+  </subsection>
+  <subsection>
+<title>Vector parametrization description</title>
+<p>
+  Consider again the solution set to the linear system in <xref ref="eg_solving_system"/>, which we described using parametric equations as 
+  <me>
+    x_1=7-2s-3t, x_2=s, x_3=1, x_4=t, x_5=2, \ s,t \in\R
+  </me>, 
+  and using set building notation as 
+  <me>
+    S=\left\{(7-2s-3t, s, 1, t, 2)\colon s, t\in\R\right\}
+  </me>.
+ Using the vector space structure of <m>\R^5</m>, we can give yet another description of the general solution: 
+ <me>
+  \boldx=(7,0,1,0,2)+s(-2,1,0,0,0)+t(-3,0,0,1,0), \ s,t\in \R
+ </me>.
+ We will call this the <em>vector parametrization</em> description of the solution set. This description is obtained in steps by first breaking up the expression <m>(7-2s-3t, s, 1, t, 2)</m> into a constant vector plus a vector involving the parameters <m>s</m> and <m>t</m>, and then rewriting the latter as a linear combination of two vectors with <m>s</m> and <m>t</m> as the coefficients: 
+ <md>
+  <mrow> (7-2s-3t, s, 1, t, 2) \amp = (7,0,1,0,2)+(-2s-3t,s,0,t,0) </mrow>
+  <mrow> \amp = (7,0,1,0,2)+(-2s,s,0,0,0)+(-3t,0,0,t,0)</mrow>
+  <mrow> \amp =(7,0,1,0,2)+s(-2,1,0,0,0)+t(-3,0,0,1,0)</mrow>
+ </md>.
+ The solution set of any consistent linear system can be described in this manner. In general, given a consistent system in <m>n</m> unknowns with <m>k</m> free variables, the general solution of the system is given by a vector parametrization of the form  
+ <men xml:id="eq_vector_param">
+  (a_1,a_2,\dots, a_n)+t_1\boldv_1+t_2\boldv_2+\cdots +t_k\boldv_k
+ </men>.
+ The vector parametrization <xref ref="eq_vector_param"/> leads to a useful geometric understanding of the set of solutions to a linear system. The point <m>P=(a_1,a_2,\dots, a_n)</m> can be thought of as a <em>particular solution</em> to the equation: the solution you obtain by choosing <m>t_1=t_2=\cdots =t_k=0</m> in <xref ref="eq_vector_param"/>. The general solution is then obtained by adding to the point <m>P</m> any linear combination of the vectors <m>\boldv_1,\boldv_2,\dots, \boldv_k</m>. 
+</p>
+<example>
+  <title>Vector parametrization</title>
+  <p>
+    Consider the linear equation <m>x+y+z=4</m>. The corresponding augmented matrix of this equation is
+    <me>
+      \begin{amatrix}[ccc|c]
+      \boxed{1} \amp 1\amp 1\amp 4
+      \end{amatrix}
+    </me>,
+    which is already in row echelon form. Using <xref ref="proc_solveSystem"/>, we see that the general solution is 
+    <me>
+      (4-s-t,s,t)=(4,0,0)+s(-1,1,0)+t(-1,0,1)
+    </me>.
+    This vector parametrization description allows us to visualize the plane <m>\mathcal{P}</m> with equation <m>x+y+z=4</m> as the set of all points obtained by translating the point <m>P=(4,0,0)</m> by various linear combinations of <m>\boldv=(-1,1,0)</m> and <m>\boldw=(-1,0,1)</m>. In this manner, the two vectors <m>\boldv</m> and <m>\boldw</m> determine a (non-rectangular) grid on <m>\mathcal{P}</m>. 
+    <figure xml:id="fig_plane_vector_param">
+      <caption>Vector parametrization of plane <m>x+y+z=4</m></caption>
+      <image xml:id="im_plane_vector_param" width="80%">
+        <shortdescription>Vector parametrization of plane</shortdescription>
+        <sageplot variant="3d" aspect="1.0">
+          (u,v,r)=var('u v r')
+          from sage.plot.plot3d.plot3d import axes
+          a=axes(4,1,color='black',ticks=[(0,1,2),(0,1,2),(0,1,2)])
+          n=[1,1,1] #normal vector
+          A=matrix([n])
+          d=vector([4]) # d in ax+by+cz=d
+          P=vector((4,0,0)) #Find a point
+          B=A.right_kernel().basis()
+          w1=vector((-1,1,0)) #Two vectors orth. to n that
+          w2=vector((-1,0,1)) #are not scalar multiples
+          r(u,v)=P+u*w1+v*w2 #The parametrization
+          S=parametric_plot3d(P+u*w1+v*w2,(u,-1,3),(v,-1,3), color='red',opacity=.1)
+          gridu=sum(line([P+r*w2-w1,P+r*w2+3*w1],color='red') for r in srange(-1,3,1))
+          gridv=sum(line([P+r*w1-w2,P+r*w1+3*w2],color='blue') for r in srange(-1,3,1))
+          t1=text3d("v",P+.75*w1+vector([0,0,.2]), fontsize=16)
+          t2=text3d("w",P+.75*w2+vector([0,0,.2]), fontsize=16)
+          t3=text3d("P",P+vector([0,0,.2]), fontsize=16)
+          t4=text3d("n",P+1.2*vector(n).normalized(), fontsize=16)
+          point3d(P,size=10, opacity=1)+S+a+arrow(P,P+w1, color="red", width=2)+arrow(P,P+w2, color='red', width=2)+gridu+gridv+t1+t2+t3
+        </sageplot>
+      </image>
+      
+    </figure>
+  </p>
+</example>
+
+  </subsection>
 
   <xi:include  href="s_solving_ex.ptx"/>
 

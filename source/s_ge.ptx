@@ -63,6 +63,58 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
 </p>
 
 </remark>
+<remark>
+  <p>
+    Note that a system of <m>m</m> equations in <m>n</m> unknowns gives rise to an augmented matrix that has <m>m</m> rows (one row for each equation) and <m>n+1</m> columns (one column for each unknown and an additional column for the right-hand side constants <m>b_1,b_2,\dots, b_m</m>). The vertical line in the augmented matrix helps distinguish between the columns corresponding to unknowns (to the left of the vertical line) and the column of constants (to the right of the vertical line). When we wish to further emphasize this distinction among the columns, we will label the first <m>n</m> columns with their corresponding variable name as in <xref ref="fig_aug_mat"/>.  
+  </p>
+  <figure xml:id="fig_aug_mat">
+    <caption>Augmented matrix with labeled columns</caption>
+<image xml:id="im_aug_mat" width="40%">
+  <shortdescription>Augmented matrix with labeled columns</shortdescription>
+  <latex-image>
+    \begin{tikzpicture}[
+    Brace/.style={
+        decorate,
+        decoration={
+            brace,
+            raise=-2pt
+        }
+    },
+    DL/.style={
+       left delimiter=[,
+       right delimiter=],
+       inner sep=-2pt,
+   }
+]
+
+ \matrix[% General option for all nodes
+    matrix of math nodes,
+    text height=2.5ex,
+    text depth=0.75ex,
+    text width=3.25ex,
+    align=center,
+%        left delimiter=(,
+%        right delimiter= ),
+    column sep=5pt,
+    row sep=5pt,
+    %nodes={draw=black!10}, % Uncoment to see the square nodes.
+    nodes in empty cells,
+] at (0,0) (M){ % Matrix contents  
+   \amp x_1  \amp x_2  \amp\dots  \amp x_n \amp  \\
+ \amp a_{11} \amp a_{12} \amp \dots  \amp a_{n1} \amp  b_1\\
+ \amp a_{21} \amp a_{22} \amp \dots  \amp a_{21} \amp  b_2\\ 
+ \amp\vdots \amp \vdots \amp \ddots \amp\vdots \amp\vdots \\
+\amp a_{m1} \amp a_{m2} \amp \dots  \amp a_{m1} \amp  b_m \\
+   };
+% Drawing the sectors using matrix coordinate names.    
+% Drawing the braces.  
+\node[DL,fit=(M-2-2)(M-5-6)](subM-1){};
+\draw[black] (M-2-5.east) -- (M-5-5.south east);
+    \end{tikzpicture}
+  </latex-image>
+</image>
+  </figure>
+</remark>
  <p>
    Here is our precise formulation of a <q>simple</q> linear system; it is a system whose associated augmented matrix is in <em>row echelon form</em>, as described below.
 </p>
@@ -109,6 +161,29 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
     </statement>
   </definition>
   <p>
+    A matrix in row echelon form displays a staircase pattern of ones as illustrated in <xref ref="fig_echelon"/>.
+    <figure xml:id="fig_echelon">
+      <caption>Staircase pattern of row echelon form</caption>
+      <image xml:id="im_echelon" width="30%">
+        <shortdescription>Staircase pattern of row echelon form</shortdescription>
+        <latex-image>
+          \begin{tikzpicture}
+  \matrix (mymatrix) [matrix of math nodes,left delimiter={[},right
+delimiter={]}]
+  {
+    0\amp1\amp*\amp*\amp*\amp*\amp*\\
+    0\amp0\amp0\amp1\amp*\amp*\amp*\\
+    0\amp0\amp0\amp0\amp1\amp*\amp*\\
+    0\amp0\amp0\amp0\amp0\amp0\amp1\\
+    0\amp0\amp0\amp0\amp0\amp0\amp0 \\
+  };
+\draw[black] (mymatrix-1-2.north west) -- (mymatrix-1-2.south west) -- (mymatrix-1-4.south west) -- (mymatrix-2-4.south west)
+-- (mymatrix-2-5.south west) -- (mymatrix-3-5.south west) -- (mymatrix-3-7.south west) -- (mymatrix-4-7.south west) -- (mymatrix-4-7.south east) ;
+\end{tikzpicture}
+
+        </latex-image>
+      </image>
+    </figure>
     In practice to decide whether a matrix is in in (reduced) row echelon form,
     follow these steps:
     <ol>
@@ -282,7 +357,7 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
       </p>
     </statement>
   </principle>
-  <definition xml:id="d_GE">
+  <algorithm xml:id="d_GE">
   <title>Gaussian elimination</title>
     <idx><h>Gaussian elimination</h></idx>
     <statement>
@@ -319,7 +394,7 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
     </li>
   </dl>
   </statement>
-</definition>
+</algorithm>
 
   <subsection>
     <title> Model example</title>
@@ -394,7 +469,7 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
   The matrix outputted by Gaussian elimination is guaranteed to be in row echelon form, but it may not be in <em>reduced</em> row echelon form. <em>Gauss-Jordan elimination</em> describes a systematic way to continue reducing to this even simpler state.
 </p>
 </subsection>
-<definition xml:id="d_GaussJordan">
+<algorithm xml:id="d_GaussJordan">
       <title>Gauss-Jordan elimination</title>
       <statement>
         <p>
@@ -421,7 +496,7 @@ As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectang
           </li>
         </dl>
       </statement>
-    </definition>
+    </algorithm>
     <example xml:id="eg_model_rref">
       <title>Reduced row echelon form</title>
       

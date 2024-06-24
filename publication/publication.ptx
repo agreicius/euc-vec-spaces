@@ -124,7 +124,7 @@
     <!-- Control behavior of online WeBWorK, per type: -->
     <webwork
       inline="dynamic"
-      divisional="static"
+      divisional="dynamic"
       reading="static"
       worksheet="static"
       project="dynamic"

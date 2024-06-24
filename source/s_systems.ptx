@@ -16,9 +16,9 @@
         (or variables)
         <m>x_1,x_2,\dots x_n</m> is an expression of the form
         <me>
-          a_1x_1+a_2x_2+\cdots +a_nx_n
+          a_1x_1+a_2x_2+\cdots +a_nx_n+c
         </me>,
-        where <m>a_1,a_2,\dots, a_n</m> are fixed real numbers.
+        where <m>a_1,a_2,\dots, a_n,c</m> are fixed real numbers.
       </p>
       <p>A <term>linear equation</term> in the unknowns <m>x_1,x_2,\dots, x_n</m> is an equation that can be simplified, using only addition and subtraction, to an equation of the form
         <men xml:id="eq_std_form">

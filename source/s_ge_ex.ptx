@@ -6,10 +6,10 @@
     <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_02_010.pg" />
   </exercise>
 
-<exercise>
+<!-- <exercise> -->
   <!-- Individual row reductions for a 3x3 matrix -->
-  <webwork source="Library/Mizzou/Finite_Math/MatrixOperations/RowOp3by3e.pg" />
-</exercise>
+  <!-- <webwork source="Library/Mizzou/Finite_Math/MatrixOperations/RowOp3by3e.pg" /> -->
+<!-- </exercise> -->
 
 <exercise>
   <!-- Combined row reductions for a 3x3 matrix -->
