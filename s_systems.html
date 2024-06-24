@@ -472,7 +472,8 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#ss_workingExample" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Model example continued</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#ss_solveSystem" class="internal"><span class="codenumber">2.3.2</span> <span class="title">General method for solving linear systems</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_solving.html#s_solving_ex" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#s_solving-5" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Vector parametrization description</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_solving.html#s_solving_ex" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -543,7 +544,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_systems"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">2.1</span><span class="space"> </span><span class="title">Systems of linear equations</span>
 </h2>
-<section class="introduction" id="s_systems-2"><div class="para" id="s_systems-2-1">Computing and studying solutions to equations, and <em class="emphasis">systems of equations</em>, unquestionably plays an important role in mathematics; though we hasten to add that this is not all that mathematicians do! In this chapter we will develop an essentially complete theory of a particularly simple family of mathematical equations: namely, <em class="emphasis">linear equations</em>.  This will serve as a somewhat indirect introduction to our study of linear algebra, as lurking below our parametric descriptions of solutions to linear systems lie vector space notions like subspace, span, and linear independence. Furthermore, we will introduce one of the most important computational tools of linear algebra: <a href="s_ge.html#d_GE" class="xref" data-knowl="./knowl/xref/d_GE.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 2.2.8: Gaussian elimination">Gaussian elimination</a>.</div></section><section class="subsection" id="ss_linear_equations"><h3 class="heading hide-type">
+<section class="introduction" id="s_systems-2"><div class="para" id="s_systems-2-1">Computing and studying solutions to equations, and <em class="emphasis">systems of equations</em>, unquestionably plays an important role in mathematics; though we hasten to add that this is not all that mathematicians do! In this chapter we will develop an essentially complete theory of a particularly simple family of mathematical equations: namely, <em class="emphasis">linear equations</em>.  This will serve as a somewhat indirect introduction to our study of linear algebra, as lurking below our parametric descriptions of solutions to linear systems lie vector space notions like subspace, span, and linear independence. Furthermore, we will introduce one of the most important computational tools of linear algebra: <a href="s_ge.html#d_GE" class="xref" data-knowl="./knowl/xref/d_GE.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 2.2.11: Gaussian elimination">Gaussian elimination</a>.</div></section><section class="subsection" id="ss_linear_equations"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="space"> </span><span class="title">Systems of linear equations</span>
 </h3>
 <article class="definition definition-like" id="d_lin-equation"><h4 class="heading">
@@ -552,10 +553,10 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <div class="para">A <dfn class="terminology">linear expression</dfn> in the <span class="process-math">\(n\)</span> unknowns (or variables) <span class="process-math">\(x_1,x_2,\dots x_n\)</span> is an expression of the form</div>
 <div class="displaymath process-math">
 \begin{equation*}
-a_1x_1+a_2x_2+\cdots +a_nx_n\text{,}
+a_1x_1+a_2x_2+\cdots +a_nx_n+c\text{,}
 \end{equation*}
 </div>
-<div class="para">where <span class="process-math">\(a_1,a_2,\dots, a_n\)</span> are fixed real numbers.</div>
+<div class="para">where <span class="process-math">\(a_1,a_2,\dots, a_n,c\)</span> are fixed real numbers.</div>
 </div> <div class="para logical" id="d_lin-equation-3-2">
 <div class="para">A <dfn class="terminology">linear equation</dfn> in the unknowns <span class="process-math">\(x_1,x_2,\dots, x_n\)</span> is an equation that can be simplified, using only addition and subtraction, to an equation of the form</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_std_form.html" id="eq_std_form">
@@ -901,6 +902,9 @@ L\xrightarrow{e_i+c\,e_j}L'
 </h3>
 <article class="subexercises" id="s_systems_ex-1"><h4 class="heading"><span class="title">WeBWork Exercises</span></h4>
 <article class="exercise exercise-like" id="s_systems_ex-1-2"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div id="webwork-18" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="18" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/TCNJ/TCNJ_LinearSystems/problem1.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-18')">Activate</button></div>
+<div class="problem-contents">
 <div class="para" id="extracted-webwork-18-1-1-1">Determine whether the following system has no solution, an infinite number of solutions or a unique solution.</div> <div class="para logical" id="extracted-webwork-18-1-1-2"><ol class="lower-alpha">
 <li id="extracted-webwork-18-1-1-2-1-1"><div class="para" id="extracted-webwork-18-1-1-2-1-1-1"><span class="process-math">\(\displaystyle \left\lbrace\begin{array}{rllrrr}
 -8 x \amp  - 7 y \amp = \amp 3 \cr
@@ -917,10 +921,20 @@ L\xrightarrow{e_i+c\,e_j}L'
 -15 x \amp + 9 y \amp = \amp -6 \cr
 30 x \amp  - 18 y \amp = \amp 12
 \end{array} \right.\)</span></div></li>
-</ol></div></article><article class="exercise exercise-like" id="s_systems_ex-1-3"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+</ol></div>
+</div>
+</div></article><article class="exercise exercise-like" id="s_systems_ex-1-3"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div id="webwork-19" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="19" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/TCNJ/TCNJ_RowReduction/problem5.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-19')">Activate</button></div>
+<div class="problem-contents">
 <div class="para" id="extracted-webwork-19-1-1-1">Suppose that the following</div> <div class="para" id="extracted-webwork-19-1-1-2"><span class="process-math">\(\left\lbrace\begin{array}{rrrrrr}\amp  4 \,x\amp +\amp  8 \, y\amp =\amp 4\\\amp  12 \,x\amp +\amp  24 \, y\amp =\amp k\\\amp  8 \,x\amp +\amp  16 \, y\amp =\amp 8\\ \end{array}\right.\)</span></div> <div class="para" id="extracted-webwork-19-1-1-3">is a consistent system.   Then <span class="process-math">\(k=\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>
 </div>
-<div class="solutions"><details id="extracted-webwork-19-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="extracted-webwork-19-1-2-1"><span class="process-math">\(12\)</span></div></div></details></div></article><article class="exercise exercise-like" id="s_systems_ex-1-4"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div class="solutions"><details id="extracted-webwork-19-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="extracted-webwork-19-1-2-1"><span class="process-math">\(12\)</span></div></div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="s_systems_ex-1-4"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div id="webwork-20" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="20" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_01_024.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-20')">Activate</button></div>
+<div class="problem-contents">
 <div class="para" id="extracted-webwork-20-1-1-1">Find the set of solutions for the linear system</div> <div class="para logical" id="extracted-webwork-20-1-1-2">
 <div class="displaymath process-math">
 \begin{equation*}
@@ -935,12 +949,22 @@ L\xrightarrow{e_i+c\,e_j}L'
 <details id="extracted-webwork-20-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="extracted-webwork-20-1-2-1"><span class="process-math">\(-16\)</span></div></div></details><details id="extracted-webwork-20-1-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="extracted-webwork-20-1-3-1"><span class="process-math">\(-3\)</span></div></div></details><details id="extracted-webwork-20-1-4" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="extracted-webwork-20-1-4-1"><span class="process-math">\(3\)</span></div></div></details><details id="extracted-webwork-20-1-5" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="extracted-webwork-20-1-5-1">
 <em class="alert">SOLUTION:</em> Equation 3 <span class="process-math">\(\Rightarrow x_3 = 3\text{.}\)</span> Substitute into equation 2, <span class="process-math">\(-x_2  - 4(3) = -9 \Rightarrow x_2 = -3\text{.}\)</span> Substitute into equation 1, <span class="process-math">\(x_1 + 4(-3) + 6(3) = -10 \Rightarrow x_1 = -16\text{.}\)</span>
 </div></div></details>
+</div>
+</div>
 </div></article><article class="exercise exercise-like" id="s_systems_ex-1-5"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div id="webwork-21" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="21" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/TCNJ/TCNJ_LinearSystems/problem3.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-21')">Activate</button></div>
+<div class="problem-contents">
 <div class="para" id="extracted-webwork-21-1-1-1">Give a geometric description of the following systems of equations</div> <div class="para logical" id="extracted-webwork-21-1-1-2"><ol class="lower-alpha">
 <li id="extracted-webwork-21-1-1-2-1-1"><div class="para" id="extracted-webwork-21-1-1-2-1-1-1"><span class="process-math">\(\displaystyle \left\lbrace\begin{array}{rrrrrr}\amp  7 \,x\amp +\amp   \, y\amp =\amp 9\\\amp  4 \,x\amp +\amp  3 \, y\amp =\amp 2\\\amp  -23 \, x\amp - \amp 13 \,y\amp =\amp -15\\ \end{array}\right.\)</span></div></li>
 <li id="extracted-webwork-21-1-1-2-1-2"><div class="para" id="extracted-webwork-21-1-1-2-1-2-1"><span class="process-math">\(\displaystyle \left\lbrace\begin{array}{rrrrrr}\amp  -8 \, x\amp +\amp  12 \, y\amp =\amp -4\\\amp  -4 \, x\amp +\amp  6 \, y\amp =\amp -2\\\amp  14 \,x\amp - \amp 21 \,y\amp =\amp 7\\ \end{array}\right.\)</span></div></li>
 <li id="extracted-webwork-21-1-1-2-1-3"><div class="para" id="extracted-webwork-21-1-1-2-1-3-1"><span class="process-math">\(\displaystyle \left\lbrace\begin{array}{rrrrrr}\amp  7 \,x\amp +\amp   \, y\amp =\amp 9\\\amp  4 \,x\amp +\amp  3 \, y\amp =\amp 2\\\amp  -23 \, x\amp - \amp 13 \,y\amp =\amp -17\\ \end{array}\right.\)</span></div></li>
-</ol></div></article><article class="exercise exercise-like" id="s_systems_ex-1-6"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+</ol></div>
+</div>
+</div></article><article class="exercise exercise-like" id="s_systems_ex-1-6"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div id="webwork-22" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="22" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/TCNJ/TCNJ_LinearSystems/problem4.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-22')">Activate</button></div>
+<div class="problem-contents">
 <div class="para" id="extracted-webwork-22-1-1-1">Give a geometric description of the following system of equations</div> <div class="para logical" id="extracted-webwork-22-1-1-2"><ol class="lower-alpha">
 <li id="extracted-webwork-22-1-1-2-1-1"><div class="para" id="extracted-webwork-22-1-1-2-1-1-1"><span class="process-math">\(\displaystyle \left\lbrace\begin{array}{rrrrrrr}
 2x \amp  + \amp  4y \amp  - \amp  6z \amp  = \amp  -12 \cr
@@ -954,7 +978,9 @@ L\xrightarrow{e_i+c\,e_j}L'
 2x \amp  + \amp  4y \amp  - \amp  6z \amp  = \amp  12 \cr
 -3x \amp  - \amp  6y \amp  + \amp  9z \amp  = \amp  16
 \end{array}\right.\)</span></div></li>
-</ol></div></article></article><article class="subexercises" id="s_systems_ex-2"><h4 class="heading"><span class="title">Written exercises</span></h4>
+</ol></div>
+</div>
+</div></article></article><article class="subexercises" id="s_systems_ex-2"><h4 class="heading"><span class="title">Written exercises</span></h4>
 <article class="exercise exercise-like" id="ex_solving_sys_geom"><h5 class="heading">
 <span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Geometry of linear systems.</span>
 </h5>

@@ -753,28 +753,19 @@ Reduced row echelon form.</p>
     <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_02_010.pg"/>
   </webwork-reps>
   <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-24" ww-id="webwork-24">
-    <static seed="24" source="Library/Mizzou/Finite_Math/MatrixOperations/RowOp3by3e.pg" failure="compile">
-      <statement>
-        <p>PTX:ERROR: WeBWorK problem Library/Mizzou/Finite_Math/MatrixOperations/RowOp3by3e.pg with seed 24 is either empty or failed to compile  
-  Use -a to halt with returned content
-</p>
-      </statement>
-    </static>
-  </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-25" ww-id="webwork-25">
-    <static seed="25" source="Library/ASU-topics/set119LinearSystems/p28.pg">
+    <static seed="24" source="Library/ASU-topics/set119LinearSystems/p28.pg">
       <statement><p>On the augmented matrix <m>A</m> below , perform all three row operations in the order
 given, 
 ((a) followed by (b) followed by
 (c)) and then write the resulting augmented matrix.</p>
 <p><me>A = \displaystyle\left[\begin{array}{rrr|r} 
-1 \amp -2 \amp 1 \amp -2 \cr  
-4 \amp -7 \amp 1 \amp 2 \cr  
--2 \amp 3 \amp -1 \amp 3 \cr  
+1 \amp 1 \amp 4 \amp -4 \cr  
+3 \amp 4 \amp -4 \amp -6 \cr  
+-4 \amp -8 \amp 3 \amp 3 \cr  
 \end{array}\right]</me></p>
-<p><m>(a) R_2 = -4 r_1 + r_2</m></p>
-<p><m>(b) R_3 = 2 r_1 + r_3</m></p>
-<p><m>(c) R_3 = 1 r_2 + r_3</m></p>
+<p><m>(a) R_2 = -3 r_1 + r_2</m></p>
+<p><m>(b) R_3 = 4 r_1 + r_3</m></p>
+<p><m>(c) R_3 = 4 r_2 + r_3</m></p>
 <tabular>
 <row>
 <cell><fillin name="AnSwEr0001" characters="5"/></cell>
@@ -803,7 +794,22 @@ given,
       </answer>
       <answer>
         <p>
-          <m>-2</m>
+          <m>1</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>4</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-4</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>0</m>
         </p>
       </answer>
       <answer>
@@ -813,27 +819,12 @@ given,
       </answer>
       <answer>
         <p>
-          <m>-2</m>
+          <m>-16</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>0</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>1</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>-3</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>10</m>
+          <m>6</m>
         </p>
       </answer>
       <answer>
@@ -848,25 +839,25 @@ given,
       </answer>
       <answer>
         <p>
-          <m>-2</m>
+          <m>-45</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>9</m>
+          <m>11</m>
         </p>
       </answer>
     </static>
     <server-data sourceFilePath="Library/ASU-topics/set119LinearSystems/p28.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/ASU-topics/set119LinearSystems/p28.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-26" ww-id="webwork-26">
-    <static seed="26" source="Library/Mizzou/Finite_Math/Augmented_Matrices/AugMatrix1a.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-25" ww-id="webwork-25">
+    <static seed="25" source="Library/Mizzou/Finite_Math/Augmented_Matrices/AugMatrix1a.pg">
       <statement><p>Solve the following system using augmented matrix methods:
 <me>\begin{array}{c}
-3 x  - 6 y = -33
+3 x  - 6 y = 6
 \\
-7 x  - 14 y = -77
+-6 x + 12 y = -12
 \end{array}</me></p>
 <p>(a) The initial matrix is:</p>
 <tabular>
@@ -894,7 +885,7 @@ given,
 <cell><fillin name="AnSwEr0012" characters="5"/></cell>
 </row>
 </tabular>
-<p>(c) Next, perform the operation <m>-7 R_1 + R_2 \to R_2</m>.  The resulting matrix is:</p>
+<p>(c) Next, perform the operation <m>+ 6 R_1 + R_2 \to R_2</m>.  The resulting matrix is:</p>
 <tabular>
 <row>
 <cell><fillin name="AnSwEr0013" characters="5"/></cell>
@@ -939,52 +930,22 @@ given,
       </answer>
       <answer>
         <p>
-          <m>-33</m>
+          <m>6</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>7</m>
+          <m>-6</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-14</m>
+          <m>12</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-77</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>1</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>-2</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>-11</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>7</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>-14</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>-77</m>
+          <m>-12</m>
         </p>
       </answer>
       <answer>
@@ -999,7 +960,37 @@ given,
       </answer>
       <answer>
         <p>
-          <m>-11</m>
+          <m>2</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-6</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>12</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-12</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>1</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-2</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>2</m>
         </p>
       </answer>
       <answer>
@@ -1029,7 +1020,7 @@ given,
       </answer>
       <answer>
         <p>
-          <m>-11</m>
+          <m>2</m>
         </p>
       </answer>
       <answer>
@@ -1054,7 +1045,7 @@ given,
       </answer>
       <answer>
         <p>
-          <m>-11+2t</m>
+          <m>2+2t</m>
         </p>
       </answer>
       <answer>
@@ -1066,15 +1057,15 @@ given,
     <server-data sourceFilePath="Library/Mizzou/Finite_Math/Augmented_Matrices/AugMatrix1a.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/Mizzou/Finite_Math/Augmented_Matrices/AugMatrix1a.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-27" ww-id="webwork-27">
-    <static seed="27" source="Library/Mizzou/Finite_Math/Gauss-Jordan_Elimination/3by3a.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-26" ww-id="webwork-26">
+    <static seed="26" source="Library/Mizzou/Finite_Math/Gauss-Jordan_Elimination/3by3a.pg">
       <statement><p>Solve the following system using augmented matrix methods:
 <me>\begin{array}{c}
-2 x_1  - 2 x_2  - 2 x_3 = -4
+10 x_1 + 5 x_2  - 30 x_3 = 25
 \\
--1 x_1 + 1 x_2 + 1 x_3 = 2
+-3 x_1  - 3 x_2 + 3 x_3 = -9
 \\
--5 x_1 + 5 x_2 + 5 x_3 = 10
+18 x_1 + 12 x_2  - 42 x_3 = 48
 \end{array}</me></p>
 <p>(a) The initial matrix is:</p>
 <tabular>
@@ -1097,7 +1088,7 @@ given,
 <cell><fillin name="AnSwEr0012" characters="5"/></cell>
 </row>
 </tabular>
-<p>(b) First, perform the Row Operation <m>\frac{1}{2} R_1 \to R_1</m>.  The resulting matrix is:</p>
+<p>(b) First, perform the Row Operation <m>\frac{1}{10} R_1 \to R_1</m>.  The resulting matrix is:</p>
 <tabular>
 <row>
 <cell><fillin name="AnSwEr0013" characters="5"/></cell>
@@ -1119,8 +1110,8 @@ given,
 </row>
 </tabular>
 <p>(c) Next, perform the operations</p>
-<p><m>\qquad \qquad  + 1 R_1 + R_2 \to R_2</m></p>
-<p><m>\qquad \qquad  + 5 R_1 + R_3 \to R_3</m>.</p>
+<p><m>\qquad \qquad  + 3 R_1 + R_2 \to R_2</m></p>
+<p><m>\qquad \qquad -18 R_1 + R_3 \to R_3</m>.</p>
 <p>The resulting matrix is:</p>
 <tabular>
 <row>
@@ -1170,31 +1161,66 @@ given,
 <p><m>x_1=</m> <fillin name="AnSwEr0050" characters="25"/></p>
 <p><m>x_2=</m> <fillin name="AnSwEr0051" characters="25"/></p>
 <p><m>x_3=</m> <fillin name="AnSwEr0052" characters="25"/></p>
-<p><alert>Note:</alert> In part (f), if there are no solutions, write "No Solution" or "None" in the answer blank after each equal sign.  If there are infinitely many solutions, and the solution set describes a line (that is, if there is only one free variable), set <m>x_{2} = t</m> and solve for the remaining variables in terms of <m>t</m>.  If there are infinitely many solutions, and the solution set describes a plane (that is, if the solution set has two free variables), set the variables <m>x_3 = t</m>  and <m>x_2 = s</m>, and then solve for <m>x_1</m> in terms of <m>s</m> and <m>t</m>.</p>
+<p><alert>Note:</alert> In part (f), if there are no solutions, write "No Solution" or "None" in the answer blank after each equal sign.  If there are infinitely many solutions, and the solution set describes a line (that is, if there is only one free variable), set <m>x_{3} = t</m> and solve for the remaining variables in terms of <m>t</m>.  If there are infinitely many solutions, and the solution set describes a plane (that is, if the solution set has two free variables), set the variables <m>x_3 = t</m>  and <m>x_2 = s</m>, and then solve for <m>x_1</m> in terms of <m>s</m> and <m>t</m>.</p>
 </statement>
       <answer>
         <p>
-          <m>2</m>
+          <m>10</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-2</m>
+          <m>5</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-2</m>
+          <m>-30</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-4</m>
+          <m>25</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-1</m>
+          <m>-3</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-3</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>3</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-9</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>18</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>12</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-42</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>48</m>
         </p>
       </answer>
       <answer>
@@ -1204,12 +1230,127 @@ given,
       </answer>
       <answer>
         <p>
+          <m>0.5</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-3</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>2.5</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-3</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-3</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>3</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-9</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>18</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>12</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-42</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>48</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
           <m>1</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>2</m>
+          <m>0.5</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-3</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>2.5</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>0</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-1.5</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-6</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-1.5</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>0</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>3</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>12</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>3</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>1</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>0</m>
         </p>
       </answer>
       <answer>
@@ -1219,136 +1360,11 @@ given,
       </answer>
       <answer>
         <p>
-          <m>5</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>5</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>10</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>1</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>-1</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>-1</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>-2</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>-1</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>1</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>1</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
           <m>2</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-5</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>5</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>5</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>10</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>1</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>-1</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>-1</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>-2</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>0</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>0</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>0</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>0</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>0</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>0</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>0</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
           <m>0</m>
         </p>
       </answer>
@@ -1359,37 +1375,12 @@ given,
       </answer>
       <answer>
         <p>
-          <m>-1</m>
+          <m>4</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-1</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>-2</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>0</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>0</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>0</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>0</m>
+          <m>1</m>
         </p>
       </answer>
       <answer>
@@ -1419,12 +1410,12 @@ given,
       </answer>
       <answer>
         <p>
-          <m>\frac{2-t\cdot 1-s\cdot 1}{-1}</m>
+          <m>2-\left(-5\right)t</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>s</m>
+          <m>1-4t</m>
         </p>
       </answer>
       <answer>
@@ -1436,14 +1427,14 @@ given,
     <server-data sourceFilePath="Library/Mizzou/Finite_Math/Gauss-Jordan_Elimination/3by3a.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/Mizzou/Finite_Math/Gauss-Jordan_Elimination/3by3a.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-28" ww-id="webwork-28">
-    <static seed="28" source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p02.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-27" ww-id="webwork-27">
+    <static seed="27" source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p02.pg">
       <statement><p>Solve
 <me>\begin{array}{rcrcrcrcr}
-    x \amp  - \amp   y \amp  + \amp   z \amp  - \amp   w \amp  = \amp  1 \\ 
-      \amp    \amp   y \amp  + \amp  2z \amp  + \amp   w \amp  = \amp  2 \\
-      \amp    \amp     \amp    \amp  -z \amp  + \amp   w \amp  = \amp  2 \\
-   -x \amp  + \amp  2y \amp  - \amp  3z \amp  + \amp  5w \amp  = \amp  2
+    x \amp  - \amp   y \amp  + \amp   z \amp  - \amp   w \amp  = \amp  4 \\ 
+      \amp    \amp   y \amp  + \amp  2z \amp  + \amp   w \amp  = \amp  3 \\
+      \amp    \amp     \amp    \amp  -z \amp  + \amp   w \amp  = \amp  1 \\
+   -x \amp  + \amp  2y \amp  - \amp  3z \amp  + \amp  5w \amp  = \amp  3
 \end{array}</me></p>
 <p><m>x</m> = <fillin name="AnSwEr0001" characters="10"/>,            
 <m>y</m> = <fillin name="AnSwEr0002" characters="10"/>, 
@@ -1452,12 +1443,7 @@ given,
 </statement>
       <answer>
         <p>
-          <m>-12</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>-15</m>
+          <m>10</m>
         </p>
       </answer>
       <answer>
@@ -1467,28 +1453,33 @@ given,
       </answer>
       <answer>
         <p>
-          <m>7</m>
+          <m>-1</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>0</m>
         </p>
       </answer>
     </static>
     <server-data sourceFilePath="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p02.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p02.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-29" ww-id="webwork-29">
-    <static seed="29" source="Library/TCNJ/TCNJ_LinearSystems/problem17.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-28" ww-id="webwork-28">
+    <static seed="28" source="Library/TCNJ/TCNJ_LinearSystems/problem17.pg">
       <statement><p>Determine whether the following system has no solution, an infinite number of solutions or a unique solution.</p>
 <p><ol>
 <li>
-<p><m>\left\lbrace\begin{array}{rrrrrrrr}\amp  - \, x\amp - \amp 7 \,y\amp - \amp 5 \,z\amp =\amp -7\\\amp  -4 \, x\amp +\amp  5 \, y\amp - \amp  \,z\amp =\amp 4\\\amp  9 \,x\amp - \amp 3 \,y\amp +\amp  7 \, z\amp =\amp -6\\ \end{array}\right.</m></p>
+<p><m>\left\lbrace\begin{array}{rrrrrrrr}\amp  4 \,x\amp +\amp  8 \, y\amp +\amp  19 \, z\amp =\amp 1\\\amp   \,x\amp +\amp   \, y\amp +\amp  3 \, z\amp =\amp 9\\\amp  3 \,x\amp +\amp  6 \, y\amp +\amp  15 \, z\amp =\amp 8\\ \end{array}\right.</m></p>
 </li>
 <li>
-<p><m>\left\lbrace\begin{array}{rrrrrrrr}\amp  -5 \, x\amp - \amp 10 \,y\amp - \amp 36 \,z\amp =\amp 6\\\amp   \,x\amp +\amp   \, y\amp +\amp  4 \, z\amp =\amp 5\\\amp  3 \,x\amp +\amp  6 \, y\amp +\amp  21 \, z\amp =\amp 9\\ \end{array}\right.</m></p>
+<p><m>\left\lbrace\begin{array}{rrrrrrrr}\amp  12 \,x\amp +\amp  15 \, y\amp +\amp  9 \, z\amp =\amp 15\\\amp  16 \,x\amp +\amp  20 \, y\amp +\amp  12 \, z\amp =\amp 20\\\amp  24 \,x\amp +\amp  30 \, y\amp +\amp  18 \, z\amp =\amp 30\\ \end{array}\right.</m></p>
 </li>
 <li>
-<p><m>\left\lbrace\begin{array}{rrrrrrrr}\amp  - \, x\amp - \amp 7 \,y\amp - \amp 5 \,z\amp =\amp -7\\\amp  -4 \, x\amp +\amp  5 \, y\amp - \amp  \,z\amp =\amp 4\\\amp  9 \,x\amp - \amp 3 \,y\amp +\amp  7 \, z\amp =\amp -1\\ \end{array}\right.</m></p>
+<p><m>\left\lbrace\begin{array}{rrrrrrrr}\amp  - \, x\amp - \amp 3 \,y\amp +\amp  5 \, z\amp =\amp 7\\\amp  2 \,x\amp +\amp  2 \, y\amp - \amp  \,z\amp =\amp 1\\\amp   \,x\amp - \amp 5 \,y\amp +\amp  13 \, z\amp =\amp 24\\ \end{array}\right.</m></p>
 </li>
 <li>
-<p><m>\left\lbrace\begin{array}{rrrrrrrr}\amp  6 \,x\amp - \amp 8 \,y\amp +\amp  2 \, z\amp =\amp 6\\\amp  15 \,x\amp - \amp 20 \,y\amp +\amp  5 \, z\amp =\amp 15\\\amp  -21 \, x\amp +\amp  28 \, y\amp - \amp 7 \,z\amp =\amp -21\\ \end{array}\right.</m></p>
+<p><m>\left\lbrace\begin{array}{rrrrrrrr}\amp  - \, x\amp - \amp 3 \,y\amp +\amp  5 \, z\amp =\amp 7\\\amp  2 \,x\amp +\amp  2 \, y\amp - \amp  \,z\amp =\amp 1\\\amp   \,x\amp - \amp 5 \,y\amp +\amp  13 \, z\amp =\amp 23\\ \end{array}\right.</m></p>
 </li>
 </ol></p>
 </statement>
@@ -1496,19 +1487,17 @@ given,
     <server-data sourceFilePath="Library/TCNJ/TCNJ_LinearSystems/problem17.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/TCNJ/TCNJ_LinearSystems/problem17.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-30" ww-id="webwork-30">
-    <static seed="30" source="Library/ASU-topics/set119MatrixAlgebra/p17.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-29" ww-id="webwork-29">
+    <static seed="29" source="Library/ASU-topics/set119MatrixAlgebra/p17.pg">
       <statement><p>Enter T or F depending on whether the statement is true or false.
 (You must enter T or F -- True and False will not work.)</p>
 <p><ol>
 <li>
-<p>If A has dimensions <m>m \times n</m> and B has dimensions <m>n \times r</m>, 
-then AB has dimensions <m>m \times r</m>.</p>
+<p>If A is a square matrix such that AA equals the 0 matrix, then A must equal the 0 matrix.</p>
 </li>
 <li>
-<p>If A has dimensions <m>5 \times 4</m> and B has dimensions <m>4 \times 3</m>, 
-then the 3rd row, 4th column entry of AB is obtained by multiplying the 3rd column of A 
-by the 4th row of B.</p>
+<p>If A has dimensions <m>m  \times r</m> and B has dimensions  <m>r \times  n</m> , then AB 
+has dimensions  <m>r \times n</m>.</p>
 </li>
 </ol></p>
 </statement>
@@ -1516,43 +1505,33 @@ by the 4th row of B.</p>
     <server-data sourceFilePath="Library/ASU-topics/set119MatrixAlgebra/p17.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/ASU-topics/set119MatrixAlgebra/p17.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-31" ww-id="webwork-31">
-    <static seed="31" source="Library/Dartmouth/setMTWCh1S5/problem_1.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-30" ww-id="webwork-30">
+    <static seed="30" source="Library/Dartmouth/setMTWCh1S5/problem_1.pg">
       <statement><p><alert> Matrix Products: </alert> Consider the matrices</p>
-<p><me>A = \begin{pmatrix}5\amp 4\amp 7\\6\amp 5\amp 4\end{pmatrix}, 
-B = \begin{pmatrix}2\amp 1\amp 3\amp 3\\2\amp 6\amp 9\amp 6\\
-    9\amp 7\amp 2\amp 8\end{pmatrix},\textrm{ and }
-C = \begin{pmatrix}7\amp 5\\1\amp 8\\2\amp 5\\2\amp 3\end{pmatrix}</me></p>
+<p><me>A = \begin{pmatrix}4\amp 7\amp 3\\9\amp 6\amp 9\end{pmatrix}, 
+B = \begin{pmatrix}1\amp 7\amp 10\amp 8\\6\amp 6\amp 10\amp 6\\
+    3\amp 8\amp 7\amp 5\end{pmatrix},\textrm{ and }
+C = \begin{pmatrix}9\amp 9\\6\amp 1\\1\amp 7\\3\amp 7\end{pmatrix}</me></p>
 <p>Of the possible matrix products <m>ABC, ACB, BAC, BCA, CAB, CBA</m>,</p>
 <p>which make sense? <fillin name="AnSwEr0001" characters="10"/></p>
 </statement>
       <answer>
-        <p>A</p>
+        <p>C</p>
       </answer>
     </static>
     <server-data sourceFilePath="Library/Dartmouth/setMTWCh1S5/problem_1.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/Dartmouth/setMTWCh1S5/problem_1.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-32" ww-id="webwork-32">
-    <static seed="32" source="Library/ASU-topics/set119MatrixAlgebra/p32.pg">
-      <statement><p>If A is <m>4 \times 9,</m>  B is <m>2 \times 4</m> and C is <m>9 \times 2</m> then:</p>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-31" ww-id="webwork-31">
+    <static seed="31" source="Library/ASU-topics/set119MatrixAlgebra/p32.pg">
+      <statement><p>If A is <m>3 \times 4,</m>  B is <m>7 \times 3</m> and C is <m>4 \times 7</m> then:</p>
 <p>a) BA has dimension    <fillin name="AnSwEr0001" characters="8"/> <m>\times</m>  <fillin name="AnSwEr0002" characters="8"/></p>
 <p>b) CB has dimension    <fillin name="AnSwEr0003" characters="8"/> <m>\times</m>  <fillin name="AnSwEr0004" characters="8"/></p>
 <p>c) AC has dimension    <fillin name="AnSwEr0005" characters="8"/> <m>\times</m>  <fillin name="AnSwEr0006" characters="8"/></p>
 </statement>
       <answer>
         <p>
-          <m>2</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>9</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>9</m>
+          <m>7</m>
         </p>
       </answer>
       <answer>
@@ -1567,27 +1546,37 @@ C = \begin{pmatrix}7\amp 5\\1\amp 8\\2\amp 5\\2\amp 3\end{pmatrix}</me></p>
       </answer>
       <answer>
         <p>
-          <m>2</m>
+          <m>3</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>3</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>7</m>
         </p>
       </answer>
     </static>
     <server-data sourceFilePath="Library/ASU-topics/set119MatrixAlgebra/p32.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/ASU-topics/set119MatrixAlgebra/p32.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-33" ww-id="webwork-33">
-    <static seed="33" source="Library/ASU-topics/set119MatrixAlgebra/p7.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-32" ww-id="webwork-32">
+    <static seed="32" source="Library/ASU-topics/set119MatrixAlgebra/p7.pg">
       <statement><p>Determine <m>x</m> and <m>y</m> such that</p>
 <p><me>\left[\begin{array}{ccc}
-1\amp  0\amp  0 \cr
--2\amp  4\amp  -1 
+0\amp  -4\amp  0 \cr
+-2\amp  1\amp  3 
 \end{array}\right]
  + \left[\begin{array}{ccc}
-x-y      \amp  -4 \amp  -2 \\
-3 \amp  x        \amp  0 
+x-y      \amp  -2 \amp  3 \\
+0 \amp  x        \amp  0 
 \end{array} \right]
 = \left[\begin{array}{ccc}
-2 \amp  -4 \amp  -2 \\
-1 \amp  2 x +y   \amp  -1
+4 \amp  -6 \amp  3 \\
+-2 \amp  2 x +y   \amp  3
 \end{array}\right]</me></p>
 <p><m>x =</m>    <fillin name="AnSwEr0001" characters="10"/></p>
 <p><m>y =</m>   <fillin name="AnSwEr0002" characters="10"/></p>
@@ -1599,26 +1588,26 @@ x-y      \amp  -4 \amp  -2 \\
       </answer>
       <answer>
         <p>
-          <m>1.5</m>
+          <m>-1.5</m>
         </p>
       </answer>
     </static>
     <server-data sourceFilePath="Library/ASU-topics/set119MatrixAlgebra/p7.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/ASU-topics/set119MatrixAlgebra/p7.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-34" ww-id="webwork-34">
-    <static seed="34" source="Library/ASU-topics/set119MatrixAlgebra/p14.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-33" ww-id="webwork-33">
+    <static seed="33" source="Library/ASU-topics/set119MatrixAlgebra/p14.pg">
       <statement><p>Determine the value(s) of  <m>x</m>  such that</p>
 <p><m>\left[\begin{array}{ccc}
 x \amp 2 \amp 1\cr
 \end{array}\right] \left[\begin{array}{ccc}
--3 \amp -6 \amp 3\cr
--6 \amp 2 \amp 0\cr
-3 \amp -18 \amp 2
+2 \amp 0 \amp -2\cr
+0 \amp -3 \amp 0\cr
+-2 \amp 5 \amp -1
 \end{array}\right] \left[\begin{array}{c}
 x\cr
 -1\cr
-2\cr
+1\cr
 \end{array}\right] = [0]</m></p>
 <p><m>x</m> = <fillin name="AnSwEr0001" characters="30"/></p>
 <p><alert> Note: </alert>
@@ -1626,31 +1615,31 @@ If there is more than one value separate them by commas.</p>
 </statement>
       <answer>
         <p>
-          <m>-2, 3</m>
+          <m>0, 2</m>
         </p>
       </answer>
     </static>
     <server-data sourceFilePath="Library/ASU-topics/set119MatrixAlgebra/p14.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/ASU-topics/set119MatrixAlgebra/p14.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-35" ww-id="webwork-35">
-    <static seed="35" source="Contrib/MountAllison/1-3_Matrices_and_Matrix_Operations/true_false.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-34" ww-id="webwork-34">
+    <static seed="34" source="Contrib/MountAllison/1-3_Matrices_and_Matrix_Operations/true_false.pg">
       <statement><p>Determine which of the following statements are true and which are false.</p>
 <p><ol>
 <li>
-<p>If <m>\displaystyle A</m> and <m>\displaystyle B</m> are matrices with sizes such that <m>\displaystyle AB</m> is square, then <m>\displaystyle A</m> and <m>\displaystyle B</m> must be square.</p>
-</li>
-<li>
-<p>If <m>\displaystyle A</m> and <m>\displaystyle B</m> are square matrices of the same size, then <m>\displaystyle (AB)^T = B^TA^T</m>.</p>
-</li>
-<li>
-<p>If <m>\displaystyle A \in \mathcal{M}_{n,m}</m> and <m>\displaystyle \mathbf{b} \in \mathbb{R}^m</m> is a column vector, then <m>\displaystyle A\mathbf{b}</m> is a linear combination of the columns of <m>\displaystyle A</m>.</p>
-</li>
-<li>
-<p>If <m>\displaystyle A</m> is a square matrix for which <m>\displaystyle A^2 = I</m>, then <m>\displaystyle A = I</m> or <m>\displaystyle A = -I</m>.</p>
+<p>If <m>\displaystyle A</m> and <m>\displaystyle B</m> are square matrices of the same size then <m>\displaystyle (A+B)^2 = A^2 + 2AB + B^2</m>.</p>
 </li>
 <li>
 <p>If <m>\displaystyle A</m> and <m>\displaystyle B</m> are matrices such that <m>\displaystyle AB = O</m> and <m>\displaystyle A \neq O</m>, then <m>\displaystyle B = O</m>.</p>
+</li>
+<li>
+<p>If <m>\displaystyle A</m> and <m>\displaystyle B</m> are square matrices of the same size, then <m>\displaystyle (A+B)(A-B) = A^2 - B^2</m>.</p>
+</li>
+<li>
+<p>The matrices <m>\displaystyle A^TA</m> and <m>\displaystyle AA^T</m> are always defined, regardless of the size of <m>\displaystyle A</m>.</p>
+</li>
+<li>
+<p>If <m>\displaystyle A</m> is a square matrix for which <m>\displaystyle A^2 = A</m>, then either <m>\displaystyle A = I</m> or <m>\displaystyle A = O</m>.</p>
 </li>
 </ol></p>
 </statement>
@@ -1658,9 +1647,9 @@ If there is more than one value separate them by commas.</p>
     <server-data sourceFilePath="Contrib/MountAllison/1-3_Matrices_and_Matrix_Operations/true_false.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Contrib/MountAllison/1-3_Matrices_and_Matrix_Operations/true_false.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-36" ww-id="webwork-36">
-    <static seed="36" source="Library/Utah/Business_Algebra/set10_Matrices/p17.pg">
-      <statement><p>Let <m>A</m> be a  5 by 8 matrix. Then <m>-A</m> is a <fillin name="AnSwEr0001" characters="5"/> by
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-35" ww-id="webwork-35">
+    <static seed="35" source="Library/Utah/Business_Algebra/set10_Matrices/p17.pg">
+      <statement><p>Let <m>A</m> be a  5 by 9 matrix. Then <m>-A</m> is a <fillin name="AnSwEr0001" characters="5"/> by
 <fillin name="AnSwEr0002" characters="5"/> matrix, and <m>A^T</m> is a <fillin name="AnSwEr0003" characters="5"/> by <fillin name="AnSwEr0004" characters="5"/>
 matrix.</p>
 </statement>
@@ -1671,12 +1660,12 @@ matrix.</p>
       </answer>
       <answer>
         <p>
-          <m>8</m>
+          <m>9</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>8</m>
+          <m>9</m>
         </p>
       </answer>
       <answer>
@@ -1688,22 +1677,22 @@ matrix.</p>
     <server-data sourceFilePath="Library/Utah/Business_Algebra/set10_Matrices/p17.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/Utah/Business_Algebra/set10_Matrices/p17.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-37" ww-id="webwork-37">
-    <static seed="37" source="Library/Utah/Business_Algebra/set10_Matrices/p21.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-36" ww-id="webwork-36">
+    <static seed="36" source="Library/Utah/Business_Algebra/set10_Matrices/p21.pg">
       <statement><p>Let</p>
 <p><me>A=\left(\begin{array}{cc} 
-            2 \amp  3 \cr
-	    3 \amp  9
+            9 \amp  6 \cr
+	    8 \amp  3
 	   \end{array}\right)
 	   , 
 B=\left(\begin{array}{cc} 
-         -2 \amp  7 \cr
-	 -4 \amp  9
+         -9 \amp  6 \cr
+	 -8 \amp  3
 	   \end{array}\right)
 	   , 
 C=\left(\begin{array}{cc} 
-            5 \amp  4 \cr
-	    7 \amp  6
+            5 \amp  8 \cr
+	    6 \amp  2
 	   \end{array}\right).</me></p>
 <p>Then</p>
 <p><me>A + B^T=\left(\begin{array}{cc} 
@@ -1733,32 +1722,12 @@ C=\left(\begin{array}{cc}
       </answer>
       <answer>
         <p>
-          <m>-1</m>
+          <m>-2</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>10</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>18</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>9</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>3</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>11</m>
+          <m>14</m>
         </p>
       </answer>
       <answer>
@@ -1766,12 +1735,32 @@ C=\left(\begin{array}{cc}
           <m>6</m>
         </p>
       </answer>
+      <answer>
+        <p>
+          <m>23</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>6</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>24</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>2</m>
+        </p>
+      </answer>
     </static>
     <server-data sourceFilePath="Library/Utah/Business_Algebra/set10_Matrices/p21.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/Utah/Business_Algebra/set10_Matrices/p21.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-38" ww-id="webwork-38">
-    <static seed="38" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.48.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-37" ww-id="webwork-37">
+    <static seed="37" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.48.pg">
       <statement><p>If <m>A</m> and <m>B</m> are invertible <m>n\times n</m> matrices,
 then the inverse of <m>A+B</m> is <m>A^{-1}+B^{-1}</m>.<var form="popup" name="AnSwEr0001">
 <li>
@@ -1796,8 +1785,8 @@ False. For example, let <m>A = I_n</m>, and <m>B = -I_n</m>, then <m>A+B = 0_n</
     <server-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.48.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.48.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-39" ww-id="webwork-39">
-    <static seed="39" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.54.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-38" ww-id="webwork-38">
+    <static seed="38" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.54.pg">
       <statement><p>Solve for the matrix <m>X</m> if <m>AX(D+B X)^{-1} = C</m>. Assume that all matrices are <m>n\times n</m> and invertible as needed.</p>
 <p><m>X =</m><fillin name="AnSwEr0001" characters="10"/></p>
 </statement>
@@ -1819,32 +1808,32 @@ AX(D+BX)^{-1} = C \amp \Rightarrow AX = C(D+BX) = CD + CBX \\
     <server-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.54.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.54.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-40" ww-id="webwork-40">
-    <static seed="40" source="Library/Rochester/setLinearAlgebra4InverseMatrix/ur_Ch2_1_4.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-39" ww-id="webwork-39">
+    <static seed="39" source="Library/Rochester/setLinearAlgebra4InverseMatrix/ur_Ch2_1_4.pg">
       <statement><p>Are the following matrices invertible?</p>
 <p><ol>
 <li>
 <p><m>\left[\begin{array}{cc}
-9 \amp -4\cr
+-16 \amp 7\cr
 0 \amp 0
 \end{array}\right]</m></p>
 </li>
 <li>
 <p><m>\left[\begin{array}{cc}
--9 \amp -4\cr
-9 \amp 4
+-1 \amp -2\cr
+4 \amp -2
 \end{array}\right]</m></p>
 </li>
 <li>
 <p><m>\left[\begin{array}{cc}
--1 \amp 3\cr
-5 \amp 2
+-2 \amp 1\cr
+-5 \amp -1
 \end{array}\right]</m></p>
 </li>
 <li>
 <p><m>\left[\begin{array}{cc}
--1 \amp -3\cr
--1 \amp -4
+4 \amp 7\cr
+-16 \amp -28
 \end{array}\right]</m></p>
 </li>
 </ol></p>
@@ -1853,8 +1842,8 @@ AX(D+BX)^{-1} = C \amp \Rightarrow AX = C(D+BX) = CD + CBX \\
     <server-data sourceFilePath="Library/Rochester/setLinearAlgebra4InverseMatrix/ur_Ch2_1_4.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/Rochester/setLinearAlgebra4InverseMatrix/ur_Ch2_1_4.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-41" ww-id="webwork-41">
-    <static seed="41" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.59.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-40" ww-id="webwork-40">
+    <static seed="40" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.59.pg">
       <statement><p>For what values of <m>c</m> will
 <m>\displaystyle A = \begin{bmatrix} 1 \amp  1 \\ c \amp  c^2 \end{bmatrix}</m> be invertible?</p>
 <p>For all <m>c</m> such that <m>c\neq</m> <fillin name="AnSwEr0001" characters="6"/> and <m>c\neq</m> <fillin name="AnSwEr0002" characters="6"/>.</p>
@@ -1876,15 +1865,15 @@ The matrix <m>\displaystyle A = \begin{bmatrix} 1 \amp  1 \\ c \amp  c^2 \end{bm
     <server-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.59.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.59.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-42" ww-id="webwork-42">
-    <static seed="42" source="Library/Utah/Business_Algebra/set10_Matrices/p24.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-41" ww-id="webwork-41">
+    <static seed="41" source="Library/Utah/Business_Algebra/set10_Matrices/p24.pg">
       <statement><p>Let</p>
 <p><me>A=\left(\begin{array}{cc} 
-            7 \amp  4 \cr
-	    -4 \amp  8
+            6 \amp  8 \cr
+	    -8 \amp  4
 	   \end{array}\right), 
 B=\left(\begin{array}{cc} 
-            6 \amp  -6 \cr
+            8 \amp  -8 \cr
 	    4 \amp  2 
 	   \end{array}\right).</me></p>
 <p>Then</p>
@@ -1919,12 +1908,32 @@ B=\left(\begin{array}{cc}
 </statement>
       <answer>
         <p>
-          <m>58</m>
+          <m>80</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-34</m>
+          <m>-32</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-48</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>72</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>112</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>32</m>
         </p>
       </answer>
       <answer>
@@ -1939,17 +1948,12 @@ B=\left(\begin{array}{cc}
       </answer>
       <answer>
         <p>
-          <m>66</m>
+          <m>112</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-24</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>20</m>
+          <m>8</m>
         </p>
       </answer>
       <answer>
@@ -1959,30 +1963,15 @@ B=\left(\begin{array}{cc}
       </answer>
       <answer>
         <p>
-          <m>66</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>20</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>-24</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>32</m>
+          <m>40</m>
         </p>
       </answer>
     </static>
     <server-data sourceFilePath="Library/Utah/Business_Algebra/set10_Matrices/p24.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/Utah/Business_Algebra/set10_Matrices/p24.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-43" ww-id="webwork-43">
-    <static seed="43" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.4.67.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-42" ww-id="webwork-42">
+    <static seed="42" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.4.67.pg">
       <statement><p>True or false: Suppose that <m>E_1</m> and <m>E_2</m> are two elementary matrices. Then <m>E_1E_2 = E_2E_1</m><var form="popup" name="AnSwEr0001">
 <li>
 <p>.</p>
@@ -2044,13 +2033,13 @@ but
     <server-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.4.67.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.4.67.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-44" ww-id="webwork-44">
-    <static seed="44" source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p08.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-43" ww-id="webwork-43">
+    <static seed="43" source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p08.pg">
       <statement><p>Let</p>
 <p><me>A=\left(\begin{array}{ccc} 
             1 \amp   8 \amp   0 \cr
-	    1 \amp   8 \amp  8 \cr
-	    1 \amp  -2 \amp  9
+	    1 \amp   8 \amp  3 \cr
+	    1 \amp  -7 \amp  4
 	   \end{array}\right)</me>
 Then</p>
 <p><me>A^{-1}=\left(\begin{array}{ccc} 
@@ -2071,42 +2060,42 @@ Then</p>
 </statement>
       <answer>
         <p>
-          <m>1.1</m>
+          <m>1.17777777777778</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-0.9</m>
+          <m>-0.711111111111111</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>0.8</m>
+          <m>0.533333333333333</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-0.0125</m>
+          <m>-0.0222222222222222</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>0.1125</m>
+          <m>0.0888888888888889</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-0.1</m>
+          <m>-0.0666666666666667</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-0.125</m>
+          <m>-0.333333333333333</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>0.125</m>
+          <m>0.333333333333333</m>
         </p>
       </answer>
       <answer>
@@ -2118,17 +2107,17 @@ Then</p>
     <server-data sourceFilePath="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p08.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p08.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-45" ww-id="webwork-45">
-    <static seed="45" source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p09.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-44" ww-id="webwork-44">
+    <static seed="44" source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p09.pg">
       <statement><p>Let</p>
 <p><me>A=\left(\begin{array}{cc} 
-            5 \amp  -3 \cr
-	    4 \amp  4
+            5 \amp  -5 \cr
+	    2 \amp  5
 	   \end{array}\right)</me></p>
 <p>Find <m>A^{-1}</m> and use it to solve <me>AX=B</me> where</p>
 <p><me>B=\left(\begin{array}{c} 
             3 \cr
-	    3
+	    5
 	   \end{array}\right)</me></p>
 <p><me>X=\left(\begin{array}{c} 
             x_{1} \cr
@@ -2138,24 +2127,24 @@ Then</p>
 </statement>
       <answer>
         <p>
-          <m>0.65625</m>
+          <m>1.14285714285714</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>0.09375</m>
+          <m>0.542857142857143</m>
         </p>
       </answer>
     </static>
     <server-data sourceFilePath="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p09.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p09.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-46" ww-id="webwork-46">
-    <static seed="46" source="Library/Rochester/setAlgebra35SystemMatrices/sw7_5_19.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-45" ww-id="webwork-45">
+    <static seed="45" source="Library/Rochester/setAlgebra35SystemMatrices/sw7_5_19.pg">
       <statement><p>Solve the system of equations 
 <me>\begin{array}{l}
-        5x+3y = -29 \\
-        3x+2y = -18 \\
+        5x+3y = 20 \\
+        3x+2y = 12 \\
 \end{array}</me>
 by converting to a matrix equation and using
 the inverse of the coefficient matrix.</p>
@@ -2164,25 +2153,25 @@ the inverse of the coefficient matrix.</p>
 </statement>
       <answer>
         <p>
-          <m>-4</m>
+          <m>4</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-3</m>
+          <m>0</m>
         </p>
       </answer>
     </static>
     <server-data sourceFilePath="Library/Rochester/setAlgebra35SystemMatrices/sw7_5_19.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/Rochester/setAlgebra35SystemMatrices/sw7_5_19.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-47" ww-id="webwork-47">
-    <static seed="47" source="Library/Rochester/setAlgebra35SystemMatrices/sw7_5_23.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-46" ww-id="webwork-46">
+    <static seed="46" source="Library/Rochester/setAlgebra35SystemMatrices/sw7_5_23.pg">
       <statement><p>Solve the system of equations 
 <me>\begin{array}{r}
-        2 x  -    4 y + z = 5 \\
-        -x + y  -z= 0 \\
-        x   -    2 y = 3 \\
+        2 x  -    5 y + z = 5 \\
+        -x + y  -z= -2 \\
+        x   -    3 y = 3 \\
 \end{array}</me>
 by converting to a matrix equation and
 using the inverse of the coefficient matrix.</p>
@@ -2192,12 +2181,12 @@ using the inverse of the coefficient matrix.</p>
 </statement>
       <answer>
         <p>
-          <m>-1</m>
+          <m>3</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-2</m>
+          <m>0</m>
         </p>
       </answer>
       <answer>
@@ -2209,28 +2198,28 @@ using the inverse of the coefficient matrix.</p>
     <server-data sourceFilePath="Library/Rochester/setAlgebra35SystemMatrices/sw7_5_23.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/Rochester/setAlgebra35SystemMatrices/sw7_5_23.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-48" ww-id="webwork-48">
-    <static seed="48" source="Library/TCNJ/TCNJ_InvertibleMatrixCharacterization/problem1.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-47" ww-id="webwork-47">
+    <static seed="47" source="Library/TCNJ/TCNJ_InvertibleMatrixCharacterization/problem1.pg">
       <statement><p>a. The linear transformation <m>T_1: R^2 \rightarrow R^2</m> is given by:</p>
-<p><m>T_1(x, y) = (2 x + 5 y, 6 x + 16 y)</m>.</p>
+<p><m>T_1(x, y) = (2 x + 5 y, 10 x + 26 y)</m>.</p>
 <p>Find <m>T_1^{-1}(x, y)</m>.</p>
 <p><m>T_1^{-1}(x, y) = (</m><fillin name="AnSwEr0001" characters="1"/>x + <fillin name="AnSwEr0002" characters="1"/>y, <fillin name="AnSwEr0003" characters="1"/>x + <fillin name="AnSwEr0004" characters="1"/>y<m>)</m></p>
 <p>b. The linear transformation <m>T_2: R^3 \rightarrow R^3</m> is given by:</p>
-<p><m>T_2(x, y, z) = (x + 2 z, 2 x + y, 1 y + z)</m>.</p>
+<p><m>T_2(x, y, z) = (x + 1 z, 1 x + y, 1 y + z)</m>.</p>
 <p>Find <m>T_2^{-1}(x, y, z)</m>.</p>
 <p><m>T_2^{-1}(x, y, z) = (</m><fillin name="AnSwEr0005" characters="1"/>x + <fillin name="AnSwEr0006" characters="1"/>y + <fillin name="AnSwEr0007" characters="1"/>z, <fillin name="AnSwEr0008" characters="1"/>x + <fillin name="AnSwEr0009" characters="1"/>y + <fillin name="AnSwEr0010" characters="1"/>z, <fillin name="AnSwEr0011" characters="1"/>x + <fillin name="AnSwEr0012" characters="1"/>y + <fillin name="AnSwEr0013" characters="1"/>z<m>)</m></p>
 <p>c. Using <m>T_1</m> from part a, it is given that:</p>
-<p><m>T_1(x, y) = (4, -2)</m></p>
+<p><m>T_1(x, y) = (2, -3)</m></p>
 <p>Find x and y.</p>
 <p><m>x =</m> <fillin name="AnSwEr0014" characters="1"/> <m>y =</m> <fillin name="AnSwEr0015" characters="1"/></p>
 <p>d. Using <m>T_2</m> from part b, it is given that:</p>
-<p><m>T_2(x, y, z) = (6, -5, 2)</m></p>
+<p><m>T_2(x, y, z) = (5, -6, -1)</m></p>
 <p>Find x, y, and z.</p>
 <p><m>x =</m> <fillin name="AnSwEr0016" characters="1"/> <m>y =</m> <fillin name="AnSwEr0017" characters="1"/> <m>z =</m> <fillin name="AnSwEr0018" characters="1"/></p>
 </statement>
       <answer>
         <p>
-          <m>8</m>
+          <m>13</m>
         </p>
       </answer>
       <answer>
@@ -2240,7 +2229,7 @@ using the inverse of the coefficient matrix.</p>
       </answer>
       <answer>
         <p>
-          <m>-3</m>
+          <m>-5</m>
         </p>
       </answer>
       <answer>
@@ -2250,92 +2239,92 @@ using the inverse of the coefficient matrix.</p>
       </answer>
       <answer>
         <p>
-          <m>0.2</m>
+          <m>0.5</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>0.4</m>
+          <m>0.5</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-0.4</m>
+          <m>-0.5</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-0.4</m>
+          <m>-0.5</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>0.2</m>
+          <m>0.5</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>0.8</m>
+          <m>0.5</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>0.4</m>
+          <m>0.5</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-0.2</m>
+          <m>-0.5</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>0.2</m>
+          <m>0.5</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>37</m>
+          <m>33.5</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-14</m>
+          <m>-13</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-1.6</m>
+          <m>0</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-1.8</m>
+          <m>-6</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>3.8</m>
+          <m>5</m>
         </p>
       </answer>
     </static>
     <server-data sourceFilePath="Library/TCNJ/TCNJ_InvertibleMatrixCharacterization/problem1.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/TCNJ/TCNJ_InvertibleMatrixCharacterization/problem1.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-49" ww-id="webwork-49">
-    <static seed="49" source="Library/UMN/algebraKaufmannSchwitters/ks_11_4_prob02.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-48" ww-id="webwork-48">
+    <static seed="48" source="Library/UMN/algebraKaufmannSchwitters/ks_11_4_prob02.pg">
       <statement><p>Use the appropriate property of determinants to find <m>a.</m>  <em> Do not </em> evaluate the determinants. 
 <me>\begin{vmatrix}
-2 \amp  23 \amp  11 \\ 
+6 \amp  23 \amp  2 \\ 
 -43 \amp  -31 \amp  -17 \\ 
-2 \amp  -3 \amp  9 \\
+-2 \amp  -4 \amp  9 \\
 \end{vmatrix}
 =
 a \cdot
 \begin{vmatrix}
--2 \amp  -23 \amp  -11 \\ 
+-6 \amp  -23 \amp  -2 \\ 
 43 \amp  31 \amp  17 \\ 
--2 \amp  3 \amp  -9\\
+2 \amp  4 \amp  -9\\
 \end{vmatrix}</me>
 Answer: <m>a =</m> <fillin name="AnSwEr0001" characters="20"/></p>
 </statement>
@@ -2348,93 +2337,93 @@ Answer: <m>a =</m> <fillin name="AnSwEr0001" characters="20"/></p>
     <server-data sourceFilePath="Library/UMN/algebraKaufmannSchwitters/ks_11_4_prob02.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/UMN/algebraKaufmannSchwitters/ks_11_4_prob02.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-50" ww-id="webwork-50">
-    <static seed="50" source="Library/NAU/setLinearAlgebra/detElementary.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-49" ww-id="webwork-49">
+    <static seed="49" source="Library/NAU/setLinearAlgebra/detElementary.pg">
       <statement><p>Consider the following Gauss elimination:</p>
 <p><me>A \to \underbrace{\left[\begin{array}{ccc}
-1 \amp 0 \amp 0\cr
 0 \amp 1 \amp 0\cr
-0 \amp 0 \amp 5
+1 \amp 0 \amp 0\cr
+0 \amp 0 \amp 1
 \end{array}\right]}_{E_1} A \to \underbrace{\left[\begin{array}{ccc}
 1 \amp 0 \amp 0\cr
-0 \amp -3 \amp 0\cr
+0 \amp -1 \amp 0\cr
 0 \amp 0 \amp 1
 \end{array}\right]}_{E_2} E_1 A \to \underbrace{\left[\begin{array}{ccc}
-1 \amp 0 \amp -5\cr
+1 \amp 0 \amp 0\cr
+0 \amp 1 \amp 0\cr
+0 \amp 0 \amp -6
+\end{array}\right]}_{E_3} E_2E_1 A \to \underbrace{\left[\begin{array}{ccc}
+1 \amp 0 \amp -8\cr
 0 \amp 1 \amp 0\cr
 0 \amp 0 \amp 1
-\end{array}\right]}_{E_3} E_2E_1 A \to \underbrace{\left[\begin{array}{ccc}
-1 \amp 0 \amp 0\cr
-0 \amp 0 \amp 1\cr
-0 \amp 1 \amp 0
 \end{array}\right]}_{E_4} E_3E_2E_1 A=\left[\begin{array}{ccc}
--7 \amp 4 \amp -5\cr
-0 \amp -2 \amp 7\cr
-0 \amp 0 \amp -5
+5 \amp -2 \amp 1\cr
+0 \amp -6 \amp 6\cr
+0 \amp 0 \amp -1
 \end{array}\right]</me></p>
 <p>What is the determinant of <m>A</m>?</p>
 <p><m>\det(A) =</m> <fillin name="AnSwEr0001" characters="10"/></p>
 </statement>
       <answer>
         <p>
-          <m>-4.66667</m>
+          <m>-5</m>
         </p>
       </answer>
     </static>
     <server-data sourceFilePath="Library/NAU/setLinearAlgebra/detElementary.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/NAU/setLinearAlgebra/detElementary.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-51" ww-id="webwork-51">
-    <static seed="51" source="Library/Rochester/setLinearAlgebra6Determinants/ur_la_6_8.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-50" ww-id="webwork-50">
+    <static seed="50" source="Library/Rochester/setLinearAlgebra6Determinants/ur_la_6_8.pg">
       <statement><p>Find <m>k</m> such that the following matrix <m>M</m> is singular.
 <me>M = \left[\begin{array}{ccc}
-1 \amp -1 \amp -4\cr
--3 \amp 1 \amp 10\cr
-13+k \amp -5 \amp -32\cr
+2 \amp 1 \amp -2\cr
+-4 \amp 0 \amp 7\cr
+2+k \amp 2 \amp -18\cr
 \end{array}\right]</me></p>
 <p><m>k=</m> <fillin name="AnSwEr0001" characters="10"/></p>
 </statement>
       <answer>
         <p>
-          <m>-4</m>
+          <m>10</m>
         </p>
       </answer>
     </static>
     <server-data sourceFilePath="Library/Rochester/setLinearAlgebra6Determinants/ur_la_6_8.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/Rochester/setLinearAlgebra6Determinants/ur_la_6_8.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-52" ww-id="webwork-52">
-    <static seed="52" source="Library/Rochester/setLinearAlgebra6Determinants/ur_la_6_9.pg">
-      <statement><p>If <m>A</m> and <m>B</m> are <m>4 \times 4</m> matrices, <m>\det (A)=-5</m>, <m>\det (B)=-8</m>, then</p>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-51" ww-id="webwork-51">
+    <static seed="51" source="Library/Rochester/setLinearAlgebra6Determinants/ur_la_6_9.pg">
+      <statement><p>If <m>A</m> and <m>B</m> are <m>3 \times 3</m> matrices, <m>\det (A)=-1</m>, <m>\det (B)=-2</m>, then</p>
 <p><m>\det  (AB) =</m> <fillin name="AnSwEr0001" characters="10"/>,</p>
 <p><m>\det  (-3 A) =</m> <fillin name="AnSwEr0002" characters="10"/>,</p>
 <p><m>\det  (A^{T}) =</m> <fillin name="AnSwEr0003" characters="10"/>,</p>
 <p><m>\det  (B^{-1}) =</m> <fillin name="AnSwEr0004" characters="10"/>,</p>
-<p><m>\det  (B^4) =</m> <fillin name="AnSwEr0005" characters="10"/>.</p>
+<p><m>\det  (B^2) =</m> <fillin name="AnSwEr0005" characters="10"/>.</p>
 </statement>
       <answer>
         <p>
-          <m>40</m>
+          <m>2</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-405</m>
+          <m>27</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-5</m>
+          <m>-1</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-0.125</m>
+          <m>-0.5</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>4096</m>
+          <m>4</m>
         </p>
       </answer>
     </static>
