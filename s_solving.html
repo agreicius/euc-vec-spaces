@@ -852,14 +852,14 @@ S=\left\{(7-2s-3t, s, 1, t, 2)\colon s, t\in\R\right\}\text{.}
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_solveSystem.html">
 \begin{equation*}
 \begin{amatrix}[ccc|c]
-\boxed{1} \amp 1\amp 1\amp 4
+1 \amp 1\amp 1\amp 4
 \end{amatrix}\text{,}
 \end{equation*}
 </div>
 <div class="para">which is already in row echelon form. Using <a href="s_solving.html#proc_solveSystem" class="xref" data-knowl="./knowl/xref/proc_solveSystem.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 2.3.6: Solving linear systems">Procedure 2.3.6</a>, we see that the general solution is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_solveSystem.html">
 \begin{equation*}
-(4-s-t,s,t)=(4,0,0)+s(-1,1,0)+t(-1,0,1)\text{.}
+(4-s-t,s,t)=(4,0,0)+s\underset{\boldv}{\underbrace{(-1,1,0)}}+t\underset{\boldw}{\underbrace{(-1,0,1)}}\text{.}
 \end{equation*}
 </div>
 <div class="para">This vector parametrization description allows us to visualize the plane <span class="process-math">\(\mathcal{P}\)</span> with equation <span class="process-math">\(x+y+z=4\)</span> as the set of all points obtained by translating the point <span class="process-math">\(P=(4,0,0)\)</span> by various linear combinations of <span class="process-math">\(\boldv=(-1,1,0)\)</span> and <span class="process-math">\(\boldw=(-1,0,1)\text{.}\)</span> In this manner, the two vectors <span class="process-math">\(\boldv\)</span> and <span class="process-math">\(\boldw\)</span> determine a (non-rectangular) grid on <span class="process-math">\(\mathcal{P}\text{.}\)</span> <figure class="figure figure-like" id="fig_plane_vector_param"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><iframe width="480" height="480" src="generated/sageplot/im_plane_vector_param.html"></iframe></div>
