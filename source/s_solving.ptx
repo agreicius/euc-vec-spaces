@@ -441,16 +441,21 @@
     Consider the linear equation <m>x+y+z=4</m>. The corresponding augmented matrix of this equation is
     <me>
       \begin{amatrix}[ccc|c]
-      \boxed{1} \amp 1\amp 1\amp 4
+      1 \amp 1\amp 1\amp 4
       \end{amatrix}
     </me>,
     which is already in row echelon form. Using <xref ref="proc_solveSystem"/>, we see that the general solution is 
     <me>
-      (4-s-t,s,t)=(4,0,0)+s(-1,1,0)+t(-1,0,1)
+      (4-s-t,s,t)=(4,0,0)+s\underset{\boldv}{\underbrace{(-1,1,0)}}+t\underset{\boldw}{\underbrace{(-1,0,1)}}
     </me>.
     This vector parametrization description allows us to visualize the plane <m>\mathcal{P}</m> with equation <m>x+y+z=4</m> as the set of all points obtained by translating the point <m>P=(4,0,0)</m> by various linear combinations of <m>\boldv=(-1,1,0)</m> and <m>\boldw=(-1,0,1)</m>. In this manner, the two vectors <m>\boldv</m> and <m>\boldw</m> determine a (non-rectangular) grid on <m>\mathcal{P}</m>. 
     <figure xml:id="fig_plane_vector_param">
       <caption>Vector parametrization of plane <m>x+y+z=4</m></caption>
+      <!-- <interactive xml:id="geogebra_plane_grid" platform="geogebra" width="80%" aspect="4:3">
+        <slate surface="geogebra" material="kergy55p" aspect="4:3" marker="train-distance">
+        enableLabelDrags(false);
+        </slate>
+      </interactive> -->
       <image xml:id="im_plane_vector_param" width="80%">
         <shortdescription>Vector parametrization of plane</shortdescription>
         <sageplot variant="3d" aspect="1.0">
@@ -475,7 +480,6 @@
           S+point3d(P,size=20)+a+arrow(P,P+w1, color="red", width=1)+arrow(P,P+w2, color='red', width=1)+gridu+gridv+t1+t2+t3
         </sageplot>
       </image>
-      
     </figure>
   </p>
 </example>

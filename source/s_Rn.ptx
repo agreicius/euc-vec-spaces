@@ -689,14 +689,14 @@
     Alternatively, when conceiving of a triple <m>(a,b,c)</m> as a <em>vector</em>, we will use lowercase bold letters to denote it (<eg/>, <m>\boldx=(a,b,c)</m> or <m>\boldv=(a,b,c)</m>), and represent it visually as a directed line segment (<ie/>, an arrow). In more detail, given the 3-vector <m>\boldx=(a,b,c)</m>, we choose an <term>initial point</term> <m>Q=(x_0,y_0,z_0)</m> and represent <m>\boldx</m> as the directed line segment <m>\overrightarrow{QR}</m> that starts at <m>Q</m> and ends at the point <m>R=(x_0+a,y_0+b,z_0+c)</m>, the <term>terminal point</term> of <m>\overrightarrow{QR}</m>. Note that in this manner we get infinitely-many different graphical representations of <m>\boldx</m>, one for each choice of starting point <m>Q</m>. Although these are technically different arrows (they have different starting points), we consider them to be equal as <em>vectors</em>. You can think of each particular choice of arrow-representation <m>\boldx=\overrightarrow{QR}</m> as an instance or incarnation of the vector <m>\boldx=(a,b,c)</m>. When the initial point of our arrow representation is chosen to be the origin <m>O=(0,0,0)</m>, we have <m>\boldx=\overrightarrow{OP}</m>, where <m>P=(a,b,c)</m>. We call <m>\overrightarrow{OP}</m> the <term>position vector</term> of the point <m>P</m>. 
     </p>
     <figure xml:id="fig_vec_vis">
-        <title>Vector visualization of triple</title>
-        <interactive xml:id="geogebra_vec_vis" platform="geogebra" width="80%" aspect="4:3">
-          <slate surface="geogebra" material="ef9phreh" aspect="4:3" marker="train-distance">
-          enableLabelDrags(false);
-          </slate>
-        </interactive>
-        <caption>Vector visualization of triple <m>\boldx=\overrightarrow{OP}=\overrightarrow{QR}</m>. Drag <m>P</m> to change the vector <m>\boldx</m>. Drag <m>Q</m> to change the initial point of <m>\overrightarrow{QR}</m>. Made with <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url>.</caption>
-    </figure>
+      <title>Vector visualization of triple</title>
+      <interactive xml:id="geogebra_vec_vis" platform="geogebra" width="100%" aspect="4:3">
+        <slate surface="geogebra" material="ef9phreh" aspect="4:3" marker="train-distance">
+        enableLabelDrags(false);
+        </slate>
+      </interactive>
+      <caption>Vector visualization of triple <m>\boldx=\overrightarrow{OP}=\overrightarrow{QR}</m>. Drag <m>P</m> to change the vector <m>\boldx</m>. Drag <m>Q</m> to change the initial point of <m>\overrightarrow{QR}</m>. Made with <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url>.</caption>
+  </figure>
     <p>
         The representation of vectors as arrows gives rise to the so-called <em>tip-to-tail</em> interpretation of vector addition. Let <m>\boldx=(a,b,c)</m> and <m>\boldy=(d,e,f)</m>. Starting with an initial point <m>P=(x_0,y_0,z_0)</m>, we can represent <m>\boldx</m> as <m>\overrightarrow{PQ}</m>, where <m>Q=(x_0+a,y_0+b,z_0+c)</m>, and <m>\boldy=\overrightarrow{QR}</m>, where <m>R=(x_0+a+d,y_0+b+e,z_0+c+f)</m>. But then we have 
         <me>
