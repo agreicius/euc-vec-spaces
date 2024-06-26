@@ -8,69 +8,34 @@
   </p>
   </introduction>
   <theorem xml:id="th_matrix_alg_props">
-      <title>Properties of matrix arithmetic</title>
+      <title>Properties of matrix multiplication</title>
       <statement>
         <p>
-          The following properties hold for all matrices <m>A, B, C</m> and scalars
-          <m>a,
-          b, c\in \R</m> for which the given expression makes sense.
-          <ol marker="(i)">
-            <li xml:id="th_matrix_comm">
-            <title>Addition commutative law</title>
-              <p>
-                <m>A+B=B+A</m>
-              </p>
-            </li>
-            <li xml:id="th_matrixadd_assoc">
-              <title>Addition associative law </title>
-              <p>
-                <m>A+(B+C)=(A+B)+C</m>
-              </p>
-            </li>
+          In what follows <m>m,n,r,s</m> will denote positive integers. 
+          <ol>
             <li xml:id="th_matrixmult_assoc">
-              <title>Multiplication associative law</title>
-
+              <title>Associative law</title>
               <p>
-                <m>A(BC)=(AB)C</m>
+                <m>A(BC)=(AB)C</m> for all <m>A\in M_{mr}, B\in M_{rs}, C\in M_{sn}</m>
               </p>
             </li>
             <li xml:id="th_matrix_leftdist">
               <title>Left-distributive law</title>
-
               <p>
-                <m>A(B+C)=AB+AC</m>
+                <m>A(B+C)=AB+AC</m> for all <m>A\in M_{mr}</m> and <m>B,C\in M_{rn}</m>.
               </p>
             </li>
             <li xml:id="th_matrix_rightdist">
               <title>Right-distributive law</title>
               <p>
-                <m>(B+C)A=BA+CA</m>
-              </p>
-            </li>
-            <li xml:id="th_matrixscale_dist">
-              <title>Scaling distributive law</title>
-
-              <p>
-                <m>a(B+C)=aB+aC</m>
-              </p>
-            </li>
-            <li xml:id="th_matrixscale_dist2">
-              <title>Another scaling distributive law</title>
-
-              <p>
-                <m>(a+b)C=aC+bC</m>
-              </p>
-            </li>
-            <li xml:id="th_matrixscale_assoc">
-              <title>Scaling associative law</title>
-              <p>
-                <m>a(bC)=(ab)C</m>
+                <m>(B+C)A=BA+CA</m> for all <m>B,C\in M_{mr}</m> and <m>A\in M_{rn}
+                </m>.
               </p>
             </li>
             <li xml:id="th_matrixscale_comm">
               <title>Scaling commutative law</title>
               <p>
-                <m>a(BC)=(aB)C=B(aC)</m>.
+                <m>a(BC)=(aB)C=B(aC)</m> for all <m>a\in \R</m>, <m>B\in M_{mr}</m>, <m>C\in M_{rn}</m>. 
               </p>
             </li>
           </ol>
@@ -86,8 +51,8 @@
     </p>
 
   <proof>
-    <title>Proof of (iii)</title>
-    <p>We prove only the <xref ref="th_matrixmult_assoc" text="custom">multiplication associative law</xref>.
+    <title>Proof of (1)</title>
+    <p>We prove only the <xref ref="th_matrixmult_assoc" text="custom">associative law</xref>.
     Let <m>A=[a_{ij}]_{m\times r}</m>,
       <m>B=[b_{ij}]_{r\times s}</m>,
       <m>C=[c_{ij}]_{s\times n}</m>.
@@ -98,9 +63,9 @@
       we must show (1) that <m>A(BC)</m> and <m>(AB)C</m> have the same dimension, and (2) that <me>[A(BC)]_{ij}=[(AB)C]_{ij}</me> for all possible <m>(i,j)</m>.
     </p>
       <p>
-      (1) The usual observation about <q>inner</q> and <q>outer</q> dimensions shows that both <m>A(BC)</m> and <m>(AB)C</m> have dimension <m>m\times n</m>.
+      The usual observation about <q>inner</q> and <q>outer</q> dimensions shows that both <m>A(BC)</m> and <m>(AB)C</m> have dimension <m>m\times n</m>.
     </p><xref ref="d_matrix_mult"/>
-    <p> (2) Given any  <m>(i,j)</m> with <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>, we have:
+    <p> Next, given any  <m>(i,j)</m> with <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>, we have:
       <md>
         <mrow> [A(BC)]_{ij}\amp=\sum_{\ell=1}^ra_{i\ell}[BC]_{\ell j}  \amp (<xref ref="d_matrix_mult"/>)</mrow>
         <mrow>\amp=\sum_{\ell=1}^ra_{i\ell}\left(\sum_{k=1}^sb_{\ell k}c_{kj}\right) \amp (<xref ref="d_matrix_mult"/>)</mrow>
@@ -117,23 +82,6 @@
   </proof>
   <p>Like real number algebra, we can identify some special matrices that act as <em>additive identities</em> and <em>multiplciative identities</em>; and every matrix has an <em>additive inverse</em>. What we mean here is spelled out in detail in <xref ref="th_matrix_add_mult_ident"/>.
 </p>
-<definition xml:id="d_matrix_add_inverse">
-  <title>Additive inverse of a matrix</title>
-  <idx><h>additive inverse</h><h>of a matrix</h></idx>
-  <idx><h>matrix</h><h>additive inverse</h></idx>
-  <notation>
-    <usage><m>-A</m></usage>
-    <description>Additive inverse of <m>A</m></description>
-  </notation>
-  <statement>
-    <p>
-    Given an <m>m\times n</m> matrix <m>A=[a_{ij}]</m>, its <term>additive inverse</term> <m>-A</m> is defined as
-    <me>
-      -A=(-1)A=[-a_{ij}]
-    </me>.
-    </p>
-  </statement>
-</definition>
 <definition xml:id="d_identity_matrix">
   <title>Identity matrix</title>
   <idx><h>identity matrix</h></idx>
@@ -162,35 +110,13 @@
   </definition>
 
   <theorem xml:id="th_matrix_add_mult_ident">
-    <title>Additive identities, additive inverses, and multiplicative identities</title>
+    <title>Multiplicative identities</title>
     <statement>
-      <ol>
-        <li xml:id="th_matrix_add_ident">
-          <title>Additive identities</title>
-          <p>The <m>m\times n</m> zero matrix <m>\boldzero_{m\times n}</m> is an <em>additive identity</em> for <m>m\times n</m> matrices in the following sense: for any <m>m\times n</m> matrix <m>A</m> we have
-          <me>
-            \boldzero_{m\times n}+A=A
-          </me>.
-          </p>
-        </li>
-        <li xml:id="th_matrix_add_inverse">
-          <title>Additive inverses</title>
-          <p>For any <m>m\times n</m> matrix <m>A</m> we have
-          <me>
-            A+-A=A+(-1)A=\boldzero_{m\times n}
-          </me>.
-          </p>
-        </li>
-        <li xml:id="th_matrix_mult_ident">
-          <title>Multiplicative identities</title>
-          <p>The <m>n\times n</m> identity matrix is a <em>multiplicative identity</em> for <m>n\times n</m> matrices in the following sense: for any <m>n\times n</m> matrix <m>A</m> we have
+        <p> Let <m>n</m> be a positive integer. The <m>n\times n</m> identity matrix acts as a multiplicative identity among <m>n\times n</m> matrices in the following sense: for all <m>A\in M_{nn}</m> we have
           <me>
             I_n\, A=A\, I_n=A
           </me>.
-          </p>
-        </li>
-      </ol>
-
+        </p>
     </statement>
   </theorem>
   <proof>
@@ -199,7 +125,7 @@
     </p>
   </proof>
 
-  <corollary xml:id="c_matrix_additive_canc">
+  <theorem xml:id="c_matrix_additive_canc">
     <title>Additive cancellation of matrices</title>
 
     <statement>
@@ -233,7 +159,7 @@
       </p>
       </case>
     </proof>
-  </corollary>
+  </theorem>
 
 
   <remark>
@@ -267,7 +193,7 @@ The example in our warning above is but one instance of the general failure of t
         <li xml:id="th_mult_not_commutative">
         <title>Matrix multiplication is not commutative</title>
           <p>
-            For two <m>n\times n</m> matrices <m>A</m> and <m>B</m>, we do <em>not</em> necessarily have <m>AB=BA</m>.
+            Given <m>n\times n</m> matrices <m>A</m> and <m>B</m>, we do <em>not</em> necessarily have <m>AB=BA</m>.
           </p>
         </li>
         <li xml:id="th_mult_has_zero_divisors">
@@ -375,32 +301,32 @@ The example in our warning above is but one instance of the general failure of t
 </p>
 <theorem xml:id="th_trans_props">
   <title>Properties of matrix transposition</title>
-  <p>
-  The following properties hold for all matrices <m>A, B, C</m> and scalars
-  <m>c\in \R</m> for which the given expression makes sense. </p>
       <statement>
-        <ol marker="(i)">
+        <p>
+          In what follows <m>m,n,r</m> will denote positive integers. 
+        <ol>
           <li xml:id="th_trans_add" >
             <p>
-              <m>(A+B)^T=A^T+B^T</m>
+              <m>(A+B)^T=A^T+B^T</m> for all <m>A,B\in M_{mn}</m>.
             </p>
           </li>
           <li xml:id="th_trans_scale" >
             <p>
-              <m>(cA)^T=cA^T</m>
+              <m>(cA)^T=cA^T</m> for all <m>c\in \R</m> and <m>A\in M_{mn}</m>.
             </p>
           </li>
           <li xml:id="th_trans_prod">
             <p>
-              <m>(AB)^T=B^TA^T</m>
+              <m>(AB)^T=B^TA^T</m> for all <m>A\in M_{mr}, B\in M_{rn}</m>. 
             </p>
           </li>
           <li xml:id="th_trans_owninverse">
             <p>
-              <m>\left(A^T\right)^T=A</m>
+              <m>\left(A^T\right)^T=A</m> for all <m>A\in M_{mn}</m>.
             </p>
           </li>
         </ol>
+      </p>
       </statement>
       <proof>
         <p> We prove only the first statement. First observe that if <m>A</m> is <m>m\times n</m>, then so is <m>B</m> and <m>A+B</m>. Then <m>(A+B)^T</m> is <m>n\times m</m> by <xref ref="d_transpose"/>. Similarly, we see that <m>A^T+B^T</m> is <m>n\times m</m>.
