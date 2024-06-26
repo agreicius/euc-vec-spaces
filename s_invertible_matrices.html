@@ -135,7 +135,7 @@ sagecell.makeSagecell({
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_algebraic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_matrices.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_invertibility_theorem.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_matrix_algebra.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_matrices.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_invertibility_theorem.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
 \newcommand{\Q}{{\mathbb Q}}
 \newcommand{\R}{{\mathbb R}}
 \newcommand{\C}{{\mathbb C}}
@@ -489,7 +489,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <div class="toc-title-box"><a href="s_matrix.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Matrix arithmetic</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_attributes" class="internal"><span class="codenumber">3.1.1</span> <span class="title">The basics</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_arithmetic" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Addition, subtraction and scalar multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_arithmetic" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Vector space structure of <span class="process-math">\(M_{mn}\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_mult" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Matrix multiplication</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#s_column_row_method" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Alternative methods of multiplication</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#s_matrix-7" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Transpose of a matrix</span></a></div></li>
@@ -497,8 +497,8 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_algebraic.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Matrix algebra</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_algebraic.html#s_algebraic_ex" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li></ul>
+<div class="toc-title-box"><a href="s_matrix_algebra.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Matrix algebra</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_matrix_algebra.html#s_matrix_algebra_ex" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="s_invertible_matrices.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Invertible matrices</span></a></div>
@@ -548,7 +548,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_invertible_matrices"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">3.3</span><span class="space"> </span><span class="title">Invertible matrices</span>
 </h2>
-<section class="introduction" id="s_invertible_matrices-2"><div class="para" id="s_invertible_matrices-2-1">Picking up the thread of <a href="s_algebraic.html#rm_cancel_failure" class="xref" data-knowl="./knowl/xref/rm_cancel_failure.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 3.2.10">Remark 3.2.10</a>, we observe that the cancellation property enjoyed in real number algebra is a consequence of the fact that every nonzero real number <span class="process-math">\(a\ne 0\)</span> has a <em class="emphasis">multiplicative inverse</em>, denoted <span class="process-math">\(a^{-1}\)</span> or <span class="process-math">\(1/a\text{,}\)</span> that satisfies <span class="process-math">\(aa^{-1}=1\text{.}\)</span> Indeed, “canceling” the <span class="process-math">\(a\)</span> in the equation <span class="process-math">\(ab=ac\)</span> (assuming <span class="process-math">\(a\ne 0\)</span>) is really the act of multiplying both sides of this equation by the multiplicative inverse <span class="process-math">\(a^{-1}\text{.}\)</span>
+<section class="introduction" id="s_invertible_matrices-2"><div class="para" id="s_invertible_matrices-2-1">Picking up the thread of <a href="s_matrix_algebra.html#rm_cancel_failure" class="xref" data-knowl="./knowl/xref/rm_cancel_failure.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 3.2.9">Remark 3.2.9</a>, we observe that the cancellation property enjoyed in real number algebra is a consequence of the fact that every nonzero real number <span class="process-math">\(a\ne 0\)</span> has a <em class="emphasis">multiplicative inverse</em>, denoted <span class="process-math">\(a^{-1}\)</span> or <span class="process-math">\(1/a\text{,}\)</span> that satisfies <span class="process-math">\(aa^{-1}=1\text{.}\)</span> Indeed, “canceling” the <span class="process-math">\(a\)</span> in the equation <span class="process-math">\(ab=ac\)</span> (assuming <span class="process-math">\(a\ne 0\)</span>) is really the act of multiplying both sides of this equation by the multiplicative inverse <span class="process-math">\(a^{-1}\text{.}\)</span>
 </div> <div class="para" id="s_invertible_matrices-2-2">Ever on the lookout for connections between real number and matrix algebra, we ask whether there is a sensible analogue of multiplicative inverses for matrices. We have seen already that identity matrices <span class="process-math">\(I_n\)</span> play the role of multiplicative identities for <span class="process-math">\(n\times n\)</span> matrices, just as the number <span class="process-math">\(1\)</span> does for real numbers. This suggests we should restrict our attention to <span class="process-math">\(n\times n\)</span> matrices. The following definition is then the desired analogue of the multiplicative inverse of a nonzero real number.</div></section><section class="subsection" id="subsec-"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="space"> </span><span class="title">Invertible matrices</span>
 </h3>
@@ -990,14 +990,14 @@ A^T(A^{-1})^T=(A^{-1})^T\, A^T=I\text{.}
 <div class="para">We verify the two equalities separately:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_inverse_trans.html ./knowl/xref/th_trans_props.html ./knowl/xref/th_trans_props.html" id="th_inverse_trans-3-2-6">
 \begin{align*}
-A^T(A^{-1})^T\amp =\left(A^{-1}A\right)^T \amp (\knowl{./knowl/xref/th_trans_props.html}{\text{Theorem 3.2.11}})\\
+A^T(A^{-1})^T\amp =\left(A^{-1}A\right)^T \amp (\knowl{./knowl/xref/th_trans_props.html}{\text{Theorem 3.2.10}})\\
 \amp =I_n^T \\
 \amp =I_n  \checkmark
 \end{align*}
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_inverse_trans.html ./knowl/xref/th_trans_props.html ./knowl/xref/th_trans_props.html" id="th_inverse_trans-3-2-7">
 \begin{align*}
-(A^{-1})^TA^T \amp =(AA^{-1})^T \amp (\knowl{./knowl/xref/th_trans_props.html}{\text{Theorem 3.2.11}})\\
+(A^{-1})^TA^T \amp =(AA^{-1})^T \amp (\knowl{./knowl/xref/th_trans_props.html}{\text{Theorem 3.2.10}})\\
 \amp =I_n^T=I_n \ \checkmark\text{.}
 \end{align*}
 </div>
@@ -1212,7 +1212,7 @@ p(A)q(A)=q(A)p(A)\text{.}
 <div class="para">You may use the results of <a href="s_invertible_matrices.html#ex_expand_matrix_prod" class="xref" data-knowl="./knowl/xref/ex_expand_matrix_prod.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 3.3.3.14: Expanding matrix products">Exercise 3.3.3.14</a> and/or <a href="s_invertible_matrices.html#ex_poly_inA_commute" class="xref" data-knowl="./knowl/xref/ex_poly_inA_commute.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 3.3.3.15: Polynomial expressions of A commute">Exercise 3.3.3.15</a>. .</div>
 </div></article></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_algebraic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_invertibility_theorem.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_matrix_algebra.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_invertibility_theorem.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
