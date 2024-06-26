@@ -165,8 +165,8 @@
                   We have 
                   <md>
                     <mrow>\angvec{\boldx,\boldy} \amp = \sum_{k=1}^n k_ix_iy_i \amp \text{(def.)}</mrow>
-                    <mrow> \amp = \sum_{k=1}^n k_iy_ix_i \amp \text{(comm. prop. of real mult.)}</mrow>
-                    <mrow> \amp = \angvec{\boldy,\boldx} \amp \text{(by def.)}</mrow> 
+                    <mrow> \amp = \sum_{k=1}^n k_iy_ix_i \amp \text{(real mult. is commut.)}</mrow>
+                    <mrow> \amp = \angvec{\boldy,\boldx} \amp \text{(def.)}</mrow> 
                   </md>.
                 </p>
                 </case>
@@ -182,7 +182,7 @@
                   <mrow>\angvec{c\boldx+d\boldy, \boldw} \amp = \sum_{i=1}^n k_i(cx_i+dy_i)w_i \amp \text{(def.)}</mrow>
                   <mrow> \amp = \sum_{i=1}^nck_ix_iw_i+dk_iy_iw_i \amp \text{(dist. prop. of reals)}  </mrow>
                   <mrow> \amp = c\sum_{i=1}^nk_ix_iw_i+d\sum_{i=1}^nk_iy_iw_i \amp \text{(props. of real arith.)} </mrow>
-                  <mrow> \amp = c\angvec{\boldx,\boldw}+d\angvec{\boldy,boldw}</mrow>
+                  <mrow> \amp = c\angvec{\boldx,\boldw}+d\angvec{\boldy,\boldw}</mrow>
                 </md>.
                 </p>
                 </case>

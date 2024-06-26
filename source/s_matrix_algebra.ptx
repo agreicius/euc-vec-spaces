@@ -1,4 +1,4 @@
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_algebraic">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_matrix_algebra">
   <title>Matrix algebra</title>
   <introduction>
     <p>The last section was devoted to what might be called the <em>arithmetic</em> of matrices. We learned the basic operations of adding, multiplying, scaling, and transposing matrices. In this section we tackle the <em>algebra</em> of matrices. We will investigate the properties enjoyed (and not enjoyed) by our matrix operations, and will show how to use these operations to solve matrix equations.
@@ -434,5 +434,5 @@ The example in our warning above is but one instance of the general failure of t
       </figure>
 
     </paragraphs>
-<xi:include  href="s_algebraic_ex.ptx"/>
+<xi:include  href="s_matrix_algebra_ex.ptx"/>
 </section>

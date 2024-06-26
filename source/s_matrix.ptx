@@ -25,6 +25,10 @@
     <definition xml:id="d_matrix">
       <title>Matrix</title>
       <idx><h>matrix</h></idx>
+      <notation>
+        <usage><m>M_{mn}</m></usage>
+        <description>set of all <m>m\times n</m> matrices</description>
+      </notation>
       <statement>
         <p>
         A <term>(real) matrix</term> is a rectangular array of real numbers
@@ -34,10 +38,7 @@
         The number <m>a_{ij}</m> located in the <m>i</m>-th row and <m>j</m>-th column of <m>A</m> is called the <term><m>(i,j)</m>-entry</term> (or <term><m>ij</m>-th entry</term>) of <m>A</m>.
         </p>
         <p>
-          A matrix with <m>m</m> rows and <m>n</m> columns is said to have <term>size</term> (or <term>dimension</term>) <m>m\times n</m>.
-        </p>
-        <p>
-          We will typically use capital letters near the beginning of the alphabet (<eg /> <m>A, B,C, D</m>, <etc />) to denote matrices.
+          A matrix with <m>m</m> rows and <m>n</m> columns is said to have <term>size</term> (or <term>dimension</term>) <m>m\times n</m>. The set of all <m>m\times n</m> matrices is denoted <m>M_{mn}</m>. 
         </p>
       </statement>
     </definition>
@@ -92,7 +93,7 @@
   </p>
 </remark>
   <p>
-  In everyday language the notion of equality is taken as self-evident. Two things are equal if they are the same. What more is there to say? In mathematics, each time we introduce a new type of mathematical object (e.g., sets, functions, <m>n</m>-tuples, etc.) we need to spell out exactly what we mean for two things to be considered equal. We do so now with matrices.
+  In everyday language the notion of equality is taken as self-evident. Two things are equal if they are the same. What more is there to say? In mathematics, each time we introduce a new type of mathematical object (e.g., sets, functions, <m>n</m>-tuples, etc.) we need to spell out exactly what we mean for two objects to be considered equal. We do so now with matrices.
 </p>
   <definition xml:id="d_matrix_equality">
     <title>Matrix equality</title>
@@ -135,7 +136,7 @@
     </statement>
   </example>
   <definition xml:id="d_square_matrices">
-    <title>Square matrices, row vectors, column vectors, zero matrices</title>
+    <title>Matrices of particular shape</title>
     <idx><h>matrix</h><h>square</h>
     </idx>
     <idx><h>matrix</h><h>row vector</h>
@@ -144,13 +145,9 @@
     </idx>
     <idx><h>matrix</h><h>diagonal of square matrix</h></idx>
     <idx><h>matrix</h><h>zero matrix</h></idx>
-    <notation>
-      <usage><m>\boldzero_{m\times n}</m></usage>
-      <description>the <m>m\times n</m> zero matrix</description>
-    </notation>
     <statement>
       <p>
-        A matrix <m>A</m> is <term>square</term> if its dimension is <m>n\times n</m>. The <term>diagonal</term> of a square matrix <m>A=[a_{ij}]_{n\times n}</m> consists of the entries <m>a_{ii}</m> for <m>1\leq i\leq n</m>.
+        A matrix <m>A</m> is <term>square</term> if its dimension is <m>n\times n</m>: <ie/>, if <m>A\in M_{nn}</m>. The <term>diagonal</term> of a square matrix <m>A\in M_{nn}</m> consists of the entries of <m>A</m> of the form <m>[A]_{ii}</m> for <m>1\leq i\leq n</m>.
       </p>
       <p>
       A <m>1\times n</m> matrix
@@ -162,12 +159,6 @@
           \boldb=\begin{bmatrix}b_1\\ b_2\\\vdots \\ b_m \end{bmatrix}
         </me>,
         is called a <term>column vector</term>. The <m>i</m>-th entry of a column vector <m>\boldb</m> is denoted <m>[\boldb]_i</m>.
-      </p>
-      <p>
-        The <term> <m>m\times n</m> zero matrix</term>, denoted <m>\boldzero_{m\times n}</m>, is the matrix of that dimension, all of whose entries are zero: i.e., <m>(\boldzero_{m\times n})_{ij}=0</m> for all <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>.
-      </p>
-      <p>
-        When the actual dimension is not significant, we will often drop the subscript and write simply <m>\boldzero</m> for a zero matrix of suitable dimension.
       </p>
     </statement>
   </definition>
@@ -202,6 +193,24 @@
       The vertical and horizontal lines in <xref ref="eq_columns"/> and <xref ref="eq_rows"/> are used to emphasize that the <m>\boldc_j</m> are columns vectors and the <m>\boldr_i</m> are row vectors.
     </p>
   </remark>
+  <p>
+    Lastly we introduce notation for a particularly simple sort of matrix: one whose entries are all equal to zero. 
+  </p>
+  <definition xml:id="d_zero_matrix">
+    <title>Zero matrices</title>
+    <notation>
+      <usage><m>\boldzero_{m\times n}</m></usage>
+      <description>the <m>m\times n</m> zero matrix</description>
+    </notation>
+    <statement>
+      <p>
+        The <term> <m>m\times n</m> zero matrix</term>, denoted <m>\boldzero_{m\times n}</m>, is the <m>m\times n</m> matrix, all of whose entries are equal to zero: i.e., <m>[\boldzero_{m\times n}]_{ij}=0</m> for all <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>.
+      </p>
+      <p>
+        When there is no confusion about which dimension zero matrix is intended, we will often write simply <m>\boldzero</m> instead of <m>\boldzero_{m\times n}</m>. 
+      </p>
+    </statement>
+  </definition>
   <project xml:id="sage_matrix_entries_rows_cols">
     <title>Matrix entries, rows, and columns</title>
     <p>
@@ -274,73 +283,134 @@
 
 </subsection>
   <subsection xml:id="ss_matrix_arithmetic">
-    <title>Addition, subtraction and scalar multiplication</title>
+    <title>Vector space structure of <m>M_{mn}</m></title>
     <p>
       We now lay out the various algebraic operations we will use to combine and transform matrices; we refer to the use of these operations loosely as <em>matrix arithmetic</em>. Some of these operations resemble familiar operations from real arithmetic in terms of their notation and definition. Do not be lulled into complacency! These are new operations defined for a new class of mathematical objects, and must be treated carefully. In particular, pay close attention to (a) exactly what type of mathematical objects serve as inputs for each operation (the <em>ingredients</em> of the operation), and (b) what type of mathematical object is outputted.
     </p>
 
 
     <definition xml:id="d_matrix_add_subtract">
-      <title>Matrix addition and subtraction</title>
+      <title>Matrix addition and scalar multiplication</title>
       <idx><h>matrix addition</h></idx>
-      <idx><h>matrix subtraction</h></idx>
-      <statement><p>
-      </p>
-        <p>
-          <term>Matrix addition</term> is the operation defined as follows: given two <m>m\times n</m> matrices <m>A=[a_{ij}]_{m\times n}</m> and <m>B=[b_{ij}]_{m\times n}</m>, we define their <term>sum</term> to be the matrix <me>A+B\colon =[a_{ij}+b_{ij}]_{m\times n}</me>.
-          In other words <m>A+B</m> is the <m>m\times n</m> matrix satisfying <me>[A+B]_{ij}=[A]_{ij}+[B]_{ij}=a_{ij}+b_{ij}</me> for all <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>.
-        </p>
-        <p>
-          <term>Matrix subtraction</term> is the operation defined as follows: given two <m>m\times n</m> matrices <m>A=[a_{ij}]_{m\times n}</m> and <m>B=[b_{ij}]_{m\times n}</m>, we define their <term>difference</term> to be the matrix <me>A-B\colon =[a_{ij}-b_{ij}]_{m\times n}</me>.
-          In other words <m>A-B</m> is the <m>m\times n</m> matrix satisfying <me>[A-B]_{ij}=[A]_{ij}-[B]_{ij}=a_{ij}-b_{ij}</me> for all <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>.
-        </p>
-      </statement>
-    </definition>
-  <remark>
-  <p>
-    Observe that matrix addition/subtraction is not defined for any pair of matrices. The ingredients of matrix addition (or subtraction) are two matrices <em>of the same dimension</em>; and the output is a third matrix of this common dimension.
-  </p>
-  </remark>
-  <definition xml:id="d_matrix_scalar_mult">
-      <title>Scalar multiplication of matrices</title>
       <idx><h>matrix scalar multiplication</h></idx>
       <statement>
         <p>
-          Given any matrix <m>A=[a_{ij}]_{m\times n}</m> and any constant <m>c\in \R</m>,
-          we define
-          <me>
-            cA=[ca_{ij}]
-          </me>.
-        In other words, <m>cA</m> is the <m>m\times n</m> matrix obtained by <q>scaling</q> each of the entries of <m>A</m> by the constant <m>c</m>.
-        </p>
-        <p>
-          We call <m>cA</m> a <term>scalar multiple</term> of <m>A</m>. Furthermore, to help distinguish between matrices and real numbers, we will refer to elements of <m>\R</m> as <term>scalars</term>.
+          Let <m>m</m> and <m>n</m> be positive integers. 
+          <ul>
+            <li>
+              <title>Matrix addition</title>
+              <p>
+                Given <m>m\times n</m> matrices <m>A,B\in M_{mn}</m>, we define their <term>matrix sum</term> <m>A+B</m> to be the <m>m\times n</m> matrix satisfying 
+                <me>
+                  [A+B]_{ij}=[A]_{ij}+[B]_{ij}
+                </me>
+                for all <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>. Equivalently, if <m>A=[a_{ij}]</m> and <m>B=[b_{ij}]</m>, then 
+                <me>
+                  A+B=[a_{ij}+b_{ij}]
+                </me>.
+                The operation 
+                <md>
+                  <mrow>M_{mn}\times M_{mn} \amp \rightarrow M_{mn}</mrow>
+                  <mrow>(A,B) \amp \mapsto A+B</mrow>
+                </md>
+                is called <term>matrix addition</term>. 
+              </p>
+            </li>
+            <li>
+              <p>
+                Given an <m>m\times n</m> matrix <m>A\in M_{mn}</m> and scalar <m>c\in \R</m>, the <term>scalar multiple</term> of <m>A</m> by <m>c</m> is the matrix <m>cA</m> satisfying 
+                <me>
+                  [cA]_{ij}=c[A]_{ij}
+                </me>
+                for all <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>. Equivalently, if <m>A=[a_{ij}]</m>, then 
+                <me>
+                  cA=[ca_{ij}]
+                </me>.
+                The operation 
+                <md>
+                  <mrow>\R\times M_{mn} \amp \rightarrow M_{mn}</mrow>
+                  <mrow>(c,A) \amp \mapsto cA</mrow>
+                </md>
+                is called <term>matrix scalar multiplication</term>. 
+              </p>
+            </li>
+          </ul>
         </p>
       </statement>
-    </definition>
-    <remark> 
-    <p>
-    Whereas matrix addition and subtraction closely resemble corresponding operations involving real numbers, there is no obvious real arithmetic analogue to matrix scalar multiplication. In particular, notice how matrix scalar multiplication is a sort of  <em>hybrid</em> operation that combines mathematical objects of two very different natures: a real number (or scalar) on the one hand, and a matrix on the other.  
-    </p>
-    </remark>
-    <p>
-    We call the result of applying a sequence of matrix additions and scalar multiplications a <em>linear combination of matrices</em>.
-    </p>
-    <definition xml:id="d_matrix_lin_comb">
-      <title>Linear combination of matrices</title>
-      <idx><h>linear combination</h><h>of matrices</h></idx>
-      <statement>
+      </definition>
+      <remark>
         <p>
-          Given matrices <m>A_1,A_2,\dots, A_r</m> of the same dimension,
-          and scalars <m>c_1,c_2, \dots ,c_r</m>,
-          the expression
-          <me>
-            c_1A_1+c_2A_2\cdots +c_rA_r
-          </me>
-          is called a <term>linear combination of matrices</term>.  The scalars <m>c_i</m> are called the <term>coefficients</term> of the linear combination.
+          Observe that matrix addition is not defined for any pair of matrices. The ingredients of matrix addition are two matrices <em>of the same dimension</em>; and the output is a third matrix of this common dimension.
         </p>
-      </statement>
-    </definition>
+        </remark>
+        <p>
+          Not surprisingly, as the names of our matrix operations suggest, the set <m>M_{mn}</m> of all <m>m\times n</m> matrices constitutes a vector space with respect to matrix addition and scalar multiplication. 
+        </p>
+        <theorem xml:id="th_matrix_vector_space">
+          <title>Vector space structure of <m>M_{mn}</m></title>
+          <statement>
+            <p>
+              Let <m>m</m> and <m>n</m> be positive integers. 
+              <ol>
+                <li>
+                  <p>
+                    The set <m>M_{mn}</m>, together with the matrix addition and scalar multiplication, is a vector space.  
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The zero vector of <m>M_{mn}</m> is the <m>m\times n</m> zero matrix <m>\boldzero_{m\times n}</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Given a matrix <m>A=[a_{ij}]\in M_{mn}</m> its inverse vector is 
+                    <me>
+                      -A=[-a_{ij}]
+                    </me>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </statement>
+          <proof>
+            <p>
+              Having identified the relevant operations, as well as the proposed zero vector and inverse vectors, we must verify that the <xref ref="d_vector_space" text="custom">vector axioms</xref> hold. We do so for Axioms i, iii, and iv, leaving the rest as an exercise. 
+            </p>
+            <case>
+            <title>Axiom i</title>
+            <p>
+            
+            </p>
+            </case>
+            <case>
+              <title>Axiom iii</title>
+              <p>
+              
+              </p>
+              </case>
+              <case>
+                <title>Axiom iv</title>
+                <p>
+                
+                </p>
+                </case>
+          </proof>
+        </theorem>
+        <remark xml:id="rm_matrix_diff">
+          <title>Matrix difference and matrix linear combination</title>
+          <p>
+            Having established that <m>M_{mn}</m> is a vector space under matrix addition and scalar multiplication, this set of matrices automatically inherits the various features and properties enjoyed by general vector spaces. For example, the <xref ref="d_vec_difference" text="custom">vector difference</xref> operation (defined for any vector space) gives rise in the case of <m>M_{mn}</m> to a <em>matrix difference</em> operation. Namely, for any <m>A,B\in M_{mn}</m> we have 
+            <me>
+              A-B=A+(-B)=A+(-1)B
+            </me>.
+            Similarly, the general notion of a <xref ref="d_lin_comb" text="custom">linear combination</xref> of vectors, gives rise to the notion of <em>matrix linear combinations</em>. Namely, given <m>A_1,A_2,\dots, A_k\in M_{mn}</m>, and scalars <m>c_1,c_2,\dots, c_k\in \R</m>, we have the matrix linear combination 
+            <me>
+              c_1A_1+c_2A_2+\cdots +c_kA_k
+            </me>.
+          </p>
+        </remark>
+  
     <example xml:id="eg_matrix_lin_comb">
     <title>Matrix linear combinations</title>
       <statement>
@@ -410,14 +480,22 @@
   <definition xml:id="d_matrix_mult">
     <title>Matrix multiplication</title>
       <idx><h>matrix multiplication</h></idx>
-    <statement><p>
-    </p>
-      <p> <term>Matrix multiplication</term> is the operation defined as follows: given an <m>m\times n</m> matrix
-        <m>A=[a_{ij}]_{m\times n}</m> and an <m>n\times r</m> matrix <m>B=[b_{ij}]_{n\times r}</m>, we define their <term>product</term> to be the <m>m\times r</m> matrix <m>AB</m> whose <m>ij</m>-th entry is given by the formula
+    <statement>
+      <p>Let <m>m,n,r</m> be positive integers. Given an <m>m\times n</m> matrix
+        <m>A\in M_{mn}</m> and an <m>n\times r</m> matrix <m>B\in M_{nr}</m>, we define their <term>product</term> to be the <m>m\times r</m> matrix <m>AB</m> satisfying 
         <men xml:id="eq_matrix_mult">
-          [AB]_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots a_{ir}b_{rj} =\sum_{\ell=1}^ra_{i\ell}b_{\ell j}
+          [AB]_{ij}=[A]_{i1}[B]_{1j}+[A]_{i2}[B]_{2j}+\cdots [A]_{in}[B]_{nj}=\sum_{k=1}^n[A]_{ik}[B]_{kj}
         </men>
-        for all <m>1\leq i\leq m</m> and <m>1\leq j\leq r</m>.
+        for all <m>1\leq i\leq m</m> and <m>1\leq j\leq r</m>. Equivalently, if <m>A=[a_{ij}]</m> and <m>B=[b_{ij}]</m>, then <m>AB=[c_{ij}]</m>, where 
+        <me>
+          c_{ij}=\sum_{k=1}^na_{ik}b_{kj}
+        </me>.
+        The operation 
+        <md>
+          <mrow>M_{mn}\times M_{nr} \amp \rightarrow M_{mr}</mrow>
+          <mrow>(A,B) \amp \mapsto AB</mrow>
+        </md>
+        is called <term>matrix multiplication</term>. 
       </p>
     </statement>
   </definition>
@@ -529,22 +607,21 @@ DL/.style={
     <title>Dot product and matrix multiplication</title>
     <statement>
       <p>
-         Let <m>A</m> be an <m>m\times n</m> matrix, and let <m>B</m> be an <m>n\times r</m> matrix. For all <m>1\leq i\leq m</m>, let <m>\boldr_i</m> be the <m>i</m>-th row of <m>A</m>; and for all <m>1\leq k\leq r</m> let <m>\boldc_j</m> be the <m>j</m>-th column of <m>B</m>. For all <m>1\leq i\leq m, 1\leq j\leq n</m>, we have
-      <me>
+         Let <m>m,n,r</m> be positive integers. Given matrices <m>A=[a_{ij}]\in M_{mn}</m> and <m>B=[b_{ij}]\in M_{nr}</m>, define 
+         <md>
+          <mrow>\boldr_i\amp =(a_{i1}, a_{i2},\dots, a_{in}) \amp </mrow>
+          <mrow>\boldc_j \amp = (b_{1j},b_{2j},\dots, b_{nj}</mrow>
+         </md>
+         for all <m>1\leq i\leq m</m> and <m>1\leq j\leq r</m>. In other words, <m>\boldr_i</m> is the <m>i</m>-th row of <m>A</m>, considered as an <m>n</m>-tuple, and <m>\boldc_j</m> is the <m>j</m>-th column of <m>B</m>, considered as an <m>n</m>-tuple. For all <m>1\leq i\leq m, 1\leq j\leq n</m>, we have
+      <men xml:id="eq_matrix_mult_dot">
         [AB]_{ij}=\boldr_i\cdot \boldc_j
-      </me>,
-      where <m>\boldr_i</m> and <m>\boldc_j</m> are treated as <m>n</m>-tuples.
+      </men>.
       In other words, the <m>ij</m>-th entry of <m>AB</m> is the dot product of the <m>i</m>-th row of <m>A</m> and the <m>j</m>-th column of <m>B</m>.
       </p>
     </statement>
     <proof>
       <p>
-        Fix a pair <m>(i,j)</m> with <m>1\leq i\leq m</m> and <m>1\leq j\leq r</m>. Considered as <m>n</m>-tuples, the <m>i</m>-th row of <m>A</m> and <m>j</m>-th column of <m>B</m> are given as 
-        <md>
-          <mrow>\boldr_i \amp =(a_{i1}, a_{i2},\dots, a_{in})</mrow>
-          <mrow>\boldc_j \amp =(b_{1j},b_{2j},\dots, b_{nj})</mrow>
-        </md>.
-        We have 
+        Fix a pair <m>(i,j)</m> with <m>1\leq i\leq m</m> and <m>1\leq j\leq r</m>. We have 
         <md>
           <mrow> [AB]_{ij} \amp = \sum_{k=1}^na_{ik}b_{kj} \amp( <xref ref="d_matrix_mult" text="global"/>) </mrow>
           <mrow> \amp =\boldr_i\cdot \boldc_j \amp (<xref ref="d_dot_product" text="global"/>) </mrow>

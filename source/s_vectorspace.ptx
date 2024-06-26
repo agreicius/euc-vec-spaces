@@ -16,7 +16,7 @@
     <p>
       We now embark on just such an axiomatic approach.
       The notion of a <em>vector space</em> arises from focusing on just two operations from matrix algebra:
-      matrix addition and matrix scalar multiplication. As we saw in <xref ref="s_algebraic"/>,
+      matrix addition and matrix scalar multiplication. As we saw in <xref ref="s_matrix_algebra"/>,
       these two operations satisfy many useful properties:
       <eg />, commutativity, associativity, distributivity, <etc />. Whereas earlier we showed directly that matrix algebra satisfies these properties, now we will come at things the other way: we record these various properties as a list of axioms, and declare <em>any</em> system that satisfies these axioms to be a vector space.
     </p>
