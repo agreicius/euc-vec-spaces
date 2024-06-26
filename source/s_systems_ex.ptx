@@ -34,7 +34,7 @@
     <title>Geometry of linear systems</title>
     <statement>
       <p>
-        In this exercise we will use the geometry of lines in <m>\R^2</m> and planes in <m>\R^3</m> to help analyze solutions to systems of equations in two and three unknowns, respectively. See <xref ref="eg_lines_planes_review"/> for a refresher on these concepts. 
+        In this exercise we will use the geometry of lines in <m>\R^2</m> and planes in <m>\R^3</m> to help analyze solutions to systems of equations in two and three unknowns, respectively. 
       <ol>
         <li>
           <p>

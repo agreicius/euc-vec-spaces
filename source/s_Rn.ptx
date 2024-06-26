@@ -1,8 +1,8 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_Rn">
-    <title>Vector space structure of Rn</title>
+    <title>Vector space structure of <m>\R^n</m></title>
     <introduction>
         <p>
-            What is a Euclidean vector space? Getting ahead of ourselves somewhat, it is a <em>finite-dimensional vector space</em> over the real numbers along with an <em>inner product</em>. In this chapter we will begin to make sense of some of these notions: specifically, we will define vector spaces and inner products on vector spaces. We will also introduce what will be for us essentially the only example of a Euclidean vector space: namely, <m>\R^n</m> along with its standard vector operations and the dot product. This might strike the reader as a somewhat overly restricted focus: if there are other examples of Euclidean spaces out there, why not invite them in? As it turns out, an <m>\R^n</m>-centered treatment of linear algebra will give us plenty of rich material to deal with in this introductory course. Furthermore, although there are other <q>exotic</q> examples of Euclidean vector spaces, they are all <em>structurally equivalent</em> to <m>\R^n</m> (for some positive integer <m>n</m>) with its usual vector operations and the dot product. More precisely, getting ahead of ourselves once again, any two <m>n</m>-dimensional Euclidean vector spaces are <em>isomorphic</em> to one another. (We will make sense of this notion also, in due time.) As a result, the theory of linear algebra and inner product spaces, as articulated in the specific context of <m>\R^n</m>, can be seen as entirely characteristic of the general theory.  
+          What exactly is a Euclidean vector space?  Getting ahead of ourselves somewhat, it is a <em>finite-dimensional vector space</em> over the real numbers along with an <em>inner product</em>. We will eventually give precise meaning to all of these notions, starting in this section with vector spaces. We will also introduce what will be for us essentially the only example of a Euclidean vector space: namely, <m>\R^n</m> together with its standard vector operations and the dot product. This might strike the reader as a somewhat overly restricted focus: if there are other examples of Euclidean spaces out there, why not invite them in? As it turns out, an <m>\R^n</m>-centered treatment of linear algebra will give us plenty of rich material to deal with in this introductory course. Furthermore, although there are other <q>exotic</q> examples of Euclidean vector spaces, they are all <em>structurally equivalent</em> to <m>\R^n</m> (for some positive integer <m>n</m>) with its usual vector operations and the dot product. More precisely, getting ahead of ourselves once again, any two <m>n</m>-dimensional Euclidean vector spaces are <em>isomorphic</em> to one another. (We will make sense of this notion also, in due time.) As a result, the theory of linear algebra and inner product spaces, as articulated in the specific context of <m>\R^n</m>, can be seen as entirely characteristic of the general theory.  
         </p>
     </introduction>
    <subsection xml:id="ss_nspace">
@@ -148,7 +148,7 @@
     <subsection xml:id="ss_vec_spaces">
         <title>Vector spaces</title>
         <p>
-            We now jump to the heart of the matter, which is that <m>\R^n</m>, together with its standard vector operations, constitutes an example of an important type of mathematical object called a <em>vector space</em>, which we now define. 
+            We now jump to the heart of the matter, which is that <m>\R^n</m>, together with its standard vector operations, constitutes an example of an important type of mathematical object called a <em>vector space</em>. 
         </p>
     </subsection>
     <definition xml:id="d_vector_space">
@@ -678,7 +678,7 @@
     </p>
     <figure xml:id="fig_point">
         <title>Point visualization of triple</title>
-        <interactive xml:id="geogebra_point" platform="geogebra" width="80%" aspect="4:3">
+        <interactive xml:id="geogebra_point" platform="geogebra" width="100%" aspect="4:3">
           <slate surface="geogebra" material="qdrz2sge" aspect="4:3" marker="train-distance">
           enableLabelDrags(false);
           </slate>
@@ -710,7 +710,7 @@
     </p>
     <figure xml:id="fig_tip_tail">
         <title>Tip-to-tail visualization of vector addition</title>
-        <interactive xml:id="geogebra_tip_tail" platform="geogebra" width="80%" aspect="4:3">
+        <interactive xml:id="geogebra_tip_tail" platform="geogebra" width="100%" aspect="4:3">
           <slate surface="geogebra" material="nrkjwppk" aspect="4:3" marker="train-distance">
           enableLabelDrags(false);
           </slate>
@@ -730,7 +730,7 @@
     </p>
     <figure xml:id="fig_tip_tip">
       <title>Tip-to-tip visualization of vector difference</title>
-      <interactive xml:id="geogebra_tip_tip" platform="geogebra" width="80%" aspect="4:3">
+      <interactive xml:id="geogebra_tip_tip" platform="geogebra" width="100%" aspect="4:3">
         <slate surface="geogebra" material="nzgvx2kv" aspect="4:3" marker="train-distance">
         enableLabelDrags(false);
         </slate>
@@ -742,12 +742,12 @@
     </p>
     <figure xml:id="fig_scal_mult">
         <title>Tip-to-tail visualization of vector addition</title>
-        <interactive xml:id="geogebra_scal_mult" platform="geogebra" width="80%" aspect="4:3">
+        <interactive xml:id="geogebra_scal_mult" platform="geogebra" width="100%" aspect="4:3">
           <slate surface="geogebra" material="w7sqxgre" aspect="4:3" marker="train-distance">
           enableLabelDrags(false);
           </slate>
         </interactive>
-        <caption>Visualization of scalar multiplication. Drag point labeled $k$ to change scalar. Made with <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url>.</caption>
+        <caption>Visualization of scalar multiplication. Drag point labeled <m>k</m> to change scalar. Made with <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url>.</caption>
     </figure>
    </subsection>
    <xi:include href="./s_Rn_ex.ptx"/>

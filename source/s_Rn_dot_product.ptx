@@ -1,6 +1,5 @@
 <section xml:id="s_Rn_dot_product">
     <title>Inner product structure of <m>\R^n</m></title>
-    <introduction>
         <p>
             In this section we introduce another operation on <m>\R^n</m> called the <em>dot product</em>. As we will see, the dot product is an additional layer added to the vector space structure of <m>\R^n</m> that gives rise to a number of useful analytic tools. More generally, the dot product turns out to be just one example of what is called an <em>inner product</em> on a vector space. Inner products imbue vector spaces with valuable geometric content, a few of which are highlighted below. 
             <ul>
@@ -13,17 +12,12 @@
               <li>
                 <title>Orthogonality</title>
                 <p>
-                Two vectors of an inner product space are <em>orthogonal</em> if their inner product is equal to zero. Orthogonality leads to a general notion of <em>orthogonal projection</em>, and is part of the definition of an <em>orthogonal basis</em>. These are two computationally very important concepts in linear algebra that we will take up in earnest later.  
+                Two vectors of an inner product space are <em>orthogonal</em> if their inner product is equal to zero. Orthogonality leads to a general notion of <em>orthogonal projection</em>, and is part of the definition of an <em>orthogonal basis</em>. 
                 </p>
               </li>
             </ul>
+            We will get into these geometric notions in detail later. For now we content ourselves simply with defining what an inner product is. We will also show that the dot product is just one example of infinitely many inner products that can be defined on <m>\R^n</m>. In particular, we will define a family of natural inner products on <m>\R^n</m> called <em>weighted dot products</em>, which play an important role in statistics and data science. 
           </p>
-    </introduction>
-    <subsection xml:id="ss_dot_product">
-        <title>Dot product and inner products</title>
-        <p>
-            We will give a purely arithmetic definition of the dot product on <m>\R^n</m>, and will provide retroactive geometric motivation in <xref ref="ss_length_angles"/>.
-        </p>
         <definition xml:id="d_dot_product">
             <title>Dot product</title>
             <statement>
@@ -74,7 +68,7 @@
                 </md>.
                 Furthermore, this operation must satisfy the following axioms.
                 <ol marker="i">
-                  <li>
+                  <li xml:id="d_inner_i">
                     <title>Symmetry</title>
                     <p>
                     For all <m>\boldv, \boldw\in V</m> we have
@@ -83,7 +77,7 @@
                     </me>.
                     </p>
                   </li>
-                  <li>
+                  <li xml:id="d_inner_ii">
                     <title>Linearity</title>
                     <p>
                       For all <m>\boldv, \boldw, \boldu\in V</m> and <m>c, d\in \R</m> we have :
@@ -96,7 +90,7 @@
                       </me>.
                     </p>
                   </li>
-                  <li>
+                  <li xml:id="d_inner_iii" >
                     <title>Positive definiteness</title>
                     <p>
                       For all <m>\boldv\in V</m> we have
@@ -111,41 +105,7 @@
               </p>
             </statement>
           </definition>
-        
-            <remark xml:id="rm_innerproduct_algebra">
-            <title>Inner products of linear combinations</title>
-            <statement>
-              <p>
-              We will have many opportunities to <q>expand out</q> an inner product of two linear combinations of vectors. Using axioms (i) and (ii) in series, this process resembles the procedure for multiplying two polynomials. For example, we have
-              <md>
-                <mrow>\langle c\boldv+d\boldw, e\boldv+f\boldw\rangle
-                \amp = c \langle \boldv,  e\boldv+f\boldw \rangle +d \langle \boldw, e\boldv+f\boldw \rangle \amp (<xref ref="d_innerproduct" text="global"/>, \text{(ii)})</mrow>
-                <mrow> \amp=ce \langle \boldv, \boldv\rangle+cf\langle \boldv,\boldw \rangle +de \langle \boldw, \boldv\rangle+df\langle \boldw, \boldw\rangle \amp (<xref ref="d_innerproduct" text="global"/>, \text{(ii)}) </mrow>
-                <mrow>  \amp = ce\langle \boldv, \boldv\rangle +(cf+de)\langle \boldv, \boldw\rangle +df\langle \boldw, \boldw\rangle
-                \amp (<xref ref="d_innerproduct" text="global"/>, \text{(i)})</mrow>
-              </md>.
-              Note how in the last step we are able to group the <q>cross terms</q>, <m>\langle \boldv, \boldw\rangle=\langle \boldw, \boldv\rangle</m> using the symmetry axiom.
-            </p>
-              <p>
-                More generally, given linear combinations
-              <md>
-                <mrow>
-                \boldv \amp = c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\sum_{i=1}^n c_i\boldv_i </mrow>
-                <mrow> \boldw \amp =d_1\boldv_1+d_2\boldv_2+\cdots +d_n\boldv_n=\sum_{i=1}^nd_i\boldv_i </mrow>
-              </md>,
-              the same reasoning shows that
-              <md>
-                <mrow>\langle \boldv, \boldw \rangle   \amp=
-                c_1d_1 \langle \boldv_1, \boldv_1  \rangle+c_2d_2 \langle \boldv_2, \boldv_2 \rangle +\cdots+c_nd_n \langle \boldv_n, \boldv_n \rangle +\underset{\text{cross terms}}{\underbrace{(c_1d_2+c_2d_1)\langle \boldv_1,\boldv_2  \rangle +\cdots}}  </mrow>
-                <mrow> \amp= \sum_{i=1}^nc_id_i \langle \boldv_i, \boldv_i \rangle +\underset{\text{cross terms}}{\underbrace{\sum_{1\leq i\lt j\leq n}(c_{i}d_j+c_jd_i)\langle \boldv_i, \boldv_j \rangle}}  </mrow>
-              </md>.
-              In particular, we have
-              <me>
-                \langle \boldv, \boldv\rangle =\sum_{i=1}^nc_i^2 \langle \boldv_i, \boldv_i \rangle +\sum_{1\leq i\lt j\leq n}2c_ic_j \langle \boldv_i, \boldv_j \rangle
-              </me>.
-              </p>
-            </statement>
-          </remark>
+          
           <p>
            Although we will almost exclusively work with the dot product in this treatment of linear algebra, it is worth considering a natural family of inner products on <m>\R^n</m> that the dot product fits nicely into: namely, <em>weighted dot products</em>. These examples of inner products are especially important in data science. 
           </p>
@@ -185,6 +145,9 @@
                 </p>
               </statement>
             </example>
+          <p>
+            We now show that any weighted dot product (including the dot product itself) is an inner product on <m>\R^n</m>. 
+          </p>
           <theorem xml:id="th_weighted_dot_product">
             <title>Weighted dot product</title>
             <statement>
@@ -260,11 +223,63 @@
               </p>
             </statement>
           </example>
-    </subsection>
+          <p>
+            Are there other examples of inner products besides weighted dot products that can be defined on <m>\R^n</m>? Indeed there are! For example, it is possible to show that the operation 
+            <men xml:id="eq_inner">
+              \angvec{(x_1,x_2),(y_1,y_2)}=2x_1y_1+x_1y_2+x_2y_1+2x_2y_2
+            </men>
+            defines an inner product on <m>\R^2</m>. In fact, getting ahead of ourselves once again, inner products on <m>\R^n</m> are in one-to-one correspondence with symmetric positive-definite <m>n\times n</m> matrices. For example, the inner product <xref ref="eq_inner"/> corresponds to the matrix 
+            <me>
+              A=\begin{bmatrix}2\amp 1\\ 1\amp 2 \end{bmatrix}
+            </me>.
+            For our purposes, however, the family of weighted dot products will serve as a sufficiently rich source of examples of inner products. Furthermore, as we will see later, any inner product on <m>\R^n</m> can be viewed as being equal to the dot product  <q>after a change of variables</q>. For example, letting <m>\boldx=(x_1,x_2)</m> and <m>\boldy=(y_1,y_2)</m>, the inner product <xref ref="eq_inner"/> satisfies 
+            <me>
+              \angvec{\boldx,\boldy}=\boldx'\cdot \boldy'
+            </me>,
+            where 
+            <md>
+              <mrow>\boldx'\amp =\frac{1}{4}((\sqrt{3}+1)x_1+(\sqrt{3}-1)x_2,(\sqrt{3}-1)x_1+(\sqrt{3}+1)x_2)</mrow>
+              <mrow>\boldy'\amp =\frac{1}{4}((\sqrt{3}+1)y_1+(\sqrt{3}-1)y_2,(\sqrt{3}-1)y_1+(\sqrt{3}+1)y_2)</mrow>
+            </md>.
+            More on this topic later! 
+          </p>
     
-     
-      
-    <subsection xml:id="ss_length_angles">
+<!--      
+          <remark xml:id="rm_innerproduct_algebra">
+            <title>Inner products of linear combinations</title>
+            <statement>
+              <p>
+              We will have many opportunities to <q>expand out</q> an inner product of two linear combinations of vectors. Using the inner product axioms in series, this process resembles the procedure for multiplying two polynomials. For example, we have
+              <md>
+                <mrow>\langle c\boldv+d\boldw, e\boldv+f\boldw\rangle
+                \amp = c \langle \boldv,  e\boldv+f\boldw \rangle +d \langle \boldw, e\boldv+f\boldw \rangle \amp (<xref ref="d_inner_ii">Axiom</xref>)</mrow>
+                <mrow> \amp=ce \langle \boldv, \boldv\rangle+cf\langle \boldv,\boldw \rangle +de \langle \boldw, \boldv\rangle+df\langle \boldw, \boldw\rangle \amp (<xref ref="d_inner_ii">Axiom</xref>) </mrow>
+                <mrow>  \amp = ce\langle \boldv, \boldv\rangle +(cf+de)\langle \boldv, \boldw\rangle +df\langle \boldw, \boldw\rangle
+                \amp (<xref ref="d_inner_i">Axiom</xref>)</mrow>
+              </md>.
+              Note how in the last step we are able to group the <q>cross terms</q>, <m>\langle \boldv, \boldw\rangle=\langle \boldw, \boldv\rangle</m> using the symmetry axiom (<xref ref="d_inner_i">Axiom</xref>). 
+            </p>
+              <p>
+                More generally, given linear combinations
+              <md>
+                <mrow>
+                \boldv \amp = c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\sum_{i=1}^n c_i\boldv_i </mrow>
+                <mrow> \boldw \amp =d_1\boldv_1+d_2\boldv_2+\cdots +d_n\boldv_n=\sum_{i=1}^nd_i\boldv_i </mrow>
+              </md>,
+              the same reasoning shows that
+              <md>
+                <mrow>\langle \boldv, \boldw \rangle   \amp=
+                c_1d_1 \langle \boldv_1, \boldv_1  \rangle+c_2d_2 \langle \boldv_2, \boldv_2 \rangle +\cdots+c_nd_n \langle \boldv_n, \boldv_n \rangle +\underset{\text{cross terms}}{\underbrace{(c_1d_2+c_2d_1)\langle \boldv_1,\boldv_2  \rangle +\cdots}}  </mrow>
+                <mrow> \amp= \sum_{i=1}^nc_id_i \langle \boldv_i, \boldv_i \rangle +\underset{\text{cross terms}}{\underbrace{\sum_{1\leq i\lt j\leq n}(c_{i}d_j+c_jd_i)\langle \boldv_i, \boldv_j \rangle}}  </mrow>
+              </md>.
+              In particular, we have
+              <me>
+                \langle \boldv, \boldv\rangle =\sum_{i=1}^nc_i^2 \langle \boldv_i, \boldv_i \rangle +\sum_{1\leq i\lt j\leq n}2c_ic_j \langle \boldv_i, \boldv_j \rangle
+              </me>.
+              </p>
+            </statement>
+          </remark> -->
+    <!-- <subsection xml:id="ss_length_angles">
         <title>Length and angles in inner product spaces</title>
         <p>
             As mentioned above, once an inner product is established, we can define further notions like length, distance, and angle in terms of the given inner product.  When the inner product in question is the standard dot product on <m>\R^2</m> or <m>\R^3</m>, then these are precisely the familiar notions you may have met in multivariable calculus. 
@@ -693,6 +708,6 @@
             </p>
           </statement>
         </example>
-      </subsection>
+      </subsection> -->
       <!-- <xi:include href="./s_innerproducts_ex.ptx"/> -->
 </section>
