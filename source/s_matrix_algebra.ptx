@@ -7,6 +7,11 @@
   As you learn about matrix algebra, always keep in mind your old friend, real number algebra. For the most part these two algebraic systems closely resemble one another, as <xref ref="th_matrix_alg_props"/> below makes clear. However, there are two crucial points where they differ (see <xref ref="th_matrix_abnormalities"/>): two important properties of real number algebra that do not hold for matrices. The consequences of these two simple aberrations are far-reaching and imbue matrix algebra with a fascinating richness in comparison to real number algebra.
   </p>
   </introduction>
+  \<subsection xml:id="ss_matrix_mult_props">
+    <title>Matrix multiplication properties</title>
+  <p>
+    We begin with a few results that establish a close connection between matrix multiplication and real number multiplication. 
+  </p>
   <theorem xml:id="th_matrix_alg_props">
       <title>Properties of matrix multiplication</title>
       <statement>
@@ -46,7 +51,7 @@
       How does one actually prove one of these properties?
       These are all <em>matrix equalities</em> of the form <m>X=Y</m>, so
       according to the <xref ref="d_matrix_equality" text='custom'> matrix equality definition</xref>
-      we must show (1) that the matrices <m>X</m> and <m>Y</m> have the same dimension,
+      we must show (1) that the matrices <m>X</m> and <m>Y</m> have the same size,
       and (2) that <m>(X)_{ij}=(Y)_{ij}</m> for all <m>(i,j)</m>. The proof below illustrates this technique for the <xref ref="th_matrixmult_assoc" text="custom">multiplication associative law</xref> of <xref ref="th_matrix_alg_props"/>.
     </p>
 
@@ -80,8 +85,17 @@
       and hence <m>A(BC)=(AB)C</m>.
     </p>
   </proof>
-  <p>Like real number algebra, we can identify some special matrices that act as <em>additive identities</em> and <em>multiplciative identities</em>; and every matrix has an <em>additive inverse</em>. What we mean here is spelled out in detail in <xref ref="th_matrix_add_mult_ident"/>.
-</p>
+  <example xml:id="eg_vid_prove_matrix_assoc">
+    <title>Video example: proving matrix equalities</title>
+    <figure xml:id="fig_proof_assoc">
+      <title>Video: matrix multiplication is associative</title>
+      <caption>Video: matrix multiplication is associative</caption>
+      <video xml:id="vid_proof_assoc" youtube="EDGxkEV5mm0" />
+    </figure>
+  </example>
+
+  <p>Like real number algebra, there are certain matrices that satisfy special properties with regard to the operations of addition and multiplication. We have seen examples of this already thanks to the natural vector space structure of <m>M_{mn}</m>. For example, the <m>m\times n</m> zero matrix <m>\boldzero_{m\times n}</m> acts as an <em>additive indentity</em> (<ie/>, <m>\boldzero_{m\times n}+A=A</m> for all <m>A\in M_{mn}</m>) and vector inverses <m>-A</m> act as <em>additive inverses</em> (<ie/>, <m>-A+A=\boldzero_{m\times n}</m> for all <m>A\in M_{mn}</m>). We now introduce the identity matrices <m>I_n</m>, which satisfy a <em>multiplicative identity</em> property with respect to matrix multiplication, and thus play a role analogous to the number <m>1</m> among real numbers. 
+  </p>
 <definition xml:id="d_identity_matrix">
   <title>Identity matrix</title>
   <idx><h>identity matrix</h></idx>
@@ -92,11 +106,12 @@
   </notation>
   <statement>
     <p>
-      The <term><m>n\times n</m> identity matrix</term>
+      The <term><m>n\times n</m> identity matrix</term>, denoted <m>I_n</m>,
       is the square <m>n\times n</m> matrix
       <me>
         I_n=\begin{bmatrix}1\amp 0\amp 0 \amp \dots\amp 0\\ 0\amp 1 \amp 0 \amp \dots \amp 0\\
-      \vdots \\
+        0\amp 0\amp 1 \amp \dots \amp 0\\
+      \vdots \amp \vdots \amp \amp \ddots \amp \vdots\\
      0\amp 0\amp \dots \amp 0\amp 1\end{bmatrix}
       </me>
         with ones along the diagonal and zeros everywhere else. In other words, for all <m>1\leq i\leq n</m> and <m>1\leq j\leq n</m>, we have
@@ -104,7 +119,7 @@
         (I_n)_{ij}=\begin{cases} 1 \amp \text{if } i=j \\ 0\amp \text{if } i\ne j
       \end{cases}
       </me>.
-      When the size <m>n</m> of the identity matrix is not important, we will often denote it simply as <m>I</m>.
+      When there is no confusion about which dimension indentity matrix is intended, we will often write simply <m>I</m> instead of <m>I_n</m>.
     </p>
   </statement>
   </definition>
@@ -124,7 +139,20 @@
       Left as an exercise.
     </p>
   </proof>
-
+</subsection>
+<subsection xml:id="ss_cancellation">
+  <title>Cancellation laws fulfilled and violated</title>
+  <p>
+    When performing real number algebra, we frequently make use of cancellation laws, and these laws come in a variety of flavors. For example, the <em>additive cancellation law</em> asserts that 
+    <me>
+      x+y=x+z \iff y=z
+    </me>
+    for all <m>x,y,z\in \R</m>. Similarly, the <em>multiplicative cancellation law</em> asserts that for any <em>nonzero</em> <m>x\in \R</m>, we have   
+    <me>
+      xy=xz \iff y=z
+    </me>
+    for all <m>y,z\in \R</m>. We now investigate the extent to which these laws apply in matrix algebra. The results, as you will see, are mixed!
+  </p>
   <theorem xml:id="c_matrix_additive_canc">
     <title>Additive cancellation of matrices</title>
 
@@ -296,6 +324,11 @@ The example in our warning above is but one instance of the general failure of t
     <p> Mark well this important abnormality of matrix algebra. Confronted with a real number equation of the form <m>ab=ac</m>, we have a deeply ingrained impulse to declare that either <m>a=0</m> or <m>b=c</m>. (If we're sloppy we may forget about that first possibility.) The corresponding maneuver for the matrix equation <m>AB=AC</m> is simply not available to us, unless we know something more about <m>A</m>.
   </p>
 </remark>
+</subsection>
+<subsection xml:id="ss_transpose_props">
+  <title>Transpostition properties</title>
+  
+
 <p>
   We end our foray into matrix algebra with some properties articulating how matrix transposition interacts with matrix addition, multiplication and scalar multiplication.
 </p>
@@ -344,21 +377,15 @@ The example in our warning above is but one instance of the general failure of t
         </p>
       </proof>
     </theorem>
-    <paragraphs xml:id="ss_algebra_video_examples">
-      <title>Video examples: proving matrix equalities</title>
-
-      <figure xml:id="fig_proof_assoc">
-        <title>Video: matrix multiplication is associative</title>
-        <caption>Video: matrix multiplication is associative</caption>
-        <video xml:id="vid_proof_assoc" youtube="EDGxkEV5mm0" />
-      </figure>
-
+    
+    <example xml:id="eg_vid_prove_matrix_transpose">
+      <title>Video example: proving matrix equalities</title>
       <figure xml:id="fig_proof_transp">
         <title>Video: transpose property</title>
         <caption>Video: transpose property</caption>
         <video xml:id="vid_proof_transp" youtube="twq0_HdpC3w" />
       </figure>
-
-    </paragraphs>
+    </example>
+  </subsection>
 <xi:include  href="s_matrix_algebra_ex.ptx"/>
 </section>

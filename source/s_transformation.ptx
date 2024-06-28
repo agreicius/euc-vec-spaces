@@ -414,7 +414,7 @@
     <me>
       \rho_{\pi}(x,y)=(-x,-y)=-(x,y)
     </me>.
-    Note: this is as expected! Rotating by 180 degrees produces the inverse vector.
+    Note: this is as expected! Rotating by 180 degrees produces the vector inverse.
     </p>
     <p>
     The rotation matrix corresponding to <m>\alpha=2\pi/3</m> is

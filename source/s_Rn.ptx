@@ -281,7 +281,7 @@
                 </statement>
             </algorithm>
             <p>
-                Note how <xref ref="proc_vector_space"/> highlights the special role played by <xref first="eq_d_zero_vector" last="eq_d_vec_inverse">Axioms</xref>. These are sometimes called the <em>existential axioms</em>, as they posit the existence of certain special elements of <m>V</m>: a vector satisfying the identity of <xref ref="eq_d_zero_vector">Axiom</xref> that is denoted <m>\boldzero</m>, and for all vectors <m>\boldv\in V</m>, a vector inverse denoted <m>-\boldv</m> that satisfies the identity of <xref ref="eq_d_vec_inverse">Axiom</xref>. Note also that our choice of inverse vectors in <xref ref="eq_d_vec_inverse">Axiom</xref> depends on our choice of the zero vector <m>\boldzero</m> in <xref ref="eq_d_zero_vector">Axiom</xref>, as this appears in the defining identity of <xref ref="eq_d_vec_inverse">Axiom</xref>. 
+                Note how <xref ref="proc_vector_space"/> highlights the special role played by <xref first="eq_d_zero_vector" last="eq_d_vec_inverse">Axioms</xref>. These are sometimes called the <em>existential axioms</em>, as they posit the existence of certain special elements of <m>V</m>: a vector satisfying the identity of <xref ref="eq_d_zero_vector">Axiom</xref> that is denoted <m>\boldzero</m>, and for all vectors <m>\boldv\in V</m>, a vector inverse denoted <m>-\boldv</m> that satisfies the identity of <xref ref="eq_d_vec_inverse">Axiom</xref>. Note also that our choice of vector inverses in <xref ref="eq_d_vec_inverse">Axiom</xref> depends on our choice of the zero vector <m>\boldzero</m> in <xref ref="eq_d_zero_vector">Axiom</xref>, as this appears in the defining identity of <xref ref="eq_d_vec_inverse">Axiom</xref>. 
             </p>
             <p>Let's apply <xref ref="proc_vector_space"/> to verify that <m>\R^n</m>, together with the vector operations defined in <xref ref="d_Rn_vec_ops"/>, constitutes a vector space. 
           </p>
@@ -305,7 +305,7 @@
                         </li>
                         <li>
                             <p>
-                                Given a vector <m>\boldx=(x_1,x_2,\dots, x_n)</m>, its inverse vector is <m>(-x_1,-x_2,\dots, -x_n)</m>: <ie/>, we have 
+                                Given a vector <m>\boldx=(x_1,x_2,\dots, x_n)</m>, its vector inverse is <m>(-x_1,-x_2,\dots, -x_n)</m>: <ie/>, we have 
                                 <me>
                                     -(x_1,x_2,\dots, x_n)=(-x_1,-x_2,\dots, -x_n)
                                 </me>.
@@ -316,7 +316,7 @@
             </statement>
             <proof>
                 <p>
-                    The statement itself of the theorem has already taken care of some of the steps of <xref ref="proc_vector_space"/>: it has identified the underlying set <m>\R^n</m> and proposed vector operations (steps (1)-(2)), and it has identified the zero vector and the rule for computing inverse vectors (steps (3)-(4)). It remains to show that the proposed zero vectors and inverse vectors satisfy the identities of <xref first="eq_d_zero_vector" last="eq_d_vec_inverse">Axioms</xref>, and that Axioms (i)-(ii) and (v)-(viii) are satisfied.  We first consider <xref first="eq_d_zero_vector" last="eq_d_vec_inverse">Axioms</xref>. 
+                    The statement itself of the theorem has already taken care of some of the steps of <xref ref="proc_vector_space"/>: it has identified the underlying set <m>\R^n</m> and proposed vector operations (steps (1)-(2)), and it has identified the zero vector and the rule for computing vector inverses (steps (3)-(4)). It remains to show that the proposed zero vectors and vector inverses satisfy the identities of <xref first="eq_d_zero_vector" last="eq_d_vec_inverse">Axioms</xref>, and that Axioms (i)-(ii) and (v)-(viii) are satisfied.  We first consider <xref first="eq_d_zero_vector" last="eq_d_vec_inverse">Axioms</xref>. 
                 </p>
                 
                 <case>

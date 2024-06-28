@@ -364,7 +364,7 @@
                 </li>
                 <li>
                   <p>
-                    Given a matrix <m>A=[a_{ij}]\in M_{mn}</m> its inverse vector is 
+                    Given a matrix <m>A=[a_{ij}]\in M_{mn}</m> its vector inverse is 
                     <me>
                       -A=[-a_{ij}]
                     </me>.
@@ -375,7 +375,7 @@
           </statement>
           <proof>
             <p>
-              Having identified the relevant operations, as well as the proposed zero vector and inverse vectors, we must verify that the <xref ref="d_vector_space" text="custom">vector axioms</xref> hold. We do so for Axioms i, iii, and iv, leaving the rest as an exercise. 
+              Having identified the relevant operations, as well as the proposed zero vector and vector inverses, we must verify that the <xref ref="d_vector_space" text="custom">vector axioms</xref> hold. We do so for Axioms i, iii, and iv, leaving the rest as an exercise. 
             </p>
             <case>
             <title>Axiom i</title>

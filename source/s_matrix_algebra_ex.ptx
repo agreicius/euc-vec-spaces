@@ -29,68 +29,27 @@
     <ol>
       <li>
         <p>
-          Prove <xref ref="th_matrix_comm"/>.
+          Prove the <xref ref="th_matrix_leftdist" text="title"/>.
         </p>
       </li>
       <li>
         <p>
-          Prove <xref ref="th_matrixadd_assoc"/>.
+          Prove the <xref ref="th_matrix_rightdist" text="title"/>.
         </p>
       </li>
       <li>
         <p>
-          Prove <xref ref="th_matrix_leftdist"/>.
-        </p>
-      </li>
-      <li>
-        <p>
-          Prove <xref ref="th_matrix_rightdist"/>.
-        </p>
-      </li>
-      <li>
-        <p>
-          Prove <xref ref="th_matrixscale_dist"/>.
-        </p>
-      </li>
-      <li>
-        <p>
-          Prove <xref ref="th_matrixscale_dist2"/>.
-        </p>
-      </li>
-      <li>
-        <p>
-          Prove <xref ref="th_matrixscale_assoc"/>.
-        </p>
-      </li>
-      <li>
-        <p>
-          Prove <xref ref="th_matrixscale_comm"/>.
+          Prove the <xref ref="th_matrixscale_comm" text="title"/>.
         </p>
       </li>
     </ol>
   </statement>
-  <solution>
-    <p>
-      <ol>
-        <li>
-            <p>
-              We  need both <m>A</m> and <m>B</m> to be <m>m\times n </m> for the expression to make sense. It is easy to see that <m>A+B</m> and <m>B+A</m> are both <m>m\times n</m> matrices. We must show <m>(A+B)_{ij}=(B+A)_{ij}</m> for all <m>1\leq i\leq m</m>, <m>1\leq j\leq n</m>. We have
-              <md>
-                <mrow>(A+B)_{ij} \amp =(A)_{ij}+(B)_{ij}\amp (<xref ref="d_matrix_add_subtract"/>) </mrow>
-                <mrow> \amp =(B)_{ij}+(A)_{ij}\amp \text{(real addition is comm.)} </mrow>
-                <mrow>  \amp =(B+A)_{ij} \amp (<xref ref="d_matrix_add_subtract"/> </mrow>
-              </md>.
-            </p>
-        </li>
-      </ol>
-    </p>
-  </solution>
 
 </exercise>
 <exercise>
   <statement>
     <p>
-      Prove all three statements of <xref ref="th_matrix_add_mult_ident"/>.
+      Prove <xref ref="th_matrix_add_mult_ident"/>.
     </p>
   </statement>
 
@@ -103,17 +62,17 @@
     <ol>
       <li>
         <p>
-          Prove <xref ref="th_trans_scale"/>.
+          Prove <xref ref="th_trans_scale">Statement</xref>.
         </p>
       </li>
       <li>
         <p>
-          Prove <xref ref="th_trans_prod"/>.
+          Prove <xref ref="th_trans_prod">Statement</xref>.
         </p>
       </li>
       <li>
         <p>
-          Prove <xref ref="th_trans_owninverse"/>.
+          Prove <xref ref="th_trans_owninverse">Statement</xref>.
         </p>
       </li>
     </ol>
