@@ -25,12 +25,6 @@
       <!-- solve 3x3 linear system using inverses -->
       <webwork source="Library/Rochester/setAlgebra35SystemMatrices/sw7_5_23.pg" />
     </exercise>
-
-    <exercise>
-    <!-- several computations -->
-      <webwork source="Library/TCNJ/TCNJ_InvertibleMatrixCharacterization/problem1.pg" />
-    </exercise>
-    
   </subexercises>
   <subexercises>
   <title>Written Exercises</title>

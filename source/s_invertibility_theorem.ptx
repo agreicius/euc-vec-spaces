@@ -624,15 +624,14 @@
   <p>
     The proof of the implication <m>(4)\implies (5)</m> of <xref ref="th_invertibility"/> can be expanded into an algorithm that (1) decides whether a given matrix <m>A</m> is invertible, and (2) computes <m>A^{-1}</m> if <m>A</m> is invertible.
   </p>
-  <theorem xml:id="th_invertibility_algorithm">
+  <algorithm xml:id="th_invertibility_algorithm">
     <title>Inverse algorithm</title>
     <statement>
       <p>
       Let <m>A</m> be an <m>n\times n</m> matrix. To test for invertibility of <m>A</m> proceed as follows.
-      </p>
-      <dl>
+      
+      <ol>
         <li>
-          <title>Step 1</title>
           <p>
           Build the <m>n\times 2n</m> augmented matrix <m>\begin{amatrix}[c|c]A\amp I_n\end{amatrix}</m> and use Gaussian elimination to row reduce to the form <m> \begin{amatrix}[c|c]U\amp B\end{amatrix} </m>, where <m>U</m> is in row echelon form.
           </p>
@@ -641,12 +640,12 @@
           </p>
         </li>
         <li>
-          <title>Step 2</title>
           <p>
             If <m>U</m> has <m>n</m> leading ones, row reduce further to a matrix of the form <m>\begin{amatrix}[c|c] I_n\amp C\end{amatrix}</m>. Then <m>A^{-1}=C</m>.
           </p>
         </li>
-      </dl>
+      </ol>
+    </p>
     </statement>
     <proof>
       <p>
@@ -665,28 +664,22 @@
         as claimed.
       </p>
     </proof>
-  </theorem>
+  </algorithm>
   <p>
     From the proof of <xref ref="th_invertibility"/> we also derive an algorithm for writing an invertible matrix as a product of elementary matrices. You should think of this as a first example of the great versatility of Gaussian elimination, as conveyed by our <xref ref="princ_GE"/>.
   </p>
-  <theorem xml:id="th_elem_matrices_alg">
+  <algorithm xml:id="th_elem_matrices_alg">
     <title>Product of elementary matrices algorithm</title>
-
     <statement>
       <p>
       Let <m>A</m> be an <m>n\times n</m> matrix. To (potentially) write <m>A</m> as a product of elementary matrices, proceed as follows.
-      </p>
-      <dl>
+      <ol>
         <li>
-          <title>Step 1</title>
           <p>
             Attempt to row reduce <m>A</m> to the identity, keeping track of your sequence of row operations in the form of elementary matrices.
           </p>
         </li>
         <li>
-          <title>Step 2</title>
-
-
           <p>
             If you are able to row reduce <m>A</m> to <m>I_n</m> with a sequence of row operatons corresponding to the elementary matrices <m>E_1, E_2, \dots, E_r</m>, then
             <me>
@@ -696,14 +689,15 @@
 
           </p>
         </li>
-      </dl>
+      </ol>
+    </p>
     </statement>
     <proof>
       <p>
         See the proof of the implication <m>(4)\implies (5)</m> in <xref ref="th_invertibility"/>.
       </p>
     </proof>
-  </theorem>
+  </algorithm>
 
 <example xml:id="eg_inv_alg_example">
   <title>Inverse algorithms</title>

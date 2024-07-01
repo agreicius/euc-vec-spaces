@@ -265,7 +265,7 @@ The example in our warning above is but one instance of the general failure of t
     </ol>
 </p>
 <p>
-  An important consequence of the abnormality <xref ref="eq_mult_has_zero_divisors"/> is that matrix algebra does not enjoy the property of <em>multiplicative cancellation</em>. 
+  An important consequence of the abnormality <xref ref="eq_mult_has_zero_divisors"/> is that matrix algebra does not enjoy the property of multiplicative cancellation. 
 </p>
   <corollary xml:id="th_matrix_cancel">
     <title>Failure of multiplicative cancellation</title>
