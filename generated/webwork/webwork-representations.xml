@@ -2199,132 +2199,19 @@ using the inverse of the coefficient matrix.</p>
     <pg source="Library/Rochester/setAlgebra35SystemMatrices/sw7_5_23.pg"/>
   </webwork-reps>
   <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-47" ww-id="webwork-47">
-    <static seed="47" source="Library/TCNJ/TCNJ_InvertibleMatrixCharacterization/problem1.pg">
-      <statement><p>a. The linear transformation <m>T_1: R^2 \rightarrow R^2</m> is given by:</p>
-<p><m>T_1(x, y) = (2 x + 5 y, 10 x + 26 y)</m>.</p>
-<p>Find <m>T_1^{-1}(x, y)</m>.</p>
-<p><m>T_1^{-1}(x, y) = (</m><fillin name="AnSwEr0001" characters="1"/>x + <fillin name="AnSwEr0002" characters="1"/>y, <fillin name="AnSwEr0003" characters="1"/>x + <fillin name="AnSwEr0004" characters="1"/>y<m>)</m></p>
-<p>b. The linear transformation <m>T_2: R^3 \rightarrow R^3</m> is given by:</p>
-<p><m>T_2(x, y, z) = (x + 1 z, 1 x + y, 1 y + z)</m>.</p>
-<p>Find <m>T_2^{-1}(x, y, z)</m>.</p>
-<p><m>T_2^{-1}(x, y, z) = (</m><fillin name="AnSwEr0005" characters="1"/>x + <fillin name="AnSwEr0006" characters="1"/>y + <fillin name="AnSwEr0007" characters="1"/>z, <fillin name="AnSwEr0008" characters="1"/>x + <fillin name="AnSwEr0009" characters="1"/>y + <fillin name="AnSwEr0010" characters="1"/>z, <fillin name="AnSwEr0011" characters="1"/>x + <fillin name="AnSwEr0012" characters="1"/>y + <fillin name="AnSwEr0013" characters="1"/>z<m>)</m></p>
-<p>c. Using <m>T_1</m> from part a, it is given that:</p>
-<p><m>T_1(x, y) = (2, -3)</m></p>
-<p>Find x and y.</p>
-<p><m>x =</m> <fillin name="AnSwEr0014" characters="1"/> <m>y =</m> <fillin name="AnSwEr0015" characters="1"/></p>
-<p>d. Using <m>T_2</m> from part b, it is given that:</p>
-<p><m>T_2(x, y, z) = (5, -6, -1)</m></p>
-<p>Find x, y, and z.</p>
-<p><m>x =</m> <fillin name="AnSwEr0016" characters="1"/> <m>y =</m> <fillin name="AnSwEr0017" characters="1"/> <m>z =</m> <fillin name="AnSwEr0018" characters="1"/></p>
-</statement>
-      <answer>
-        <p>
-          <m>13</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>-2.5</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>-5</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>1</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>0.5</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>0.5</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>-0.5</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>-0.5</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>0.5</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>0.5</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>0.5</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>-0.5</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>0.5</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>33.5</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>-13</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>0</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>-6</m>
-        </p>
-      </answer>
-      <answer>
-        <p>
-          <m>5</m>
-        </p>
-      </answer>
-    </static>
-    <server-data sourceFilePath="Library/TCNJ/TCNJ_InvertibleMatrixCharacterization/problem1.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
-    <pg source="Library/TCNJ/TCNJ_InvertibleMatrixCharacterization/problem1.pg"/>
-  </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-48" ww-id="webwork-48">
-    <static seed="48" source="Library/UMN/algebraKaufmannSchwitters/ks_11_4_prob02.pg">
+    <static seed="47" source="Library/UMN/algebraKaufmannSchwitters/ks_11_4_prob02.pg">
       <statement><p>Use the appropriate property of determinants to find <m>a.</m>  <em> Do not </em> evaluate the determinants. 
 <me>\begin{vmatrix}
-6 \amp  23 \amp  2 \\ 
+9 \amp  23 \amp  -7 \\ 
 -43 \amp  -31 \amp  -17 \\ 
--2 \amp  -4 \amp  9 \\
+1 \amp  -1 \amp  9 \\
 \end{vmatrix}
 =
 a \cdot
 \begin{vmatrix}
--6 \amp  -23 \amp  -2 \\ 
+-9 \amp  -23 \amp  7 \\ 
 43 \amp  31 \amp  17 \\ 
-2 \amp  4 \amp  -9\\
+-1 \amp  1 \amp  -9\\
 \end{vmatrix}</me>
 Answer: <m>a =</m> <fillin name="AnSwEr0001" characters="20"/></p>
 </statement>
@@ -2337,93 +2224,93 @@ Answer: <m>a =</m> <fillin name="AnSwEr0001" characters="20"/></p>
     <server-data sourceFilePath="Library/UMN/algebraKaufmannSchwitters/ks_11_4_prob02.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/UMN/algebraKaufmannSchwitters/ks_11_4_prob02.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-49" ww-id="webwork-49">
-    <static seed="49" source="Library/NAU/setLinearAlgebra/detElementary.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-48" ww-id="webwork-48">
+    <static seed="48" source="Library/NAU/setLinearAlgebra/detElementary.pg">
       <statement><p>Consider the following Gauss elimination:</p>
 <p><me>A \to \underbrace{\left[\begin{array}{ccc}
-0 \amp 1 \amp 0\cr
 1 \amp 0 \amp 0\cr
-0 \amp 0 \amp 1
+0 \amp 0 \amp 1\cr
+0 \amp 1 \amp 0
 \end{array}\right]}_{E_1} A \to \underbrace{\left[\begin{array}{ccc}
 1 \amp 0 \amp 0\cr
-0 \amp -1 \amp 0\cr
-0 \amp 0 \amp 1
+0 \amp 1 \amp 0\cr
+0 \amp 0 \amp 5
 \end{array}\right]}_{E_2} E_1 A \to \underbrace{\left[\begin{array}{ccc}
-1 \amp 0 \amp 0\cr
+1 \amp 0 \amp -1\cr
 0 \amp 1 \amp 0\cr
-0 \amp 0 \amp -6
+0 \amp 0 \amp 1
 \end{array}\right]}_{E_3} E_2E_1 A \to \underbrace{\left[\begin{array}{ccc}
-1 \amp 0 \amp -8\cr
-0 \amp 1 \amp 0\cr
+1 \amp 0 \amp 0\cr
+0 \amp -4 \amp 0\cr
 0 \amp 0 \amp 1
 \end{array}\right]}_{E_4} E_3E_2E_1 A=\left[\begin{array}{ccc}
-5 \amp -2 \amp 1\cr
-0 \amp -6 \amp 6\cr
-0 \amp 0 \amp -1
+-1 \amp 8 \amp 8\cr
+0 \amp -6 \amp 8\cr
+0 \amp 0 \amp -2
 \end{array}\right]</me></p>
 <p>What is the determinant of <m>A</m>?</p>
 <p><m>\det(A) =</m> <fillin name="AnSwEr0001" characters="10"/></p>
 </statement>
       <answer>
         <p>
-          <m>-5</m>
+          <m>-0.6</m>
         </p>
       </answer>
     </static>
     <server-data sourceFilePath="Library/NAU/setLinearAlgebra/detElementary.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/NAU/setLinearAlgebra/detElementary.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-50" ww-id="webwork-50">
-    <static seed="50" source="Library/Rochester/setLinearAlgebra6Determinants/ur_la_6_8.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-49" ww-id="webwork-49">
+    <static seed="49" source="Library/Rochester/setLinearAlgebra6Determinants/ur_la_6_8.pg">
       <statement><p>Find <m>k</m> such that the following matrix <m>M</m> is singular.
 <me>M = \left[\begin{array}{ccc}
-2 \amp 1 \amp -2\cr
--4 \amp 0 \amp 7\cr
-2+k \amp 2 \amp -18\cr
+-1 \amp -5 \amp -3\cr
+-1 \amp -7 \amp -5\cr
+-9+k \amp -3 \amp -1\cr
 \end{array}\right]</me></p>
 <p><m>k=</m> <fillin name="AnSwEr0001" characters="10"/></p>
 </statement>
       <answer>
         <p>
-          <m>10</m>
+          <m>8</m>
         </p>
       </answer>
     </static>
     <server-data sourceFilePath="Library/Rochester/setLinearAlgebra6Determinants/ur_la_6_8.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/Rochester/setLinearAlgebra6Determinants/ur_la_6_8.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-51" ww-id="webwork-51">
-    <static seed="51" source="Library/Rochester/setLinearAlgebra6Determinants/ur_la_6_9.pg">
-      <statement><p>If <m>A</m> and <m>B</m> are <m>3 \times 3</m> matrices, <m>\det (A)=-1</m>, <m>\det (B)=-2</m>, then</p>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-50" ww-id="webwork-50">
+    <static seed="50" source="Library/Rochester/setLinearAlgebra6Determinants/ur_la_6_9.pg">
+      <statement><p>If <m>A</m> and <m>B</m> are <m>3 \times 3</m> matrices, <m>\det (A)=3</m>, <m>\det (B)=4</m>, then</p>
 <p><m>\det  (AB) =</m> <fillin name="AnSwEr0001" characters="10"/>,</p>
-<p><m>\det  (-3 A) =</m> <fillin name="AnSwEr0002" characters="10"/>,</p>
+<p><m>\det  (-2 A) =</m> <fillin name="AnSwEr0002" characters="10"/>,</p>
 <p><m>\det  (A^{T}) =</m> <fillin name="AnSwEr0003" characters="10"/>,</p>
 <p><m>\det  (B^{-1}) =</m> <fillin name="AnSwEr0004" characters="10"/>,</p>
-<p><m>\det  (B^2) =</m> <fillin name="AnSwEr0005" characters="10"/>.</p>
+<p><m>\det  (B^4) =</m> <fillin name="AnSwEr0005" characters="10"/>.</p>
 </statement>
       <answer>
         <p>
-          <m>2</m>
+          <m>12</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>27</m>
+          <m>-24</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-1</m>
+          <m>3</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>-0.5</m>
+          <m>0.25</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>4</m>
+          <m>256</m>
         </p>
       </answer>
     </static>
