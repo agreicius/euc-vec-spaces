@@ -1,7 +1,7 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_polynomials">
   <title>Polynomials</title>
 <introduction>
-  Polynomials will play an important role in our treatment of linear algebra both in terms of building examples of vector spaces (<xref ref="d_subspace_functions" text="global"/>) and as tools for studying linear operators (<xref ref="d_char_poly_transform" text="global"/>). We gather here some basic definitions and properties of polynomials. Although we will primarily be concerned with polynomials with real coefficients in this course, it is convenient to develop the theory over the complex numbers. As with <xref ref="s_complex_numbers"/>, all theorems will be stated without proof.
+  Polynomials will play an important role in our treatment of linear algebra both as tools for studying linear transformations. We gather here some basic definitions and properties of polynomials. Although we will primarily be concerned with polynomials with real coefficients in this course, it is convenient to develop the theory over the complex numbers. As with <xref ref="s_complex_numbers"/>, all theorems will be stated without proof.
 </introduction>
 <subsection xml:id="ss_poly_def">
   <title>Basic definitions</title>

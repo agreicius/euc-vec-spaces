@@ -47,7 +47,7 @@
       <statement>
         <p>
           Let <m>A=[a_{ij}]_{n\times n}</m>. The determinant is defined as follows:
-          <dl>
+          <ul>
             <li>
               <title>Base case: <m>n=1</m></title>
               <p> When <m>n=1</m> we have <m>A=[a_{11}]</m> and we define
@@ -57,12 +57,13 @@
             <li>
               <title>Recursive case: <m>n\geq 2 </m></title>
               <p> When <m>n\geq 2</m> we define
-                <me>
-                  \det A=\sum_{j=1}^n(-1)^{1+j}a_{1j}\det A_{1  j}=a_{11}\det A_{11}-a_{12} A_{12}+\cdots +(-1)^{1+n}a_{1n}\det A_{1  n}
-                </me>.
+                <mdn>
+                  <mrow xml:id="eq_d_det">\det A \amp = \sum_{j=1}^n(-1)^{1+j}a_{1j}\det A_{1, j} </mrow>
+                  <mrow> \amp = a_{11}\det A_{11}-a_{12} A_{12}+\cdots +(-1)^{1+n}a_{1\, n}\det A_{1\, n}</mrow>
+                </mdn>.
               </p>
             </li>
-          </dl>
+          </ul>
         </p>
       </statement>
     </definition>
@@ -345,7 +346,7 @@
       <me>
         \det A=  \sum_{k=1}^n(-1)^{k+j}a_{kj}M_{kj}
       </me>.
-      In other words, we can compute <m>\det A</m> by expanding along any row of <m>A</m>.
+      In other words, we can compute <m>\det A</m> by expanding along any column of <m>A</m>.
     </p>
   </statement>
   <proof>

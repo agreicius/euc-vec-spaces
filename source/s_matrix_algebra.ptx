@@ -174,9 +174,9 @@
         We prove this via a chain of implications:
         <md>
           <mrow> A+B=A+C\amp \implies -A+(A+B)=-A+(A+C) </mrow>
-          <mrow>  \amp\implies (-A+A)+B=(-A+A)+C\amp (<xref ref="th_matrixadd_assoc" text="title"/>) </mrow>
-          <mrow>  \amp\implies \boldzero_{m\times n}+B=\boldzero_{m\times n}+C \amp (<xref ref="th_matrix_add_inverse"/>) </mrow>
-          <mrow>  \amp \implies B=C \amp (<xref ref="th_matrix_add_ident"/>) </mrow>
+          <mrow>  \amp\implies (-A+A)+B=(-A+A)+C </mrow>
+          <mrow>  \amp\implies \boldzero_{m\times n}+B=\boldzero_{m\times n}+C   </mrow>
+          <mrow>  \amp \implies B=C   </mrow>
         </md>.
       </p>
     </case>
