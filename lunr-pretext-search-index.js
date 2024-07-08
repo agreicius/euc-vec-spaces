@@ -3373,7 +3373,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.5",
   "title": "The determinant",
-  "body": " The determinant   The determinant is a map that assigns to a square matrix a scalar . The definition given below of the determinant is far from intuitive, and we will do little to motivate it up front. Instead, we allow its various properties to speak for themselves by way of retroactive motivation. In particular, we will see that , making the determinant an important tool for investigating invertibility.    Definition of the determinant  Our definition of the determinant is a recursive one; given an matrix its determinant is defined in terms of the determinant of certain submatrices of dimension . This necessitates some notation to help our discussion along.   Submatrix notation  submatrix    submatrix of    Let be an matrix with . Given , the submatrix of obtained by removing the -th row and -th column of is denoted .      Do not conflate the submatrix notation with matrix entry notation : the former returns the submatrix of obtained by deleting the -th row and -th column; the latter returns the -th entry of .     The determinant  determinant    determinant of    Let . The determinant is defined as follows:   Base case:  When we have and we define .    Recursive case:  When we define .        Small cases   Let's look at determinant formulas for the cases. You may remember the formula for matrices from ; we will make the connection more explicit in .  Given , we have . The formula for the case is simple enough to serve as a second base case , allowing us to end the recursive process of computing a general matrix once we get to expressions involving matrices.  Given , we have .    The recursive nature of the determinant definition makes induction arguments particularly useful when proving properties of the determinant, as illustrated by the next theorem.   Determinant of triangular matrices   Let be triangular (upper, lower, or diagonal). Then . In other words, the determinant of a triangular matrix is the product of its diagonal entries.    We only give the proof for lower triangular matrices; the proof in the upper triangular case is nearly identical.  For any let denote the proposition: The determinant of any lower triangular matrix is the product of its diagonal entries . We prove by induction that is true for all .   Base step: show is true  In this case , and is indeed the product of the diagonal entries of .    Induction step: show for all  Let be a lower triangular matrix. Then for all , and hence the determinant of is given by . Claim: is lower triangular. Indeed, first observe that we have for all ; by deleting the first row and first column we effectively bump each index up by one. Since is lower triangular we have for all , and hence also for all , proving the claim.  Lastly, assuming is true (the induction hypothesis) we have , as desired.      Determinant of identity matrices   Let be the identity matrix. Then .    This follows directly from since the diagonal entries of are all ones.      Expansion along rows and columns   Morally speaking, we should give some examples of higher-dimensional determinants, but we first introduce some theory that affords us more leeway in our computations.    Minors and expansions along rows\/columns  minor of matrix  expansion along row\/column    the -th minor of a matrix    Given an matrix , for any pair the -th minor of is defined as .  For any the expression is called the expansion along the -th row of .  For any , the expression is called the expansion along the -th column of .     Expansion along rows   Let . For any we have . In other words, we can compute by expanding along any row of .    The proof is by induction on the size of the matrix.   Base step:  For there is nothing to prove. Given expanding along either row yields , as one easily verifies.    Induction step  Assume the claim is true of any matrix. Given we have . Expanding along the -th row of for any , on the other hand, we get . To show these two expressions are equal we use the induction hypothesis to compute each by expanding along its -th row: . The matrix is the result of first deleting row 1 and column from , and then deleting row and column of the resulting matrix. To deal with such iterated submatrices, we make some simple observations relating the rows and columns of and with those of .   The -th row of corresponds to the -th row of , and the first row of corresponds to the first row of .    If , then the -th column of corresponds to the -th column of ; if , then the -th column of corresponds to the -th column of .    If , then the -th column of corresponds to the -th column of ; if , then the -th column of corresponds to the -th column of .   From these observations we derive the following table of formulas: . We now begin to unpack : . This completes the induction step, and thus the proof is finished.     Surprisingly, it turns out that we can compute the determinant of a matrix by expanding along any column ( ). This is a consequence of the following theorem, which is useful in its own right. The proof below is taken from Robert Beezer's A First Course in Linear Algebra . (See Theorem DT .) It uses induction and a wonderful trick starting from the observation that for any .   Determinant and transposition   Let be an matrix. Then .    The proof is by induction on . The base case ( ) is trivial since for any matrix .  For induction we assume that for all we have for any matrix. Suppose is an matrix. We have . This completes the proof by induction. (Note how in the second equality in the chain above we compute in the -th term of by expanding along the -th row of . A similar observation applies to the penultimate equality.)     Expansion along columns   Let . For any we have . In other words, we can compute by expanding along any row of .    For any , we have .      Compute for .    First we compute by expanding along the second row. The only nonzero term of this expansion is the last one, yielding . We have . To compute its determinant we expand along its third column: We conclude that .     Matrix of signs   When expanding along a row or column, it is easy to get tripped up by the sign in front of the -th coefficient. A matrix of signs is a sort of mnemonic device to help you in this regard. It is easily generated by observing that the sign in front of the -th entry is always a (since ), and that any horizontal or vertical step within the matrix is accompanied by a change of sign. As an example, for we have the following matrix of signs: .     Video example: determinant   Video: determinant  Video: determinant     The freedom to compute the determinant by expanding along any row or column gives rise to the following intuitive property.   Zero rows\/columns, swapping rows\/columns, identical rows\/columns   Let be an matrix.   If has a zero row or zero column, then     Assume . Let be the matrix obtained by swapping two rows (or two columns) of . Then .    Assume . If has two identical rows or two identical columns, then .       The first statement is obvious since according to and we may compute the determinant by expanding along the zero row or zero column in question.  The third statement follows from the second. Indeed, if has two identical rows or columns, then the matrix obtained from by swapping the rows (or columns) in question is itself. Thus by the second statement, and we conclude that .  It remains only to show the second statement. We prove only the statement regarding swapping rows; the corresponding statement about columns follows from . The proof is by induction.   Base step:  Let . Then , and .    Induction step  We assume by induction that the result holds for any matrices, , and show the same is true for any matrix.  Let be an matrix, and suppose is the result of swapping the -th and -th rows of . We compute the determinants of and by expanding along the -th row, where and . This is possible since .  Moving along the -th row, notice that each submatrix is the result of swapping the two rows of that originally corresponded to the -th and -th rows of . Since these submatrices are of dimension , we have by induction. Lastly, since the -th rows of and are the same we have .     As a further consequence of and , we can derive the adjoint matrix formula .   Adjoint matrix  adjoint matrix    adjoint of a square matrix    Let be an matrix. The adjoint matrix of , denoted , is the matrix whose -th entry is defined as follows: .      Be careful of the order reversal in this definition. The -th entry of is equal to plus or minus the -th minor of . Let's see this in action for some small matrices.  For we have .  For we have .     Adjoint matrix formula   Given an matrix , we have . As a consequence, if , then is invertible and .    First observe that the second statement regarding invertibility follows directly from , since in this case setting we have .  Thus it suffices to prove . To do so, we must show that .   Case:  In this case we have . A similar argument shows that , though in this case we use expansion along a column.    Case:  When we have , where is the matrix obtained by replacing the -th row of with a copy of its -th row. Since has two identical rows implies , as desired. Once again, a similar argument using expansion along a column shows that .       Use the adjoint matrix formula to compute , where .    First compute by expanding along the third row: . Next, compute . Then we have .      Before you get too excited about the adjoint matrix formula, you should know that as grows, this procedure becomes much more costly in terms of number of arithmetic operations involved than our inverse algorithm based on Gauss-Jordan elimination. You get a sense of this already from the previous example. In general, the Gauss-Jordan inverse algorithm is the way to go.      Row operations and determinant  Suppose the square matrix can be row reduced to via sequence of row operations. In general we do not have , but we can compute from by keeping track of which operations are used.   Row operations and determinant   Let be an matrix. Using the notation from we have:              .   In particular, taking , we have .    The first statement follows easily by computing by expanding along the -th row. The second statement is in fact a rephrasing of the second statement of . It remains to prove the third statement.  Let , and set . Then is identical to with the exception of the -th row, whose -th entry is . It follows that , where is the matrix obtained by replacing the -th row of with a row identical with its -th row. By we conclude , and thus , as desired.      In the language of row operations, translates as follows:   Scaling a row of a matrix by has the effect of scaling the determinant by .    Swapping two rows of a matrix changes the sign of the determinant.    Performing a row addition operation on a matrix has no effect on the determinant.        Column operations and the determinant   As shown in the determinant behaves in a similar manner with respect to elementary column operations : , scaling a column by a nonzero constant scales the determinant by , swapping columns multiplies the determinant by , adding a multiple of one column to another leaves the determinant unchanged.     Determinant and products of elementary matrices   Let be an matrix, and suppose we have for some collection of elementary matrices . Then .    This is an easy proof by induction on the number of elementary matrices involved, the base case ( ) of which is covered by .     has both computational and theoretical applications.  On the computational side, it suggests an alternative method of computing : first row reduce to a simpler matrix , making sure to keep track of the operations you use; set up an equation as in representing the row reduction; then solve the corresponding equation for in terms of and the .   Determinant via row reduction   Suppose the matrix can be row reduced to by perfomring the following sequence of row operations:   First swap the second and third rows.    Then scale the first row by     Then replace the second row with the second row plus the first row.   Compute .    In terms of elementary matrices we have and hence We conclude that .    On the theoretical side, implies both and .   Determinant and invertibility   Let be an matrix. Then is invertible if and only if .    The implication was proved in .  For the other direction, assume is invertible. Then implies is a product of elementary matrices: . Then implies . Since for all ( ), we conclude .     Determinant is multiplicative   Let and be matrices. Then .    We consider two cases based on the invertibility of and\/or .   or is not invertible  In this case is not invertible ( ), and hence by . By the same reasoning we must have or . It follows that in this case.    and both invertible  In this case we can write for some elementary matrices and ( ). Then .     We end this section (and chapter) by adding the results of and one of our homework exercises to our invertibility theorem.   Invertibility theorem (extended cut)   Let be an matrix. The following statements are equivalent.     is invertible.    The matrix equation has a unique solution for any column vector .    The matrix equation has a solution for any column vector .    The matrix equation has a unique solution : namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.     .         WeBWork Exercises    Use the appropriate property of determinants to find  Do not evaluate the determinants. Answer:               Consider the following Gauss elimination:   What is the determinant of ?                Find such that the following matrix is singular.                If and are matrices, , , then   ,   ,   ,   ,   .                                  Written Exercises   Let    Compute by expanding along the second row.    Compute by expanding along the third column.       Row\/column expansion   Compute the determinant of the given matrix. Indicate which row or column you expand along.                    Determinant and invertibility   For each matrix, find all values of (if any) making the matrix invertible. Use the determinant.                         Adjoint matrix formula  Use the adjoint matrix formula to compute the inverse of each matrix.              Let . Show without computing the determinant directly. In other words, use a row reduction technique or .    Let be an matrix, and let be a scalar. State and prove a formula relating with .    Assume is a matrix satisfying . Compute the determinant of the given matrix.                          Let and be matrices, and suppose is invertible. Prove the following:     .     .      Assume the square matrix satisfies . Show that .    Prove that a square matrix is invertible if and only if is invertible.    Adjoint matrix   The following exercises explore the relationship between a square matrix and its adjoint .    Give an explicit example of a square matrix satisfying and .  In other words, show that it is possible for a nonzero matrix to have a zero adjoint matrix.    Let be an matrix. Prove: .    Prove: is invertible if and only if is invertible.    Assume is invertible. Prove: .     In our proof of statement (2) of we only showed that if is a square matrix with two identical rows, then . Assuming this, show that the same is true if has two identical columns.    State and prove an analogue to that describes how the corresponding column operations (i.e., scale a column by , swap two columns, column addition) affect the determinant of a matrix. (See ).   Express each of these types of column operations as multiplication on the right by an elementary matrix.    Let be the matrix with along the diagonal and 's elsewhere: i.e., . State and prove a formula for . (Your formula will involve , , and .)  Look at the and cases first. To prove the formula in the general case you may want to make use of row reduction and .    Given scalars the Vandermonde matrix is defined as . In other words, we have Prove: .     "
+  "body": " The determinant   The determinant is a map that assigns to a square matrix a scalar . The definition given below of the determinant is far from intuitive, and we will do little to motivate it up front. Instead, we allow its various properties to speak for themselves by way of retroactive motivation. In particular, we will see that , making the determinant an important tool for investigating invertibility.    Definition of the determinant  Our definition of the determinant is a recursive one; given an matrix its determinant is defined in terms of the determinant of certain submatrices of dimension . This necessitates some notation to help our discussion along.   Submatrix notation  submatrix    submatrix of    Let be an matrix with . Given , the submatrix of obtained by removing the -th row and -th column of is denoted .      Do not conflate the submatrix notation with matrix entry notation : the former returns the submatrix of obtained by deleting the -th row and -th column; the latter returns the -th entry of .     The determinant  determinant    determinant of    Let . The determinant is defined as follows:   Base case:  When we have and we define .    Recursive case:  When we define .        Small cases   Let's look at determinant formulas for the cases. You may remember the formula for matrices from ; we will make the connection more explicit in .  Given , we have . The formula for the case is simple enough to serve as a second base case , allowing us to end the recursive process of computing a general matrix once we get to expressions involving matrices.  Given , we have .    The recursive nature of the determinant definition makes induction arguments particularly useful when proving properties of the determinant, as illustrated by the next theorem.   Determinant of triangular matrices   Let be triangular (upper, lower, or diagonal). Then . In other words, the determinant of a triangular matrix is the product of its diagonal entries.    We only give the proof for lower triangular matrices; the proof in the upper triangular case is nearly identical.  For any let denote the proposition: The determinant of any lower triangular matrix is the product of its diagonal entries . We prove by induction that is true for all .   Base step: show is true  In this case , and is indeed the product of the diagonal entries of .    Induction step: show for all  Let be a lower triangular matrix. Then for all , and hence the determinant of is given by . Claim: is lower triangular. Indeed, first observe that we have for all ; by deleting the first row and first column we effectively bump each index up by one. Since is lower triangular we have for all , and hence also for all , proving the claim.  Lastly, assuming is true (the induction hypothesis) we have , as desired.      Determinant of identity matrices   Let be the identity matrix. Then .    This follows directly from since the diagonal entries of are all ones.      Expansion along rows and columns   Morally speaking, we should give some examples of higher-dimensional determinants, but we first introduce some theory that affords us more leeway in our computations.    Minors and expansions along rows\/columns  minor of matrix  expansion along row\/column    the -th minor of a matrix    Given an matrix , for any pair the -th minor of is defined as .  For any the expression is called the expansion along the -th row of .  For any , the expression is called the expansion along the -th column of .     Expansion along rows   Let . For any we have . In other words, we can compute by expanding along any row of .    The proof is by induction on the size of the matrix.   Base step:  For there is nothing to prove. Given expanding along either row yields , as one easily verifies.    Induction step  Assume the claim is true of any matrix. Given we have . Expanding along the -th row of for any , on the other hand, we get . To show these two expressions are equal we use the induction hypothesis to compute each by expanding along its -th row: . The matrix is the result of first deleting row 1 and column from , and then deleting row and column of the resulting matrix. To deal with such iterated submatrices, we make some simple observations relating the rows and columns of and with those of .   The -th row of corresponds to the -th row of , and the first row of corresponds to the first row of .    If , then the -th column of corresponds to the -th column of ; if , then the -th column of corresponds to the -th column of .    If , then the -th column of corresponds to the -th column of ; if , then the -th column of corresponds to the -th column of .   From these observations we derive the following table of formulas: . We now begin to unpack : . This completes the induction step, and thus the proof is finished.     Surprisingly, it turns out that we can compute the determinant of a matrix by expanding along any column ( ). This is a consequence of the following theorem, which is useful in its own right. The proof below is taken from Robert Beezer's A First Course in Linear Algebra . (See Theorem DT .) It uses induction and a wonderful trick starting from the observation that for any .   Determinant and transposition   Let be an matrix. Then .    The proof is by induction on . The base case ( ) is trivial since for any matrix .  For induction we assume that for all we have for any matrix. Suppose is an matrix. We have . This completes the proof by induction. (Note how in the second equality in the chain above we compute in the -th term of by expanding along the -th row of . A similar observation applies to the penultimate equality.)     Expansion along columns   Let . For any we have . In other words, we can compute by expanding along any column of .    For any , we have .      Compute for .    First we compute by expanding along the second row. The only nonzero term of this expansion is the last one, yielding . We have . To compute its determinant we expand along its third column: We conclude that .     Matrix of signs   When expanding along a row or column, it is easy to get tripped up by the sign in front of the -th coefficient. A matrix of signs is a sort of mnemonic device to help you in this regard. It is easily generated by observing that the sign in front of the -th entry is always a (since ), and that any horizontal or vertical step within the matrix is accompanied by a change of sign. As an example, for we have the following matrix of signs: .     Video example: determinant   Video: determinant  Video: determinant     The freedom to compute the determinant by expanding along any row or column gives rise to the following intuitive property.   Zero rows\/columns, swapping rows\/columns, identical rows\/columns   Let be an matrix.   If has a zero row or zero column, then     Assume . Let be the matrix obtained by swapping two rows (or two columns) of . Then .    Assume . If has two identical rows or two identical columns, then .       The first statement is obvious since according to and we may compute the determinant by expanding along the zero row or zero column in question.  The third statement follows from the second. Indeed, if has two identical rows or columns, then the matrix obtained from by swapping the rows (or columns) in question is itself. Thus by the second statement, and we conclude that .  It remains only to show the second statement. We prove only the statement regarding swapping rows; the corresponding statement about columns follows from . The proof is by induction.   Base step:  Let . Then , and .    Induction step  We assume by induction that the result holds for any matrices, , and show the same is true for any matrix.  Let be an matrix, and suppose is the result of swapping the -th and -th rows of . We compute the determinants of and by expanding along the -th row, where and . This is possible since .  Moving along the -th row, notice that each submatrix is the result of swapping the two rows of that originally corresponded to the -th and -th rows of . Since these submatrices are of dimension , we have by induction. Lastly, since the -th rows of and are the same we have .     As a further consequence of and , we can derive the adjoint matrix formula .   Adjoint matrix  adjoint matrix    adjoint of a square matrix    Let be an matrix. The adjoint matrix of , denoted , is the matrix whose -th entry is defined as follows: .      Be careful of the order reversal in this definition. The -th entry of is equal to plus or minus the -th minor of . Let's see this in action for some small matrices.  For we have .  For we have .     Adjoint matrix formula   Given an matrix , we have . As a consequence, if , then is invertible and .    First observe that the second statement regarding invertibility follows directly from , since in this case setting we have .  Thus it suffices to prove . To do so, we must show that .   Case:  In this case we have . A similar argument shows that , though in this case we use expansion along a column.    Case:  When we have , where is the matrix obtained by replacing the -th row of with a copy of its -th row. Since has two identical rows implies , as desired. Once again, a similar argument using expansion along a column shows that .       Use the adjoint matrix formula to compute , where .    First compute by expanding along the third row: . Next, compute . Then we have .      Before you get too excited about the adjoint matrix formula, you should know that as grows, this procedure becomes much more costly in terms of number of arithmetic operations involved than our inverse algorithm based on Gauss-Jordan elimination. You get a sense of this already from the previous example. In general, the Gauss-Jordan inverse algorithm is the way to go.      Row operations and determinant  Suppose the square matrix can be row reduced to via sequence of row operations. In general we do not have , but we can compute from by keeping track of which operations are used.   Row operations and determinant   Let be an matrix. Using the notation from we have:              .   In particular, taking , we have .    The first statement follows easily by computing by expanding along the -th row. The second statement is in fact a rephrasing of the second statement of . It remains to prove the third statement.  Let , and set . Then is identical to with the exception of the -th row, whose -th entry is . It follows that , where is the matrix obtained by replacing the -th row of with a row identical with its -th row. By we conclude , and thus , as desired.      In the language of row operations, translates as follows:   Scaling a row of a matrix by has the effect of scaling the determinant by .    Swapping two rows of a matrix changes the sign of the determinant.    Performing a row addition operation on a matrix has no effect on the determinant.        Column operations and the determinant   As shown in the determinant behaves in a similar manner with respect to elementary column operations : , scaling a column by a nonzero constant scales the determinant by , swapping columns multiplies the determinant by , adding a multiple of one column to another leaves the determinant unchanged.     Determinant and products of elementary matrices   Let be an matrix, and suppose we have for some collection of elementary matrices . Then .    This is an easy proof by induction on the number of elementary matrices involved, the base case ( ) of which is covered by .     has both computational and theoretical applications.  On the computational side, it suggests an alternative method of computing : first row reduce to a simpler matrix , making sure to keep track of the operations you use; set up an equation as in representing the row reduction; then solve the corresponding equation for in terms of and the .   Determinant via row reduction   Suppose the matrix can be row reduced to by perfomring the following sequence of row operations:   First swap the second and third rows.    Then scale the first row by     Then replace the second row with the second row plus the first row.   Compute .    In terms of elementary matrices we have and hence We conclude that .    On the theoretical side, implies both and .   Determinant and invertibility   Let be an matrix. Then is invertible if and only if .    The implication was proved in .  For the other direction, assume is invertible. Then implies is a product of elementary matrices: . Then implies . Since for all ( ), we conclude .     Determinant is multiplicative   Let and be matrices. Then .    We consider two cases based on the invertibility of and\/or .   or is not invertible  In this case is not invertible ( ), and hence by . By the same reasoning we must have or . It follows that in this case.    and both invertible  In this case we can write for some elementary matrices and ( ). Then .     We end this section (and chapter) by adding the results of and one of our homework exercises to our invertibility theorem.   Invertibility theorem (extended cut)   Let be an matrix. The following statements are equivalent.     is invertible.    The matrix equation has a unique solution for any column vector .    The matrix equation has a solution for any column vector .    The matrix equation has a unique solution : namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.     .         WeBWork Exercises    Use the appropriate property of determinants to find  Do not evaluate the determinants. Answer:               Consider the following Gauss elimination:   What is the determinant of ?                Find such that the following matrix is singular.                If and are matrices, , , then   ,   ,   ,   ,   .                                  Written Exercises   Let    Compute by expanding along the second row.    Compute by expanding along the third column.       Row\/column expansion   Compute the determinant of the given matrix. Indicate which row or column you expand along.                    Determinant and invertibility   For each matrix, find all values of (if any) making the matrix invertible. Use the determinant.                         Adjoint matrix formula  Use the adjoint matrix formula to compute the inverse of each matrix.              Let . Show without computing the determinant directly. In other words, use a row reduction technique or .    Let be an matrix, and let be a scalar. State and prove a formula relating with .    Assume is a matrix satisfying . Compute the determinant of the given matrix.                          Let and be matrices, and suppose is invertible. Prove the following:     .     .      Assume the square matrix satisfies . Show that .    Prove that a square matrix is invertible if and only if is invertible.    Adjoint matrix   The following exercises explore the relationship between a square matrix and its adjoint .    Give an explicit example of a square matrix satisfying and .  In other words, show that it is possible for a nonzero matrix to have a zero adjoint matrix.    Let be an matrix. Prove: .    Prove: is invertible if and only if is invertible.    Assume is invertible. Prove: .     In our proof of statement (2) of we only showed that if is a square matrix with two identical rows, then . Assuming this, show that the same is true if has two identical columns.    State and prove an analogue to that describes how the corresponding column operations (i.e., scale a column by , swap two columns, column addition) affect the determinant of a matrix. (See ).   Express each of these types of column operations as multiplication on the right by an elementary matrix.    Let be the matrix with along the diagonal and 's elsewhere: i.e., . State and prove a formula for . (Your formula will involve , , and .)  Look at the and cases first. To prove the formula in the general case you may want to make use of row reduction and .    Given scalars the Vandermonde matrix is defined as . In other words, we have Prove: .     "
 },
 {
   "id": "d_minors",
@@ -3463,7 +3463,7 @@ var ptx_lunr_docs = [
   "type": "Corollary",
   "number": "3.5.10",
   "title": "Expansion along columns.",
-  "body": " Expansion along columns   Let . For any we have . In other words, we can compute by expanding along any row of .    For any , we have .   "
+  "body": " Expansion along columns   Let . For any we have . In other words, we can compute by expanding along any column of .    For any , we have .   "
 },
 {
   "id": "ss_expansion_rows_columns-8",
@@ -3871,6 +3871,1716 @@ var ptx_lunr_docs = [
   "body": " Given scalars the Vandermonde matrix is defined as . In other words, we have Prove: .  "
 },
 {
+  "id": "s_subspace",
+  "level": "1",
+  "url": "s_subspace.html",
+  "type": "Section",
+  "number": "4.1",
+  "title": "Subspaces and span",
+  "body": " Subspaces and span   We return now to our main object of study: vector spaces. Our foray into the theory of matrices will prove to be useful in this regard in two ways: on the one hand, matrix spaces are themselves interesting examples of vector spaces; on the other hand, matrices serve as an essential computational tool for describing and investigating general vector spaces.  In this section we will study subspaces , which are special subsets of vector spaces that respect the defining structure of a vector spaces: namely, the two vector operations. makes precise what we mean here by respect .  Subspaces arise naturally in any setting where vector spaces are at play, and are closely connected to solutions to linear systems. As we will see in , subspaces of vector spaces are themselves examples of vector spaces, furnishing us with yet more interesting examples of vector spaces.    Definition of subspace   Subspace  subspace  vector space subspace   Let be a vector space. A subset is a subspace of if the following conditions hold:   contains the zero vector  We have .    is closed under addition  For all , if , then . Using logical notation: .    is closed under scalar multiplication  For all and , if , then . In logical notation: .         Let and let . Prove that is a subspace.    We must show properties (i)-(iii) hold for .   The zero element of is , which is certainly of the form . Thus .    We must prove the implication . .    We must prove the implication , for any . We have          Let and let . Is a vector space? Decide which of the of properties (i)-(iii) in (if any) are satisfied by .       Clearly .    Suppose . Then , in which case , and hence . Thus is closed under addition.    The set is not closed under scalar multiplication. Indeed, let . Then .        Two-step proof for subspaces   As with proofs regarding linearity of functions, we can merge conditions (ii)-(iii) of into a single statement about linear combinations, deriving the following two-step method for proving a set is a subspace of a vector space .   Show     Show that , for all .        Video example: deciding if is a subspace   Video: deciding if is a subspace  Video: deciding if is a subspace      If is a subspace of a vector space , then it inherits a vector space structure from by simply restricting the vector operations defined on to the subset .   Subspaces are vector spaces   Let be a subspace of the vector space .   The vector operations of restrict to operations on that satisfy the vector space axioms.    The zero vector of , considered as a vector space, is the zero vector of .    Given an element , its vector inverse with respect to the vector space structure of is equal to its vector inverse with respect to the vector space structure of .       Since for all , the vector addition on gives rise by restriction to a well-defined operation on ; similarly, since for all and , the scalar multiplication operation on gives rise by restriction to a well-defined scalar multiplication on .  By Axiom , the zero vector of is an element of . Since this element satisfies for all , and since , it also satisfies for all . Thus acts as a zero vector for the subspace .    It is important to understand how Axioms of come into play here. Without them we would not be able to say that restricting the vector operations of to elements of actually gives rise to well-defined operations on . To be well-defined the operations must output elements that lie not just in , but in itself. This is precisely what being closed under addition and scalar multiplication guarantees.  Once we know restriction gives rise to well-defined operations on , verifying the axioms of mostly amounts to observing that if a condition is true for all in , it is certainly true for all in the subset .  The existential axioms (iii) and (iv) of , however, require special consideration. By definition, a subspace contains the zero vector of , and clearly this still acts as the zero vector when we restrict the vector operations to . What about vector inverses? We know that for any there is a vector inverse lying somewhere in . We must show that in fact lies in : we need to show that the operation of taking the vector inverse is well-defined on . We prove this as follows: .  We now know how to determine whether a given subset of a vector space is in fact a subspace. We are also interested in means of constructing subspaces from some given ingredients. The result below tells us that taking the intersection of a given collection of subspaces results in a subspace.   Intersection of subspaces   Let be a vector space. Given a collection , where each is a subspace of , the intersection is a subspace.    Exercise.     Unions of subspaces  While the intersection of subspaces is again a subspace, the same is not true for unions of subspaces.  For example, take , and . Then each is a subspace, but their union is not.  Indeed, observe that and , but . Thus is not closed under addition. (Interestingly, it is closed under scalar multiplication.)     Subspaces of   gives a convenient method of producing a subspace of : namely, given any matrix , the set of all solutions to the homogeneous linear system is guaranteed to be a subspace of . We call this set the null space of the matrix .    Let . The null space of , denoted , is the set of all solutions to the matrix equation . In other words, . Equivalently, thinking in terms of linear systems, is the set of solutions to the homogeneous linear system represented by .     Null spaces of matrices   Given any , its null space is a subspace of .    Following the two-step technique, we first show that the zero vector of lies in . This is clear, since .  Next, we show that for any and any we have . If , then we have , by definition. It then follows that the vector satisfies . Since , we have , as desired.      Alternative subspace method   provides an alternative way of showing that a subset : namely, find an matrix for which we have . This is often much faster than using the two-step technique.    Subspace as null space   Define the subset of as .   Prove that is a subspace by identifying it as the set of solutions to a homogeneous matrix equation.    Use (a) and Gaussian elimination to compute a parametric description of .          It is easy to see that where . We conclude is a subspace.    The augmented matrix row reduces to . Following we conclude that . Geometrically this is the line in passing through with direction vector .        Subspace as null space  As convenient as the method described in and illustrated in may be, bear in mind that it cannot always be used. Indeed, by definition the null space of an matrix is a subset of . Thus this method can only be employed when the ambient vector space is . Don't forget that there are other vector spaces besides . Indeed, in we consider subspaces of matrix vector spaces . In this setting, our null space trick does not apply.   Let be an matrix. If is nonzero , then the set of solutions to is not a subspace of , and for a very simple reason: since , we see that , and thus is not a subspace. Thus, thinking in terms of linear systems, we see that while the set of solutions to a homogenous linear system constitutes a subspace, the set of solutions to a nonhomogeneous system does not. On the other hand, as articulated by , the set of solutions to a nonhomogeneous linear system can be thought of as a translate of a vector space.   Null space and linear systems   Let and , and let be the set of all solutions to the linear system .    is a subspace of if and only if : , if and only if the linear system is homogeneous.    If is a solution to , then we have . In other words, given a particular solution to , the general solution is given by where is a solution to the homogeneous linear system .          If , then , and this is a subspace by . If , then , and hence is not a subspace.    Let satisfy . We show that by showing the two inclusions . If , then we have for some , in which case . This shows that if , then , and thus that . For the other inclusion, if , then we have , showing that . But then we have , where . Thus , showing that .        Null space and linear systems   Let and , and suppose the linear system is consistent.   There is a unique solution to the system if and only if : , if and only if the only solution to is the trivial one .    There are infinitely many solutions if and only if there is a nonzero solution to .        Solving matrix equations  Let's use Sage and to find the set of solutions to the matrix equation . This is the matrix equation form of the linear system we investigated in . The method solve_right can be used to find a particular solution  to .   We get the entire set of solutions by translating by the particular solution : . We can illustrate this in Sage by taking random elements of (computed using right_kernel ), adding them to xp , and verifying that the result is a solution to . Each time you evaluate the cell below, a randomly generated element of will be outputted.   You may wonder just how random these elements of are, considering that the entries always seem to be integers! Indeed, soliciting information about NS from Sage, we see that it has the structure of a free module defined over the the Integer Ring .   Without getting too far into the weeds, this is a result of our initial definition of using Matrix() . Without further information, Sage interprets this as a matrix with integer coefficients, as opposed to real coefficients. All further computations ( , xp and NS ) are done in a similar spirit. More precisely, the object NS generated by Sage consists of all integer linear combinations of the two rows in the echelon basis matrix displayed in the cell above. The next cell shows you how things change when we alert Sage to the fact that we are dealing with matrices over the reals. The only change is adding RR to Matrix() , which specifies that matrix coefficients should be understood as real numbers.     Hyperplanes and subspaces  Recall that a hyperplane is the set of solutions to a linear system of the form , where for some . In terms of , is just the set of solutions to the matrix equation , where . It follows from that is a subspace if and only if : , if and only if passes through the origin. Furthermore, if , we have , where is any solution to , and is the set of solutions to the corresponding homogeneous equation . In other words, although it is not true in general that every hyperplane is a subspace (since it may not pass through the origin), it is true that is a translate of a hyperplane that is a subspace (since passes through the origin).      Important subspaces of  In we met three families of square matrices: namely, the diagonal, upper triangular, and lower triangular matrices. (See ). We now introduce three more naturally occurring families. Before doing so, we give an official definition of the trace function.   Trace of a matrix  trace of a matrix    the trace of    Let be an matrix. The trace of , denoted is defined as the sum of the diagonal entries of : , .     Trace-zero, symmetric, and skew-symmetric  trace-zero matrix  symmetric matrix  skew-symmetric matrix   Fix an integer .   A matrix is said to be a trace-zero matrix if .    A matrix is symmetric if : equivalently, if for all .    A matrix is skew-symmetric if : equivalently, if for all .        Trace-zero symmetric, and skew-symmetric matrices   The set of all trace-zero matrices can be described as . The set of all symmetric matrices can be described as . The set of all skew-symmetric matrices can be described as .     Assume is a skew-symmetric matrix. By definition, for all we must have . It follows that for all . Thus the diagonal entries of a skew-symmetric matrix are always equal to 0.   It will come as no surprise that all of the afore mentioned matrix families are in fact subspaces of .   Matrix subspaces   Fix an integer . Each of the following subsets of is a subspace.   Diagonal matrices       Upper triangular matrices       Lower triangular matrices       Trace-zero matrix       Symmetric matrices       Skew-symmetric matrices          See         For each subset of described below: (a) sketch as a region of , and (b) determine whether is a subspace. Justify your answer either with a proof or explicit counterexample.                     Determine whether the subset of described is a subspace of . Justify your answer either with a proof or explicit counterexample.              Fix a matrix and define , the set of matrices that commute with .      For each given subset : (a) show that is a subspace by identifying it with the set of solutions to a matrix equation, and (b) give a parametric description of .                    Prove .    Prove (1)-(6) of .    "
+},
+{
+  "id": "d_subspace",
+  "level": "2",
+  "url": "s_subspace.html#d_subspace",
+  "type": "Definition",
+  "number": "4.1.1",
+  "title": "Subspace.",
+  "body": " Subspace  subspace  vector space subspace   Let be a vector space. A subset is a subspace of if the following conditions hold:   contains the zero vector  We have .    is closed under addition  For all , if , then . Using logical notation: .    is closed under scalar multiplication  For all and , if , then . In logical notation: .      "
+},
+{
+  "id": "ss_subspace-3",
+  "level": "2",
+  "url": "s_subspace.html#ss_subspace-3",
+  "type": "Example",
+  "number": "4.1.2",
+  "title": "",
+  "body": "  Let and let . Prove that is a subspace.    We must show properties (i)-(iii) hold for .   The zero element of is , which is certainly of the form . Thus .    We must prove the implication . .    We must prove the implication , for any . We have       "
+},
+{
+  "id": "ss_subspace-4",
+  "level": "2",
+  "url": "s_subspace.html#ss_subspace-4",
+  "type": "Example",
+  "number": "4.1.3",
+  "title": "",
+  "body": "  Let and let . Is a vector space? Decide which of the of properties (i)-(iii) in (if any) are satisfied by .       Clearly .    Suppose . Then , in which case , and hence . Thus is closed under addition.    The set is not closed under scalar multiplication. Indeed, let . Then .      "
+},
+{
+  "id": "proc_twostep_proof",
+  "level": "2",
+  "url": "s_subspace.html#proc_twostep_proof",
+  "type": "Procedure",
+  "number": "4.1.4",
+  "title": "Two-step proof for subspaces.",
+  "body": " Two-step proof for subspaces   As with proofs regarding linearity of functions, we can merge conditions (ii)-(iii) of into a single statement about linear combinations, deriving the following two-step method for proving a set is a subspace of a vector space .   Show     Show that , for all .      "
+},
+{
+  "id": "vid_eg_subspace1",
+  "level": "2",
+  "url": "s_subspace.html#vid_eg_subspace1",
+  "type": "Example",
+  "number": "4.1.5",
+  "title": "Video example: deciding if <span class=\"process-math\">\\(W\\subseteq V\\)<\/span> is a subspace.",
+  "body": " Video example: deciding if is a subspace   Video: deciding if is a subspace  Video: deciding if is a subspace    "
+},
+{
+  "id": "th_subspace_vectorspace",
+  "level": "2",
+  "url": "s_subspace.html#th_subspace_vectorspace",
+  "type": "Theorem",
+  "number": "4.1.7",
+  "title": "Subspaces are vector spaces.",
+  "body": " Subspaces are vector spaces   Let be a subspace of the vector space .   The vector operations of restrict to operations on that satisfy the vector space axioms.    The zero vector of , considered as a vector space, is the zero vector of .    Given an element , its vector inverse with respect to the vector space structure of is equal to its vector inverse with respect to the vector space structure of .       Since for all , the vector addition on gives rise by restriction to a well-defined operation on ; similarly, since for all and , the scalar multiplication operation on gives rise by restriction to a well-defined scalar multiplication on .  By Axiom , the zero vector of is an element of . Since this element satisfies for all , and since , it also satisfies for all . Thus acts as a zero vector for the subspace .   "
+},
+{
+  "id": "th_subspace_intersection",
+  "level": "2",
+  "url": "s_subspace.html#th_subspace_intersection",
+  "type": "Theorem",
+  "number": "4.1.8",
+  "title": "Intersection of subspaces.",
+  "body": " Intersection of subspaces   Let be a vector space. Given a collection , where each is a subspace of , the intersection is a subspace.    Exercise.   "
+},
+{
+  "id": "rm_subspace_union",
+  "level": "2",
+  "url": "s_subspace.html#rm_subspace_union",
+  "type": "Remark",
+  "number": "4.1.9",
+  "title": "Unions of subspaces.",
+  "body": " Unions of subspaces  While the intersection of subspaces is again a subspace, the same is not true for unions of subspaces.  For example, take , and . Then each is a subspace, but their union is not.  Indeed, observe that and , but . Thus is not closed under addition. (Interestingly, it is closed under scalar multiplication.)  "
+},
+{
+  "id": "d_nullspace_matrix",
+  "level": "2",
+  "url": "s_subspace.html#d_nullspace_matrix",
+  "type": "Definition",
+  "number": "4.1.10",
+  "title": "",
+  "body": "  Let . The null space of , denoted , is the set of all solutions to the matrix equation . In other words, . Equivalently, thinking in terms of linear systems, is the set of solutions to the homogeneous linear system represented by .   "
+},
+{
+  "id": "th_subspace_matrix_solutions",
+  "level": "2",
+  "url": "s_subspace.html#th_subspace_matrix_solutions",
+  "type": "Theorem",
+  "number": "4.1.11",
+  "title": "Null spaces of matrices.",
+  "body": " Null spaces of matrices   Given any , its null space is a subspace of .    Following the two-step technique, we first show that the zero vector of lies in . This is clear, since .  Next, we show that for any and any we have . If , then we have , by definition. It then follows that the vector satisfies . Since , we have , as desired.   "
+},
+{
+  "id": "rm_subspace_alt",
+  "level": "2",
+  "url": "s_subspace.html#rm_subspace_alt",
+  "type": "Remark",
+  "number": "4.1.12",
+  "title": "Alternative subspace method.",
+  "body": " Alternative subspace method   provides an alternative way of showing that a subset : namely, find an matrix for which we have . This is often much faster than using the two-step technique.  "
+},
+{
+  "id": "eg_subspace_alt",
+  "level": "2",
+  "url": "s_subspace.html#eg_subspace_alt",
+  "type": "Example",
+  "number": "4.1.13",
+  "title": "Subspace as null space.",
+  "body": " Subspace as null space   Define the subset of as .   Prove that is a subspace by identifying it as the set of solutions to a homogeneous matrix equation.    Use (a) and Gaussian elimination to compute a parametric description of .          It is easy to see that where . We conclude is a subspace.    The augmented matrix row reduces to . Following we conclude that . Geometrically this is the line in passing through with direction vector .      "
+},
+{
+  "id": "ss_subspaces_tuples-7",
+  "level": "2",
+  "url": "s_subspace.html#ss_subspaces_tuples-7",
+  "type": "Warning",
+  "number": "4.1.14",
+  "title": "Subspace as null space.",
+  "body": " Subspace as null space  As convenient as the method described in and illustrated in may be, bear in mind that it cannot always be used. Indeed, by definition the null space of an matrix is a subset of . Thus this method can only be employed when the ambient vector space is . Don't forget that there are other vector spaces besides . Indeed, in we consider subspaces of matrix vector spaces . In this setting, our null space trick does not apply.  "
+},
+{
+  "id": "th_nullspace_linsys",
+  "level": "2",
+  "url": "s_subspace.html#th_nullspace_linsys",
+  "type": "Theorem",
+  "number": "4.1.15",
+  "title": "Null space and linear systems.",
+  "body": " Null space and linear systems   Let and , and let be the set of all solutions to the linear system .    is a subspace of if and only if : , if and only if the linear system is homogeneous.    If is a solution to , then we have . In other words, given a particular solution to , the general solution is given by where is a solution to the homogeneous linear system .          If , then , and this is a subspace by . If , then , and hence is not a subspace.    Let satisfy . We show that by showing the two inclusions . If , then we have for some , in which case . This shows that if , then , and thus that . For the other inclusion, if , then we have , showing that . But then we have , where . Thus , showing that .      "
+},
+{
+  "id": "cor_matrix_equations",
+  "level": "2",
+  "url": "s_subspace.html#cor_matrix_equations",
+  "type": "Corollary",
+  "number": "4.1.16",
+  "title": "Null space and linear systems.",
+  "body": " Null space and linear systems   Let and , and suppose the linear system is consistent.   There is a unique solution to the system if and only if : , if and only if the only solution to is the trivial one .    There are infinitely many solutions if and only if there is a nonzero solution to .      "
+},
+{
+  "id": "sage_solve_matrix_eqn",
+  "level": "2",
+  "url": "s_subspace.html#sage_solve_matrix_eqn",
+  "type": "Sage example",
+  "number": "4.1.1",
+  "title": "Solving matrix equations.",
+  "body": " Solving matrix equations  Let's use Sage and to find the set of solutions to the matrix equation . This is the matrix equation form of the linear system we investigated in . The method solve_right can be used to find a particular solution  to .   We get the entire set of solutions by translating by the particular solution : . We can illustrate this in Sage by taking random elements of (computed using right_kernel ), adding them to xp , and verifying that the result is a solution to . Each time you evaluate the cell below, a randomly generated element of will be outputted.   You may wonder just how random these elements of are, considering that the entries always seem to be integers! Indeed, soliciting information about NS from Sage, we see that it has the structure of a free module defined over the the Integer Ring .   Without getting too far into the weeds, this is a result of our initial definition of using Matrix() . Without further information, Sage interprets this as a matrix with integer coefficients, as opposed to real coefficients. All further computations ( , xp and NS ) are done in a similar spirit. More precisely, the object NS generated by Sage consists of all integer linear combinations of the two rows in the echelon basis matrix displayed in the cell above. The next cell shows you how things change when we alert Sage to the fact that we are dealing with matrices over the reals. The only change is adding RR to Matrix() , which specifies that matrix coefficients should be understood as real numbers.   "
+},
+{
+  "id": "rm_hyperplanes",
+  "level": "2",
+  "url": "s_subspace.html#rm_hyperplanes",
+  "type": "Remark",
+  "number": "4.1.17",
+  "title": "Hyperplanes and subspaces.",
+  "body": " Hyperplanes and subspaces  Recall that a hyperplane is the set of solutions to a linear system of the form , where for some . In terms of , is just the set of solutions to the matrix equation , where . It follows from that is a subspace if and only if : , if and only if passes through the origin. Furthermore, if , we have , where is any solution to , and is the set of solutions to the corresponding homogeneous equation . In other words, although it is not true in general that every hyperplane is a subspace (since it may not pass through the origin), it is true that is a translate of a hyperplane that is a subspace (since passes through the origin).  "
+},
+{
+  "id": "d_trace",
+  "level": "2",
+  "url": "s_subspace.html#d_trace",
+  "type": "Definition",
+  "number": "4.1.18",
+  "title": "Trace of a matrix.",
+  "body": " Trace of a matrix  trace of a matrix    the trace of    Let be an matrix. The trace of , denoted is defined as the sum of the diagonal entries of : , .   "
+},
+{
+  "id": "d_tracezero_symmetric_skewsymmetric",
+  "level": "2",
+  "url": "s_subspace.html#d_tracezero_symmetric_skewsymmetric",
+  "type": "Definition",
+  "number": "4.1.19",
+  "title": "Trace-zero, symmetric, and skew-symmetric.",
+  "body": " Trace-zero, symmetric, and skew-symmetric  trace-zero matrix  symmetric matrix  skew-symmetric matrix   Fix an integer .   A matrix is said to be a trace-zero matrix if .    A matrix is symmetric if : equivalently, if for all .    A matrix is skew-symmetric if : equivalently, if for all .      "
+},
+{
+  "id": "ss_subspace_matrices-5",
+  "level": "2",
+  "url": "s_subspace.html#ss_subspace_matrices-5",
+  "type": "Example",
+  "number": "4.1.20",
+  "title": "Trace-zero symmetric, and skew-symmetric <span class=\"process-math\">\\(2\\times 2\\)<\/span> matrices.",
+  "body": " Trace-zero symmetric, and skew-symmetric matrices   The set of all trace-zero matrices can be described as . The set of all symmetric matrices can be described as . The set of all skew-symmetric matrices can be described as .   "
+},
+{
+  "id": "rm_skew-symmetric",
+  "level": "2",
+  "url": "s_subspace.html#rm_skew-symmetric",
+  "type": "Remark",
+  "number": "4.1.21",
+  "title": "",
+  "body": " Assume is a skew-symmetric matrix. By definition, for all we must have . It follows that for all . Thus the diagonal entries of a skew-symmetric matrix are always equal to 0.  "
+},
+{
+  "id": "th_matrix_subspaces",
+  "level": "2",
+  "url": "s_subspace.html#th_matrix_subspaces",
+  "type": "Theorem",
+  "number": "4.1.22",
+  "title": "Matrix subspaces.",
+  "body": " Matrix subspaces   Fix an integer . Each of the following subsets of is a subspace.   Diagonal matrices       Upper triangular matrices       Lower triangular matrices       Trace-zero matrix       Symmetric matrices       Skew-symmetric matrices          See    "
+},
+{
+  "id": "s_subspace_ex-1-2",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-1-2",
+  "type": "Exercise",
+  "number": "4.1.4.1",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_subspace_ex-1-3",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-1-3",
+  "type": "Exercise",
+  "number": "4.1.4.2",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_subspace_ex-1-4",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-1-4",
+  "type": "Exercise",
+  "number": "4.1.4.3",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_subspace_ex-2-2",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-2-2",
+  "type": "Exercise",
+  "number": "4.1.4.4",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_subspace_ex-2-3",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-2-3",
+  "type": "Exercise",
+  "number": "4.1.4.5",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_subspace_ex-2-4",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-2-4",
+  "type": "Exercise",
+  "number": "4.1.4.6",
+  "title": "",
+  "body": " Fix a matrix and define , the set of matrices that commute with .  "
+},
+{
+  "id": "s_subspace_ex-3-2",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-3-2",
+  "type": "Exercise",
+  "number": "4.1.4.7",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_subspace_ex-3-3",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-3-3",
+  "type": "Exercise",
+  "number": "4.1.4.8",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_subspace_ex-3-4",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-3-4",
+  "type": "Exercise",
+  "number": "4.1.4.9",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_subspace_ex-4",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-4",
+  "type": "Exercise",
+  "number": "4.1.4.10",
+  "title": "",
+  "body": " Prove .  "
+},
+{
+  "id": "ex_matrix_subspaces",
+  "level": "2",
+  "url": "s_subspace.html#ex_matrix_subspaces",
+  "type": "Exercise",
+  "number": "4.1.4.11",
+  "title": "",
+  "body": " Prove (1)-(6) of .  "
+},
+{
+  "id": "s_span_independence",
+  "level": "1",
+  "url": "s_span_independence.html",
+  "type": "Section",
+  "number": "4.2",
+  "title": "Span and linear independence",
+  "body": " Span and linear independence   There are many situations in mathematics where we want to describe an infinite set in a concise manner. We saw this at work already in , where infinite sets of solutions to linear systems were neatly described with parametric expressions.  A similar issue arises when describing vector spaces and their subspaces. As we know, any vector space is either the zero space or infinite ( ). If we happen to be dealing with a subspace of , then there is the possibility of giving a parametric description; but how do we proceed when working in one of our more exotic vector spaces like ?  As we will see in the relevant linear algebraic tool for this purpose is the concept of a basis . Loosely speaking, a basis for a vector space is a set of vectors that is large enough to generate the entire space, and small enough to contain no redundancies . What exactly we mean by generate is captured by the rigorous notion of span ; and what we mean by no redundancies is captured by linear independence .    Span  Recall that a linear combination in a vector space is a vector of the form , where are scalars. We use this notion to define the span of a set of vectors.   Span  span of a set of vectors    the span of    Let be a vector space, and let be any subset of . The span of , denoted , is the subset of defined as follows:   If , then .    Otherwise we define to be the set of all linear combinations of elements of : , .         Let be a subset of . Some simple observations:   The zero vector is always an element of . Indeed, if , then by definition. Otherwise, given any , the linear combination is an element of .    We have : , includes itself. Indeed, given any , the linear combination is an element of .    If contains exactly one element, then is simply the set of all scalar multiples of .  If , then we know that this set is infinite ( ). Thus even when is finite , will be infinite , as long as contains nonzero vectors.        Examples in   Let . For each , identify as a familiar geometric object.     .          ,                               , the set containing just the origin, by definition.     is the set of all scalar multiples of . Thus .     is the set of all scalar multiples of the nonzero vector . Geometrically, this is the line that passes through the the origin and the point .    By definition . Thus , the entire -plane.    By definition . It is easy to see that , the line with equation . Note that in this case we have , and thus that the vector is in some sense redundant.    By definition . Claim: . Proving the claim amounts to showing that for all there exist such that . Solving this system using Gaussian elimination, we see that the system has the unique solution , and thus that . This proves , as claimed.    By , we have . Thus . Since by definition, we conclude that .        Video example: computing span   Video: computing span  Video: computing span     You may have noticed that each span computation in the previous example produced a subspace of . This is no accident!   Spans are subspaces   Let be a subset of the vector space .   The set is a subspace of .    If is any subspace containing , then .   Taken together, (1) and (2) imply that is the smallest subspace of containing .    We prove each statement separately.   Statement (1)  To show is a subspace, we use the two-step technique.   By we know that .    Suppose . By definition we have for some vectors and scalars . Then for any we have , which is clearly a linear combination of elements of . Thus , as desired.       Statement (2)  Let be a subspace that contains all elements of . Since is closed under arbitrary linear combinations, it must contain any linear combination of elements of , and thus .     The results of motivate the following additional terminology.   Spanning set  spanning set   Let be a subset of the vector space . We call the subspace of  generated by S , and we call a spanning set for .     Some standard spanning sets  spanning set standard examples   For most of the vector spaces we've met a natural spanning set springs to mind. We will refer to these loosely as standard spanning sets. Some examples:   Zero space  Let . By definition the empty set is a spanning set of .    Tuples  Let . For , define to be the -tuple with a one in the -th entry, and zeros elsewhere. Then is a spanning set for .    Matrices  Let . For each with and , define to be the matrix with a one in the -th entry, and zeros elsewhere. Then is a spanning set for .    Polynomials of bounded degree  Let . The set clearly spans . This is just another way of saying that the monomials of degree at most generate the polynomials of degree at most .    Polynomials  Let , the space of all polynomials. In a similar vein, the set of all monomials is a spanning set for .   Note the glaring difference between the first three examples, and the last: our standard spanning set for is infinite , whereas the previous examples are all finite spanning sets. You suspect, no doubt, that there is no finite spanning set for . We will be able to prove this shortly.    It is important to observe that spanning sets for vector spaces are not unique. Far from it! In general, for any nonzero vector space there are infinitely many choices of spanning sets.   Spanning sets are not unique   For each and below, verify that is a spanning set for .    ,      , , .     ,           This was shown in     We must show, given any , we can find such that , or . We can find such if and only if the system with augmented matrix is consistent. This matrix row reduces to . Since the last column will never contain a leading one, we conclude that the system is consistent for any choice of , and thus that , as claimed.    We must show that given any we can find such that , or . According to this equality holds if and only if . As in the examples above, our reasoning implies if and only if this system is consistent for any choice of . Thus usual Gaussian elimination procedure tells us that this is indeed so. We leave the details to you.          Linear independence  As mentioned at the top, the notion of linear independence is precisely what we need to guarantee that a given spanning set has no redundancies . We first define linear independence of a finite set of vectors ( ) and later generalize to an arbitrary set of vectors ( ).   Linear independence (for finite subsets)  linear independence   Let be a vector space, let be a finite subset, and let be the distinct elements of : , for all . We say is linearly independent if the following condition holds: . We say is linearly dependent if it is not linearly independent; i.e., if we can find scalars with for some and . We call a linear combination  trivial if for all , and nontrivial if for some . Using this terminology, a set is linearly independent if the only linear combination of distinct elements of yielding the zero vector is the trivial one.      The definition of linear independence is quite a mouthful! Some clarifying remarks:   To prove a set of distinct vectors is linearly independent, we must prove an implication : . More often than not you will do so in the direct manner: , assume you have a linear combination equal to the zero vector, then show that all coefficients must be zero.    By the same token, to show is linearly dependent, we must produce a nontrivial linear combination of distinct elements equal to the zero vector.    It is easy to see that is linearly dependent if and only if some element of can be written as a linear combination of other elements of : just take the nontrivial linear combination yielding the zero vector, and solve for the vector in this combination with the nonzero coefficient.  This makes precise what it means for a spanning set to have redundancies or not. If is linearly dependent, then one of its vectors can be written as a linear combination of the others, and thus can be thrown out when computing , the set of all linear combinations of . Conversely, if is linearly independent, then no element of can be written as a linear combination of the others; throwing any element out would thus result in being strictly smaller.        Elementary examples   Let be a vector space, and let be a subset.    If , then is linearly dependent: indeed, we have the nontrivial linear combination .    If , then is linearly independent if and only if . The previous comment shows why is a necessary condition. Let's see why it is sufficient.  Suppose , and suppose we have . By we have or ( ). Since , we conclude . This shows that the only linear combination of yielding is the trivial one.    Suppose , where . From the last remark, it follows that is linearly independent if and only if one of its elements is a scalar multiple of the other.  This makes it very easy to decide whether a two-element set is linearly independent. Note however, that the same observation does not apply to larger sets: , can be shown to be linearly dependent, and yet no element of is a scalar multiple of any other element.      Deciding whether a subset of a vector space is linearly independent usually boils down to a question about the solutions to a certain system of linear equations. The procedure below outlines the steps necessary to extract the relevant linear system and draw the relevant conclusions.   Investigating linear independence     Write out the general vector equation  where the are arbitrary elements of the given set .    Translate this vector equation into a homogeneous linear system in the unknowns , using the definition of equality for your vector space.    Decide, using Gaussian elimination, whether this system has any nonzero ( , nontrivial) solutions.      This is a fitting point to recall our . As you can see, even as we move into more and more abstract realms of linear algebra (linear independence, span, ), Gaussian elimination remains our most important tool.    Linear independence   For each subset of the given vector space , decide whether is linearly independent.     ,      ,      , , where .        We have if and only if . After a little Gaussian elimination we see that is a nonzero solution to this system, and thus that Since there is a nontrivial linear combination of elements of yielding the zero vector, we conclude is linearly dependent.    Recall that the zero vector of is the zero polynomial . We have . Gaussian elimination shows that is the unique solution to this last system. We conclude that is linearly independent.    We have . Row reduction reveals that this last linear system has a free variable, and hence that there are infinitely many solutions to this system: , . We conclude that is linearly dependent.      So far we have only defined linead independence for finite subsets of a vector space. The notion is easily extended to arbitrary (potentially infinite) subsets.   Linear independence (for arbitrary subsets)   Let be a vector space. A subset is linearly independent if and only if every finite subset of is lineary independent in the sense of .      A subtle question arises here: namely, whether our definition of linear independence for arbitrary sets is consistent with our definition for finite ones. In other words, given a set of distinct vectors, is it true that is linearly independent (in the sense of ) if and only if every subset is linearly independent (in the sense of )? The answer of course is yes. One direction is easy: since is a subset of itself, clearly if every subset is linearly independent, then is linearly independent. The other direction is left as an exercise ( ).     Linear independence in  Consider the vector space of polynomial functions on . We show that the set is linearly independent. Given a finite subset , we can write ,where . By , we have if and only if . This proves is linearly independent. We have thus shown that any finite subset of is linearly independent, and thus conclude that is linearly independent by .     Linear independence in function spaces  In each computation of it was easy to derive a relevant linear system since the notion of equality in each of these spaces amounts to checking a finite number of numeric equalities: , between the entries of two triples, the coefficients of two polynomials, or the entries of two matrices.  Things are slightly more complicated when working in function spaces on an interval (  , ), since by definition functions and are equal if and only if for all . Thus, in principle verifying two functions are equal amounts to showing infinitely many equalities hold: one for each . Despite this added complexity, we can still investigate linear independence of functions with certain linear systems, as described in the procedure below.   Investigating linear independence of functions   Let , let , and let be a set of distinct elements of .    If you believe is linearly independent:    Write out the function equation  . Since the zero vector of is the zero function, the definition of function equality implies for all  .    Since is true for all , we can produce a homogeneous system of linear equations in the unknowns by picking elements of , and evaluating  at . The -th equation of the resulting system is thus .    If you can find elements so that the resulting homogeneous system in the unknowns has the unique solution , then we conclude that is linearly independent.      If you believe is linearly dependent:    A nontrivial linear combination of the equal to the zero function amounts to a function identity. Either cite a well-known function identity involving the , or else prove an identity of your own.          When using to show is linearly independent, you want to produce enough linear equations to force the unknowns to all be equal to 0. Note that since you you have unknowns, you need at at least  equations, and so must pick at least elements . Do so judiciously in order to (a) force the to all be equal to 0, and (b) make the necessary computations palatable.    We illustrate in the following example.   Linear independence of functions   Let . Determine whether the given subset is linearly independent.          .        We claim is linearly independent. If , then , for all . In particular, the equality is true when evaluated at , yielding the following linear system: , or . This system can be now be solved essentially by inspection: the first equation implies ; setting , in the third equation, we conclude ; the second equation now implies . We conclude that . Thus the only linear combination of yielding the zero function is the trivial one, showing that is linearly independent.    We claim is linearly dependent. As discussed in , to prove this we have to produce an identity involving these functions. The double-angle formula from trigonometry tells us that for all (in fact for all ). It follows that for all , or . Since we have found a nontrivial linear combination of elements of yielding the zero vector, we conclude that is linearly dependent.       Video example: linear independence of functions   Video: linear independence of functions  Video: linear independence of functions        WeBWork Exercises    Let be a linear combination of .  Select the best statement.    We only know that .    There is no obvious relationship between and .    .    when is a scalar multiple of one of .    none of the above     span .        Let be a linearly independent set of vectors.  Select the best statement.    is also a linearly independent set of vectors unless .    could be a linearly independent or linearly dependent set of vectors depending on the vectors chosen.    is always a linearly dependent set of vectors.    is also a linearly independent set of vectors unless is a scalar multiple another vector in the set.    is always a linearly independent set of vectors.    none of the above     is a linear combination of then is linearly dependent. Otherwise the set in linearly independent. could be a linearly independent or linearly dependent set of vectors depending on the vectors chosen.        Let be a linearly dependent set of vectors.  Select the best statement.    is a linearly independent set of vectors unless is a linear combination of other vectors in the set.    is always a linearly independent set of vectors.    could be a linearly independent or linearly dependent set of vectors depending on the vectors chosen.    is a linearly independent set of vectors unless .    is always a linearly dependent set of vectors.    none of the above     is always a linearly dependent set of vectors.        Are the vectors , and linearly independent?    Choose    linearly dependent    linearly independent    If they are linearly dependent, find scalars that are not all zero such that the equation below is true. If they are linearly independent, find the only scalars that will make the equation below true.        .                   Let be the vector space of symmetric matrices and be the subspace  a. Find a nonzero element in .    b. Find an element in that is not in .            In each exercise, determine whether the given subset of the vector space is linearly independent. Justify your answer.     ,      ,      ,      ,      Let and let , where . Determine all values for which is linearly independent.    Let , and define , , .    Compute , identifying it as a certain familiar set of matrices.    Decide whether is independent.      Let be a vector space, and let be a subset of distinct vectors. Assume is linearly independent. Show that any subset is linearly independent.   The empty set is trivially linearly independent. Let represent an arbitrary nonempty set of distinct elements of . You can show is linearly independent by extending linear combinations of the elements of to a linear combination of the elements of in a certain way.   Span, independence, and invertibility  In this exercise we identify elements of with column vectors.  Let be a subset of , and let be the matrix whose -th column is : , .    Prove: if and only if is invertible.    Prove: is linearly independent if and only if is invertible.     Use the column method ( ) and the invertibility theorem ( )   Linear transformations, span, and independence  Suppose is a linear transformation. Let be a subset of , and let be the image of under : , . Assume and for all .  Answer true or false: if true, provide a proof; if false, provide an explicit counterexample. Note: for a complete counterexample you need to specify , and .    If is linearly independent, then is linearly independent.    If is linearly independent, then is linearly independent.    If is a spanning set for , then is a spanning set for .       "
+},
+{
+  "id": "d_span",
+  "level": "2",
+  "url": "s_span_independence.html#d_span",
+  "type": "Definition",
+  "number": "4.2.1",
+  "title": "Span.",
+  "body": " Span  span of a set of vectors    the span of    Let be a vector space, and let be any subset of . The span of , denoted , is the subset of defined as follows:   If , then .    Otherwise we define to be the set of all linear combinations of elements of : , .      "
+},
+{
+  "id": "rm_span",
+  "level": "2",
+  "url": "s_span_independence.html#rm_span",
+  "type": "Remark",
+  "number": "4.2.2",
+  "title": "",
+  "body": "  Let be a subset of . Some simple observations:   The zero vector is always an element of . Indeed, if , then by definition. Otherwise, given any , the linear combination is an element of .    We have : , includes itself. Indeed, given any , the linear combination is an element of .    If contains exactly one element, then is simply the set of all scalar multiples of .  If , then we know that this set is infinite ( ). Thus even when is finite , will be infinite , as long as contains nonzero vectors.      "
+},
+{
+  "id": "eg_span_2space",
+  "level": "2",
+  "url": "s_span_independence.html#eg_span_2space",
+  "type": "Example",
+  "number": "4.2.3",
+  "title": "Examples in <span class=\"process-math\">\\(\\R^2\\)<\/span>.",
+  "body": " Examples in   Let . For each , identify as a familiar geometric object.     .          ,                               , the set containing just the origin, by definition.     is the set of all scalar multiples of . Thus .     is the set of all scalar multiples of the nonzero vector . Geometrically, this is the line that passes through the the origin and the point .    By definition . Thus , the entire -plane.    By definition . It is easy to see that , the line with equation . Note that in this case we have , and thus that the vector is in some sense redundant.    By definition . Claim: . Proving the claim amounts to showing that for all there exist such that . Solving this system using Gaussian elimination, we see that the system has the unique solution , and thus that . This proves , as claimed.    By , we have . Thus . Since by definition, we conclude that .      "
+},
+{
+  "id": "fig_vid_span",
+  "level": "2",
+  "url": "s_span_independence.html#fig_vid_span",
+  "type": "Figure",
+  "number": "4.2.4",
+  "title": "Video: computing span",
+  "body": " Video: computing span  Video: computing span   "
+},
+{
+  "id": "th_span",
+  "level": "2",
+  "url": "s_span_independence.html#th_span",
+  "type": "Theorem",
+  "number": "4.2.5",
+  "title": "Spans are subspaces.",
+  "body": " Spans are subspaces   Let be a subset of the vector space .   The set is a subspace of .    If is any subspace containing , then .   Taken together, (1) and (2) imply that is the smallest subspace of containing .    We prove each statement separately.   Statement (1)  To show is a subspace, we use the two-step technique.   By we know that .    Suppose . By definition we have for some vectors and scalars . Then for any we have , which is clearly a linear combination of elements of . Thus , as desired.       Statement (2)  Let be a subspace that contains all elements of . Since is closed under arbitrary linear combinations, it must contain any linear combination of elements of , and thus .    "
+},
+{
+  "id": "d_spanning_set",
+  "level": "2",
+  "url": "s_span_independence.html#d_spanning_set",
+  "type": "Definition",
+  "number": "4.2.6",
+  "title": "Spanning set.",
+  "body": " Spanning set  spanning set   Let be a subset of the vector space . We call the subspace of  generated by S , and we call a spanning set for .   "
+},
+{
+  "id": "rm_spanning_sets",
+  "level": "2",
+  "url": "s_span_independence.html#rm_spanning_sets",
+  "type": "Remark",
+  "number": "4.2.7",
+  "title": "Some standard spanning sets.",
+  "body": " Some standard spanning sets  spanning set standard examples   For most of the vector spaces we've met a natural spanning set springs to mind. We will refer to these loosely as standard spanning sets. Some examples:   Zero space  Let . By definition the empty set is a spanning set of .    Tuples  Let . For , define to be the -tuple with a one in the -th entry, and zeros elsewhere. Then is a spanning set for .    Matrices  Let . For each with and , define to be the matrix with a one in the -th entry, and zeros elsewhere. Then is a spanning set for .    Polynomials of bounded degree  Let . The set clearly spans . This is just another way of saying that the monomials of degree at most generate the polynomials of degree at most .    Polynomials  Let , the space of all polynomials. In a similar vein, the set of all monomials is a spanning set for .   Note the glaring difference between the first three examples, and the last: our standard spanning set for is infinite , whereas the previous examples are all finite spanning sets. You suspect, no doubt, that there is no finite spanning set for . We will be able to prove this shortly.   "
+},
+{
+  "id": "s_span_independence-3-13",
+  "level": "2",
+  "url": "s_span_independence.html#s_span_independence-3-13",
+  "type": "Example",
+  "number": "4.2.8",
+  "title": "Spanning sets are not unique.",
+  "body": " Spanning sets are not unique   For each and below, verify that is a spanning set for .    ,      , , .     ,           This was shown in     We must show, given any , we can find such that , or . We can find such if and only if the system with augmented matrix is consistent. This matrix row reduces to . Since the last column will never contain a leading one, we conclude that the system is consistent for any choice of , and thus that , as claimed.    We must show that given any we can find such that , or . According to this equality holds if and only if . As in the examples above, our reasoning implies if and only if this system is consistent for any choice of . Thus usual Gaussian elimination procedure tells us that this is indeed so. We leave the details to you.      "
+},
+{
+  "id": "d_linear_independence",
+  "level": "2",
+  "url": "s_span_independence.html#d_linear_independence",
+  "type": "Definition",
+  "number": "4.2.9",
+  "title": "Linear independence (for finite subsets).",
+  "body": " Linear independence (for finite subsets)  linear independence   Let be a vector space, let be a finite subset, and let be the distinct elements of : , for all . We say is linearly independent if the following condition holds: . We say is linearly dependent if it is not linearly independent; i.e., if we can find scalars with for some and . We call a linear combination  trivial if for all , and nontrivial if for some . Using this terminology, a set is linearly independent if the only linear combination of distinct elements of yielding the zero vector is the trivial one.   "
+},
+{
+  "id": "rm_linear_independence",
+  "level": "2",
+  "url": "s_span_independence.html#rm_linear_independence",
+  "type": "Remark",
+  "number": "4.2.10",
+  "title": "",
+  "body": "  The definition of linear independence is quite a mouthful! Some clarifying remarks:   To prove a set of distinct vectors is linearly independent, we must prove an implication : . More often than not you will do so in the direct manner: , assume you have a linear combination equal to the zero vector, then show that all coefficients must be zero.    By the same token, to show is linearly dependent, we must produce a nontrivial linear combination of distinct elements equal to the zero vector.    It is easy to see that is linearly dependent if and only if some element of can be written as a linear combination of other elements of : just take the nontrivial linear combination yielding the zero vector, and solve for the vector in this combination with the nonzero coefficient.  This makes precise what it means for a spanning set to have redundancies or not. If is linearly dependent, then one of its vectors can be written as a linear combination of the others, and thus can be thrown out when computing , the set of all linear combinations of . Conversely, if is linearly independent, then no element of can be written as a linear combination of the others; throwing any element out would thus result in being strictly smaller.      "
+},
+{
+  "id": "eg_independence_basic_examples",
+  "level": "2",
+  "url": "s_span_independence.html#eg_independence_basic_examples",
+  "type": "Example",
+  "number": "4.2.11",
+  "title": "Elementary examples.",
+  "body": " Elementary examples   Let be a vector space, and let be a subset.    If , then is linearly dependent: indeed, we have the nontrivial linear combination .    If , then is linearly independent if and only if . The previous comment shows why is a necessary condition. Let's see why it is sufficient.  Suppose , and suppose we have . By we have or ( ). Since , we conclude . This shows that the only linear combination of yielding is the trivial one.    Suppose , where . From the last remark, it follows that is linearly independent if and only if one of its elements is a scalar multiple of the other.  This makes it very easy to decide whether a two-element set is linearly independent. Note however, that the same observation does not apply to larger sets: , can be shown to be linearly dependent, and yet no element of is a scalar multiple of any other element.     "
+},
+{
+  "id": "proc_linear_independence",
+  "level": "2",
+  "url": "s_span_independence.html#proc_linear_independence",
+  "type": "Procedure",
+  "number": "4.2.12",
+  "title": "Investigating linear independence.",
+  "body": " Investigating linear independence     Write out the general vector equation  where the are arbitrary elements of the given set .    Translate this vector equation into a homogeneous linear system in the unknowns , using the definition of equality for your vector space.    Decide, using Gaussian elimination, whether this system has any nonzero ( , nontrivial) solutions.     "
+},
+{
+  "id": "ex_linear_independence",
+  "level": "2",
+  "url": "s_span_independence.html#ex_linear_independence",
+  "type": "Example",
+  "number": "4.2.13",
+  "title": "Linear independence.",
+  "body": " Linear independence   For each subset of the given vector space , decide whether is linearly independent.     ,      ,      , , where .        We have if and only if . After a little Gaussian elimination we see that is a nonzero solution to this system, and thus that Since there is a nontrivial linear combination of elements of yielding the zero vector, we conclude is linearly dependent.    Recall that the zero vector of is the zero polynomial . We have . Gaussian elimination shows that is the unique solution to this last system. We conclude that is linearly independent.    We have . Row reduction reveals that this last linear system has a free variable, and hence that there are infinitely many solutions to this system: , . We conclude that is linearly dependent.     "
+},
+{
+  "id": "d_linear_independence_arbitrary",
+  "level": "2",
+  "url": "s_span_independence.html#d_linear_independence_arbitrary",
+  "type": "Definition",
+  "number": "4.2.14",
+  "title": "Linear independence (for arbitrary subsets).",
+  "body": " Linear independence (for arbitrary subsets)   Let be a vector space. A subset is linearly independent if and only if every finite subset of is lineary independent in the sense of .   "
+},
+{
+  "id": "rm_linear_independence_arbitrary",
+  "level": "2",
+  "url": "s_span_independence.html#rm_linear_independence_arbitrary",
+  "type": "Remark",
+  "number": "4.2.15",
+  "title": "",
+  "body": "  A subtle question arises here: namely, whether our definition of linear independence for arbitrary sets is consistent with our definition for finite ones. In other words, given a set of distinct vectors, is it true that is linearly independent (in the sense of ) if and only if every subset is linearly independent (in the sense of )? The answer of course is yes. One direction is easy: since is a subset of itself, clearly if every subset is linearly independent, then is linearly independent. The other direction is left as an exercise ( ).   "
+},
+{
+  "id": "eg_lin_ind_P",
+  "level": "2",
+  "url": "s_span_independence.html#eg_lin_ind_P",
+  "type": "Example",
+  "number": "4.2.16",
+  "title": "Linear independence in <span class=\"process-math\">\\(P\\)<\/span>.",
+  "body": " Linear independence in  Consider the vector space of polynomial functions on . We show that the set is linearly independent. Given a finite subset , we can write ,where . By , we have if and only if . This proves is linearly independent. We have thus shown that any finite subset of is linearly independent, and thus conclude that is linearly independent by .  "
+},
+{
+  "id": "proc_linear_independence_functions",
+  "level": "2",
+  "url": "s_span_independence.html#proc_linear_independence_functions",
+  "type": "Procedure",
+  "number": "4.2.17",
+  "title": "Investigating linear independence of functions.",
+  "body": " Investigating linear independence of functions   Let , let , and let be a set of distinct elements of .    If you believe is linearly independent:    Write out the function equation  . Since the zero vector of is the zero function, the definition of function equality implies for all  .    Since is true for all , we can produce a homogeneous system of linear equations in the unknowns by picking elements of , and evaluating  at . The -th equation of the resulting system is thus .    If you can find elements so that the resulting homogeneous system in the unknowns has the unique solution , then we conclude that is linearly independent.      If you believe is linearly dependent:    A nontrivial linear combination of the equal to the zero function amounts to a function identity. Either cite a well-known function identity involving the , or else prove an identity of your own.       "
+},
+{
+  "id": "rm_linear_independence_functions",
+  "level": "2",
+  "url": "s_span_independence.html#rm_linear_independence_functions",
+  "type": "Remark",
+  "number": "4.2.18",
+  "title": "",
+  "body": "  When using to show is linearly independent, you want to produce enough linear equations to force the unknowns to all be equal to 0. Note that since you you have unknowns, you need at at least  equations, and so must pick at least elements . Do so judiciously in order to (a) force the to all be equal to 0, and (b) make the necessary computations palatable.   "
+},
+{
+  "id": "ss_linear_independence_functionspace-7",
+  "level": "2",
+  "url": "s_span_independence.html#ss_linear_independence_functionspace-7",
+  "type": "Example",
+  "number": "4.2.19",
+  "title": "Linear independence of functions.",
+  "body": " Linear independence of functions   Let . Determine whether the given subset is linearly independent.          .        We claim is linearly independent. If , then , for all . In particular, the equality is true when evaluated at , yielding the following linear system: , or . This system can be now be solved essentially by inspection: the first equation implies ; setting , in the third equation, we conclude ; the second equation now implies . We conclude that . Thus the only linear combination of yielding the zero function is the trivial one, showing that is linearly independent.    We claim is linearly dependent. As discussed in , to prove this we have to produce an identity involving these functions. The double-angle formula from trigonometry tells us that for all (in fact for all ). It follows that for all , or . Since we have found a nontrivial linear combination of elements of yielding the zero vector, we conclude that is linearly dependent.     "
+},
+{
+  "id": "fig_vid_ind_func",
+  "level": "2",
+  "url": "s_span_independence.html#fig_vid_ind_func",
+  "type": "Figure",
+  "number": "4.2.20",
+  "title": "Video: linear independence of functions",
+  "body": " Video: linear independence of functions  Video: linear independence of functions   "
+},
+{
+  "id": "s_span_independence_ex-1-2",
+  "level": "2",
+  "url": "s_span_independence.html#s_span_independence_ex-1-2",
+  "type": "Exercise",
+  "number": "4.2.4.1",
+  "title": "",
+  "body": "  Let be a linear combination of .  Select the best statement.    We only know that .    There is no obvious relationship between and .    .    when is a scalar multiple of one of .    none of the above     span .     "
+},
+{
+  "id": "s_span_independence_ex-1-3",
+  "level": "2",
+  "url": "s_span_independence.html#s_span_independence_ex-1-3",
+  "type": "Exercise",
+  "number": "4.2.4.2",
+  "title": "",
+  "body": "  Let be a linearly independent set of vectors.  Select the best statement.    is also a linearly independent set of vectors unless .    could be a linearly independent or linearly dependent set of vectors depending on the vectors chosen.    is always a linearly dependent set of vectors.    is also a linearly independent set of vectors unless is a scalar multiple another vector in the set.    is always a linearly independent set of vectors.    none of the above     is a linear combination of then is linearly dependent. Otherwise the set in linearly independent. could be a linearly independent or linearly dependent set of vectors depending on the vectors chosen.     "
+},
+{
+  "id": "s_span_independence_ex-1-4",
+  "level": "2",
+  "url": "s_span_independence.html#s_span_independence_ex-1-4",
+  "type": "Exercise",
+  "number": "4.2.4.3",
+  "title": "",
+  "body": "  Let be a linearly dependent set of vectors.  Select the best statement.    is a linearly independent set of vectors unless is a linear combination of other vectors in the set.    is always a linearly independent set of vectors.    could be a linearly independent or linearly dependent set of vectors depending on the vectors chosen.    is a linearly independent set of vectors unless .    is always a linearly dependent set of vectors.    none of the above     is always a linearly dependent set of vectors.     "
+},
+{
+  "id": "s_span_independence_ex-1-5",
+  "level": "2",
+  "url": "s_span_independence.html#s_span_independence_ex-1-5",
+  "type": "Exercise",
+  "number": "4.2.4.4",
+  "title": "",
+  "body": "  Are the vectors , and linearly independent?    Choose    linearly dependent    linearly independent    If they are linearly dependent, find scalars that are not all zero such that the equation below is true. If they are linearly independent, find the only scalars that will make the equation below true.        .                "
+},
+{
+  "id": "s_span_independence_ex-1-6",
+  "level": "2",
+  "url": "s_span_independence.html#s_span_independence_ex-1-6",
+  "type": "Exercise",
+  "number": "4.2.4.5",
+  "title": "",
+  "body": "  Let be the vector space of symmetric matrices and be the subspace  a. Find a nonzero element in .    b. Find an element in that is not in .        "
+},
+{
+  "id": "s_span_independence_ex-2-2",
+  "level": "2",
+  "url": "s_span_independence.html#s_span_independence_ex-2-2",
+  "type": "Exercise",
+  "number": "4.2.4.6",
+  "title": "",
+  "body": "  ,   "
+},
+{
+  "id": "s_span_independence_ex-2-3",
+  "level": "2",
+  "url": "s_span_independence.html#s_span_independence_ex-2-3",
+  "type": "Exercise",
+  "number": "4.2.4.7",
+  "title": "",
+  "body": "  ,   "
+},
+{
+  "id": "s_span_independence_ex-2-4",
+  "level": "2",
+  "url": "s_span_independence.html#s_span_independence_ex-2-4",
+  "type": "Exercise",
+  "number": "4.2.4.8",
+  "title": "",
+  "body": "  ,   "
+},
+{
+  "id": "s_span_independence_ex-2-5",
+  "level": "2",
+  "url": "s_span_independence.html#s_span_independence_ex-2-5",
+  "type": "Exercise",
+  "number": "4.2.4.9",
+  "title": "",
+  "body": "  ,   "
+},
+{
+  "id": "s_span_independence_ex-3",
+  "level": "2",
+  "url": "s_span_independence.html#s_span_independence_ex-3",
+  "type": "Exercise",
+  "number": "4.2.4.10",
+  "title": "",
+  "body": " Let and let , where . Determine all values for which is linearly independent.  "
+},
+{
+  "id": "s_span_independence_ex-4",
+  "level": "2",
+  "url": "s_span_independence.html#s_span_independence_ex-4",
+  "type": "Exercise",
+  "number": "4.2.4.11",
+  "title": "",
+  "body": " Let , and define , , .    Compute , identifying it as a certain familiar set of matrices.    Decide whether is independent.    "
+},
+{
+  "id": "ex_linear_independence_arbitrary",
+  "level": "2",
+  "url": "s_span_independence.html#ex_linear_independence_arbitrary",
+  "type": "Exercise",
+  "number": "4.2.4.12",
+  "title": "",
+  "body": " Let be a vector space, and let be a subset of distinct vectors. Assume is linearly independent. Show that any subset is linearly independent.   The empty set is trivially linearly independent. Let represent an arbitrary nonempty set of distinct elements of . You can show is linearly independent by extending linear combinations of the elements of to a linear combination of the elements of in a certain way.  "
+},
+{
+  "id": "ex_span_independence_inveribility",
+  "level": "2",
+  "url": "s_span_independence.html#ex_span_independence_inveribility",
+  "type": "Exercise",
+  "number": "4.2.4.13",
+  "title": "Span, independence, and invertibility.",
+  "body": "Span, independence, and invertibility  In this exercise we identify elements of with column vectors.  Let be a subset of , and let be the matrix whose -th column is : , .    Prove: if and only if is invertible.    Prove: is linearly independent if and only if is invertible.     Use the column method ( ) and the invertibility theorem ( )  "
+},
+{
+  "id": "ex_span_independence_transform",
+  "level": "2",
+  "url": "s_span_independence.html#ex_span_independence_transform",
+  "type": "Exercise",
+  "number": "4.2.4.14",
+  "title": "Linear transformations, span, and independence.",
+  "body": "Linear transformations, span, and independence  Suppose is a linear transformation. Let be a subset of , and let be the image of under : , . Assume and for all .  Answer true or false: if true, provide a proof; if false, provide an explicit counterexample. Note: for a complete counterexample you need to specify , and .    If is linearly independent, then is linearly independent.    If is linearly independent, then is linearly independent.    If is a spanning set for , then is a spanning set for .    "
+},
+{
+  "id": "s_basis",
+  "level": "1",
+  "url": "s_basis.html",
+  "type": "Section",
+  "number": "4.3",
+  "title": "Bases",
+  "body": " Bases   Now that we have the notions of span and linear independence in place, we simply combine them to define a basis of a vector space. In the spirit of , a basis of a vector space should be understood as a minimal spanning set.  This section includes many theoretical results. There are two in particular that are worth highlighting, especially in regard to computational techniques for abstract vector spaces:   If is a basis of containing exactly elements, then any other basis also contains exactly elements. ( )    If is a basis for , then every element of can be written as a linear combination of elements of in a unique way . ( )   The first result allows us to define the dimension of a vector space as the number of elements in any given basis. The second result allows us to take any -dimensional vector space with chosen basis and effectively identify vectors with the sequence , where . This observation has the following consequence: given any -dimensional vector space , no matter how exotic, once we choose a basis of , we can reduce any and all linear algebraic questions or computations about to a corresponding question in . We will elaborate this idea further in .    Bases of vector spaces   Basis  basis of a vector space   A subset of a vector space is called a basis if    spans , and     is linearly independent.   If the basis comes equipped with an ordering ( , is an ordered set), then we call and ordered basis      Some standard bases   The examples of standard spanning sets in are easily seen to be linearly independent, and hence are in fact bases. We list them again here, using the same notation, and refer to these as standard bases for the given spaces.    Zero space  Let . The empty is a basis for . Note that spans by definition ( ), and it satisfies the defining implication of linear independence ( ) trivially.    Tuples  Let . The set is the standard basis of .    Matrices  Let . The set is the standard basis of .    Polynomials of bounded degree  Let . The set is the standard basis of .    Polynomials  Let , the space of all polynomials. The set is the standard basis of .      Just as with spanning sets, bases are not in general unique: in fact, for any nonzero vector space there are infinitely many different bases.   Some nonstandard bases   For each and below, verify that is a basis of .    , .     , .     , .       Each verification amounts to showing, using the techniques from , that the given spans the given and is linearly independent. We illustrate with (1) and (2), leaving (3) to the reader.    Since neither element of is a scalar multiple of the other, the set is linearly independent. To see that spans we show that for any we have for some . Indeed we may take and . (These formulas were obtained by solving the corresponding system of two equations in the unknowns and .)    To show spans we must show that for any we can find such that , or . Equating coefficients yields the system of equations , which corresponds to the matrix equation . An easy computation shows , and thus that is invertible. We conclude that the system can be solved for (set ), and thus that spans .  Our work above now can be used to also show that is linearly independent. Replacing the arbitrary polynomial with the zero polynomial , we see that a linear combination corresponds to a solution to the matrix equation . Since is invertible, we conclude that ( ), and thus that . This shows is linearly independent.      Not every vector space has a finite basis, as we show in the next example.   has no finite basis   Prove that , the space of all real polynomials, does not have a finite basis.    We show that no finite set of polynomials can span all of ; it follows that does not have a finite basis.  Indeed let be a finite set of polynomials, and let be the maximal degree of all the polynomials . Then for all , in which case : , is a subspace of the space of polynomials of degree at most . Since , we conclude that , as claimed.      By and its corollaries, we know that if has a finite basis, then and subspace of also has a finite basis. Let be an interval. Since is a chain of subspaces, and since does not have a finite basis, we conclude that none of these other function spaces has a finite basis.     Basis for   Let , and let , where is any positive real number. Prove: is a basis if and only if .      Suppose . Since , we have . Any set containing the zero vector is linearly dependent ( ). Thus is not a basis.     Since consists of one nonzero element, it is linearly independent ( ). It remains only to show that spans , which amounts to showing that every is a scalar multiple of . Since by definition scalar multiplication in is defined as , this is equivalent to showing that every can be written in the form . This fact is a familiar result from calculus, where you learn that the range (or image) of any exponential function is the set of all positive real numbers.     Proceeding directly from the definition, to show a set is a basis of we have to do two steps: (i) show ; (ii) show that is linearly independent. The following theorem offers gives rise to a one-step technique for proving is a basis: show that every element of can be written as a linear combination of elements of in a unique way .   Basis equivalence   Let be a subset of the vector space . The following statements are equivalent:    The set is a basis of     Every element can be written as a linear combination of elements of , and furthermore this linear combination is unique: , if we have , for some distinct vectors , then for all .       Implication:  Suppose is a basis. By definition, spans , and so every element of can be written as a linear combination of elements of . It remains to show that this linear combination is unique in the sense described. This follows from the fact that is linearly independent. Indeed, if , then after some algebra we have . Since is linearly independent and since the are distinct, we must have , and hence for all .    Implication:  If satisfies (2), then clearly it spans . The uniqueness of linear combinations of elements of now easily implies is linearly independent: .      yields the following one-step technique for proving a set is a basis.   One-step technique for bases   Let be a vector space. To prove a subset is a basis it suffices to show that every can be written as a linear combination of elements of in a unique way, as specified in .     One-step technique for   Use the one step technique to decide whether the set is a basis of .    We ask whether for all elements we can write for a unique choice of . This is equivalent to asking whether the matrix equation . has a unique solution for any choice of . Performing Gaussian elimination on the corresponding augmented matrix yields . Since the third column of does not have a leading one, we conclude that the corresponding system has a free variable, and hence that for any given the equation has either no solutions (inconsistent) or infinitely many solutions. In particular, it is not true that there is always a unique solution. Thus is not a basis according to the one-step technique.  In fact, our Gaussian elimination analysis tells us exactly how fails to be a basis. Since the last column of does not have a leading one, the corresponding system is always consistent: , there is always at least one solution to for each . This tells us that is a spanning set of . On the other hand, the existence of the free variable tells us that for , we will have infinitely many choices satisfying . This shows that is not linearly independent.     One-step technique for   Use the one-step technique to decide whether the set is a basis of .    Take an arbitrary element and consider the polynomial equation The usual remark about polynomial equality implies that this is equivalent to the matrix equation . The matrix on the left is invertible, allowing us to solve: . We conclude that any can be written as in a unique way: namely, with and . Thus is a basis.     Video example: deciding if a set is a basis   Video: deciding if a set is a basis ( )  Video: deciding if a set is a basis ( )     Video: deciding if a set is a basis  Video: deciding if a set is a basis     Besides deciding whether a given set is a basis, we will often want to come up with a basis of a given space on our own. The following by inspection technique often comes in handy in cases where the elements of the vector space can be described in a simple parametric manner.   By-inspection basis technique   To produce a basis of a vector space  by inspection , proceed as follows.   Paremetric description  Give a simple parametric description of the general element of .    Spanning set  If your parametric description is simple enough, you should be able to extract from it a natural spanning set of .    Linear independence  If your parametric description is free of redundancies, then will likely be linearly independent. Verify this using .        By-inspection basis technique   Let be the subspace of all symmetric matrices. Use to produce a basis of .    We follow the three steps of .   A general symmetric matrix can be described parametrically as .    We have . It follows immediately that the set is a spanning set, where .    The expression tells us that . This proves is linearly independent.   Since is a linearly independent spanning set of , it is a basis of .      Bases and linear transformations  In we saw that a vector space is completely and concisely determined by a basis in the sense that all elements of can be expressed in a unique was as a linear combination of elements of . A similar principle applies to linear transformations. Roughly speaking, a linear transformation defined on a vector space is completely determined by where its sends elements of a basis for . This is spelled out in more detail in and the remark that follows.   Bases and linear transformations   Let be a basis for the vector space .    Let and be linear transformations from to . If for all , then .    Let be a vector space. Any mapping assigning each element of to a chosen element extends uniquely to a linear transformation satisfying for all . In more detail, given any , if , where and for all , then .       Proof of (i)  Assume and are linear transformations from to satisfying for all . Given any we can write . It follows that . Since for all , we have .    Proof of (ii)  That there can me at most one such follows from (i). Thus we need only show that such a exists.  Since any has a unique expression of the form , where for all , the formula in defines a function in a well-defined manner. Note also that the formula still applies even if some of the coefficients are equal to 0: if , then , and the right-hand side of is unchanged. We will use this fact below.  We now show that is linear. Given we can find a common collection of elements for which for some . We can no longer assume that and for all , but as observed above we still have . Given any , we have . Thus is a linear transformation.      Transformations determined by behavior on basis   Let's paraphrase the two results of .   A linear transformation is completely determined by its behavior on a basis . Once we know the images for all , the image for any other is then completely determined. Put another way, if two linear transformations out of  agree on the elements of a basis , then they agree for all elements of .    Once we have a basis on hand, it is easy to construct linear transformations : simply choose images for all in any manner you like, and then define for any element using .        Composition of reflections   Let be reflection across the -axis, and let be reflection across the -axis. (See .) Use an argument in the spirit of statement (i) from to show that . (Note: this equality can also be shown using our matrix formulas for rotations and reflections. See . )    Since and are both linear transformations ( ), so is the composition . We wish to show . Since is also a linear transformation, it suffices by to show that and agree on a basis of . Take the standard basis . Compute: . Since and agree on the basis , we have .    As a corollary to we can at last complete the partial description of linear transformations of the form given in .   Matrix transformations   Given any linear transformation there is a unique matrix such that . In fact we have , where is the standard basis of . As a result, in the special case where the domain and codomain are both spaces of tuples, all linear transformations are matrix transformations.    Let be the standard basis of , and let be the matrix defined as . In other words, the -th column of is , considered as an column vector. The corresponding matrix transformation is linear by . Since is linear by assumption, applies: to show we need only show that for all . We have . Thus , as claimed.    Besides rounding out our theoretical discussion of linear transformations from to , computationally provides a recipe for computing a matrix formula for a linear transformation . In other words, it tells us how to build the , column by column, such that for all . For reasons that will be made more clear in , we will call the standard matrix of .   Standard matrix of linear   Let be a linear transformation. The standard matrix of is the unique matrix satisfying . Equivalently, is the unique matrix satisfying for all .     Standard matrix computation   The function defined as is linear.    Use to compute the standard matrix of .    Use to compute .      We have . Let . Since provides a matrix formula for we have . Thus , as you can confirm.     Rotation matrices revisited   Fix an angle . Taking for granted that the rotation operation is a linear transformation, re-derive the matrix formula for : , compute , the standard matrix of .    Let . According to  , since gets rotated by to , and gets rotated to .       WeBWork Exercises    Find a basis for the vector space where is the vector space of polynomials in with degree less than 3.   ,               Find a basis for the kernel of the linear transformation defined by where is the vector space of polynomials in with degree less than 3.   ,               Find a basis for the vector space of matrices with trace 0.   , ,  .         A square matrix is half-magic if the sum of the numbers in each row and column is the same. Find a basis for the vector space of half-magic squares.   ,  .         One-step basis technique   For each vector space and subset , use the one-step technique ( ) to decide whether is a basis for .                                            , where      , where        By-inspection basis technique   For each given and subspace , provide a basis for using the by inspection technique . In more detail:    Give a simple parametric description of the elements of .    If your parametric description is simple enough, you should be able to find an obvious spanning set of .    Argue that your spanning set is linearly independent.       ,      ,      ,      , is set of all matrices whose rows and columns all sum to zero     Suppose be a basis for the vector space . Let , where . Prove that is a basis.    Let be a set of distinct elements of , let be an invertible matrix, and let . Prove that is a basis of if and only if is a basis of as follows.    Prove that for all : , contains distinct elements.    Prove that if is a basis of , then is also a basis for any invertible matrix .    Now prove that if is a basis of for the invertible matrix , then is a basis of .  Hint: in (b) you showed that if you start with any basis and apply any invertible matrix to the elements of this basis, then you end up with another basis; think of a useful choice of matrix for the present situation.     Bases for important matrix subspaces  Let . For each of the following subspaces , give a basis of . You must explicitly describe the elements of your basis as linear combinations of the elements of the standard basis for . No justification needed, as long as your proposed basis is simple enough.    Upper triangular matrices       Symmetric matrices       Skew-symmetric matrices        It might help to look at the and cases to get an idea of what these bases should be.    The set is a basis of . Suppose the linear transformation satisfies . Find a formula for , where is a general element of .    The set is a basis of . Suppose the linear transformation satisfies . Find a formula for , where is a general element of .    The set is a basis of . Suppose the linear transformation satisfies . Show that the general formula for is given by .   Use (1) of .    Suppose is a linear transformation, and is a basis of for which for all . Show that : , is the zero transformation from to .   Use (1) of .    Suppose is a linear transformation, and is a basis of for which for all . Show that : , is the identity transformation of .   Use (1) of .    Let be a linear transformation. Assume there is a basis of and a constant such that for all . Prove: , where .   Use (1) of .    Matrix transformations   For each linear transformation and : (a) compute the standard matrix of using ; (b) compute using . You may take for granted that the given is linear.               "
+},
+{
+  "id": "d_basis",
+  "level": "2",
+  "url": "s_basis.html#d_basis",
+  "type": "Definition",
+  "number": "4.3.1",
+  "title": "Basis.",
+  "body": " Basis  basis of a vector space   A subset of a vector space is called a basis if    spans , and     is linearly independent.   If the basis comes equipped with an ordering ( , is an ordered set), then we call and ordered basis    "
+},
+{
+  "id": "rm_standard_bases",
+  "level": "2",
+  "url": "s_basis.html#rm_standard_bases",
+  "type": "Remark",
+  "number": "4.3.2",
+  "title": "Some standard bases.",
+  "body": " Some standard bases   The examples of standard spanning sets in are easily seen to be linearly independent, and hence are in fact bases. We list them again here, using the same notation, and refer to these as standard bases for the given spaces.    Zero space  Let . The empty is a basis for . Note that spans by definition ( ), and it satisfies the defining implication of linear independence ( ) trivially.    Tuples  Let . The set is the standard basis of .    Matrices  Let . The set is the standard basis of .    Polynomials of bounded degree  Let . The set is the standard basis of .    Polynomials  Let , the space of all polynomials. The set is the standard basis of .     "
+},
+{
+  "id": "ss_bases-5",
+  "level": "2",
+  "url": "s_basis.html#ss_bases-5",
+  "type": "Example",
+  "number": "4.3.3",
+  "title": "Some nonstandard bases.",
+  "body": " Some nonstandard bases   For each and below, verify that is a basis of .    , .     , .     , .       Each verification amounts to showing, using the techniques from , that the given spans the given and is linearly independent. We illustrate with (1) and (2), leaving (3) to the reader.    Since neither element of is a scalar multiple of the other, the set is linearly independent. To see that spans we show that for any we have for some . Indeed we may take and . (These formulas were obtained by solving the corresponding system of two equations in the unknowns and .)    To show spans we must show that for any we can find such that , or . Equating coefficients yields the system of equations , which corresponds to the matrix equation . An easy computation shows , and thus that is invertible. We conclude that the system can be solved for (set ), and thus that spans .  Our work above now can be used to also show that is linearly independent. Replacing the arbitrary polynomial with the zero polynomial , we see that a linear combination corresponds to a solution to the matrix equation . Since is invertible, we conclude that ( ), and thus that . This shows is linearly independent.     "
+},
+{
+  "id": "ss_bases-7",
+  "level": "2",
+  "url": "s_basis.html#ss_bases-7",
+  "type": "Example",
+  "number": "4.3.4",
+  "title": "<span class=\"process-math\">\\(P\\)<\/span> has no finite basis.",
+  "body": " has no finite basis   Prove that , the space of all real polynomials, does not have a finite basis.    We show that no finite set of polynomials can span all of ; it follows that does not have a finite basis.  Indeed let be a finite set of polynomials, and let be the maximal degree of all the polynomials . Then for all , in which case : , is a subspace of the space of polynomials of degree at most . Since , we conclude that , as claimed.   "
+},
+{
+  "id": "rm_dimension_functionspaces",
+  "level": "2",
+  "url": "s_basis.html#rm_dimension_functionspaces",
+  "type": "Remark",
+  "number": "4.3.5",
+  "title": "",
+  "body": "  By and its corollaries, we know that if has a finite basis, then and subspace of also has a finite basis. Let be an interval. Since is a chain of subspaces, and since does not have a finite basis, we conclude that none of these other function spaces has a finite basis.   "
+},
+{
+  "id": "ss_bases-9",
+  "level": "2",
+  "url": "s_basis.html#ss_bases-9",
+  "type": "Example",
+  "number": "4.3.6",
+  "title": "Basis for <span class=\"process-math\">\\(\\R_{>0}\\)<\/span>.",
+  "body": " Basis for   Let , and let , where is any positive real number. Prove: is a basis if and only if .      Suppose . Since , we have . Any set containing the zero vector is linearly dependent ( ). Thus is not a basis.     Since consists of one nonzero element, it is linearly independent ( ). It remains only to show that spans , which amounts to showing that every is a scalar multiple of . Since by definition scalar multiplication in is defined as , this is equivalent to showing that every can be written in the form . This fact is a familiar result from calculus, where you learn that the range (or image) of any exponential function is the set of all positive real numbers.    "
+},
+{
+  "id": "th_basis_equivalence",
+  "level": "2",
+  "url": "s_basis.html#th_basis_equivalence",
+  "type": "Theorem",
+  "number": "4.3.7",
+  "title": "Basis equivalence.",
+  "body": " Basis equivalence   Let be a subset of the vector space . The following statements are equivalent:    The set is a basis of     Every element can be written as a linear combination of elements of , and furthermore this linear combination is unique: , if we have , for some distinct vectors , then for all .       Implication:  Suppose is a basis. By definition, spans , and so every element of can be written as a linear combination of elements of . It remains to show that this linear combination is unique in the sense described. This follows from the fact that is linearly independent. Indeed, if , then after some algebra we have . Since is linearly independent and since the are distinct, we must have , and hence for all .    Implication:  If satisfies (2), then clearly it spans . The uniqueness of linear combinations of elements of now easily implies is linearly independent: .    "
+},
+{
+  "id": "proc_basis_onestep",
+  "level": "2",
+  "url": "s_basis.html#proc_basis_onestep",
+  "type": "Procedure",
+  "number": "4.3.8",
+  "title": "One-step technique for bases.",
+  "body": " One-step technique for bases   Let be a vector space. To prove a subset is a basis it suffices to show that every can be written as a linear combination of elements of in a unique way, as specified in .   "
+},
+{
+  "id": "eg_basis_onestep_R3",
+  "level": "2",
+  "url": "s_basis.html#eg_basis_onestep_R3",
+  "type": "Example",
+  "number": "4.3.9",
+  "title": "One-step technique for <span class=\"process-math\">\\(\\R^3\\)<\/span>.",
+  "body": " One-step technique for   Use the one step technique to decide whether the set is a basis of .    We ask whether for all elements we can write for a unique choice of . This is equivalent to asking whether the matrix equation . has a unique solution for any choice of . Performing Gaussian elimination on the corresponding augmented matrix yields . Since the third column of does not have a leading one, we conclude that the corresponding system has a free variable, and hence that for any given the equation has either no solutions (inconsistent) or infinitely many solutions. In particular, it is not true that there is always a unique solution. Thus is not a basis according to the one-step technique.  In fact, our Gaussian elimination analysis tells us exactly how fails to be a basis. Since the last column of does not have a leading one, the corresponding system is always consistent: , there is always at least one solution to for each . This tells us that is a spanning set of . On the other hand, the existence of the free variable tells us that for , we will have infinitely many choices satisfying . This shows that is not linearly independent.   "
+},
+{
+  "id": "eg_basis_onestep_p1",
+  "level": "2",
+  "url": "s_basis.html#eg_basis_onestep_p1",
+  "type": "Example",
+  "number": "4.3.10",
+  "title": "One-step technique for <span class=\"process-math\">\\(P_1\\)<\/span>.",
+  "body": " One-step technique for   Use the one-step technique to decide whether the set is a basis of .    Take an arbitrary element and consider the polynomial equation The usual remark about polynomial equality implies that this is equivalent to the matrix equation . The matrix on the left is invertible, allowing us to solve: . We conclude that any can be written as in a unique way: namely, with and . Thus is a basis.   "
+},
+{
+  "id": "fig_vid_basis",
+  "level": "2",
+  "url": "s_basis.html#fig_vid_basis",
+  "type": "Figure",
+  "number": "4.3.11",
+  "title": "Video: deciding if a set is a basis (<span class=\"process-math\">\\(\\R^n\\)<\/span>)",
+  "body": " Video: deciding if a set is a basis ( )  Video: deciding if a set is a basis ( )   "
+},
+{
+  "id": "fig_vid_basis_exotic",
+  "level": "2",
+  "url": "s_basis.html#fig_vid_basis_exotic",
+  "type": "Figure",
+  "number": "4.3.12",
+  "title": "Video: deciding if a set is a basis",
+  "body": " Video: deciding if a set is a basis  Video: deciding if a set is a basis   "
+},
+{
+  "id": "proc_provide_basis",
+  "level": "2",
+  "url": "s_basis.html#proc_provide_basis",
+  "type": "Procedure",
+  "number": "4.3.13",
+  "title": "By-inspection basis technique.",
+  "body": " By-inspection basis technique   To produce a basis of a vector space  by inspection , proceed as follows.   Paremetric description  Give a simple parametric description of the general element of .    Spanning set  If your parametric description is simple enough, you should be able to extract from it a natural spanning set of .    Linear independence  If your parametric description is free of redundancies, then will likely be linearly independent. Verify this using .      "
+},
+{
+  "id": "eg_byinspection_basis",
+  "level": "2",
+  "url": "s_basis.html#eg_byinspection_basis",
+  "type": "Example",
+  "number": "4.3.14",
+  "title": "By-inspection basis technique.",
+  "body": " By-inspection basis technique   Let be the subspace of all symmetric matrices. Use to produce a basis of .    We follow the three steps of .   A general symmetric matrix can be described parametrically as .    We have . It follows immediately that the set is a spanning set, where .    The expression tells us that . This proves is linearly independent.   Since is a linearly independent spanning set of , it is a basis of .   "
+},
+{
+  "id": "th_bases_transformations",
+  "level": "2",
+  "url": "s_basis.html#th_bases_transformations",
+  "type": "Theorem",
+  "number": "4.3.15",
+  "title": "Bases and linear transformations.",
+  "body": " Bases and linear transformations   Let be a basis for the vector space .    Let and be linear transformations from to . If for all , then .    Let be a vector space. Any mapping assigning each element of to a chosen element extends uniquely to a linear transformation satisfying for all . In more detail, given any , if , where and for all , then .       Proof of (i)  Assume and are linear transformations from to satisfying for all . Given any we can write . It follows that . Since for all , we have .    Proof of (ii)  That there can me at most one such follows from (i). Thus we need only show that such a exists.  Since any has a unique expression of the form , where for all , the formula in defines a function in a well-defined manner. Note also that the formula still applies even if some of the coefficients are equal to 0: if , then , and the right-hand side of is unchanged. We will use this fact below.  We now show that is linear. Given we can find a common collection of elements for which for some . We can no longer assume that and for all , but as observed above we still have . Given any , we have . Thus is a linear transformation.    "
+},
+{
+  "id": "rm_bases_transformations",
+  "level": "2",
+  "url": "s_basis.html#rm_bases_transformations",
+  "type": "Remark",
+  "number": "4.3.16",
+  "title": "Transformations determined by behavior on basis.",
+  "body": " Transformations determined by behavior on basis   Let's paraphrase the two results of .   A linear transformation is completely determined by its behavior on a basis . Once we know the images for all , the image for any other is then completely determined. Put another way, if two linear transformations out of  agree on the elements of a basis , then they agree for all elements of .    Once we have a basis on hand, it is easy to construct linear transformations : simply choose images for all in any manner you like, and then define for any element using .      "
+},
+{
+  "id": "ss_bases_transformations-5",
+  "level": "2",
+  "url": "s_basis.html#ss_bases_transformations-5",
+  "type": "Example",
+  "number": "4.3.17",
+  "title": "Composition of reflections.",
+  "body": " Composition of reflections   Let be reflection across the -axis, and let be reflection across the -axis. (See .) Use an argument in the spirit of statement (i) from to show that . (Note: this equality can also be shown using our matrix formulas for rotations and reflections. See . )    Since and are both linear transformations ( ), so is the composition . We wish to show . Since is also a linear transformation, it suffices by to show that and agree on a basis of . Take the standard basis . Compute: . Since and agree on the basis , we have .   "
+},
+{
+  "id": "cor_matrix_transformations",
+  "level": "2",
+  "url": "s_basis.html#cor_matrix_transformations",
+  "type": "Corollary",
+  "number": "4.3.18",
+  "title": "Matrix transformations.",
+  "body": " Matrix transformations   Given any linear transformation there is a unique matrix such that . In fact we have , where is the standard basis of . As a result, in the special case where the domain and codomain are both spaces of tuples, all linear transformations are matrix transformations.    Let be the standard basis of , and let be the matrix defined as . In other words, the -th column of is , considered as an column vector. The corresponding matrix transformation is linear by . Since is linear by assumption, applies: to show we need only show that for all . We have . Thus , as claimed.   "
+},
+{
+  "id": "d_transformation_standard_matrix",
+  "level": "2",
+  "url": "s_basis.html#d_transformation_standard_matrix",
+  "type": "Definition",
+  "number": "4.3.19",
+  "title": "Standard matrix of linear <span class=\"process-math\">\\(T\\colon \\R^n\\rightarrow \\R^m\\)<\/span>.",
+  "body": " Standard matrix of linear   Let be a linear transformation. The standard matrix of is the unique matrix satisfying . Equivalently, is the unique matrix satisfying for all .   "
+},
+{
+  "id": "eg_standard_matrix",
+  "level": "2",
+  "url": "s_basis.html#eg_standard_matrix",
+  "type": "Example",
+  "number": "4.3.20",
+  "title": "Standard matrix computation.",
+  "body": " Standard matrix computation   The function defined as is linear.    Use to compute the standard matrix of .    Use to compute .      We have . Let . Since provides a matrix formula for we have . Thus , as you can confirm.   "
+},
+{
+  "id": "eg_rotation_via_standard_matrix",
+  "level": "2",
+  "url": "s_basis.html#eg_rotation_via_standard_matrix",
+  "type": "Example",
+  "number": "4.3.21",
+  "title": "Rotation matrices revisited.",
+  "body": " Rotation matrices revisited   Fix an angle . Taking for granted that the rotation operation is a linear transformation, re-derive the matrix formula for : , compute , the standard matrix of .    Let . According to  , since gets rotated by to , and gets rotated to .   "
+},
+{
+  "id": "s_basis_ex-1-2",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-1-2",
+  "type": "Exercise",
+  "number": "4.3.3.1",
+  "title": "",
+  "body": "  Find a basis for the vector space where is the vector space of polynomials in with degree less than 3.   ,            "
+},
+{
+  "id": "s_basis_ex-1-3",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-1-3",
+  "type": "Exercise",
+  "number": "4.3.3.2",
+  "title": "",
+  "body": "  Find a basis for the kernel of the linear transformation defined by where is the vector space of polynomials in with degree less than 3.   ,            "
+},
+{
+  "id": "s_basis_ex-1-4",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-1-4",
+  "type": "Exercise",
+  "number": "4.3.3.3",
+  "title": "",
+  "body": "  Find a basis for the vector space of matrices with trace 0.   , ,  .      "
+},
+{
+  "id": "s_basis_ex-1-5",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-1-5",
+  "type": "Exercise",
+  "number": "4.3.3.4",
+  "title": "",
+  "body": "  A square matrix is half-magic if the sum of the numbers in each row and column is the same. Find a basis for the vector space of half-magic squares.   ,  .      "
+},
+{
+  "id": "s_basis_ex-2-3",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-2-3",
+  "type": "Exercise",
+  "number": "4.3.3.5",
+  "title": "",
+  "body": "                "
+},
+{
+  "id": "s_basis_ex-2-4",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-2-4",
+  "type": "Exercise",
+  "number": "4.3.3.6",
+  "title": "",
+  "body": "                "
+},
+{
+  "id": "s_basis_ex-2-5",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-2-5",
+  "type": "Exercise",
+  "number": "4.3.3.7",
+  "title": "",
+  "body": "       , where      , where     "
+},
+{
+  "id": "s_basis_ex-3-3",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-3-3",
+  "type": "Exercise",
+  "number": "4.3.3.8",
+  "title": "",
+  "body": "  ,   "
+},
+{
+  "id": "s_basis_ex-3-4",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-3-4",
+  "type": "Exercise",
+  "number": "4.3.3.9",
+  "title": "",
+  "body": "  ,   "
+},
+{
+  "id": "s_basis_ex-3-5",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-3-5",
+  "type": "Exercise",
+  "number": "4.3.3.10",
+  "title": "",
+  "body": "  ,   "
+},
+{
+  "id": "s_basis_ex-3-6",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-3-6",
+  "type": "Exercise",
+  "number": "4.3.3.11",
+  "title": "",
+  "body": "  , is set of all matrices whose rows and columns all sum to zero  "
+},
+{
+  "id": "s_basis_ex-4",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-4",
+  "type": "Exercise",
+  "number": "4.3.3.12",
+  "title": "",
+  "body": " Suppose be a basis for the vector space . Let , where . Prove that is a basis.  "
+},
+{
+  "id": "s_basis_ex-5",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-5",
+  "type": "Exercise",
+  "number": "4.3.3.13",
+  "title": "",
+  "body": " Let be a set of distinct elements of , let be an invertible matrix, and let . Prove that is a basis of if and only if is a basis of as follows.    Prove that for all : , contains distinct elements.    Prove that if is a basis of , then is also a basis for any invertible matrix .    Now prove that if is a basis of for the invertible matrix , then is a basis of .  Hint: in (b) you showed that if you start with any basis and apply any invertible matrix to the elements of this basis, then you end up with another basis; think of a useful choice of matrix for the present situation.    "
+},
+{
+  "id": "ex_basis_matrix_families",
+  "level": "2",
+  "url": "s_basis.html#ex_basis_matrix_families",
+  "type": "Exercise",
+  "number": "4.3.3.14",
+  "title": "Bases for important matrix subspaces.",
+  "body": "Bases for important matrix subspaces  Let . For each of the following subspaces , give a basis of . You must explicitly describe the elements of your basis as linear combinations of the elements of the standard basis for . No justification needed, as long as your proposed basis is simple enough.    Upper triangular matrices       Symmetric matrices       Skew-symmetric matrices        It might help to look at the and cases to get an idea of what these bases should be.  "
+},
+{
+  "id": "s_basis_ex-7",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-7",
+  "type": "Exercise",
+  "number": "4.3.3.15",
+  "title": "",
+  "body": " The set is a basis of . Suppose the linear transformation satisfies . Find a formula for , where is a general element of .  "
+},
+{
+  "id": "s_basis_ex-8",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-8",
+  "type": "Exercise",
+  "number": "4.3.3.16",
+  "title": "",
+  "body": " The set is a basis of . Suppose the linear transformation satisfies . Find a formula for , where is a general element of .  "
+},
+{
+  "id": "s_basis_ex-9",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-9",
+  "type": "Exercise",
+  "number": "4.3.3.17",
+  "title": "",
+  "body": " The set is a basis of . Suppose the linear transformation satisfies . Show that the general formula for is given by .   Use (1) of .  "
+},
+{
+  "id": "s_basis_ex-10",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-10",
+  "type": "Exercise",
+  "number": "4.3.3.18",
+  "title": "",
+  "body": " Suppose is a linear transformation, and is a basis of for which for all . Show that : , is the zero transformation from to .   Use (1) of .  "
+},
+{
+  "id": "s_basis_ex-11",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-11",
+  "type": "Exercise",
+  "number": "4.3.3.19",
+  "title": "",
+  "body": " Suppose is a linear transformation, and is a basis of for which for all . Show that : , is the identity transformation of .   Use (1) of .  "
+},
+{
+  "id": "s_basis_ex-12",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-12",
+  "type": "Exercise",
+  "number": "4.3.3.20",
+  "title": "",
+  "body": " Let be a linear transformation. Assume there is a basis of and a constant such that for all . Prove: , where .   Use (1) of .  "
+},
+{
+  "id": "s_basis_ex-13-3",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-13-3",
+  "type": "Exercise",
+  "number": "4.3.3.21",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_basis_ex-13-4",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-13-4",
+  "type": "Exercise",
+  "number": "4.3.3.22",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_dimension",
+  "level": "1",
+  "url": "s_dimension.html",
+  "type": "Section",
+  "number": "4.4",
+  "title": "Dimension",
+  "body": " Dimension   Intuitively, we think of as a two-dimensional space, and as three-dimensional one. Why? Loosely speaking this notion of dimension has something to do with the number of degrees of freedom involved in specifying a particular element of the given space: to specify an element of we need to give its two coordinates; to specify an element of we need to give its three coordinates. Clearly, this conception is too imprecise to serve as a mathematical definition. What exactly does degrees of freedom mean? And how do you quantify the number of degrees of freedom needed for a given space? For example, we also think of a plane passing through the origin as a two-dimensional object; it is not immediately clear how to square this intuition with our vague degrees of freedom formulation. In this section we introduce the definition of the dimension of a vector space, which will be a rigorous articulation of these notions. Our definition, which relies on the concept of bases, seems simple enough: the dimension of a vector space is defined as the number of elements contained in any basis of . However, as we will see there is considerable work involved (a) in proving that this definition is well-defined, and (b) in showing that it captures the intuition of dimension described above.    Dimension of a vector space   Cardinality of a set  cardinality of a set    the cardinality of the set    Let be a set. The cardinality of , denoted is defined as follows:   If is finite, then its cardinality is the number of distinct elements it contains, written .    If is infinite, then we say it has infinite cardinality , and write .      The following theorem is the crucial result needed to show that any two finite bases of a vector space have the same cardinality.  Spanning set bound   Suppose is a finite spanning set for the vector space and let . If is a finite set with , then is linearly dependent.    Let , and let . Since spans , each element of is a linear combination of elements of : , we have for all . Now consider the following chain of equivalences: . From the last vector equation, we see that if we can find a nonzero sequence satisfying for all , then there is a nontrivial combination of the equal to the zero vector, and hence that is linearly dependent. Such a sequence corresponds to a solution to the homogeneous linear with augmented matrix , where . Since this is a homogeneous system of equations in unknowns, and since , there are in fact infinitely many solutions. (The system has at most leading ones, and so there must be a free variable since one of the columns in the equivalent row echelon matrix must fail to contain a leading one.) In particular there is a nonzero solution , and we conclude that is linearly dependent.    The next theorem not only ensures that our definition of dimension ( ) is well-defined, it also characterizes dimension as the minimal cardinality of a spanning set, and the maximal cardinality of a linearly independent set.   Basis bounds   Let be a basis of the vector space , and suppose     If spans , then .    If is linearly independent, then .    If is a basis for , then .         Suppose by contradiction that and . Then would imply is linearly dependent. Since this is a contradiction, we conclude that .    This also follows from : since is a spanning set of any set containing more than elements must be linearly dependent.    This follows from (1) and (2): if is a basis, then since spans, we have (1); and since is linearly independent we have (2). We conclude that .        Dimension of a vector space  dimension of a vector space    dimension of    Let be a vector space. The dimension of , denoted , is defined as follows:   If has a finite basis , then the dimension of is the number of elements of : , .    If does not have a finite basis, then we say is infinite dimensional , and write .        Wouldn't it have been more natural to simply say is infinite dimensional if it has an infinite basis? As it turns out this is indeed equivalent to not having a finite basis, but to prove this we need to establish the general fact that we can always find a basis for a given vector space . As intuitive as that claim may sound ( , that bases always exist), its proof requires some set theory methods that are not covered in this text. As such we will not include it in our treatment of dimension, and so will have to make do with our slightly awkward definition of infinite-dimensional vector spaces.   By definition, to show a vector space has dimension , we must exhibit a basis with . Similarly to show is infinite dimensional, we must show that it does not have a finite basis: equivalently, if you believe , we must exhibit an infinite basis of .   Computing dimension   To compute the dimension of a vector space proceed as follows.   Basis  Attempt to produce a basis of , possibly with the help of the by-inspection basis technique .    Dimension     If you found a finite basis in Step 1, then determine the cardinality by counting the number of distinct elements of . We have in this case.      If you found an infinite basis in Step 1, or were able to show that no finite basis exists, then .          It is especially easy to carry out for a vector space when we have a basis at the ready. This is the case for our list of familiar vector spaces, each of which is equipped with a standard basis.   Familiar vector spaces  For each below we provide its standard basis and compute .    Zero space   , ,     Tuples   , ,     Matrices   , ,     Polynomials of bounded degree   , ,     Polynomials   , ,      Even when we do not have a standard basis at our disposal, there are many situations when we can produce a basis of a space by inspection, allowing us to then easily compute the dimension.   Subspace of   Let be the subspace of polynomials whose leading coefficient is equal to their constant term: , . Compute using . You may take for granted that is a subspace.    First we use to produce a basis of . A general element of has parametric description , from which we see immediately that is a spanning set of . From we also see that . Thus is a basis of . Since contains three distinct elements, we conclude that .     Dimension of symmetric matrices   Let be the space of symmetric matrices. Compute using . You may take for granted that is a subspace.    We saw in that is a basis of , where . We conclude that .     Video example: computing dimension   Video: computing dimension  Video: computing dimension     The contracting and expanding theorem below is very useful theoretical consequence of . It allows us to construct a customized basis from a given set . This method is used prominently in the proof of the rank-nullity theorem .   Contracting and expanding to bases   Let be a vector space of dimension , and let be a finite subset.    Contract to basis  If spans , then there is a subset of that is a basis of : , we can contract a spanning set to a basis.    Extend to basis  If is linearly independent, then is contained in a basis of : , we can extend a linearly independent set to a basis.      Let .   Assume . Let be a subset of of minimal cardinality such that is still equal to . Such a set is guaranteed to exist: since is finite, it has a finite number of subsets; of these subsets some will span, others will not; of the subsets that do span, there will be one (or more) that has the least number of elements.  We claim that such a spanning subset of minimal cardinality is linearly independent, and hence is a basis for , as desired. We give a proof by contradiction. Suppose is linearly dependent. Then some element of , call it , can be expressed as a linear combination of the other elements ( ). Then in terms of span, the element is redundant . In other words, if we let , the set obtained by throwing out  , then we have . Since , this contradicts our choice of as a spanning set of minimal cardinality. We conclude that is linearly independent, completing the proof.    Assume is linearly independent. The procedure below constructs a finite chain of sets that ends with a basis .   Initialization  Let     Expansion loop  If , return . Otherwise set , where is any element of that is not contained in and repeat.   Some observations:   Each is linearly independent. This can be shown by induction, the crucial point being that if is linearly independent, and if , then is linearly independent. The proof is left as an exercise.    The procedure must halt. Why? Since , and since each is linearly independent, we must have for all by . Since and , the procedure must halt in at most steps.   From (ii) we may assume the procedure halts at for some . From (i) we know that is linearly independent. Furthermore, since the procedure halts at , we know that . It follows that is a basis containing , as desired.       The following corollary follows from and . We call it a street smarts result as the first two statements give us a quick and dirty way of dashing a set's hopes of being a basis. The third statement asserts that when a finite set's cardinality matches the dimension of a space, then to prove it is a basis it suffices to prove either one of the two defining properties of .   Street smarts   Let be a vector space of dimension , and let be a subset.    If , then does not span .    If , then is linearly dependent.    If , then the following are equivalent:   The set is a basis.    The set spans .    The set is linearly independent.         Statements (1) and (2) follow directly from . Statement (3) is an easy consequence of . For example, if spans , then there is a subset of that is a basis of ; since all bases of have elements, and since , we must have ; thus is a basis. The proof for a linear independent set is similar, and is left to the reader.    We are often in a situation where we wish to show a given subspace of a vector space is in fact the entire space. For example, when deciding whether a set spans a vector space , we are asking whether is all of . As another example, given a linear transformation , one of the first things we wish to determine is whether the subspace is in fact all of . As the next result illustrates, dimension is a very useful tool in this regard.   Dimension of subspaces   Let be a vector space.    If is a subspace, then .    If is a subspace, then if and only if .         Firstly, if , then clearly for any subspace .  Now assume . Apply the extending to a basis procedure described in the proof of to the emptyset , which is lienarly independent, considered as a subset of : , at each stage, if the current set is not a basis of , add any element . Since , and since , the linearly independent sets cannot have more than elements; thus the procedure must halt with a basis of satisfying . We conclude that .    Clearly, if , then . For the other direction, assume . Let be a basis for . Since is lienarly independent, it can be extended to a basis of ( ). Since , and since all bases of have cardinality , we must have . It follows that is also a basis of , and hence that .        Dimension of subspace   Let , where . Let be the space of symmetric matrices. Use and the fact that to prove that .       Since each is symmetric, and since the set of symmetric matrices is a subspace, we have by statement (2) of .    The set is linearly independent: . Thus is a basis of , and we conclude that .    We saw in that : , the space of symmetric is -dimensional. Since is a subspace of and , we conclude that by .        is also of use in situations where we wish to characterize all subspaces of a given -dimensional vector space . By the corollary, any such subspace must have dimension for some ; and this in turn means that must have a basis of cardinality . We thus have the beginnings of a systematic description of all subspaces , organized by dimension , for .   Subspaces of  We describe all subspaces of ordered by dimension.    If , then must have the empty set as a basis (by definition of dimension), and hence , the zero subspace.     If , then has a basis consisting of a single nonzero vector . In this case we have , which is a line passing through the origin with direction vector . Thus -dimensional subspaces of are lines passing through the origin.     If , then has a basis containing two non-parallel vectors in . You learn in multivariable calculus that is the plane in passing through the origin with direction vectors  . In fact, you can show that the cross product  is a normal vector for the plane in this case. Thus the -dimensional subspaces of are planes passing through the origin.     Assume . Since is a subspace of , and since , we must have according to . It is as simple as that! Thus is the only -dimensional subspace of .      That was quite a dose of theory! For your convenience, we collect the various results on dimension, together with their nicknames, in one omnibus theorem.   Dimension theory compendium   Let be a vector space of dimension .   Contract  If spans , then can be contracted to a basis of .    Expand  If is linearly independent, then can be extended to a basis of .    Street smarts  If and , then does not span .    Street smarts  If and , then is linearly dependent.    Street smarts  If and , then is a basis if and only if spans if and only if is linearly independent.    Dimension of subspaces  If is a subspace, then    , and     if and only if .             WeBWork Exercises    Are the following statements true or false?    The set {0} forms a basis for the zero subspace.    If is of dimension 3 and is a subspace of , then there can not exist a subspace of such that with and .    has exactly one subspace of dimension for each of .    The nullity of a matrix A is the same as the dimension of the subspace spanned be the columns of A.    If { } is a basis for , then span{ } is a plane.           Suppose that and are nonzero subspaces, with contained inside , and suppose that .  (a) What are the possible dimensions of ?   1    2    3    1 or 2    1,2, or 3    (b) If then what are the possible dimensions of ?   1    2    3    1 or 2    1,2, or 3               (a) The dimension of cannot exceed the dimension of since is contained in . is non-zero, and thus its dimension cannot be 0. Hence 1, 2, or 3 are the possible dimensions of . (b) If , then is properly contained in , and the dimension of is strictly less than the dimension of . Thus only 1 or 2 are possible dimensions of .        Suppose that and are nonzero subspaces, with contained inside , and suppose that    What are the possible dimensions of ?    If , then what are the possible dimensions of ?     cannot exceed the dimension of , since is contained in . us non-zero, and thus the its dimension cannot be zero. Hence the possible dimensions of are 1, 2, 3, and 4. b) If , then is properly contained in , and the dimension of is strictly less than the dimension of . So the possible dimensions of are 1, 2, and 3.        Find the dimensions of the following vector spaces.  (a) The vector space   (b) The vector space of polynomials with degree less than   (c) The vector space   (d) The vector space of all upper triangular matrices  (e) The vector space of matrices with trace 0  (f) The vector space of all diagonal matrices                                       By deleting linearly dependent vectors, find a basis of each subspace and give the dimension of the subspace.  A. The dimension of is .  B. The dimension of is .  C. The dimension of is .  D. The dimension of is .  E. The dimension of is .                                 Street smarts!    For each vector space and subset use an appropriate statement from to help decide whether is a basis for . Justify your answer.     ,      ,      ,      Let be the set of solutions to the following homogeneous system: .    Compute a basis of . Justify your answer.    Compute .      Compute bases and dimensions for the following subspaces of .                Suppoe be a basis for the vector space . Let , where . Prove that is a basis.   First explain why it is enough to show that is linearly independent.    In multivariable calculus, a plane in is defined as the set of solutions to an equation of the form , where at least one of is nonzero. In particular, a plane passing through the origin is the set of solutions to an equation of the form , where at least one of is nonzero.  Prove that the 2-dimensional subspaces of are precisely the planes of that pass through the origin. In other words, show (a) that any plane passing through the origin is a 2-dimensional subspace, and conversely, (b) that any 2-dimensional subspace is a plane passing through the origin.   For (b), begin with a basis of of , and use the cross product to find a normal vector that defines as a plane.    Let , , and , where Show that as follows:  Show that .   Compute the dimensions of and and use .       Let and define . Find a basis for by inspection and compute its dimension.    Let and let , where . Provide a basis for and compute .   You can contract to a basis by throwing out some redundant elements.   Dimensions of important matrix subspaces  Let . Compute for each subspace .    Upper triangular matrices       Symmetric matrices       Skew-symmetric matrices        Use your results from . The identity will be helpful.    Let . Show that there is a nonzero polynomial such that .   Consider the set and use a relevant statement from . Treat two cases separately: (a) the powers of are all distinct; (b) for some .    "
+},
+{
+  "id": "d_cardinality",
+  "level": "2",
+  "url": "s_dimension.html#d_cardinality",
+  "type": "Definition",
+  "number": "4.4.1",
+  "title": "Cardinality of a set.",
+  "body": " Cardinality of a set  cardinality of a set    the cardinality of the set    Let be a set. The cardinality of , denoted is defined as follows:   If is finite, then its cardinality is the number of distinct elements it contains, written .    If is infinite, then we say it has infinite cardinality , and write .      "
+},
+{
+  "id": "th_basis_span_bounds",
+  "level": "2",
+  "url": "s_dimension.html#th_basis_span_bounds",
+  "type": "Theorem",
+  "number": "4.4.2",
+  "title": "Spanning set bound.",
+  "body": " Spanning set bound   Suppose is a finite spanning set for the vector space and let . If is a finite set with , then is linearly dependent.    Let , and let . Since spans , each element of is a linear combination of elements of : , we have for all . Now consider the following chain of equivalences: . From the last vector equation, we see that if we can find a nonzero sequence satisfying for all , then there is a nontrivial combination of the equal to the zero vector, and hence that is linearly dependent. Such a sequence corresponds to a solution to the homogeneous linear with augmented matrix , where . Since this is a homogeneous system of equations in unknowns, and since , there are in fact infinitely many solutions. (The system has at most leading ones, and so there must be a free variable since one of the columns in the equivalent row echelon matrix must fail to contain a leading one.) In particular there is a nonzero solution , and we conclude that is linearly dependent.   "
+},
+{
+  "id": "th_basis_dimension",
+  "level": "2",
+  "url": "s_dimension.html#th_basis_dimension",
+  "type": "Theorem",
+  "number": "4.4.3",
+  "title": "Basis bounds.",
+  "body": " Basis bounds   Let be a basis of the vector space , and suppose     If spans , then .    If is linearly independent, then .    If is a basis for , then .         Suppose by contradiction that and . Then would imply is linearly dependent. Since this is a contradiction, we conclude that .    This also follows from : since is a spanning set of any set containing more than elements must be linearly dependent.    This follows from (1) and (2): if is a basis, then since spans, we have (1); and since is linearly independent we have (2). We conclude that .      "
+},
+{
+  "id": "d_dimension",
+  "level": "2",
+  "url": "s_dimension.html#d_dimension",
+  "type": "Definition",
+  "number": "4.4.4",
+  "title": "Dimension of a vector space.",
+  "body": " Dimension of a vector space  dimension of a vector space    dimension of    Let be a vector space. The dimension of , denoted , is defined as follows:   If has a finite basis , then the dimension of is the number of elements of : , .    If does not have a finite basis, then we say is infinite dimensional , and write .      "
+},
+{
+  "id": "rm_basis_existence",
+  "level": "2",
+  "url": "s_dimension.html#rm_basis_existence",
+  "type": "Remark",
+  "number": "4.4.5",
+  "title": "",
+  "body": " Wouldn't it have been more natural to simply say is infinite dimensional if it has an infinite basis? As it turns out this is indeed equivalent to not having a finite basis, but to prove this we need to establish the general fact that we can always find a basis for a given vector space . As intuitive as that claim may sound ( , that bases always exist), its proof requires some set theory methods that are not covered in this text. As such we will not include it in our treatment of dimension, and so will have to make do with our slightly awkward definition of infinite-dimensional vector spaces.  "
+},
+{
+  "id": "proc_dimension",
+  "level": "2",
+  "url": "s_dimension.html#proc_dimension",
+  "type": "Procedure",
+  "number": "4.4.6",
+  "title": "Computing dimension.",
+  "body": " Computing dimension   To compute the dimension of a vector space proceed as follows.   Basis  Attempt to produce a basis of , possibly with the help of the by-inspection basis technique .    Dimension     If you found a finite basis in Step 1, then determine the cardinality by counting the number of distinct elements of . We have in this case.      If you found an infinite basis in Step 1, or were able to show that no finite basis exists, then .         "
+},
+{
+  "id": "eg_dimension_familiar",
+  "level": "2",
+  "url": "s_dimension.html#eg_dimension_familiar",
+  "type": "Example",
+  "number": "4.4.7",
+  "title": "Familiar vector spaces.",
+  "body": " Familiar vector spaces  For each below we provide its standard basis and compute .    Zero space   , ,     Tuples   , ,     Matrices   , ,     Polynomials of bounded degree   , ,     Polynomials   , ,     "
+},
+{
+  "id": "eg_dimension_polynomials",
+  "level": "2",
+  "url": "s_dimension.html#eg_dimension_polynomials",
+  "type": "Example",
+  "number": "4.4.8",
+  "title": "Subspace of <span class=\"process-math\">\\(P_3\\)<\/span>.",
+  "body": " Subspace of   Let be the subspace of polynomials whose leading coefficient is equal to their constant term: , . Compute using . You may take for granted that is a subspace.    First we use to produce a basis of . A general element of has parametric description , from which we see immediately that is a spanning set of . From we also see that . Thus is a basis of . Since contains three distinct elements, we conclude that .   "
+},
+{
+  "id": "eg_dim_symm",
+  "level": "2",
+  "url": "s_dimension.html#eg_dim_symm",
+  "type": "Example",
+  "number": "4.4.9",
+  "title": "Dimension of symmetric matrices.",
+  "body": " Dimension of symmetric matrices   Let be the space of symmetric matrices. Compute using . You may take for granted that is a subspace.    We saw in that is a basis of , where . We conclude that .   "
+},
+{
+  "id": "fig_vid_computing_dim",
+  "level": "2",
+  "url": "s_dimension.html#fig_vid_computing_dim",
+  "type": "Figure",
+  "number": "4.4.10",
+  "title": "Video: computing dimension",
+  "body": " Video: computing dimension  Video: computing dimension   "
+},
+{
+  "id": "th_basis_contract_expand",
+  "level": "2",
+  "url": "s_dimension.html#th_basis_contract_expand",
+  "type": "Theorem",
+  "number": "4.4.11",
+  "title": "Contracting and expanding to bases.",
+  "body": " Contracting and expanding to bases   Let be a vector space of dimension , and let be a finite subset.    Contract to basis  If spans , then there is a subset of that is a basis of : , we can contract a spanning set to a basis.    Extend to basis  If is linearly independent, then is contained in a basis of : , we can extend a linearly independent set to a basis.      Let .   Assume . Let be a subset of of minimal cardinality such that is still equal to . Such a set is guaranteed to exist: since is finite, it has a finite number of subsets; of these subsets some will span, others will not; of the subsets that do span, there will be one (or more) that has the least number of elements.  We claim that such a spanning subset of minimal cardinality is linearly independent, and hence is a basis for , as desired. We give a proof by contradiction. Suppose is linearly dependent. Then some element of , call it , can be expressed as a linear combination of the other elements ( ). Then in terms of span, the element is redundant . In other words, if we let , the set obtained by throwing out  , then we have . Since , this contradicts our choice of as a spanning set of minimal cardinality. We conclude that is linearly independent, completing the proof.    Assume is linearly independent. The procedure below constructs a finite chain of sets that ends with a basis .   Initialization  Let     Expansion loop  If , return . Otherwise set , where is any element of that is not contained in and repeat.   Some observations:   Each is linearly independent. This can be shown by induction, the crucial point being that if is linearly independent, and if , then is linearly independent. The proof is left as an exercise.    The procedure must halt. Why? Since , and since each is linearly independent, we must have for all by . Since and , the procedure must halt in at most steps.   From (ii) we may assume the procedure halts at for some . From (i) we know that is linearly independent. Furthermore, since the procedure halts at , we know that . It follows that is a basis containing , as desired.      "
+},
+{
+  "id": "cor_street_smarts",
+  "level": "2",
+  "url": "s_dimension.html#cor_street_smarts",
+  "type": "Corollary",
+  "number": "4.4.12",
+  "title": "Street smarts.",
+  "body": " Street smarts   Let be a vector space of dimension , and let be a subset.    If , then does not span .    If , then is linearly dependent.    If , then the following are equivalent:   The set is a basis.    The set spans .    The set is linearly independent.         Statements (1) and (2) follow directly from . Statement (3) is an easy consequence of . For example, if spans , then there is a subset of that is a basis of ; since all bases of have elements, and since , we must have ; thus is a basis. The proof for a linear independent set is similar, and is left to the reader.   "
+},
+{
+  "id": "cor_dimension_subspace",
+  "level": "2",
+  "url": "s_dimension.html#cor_dimension_subspace",
+  "type": "Corollary",
+  "number": "4.4.13",
+  "title": "Dimension of subspaces.",
+  "body": " Dimension of subspaces   Let be a vector space.    If is a subspace, then .    If is a subspace, then if and only if .         Firstly, if , then clearly for any subspace .  Now assume . Apply the extending to a basis procedure described in the proof of to the emptyset , which is lienarly independent, considered as a subset of : , at each stage, if the current set is not a basis of , add any element . Since , and since , the linearly independent sets cannot have more than elements; thus the procedure must halt with a basis of satisfying . We conclude that .    Clearly, if , then . For the other direction, assume . Let be a basis for . Since is lienarly independent, it can be extended to a basis of ( ). Since , and since all bases of have cardinality , we must have . It follows that is also a basis of , and hence that .      "
+},
+{
+  "id": "eg_subspace_dimension",
+  "level": "2",
+  "url": "s_dimension.html#eg_subspace_dimension",
+  "type": "Example",
+  "number": "4.4.14",
+  "title": "Dimension of subspace.",
+  "body": " Dimension of subspace   Let , where . Let be the space of symmetric matrices. Use and the fact that to prove that .       Since each is symmetric, and since the set of symmetric matrices is a subspace, we have by statement (2) of .    The set is linearly independent: . Thus is a basis of , and we conclude that .    We saw in that : , the space of symmetric is -dimensional. Since is a subspace of and , we conclude that by .      "
+},
+{
+  "id": "eg_subspaces_R3",
+  "level": "2",
+  "url": "s_dimension.html#eg_subspaces_R3",
+  "type": "Example",
+  "number": "4.4.15",
+  "title": "Subspaces of <span class=\"process-math\">\\(\\R^3\\)<\/span>.",
+  "body": " Subspaces of  We describe all subspaces of ordered by dimension.    If , then must have the empty set as a basis (by definition of dimension), and hence , the zero subspace.     If , then has a basis consisting of a single nonzero vector . In this case we have , which is a line passing through the origin with direction vector . Thus -dimensional subspaces of are lines passing through the origin.     If , then has a basis containing two non-parallel vectors in . You learn in multivariable calculus that is the plane in passing through the origin with direction vectors  . In fact, you can show that the cross product  is a normal vector for the plane in this case. Thus the -dimensional subspaces of are planes passing through the origin.     Assume . Since is a subspace of , and since , we must have according to . It is as simple as that! Thus is the only -dimensional subspace of .     "
+},
+{
+  "id": "th_dimension_compendium",
+  "level": "2",
+  "url": "s_dimension.html#th_dimension_compendium",
+  "type": "Theorem",
+  "number": "4.4.16",
+  "title": "Dimension theory compendium.",
+  "body": " Dimension theory compendium   Let be a vector space of dimension .   Contract  If spans , then can be contracted to a basis of .    Expand  If is linearly independent, then can be extended to a basis of .    Street smarts  If and , then does not span .    Street smarts  If and , then is linearly dependent.    Street smarts  If and , then is a basis if and only if spans if and only if is linearly independent.    Dimension of subspaces  If is a subspace, then    , and     if and only if .         "
+},
+{
+  "id": "s_dimension_ex-1-2",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-1-2",
+  "type": "Exercise",
+  "number": "4.4.2.1",
+  "title": "",
+  "body": "  Are the following statements true or false?    The set {0} forms a basis for the zero subspace.    If is of dimension 3 and is a subspace of , then there can not exist a subspace of such that with and .    has exactly one subspace of dimension for each of .    The nullity of a matrix A is the same as the dimension of the subspace spanned be the columns of A.    If { } is a basis for , then span{ } is a plane.        "
+},
+{
+  "id": "s_dimension_ex-1-3",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-1-3",
+  "type": "Exercise",
+  "number": "4.4.2.2",
+  "title": "",
+  "body": "  Suppose that and are nonzero subspaces, with contained inside , and suppose that .  (a) What are the possible dimensions of ?   1    2    3    1 or 2    1,2, or 3    (b) If then what are the possible dimensions of ?   1    2    3    1 or 2    1,2, or 3               (a) The dimension of cannot exceed the dimension of since is contained in . is non-zero, and thus its dimension cannot be 0. Hence 1, 2, or 3 are the possible dimensions of . (b) If , then is properly contained in , and the dimension of is strictly less than the dimension of . Thus only 1 or 2 are possible dimensions of .     "
+},
+{
+  "id": "s_dimension_ex-1-4",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-1-4",
+  "type": "Exercise",
+  "number": "4.4.2.3",
+  "title": "",
+  "body": "  Suppose that and are nonzero subspaces, with contained inside , and suppose that    What are the possible dimensions of ?    If , then what are the possible dimensions of ?     cannot exceed the dimension of , since is contained in . us non-zero, and thus the its dimension cannot be zero. Hence the possible dimensions of are 1, 2, 3, and 4. b) If , then is properly contained in , and the dimension of is strictly less than the dimension of . So the possible dimensions of are 1, 2, and 3.     "
+},
+{
+  "id": "s_dimension_ex-1-5",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-1-5",
+  "type": "Exercise",
+  "number": "4.4.2.4",
+  "title": "",
+  "body": "  Find the dimensions of the following vector spaces.  (a) The vector space   (b) The vector space of polynomials with degree less than   (c) The vector space   (d) The vector space of all upper triangular matrices  (e) The vector space of matrices with trace 0  (f) The vector space of all diagonal matrices                                    "
+},
+{
+  "id": "s_dimension_ex-1-6",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-1-6",
+  "type": "Exercise",
+  "number": "4.4.2.5",
+  "title": "",
+  "body": "  By deleting linearly dependent vectors, find a basis of each subspace and give the dimension of the subspace.  A. The dimension of is .  B. The dimension of is .  C. The dimension of is .  D. The dimension of is .  E. The dimension of is .                               "
+},
+{
+  "id": "s_dimension_ex-3-2",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-3-2",
+  "type": "Exercise",
+  "number": "4.4.2.6",
+  "title": "",
+  "body": "  ,   "
+},
+{
+  "id": "s_dimension_ex-3-3",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-3-3",
+  "type": "Exercise",
+  "number": "4.4.2.7",
+  "title": "",
+  "body": "  ,   "
+},
+{
+  "id": "s_dimension_ex-3-4",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-3-4",
+  "type": "Exercise",
+  "number": "4.4.2.8",
+  "title": "",
+  "body": "  ,   "
+},
+{
+  "id": "s_dimension_ex-4",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-4",
+  "type": "Exercise",
+  "number": "4.4.2.9",
+  "title": "",
+  "body": " Let be the set of solutions to the following homogeneous system: .    Compute a basis of . Justify your answer.    Compute .    "
+},
+{
+  "id": "s_dimension_ex-5",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-5",
+  "type": "Exercise",
+  "number": "4.4.2.10",
+  "title": "",
+  "body": " Compute bases and dimensions for the following subspaces of .              "
+},
+{
+  "id": "s_dimension_ex-6",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-6",
+  "type": "Exercise",
+  "number": "4.4.2.11",
+  "title": "",
+  "body": " Suppoe be a basis for the vector space . Let , where . Prove that is a basis.   First explain why it is enough to show that is linearly independent.  "
+},
+{
+  "id": "s_dimension_ex-7",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-7",
+  "type": "Exercise",
+  "number": "4.4.2.12",
+  "title": "",
+  "body": " In multivariable calculus, a plane in is defined as the set of solutions to an equation of the form , where at least one of is nonzero. In particular, a plane passing through the origin is the set of solutions to an equation of the form , where at least one of is nonzero.  Prove that the 2-dimensional subspaces of are precisely the planes of that pass through the origin. In other words, show (a) that any plane passing through the origin is a 2-dimensional subspace, and conversely, (b) that any 2-dimensional subspace is a plane passing through the origin.   For (b), begin with a basis of of , and use the cross product to find a normal vector that defines as a plane.  "
+},
+{
+  "id": "s_dimension_ex-8",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-8",
+  "type": "Exercise",
+  "number": "4.4.2.13",
+  "title": "",
+  "body": " Let , , and , where Show that as follows:  Show that .   Compute the dimensions of and and use .     "
+},
+{
+  "id": "s_dimension_ex-9",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-9",
+  "type": "Exercise",
+  "number": "4.4.2.14",
+  "title": "",
+  "body": " Let and define . Find a basis for by inspection and compute its dimension.  "
+},
+{
+  "id": "s_dimension_ex-10",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-10",
+  "type": "Exercise",
+  "number": "4.4.2.15",
+  "title": "",
+  "body": " Let and let , where . Provide a basis for and compute .   You can contract to a basis by throwing out some redundant elements.  "
+},
+{
+  "id": "ex_dimension_matrix_families",
+  "level": "2",
+  "url": "s_dimension.html#ex_dimension_matrix_families",
+  "type": "Exercise",
+  "number": "4.4.2.16",
+  "title": "Dimensions of important matrix subspaces.",
+  "body": "Dimensions of important matrix subspaces  Let . Compute for each subspace .    Upper triangular matrices       Symmetric matrices       Skew-symmetric matrices        Use your results from . The identity will be helpful.  "
+},
+{
+  "id": "s_dimension_ex-12",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-12",
+  "type": "Exercise",
+  "number": "4.4.2.17",
+  "title": "",
+  "body": " Let . Show that there is a nonzero polynomial such that .   Consider the set and use a relevant statement from . Treat two cases separately: (a) the powers of are all distinct; (b) for some .  "
+},
+{
+  "id": "s_rank_nullity",
+  "level": "1",
+  "url": "s_rank_nullity.html",
+  "type": "Section",
+  "number": "4.5",
+  "title": "Rank-nullity theorem and fundamental spaces",
+  "body": " Rank-nullity theorem and fundamental spaces  This section is in a sense just a long-format example of how to compute bases and dimensions of subspaces. Along the way, however we meet the rank-nullity theorem (sometimes called the fundamental theorem of linear algebra ), and apply this theorem in the context of fundamental spaces of matrices ( ).   The rank-nullity theorem   The rank-nullity theorem relates the the dimensions of the null space and image of a linear transformation , assuming is finite dimensional. Roughly speaking, it says that the bigger the null space, the smaller the image. More precisely, it tells us that . As we will see, this elegant result can be used to significantly simplify computations with linear transformations. For example, in a situation where we wish to compute explicitly both the null space and image of a given linear transformation, we can often get away with just computing one of the two spaces and using the rank-nullity theorem (and a dimension argument) to easily determine the other. Additionally, the rank-nullity theorem will directly imply some intuitively obvious properties of linear transformations. For example, suppose is a finite-dimensional vector space. It seems obvious that if , then there is no linear transformation mapping surjectively onto : , you should not be able to map a smaller vector space onto a bigger one. Similarly, if , then we expect that there is no injective linear transformation mapping injectively into . Both these results are easy consequences of the rank-nullity theorem .  Before proving the theorem we give names to and .    Rank and nullity  rank of a linear transformation  nullity of a linear transformation    the rank of     the nullity of    Let be a linear transformation.   The rank of , denoted , is the dimension of : , .    The nullity of , denoted , is the dimension of : , .        Rank-nullity  rank-nullity theorem   Let be a vector space of dimension , and let be a linear transformation. Then , or alternatively, .    Choose a basis of and extend to a basis , using . Observe that and .  We claim that is a basis of .   Proof of claim   is linearly independent  Suppose . Then the vector satisfies (using linearity of ), and hence . Then, using the fact that is a basis of , we have and hence Since the set is linearly independent, we conclude that for all and . In particular, , as desired.    spans  It is clear that since for all and is closed under linear combinations.  For the other direction, suppose . Then there is a such that . Since is a basis of we may write , in which case . This shows that , as desired.   Having shown is a basis for , we conclude that , and thus that .    Rank-nullity: verification   Verify the rank-nullity theorem for the linear transformation defined as .    To verify the rank-nullity theorem, we must compute bases for and . Consider first . We have . Here the parametric description is obtained using our usual technique for solving systems of equations ( ). From the parametric description, it is clear that the set spans . Since is clearly linearly independent, it is a basis for , and we conclude that . (Alternatively, the equation defines a plane passing through the origin in , and we know such subspaces are of dimension two. )  Next it is fairly clearly that . Thus is a basis for and .  Finally we observe that as predicted by the rank-nullity theorem.     Rank-nullity: application   Show that the linear transformation is surjective: , . Do so by first computing .    We first examine . We have . The system above is already in row echelon form, and so we easily see that . Thus is a basis of , and we conclude that . The rank-nullity theorem now implies that . Since and , we conclude by that . Thus is surjective.      Fundamental spaces of matrices  We now treat the special case of matrix transformations . The fundamenal spaces of a matrix defined below are can each be connected to and , and hence the rank-nullity theorem comes to bear in their analysis. Observe that was defined previously ( ). We include it below to gather all the fundamental spaces together under one definition.   Fundamental spaces  fundamental space of a matrix  null space of a matrix  row space of a matrix  column space of a matrix  rank of a matrix  nullity of a matrix    the null space of matrix     the row space of a matrix     the column space of a matrix     the rank of a matrix     the nullity of a matrix    Let be a an matrix. Let be the rows of , and let be its columns. The following subspaces are called the fundamental subspaces of .    The null space of , denoted is defined as .    The row space of , denoted , is defined as .    The column space of , denoted , is defined as .    The rank and nullity of , denoted and , respectively, are defined as and .    How do the fundamental spaces of a matrix relate to its associated matrix transformation ? It is easy to see that , and indeed we made this connection in . What about ? We claim that . To see why, let be the columns of and consider the following chain of equivalences: . We now highlight three equivalent statments in this chain . The first equivalence tells us that is the set of for which the matrix equation is consistent. The second equivalence tells us that . In sum, we have proven the following result.   Null space and image as fundamental spaces   Let be an matrix, and let be its corresponding matrix transformation. The following equalities hold: .    The next theorem indicates how row reduction affects fundamental spaces.   Fundamental spaces and row equivalence   Let be an matrix, and suppose is row equivalent to . The following equalities hold . Although and have the same dimension, they are in general not equal as subspaces.    First observe that is row equivalent to and yet . Thus we do not have in general.  We now turn to the equalities . Assume that is row equivalent to . Using the formulation of row reduction in terms of multiplication by elementary matrices, we see that there is an invertible matrix such that , and hence also . But then we have . This proves .  Next, by we have , and , . It follows that . Lastly, we turn to the row spaces. We will show that each row of is an element of , from whence it follows that . Let be the -th row of , and let be the -th column of . By , we have , and furthermore, is the linear combination of the rows of whose coefficients come from the entries of . Thus , as desired.  Having shown that , we see that the same argument works mutatis mutandis (swapping the roles of and and using in place of ) to show that . We conclude that .    Now that we better understand the role row reduction plays in fundamental spaces, we investigate the special case of a matrix in row echelon form.   Fundamental spaces and row echelon forms   Let be an matrix, and suppose is row equivalent to the matrix in row echelon form. Let be the number of leading ones in , and let ; , and are the number of leading and free variables, respectively, of the system corresponding to . We have .    By we know that , and . So it is enough to show that and .  First, we will show that the nonzero rows of form a basis for , proving . Clearly the nonzero rows span , since any linear combination of all the rows of can be expressed as a linear combination of the nonzero rows. Furthermore, since is in row echelon form, the staircase pattern of the leading ones appearing in the nonzero rows assures that these row vectors are linearly independent.  Next, we show that the columns of containing leading ones form a basis of . Let be the columns of with leading ones, and let be the columns without leading ones. To prove the form a basis for , we will show that given any there is a unique choice of scalars such that . (Recall that the uniqueness of this choice implies linear independence.) Given , we can find such that ( ), which means the linear system with augmented matrix is consistent. Using our Gaussian elimination theory (specifically, ), we know that the solutions to this system are in 1-1 correspondence with choices for the free variables . (Remember that the columns without leading ones correspond to the free variables.) In particular, there is a unique solution to where we set all the free variables equal to 0. By the column method ( ), this gives us a unique linear combination of only the columns with leading ones equal to . This proves the claim, and shows that the columns with leading ones form a basis for . We conclude that .  Lastly, we have , where the last equality uses the fact that the sum of the number of columns with leading ones ( ) and the number of columns without leading ones ( ) is , the total number of columns.     is now an easy consequence of the foregoing.   Rank-nullity for matrices   Let be an matrix. We have .    We have .    We now gather this suite of results into one overall procedure for computing with fundamental spaces.   Computing bases of fundamental spaces   To compute bases for the fundamental spaces of an matrix , proceed as follow.    Row reduce to a matrix in row echelon form.    We have . Compute a parametric description of the solutions to the linear system following . If the free variables are , a basis of is obtained by letting be the solution corresponding to the choice and for .    We have . The set of nonzero rows of is a basis for .    In general . However, the columns of containing leading ones form a basis of , and the corresponding columns of form a basis for .       Video example: fundamental spaces   Video: computing fundamental spaces  Video: computing fundamental spaces     The results allow us to add seven more equivalent statements to our invertibility theorem, bringing us to a total of fourteen!   Invertibility theorem (supersized)   Let be an matrix. The following statements are equivalent.     is invertible.    The matrix equation has a unique solution for any column vector .    The matrix equation has a solution for any column vector .    The matrix equation has a unique solution : namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.     .                             Any of the following equivalent conditions about the set of columns of hold: is a basis of ; spans ; is linearly independent.    Any of the following equivalent conditions about the set of rows of hold: is a basis of ; spans ; is linearly independent.        Contracting and expanding to bases  Thanks to we know that spanning sets can be contracted to bases, and linearly independent sets can be extended to bases; and we have already seen a few instances where this result has been put to good use. However, neither the theorem nor its proof provide a practical means of performing this contraction or extension. We would like a systematic way of determining which vectors to throw out (when contracting), or which vectors to chuck in (when extending). In the special case where for some , we can adapt to our needs.   Contracting and extending to bases of   Let .    Contracting to a basis  Assume spans . To contract to a basis , proceed as follows.    Let be the matrix whose -th column is given by for all .    Use the column space procedure ( ) to compute a basis of , chosen from among the original columns of .    The subset is a basis for .      Extending to a basis  Assume is linearly independent. To extend to a basis of proceed as follows.    Let be the matrix whose first columns are the elements of , and whose remaining columns consist of , the standard basis elements of .    Use the column space procedure ( ) to compute a basis of , chosen from among the original columns of .    The set is a basis for containing .        Let's see why in both cases the procedure produces a basis of that is either a sub- or superset of .   Contracting to a basis  In this case we have . Thus is a basis for . Since the column space procedure selects columns from among the original columns of , we have , as desired.    Extending to a basis  Since contains for all , we have . Thus is a basis for . Since the first columns of are linearly independent (they are the elements of ), when we row reduce to a matrix in row echelon form, the first columns of will contain leading ones. (To see this, imagine row reducing the submatrix consisting of the first columns of to a row echelon matrix . Since these columns are linearly independent, they already form a basis for . Thus the corresponding colmns of must all have leading ones. ) It follows that the first columns of are selected to be in the basis , and hence that , as desired.      Video example: contracting to a basis   Video: contracting to a basis  Video: contracting to a basis        WeBWork Exercises    Suppose that is a matrix that has an echelon form with two zero rows. Find the dimension of the row space of , the dimension of the column space of , and the dimension of the null space of .  The dimension of the row space of is .  The dimension of the column space of is .  The dimension of the null space of is .                  The dimension of the row space is the number of nonzero rows in the echelon form, or The dimension of the column space is the same as the dimension of the row space, and the dimension of the null space is         Are the following statements true or false?    The set {0} forms a basis for the zero subspace.    Let . Then { } in can form a basis for if the correct vectors are added to .    The nullity of a matrix A is the same as the dimension of the subspace spanned be the columns of A.    has exactly one subspace of dimension for each of .    Let . Then { } in can form a basis for if the correct vectors are removed from .           Are the following statements true or false?    If and are subspaces of of the same dimension, then .    If the set of vectors is linearly independent in a subspace then vectors can be added to to create a basis for    Three nonzero vectors that lie in a plane in might form a basis for .    If the set of vectors is linearly independent in a subspace then vectors can be removed from to create a basis for .    If the set of vectors spans a subspace , then vectors can be removed from to create a basis for           Let Find dimensions of the kernel and image of .   ,   .                   Let be the linear transformation defined by Find bases for the kernel and image of . vector  A basis for the kernel of is    A basis for the image of is                     Let be the linear operator defined by   (a) Find the dimension of the range of :  (b) Find the dimension of the kernel of :  (c) Let be the subspace of spanned by and . Find the dimension of :                  Solution: (a) Since , , spans , we get that is spanned by , , . So    and hence the dimension of the range is 2.  (b) The rank-nullity theorem implies that the dimension of the kernel is .  (c) Notice that   and it is easy to check that these two vectors are linearly independent. Therefore, the dimension of is 2.         In this exercise we will show that for any , there is a polynomial satisfying . In other words given any list of values , we can find a polynomial that evaluates to these values at the inputs .    Define by . Show that is linear.    Compute . You may use the fact that a polynomial of degree has at most roots.    Use the rank-nullity theorem to compute . Explain why this implies     Explain why the equality is equivalent to the claim we wish to prove.       Use the rank-nullity theorem to compute the rank of the linear transformation described.     ,      ,      ,        For each linear transformation use the rank-nullity theorem to decide whether .          ,      ,       Let be with . Prove that there is a such that the system is inconsistent.   Use and .    For each matrix (i) row reduce to a matrix in row echelon form, (ii) compute bases for and , (iii) compute and ,and (iv) decide whether .                     Assume is invertible, and is row equivalent to the row echelon matrix . Prove: .    For each matrix below, (i) compute bases for each fundamental space, (ii) identify these spaces as familiar geometric objects in or , and (iii) provide sketches of each space. The sketches of and should be combined in the same coordinate system.                     For each compute bases for each fundamental space. In each case, you can find bases for one of the fundamental spaces by inspection, and then use the rank-nullity theorem to reduce your workload for the other spaces. See first solution for a model example.                 Clearly, is a basis for , and is a basis for . It follows that and hence . Thus we need to find three linearly independent elements of to find a basis. We can do so by inspection with the help of the column method. Namely, observe that are all in (column method). The location of zeros in these vectors make it clear that are linearly independent. Since , and , we conclude that is a basis of ( ).      For each use to compute bases for each fundamental space.                     Find the rank and nullity of each matrix by reducing it to row echelon form.                Let be an matrix.    Prove: if and only if .   Construct a matrix with . Verify that your satisfies .     Suppose is with .  Prove: either the rows of are linearly dependent or the columns of are linearly dependent.    Prove: if and only if is a square matrix.    Suppose and are row equivalent matrices. For each let and be the -th columns of and , respectively.  Prove: columns of are linearly independent if and only if the corresponding columns are linearly independent.   By there is an invertible such that . Let and be the submatrices of and obtained by taking columns . Show that we still have and relate linear independence of the columns to solutions of the matrix equations and .    Prove as follows.    First show that all three statements of (13) are equivalent, and that all three statements of (14) are equivalent. (Use .)    Show that statements (8)-(14) are equivalent with the help of .    Choose a statement from (1)-(7) that can be easily shown to be equivalent to one of the statements from (8)-(14).      "
+},
+{
+  "id": "d_rank_nullity",
+  "level": "2",
+  "url": "s_rank_nullity.html#d_rank_nullity",
+  "type": "Definition",
+  "number": "4.5.1",
+  "title": "Rank and nullity.",
+  "body": " Rank and nullity  rank of a linear transformation  nullity of a linear transformation    the rank of     the nullity of    Let be a linear transformation.   The rank of , denoted , is the dimension of : , .    The nullity of , denoted , is the dimension of : , .      "
+},
+{
+  "id": "th_rank-nullity",
+  "level": "2",
+  "url": "s_rank_nullity.html#th_rank-nullity",
+  "type": "Theorem",
+  "number": "4.5.2",
+  "title": "Rank-nullity.",
+  "body": " Rank-nullity  rank-nullity theorem   Let be a vector space of dimension , and let be a linear transformation. Then , or alternatively, .    Choose a basis of and extend to a basis , using . Observe that and .  We claim that is a basis of .   Proof of claim   is linearly independent  Suppose . Then the vector satisfies (using linearity of ), and hence . Then, using the fact that is a basis of , we have and hence Since the set is linearly independent, we conclude that for all and . In particular, , as desired.    spans  It is clear that since for all and is closed under linear combinations.  For the other direction, suppose . Then there is a such that . Since is a basis of we may write , in which case . This shows that , as desired.   Having shown is a basis for , we conclude that , and thus that .  "
+},
+{
+  "id": "eg_rank-nullity_verification",
+  "level": "2",
+  "url": "s_rank_nullity.html#eg_rank-nullity_verification",
+  "type": "Example",
+  "number": "4.5.3",
+  "title": "Rank-nullity: verification.",
+  "body": " Rank-nullity: verification   Verify the rank-nullity theorem for the linear transformation defined as .    To verify the rank-nullity theorem, we must compute bases for and . Consider first . We have . Here the parametric description is obtained using our usual technique for solving systems of equations ( ). From the parametric description, it is clear that the set spans . Since is clearly linearly independent, it is a basis for , and we conclude that . (Alternatively, the equation defines a plane passing through the origin in , and we know such subspaces are of dimension two. )  Next it is fairly clearly that . Thus is a basis for and .  Finally we observe that as predicted by the rank-nullity theorem.   "
+},
+{
+  "id": "eg_rank-nullity_computation",
+  "level": "2",
+  "url": "s_rank_nullity.html#eg_rank-nullity_computation",
+  "type": "Example",
+  "number": "4.5.4",
+  "title": "Rank-nullity: application.",
+  "body": " Rank-nullity: application   Show that the linear transformation is surjective: , . Do so by first computing .    We first examine . We have . The system above is already in row echelon form, and so we easily see that . Thus is a basis of , and we conclude that . The rank-nullity theorem now implies that . Since and , we conclude by that . Thus is surjective.   "
+},
+{
+  "id": "d_fundamental_space",
+  "level": "2",
+  "url": "s_rank_nullity.html#d_fundamental_space",
+  "type": "Definition",
+  "number": "4.5.5",
+  "title": "Fundamental spaces.",
+  "body": " Fundamental spaces  fundamental space of a matrix  null space of a matrix  row space of a matrix  column space of a matrix  rank of a matrix  nullity of a matrix    the null space of matrix     the row space of a matrix     the column space of a matrix     the rank of a matrix     the nullity of a matrix    Let be a an matrix. Let be the rows of , and let be its columns. The following subspaces are called the fundamental subspaces of .    The null space of , denoted is defined as .    The row space of , denoted , is defined as .    The column space of , denoted , is defined as .    The rank and nullity of , denoted and , respectively, are defined as and .   "
+},
+{
+  "id": "th_fundspaces_matrixtransform",
+  "level": "2",
+  "url": "s_rank_nullity.html#th_fundspaces_matrixtransform",
+  "type": "Theorem",
+  "number": "4.5.6",
+  "title": "Null space and image as fundamental spaces.",
+  "body": " Null space and image as fundamental spaces   Let be an matrix, and let be its corresponding matrix transformation. The following equalities hold: .   "
+},
+{
+  "id": "th_fundspaces_rowreduce",
+  "level": "2",
+  "url": "s_rank_nullity.html#th_fundspaces_rowreduce",
+  "type": "Theorem",
+  "number": "4.5.7",
+  "title": "Fundamental spaces and row equivalence.",
+  "body": " Fundamental spaces and row equivalence   Let be an matrix, and suppose is row equivalent to . The following equalities hold . Although and have the same dimension, they are in general not equal as subspaces.    First observe that is row equivalent to and yet . Thus we do not have in general.  We now turn to the equalities . Assume that is row equivalent to . Using the formulation of row reduction in terms of multiplication by elementary matrices, we see that there is an invertible matrix such that , and hence also . But then we have . This proves .  Next, by we have , and , . It follows that . Lastly, we turn to the row spaces. We will show that each row of is an element of , from whence it follows that . Let be the -th row of , and let be the -th column of . By , we have , and furthermore, is the linear combination of the rows of whose coefficients come from the entries of . Thus , as desired.  Having shown that , we see that the same argument works mutatis mutandis (swapping the roles of and and using in place of ) to show that . We conclude that .   "
+},
+{
+  "id": "th_fundspaces_rowechelon",
+  "level": "2",
+  "url": "s_rank_nullity.html#th_fundspaces_rowechelon",
+  "type": "Theorem",
+  "number": "4.5.8",
+  "title": "Fundamental spaces and row echelon forms.",
+  "body": " Fundamental spaces and row echelon forms   Let be an matrix, and suppose is row equivalent to the matrix in row echelon form. Let be the number of leading ones in , and let ; , and are the number of leading and free variables, respectively, of the system corresponding to . We have .    By we know that , and . So it is enough to show that and .  First, we will show that the nonzero rows of form a basis for , proving . Clearly the nonzero rows span , since any linear combination of all the rows of can be expressed as a linear combination of the nonzero rows. Furthermore, since is in row echelon form, the staircase pattern of the leading ones appearing in the nonzero rows assures that these row vectors are linearly independent.  Next, we show that the columns of containing leading ones form a basis of . Let be the columns of with leading ones, and let be the columns without leading ones. To prove the form a basis for , we will show that given any there is a unique choice of scalars such that . (Recall that the uniqueness of this choice implies linear independence.) Given , we can find such that ( ), which means the linear system with augmented matrix is consistent. Using our Gaussian elimination theory (specifically, ), we know that the solutions to this system are in 1-1 correspondence with choices for the free variables . (Remember that the columns without leading ones correspond to the free variables.) In particular, there is a unique solution to where we set all the free variables equal to 0. By the column method ( ), this gives us a unique linear combination of only the columns with leading ones equal to . This proves the claim, and shows that the columns with leading ones form a basis for . We conclude that .  Lastly, we have , where the last equality uses the fact that the sum of the number of columns with leading ones ( ) and the number of columns without leading ones ( ) is , the total number of columns.   "
+},
+{
+  "id": "th_rank_nullity_matrix",
+  "level": "2",
+  "url": "s_rank_nullity.html#th_rank_nullity_matrix",
+  "type": "Theorem",
+  "number": "4.5.9",
+  "title": "Rank-nullity for matrices.",
+  "body": " Rank-nullity for matrices   Let be an matrix. We have .    We have .   "
+},
+{
+  "id": "proc_fund_spaces",
+  "level": "2",
+  "url": "s_rank_nullity.html#proc_fund_spaces",
+  "type": "Procedure",
+  "number": "4.5.10",
+  "title": "Computing bases of fundamental spaces.",
+  "body": " Computing bases of fundamental spaces   To compute bases for the fundamental spaces of an matrix , proceed as follow.    Row reduce to a matrix in row echelon form.    We have . Compute a parametric description of the solutions to the linear system following . If the free variables are , a basis of is obtained by letting be the solution corresponding to the choice and for .    We have . The set of nonzero rows of is a basis for .    In general . However, the columns of containing leading ones form a basis of , and the corresponding columns of form a basis for .     "
+},
+{
+  "id": "fig_vid_fund_space",
+  "level": "2",
+  "url": "s_rank_nullity.html#fig_vid_fund_space",
+  "type": "Figure",
+  "number": "4.5.11",
+  "title": "Video: computing fundamental spaces",
+  "body": " Video: computing fundamental spaces  Video: computing fundamental spaces   "
+},
+{
+  "id": "th_invertibility_supersized",
+  "level": "2",
+  "url": "s_rank_nullity.html#th_invertibility_supersized",
+  "type": "Theorem",
+  "number": "4.5.12",
+  "title": "Invertibility theorem (supersized).",
+  "body": " Invertibility theorem (supersized)   Let be an matrix. The following statements are equivalent.     is invertible.    The matrix equation has a unique solution for any column vector .    The matrix equation has a solution for any column vector .    The matrix equation has a unique solution : namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.     .                             Any of the following equivalent conditions about the set of columns of hold: is a basis of ; spans ; is linearly independent.    Any of the following equivalent conditions about the set of rows of hold: is a basis of ; spans ; is linearly independent.     "
+},
+{
+  "id": "proc_contract_extend",
+  "level": "2",
+  "url": "s_rank_nullity.html#proc_contract_extend",
+  "type": "Procedure",
+  "number": "4.5.13",
+  "title": "Contracting and extending to bases of <span class=\"process-math\">\\(\\R^n\\)<\/span>.",
+  "body": " Contracting and extending to bases of   Let .    Contracting to a basis  Assume spans . To contract to a basis , proceed as follows.    Let be the matrix whose -th column is given by for all .    Use the column space procedure ( ) to compute a basis of , chosen from among the original columns of .    The subset is a basis for .      Extending to a basis  Assume is linearly independent. To extend to a basis of proceed as follows.    Let be the matrix whose first columns are the elements of , and whose remaining columns consist of , the standard basis elements of .    Use the column space procedure ( ) to compute a basis of , chosen from among the original columns of .    The set is a basis for containing .        Let's see why in both cases the procedure produces a basis of that is either a sub- or superset of .   Contracting to a basis  In this case we have . Thus is a basis for . Since the column space procedure selects columns from among the original columns of , we have , as desired.    Extending to a basis  Since contains for all , we have . Thus is a basis for . Since the first columns of are linearly independent (they are the elements of ), when we row reduce to a matrix in row echelon form, the first columns of will contain leading ones. (To see this, imagine row reducing the submatrix consisting of the first columns of to a row echelon matrix . Since these columns are linearly independent, they already form a basis for . Thus the corresponding colmns of must all have leading ones. ) It follows that the first columns of are selected to be in the basis , and hence that , as desired.    "
+},
+{
+  "id": "fig_vid_contract_basis",
+  "level": "2",
+  "url": "s_rank_nullity.html#fig_vid_contract_basis",
+  "type": "Figure",
+  "number": "4.5.14",
+  "title": "Video: contracting to a basis",
+  "body": " Video: contracting to a basis  Video: contracting to a basis   "
+},
+{
+  "id": "s_rank_nullity_ex-1-2",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-1-2",
+  "type": "Exercise",
+  "number": "4.5.4.1",
+  "title": "",
+  "body": "  Suppose that is a matrix that has an echelon form with two zero rows. Find the dimension of the row space of , the dimension of the column space of , and the dimension of the null space of .  The dimension of the row space of is .  The dimension of the column space of is .  The dimension of the null space of is .                  The dimension of the row space is the number of nonzero rows in the echelon form, or The dimension of the column space is the same as the dimension of the row space, and the dimension of the null space is      "
+},
+{
+  "id": "s_rank_nullity_ex-1-3",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-1-3",
+  "type": "Exercise",
+  "number": "4.5.4.2",
+  "title": "",
+  "body": "  Are the following statements true or false?    The set {0} forms a basis for the zero subspace.    Let . Then { } in can form a basis for if the correct vectors are added to .    The nullity of a matrix A is the same as the dimension of the subspace spanned be the columns of A.    has exactly one subspace of dimension for each of .    Let . Then { } in can form a basis for if the correct vectors are removed from .        "
+},
+{
+  "id": "s_rank_nullity_ex-1-4",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-1-4",
+  "type": "Exercise",
+  "number": "4.5.4.3",
+  "title": "",
+  "body": "  Are the following statements true or false?    If and are subspaces of of the same dimension, then .    If the set of vectors is linearly independent in a subspace then vectors can be added to to create a basis for    Three nonzero vectors that lie in a plane in might form a basis for .    If the set of vectors is linearly independent in a subspace then vectors can be removed from to create a basis for .    If the set of vectors spans a subspace , then vectors can be removed from to create a basis for        "
+},
+{
+  "id": "s_rank_nullity_ex-1-5",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-1-5",
+  "type": "Exercise",
+  "number": "4.5.4.4",
+  "title": "",
+  "body": "  Let Find dimensions of the kernel and image of .   ,   .                "
+},
+{
+  "id": "s_rank_nullity_ex-1-6",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-1-6",
+  "type": "Exercise",
+  "number": "4.5.4.5",
+  "title": "",
+  "body": "  Let be the linear transformation defined by Find bases for the kernel and image of . vector  A basis for the kernel of is    A basis for the image of is                  "
+},
+{
+  "id": "s_rank_nullity_ex-1-7",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-1-7",
+  "type": "Exercise",
+  "number": "4.5.4.6",
+  "title": "",
+  "body": "  Let be the linear operator defined by   (a) Find the dimension of the range of :  (b) Find the dimension of the kernel of :  (c) Let be the subspace of spanned by and . Find the dimension of :                  Solution: (a) Since , , spans , we get that is spanned by , , . So    and hence the dimension of the range is 2.  (b) The rank-nullity theorem implies that the dimension of the kernel is .  (c) Notice that   and it is easy to check that these two vectors are linearly independent. Therefore, the dimension of is 2.      "
+},
+{
+  "id": "s_rank_nullity_ex-2",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-2",
+  "type": "Exercise",
+  "number": "4.5.4.7",
+  "title": "",
+  "body": " In this exercise we will show that for any , there is a polynomial satisfying . In other words given any list of values , we can find a polynomial that evaluates to these values at the inputs .    Define by . Show that is linear.    Compute . You may use the fact that a polynomial of degree has at most roots.    Use the rank-nullity theorem to compute . Explain why this implies     Explain why the equality is equivalent to the claim we wish to prove.    "
+},
+{
+  "id": "s_rank_nullity_ex-3",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-3",
+  "type": "Exercise",
+  "number": "4.5.4.8",
+  "title": "",
+  "body": "  Use the rank-nullity theorem to compute the rank of the linear transformation described.     ,      ,      ,      "
+},
+{
+  "id": "s_rank_nullity_ex-4",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-4",
+  "type": "Exercise",
+  "number": "4.5.4.9",
+  "title": "",
+  "body": " For each linear transformation use the rank-nullity theorem to decide whether .          ,      ,     "
+},
+{
+  "id": "s_rank_nullity_ex-5",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-5",
+  "type": "Exercise",
+  "number": "4.5.4.10",
+  "title": "",
+  "body": " Let be with . Prove that there is a such that the system is inconsistent.   Use and .  "
+},
+{
+  "id": "s_rank_nullity_ex-6",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-6",
+  "type": "Exercise",
+  "number": "4.5.4.11",
+  "title": "",
+  "body": " For each matrix (i) row reduce to a matrix in row echelon form, (ii) compute bases for and , (iii) compute and ,and (iv) decide whether .                   "
+},
+{
+  "id": "s_rank_nullity_ex-7",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-7",
+  "type": "Exercise",
+  "number": "4.5.4.12",
+  "title": "",
+  "body": " Assume is invertible, and is row equivalent to the row echelon matrix . Prove: .  "
+},
+{
+  "id": "s_rank_nullity_ex-8",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-8",
+  "type": "Exercise",
+  "number": "4.5.4.13",
+  "title": "",
+  "body": " For each matrix below, (i) compute bases for each fundamental space, (ii) identify these spaces as familiar geometric objects in or , and (iii) provide sketches of each space. The sketches of and should be combined in the same coordinate system.                   "
+},
+{
+  "id": "s_rank_nullity_ex-9",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-9",
+  "type": "Exercise",
+  "number": "4.5.4.14",
+  "title": "",
+  "body": " For each compute bases for each fundamental space. In each case, you can find bases for one of the fundamental spaces by inspection, and then use the rank-nullity theorem to reduce your workload for the other spaces. See first solution for a model example.                 Clearly, is a basis for , and is a basis for . It follows that and hence . Thus we need to find three linearly independent elements of to find a basis. We can do so by inspection with the help of the column method. Namely, observe that are all in (column method). The location of zeros in these vectors make it clear that are linearly independent. Since , and , we conclude that is a basis of ( ).    "
+},
+{
+  "id": "s_rank_nullity_ex-10",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-10",
+  "type": "Exercise",
+  "number": "4.5.4.15",
+  "title": "",
+  "body": " For each use to compute bases for each fundamental space.                   "
+},
+{
+  "id": "s_rank_nullity_ex-11",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-11",
+  "type": "Exercise",
+  "number": "4.5.4.16",
+  "title": "",
+  "body": " Find the rank and nullity of each matrix by reducing it to row echelon form.              "
+},
+{
+  "id": "s_rank_nullity_ex-12",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-12",
+  "type": "Exercise",
+  "number": "4.5.4.17",
+  "title": "",
+  "body": " Let be an matrix.    Prove: if and only if .   Construct a matrix with . Verify that your satisfies .   "
+},
+{
+  "id": "s_rank_nullity_ex-13",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-13",
+  "type": "Exercise",
+  "number": "4.5.4.18",
+  "title": "",
+  "body": " Suppose is with .  Prove: either the rows of are linearly dependent or the columns of are linearly dependent.  "
+},
+{
+  "id": "s_rank_nullity_ex-14",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-14",
+  "type": "Exercise",
+  "number": "4.5.4.19",
+  "title": "",
+  "body": " Prove: if and only if is a square matrix.  "
+},
+{
+  "id": "s_rank_nullity_ex-15",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-15",
+  "type": "Exercise",
+  "number": "4.5.4.20",
+  "title": "",
+  "body": " Suppose and are row equivalent matrices. For each let and be the -th columns of and , respectively.  Prove: columns of are linearly independent if and only if the corresponding columns are linearly independent.   By there is an invertible such that . Let and be the submatrices of and obtained by taking columns . Show that we still have and relate linear independence of the columns to solutions of the matrix equations and .  "
+},
+{
+  "id": "s_rank_nullity_ex-16",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-16",
+  "type": "Exercise",
+  "number": "4.5.4.21",
+  "title": "",
+  "body": " Prove as follows.    First show that all three statements of (13) are equivalent, and that all three statements of (14) are equivalent. (Use .)    Show that statements (8)-(14) are equivalent with the help of .    Choose a statement from (1)-(7) that can be easily shown to be equivalent to one of the statements from (8)-(14).    "
+},
+{
+  "id": "s_isom",
+  "level": "1",
+  "url": "s_isom.html",
+  "type": "Section",
+  "number": "4.6",
+  "title": "Isomorphisms",
+  "body": " Isomorphisms  In this section we utilize bases, dimension, and the rank-nullity theorem to investigate properties of linear transformations. The main focus will be the notion of an isomorphism , which is simply a linear transformation that is invertible when considered as a function. We begin, however, with an enlightening discussion relating linear transformations and bases.   Isomorphisms  We spoke of the coordinate vector map as a means of translating questions about an abstract vector space to equivalent ones about the more familiar vector space . Properties (1)-(3) of are what guarantee that nothing is lost in this translation. Axiomitizing these properties, we obtain an important family of linear transformations called isomorphisms . The word isomorphism is derived from the Greek terms iso , meaning same , and morphe , meaning form . As we will see, isomorphic vector spaces and are essentially the same creature, at least as far as linear algebraic properties are concerned. Furthermore, an isomorphism provides a one-to-one correspondence between them: a dictionary that allows us to translate statements about to statements about , and vice versa.  Before getting to the definition, recall that by definition a function is bijective if it is injective and surjective ( )   Isomorphism  isomorphism  invertible linear transformation  Let and be vector spaces. An isomorphism from to is a bijective linear transformation . Vector spaces and are isomorphic if there is an isomorphism from to .     Proving is an isomorphism  According to , to prove a function is an isomorphism, we must show that    is linear, and     is invertible.   Since being invertible is equivalent to being bijective, there are two main approaches to proving that (ii) holds for a linear transformation :   we can show directly that is invertible by providing an inverse ;    we can show that is bijective (i.e., injective and surjective).   Which approach, (a) or (b), is more convenient depends on the linear transformation in question.    Inverse of isomorphism is an isomorphism   Let be an isomorphism. Since is invertible, there is an inverse function . Not surprisingly, is itself a linear transformation, though of course this requires proof. (See .) Since is also invertible ( is its inverse), it follows that is itself an isomorphism.     Isomorphism equivalence   Let be a linear transformation. The following are equivalent.    is an isomorphism;     and .       We mentioned in the introduction that two isomorphic vector spaces are, for all linear algebraic intents and purposes, essentially the same thing. The next theorem provides some evidence for this claim. It also illustrates how a given isomorphism can translate back and forth between two isomorphic vector spaces. Recall ( ) that for a subset , the image of under is the set .   Properties preserved by isomorphisms   Let be an isomorphism. The following properties hold:    is linearly independent if and only if is linearly independent;     spans if and only if spans ;     is a basis of if and only if is a basis of      .       The following omnibus result is useful for deciding whether a linear transformation is an isomorphism, and lists a few of the properties of a vector space that are preserved by isomorphisms: namely, dimension, span, and linear independence.   Isomorphism compendium   Let be a linear transformation.     is injective if and only if     Assume is an isomorphism, let , and let , the set of images of under .   The inverse function is a linear transformation.    The set spans if and only if spans .    The set is linearly independent if and only if is linearly independent.       Assume . Then the following are equivalent:    is an isomorphism;     and ;     and .           Assume is injective. Then . It follows that .  Now assume . Then . Thus is injective.       "
+},
+{
+  "id": "d_isomorphism",
+  "level": "2",
+  "url": "s_isom.html#d_isomorphism",
+  "type": "Definition",
+  "number": "4.6.1",
+  "title": "Isomorphism.",
+  "body": " Isomorphism  isomorphism  invertible linear transformation  Let and be vector spaces. An isomorphism from to is a bijective linear transformation . Vector spaces and are isomorphic if there is an isomorphism from to .   "
+},
+{
+  "id": "ss_isomorphisms-5",
+  "level": "2",
+  "url": "s_isom.html#ss_isomorphisms-5",
+  "type": "Remark",
+  "number": "4.6.2",
+  "title": "Proving <span class=\"process-math\">\\(T\\)<\/span> is an isomorphism.",
+  "body": " Proving is an isomorphism  According to , to prove a function is an isomorphism, we must show that    is linear, and     is invertible.   Since being invertible is equivalent to being bijective, there are two main approaches to proving that (ii) holds for a linear transformation :   we can show directly that is invertible by providing an inverse ;    we can show that is bijective (i.e., injective and surjective).   Which approach, (a) or (b), is more convenient depends on the linear transformation in question.  "
+},
+{
+  "id": "rm_isomorphism_inverse",
+  "level": "2",
+  "url": "s_isom.html#rm_isomorphism_inverse",
+  "type": "Remark",
+  "number": "4.6.3",
+  "title": "Inverse of isomorphism is an isomorphism.",
+  "body": " Inverse of isomorphism is an isomorphism   Let be an isomorphism. Since is invertible, there is an inverse function . Not surprisingly, is itself a linear transformation, though of course this requires proof. (See .) Since is also invertible ( is its inverse), it follows that is itself an isomorphism.   "
+},
+{
+  "id": "th_bijective_transformation",
+  "level": "2",
+  "url": "s_isom.html#th_bijective_transformation",
+  "type": "Theorem",
+  "number": "4.6.4",
+  "title": "Isomorphism equivalence.",
+  "body": " Isomorphism equivalence   Let be a linear transformation. The following are equivalent.    is an isomorphism;     and .      "
+},
+{
+  "id": "th_isomorphism_preserves",
+  "level": "2",
+  "url": "s_isom.html#th_isomorphism_preserves",
+  "type": "Theorem",
+  "number": "4.6.5",
+  "title": "Properties preserved by isomorphisms.",
+  "body": " Properties preserved by isomorphisms   Let be an isomorphism. The following properties hold:    is linearly independent if and only if is linearly independent;     spans if and only if spans ;     is a basis of if and only if is a basis of      .      "
+},
+{
+  "id": "th_isomorphisms",
+  "level": "2",
+  "url": "s_isom.html#th_isomorphisms",
+  "type": "Theorem",
+  "number": "4.6.6",
+  "title": "Isomorphism compendium.",
+  "body": " Isomorphism compendium   Let be a linear transformation.     is injective if and only if     Assume is an isomorphism, let , and let , the set of images of under .   The inverse function is a linear transformation.    The set spans if and only if spans .    The set is linearly independent if and only if is linearly independent.       Assume . Then the following are equivalent:    is an isomorphism;     and ;     and .           Assume is injective. Then . It follows that .  Now assume . Then . Thus is injective.     "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
@@ -3943,9 +5653,9 @@ var ptx_lunr_docs = [
   "body": " Mantras and fiats   "
 },
 {
-  "id": "euc_vec_spaces-7-10",
+  "id": "euc_vec_spaces-8-10",
   "level": "1",
-  "url": "euc_vec_spaces-7-10.html",
+  "url": "euc_vec_spaces-8-10.html",
   "type": "Index",
   "number": "",
   "title": "Index",

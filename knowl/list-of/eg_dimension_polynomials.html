@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.4.8</span><span class="period">.</span><span class="space"> </span><span class="title">Subspace of <span class="process-math">\(P_3\)</span>.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(W\subseteq P_3\)</span> be the subspace of polynomials whose leading coefficient is equal to their constant term: i.e.,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_dimension.html">
+\begin{equation*}
+W=\{a_3x^3+a_2x^2+a_1x+a_0\colon a_3=a_0\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Compute <span class="process-math">\(\dim W\)</span> using <a href="s_dimension.html#proc_dimension" class="xref" data-knowl="./knowl/xref/proc_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.4.6: Computing dimension">Procedure 4.4.6</a>. You may take for granted that <span class="process-math">\(W\)</span> is a subspace.</div>
+</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">First we use <a href="s_basis.html#proc_provide_basis" class="xref" data-knowl="./knowl/xref/proc_provide_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.3.13: By-inspection basis technique">Procedure 4.3.13</a> to produce a basis of <span class="process-math">\(W\text{.}\)</span> A general element of <span class="process-math">\(W\)</span> has parametric description</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_provide_basis.html ./knowl/xref/eq_dim_poly.html">
+\begin{equation}
+p(x)=ax^3+bx^2+cx+a=a(x^3+1)+bx^2+cx\text{,}\tag{4.4.2}
+\end{equation}
+</div>
+<div class="para">from which we see immediately that <span class="process-math">\(B=\{x^3+1, x^2, x\}\)</span> is a spanning set of <span class="process-math">\(W\text{.}\)</span> From <a href="s_dimension.html#eq_dim_poly" class="xref" data-knowl="./knowl/xref/eq_dim_poly.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.4.2">(4.4.2)</a> we also see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_provide_basis.html ./knowl/xref/eq_dim_poly.html">
+\begin{align*}
+a(x^3+1)+bx^2+cx=\boldzero \amp \iff ax^3+bx^2+cx+a=0x^3+0x^2+0x+0 \\
+\amp \iff a=b=c=0\text{.}
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(B\)</span> is a basis of <span class="process-math">\(W\text{.}\)</span> Since <span class="process-math">\(B\)</span> contains three distinct elements, we conclude that <span class="process-math">\(\dim W=\abs{B}=3\text{.}\)</span>
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_dimension.html#eg_dimension_polynomials">in-context</a></span>
+</body>
+</html>
