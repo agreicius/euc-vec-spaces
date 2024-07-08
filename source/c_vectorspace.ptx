@@ -2,7 +2,7 @@
   <title>Vector spaces and linear transformations</title>
   <!-- <xi:include  href="s_vectorspace.ptx"/> -->
   <!-- <xi:include  href="s_transformation.ptx"/> -->
-  <xi:include  href="s_subspace_span.ptx"/>
+  <xi:include  href="s_subspace.ptx"/>
   <!-- <xi:include  href="s_nullspace_image.ptx"/> -->
   <xi:include  href="s_span_independence.ptx"/>
   <xi:include  href="s_basis.ptx"/>
