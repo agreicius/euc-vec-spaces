@@ -6,10 +6,6 @@
       <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.2.61.pg" />
     </exercise>
 
-    <exercise>
-      <!-- another similar problem: Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.2.64.pg -->
-      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.2.63.pg" />
-    </exercise>
 
     <exercise>
       <!-- several similar multiple questions from 2.3.45 to 2.3.52 -->
@@ -21,15 +17,7 @@
       <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.3.46.pg" />
     </exercise>
 
-    <exercise>
-      <!-- span of polynomials -->
-      <webwork source="Library/NAU/setLinearAlgebra/P3span.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- linear independence of polynomials -->
-      <webwork source="Library/TCNJ/TCNJ_BasesLinearlyIndependentSet/problem10.pg" />
-    </exercise>
+    
 
     <exercise>
       <!-- linear independence of vectors -->
@@ -42,115 +30,6 @@
     </exercise>
   </subexercises>
   <exercisegroup>
-  <introduction>
-  <p>
-  A subset <m>S</m> of a vector space is given in each exercise below. Determine whether the given elements are elements of <m>\Span S</m>. Justify your answer by either providing a linear combination of <m>S</m> yielding the given element, or else showing that no such linear combination exists.
-  </p>
-  </introduction>
-  <exercise>
-    <statement>
-      <p>
-        <m>V=\R^3</m>, <m>S=\{(1,0,1),(1,1,1), (1,2,1) \}</m>
-      </p>
-      <ol>
-        <li>
-          <p>
-            <m>\boldv=(0,0,0)</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>\boldw=(1,2,1)</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>\boldu=(7,1,0)</m>
-          </p>
-        </li>
-      </ol>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        <m>V=M_{22}</m>, <m>S=\{A, B, C\}</m>, where
-        <me>
-A = \begin{bmatrix}4\amp 0\\ -2\amp -2 \end{bmatrix} \hspace{5pt}, B = \begin{bmatrix}1\amp -1\\ 2\amp 3 \end{bmatrix} \hspace{5pt}, C= \begin{bmatrix}0\amp 2\\ 1\amp 4 \end{bmatrix}
-        </me>.
-      </p>
-      <ol>
-        <li>
-          <p>
-            <m>A_1=\begin{bmatrix}6\amp -8\\ -1\amp -8 \end{bmatrix}</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>A_2=\begin{bmatrix}-1\amp 5\\ 7\amp 1 \end{bmatrix}</m>
-          </p>
-        </li>
-      </ol>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-      <m>V=C(\R)</m>, <m>S=\{f_1(x)=\cos^2 x, f_2(x)=\sin^2 x\}</m>
-      </p>
-      <ol>
-        <li>
-          <p>
-            <m>f(x)=x</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>g(x)=\cos 2x</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>h(x)=\sin x</m>
-          </p>
-        </li>
-      </ol>
-    </statement>
-
-  </exercise>
-  </exercisegroup>
-<exercise>
-  <statement>
-    <p>
-      Determine whether <m>S</m> is a spanning set of <m>V</m>.
-    </p>
-    <ol>
-      <li>
-        <p>
-          <m>V=\R^3</m>, <m>S=\{(1,-1,1),(0,1,-2), (1,0,1)\} </m>
-        </p>
-      </li>
-      <li>
-        <p>
-          <m>V=\R^3</m>, <m>S=\{(1,-1,1), (0,1,-2), (-3,2,-1)\}</m>
-        </p>
-      </li>
-      <li>
-        <p>
-          <m>V=P_2</m>, <m>S=\{ x^2-1, x^2+1, x^2+2x \}</m>
-        </p>
-      </li>
-      <li>
-        <p>
-          <m>V=\R_{>0}</m> (see <xref ref="ex_vs_positivereals"/>), <m>S=\{3\}</m>
-        </p>
-      </li>
-
-    </ol>
-  </statement>
-
-</exercise>
-<exercisegroup>
 <introduction>
 <p>
 In each exercise, determine whether the given subset <m>S</m> of the vector space <m>V</m> is linearly independent. Justify your answer.
