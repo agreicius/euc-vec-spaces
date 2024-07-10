@@ -199,14 +199,14 @@
       </p>
       </solution>
     </example>
-    <paragraphs xml:id="ss_vid_eg_span">
+    <example xml:id="vid_eg_span">
       <title>Video example: computing span</title>
       <figure xml:id="fig_vid_span">
         <title>Video: computing span</title>
       <caption>Video: computing span</caption>
       <video xml:id="vid_span" youtube="WN_5qI2r2ks" />
       </figure>
-    </paragraphs>
+    </example>
     <p>
       You may have noticed that each span computation in the previous example produced a subspace of <m>\R^2</m>. This is no accident!
     </p>
@@ -306,7 +306,7 @@
             Let <m>V=M_{mn}</m>. For each <m>(i,j)</m> with <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>, define <m>E_{ij}</m> to be the <m>m\times n</m> matrix with a one in the <m>ij</m>-th entry, and zeros elsewhere. Then <m>S=\{E_{ij}\colon 1\leq i\leq m, 1\leq j\leq n\}</m> is a spanning set for <m>M_{mn}</m>.
             </p>
           </li>
-          <li>
+          <!-- <li>
             <title>Polynomials of bounded degree</title>
             <p>
             Let <m>V=P_n</m>. The set <m>S=\{x^n, x^{n-1}, \dots, x, 1\}</m> clearly spans <m>P_n</m>. This is just another way of saying that the <em>monomials</em> of degree at most <m>n</m> generate the polynomials of degree at most <m>n</m>.
@@ -319,9 +319,9 @@
             <me>S=\{1, x, x^2, \dots\}=\{x^i\colon i\geq 0\} </me>
             of <em>all</em> monomials is a spanning set for <m>P</m>.
             </p>
-          </li>
+          </li> -->
         </ul>
-        Note the glaring difference between the first three examples, and the last: our standard spanning set for <m>P</m> is <em>infinite</em>, whereas the previous examples are all finite spanning sets. You suspect, no doubt, that there is no finite spanning set for <m>P</m>. We will be able to prove this shortly.
+        <!-- Note the glaring difference between the first three examples, and the last: our standard spanning set for <m>P</m> is <em>infinite</em>, whereas the previous examples are all finite spanning sets. You suspect, no doubt, that there is no finite spanning set for <m>P</m>. We will be able to prove this shortly. -->
         </p>
       </statement>
     </remark>
@@ -350,11 +350,11 @@
               </me>.
             </p>
           </li>
-          <li>
+          <!-- <li>
             <p>
               <m>V=P_2</m>, <m>S=\{x^2+x+1, x^2-x, x-1\}</m>
             </p>
-          </li>
+          </li> -->
         </ol>
         </p>
       </statement>
@@ -400,7 +400,7 @@
                 Since the last column will never contain a leading one, we conclude that the system is consistent for any choice of <m>a,b,c,d</m>, and thus that <m>\Span S=M_{22}</m>, as claimed.
               </p>
             </li>
-            <li>
+            <!-- <li>
               <p>
                 We must show that given any <m>p(x)=ax^2+bx+c</m> we can find <m>c_1,c_2,c_3</m> such that
                 <me>
@@ -420,7 +420,7 @@
                 </me>.
                 As in the examples above, our reasoning implies  <m>\Span S=P_2</m> if and only if this system is consistent for <em>any</em> choice of <m>a,b,c</m>. Thus usual Gaussian elimination procedure tells us that this is indeed so. We leave the details to you.
               </p>
-            </li>
+            </li> -->
           </ol>
         </p>
       </solution>
@@ -429,170 +429,74 @@
     </subsection>
 
 
-    <!-- <subsection>
-      <title><m>\R^\infty</m></title>
-      <p>
-        As above we can define <m>\bolde_i\in \R^\infty</m> to be the infinite sequence whose <m>i</m>-th entry is 1, and whose every other entry is <m>0</m>.
-      </p>
-    </subsection>
-    <p>
-      Note, however,
-      that the set <m>\{\bolde_1, \bolde_2, \bolde_3, \dots\}</m> is <em>not</em>
-      a spanning set for <m>\R^\infty</m>.
-    </p>
-    <p>
-      Indeed, the sequence <m>(1,1,1,\dots)</m> is not a (finite!) linear combination of the <m>\bolde_i</m>.
-    </p>
-    <p>
-      \alert{<m>\R_{>0}</m>} Any
-      <m>a\ne 1\in \R_{>0}</m> forms a spanning set for <m>\R_{>0}</m> as a vector space.
-      This is because scalar multiplication by <m>r</m> in <m>\R_{>0}</m> is defined as exponentiation.
-      Thus <m>\Span(\{a\})=\{a^r\colon r\in\R\}=\R_{>0}</m>.
-      The last equality holds since the exponential function
-      <m>f(x)=a^x</m> has image all positive reals for any base <m>a\ne 1</m>.
-    </p>
-    </subsection>
-    <subsection>
-    <title>Example</title>
-    <p>
-      Let <m>V=P_2</m> and let <m>S=\{p_1, p_2\}</m>,
-      where <m>p_1(x)=x^2-1</m> and <m>p_2(x)=x^2-x</m>.
-      Show that <m>W=\Span(S)</m> is the subspace of all polynomials
-      <m>p(x)=a_2x^2+a_1x+a_0</m> for which <m>p(1)=0</m>.
-      That is:
-      <me>
-        \Span(S)=\{p(x)\in P_2\colon p(1)=0\}
-      </me>
-    </p>
-    <proof>
-      <p>
-        We wish to prove a <em>set equality</em>.
-        We do so by showing the <m>\subseteq</m> and
-        <m>\supseteq</m> relations separately. (See my proof technique guide!)
-      </p>
-      <subsection>
-        <title><m>\subseteq</m></title>
-        <p>
-          Note first that <m>p_1(1)=p_2(1)=0</m>.
-          Given an element <m>q(x)\in \Span\left(\{p_1(x), p_2(x)\}\right)</m>,
-          we have <m>q(x)=ap_1(x)+bp_2(x)</m> for some <m>a, b\in \R</m>.
-          But then <m>q(1)=ap_1(1)+bp_2(1)=0+0=0</m>.
-          Thus <m>q(x)\in \{p(x)\colon p(1)=0\}</m>.
-        </p>
-      </subsection>
-      <subsection>
-        <title><m>\supseteq</m></title>
-        <p>
-          Now take <m>p(x)=a_2x^2+a_1x+a_0\in \{p(x)\in P_2\colon p(1)=0\}</m>.
-          We must find <m>a, b\in \R</m> such that <m>p(x)=ap_1+bp_2</m>.
-        </p>
-      </subsection>
-      <p>
-        Since <m>p(1)=0</m>, we have <m>a_2+a_1+a_0=0</m>.
-        I claim <m>p(x)=(-a_0)p_1+(-a_1)p_2</m>.
-        Indeed we have
-        <me>
-          -a_0p_1-a_1p_2=(-a_0-a_1)x^2+a_1x+a_0=a_2x^2+a_1x+a_0
-        </me>,
-        since <m>a_2+a_1+a_0=0</m>.
-        This shows that <m>p(x)\in\Span\left(\{p_1, p_2\}\right)</m>,
-        as desired.
-      </p>
-    </proof>
-    </subsection>
-    <subsection>
-      <title>Example</title>
-      <p>
-        Let <m>V=P_2</m> and let <m>S=\{p_1, p_2, p_3\}</m> where
-        <me>
-          p_1(x)=x^2+x+1, p_2(x)=x^2+x, p_3(x)=x^2+1
-        </me>.
-      </p>
-      <p>
-        Show that <m>\Span(S)=P_2</m>.
-      </p>
-      <proof>
-        <p>
-          Again, we are tasked with showing a <em>set equality</em>.
-          It is clear that <m>\Span(S)=\{rp_1+sp_2+tp_3\colon r,s,t\in\R\}\subseteq P_2</m>.
-          The harder direction is showing <m>P_2\subseteq \Span(S)</m>:
-          i.e., given <em>any</em> <m>p(x)=a_2x^2+a_1x+a_0</m> we must show there are
-          <m>r,s,t\in\R</m> such that <m>p(x)=rp_1+sp_2+tp_3</m>.
-        </p>
-        <p>
-          We do so by setting up a system of equations.
-          Combining like terms and equating coefficients in the polynomial expression
-          <m>p(x)=rp_1+sp_2+tp_3</m> yields the linear system
-          <md>
-            \begin{linsys}{3} r\amp +\amp s\amp +\amp t\amp =\amp a_2\\ r\amp +\amp s\amp \amp \amp =\amp a_1\\ r\amp \amp \amp +\amp t\amp =\amp a_0 \end{linsys}
-          </md>
-        </p>
-        <p>
-          GE shows that the system has a solution for <em>any</em>
-          choice of <m>a_2, a_1, a_0</m>:
-          namely, <m>r=-a_2+a_1+a_0</m>,
-          <m>s=a_2-a_0</m>, <m>t=a_2-a_1</m>.
-          Thus given any <m>p(x)=a_2x^2+a_1x+a_0</m>,
-          we can find <m>r,s,t</m> such that <m>p=rp_1+sp_2+tp_3</m>,
-          showing <m>P_2\subseteq \Span(S)</m>.
-        </p>
-      </proof>
-    </subsection> -->
+    
   <subsection  xml:id="ss_linear_independence">
     <title>Linear independence</title>
     <p>
-      As mentioned at the top, the notion of <em>linear independence</em> is precisely what we need to guarantee that a given spanning set has no <q>redundancies</q>. We first define linear independence of a finite set of vectors (<xref ref="d_linear_independence"/>) and later generalize to an arbitrary set of vectors (<xref ref="d_linear_independence_arbitrary"/>). 
+      As mentioned at the top, the notion of <em>linear independence</em> is precisely what we need to guarantee that a given spanning set has no <q>redundancies</q>. 
     </p>
     <definition xml:id="d_linear_independence">
-      <title>Linear independence (for finite subsets)</title>
+      <title>Linear independence</title>
       <idx><h>linear independence</h></idx>
       <statement>
         <p>
-          Let <m>V</m> be a vector space, let <m>S</m> be a finite subset, and let <m>\boldv_1, \boldv_2, \dots, \boldv_n</m> be the distinct elements of <m>S</m>: <ie />, <m>\boldv_i\ne \boldv_j</m> for all <m>i\ne j</m>.  We say <m>S</m> is <term>linearly independent</term> if the following condition holds:
+          Let <m>V</m> be a vector space. A subset <m>S\subseteq V</m> is <term>linearly independent</term> if for any collection <m>\boldv_1,\boldv_2,\dots, \boldv_n</m> of distinct vectors of <m>S</m> (<ie/>, <m>\boldv_i\ne \boldv_j</m> for <m>i\ne j</m>), and any scalars <m>c_1,c_2,\dots, c_n\in \R</m>, the following implication holds:
           <me>
-            \text{if } c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldzero \text{ for some } c_i\in \R , \text{ then } c_i=0 \text{ for all } i
+            c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldzero \implies c_1=c_2=\cdots =c_n=0
           </me>.
-          We say <m>S</m>is <term>linearly dependent</term>
-          if it is not linearly independent;
-          i.e., if we can find scalars <m>c_1, c_2,\dots, c_n</m> with <m>c_i\ne 0</m> for some <m>i</m> and
+          A subset <m>S</m> is <term>linearly dependent</term>
+          if it is not linearly independent: <ie/>, if we can find distinct vectors <m>\boldv_1,\boldv_2,\dots, \boldv_n\in S</m>, and scalars <m>c_1, c_2,\dots, c_n</m> with <m>c_i\ne 0</m> for some <m>i</m>, such that 
           <me>
             c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldzero
           </me>.
-          We call a linear combination <m>c_1\boldv_1+c_2\boldv_2+\cdots c_n\boldv_n</m>  <term>trivial</term> if <m>c_i=0</m> for all <m>i</m>, and <term>nontrivial</term> if <m>c_i\ne 0</m> for some <m>i</m>. Using this terminology, a set <m>S</m> is linearly independent if the only linear combination of distinct elements of <m>S</m> yielding the zero vector is the trivial one.
+          <!-- In other words, <m>S</m> is linearly independent if there is no non-trivial linear combination of equal to <m>\boldzero</m>, and linearly dependent if there is a nontrivial linear combination of the <m>\boldv_i</m> equal to <m>\boldzero</m>. --> 
         </p>
       </statement>
     </definition>
-      <remark xml:id="rm_linear_independence">
+    <remark>
+      <title>Linear independence</title>
+      <p>
+        Recalling the notion of trivial and nontrivial linear combinations from <xref ref="d_lin_comb"/>, we can summarize <xref ref="d_linear_independence"/> in plain English as follows: 
+        <ul>
+          <li>
+            <p>
+              A set <m>S</m> is linearly independent if there is no nontrivial linear combination of distinct elements of <m>S</m> equal to the zero vector. 
+            </p>
+          </li>
+          <li>
+            <p>
+              A set <m>S</m> is linearly dependent if there is a nontrivial linear combination of elements of <m>S</m> equal to the zero vector. 
+            </p>
+          </li>
+        </ul>
+      </p>
+    </remark>
+    <p>
+      As stated, our definition of linear independence is pleasingly general in that it places no restriction on the subset in question; in particular, the definition applies to both finite and infinite subsets of vector spaces. That said, one drawback to this definition is that in order to determine whether <m>S</m> is linearly independent, we must look at <em>each</em> finite subset of elements of <m>S</m> and determine for this collection whether or not there is a nontrivial linear combination equal to the zero vector. To do so directly would be quite time consuming. Thankfully, we will focus on finite sets <m>S</m>, and in this case it turns out that the only subset we need to consider is <m>S</m> itself.  
+    </p>
+    <theorem xml:id="th_lin_ind_finite">
+      <title>Linear independence of finite sets</title>
       <statement>
         <p>
-        The definition of linear independence is quite a mouthful! Some clarifying remarks:
-        <ol>
-          <li>
-            <p>
-              To prove a set <m>S=\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m> of <m>n</m> distinct vectors is linearly independent, we must prove an <em>implication</em>:
-              <me>
-                c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldzero \implies c_1=c_2=\dots=c_n=0
-              </me>.
-              More often than not you will do so in the direct manner: <ie />, assume you have a linear combination equal to the zero vector, then show that all coefficients must be zero.
-            </p>
-          </li>
-          <li>
-            <p>
-              By the same token, to show <m>S</m> is linearly dependent, we must produce a <em>nontrivial</em> linear combination of distinct elements equal to the zero vector.
-            </p>
-          </li>
-          <li>
-            <p>
-                It is easy to see that <m>S</m> is linearly dependent if and only if some element of <m>S</m> can be written as a linear combination of other elements of <m>S</m>: just take the nontrivial linear combination yielding the zero vector, and solve for the vector in this combination with the nonzero coefficient.
-              </p>
+          Let <m>V</m> be a vector space, and let <m>S=\{\boldv_1,\boldv_2,\dots, \boldv_n\}\subseteq V</m>, where the <m>\boldv_i</m> are distinct. The following are equivalent. 
+          <ol>
+            <li>
               <p>
-                This makes precise what it means for a spanning set <m>S</m> to have redundancies or not.  If <m>S</m> is linearly dependent, then one of its vectors can be written as a linear combination of the others, and thus can be <q>thrown out</q> when computing <m>\Span S</m>, the set of all linear combinations of <m>S</m>. Conversely, if <m>S</m> is linearly independent, then no element of <m>S</m> can be written as a linear combination of the others; throwing any element out would thus result in <m>\Span S</m> being strictly smaller.
-            </p>
-          </li>
-        </ol>
+                <m>S</m> is linearly independent. 
+              </p>
+            </li>
+            <li>
+              <p>
+                For all <m>c_1,c_2,\dots, c_n\in \R</m>,
+                <men xml:id="eq_d_lin_ind">
+                 c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldzero \implies c_1=c_2=\cdots =c_n=0
+                </men>.
+              </p>
+            </li>
+          </ol>
         </p>
       </statement>
-    </remark>
+    </theorem>
     <example xml:id="eg_independence_basic_examples">
       <title>Elementary examples</title>
       <statement>
@@ -602,7 +506,7 @@
         <ol>
           <li>
             <p>
-              If <m>\boldzero\in S</m>, then <m>S</m> is linearly dependent: indeed, we have the nontrivial linear combination <m>1\boldzero=\boldzero</m>.
+              If <m>\boldzero\in S</m>, then <m>S</m> is linearly dependent: indeed, we have the nontrivial linear combination <m>1\, \boldzero=\boldzero</m>.
             </p>
           </li>
           <li>
@@ -614,29 +518,59 @@
           </li>
           <li>
             <p>
-              Suppose <m>S=\{\boldv, \boldw\}</m>, where <m>\boldv\ne\boldw</m>. From the last remark, it follows that <m>S</m> is linearly independent if and only if one of its elements is a scalar multiple of the other.
-            </p>
-            <p>
-              This makes it very easy to decide whether a two-element set is linearly independent. Note however, that the same observation does not apply to larger sets: <eg />, <m>S=\{(1,1),(1,0), (0,1)\}</m> can be shown to be linearly dependent, and yet no element of <m>S</m> is a scalar multiple of any other element.
+              Suppose <m>S=\{\boldv, \boldw\}</m>, where <m>\boldv\ne\boldw</m>. If <m>S</m> is linearly dependent, then we have 
+              <me>c\boldv+d\boldw=\boldzero</me>,
+              where <m>c\ne 0</m> or <m>d\ne 0</m>. 
+              If <m>c\ne 0</m>, then we can solve 
+              <me>\boldv=-\frac{d}{c}\boldw</me>. Similarly, if <m>d\ne 0</m>, then we have 
+              <me>\boldw=-\frac{c}{d}\boldv</me>. In both cases, we see that one of the vectors is a scalar multiple of the other. Conversely, if one the two vectors is a scalar multiple of the other, then it is easy to see that there is a nontrivial linear combination equal to <m>\boldzero</m>: <eg/>, if <m>\boldv=c\boldw</m>, then <m>\boldv-c\boldw=\boldzero</m>. We conclude that <m>S</m> is linearly dependent of if and only if one of the vectors is a scalar multiple of the other, and linearly independent if and only if neither vector is a scalar multiple of the other. 
             </p>
           </li>
         </ol>
       </statement>
     </example>
     <p>
-        Deciding whether a subset <m>S</m> of a vector space <m>V</m> is linearly independent usually boils down to a question about the solutions to a certain system of linear equations. The procedure below outlines the steps necessary to extract the relevant linear system and draw the relevant conclusions.
+      The simple test in <xref ref="eg_independence_basic_examples"/> for linear independence of a set of two vectors unfortunately does not extend to larger sets. For example, the set <m>S=\{(1,1),(1,0), (0,1)\}</m> can be shown to be linearly dependent, and yet no element of <m>S</m> is a scalar multiple of any other element. What is true in these cases, is that some element of <m>S</m> can be written as a <em>linear combination</em> of the others, as articulated in <xref ref="rm_lin_ind_redund"/>. 
+      </p>
+    <remark xml:id="rm_lin_ind_redund">
+      <title>Linear dependence and redundancy</title>
+      <p>
+        Let <m>S=\{\boldv_1,\boldv_2, \dots, \boldv_n\}</m> be a subset of the vector space <m>V</m>, where the <m>\boldv_i</m> are distinct. If <m>n\geq 2</m>, then <m>S</m> is linearly dependent if and only if we can express some element of <m>S</m> as a linear combination of the others: <ie/>, if and only if we have 
+        <men xml:id="eq_lin_dep">
+          \boldv_i=\sum_{j\ne i}\boldv_j
+        </men>.
+        Indeed, assume we have a vector equation of the form <xref ref="eq_lin_dep"/> for some <m>1\leq i\leq n</m>. If <m>\boldv_i=\boldzero</m>, then <m>S</m> is automatically dependent. (See (1) from <xref ref="eg_independence_basic_examples"/>.) Otherwise the linear combination on the right side of <xref ref="eq_lin_dep"/> must be nontrivial, in which case 
+        <me>
+          \boldv_i+\sum_{j\ne i}-c_j\boldv_j=\boldzero
+        </me>
+        is a nontrivial linear combination of distinct elements equal to <m>\boldzero</m>. Thus <m>S</m> is linearly dependent. 
+      </p>
+      <p>
+        Conversely, if <m>S</m> is linearly dependent, then there are scalars <m>c_1,c_2,\dots, c_n\in \R</m> such that 
+        <me>
+          c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldzero
+        </me>
+        and <m>\boldc_i\ne 0</m> for some <m>1\leq i\leq n</m>, in which case
+        <me>
+          \boldv_i=\sum_{j\ne i}-\frac{c_j}{c_i}\boldv_j
+        </me>.
+      </p>
+      
+    </remark>
+    <p>
+        Using <xref ref="th_lin_ind_finite"/>, to decide whether a finite set <m>S</m> is linearly independent, we need to determine whether there is a nontrivial linear combination of its elements equal to the zero vector. As described in the <xref ref="proc_linear_independence"/>, this boils down to a question about the solutions to a certain system of linear equations. 
     </p>
 <algorithm xml:id="proc_linear_independence">
-  <title>Investigating linear independence</title>
+  <title>Linear independence of a finite set</title>
   <statement>
+    <p>Let <m>V</m> be a vector space, and let <m>S=\{\boldv_1,\boldv_2,\dots, \boldv_n\}\subseteq V</m>, where the <m>\boldv_i</m> are distinct. 
     <ol>
       <li>
         <p>
           Write out the general <em>vector equation</em>
           <me>
           c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldzero
-          </me>
-          where the <m>\boldv_i</m> are arbitrary elements of the given set <m>S</m>.
+          </me>.
         </p>
       </li>
       <li>
@@ -646,10 +580,11 @@
       </li>
       <li>
         <p>
-          Decide, using Gaussian elimination, whether this system has any nonzero (<ie />, nontrivial) solutions.
+          Decide, using Gaussian elimination, whether this system has any nonzero (<ie />, nontrivial) solutions. If it has no nontrivial solution, <m>S</m> is linearly independent; if it has a nontrivial solution, <m>S</m> is linearly dependent. 
         </p>
       </li>
     </ol>
+  </p>
   </statement>
 </algorithm>
 <p>
@@ -677,11 +612,7 @@
             <m>V=\R^3</m>, <m>S=\{(1,1,2),(1,0,1), (-2,1,-1)\}</m>
           </p>
         </li>
-        <li>
-          <p>
-            <m>V=P_2</m>, <m>S=\{x^2+x-2, 2x^2+1, x^2-x\}</m>
-          </p>
-        </li>
+  
         <li>
           <p>
             <m>V=M_{22}</m>, <m>S=\{A_1, A_2, A_3, A_4\}</m>, where
@@ -716,20 +647,7 @@
         Since there is a nontrivial linear combination of elements of <m>S</m> yielding the zero vector, we conclude <m>S</m> is linearly dependent.
         </p>
       </li>
-      <li>
-        <p>
-          Recall that the zero vector of <m>P_2</m> is the zero polynomial <m>\boldzero=0x^2+0x+0</m>. We have
-          <md>
-            <mrow>a(x^2+x-2)+b(2x^2+1)+c(x^2-x)=\boldzero \amp \iff
-            (a+2b+c)x^2+(a-c)x+(-2a+b)=0x^2+0x+0 </mrow>
-            <mrow>  \amp </mrow>
-            <mrow>\amp \iff
-            \begin{linsys}{3} a\amp +\amp 2b\amp +\amp c\amp =\amp 0\\ a\amp \amp \amp -\amp c\amp =\amp 0\\ -2a\amp +\amp b \amp \amp  \amp =\amp 0 \end{linsys}
-              \amp (<xref ref="th_poly_equality"/>)</mrow>
-          </md>.
-          Gaussian elimination shows that <m>(a,b,c)=(0,0,0)</m> is the unique solution to this last system. We conclude that <m>S</m> is linearly independent.
-        </p>
-      </li>
+      
       <li>
         <p>
           We have
@@ -746,201 +664,11 @@
     </ol>
     </solution>
   </example>
-  <p>
-    So far we have only defined linead independence for <em>finite</em> subsets of a vector space. The notion is easily extended to arbitrary (potentially infinite) subsets.
-  </p>
-  <definition xml:id="d_linear_independence_arbitrary">
-    <title>Linear independence (for arbitrary subsets)</title>
-    <statement>
-      <p>
-        Let <m>V</m> be a vector space. A subset <m>S\subseteq V</m> is linearly independent if and only if every finite subset of <m>S</m> is lineary independent in the sense of <xref ref="d_linear_independence"/>.
-      </p>
-    </statement>
-  </definition>
-      <remark xml:id="rm_linear_independence_arbitrary">
-    <statement>
-      <p>
-        A subtle question arises here: namely, whether our definition of linear independence for arbitrary sets is consistent with our definition for finite ones. In other words, given a set <m>S=\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m> of <m>n</m> distinct vectors, is it true that <m>S</m> is linearly independent (in the sense of <xref ref="d_linear_independence" text="global"/>) if and only if every subset <m>\{\boldv_{i_1}, \boldv_{i_2}, \dots, \boldv_{i_k}\}</m> is linearly independent (in the sense of <xref ref="d_linear_independence" text="global"/>)? The answer of course is yes. One direction is easy: since <m>S</m> is a subset of itself, clearly if every subset is linearly independent, then <m>S</m> is linearly independent. The other direction is left as an exercise (<xref ref="ex_linear_independence_arbitrary"/>).
-      </p>
-    </statement>
-  </remark>
-  <example xml:id="eg_lin_ind_P">
-    <title>Linear independence in <m>P</m></title>
-    <p>
-      Consider the vector space <m>P</m> of polynomial functions on <m>\R</m>. We show that the set 
-      <me>
-      S=\{1,x, x^2, \dots\}=\{x^n\colon n\geq 0\}  
-      </me>
-      is linearly independent. Given a finite subset <m>T\subseteq S</m>, we can write <m>T=\{x^{n_1}, x^{n_2}, \dots, x^{n_r}\}</m>,where <m>n_1&lt; n_2 &lt; \cdots &lt; n_r</m>. By <xref ref="cor_poly_equality"/>, we have 
-      <me>
-        c_1x^{n_1}+c_2x^{n_2}+\cdots +c_rx^{n_r}=\boldzero
-      </me>
-      if and only if 
-      <me>
-        c_1=c_2=\cdots =c_r=0
-      </me>.       
-      This proves <m>T</m> is linearly independent. We have thus shown that any finite subset of <m>S</m> is linearly independent, and thus conclude that <m>S</m> is linearly independent by <xref ref="d_linear_independence_arbitrary"/>. 
-    </p>
-  </example>
+  
 
   </subsection>
-  <subsection xml:id="ss_linear_independence_functionspace">
-  <title>Linear independence in function spaces</title>
-    <p>
-      In each computation of <xref ref="ex_linear_independence"/> it was easy to derive a relevant linear system since the notion of equality in each of these spaces amounts to checking a <em>finite</em> number of numeric equalities: <eg />, between the entries of two triples, the coefficients of two polynomials, or the entries of two <m>2\times 2</m> matrices.
-    </p>
-    <p>
-      Things are slightly more complicated when working in function spaces on an interval <m>X</m> (<eg /> <m>C(X), C^\infty(X)</m>, <etc />), since by definition functions <m>f</m> and <m>g</m> are equal if and only if <m>f(x)=g(x)</m> for all <m>x\in X</m>. Thus, in principle verifying two functions are equal amounts to showing <em>infinitely many</em> equalities hold: one for each <m>x\in X</m>. Despite this added complexity, we can still investigate linear independence of functions with certain linear systems, as described in the procedure below.
-    </p>
-    <algorithm xml:id="proc_linear_independence_functions">
-      <title>Investigating linear independence of functions</title>
-      <statement>
-        <p>
-        Let <m>X\subseteq \R</m>, let <m>V=F(X,\R)</m>, and let  <m>S=\{f_1,f_2,\dots, f_n\}</m> be a set of <m>n</m> distinct elements of <m>V</m>.
-        </p>
-        <ul>
-          <li>
-            <p>
-              If you believe <m>S</m> is linearly independent:
-            </p>
+  
 
-            <ul>
-              <li>
-                <p>
-                  Write out the <em>function equation</em>
-                  <me>
-                    c_1f+c_2f_2+\cdots +c_nf_n=\boldzero
-                  </me>.
-                  Since the zero vector of <m>F(X,\R)</m> is the zero function, the definition of function equality implies
-                  <men xml:id="eq_function_equality">
-                    c_1f(x)+c_2f_2(x)+\cdots +c_nf(x)_n=0
-                  </men>
-                  for <em>all</em>  <m>x\in X</m>.
-                </p>
-              </li>
-              <li>
-                <p>
-              Since <xref ref="eq_function_equality"/> is true for all <m>x\in X</m>, we can produce a homogeneous system of linear equations in the unknowns <m>c_j</m> by picking elements <m>x_1,x_2,\dots </m> of <m>X</m>, and <em>evaluating</em>  <xref ref="eq_function_equality"/> at <m>x_i</m>. The <m>i</m>-th equation of the resulting system is thus
-              <me>
-                f_1(x_i)c_1+f_2(x_i)c_2+\cdots +f_n(x_i)c_n=0
-              </me>.
-            </p>
-          </li>
-              <li>
-                <p>
-                  If you can find elements <m>x_1, x_2, \dots, x_t\in X</m> so that the resulting homogeneous system in the unknowns <m>c_j</m> has the unique solution <m>c_1=c_2=\dots=c_n=0</m>, then we conclude that <m>S</m> is linearly independent.
-                </p>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <p>
-              If you believe <m>S</m> is linearly dependent:
-            </p>
-            <ul>
-              <li>
-                <p>
-                  A nontrivial linear combination of the <m>f_i</m> equal to the zero function amounts to a function identity. Either cite a well-known function identity involving the <m>f_i</m>, or else prove an identity of your own.
-                </p>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </statement>
-    </algorithm>
-    <remark xml:id="rm_linear_independence_functions">
-  <statement>
-    <p>
-    When using <xref ref="proc_linear_independence_functions"/> to show <m>S=\{f_1, f_2, \dots, f_n\}</m> is linearly independent, you want to produce enough linear equations to <em>force</em> the unknowns <m>c_i</m> to all be equal to 0. Note that since you you have <m>n</m> unknowns, you need at <em>at least</em> <m>n</m> equations, and so must pick at least <m>n</m> elements <m>x_i\in X</m>. Do so judiciously in order to (a) force the <m>c_i</m> to all be equal to 0, and (b) make the necessary computations palatable.
-    </p>
-  </statement>
-</remark>
-
-<p>
-  We illustrate <xref ref="proc_linear_independence_functions"/> in the following example.
-</p>
-<example>
-  <title>Linear independence of functions</title>
-  <statement>
-    <p>
-    Let <m>V=F((-2\pi, 2\pi), \R)</m>. Determine whether the given subset <m>S</m> is linearly independent.
-    </p>
-    <ol>
-      <li>
-        <p>
-          <m>S=\{f(x)=x, g(x)=\cos x, h(x)=\sin x\}</m>
-        </p>
-      </li>
-      <li>
-        <p>
-          <m>S=\{f(x)=1, g(x)=\cos 2x, g(x)=\cos^2 x\}</m>.
-        </p>
-      </li>
-    </ol>
-  </statement>
-  <solution>
-    <ol>
-      <li>
-        <p>
-          We claim <m>S</m> is linearly independent. If
-          <me>
-            c_1f+c_2g+c_3h=\boldzero
-          </me>,
-          then
-          <me>
-            c_1x+c_2\cos x+c_3\sin x=0
-          </me>,
-          for all <m>x\in (-2\pi, 2\pi)</m>. In particular, the equality is true when evaluated at <m>x=0, \pi/2, \pi</m>, yielding the following linear system:
-          <me>
-            \begin{linsys}{4}
-            x=0 \colon \amp \amp 0c_1\amp +\amp \cos(0)c_2\amp +\amp \sin(0) c_3\amp= \amp 0\\
-            x=\pi/2 \colon \amp \amp (\pi/2)c_1\amp +\amp \cos(\pi/2)c_2\amp +\amp \sin(\pi/2)c_3 \amp = \amp 0\\
-            x=\pi \colon \amp  \amp \pi c_1\amp +\amp \cos(\pi)c_2\amp +\amp \sin(\pi)c_3 \amp= \amp 0
-            \end{linsys}
-          </me>,
-          or
-          <me>
-          \begin{linsys}{4}
-          x=0 \colon  \amp \amp \amp \amp c_2\amp \amp \amp = \amp 0\\
-          x=\pi/2 \colon \amp  \amp (\pi/2)c_1\amp +\amp \amp +\amp c_3 \amp = \amp 0\\
-          x=\pi \colon \amp  \amp \pi c_1\amp - \amp c_2 \amp \amp  \amp= \amp 0
-          \end{linsys}
-          </me>.
-          This system can be now be solved essentially by inspection: the first equation implies <m>c_2=0</m>; setting <m>c_2=0</m>, in the third equation, we conclude <m>c_1=0</m>; the second equation now implies <m>c_3=0</m>. We conclude that <m>c_1=c_2=c_3=0</m>. Thus the only linear combination of <m>f, g, h</m> yielding the zero function is the trivial one, showing that <m>S</m> is linearly independent.
-        </p>
-
-      </li>
-      <li>
-        <p>
-          We claim <m>S</m> is linearly dependent. As discussed in <xref ref="proc_linear_independence_functions"/>, to prove this we have to produce an identity involving these functions. The double-angle formula from trigonometry tells us that
-          <me>
-            \cos 2x=\cos^2 x-\sin^2x=2\cos^2x+1
-          </me>
-          for all <m>x\in (-2\pi, 2\pi)</m> (in fact for all <m>x\in \R</m>). It follows that
-          <me>
-            1-\cos 2x+2\cos^2x=0
-          </me>
-          for all <m>x\in (-2\pi, 2\pi)</m>, or
-          <me>
-            f-g+2h=\boldzero
-          </me>.
-          Since we have found a nontrivial linear combination of elements of <m>S</m> yielding the zero vector, we conclude that <m>S</m> is linearly dependent.
-
-
-        </p>
-      </li>
-    </ol>
-  </solution>
-</example>
-<paragraphs xml:id="ss_vid_eg_ind_func">
-  <title>Video example: linear independence of functions</title>
-  <figure xml:id="fig_vid_ind_func">
-    <title>Video: linear independence of functions</title>
-  <caption>Video: linear independence of functions</caption>
-  <video xml:id="vid_ind_func" youtube="kgb0N70RKtE" />
-  </figure>
-</paragraphs>
-  </subsection>
 <xi:include href="./s_span_independence_ex.ptx"/>
 
   <!-- <subsection>

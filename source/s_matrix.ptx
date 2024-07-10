@@ -92,6 +92,40 @@
     In this example we have <m>[A]_{23}=-3</m> and <m>[A]_{ii}=0</m> for <m>i=1,2</m>.
   </p>
 </remark>
+<p>
+  Using matrix notation we can now precisely define what the rows and columns of a matrix are. 
+</p>
+<definition xml:id="d_rows_columns">
+  <title>Rows and columns of a matrix</title>
+  <statement>
+    <p>
+      Let <m>A</m> be an <m>m\times n</m> matrix. For each <m>1\leq i\leq m</m>,  <term><m>i</m>-th row</term> of <m>A</m> is the <m>n</m>-tuple 
+      <me>(a_{i 1},  a_{i2}, \dots,  a_{i n})\in \R^n</me>.
+      Similarly, for each <m>1\leq j\leq n</m>, the <term><m>j</m>-th column</term> of <m>A</m> is the <m>m</m>-tuple 
+      <me>
+        (a_{1 j}, a_{2 j},  \dots, a_{m j})\in \R^m
+      </me>.
+      Given <m>n</m>-tuples <m>\boldr_1, \boldr_2,\dots, \boldr_m\in \R^n</m>, we denote by 
+      <me>
+        \begin{bmatrix}\ -\boldr_{1}- \ \\
+        \ -\boldr_{1}- \ \\
+        \vdots \\
+        \ -\boldr_{m}- \ \\
+      \end{bmatrix}
+      </me>
+      the <m>m\times n</m> matrix whose <m>i</m>-th row is <m>\boldr_i</m>.
+    </p>
+    <p>Similarly, given <m>m</m>-tuples <m>\boldc_1,\boldc_2,\dots, \boldc_n\in \R^m</m>, we denote by 
+      <me>
+        \begin{bmatrix}\vert \amp \vert \amp \amp \vert \\
+        \boldc_1 \amp \boldc_2\amp \cdots \amp \boldc_n \\
+        \vert \amp \vert \amp \amp \vert
+      \end{bmatrix}
+      </me>
+      the <m>m\times n</m> matrix whose <m>j</m>-th column is <m>\boldc_j</m>.
+    </p>
+  </statement>
+</definition>
   <p>
   In everyday language the notion of equality is taken as self-evident. Two things are equal if they are the same. What more is there to say? In mathematics, each time we introduce a new type of mathematical object (e.g., sets, functions, <m>n</m>-tuples, etc.) we need to spell out exactly what we mean for two objects to be considered equal. We do so now with matrices.
 </p>
@@ -162,55 +196,38 @@
       </p>
     </statement>
   </definition>
-      <remark xml:id="rm_matrices_as_row_columns">
-    <title>Matrices as collections of columns/rows</title>
+  
+    <remark xml:id="rm_tuples_rows_columns">
+    <title>Tuples, row vectors, and column vectors</title>
     <p>
-      Let <m>A</m> be an <m>m\times n</m> matrix. We will often think of <m>A</m> as a collection of columns, in which case we write
-      <men xml:id="eq_columns">
-        A=\begin{bmatrix}\vert \amp \vert \amp \amp \vert \\
-        \boldc_1 \amp \boldc_2\amp \cdots \amp \boldc_n \\
-        \vert \amp \vert \amp \amp \vert
-      \end{bmatrix}
-    </men>,
-      where <m>\boldc_j</m> is the column vector consisting of the entries of the <m>j</m>-th column of <m>A</m>: <ie />,
+      You are perhaps wondering why we make a distinction between <m>n</m>-tuples, <m>1\times n</m> row vectors, and <m>n\times 1</m> column vectors. One answer is that a matrix is not simply an ordered sequence: it is an ordered sequence arranged in a very particular way. This subtlety is baked into the very definition of matrix equality, and allows us to say that <me>
+        \begin{amatrix}[rr]1\amp 2  \end{amatrix}\ne \begin{amatrix}[r]1\\ 2  \end{amatrix}
+        </me>.
+        There are situations, however, where we don't need this extra layer of structure, where we want to treat an ordered sequence simply as an ordered sequence. In such situations tuples are preferred to row or column vectors.
+      </p>
+      <p>Of course there will be times where we wish to treat an ordered sequence now as a tuple and now as a row or column vector. In these situations we will clarify what is meant by using the phrase <q>treated as a tuple</q>, <q>treated as a row vector</q>, or <q>treated as a column vector</q>. For example, the tuple <m>(1,2)</m>, treated as a row vector, is the <m>1\times 2</m> matrix <m>\begin{bmatrix}1 \amp 2\end{bmatrix}</m>. 
+      </p>
+      <p> 
+      That said, the close connection between linear systems and matrix equations makes it very convenient to be able to treat an <m>n</m>-tuple <m>(c_1,c_2,\dots, c_n)</m> as if it were the column vector
       <me>
-        \boldc_j=\begin{bmatrix}a_{1j}\\ a_{2j}\\ \vdots \\ a_{mj}\end{bmatrix}
-      </me>.
-      Similarly, when we think of <m>A</m> as a collection of rows, we write
-      <men xml:id="eq_rows">
-        A=\begin{bmatrix}\ -\boldr_{1}- \ \\
-        \ -\boldr_{1}- \ \\
-        \vdots \\
-        \ -\boldr_{m}- \ \\
-      \end{bmatrix}
-    </men>,
-      where <m>\boldr_i</m> is the row vector consisting of the entries of the <m>i</m>-th row of <m>A</m>: <ie />,
-      <me>
-        \boldr_i=
-        \begin{bmatrix}a_{i1}\amp a_{i2}\amp\cdots\amp a_{in}
-      \end{bmatrix}
-      </me>.
-      The vertical and horizontal lines in <xref ref="eq_columns"/> and <xref ref="eq_rows"/> are used to emphasize that the <m>\boldc_j</m> are columns vectors and the <m>\boldr_i</m> are row vectors.
+        \colvec{c_1\\ c_2\\ \vdots \\ c_n}
+      </me>,
+      and vice versa. This conflation is so convenient, in fact, that we will simply declare it to be true by fiat! This means that going forward we are permitted to treat tuples as column vectors and vice versa without further comment. 
     </p>
   </remark>
-  <p>
-    Lastly we introduce notation for a particularly simple sort of matrix: one whose entries are all equal to zero. 
-  </p>
-  <definition xml:id="d_zero_matrix">
-    <title>Zero matrices</title>
-    <notation>
-      <usage><m>\boldzero_{m\times n}</m></usage>
-      <description>the <m>m\times n</m> zero matrix</description>
-    </notation>
+  <assumption xml:id="declaration_tuples_columns">
+    <title>Tuples shall be column vectors, and vice versa</title>
     <statement>
       <p>
-        The <term> <m>m\times n</m> zero matrix</term>, denoted <m>\boldzero_{m\times n}</m>, is the <m>m\times n</m> matrix, all of whose entries are equal to zero: i.e., <m>[\boldzero_{m\times n}]_{ij}=0</m> for all <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>.
-      </p>
-      <p>
-        When there is no confusion about which dimension zero matrix is intended, we will often write simply <m>\boldzero</m> instead of <m>\boldzero_{m\times n}</m>. 
+        We hereby declare that for all <m>\boldx=(c_1,c_2,\dots, c_n)\in \R^n</m> we have
+        <me>
+          \boldx=(c_1,c_2,\dots, c_n)=\colvec{c_1\\ c_2\\ \vdots \\ c_n}
+        </me>.
+        In other words, tuples are henceforth the same as column vectors.
       </p>
     </statement>
-  </definition>
+  </assumption>
+  
   <project xml:id="sage_matrix_entries_rows_cols">
     <title>Matrix entries, rows, and columns</title>
     <p>
@@ -287,8 +304,6 @@
     <p>
       We now lay out the various algebraic operations we will use to combine and transform matrices; we refer to the use of these operations loosely as <em>matrix arithmetic</em>. Some of these operations resemble familiar operations from real arithmetic in terms of their notation and definition. Do not be lulled into complacency! These are new operations defined for a new class of mathematical objects, and must be treated carefully. In particular, pay close attention to (a) exactly what type of mathematical objects serve as inputs for each operation (the <em>ingredients</em> of the operation), and (b) what type of mathematical object is outputted.
     </p>
-
-
     <definition xml:id="d_matrix_add_subtract">
       <title>Matrix addition and scalar multiplication</title>
       <idx><h>matrix addition</h></idx>
@@ -344,8 +359,37 @@
         </p>
         </remark>
         <p>
-          Not surprisingly, as the names of our matrix operations suggest, the set <m>M_{mn}</m> of all <m>m\times n</m> matrices constitutes a vector space with respect to matrix addition and scalar multiplication. 
+          Not surprisingly, as the names of our matrix operations suggest, the set <m>M_{mn}</m> of all <m>m\times n</m> matrices constitutes a vector space with respect to matrix addition and scalar multiplication. Before proving this fact, we introduce what will be the zero vectors and vector inverses of these vector spaces. 
         </p>
+        <definition xml:id="d_zero_matrix">
+          <title>Zero matrices</title>
+          <notation>
+            <usage><m>\boldzero_{m\times n}</m></usage>
+            <description>the <m>m\times n</m> zero matrix</description>
+          </notation>
+          <statement>
+            <p>
+              The <term> <m>m\times n</m> zero matrix</term>, denoted <m>\boldzero_{m\times n}</m>, is the <m>m\times n</m> matrix, all of whose entries are equal to zero: i.e., <m>[\boldzero_{m\times n}]_{ij}=0</m> for all <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>.
+            </p>
+            <p>
+              When there is no confusion about which dimension zero matrix is intended, we will often write simply <m>\boldzero</m> instead of <m>\boldzero_{m\times n}</m>. 
+            </p>
+          </statement>
+        </definition>
+        <definition xml:id="d_additive_inverse">
+          <title>Additive inverse matrix</title>
+          <statement>
+            <p>
+              The <term>additive inverse</term> of an <m>m\times n</m> matrix <m>A=[a_{ij}]</m> is the <m>m\times n</m> matrix <m>-A</m> defined as <m>-A=[-a_{ij}]</m>. 
+            </p>
+          </statement>
+        </definition>
+        <remark>
+          <title>Additive inverse matrix</title>
+          <p>
+            <sq>Additive inverse matrix</sq> is admittedly a bit clunky. We are taking pains here not to call <m>-A</m> simply the inverse of <m>A</m>, as this term is reserved for multiplicative inverses of matrices. (See <xref ref="d_invertible_matrix"/>.)
+          </p>
+        </remark>
         <theorem xml:id="th_matrix_vector_space">
           <title>Vector space structure of <m>M_{mn}</m></title>
           <statement>
@@ -364,10 +408,7 @@
                 </li>
                 <li>
                   <p>
-                    Given a matrix <m>A=[a_{ij}]\in M_{mn}</m> its vector inverse is 
-                    <me>
-                      -A=[-a_{ij}]
-                    </me>.
+                    Given a matrix <m>A\in M_{mn}</m> its vector inverse is the additive inverse matrix <m>-A</m>.
                   </p>
                 </li>
               </ol>
@@ -462,7 +503,7 @@
     </example>
         <remark xml:id="rm_entry_lin_comb">
       <p>
-        Let <m>A_1, A_2,\dots, A_r</m> be <m>m\times n</m> matrices,  An easy induction argument on <m>r</m> shows that for any scalars <m>c_1,c_2,\dots, c_r</m> we have
+        Let <m>A_1, A_2,\dots, A_r</m> be <m>m\times n</m> matrices.  An easy induction argument on <m>r</m> shows that for any scalars <m>c_1,c_2,\dots, c_r</m> we have
         <me>
            [c_1A_1+c_2A_2+\cdots +c_rA_r]_{ij} =c_1[A_1]_{ij}+c_2[A_2]_{ij}+\cdots c_r[A_r]_{ij}
         </me>
@@ -607,24 +648,37 @@ DL/.style={
     <title>Dot product and matrix multiplication</title>
     <statement>
       <p>
-         Let <m>m,n,r</m> be positive integers. Given matrices <m>A=[a_{ij}]\in M_{mn}</m> and <m>B=[b_{ij}]\in M_{nr}</m>, define 
+         Let <m>m,n,r</m> be positive integers. Given matrices <m>A\in M_{mn}</m> and <m>B\in M_{nr}</m>, let <m>\bolda_i\in \R^n</m> be the <m>i</m>-th row of <m>A</m> for all <m>1\leq i\leq m</m>, and let <m>\boldb_j\in\R^n</m> be <m>j</m>-th column of <m>B</m> for all <m>1\leq j\leq r</m>, so that 
          <md>
-          <mrow>\boldr_i\amp =(a_{i1}, a_{i2},\dots, a_{in}) \amp </mrow>
-          <mrow>\boldc_j \amp = (b_{1j},b_{2j},\dots, b_{nj}</mrow>
-         </md>
-         for all <m>1\leq i\leq m</m> and <m>1\leq j\leq r</m>. In other words, <m>\boldr_i</m> is the <m>i</m>-th row of <m>A</m>, considered as an <m>n</m>-tuple, and <m>\boldc_j</m> is the <m>j</m>-th column of <m>B</m>, considered as an <m>n</m>-tuple. For all <m>1\leq i\leq m, 1\leq j\leq n</m>, we have
+          <mrow>A\amp=\begin{bmatrix}-\bolda_1-\\
+            -\bolda_2-\\
+            \vdots \\
+            -\bolda_m-
+            \end{bmatrix}  \amp B\amp= \begin{bmatrix}
+            \vert \amp \vert \amp  \amp \vert \\
+            \boldb_1\amp \boldb_2\amp \cdots \amp \boldc_r \\
+            \vert \amp \vert \amp  \amp \vert
+            \end{bmatrix}
+            </mrow>
+         </md>.
+       For all <m>1\leq i\leq m, 1\leq j\leq r</m>, we have
       <men xml:id="eq_matrix_mult_dot">
-        [AB]_{ij}=\boldr_i\cdot \boldc_j
+        [AB]_{ij}=\bolda_i\cdot \boldb_j
       </men>.
       In other words, the <m>ij</m>-th entry of <m>AB</m> is the dot product of the <m>i</m>-th row of <m>A</m> and the <m>j</m>-th column of <m>B</m>.
       </p>
     </statement>
     <proof>
       <p>
-        Fix a pair <m>(i,j)</m> with <m>1\leq i\leq m</m> and <m>1\leq j\leq r</m>. We have 
+        Let <m>A=[a_{ij}]</m> and <m>B=[b_{ij}]</m>, so that 
+        <md>
+          <mrow>\bolda_i \amp = (a_{i1},a_{i2},\dots, a_{in})</mrow>
+          <mrow>\boldb_j \amp = (b_{1j},b_{2j},\dots, b_{nj})</mrow>
+        </md>
+        for all <m>1\leq i\leq m</m> and <m>1\leq j\leq r</m>. Given any pair <m>(i,j)</m> with <m>1\leq i\leq m</m> and <m>1\leq j\leq r</m>, we have 
         <md>
           <mrow> [AB]_{ij} \amp = \sum_{k=1}^na_{ik}b_{kj} \amp( <xref ref="d_matrix_mult" text="global"/>) </mrow>
-          <mrow> \amp =\boldr_i\cdot \boldc_j \amp (<xref ref="d_dot_product" text="global"/>) </mrow>
+          <mrow> \amp =\bolda_i\cdot \boldb_j \amp (<xref ref="d_dot_product" text="global"/>) </mrow>
         </md>,
         as claimed. 
       </p>
@@ -638,18 +692,18 @@ DL/.style={
         <mrow>A \amp =\begin{amatrix}[rrrr]1\amp 1\amp 1\amp 1\\ 1\amp 2\amp 1\amp 2\end{amatrix} 
         \amp B\amp =\begin{amatrix}[rr] 1\amp -1 \\ 0\amp 1\\ 1\amp 0 \\ 0\amp 0 \end{amatrix}</mrow>
       </md>.
-      The two rows of <m>A</m> (in tuple form) are 
+      The two rows of <m>A</m> are 
       <md>
-        <mrow>\boldr_1 \amp =(1,1,1,1) \amp \boldr_2=(1,2,1,2)</mrow>
+        <mrow>\bolda_1 \amp =(1,1,1,1) \amp \bolda_2=(1,2,1,2)</mrow>
       </md>.
-      The two columns of <m>B</m> (in tuple form) are 
+      The two columns of <m>B</m> are 
       <md>
-        <mrow>\boldc_1 \amp =(1,0,1,0) \amp \boldc_2=(-1,1,0,0)</mrow>
+        <mrow>\boldb_1 \amp =(1,0,1,0) \amp \boldb_2=(-1,1,0,0)</mrow>
       </md>.
       Using the dot product description of matrix multiplication, we compute 
       <md>
-        <mrow>AB \amp =\begin{bmatrix}\boldr_1\cdot \boldc_1 \amp \boldr_1\cdot \boldc_2 \\ 
-        \boldr_2\cdot \boldc_1 \amp \boldr_2\cdot \boldc_2 \end{bmatrix}</mrow>
+        <mrow>AB \amp =\begin{bmatrix}\bolda_1\cdot \boldb_1 \amp \bolda_1\cdot \boldb_2 \\ 
+        \bolda_2\cdot \boldb_1 \amp \bolda_2\cdot \boldb_2 \end{bmatrix}</mrow>
         <mrow> \amp = \begin{amatrix}[rr] 2 \amp 0 \\ 2\amp 1\end{amatrix}</mrow>
       </md>.
     </p>
@@ -1022,14 +1076,14 @@ DL/.style={
       </sage>
 
     </project>
-    <paragraphs xml:id="ss_matrix_mult_vid">
+    <example xml:id="video_eg_matrix_mult_vid">
       <title>Video example of matrix multiplication</title>
       <figure xml:id="fig_vid_matrix_mult_methods">
         <title>Video: three methods of matrix multiplication</title>
       <caption>Video: three methods of matrix multiplication</caption>
       <video xml:id="vid_matrix_mult_methods" youtube="Kx4K8TTbl98" />
       </figure>
-    </paragraphs>
+    </example>
   </subsection>
 
   <subsection>
