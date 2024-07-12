@@ -76,20 +76,6 @@
           Let <m>V=M_{mn}</m>. The set <m>B=\{E_{ij}\colon 1\leq i\leq m, 1\leq j\leq n\}</m> is the standard basis of <m>M_{mn}</m>.
           </p>
         </li>
-        <li>
-          <title>Polynomials of bounded degree</title>
-          <p>
-          Let <m>V=P_n</m>. The set <m>B=\{x^n, x^{n-1}, \dots, x, 1\}</m> is the standard basis of <m>P_n</m>.
-          </p>
-        </li>
-        <li>
-          <title>Polynomials</title>
-          <p>
-          Let <m>V=P</m>, the space of all polynomials. The set
-          <me>B=\{1, x, x^2, \dots\}=\{x^i\colon i\geq 0\} </me>
-          is the standard basis of <m>P</m>.
-          </p>
-        </li>
       </ul>
       </statement>
     </remark>
@@ -110,14 +96,9 @@
         </li>
         <li>
           <p>
-            <m>V=P_2</m>, <m>B=\{x^2+x+1, x^2-x, x^2+1\}</m>.
-          </p>
-        </li>
-        <li>
-          <p>
             <m>V=M_{22}</m>,
             <me>
-              B=\left\{ \begin{bmatrix}3\amp 6\\ 3\amp -6 \end{bmatrix} , \begin{bmatrix}0\amp -1\\ -1\amp 0 \end{bmatrix} , \begin{bmatrix}0\amp -8\\ -12\amp -4 \end{bmatrix} , \begin{bmatrix}1\amp 0\\ -1\amp 2 \end{bmatrix} \right\}
+              B=\left\{ A_1=\begin{bmatrix}0\amp 1\\ 1\amp 1 \end{bmatrix} , A_2=\begin{bmatrix}1\amp 0\\ 1\amp 1 \end{bmatrix} , A_3=\begin{bmatrix}1\amp 1\\ 0\amp 1 \end{bmatrix} , A_4=\begin{bmatrix}1\amp 1\\ 1\amp 0 \end{bmatrix} \right\}
             </me>.
           </p>
         </li>
@@ -126,7 +107,7 @@
   </statement>
   <solution>
     <p>
-    Each verification amounts to showing, using the techniques from <xref ref="s_span_independence"/>, that the given <m>B</m> spans the given <m>V</m> and is linearly independent. We illustrate with (1) and (2), leaving (3) to the reader.
+    Each verification amounts to showing, using the techniques from <xref ref="s_span_independence"/>, that the given <m>B</m> spans the given <m>V</m> and is linearly independent. 
     </p>
     <ol>
       <li>
@@ -140,94 +121,79 @@
       </li>
       <li>
         <p>
-          To show <m>B</m> spans <m>P_2</m> we must show that for any <m>dx^2+ex+f\in P_2</m> we can find <m>a,b,c\in\R</m> such that
+          First we show that <m>B=\{A_1,A_2,A_3,A_4\}</m> spans <m>M_{22}</m>. Given an arbitrary element 
           <me>
-            a(x^2+x+1)+b(x^2-x)+c(x^2-1)=dx^2+ex+f
+            A=\begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}
           </me>,
-          or
+          we must show that there exist scalars <m>c_1,c_2,c_3,c_4\in \R</m> satisfying 
           <me>
-            (a+b+c)x^2+(a-b)x+(a-1)=dx^2+ex+f
+            c_1A_1+c_2A_2+c_3A_3+c_4A_4=A
+          </me>. 
+          Expanding out the left side of the above equality, we would have 
+          <me>
+            \begin{bmatrix}
+            c_2+c_3+c_4 \amp c_1+c_3+c_4\\
+            c_1+c_2+c_4\amp c_1+c_2+c_3
+            \end{bmatrix}=
+            \begin{bmatrix}
+            a\amp b\\ c\amp d
+            \end{bmatrix}
           </me>.
-          Equating coefficients yields the system of equations
+          Thus we have <m>A\in \Span B</m> if and only if the linear system with augmented matrix 
           <me>
-            \begin{linsys}{3}
-              a\amp +\amp b\amp +\amp c\amp = d\\
-              a\amp -\amp b\amp \amp \amp =e\\
-              a\amp  \amp  \amp -\amp c\amp =f
-            \end{linsys}
-          </me>,
-          which corresponds to the matrix equation
+            \begin{amatrix}[rrrr|r]
+            0\amp 1\amp 1\amp 1 \amp a\\
+            1\amp 0\amp 1\amp 1 \amp b \\
+            1\amp 1\amp 0 \amp 1 \amp c\\
+            1\amp 1\amp 1\amp 0\amp d
+            \end{amatrix}            
+          </me>
+          is consistent. This augmented matrix row reduces to 
           <me>
-            \underset{A}{\begin{amatrix}[rrr]1\amp 1\amp 1\\ 1\amp -1\amp 0\\ 1\amp 0\amp -1\end{amatrix}}\underset{\boldx}{\begin{bmatrix} a\\ b\\ c\end{bmatrix}}=\underset{\boldy}{\begin{bmatrix} d\\ e\\ f\end{bmatrix}}
+            \begin{amatrix}[rrrr|r]
+            \boxed{1}\amp 0\amp 1\amp 1 \amp b\\
+            0\amp \boxed{1}\amp 1\amp 1 \amp a \\
+            0\amp 0\amp \boxed{1} \amp 1/2 \amp \frac{1}{2}(a+b-c)\\
+            0\amp 0\amp 0\amp \boxed{1}\amp \frac{1}{3}(a+b+c-2d)
+            \end{amatrix}            
           </me>.
-          An easy computation shows <m>\det A=3</m>, and thus that <m>A</m> is invertible. We conclude that the system can be solved for <m>(a,b,c)</m> (set <m>\boldx=A^{-1}\boldy</m>), and thus that <m>B</m> spans <m>P_2</m>.
+          Since there is no leading one in the last column, we see that the corresponding system is consistent, and thus <m>A\in \Span B</m>, as desired. 
         </p>
         <p>
-          Our work above now can be used to also show that <m>B</m> is linearly independent. Replacing the arbitrary polynomial <m>dx^2+ex+f</m> with the zero polynomial <m>0x^2+0x+0</m>, we see that a linear combination
+          Turning to linear independence of <m>B</m>, we now endeavor to show that the only solution to  
           <me>
-            a(x^2+x+1)+b(x^2-x)+c(x^2-1)=\boldzero
+          c_1A_1+c_2A_2+c_3A_3+c_4A_4=\begin{bmatrix}
+          0\amp 0\\ 0\amp 0
+          \end{bmatrix}
           </me>
-          corresponds to a solution <m>\boldx=(a,b,c)</m> to the matrix equation <m>A\boldx=\boldzero</m>. Since <m>A</m> is invertible, we conclude that <m>\boldx=\boldzero</m> (<xref ref="th_invertibility_expanded"/>), and thus that <m>a=b=c=0</m>. This shows <m>B</m> is linearly independent.
+          is the trivial one <m>c_1=c_2=c_3=c_4=0</m>. Just as above, such a solution corresponds to a solution to the linear system with augmented matrix 
+          <me>
+            \begin{amatrix}[rrrr|r]
+            0\amp 1\amp 1\amp 1 \amp 0\\
+            1\amp 0\amp 1\amp 1 \amp 0 \\
+            1\amp 1\amp 0 \amp 1 \amp 0\\
+            1\amp 1\amp 1\amp 0\amp 0
+            \end{amatrix}            
+          </me>,
+          which row reduces to 
+          <me>
+            \begin{amatrix}[rrrr|r]
+            \boxed{1}\amp 0\amp 1\amp 1 \amp 0\\
+            0\amp \boxed{1}\amp 1\amp 1 \amp 0 \\
+            0\amp 0\amp \boxed{1} \amp 1/2 \amp 0\\
+            0\amp 0\amp 0\amp \boxed{1}\amp 0
+            \end{amatrix}            
+          </me>.
+          Since the first four columns of this matrix contain leading ones, none of the unknowns <m>c_i</m> is free, which means that <m>(c_1,c_2,c_3,c_4)=(0,0,0,0)</m> is the unique solution to the system. This proves that
+          <me>
+            c_1A_1+c_2A_2+c_3A_3+c_4A_4=\boldzero\implies c_1=c_2=c_3=c_4=0
+          </me>,
+          as desired.
         </p>
       </li>
     </ol>
   </solution>
 </example>
-<p>
- Not every vector space has a finite basis, as we show in the next example.
-</p>
-<example>
-  <title><m>P</m> has no finite basis</title>
-
-  <statement>
-    <p>
-      Prove that <m>P</m>, the space of all real polynomials, does not have a finite basis.
-    </p>
-  </statement>
-  <solution>
-    <p>
-      We show that no finite set of polynomials can span all of <m>P</m>; it follows that <m>P</m> does not have a finite basis.
-    </p>
-    <p>
-    Indeed let <m>S=\{p_1, p_2, \dots, p_r\}</m> be a finite set of polynomials, and let <m>n</m> be the maximal degree of all the polynomials <m>p_i\in S</m>. Then <m>p_i\in P_n</m> for all <m>i</m>, in which case <m>\Span S\subseteq P_n</m>: <ie />, <m>\Span S</m> is a subspace of the space of polynomials of degree at most <m>n</m>. Since <m>P_n\subsetneq P</m>, we conclude that <m>\Span S\ne P</m>, as claimed.
-    </p>
-  </solution>
-</example>
-    <remark xml:id="rm_dimension_functionspaces">
-  <statement>
-    <p>
-      By <xref ref="th_dimension_compendium"/> and its corollaries, we know that if <m>V</m> has a finite basis, then and subspace of <m>V</m> also has a finite basis. Let <m>X\subseteq \R</m> be an interval. Since
-      <me>
-        P\subseteq C^\infty(X)\subseteq C^n(X)\subseteq C(X)\subseteq F(X,\R)
-      </me>
-      is a chain of subspaces, and since <m>P</m> does not have a finite basis, we conclude that none of these other function spaces has a finite basis.
-    </p>
-  </statement>
-</remark>
-<example>
-  <title>Basis for <m>\R_{>0}</m></title>
-  <statement>
-    <p>
-    Let <m>V=\R_{>0}</m>, and let <m>S=\{\boldv\}</m>, where <m>\boldv=a</m> is any positive real number. Prove: <m>S</m> is a basis if and only if <m>a\ne 1</m>.
-    </p>
-  </statement>
-  <solution>
-    <case>
-     <title><m>(a=1\implies S \text{ not a basis})</m></title>
-    <p>
-    Suppose <m>a=1</m>. Since <m>1=\boldzero\in V</m>, we have <m>S=\{\boldzero\}</m>. Any set containing the zero vector is linearly dependent (<xref ref="rm_linear_independence"/>). Thus <m>S</m> is not a basis.
-    </p>
-    </case>
-    <case>
-     <title><m>(a\ne 1 \implies S \text{ is a basis})</m></title>
-    <p>
-    Since <m>S=\{\boldv\}</m> consists of one nonzero element, it is linearly independent (<xref ref="rm_linear_independence"/>). It remains only to show that <m>S</m> spans <m>\R_{>0}</m>, which amounts to showing that every <m>b\in \R_{>0}</m> is a scalar multiple of <m>\boldv=a</m>. Since by definition scalar multiplication in <m>\R_{>0}</m> is defined as <m>c\boldv=a^c</m>, this is equivalent to showing that every <m>b\in \R_{>0}</m> can be written in the form <m>b=a^c</m>. This fact is a familiar result from calculus, where you learn that the range (or image) of any exponential function <m>f(x)=a^x</m> is the set of all positive real numbers.
-    </p>
-    </case>
-  </solution>
-</example>
-
-
 <p>
   Proceeding directly from the definition, to show a set <m>B</m> is a basis of <m>V</m> we have to do two steps: (i) show <m>\Span B= V</m>; (ii) show that <m>B</m> is linearly independent. The following theorem offers gives rise to a one-step technique for proving <m>B</m> is a basis: show that every element of <m>V</m> can be written as a linear combination of elements of <m>B</m> in a <em>unique way</em>.
 </p>
@@ -342,55 +308,8 @@
     </p>
   </solution>
 </example>
-<example xml:id="eg_basis_onestep_p1">
-  <title>One-step technique for <m>P_1</m></title>
-  <statement>
-    <p>
-    Use the one-step technique to decide whether the set
-          <me>S=\{p(x)=2x+1, x+1\}</me>
-    is a basis of <m>P_1</m>.
-    </p>
-  </statement>
-  <solution>
-    <p>
-    Take an arbitrary element <m>ax+b\in P_1</m> and consider the polynomial equation
-            <me>
-              c_1p(x)+c_2q(x)=ax+b
-            </me>
-            The usual remark about polynomial equality implies that this is equivalent to the matrix equation
-            <me>
-            \begin{bmatrix}
-            2\amp 1\\ 1\amp 1
-            \end{bmatrix}
-            \begin{bmatrix}
-              c_1 \\ c_2
-            \end{bmatrix}
-            =
-            \begin{bmatrix}
-              a\\ b
-            \end{bmatrix}
-            =\boldy
-            </me>.
-            The matrix on the left is invertible, allowing us to solve:
-            <me>
-            \begin{bmatrix}
-              c_1 \\ c_2
-            \end{bmatrix}
-            =\begin{bmatrix}
-            1\amp -1\\ -1\amp 2
-            \end{bmatrix}
-            \begin{bmatrix}
-              a\\ b
-            \end{bmatrix}
-            =\begin{bmatrix}
-              a-b\\ -a+2b
-            \end{bmatrix}
-            </me>.
-            We conclude that any <m>ax+b\in P_1</m> can be written as <m>c_1p+c_2q</m> in a unique way: namely, with <m>c_1=a-b</m> and <m>c_2=-a+2b</m>. Thus <m>S</m> is a basis.
-          </p>
-  </solution>
-</example>
-<paragraphs xml:id="ss_vid_eg_basis">
+
+<example xml:id="ss_vid_eg_basis">
   <title>Video example: deciding if a set is a basis</title>
   <figure xml:id="fig_vid_basis">
     <title>Video: deciding if a set is a basis (<m>\R^n</m>)</title>
@@ -403,7 +322,7 @@
   <caption>Video: deciding if a set is a basis</caption>
   <video xml:id="vid_basis_exotic" youtube="JvPn5X93lGw" />
   </figure>
-</paragraphs>
+</example>
 <p>
   Besides deciding whether a given set is a basis, we will often want to come up with a basis of a given space on our own. The following <q>by inspection</q> technique often comes in handy in cases where the elements of the vector space can be described in a simple parametric manner. 
 </p>
@@ -414,7 +333,7 @@
       To produce a basis <m>B</m> of a vector space <m>V</m> <q>by inspection</q>, proceed as follows. 
       <ol>
         <li>
-          <title>Paremetric description</title>
+          <title>Parametric description</title>
           <p>
             Give a simple parametric description of the general element of <m>V</m>. 
           </p>
@@ -435,11 +354,41 @@
     </p>
   </statement>
 </algorithm>
+<example xml:base="eg_byinspection_R5">
+  <title>By-inspection basis technique</title>
+  <statement>
+    <p>
+      Use <xref ref="proc_provide_basis"/> to compute a basis of the subspace <m>W\subseteq \R^5</m> defined as 
+      <me>  
+        W=\{(x_1,x_2,x_3,x_4,x_5)\in \R^5\colon x_1+x_2=x_4-x_5=0\}
+      </me>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The two equations 
+      <md>
+        <mrow>x_1+x_2\amp =0 \amp x_4-x_5\amp =0 </mrow>
+      </md>
+      give two independent conditions on <m>x_1,x_2</m> and <m>x_4,x_5</m>, and no condition on <m>x_3</m>. We see that the general element of <m>W</m> can be described as 
+      <men xml:id="eq_basis_R5">
+        (r,-r,s,t,t)=r\underset{\boldx_1}{\underbrace{(1,-1,0,0,0)}}+s\underset{\boldx_2}{\underbrace{(0,0,1,0,0)}}+t\underset{\boldx_3}{\underbrace{(0,0,0,1,1)}}
+      </men>
+      for arbitrary scalars <m>r,s,t</m>. It follows immediately that <m>B=\{\boldx_1,\boldx_2,\boldx_3\}</m> spans <m>W</m>. Furthermore, using <xref ref="eq_basis_R5"/>, we have 
+      <md>
+        <mrow>c_1\boldx_1+c_2\boldx_2+c_3\boldx_3=\boldzero \amp\implies (c_1,-c_1,c_2,c_3,c_3)=(0,0,0,0,0,0) </mrow>
+        <mrow> \amp \implies c_1=c_2=c_3=0</mrow>
+      </md>
+      for any scalars <m>c_1,c_2,c_3\in \R</m>. 
+      Thus <m>B</m> is linearly independent. We conclude <m>B</m> is a basis. 
+    </p>
+  </solution>
+</example>
 <example xml:id="eg_byinspection_basis">
   <title>By-inspection basis technique</title>
   <statement>
     <p>
-      Let <m>W\subseteq M_{22}</m> be the subspace of all symmetric matrices. Use <xref ref="proc_provide_basis"/> to produce a basis of <m>W</m>.    
+      Let <m>W\subseteq M_{22}</m> be the subspace of all symmetric matrices. Use <xref ref="proc_provide_basis"/> to compute a basis of <m>W</m>.    
     </p>
   </statement>
   <solution>
@@ -513,258 +462,6 @@
   </solution>
 </example>
 </subsection>
-<subsection xml:id="ss_bases_transformations">
-  <title>Bases and linear transformations</title>
-  <introduction>
-   In <xref ref="s_basis"/> we saw that a vector space <m>V</m> is completely and concisely determined by a basis <m>B</m> in the sense that all elements of <m>V</m> can be expressed in a unique was as a linear combination of elements of <m>B</m>. A similar principle applies to linear transformations. Roughly speaking, a linear transformation defined on a vector space <m>V</m> is completely determined by where its sends elements of a basis for <m>V</m>. This is spelled out in more detail in <xref ref="th_bases_transformations"/> and the remark that follows. 
-  </introduction>
-  <theorem xml:id="th_bases_transformations">
-    <title>Bases and linear transformations</title>
-    <statement>
-      <p>
-        Let <m>B</m> be a basis for the vector space <m>V</m>.
-      </p>
-      <ol>
-        <li>
-          <p>
-            Let <m>T</m> and <m>T'</m> be linear transformations from <m>V</m> to <m>W</m>. If <m>T(\boldu)=T'(\boldu)</m> for all <m>\boldu\in B</m>, then <m>T=T'</m>.
-          </p>
-        </li>
-        <li>
-          <p>
-            Let <m>W</m> be a vector space. Any mapping
-            <me>
-              \boldu\mapsto \boldw_\boldu
-            </me>
-            assigning each element of <m>\boldu\in B</m> to a chosen element <m>\boldw_\boldu\in W</m> extends uniquely to a linear transformation <m>T\colon V\rightarrow W</m> satisfying
-            <me>
-              T(\boldu)=\boldw_\boldu
-            </me>
-            for all <m>\boldu\in B</m>. In more detail, given any <m>\boldv\in V</m>, if   <m>\boldv=c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r</m>, where <m>\boldu_i\in B</m>  and <m>c_i\ne 0</m> for all <m>1\leq i\leq r</m>, then
-            <men xml:id="eq_bases_transformations">
-              T(\boldv)=c_1T(\boldu_{1})+c_2T(\boldu_{2})+\cdots +c_rT(\boldu_{r})
-            </men>.
 
-          </p>
-        </li>
-      </ol>
-    </statement>
-    <proof>
-      <proof>
-        <title>Proof of (i)</title>
-        <p>
-          Assume <m>T</m> and <m>T'</m> are linear transformations from <m>V</m> to <m>W</m> satisfying <m>T(\boldu)=T'(\boldu)</m> for all <m>\boldu\in B</m>. Given any <m>\boldv\in V</m> we can write <m>\boldv=c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r</m>. It follows that
-          <md>
-            <mrow>T(\boldv) \amp = T(c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r)</mrow>
-            <mrow> \amp = c_1T(\boldu_1)+c_2T(\boldu_2)+\cdots +c_rT(\boldu_r) \amp (T \text{ is linear})</mrow>
-            <mrow>  \amp =c_1T'(\boldu_1)+c_2T'(\boldu_2)+\cdots +c_rT'(\boldu_r)</mrow>
-            <mrow>  \amp = T'(c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r) \amp (T' \text{ is linear}) </mrow>
-            <mrow>  \amp = T'(\boldv)</mrow>
-          </md>.
-          Since <m>T(\boldv)=T'(\boldv)</m> for all <m>\boldv\in V</m>, we have <m>T=T'</m>.
-        </p>
-      </proof>
-      <proof>
-        <title>Proof of (ii)</title>
-        <p>
-          That there can me <em>at most</em> one such <m>T\colon V\rightarrow W</m> follows from (i). Thus we need only show that such a <m>T</m> exists.
-        </p>
-        <p>
-          Since any <m>\boldv\in V</m> has a <em>unique</em> expression of the form
-          <me>
-            \boldv=c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r
-          </me>,
-          where <m>c_i\ne 0</m> for all <m>1\leq i\leq r</m>,
-          the formula in <xref ref="eq_bases_transformations"/> defines a function <m>T\colon V\rightarrow W</m> in a well-defined manner. Note also that the formula still applies even if some of the coefficients are equal to 0: if <m>c_i=0</m>, then <m>c_iT(\boldv_i)=\boldzero</m>, and the right-hand side of <xref ref="eq_bases_transformations"/> is unchanged. We will use this fact below.
-        </p>
-        <p> We now show that <m>T</m> is linear. Given <m>\boldv, \boldv'\in V</m> we can find a common collection of elements <m>\boldu_1,\boldu_2,\dots, \boldu_r\in B</m> for which
-          <md>
-            <mrow>\boldv \amp = c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r</mrow>
-            <mrow> \boldv'\amp=d_1\boldu_1+d_2\boldu_2+\cdots +d_r\boldu_r </mrow>
-          </md>
-          for some <m>c_i, d_i\in \R</m>. We can no longer assume that <m>c_i\ne 0</m> and <m>d_i\ne 0</m> for all <m>1\leq i\leq r</m>, but as observed above we still have
-          <md>
-          <mrow>T(\boldv) \amp = c_1T(\boldu_1)+c_2T(\boldu_2)+\cdots +c_rT(\boldu_r)</mrow>
-          <mrow> T(\boldv')\amp=d_1T(\boldu_1)+d_2T(\boldu_2)+\cdots +d_rT(\boldu_r) </mrow>
-          </md>.
-          Given any <m>c, d\in \R</m>, we have
-          <md>
-            <mrow> T(c\boldv+d\boldv')\amp=T(cc_1\boldu_1+cc_2\boldu_2+\cdots +cc_r\boldu_r+dd_1\boldu_1+dd_2\boldu_2+\cdots +dd_r\boldu_r) </mrow>
-            <mrow> \amp= T\left((cc_1+dd_1)\boldu_1+(cc_2+dd_2)\boldu_2+\cdots +(cc_r+dd_r)\boldu_r\right) </mrow>
-              <mrow> \amp =(cc_1+dd_1)T(\boldu_1)+(cc_2+dd_2)T(\boldu_2)+\cdots +(cc_r+dd_r)T(\boldu_r) \amp (<xref ref="eq_bases_transformations"/>) </mrow>
-              <mrow> \amp= c(c_1T(\boldu_1)+c_2T(\boldu_2)+\cdots +c_rT(\boldu_r))+d(d_1T(\boldu_1)+d_2T(\boldu_2)+\cdots +d_rT(\boldu_r)</mrow>
-              <mrow>  \amp =cT(\boldv)+dT(\boldv')</mrow>
-            </md>.
-            Thus <m>T</m> is a linear transformation.
-        </p>
-      </proof>
-
-    </proof>
-
-  </theorem>
-      <remark xml:id="rm_bases_transformations">
-        <title>Transformations determined by behavior on basis</title>
-    <statement>
-      <p>
-        Let's paraphrase the two results of <xref ref="th_bases_transformations"/>.
-        <ol marker="i">
-          <li>
-            <p>
-            A linear transformation <m>T\colon V\rightarrow W</m> is completely determined by its behavior on a basis <m>B\subseteq V</m>. Once we know the images <m>T(\boldu)</m> for all <m>\boldu\in B</m>, the image <m>T(\boldv)</m> for any other <m>\boldv\in V</m> is then completely determined. Put another way, if two linear transformations out of <m>V</m> <em>agree</em> on the elements of a basis <m>B\subseteq V</m>, then they agree for all elements of <m>V</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Once we have a basis <m>B\subseteq V</m> on hand, it is easy to construct linear transformations <m>T\colon V\rightarrow W</m>: simply choose images <m>T(\boldu)\in W</m> for all <m>\boldu\in B</m> in any manner you like, and then define <m>T(\boldv)</m> for any element <m>\boldv\in V</m> using <xref ref="eq_bases_transformations"/>.
-            </p>
-          </li>
-        </ol>
-      </p>
-    </statement>
-  </remark>
-<example>
-  <title>Composition of reflections</title>
-  <statement>
-    <p>
-      Let <m>r_0\colon \R^2\rightarrow\R^2</m> be reflection across the <m>x</m>-axis, and let <m>r_{\pi/2}\colon \R^2\rightarrow \R^2</m> be reflection across the <m>y</m>-axis. (See <xref ref="ex_transformation_reflection"/>.) Use an argument in the spirit of statement (i) from <xref ref="rm_bases_transformations"/> to show that
-      <me>
-        r_{\pi/2}\circ r_{0}=\rho_{\pi}
-      </me>.
-      (Note: this equality can also be shown using our matrix formulas for rotations and reflections. See <xref ref="ex_transformation_composition_rotations_reflections"/>. )
-    </p>
-  </statement>
-  <solution>
-    <p>
-      Since <m>r_0</m> and <m>r_{\pi/2}</m> are both linear transformations (<xref ref="ex_transformation_reflection"/>), so is the composition <m>T=r_{\pi/2}\circ r_{0}</m>. We wish to show <m>T=\rho_{\pi}</m>. Since <m>\rho_{\pi}</m> is also a linear transformation, it suffices by <xref ref="th_bases_transformations"/> to show that <m>T</m> and <m>\rho_\pi</m> agree on a basis of <m>\R^2</m>. Take the standard basis <m>B=\{(1,0), (0,1)\}</m>. Compute:
-      <md>
-        <mrow>T(1,0) \amp=r_{\pi/2}(r_{0}(1,0)) </mrow>
-        <mrow> \amp =r_{\pi/2}(1,0) </mrow>
-        <mrow>  \amp =(-1,0)</mrow>
-        <mrow>  \amp =\rho_{\pi}(1,0)</mrow>
-        <mrow> T(0,1) \amp </mrow>
-        <mrow>T(0,1) \amp=r_{\pi/2}(r_{0}(0,1)) </mrow>
-        <mrow> \amp =r_{\pi/2}(0,-1) </mrow>
-        <mrow>  \amp =(0,-1)</mrow>
-        <mrow>  \amp =\rho_{\pi}(0,1)</mrow>
-        </md>.
-        Since <m>T</m> and <m>\rho_\pi</m> agree on the basis <m>B</m>, we have <m>T=\rho_\pi</m>.
-    </p>
-  </solution>
-</example>
-<p>
-  As a corollary to <xref ref="th_bases_transformations"/> we can at last complete the partial description of linear transformations of the form <m>T\colon \R^n\rightarrow \R^m</m> given in <xref ref="th_matrix_transform_i"/>.
-</p>
-<corollary xml:id="cor_matrix_transformations">
-  <title>Matrix transformations</title>
-  <statement>
-    <p>
-    Given any linear transformation <m>T\colon \R^n\rightarrow \R^m</m> there is a unique <m>m\times n</m> matrix <m>A</m> such that <m>T=T_A</m>. In fact we have
-    <me>
-    A=\begin{bmatrix}\vert\amp \vert\amp  \amp \vert \\ T(\bolde_1)\amp  T(\bolde_2)\amp \cdots \amp T(\bolde_n)\\ \vert\amp \vert\amp  \amp \vert \end{bmatrix}
-    </me>,
-    where <m>B=\{\bolde_1, \bolde_2, \dots, \bolde_n\}</m> is the standard basis of <m>\R^n</m>.
-    As a result, in the special case where the domain and codomain are both spaces of tuples, all linear transformations are matrix transformations.
-    </p>
-  </statement>
-  <proof>
-    <p>
-      Let <m>B=\{\bolde_1, \bolde_2, \dots, \bolde_n\}</m> be the standard basis of <m>\R^n</m>, and let <m>A</m> be the <m>m\times n</m> matrix defined as
-      <me>
-      A=\begin{bmatrix}\vert\amp \vert\amp  \amp \vert \\ T(\bolde_1)\amp  T(\bolde_2)\amp \cdots \amp T(\bolde_n)\\ \vert\amp \vert\amp  \amp \vert \end{bmatrix}
-      </me>.
-      In other words, the <m>j</m>-th column of <m>A</m> is <m>T(\bolde_j)</m>, considered as an <m>m\times 1</m> column vector. The corresponding matrix transformation <m>T_A\colon \R^n\rightarrow \R^m</m> is linear by <xref ref="th_matrix_transform_i"/>. Since <m>T</m> is linear by assumption, <xref ref="th_bases_transformations"/> applies: to show <m>T=T_A</m> we need only show that <m>T(\bolde_j)=T_A(\bolde_j)</m> for all <m>1\leq j\leq n</m>. We have
-      <md>
-        <mrow>T_A(\bolde_j) \amp =A\bolde_j  \amp (<xref ref="d_matrix_transform"/>)</mrow>
-        <mrow> \amp=(j\text{-th column of } A) \amp (<xref ref="th_column_method"/>) </mrow>
-        <mrow>  \amp = T(\bolde_j) \amp (\text{def. of } A)</mrow>
-      </md>.
-      Thus <m>T=T_A</m>, as claimed.
-    </p>
-  </proof>
-</corollary>
-<p>
-  Besides rounding out our theoretical discussion of linear transformations from <m>\R^n</m> to <m>\R^m</m>, computationally <xref ref="cor_matrix_transformations"/> provides a recipe for computing a <q>matrix formula</q> for a linear transformation <m>T\colon \R^n\colon \rightarrow \R^m</m>. In other words, it tells us how to build the <m>A</m>, column by column, such that <m>T\boldx=A\boldx</m> for all <m>\boldx\in R^n</m>. For reasons that will be made more clear in <xref ref="s_matrixreps"/>, we will call <m>A</m> the <em>standard matrix</em> of <m>T</m>.
-</p>
-<definition xml:id="d_transformation_standard_matrix">
-  <title>Standard matrix of linear <m>T\colon \R^n\rightarrow \R^m</m></title>
-  <statement>
-    <p>
-      Let <m>T\colon \R^n\rightarrow \R^m</m> be a linear transformation. The <term>standard matrix</term> of <m>T</m> is the unique <m>m\times n</m> matrix <m>A</m> satisfying <m>T=T_A</m>. Equivalently, <m>A</m> is the unique matrix satisfying
-      <me>
-        T(\boldx)=A\boldx
-      </me>
-      for all <m>\boldx\in \R^n</m>.
-    </p>
-  </statement>
-</definition>
-<example xml:id="eg_standard_matrix">
-  <title>Standard matrix computation</title>
-  <statement>
-    <p>
-      The function <m>T\colon \R^3\rightarrow \R^2</m> defined as <m>T(x,y,z)=T(x+y+z, 2x+3y-4z)</m> is linear.
-      </p>
-      <ol>
-        <li>
-          <p>
-            Use <xref ref="cor_matrix_transformations" text="global"/> to compute the standard matrix of <m>A</m>.
-          </p>
-        </li>
-        <li>
-          <p>
-            Use <m>A</m> to compute <m>T((-2,3,4))</m>.
-          </p>
-        </li>
-      </ol>
-  </statement>
-  <solution>
-    <p>
-      We have
-      <md>
-        <mrow>A \amp = \begin{amatrix}[ccc]\vert\amp \vert\amp \vert\\
-        T((1,0,0))\amp T((0,1,0))\amp T((0,0,1)) \\
-        \vert\amp \vert\amp vert  \end{amatrix} </mrow>
-        <mrow> \amp =
-        \begin{amatrix}[rrr]
-        1 \amp 1 \amp 1 \\ 2\amp 3 \amp -4 \end{amatrix} </mrow>
-      </md>.
-      Let <m>\boldx=(-2,3,4)</m>. Since <m>A</m> provides a <q>matrix formula</q> for <m>T</m> we have
-      <md>
-        <mrow>T(\boldx) \amp = A\boldx </mrow>
-        <mrow> \amp =
-        \begin{amatrix}[rrr]
-        1 \amp 1 \amp 1 \\ 2\amp 3 \amp -4 \end{amatrix}
-        \colvec{-2\\ 3\\ 4}</mrow>
-        <mrow>  \amp = \colvec{5\\ -9} </mrow>
-      </md>.
-      Thus <m>T((-2,3,4))=(5,-9)</m>, as you can confirm.
-    </p>
-  </solution>
-</example>
-<example xml:id="eg_rotation_via_standard_matrix">
-  <title>Rotation matrices revisited</title>
-  <statement>
-    <p>
-      Fix an angle <m>\alpha</m>. Taking for granted that the rotation operation <m>\rho_\alpha\colon\R^2\rightarrow\R^2</m> is a linear transformation, re-derive the matrix formula for <m>\rho_\alpha\colon \R^2\rightarrow\R^2</m>: <ie />, compute <m>A</m>, the standard matrix of <m>\rho_\alpha</m>.
-    </p>
-  </statement>
-  <solution>
-    <p>
-      Let <m>B=\{\bolde_1, \bolde_2\}=\{(1,0), (0,1)\}</m>. According to <xref ref="cor_matrix_transformations"/>
-      <md>
-        <mrow> A \amp=\begin{bmatrix}
-          \vert\amp \vert \\
-          \rho_\alpha(1,0)\amp \rho_\alpha(0,1) \\
-          \vert \amp \vert
-        \end{bmatrix} </mrow>
-        <mrow> \amp=\begin{amatrix}[rr]
-          \cos\alpha \amp -\sin\alpha \\
-          \sin\alpha \amp \cos\alpha
-        \end{amatrix} </mrow>
-      </md>,
-      since <m>(1,0)</m> gets rotated by <m>\rho_\alpha</m> to <m>(\cos\alpha, \sin\alpha)</m>, and <m>(0,1)</m> gets rotated to <m>(-\sin\alpha, \cos\alpha)</m>.
-    </p>
-  </solution>
-</example>
-</subsection>
 <xi:include href="./s_basis_ex.ptx"/>
 </section>

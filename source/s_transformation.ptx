@@ -879,6 +879,259 @@ Thus, we can now understand the definition of matrix multiplication as being cho
 </p>
 
 </subsection>
+<subsection xml:id="ss_bases_transformations">
+  <title>Bases and linear transformations</title>
+  <introduction>
+   In <xref ref="s_basis"/> we saw that a vector space <m>V</m> is completely and concisely determined by a basis <m>B</m> in the sense that all elements of <m>V</m> can be expressed in a unique was as a linear combination of elements of <m>B</m>. A similar principle applies to linear transformations. Roughly speaking, a linear transformation defined on a vector space <m>V</m> is completely determined by where its sends elements of a basis for <m>V</m>. This is spelled out in more detail in <xref ref="th_bases_transformations"/> and the remark that follows. 
+  </introduction>
+  <theorem xml:id="th_bases_transformations">
+    <title>Bases and linear transformations</title>
+    <statement>
+      <p>
+        Let <m>B</m> be a basis for the vector space <m>V</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Let <m>T</m> and <m>T'</m> be linear transformations from <m>V</m> to <m>W</m>. If <m>T(\boldu)=T'(\boldu)</m> for all <m>\boldu\in B</m>, then <m>T=T'</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Let <m>W</m> be a vector space. Any mapping
+            <me>
+              \boldu\mapsto \boldw_\boldu
+            </me>
+            assigning each element of <m>\boldu\in B</m> to a chosen element <m>\boldw_\boldu\in W</m> extends uniquely to a linear transformation <m>T\colon V\rightarrow W</m> satisfying
+            <me>
+              T(\boldu)=\boldw_\boldu
+            </me>
+            for all <m>\boldu\in B</m>. In more detail, given any <m>\boldv\in V</m>, if   <m>\boldv=c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r</m>, where <m>\boldu_i\in B</m>  and <m>c_i\ne 0</m> for all <m>1\leq i\leq r</m>, then
+            <men xml:id="eq_bases_transformations">
+              T(\boldv)=c_1T(\boldu_{1})+c_2T(\boldu_{2})+\cdots +c_rT(\boldu_{r})
+            </men>.
+
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <proof>
+      <proof>
+        <title>Proof of (i)</title>
+        <p>
+          Assume <m>T</m> and <m>T'</m> are linear transformations from <m>V</m> to <m>W</m> satisfying <m>T(\boldu)=T'(\boldu)</m> for all <m>\boldu\in B</m>. Given any <m>\boldv\in V</m> we can write <m>\boldv=c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r</m>. It follows that
+          <md>
+            <mrow>T(\boldv) \amp = T(c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r)</mrow>
+            <mrow> \amp = c_1T(\boldu_1)+c_2T(\boldu_2)+\cdots +c_rT(\boldu_r) \amp (T \text{ is linear})</mrow>
+            <mrow>  \amp =c_1T'(\boldu_1)+c_2T'(\boldu_2)+\cdots +c_rT'(\boldu_r)</mrow>
+            <mrow>  \amp = T'(c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r) \amp (T' \text{ is linear}) </mrow>
+            <mrow>  \amp = T'(\boldv)</mrow>
+          </md>.
+          Since <m>T(\boldv)=T'(\boldv)</m> for all <m>\boldv\in V</m>, we have <m>T=T'</m>.
+        </p>
+      </proof>
+      <proof>
+        <title>Proof of (ii)</title>
+        <p>
+          That there can me <em>at most</em> one such <m>T\colon V\rightarrow W</m> follows from (i). Thus we need only show that such a <m>T</m> exists.
+        </p>
+        <p>
+          Since any <m>\boldv\in V</m> has a <em>unique</em> expression of the form
+          <me>
+            \boldv=c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r
+          </me>,
+          where <m>c_i\ne 0</m> for all <m>1\leq i\leq r</m>,
+          the formula in <xref ref="eq_bases_transformations"/> defines a function <m>T\colon V\rightarrow W</m> in a well-defined manner. Note also that the formula still applies even if some of the coefficients are equal to 0: if <m>c_i=0</m>, then <m>c_iT(\boldv_i)=\boldzero</m>, and the right-hand side of <xref ref="eq_bases_transformations"/> is unchanged. We will use this fact below.
+        </p>
+        <p> We now show that <m>T</m> is linear. Given <m>\boldv, \boldv'\in V</m> we can find a common collection of elements <m>\boldu_1,\boldu_2,\dots, \boldu_r\in B</m> for which
+          <md>
+            <mrow>\boldv \amp = c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r</mrow>
+            <mrow> \boldv'\amp=d_1\boldu_1+d_2\boldu_2+\cdots +d_r\boldu_r </mrow>
+          </md>
+          for some <m>c_i, d_i\in \R</m>. We can no longer assume that <m>c_i\ne 0</m> and <m>d_i\ne 0</m> for all <m>1\leq i\leq r</m>, but as observed above we still have
+          <md>
+          <mrow>T(\boldv) \amp = c_1T(\boldu_1)+c_2T(\boldu_2)+\cdots +c_rT(\boldu_r)</mrow>
+          <mrow> T(\boldv')\amp=d_1T(\boldu_1)+d_2T(\boldu_2)+\cdots +d_rT(\boldu_r) </mrow>
+          </md>.
+          Given any <m>c, d\in \R</m>, we have
+          <md>
+            <mrow> T(c\boldv+d\boldv')\amp=T(cc_1\boldu_1+cc_2\boldu_2+\cdots +cc_r\boldu_r+dd_1\boldu_1+dd_2\boldu_2+\cdots +dd_r\boldu_r) </mrow>
+            <mrow> \amp= T\left((cc_1+dd_1)\boldu_1+(cc_2+dd_2)\boldu_2+\cdots +(cc_r+dd_r)\boldu_r\right) </mrow>
+              <mrow> \amp =(cc_1+dd_1)T(\boldu_1)+(cc_2+dd_2)T(\boldu_2)+\cdots +(cc_r+dd_r)T(\boldu_r) \amp (<xref ref="eq_bases_transformations"/>) </mrow>
+              <mrow> \amp= c(c_1T(\boldu_1)+c_2T(\boldu_2)+\cdots +c_rT(\boldu_r))+d(d_1T(\boldu_1)+d_2T(\boldu_2)+\cdots +d_rT(\boldu_r)</mrow>
+              <mrow>  \amp =cT(\boldv)+dT(\boldv')</mrow>
+            </md>.
+            Thus <m>T</m> is a linear transformation.
+        </p>
+      </proof>
+
+    </proof>
+
+  </theorem>
+      <remark xml:id="rm_bases_transformations">
+        <title>Transformations determined by behavior on basis</title>
+    <statement>
+      <p>
+        Let's paraphrase the two results of <xref ref="th_bases_transformations"/>.
+        <ol marker="i">
+          <li>
+            <p>
+            A linear transformation <m>T\colon V\rightarrow W</m> is completely determined by its behavior on a basis <m>B\subseteq V</m>. Once we know the images <m>T(\boldu)</m> for all <m>\boldu\in B</m>, the image <m>T(\boldv)</m> for any other <m>\boldv\in V</m> is then completely determined. Put another way, if two linear transformations out of <m>V</m> <em>agree</em> on the elements of a basis <m>B\subseteq V</m>, then they agree for all elements of <m>V</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Once we have a basis <m>B\subseteq V</m> on hand, it is easy to construct linear transformations <m>T\colon V\rightarrow W</m>: simply choose images <m>T(\boldu)\in W</m> for all <m>\boldu\in B</m> in any manner you like, and then define <m>T(\boldv)</m> for any element <m>\boldv\in V</m> using <xref ref="eq_bases_transformations"/>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </remark>
+<example>
+  <title>Composition of reflections</title>
+  <statement>
+    <p>
+      Let <m>r_0\colon \R^2\rightarrow\R^2</m> be reflection across the <m>x</m>-axis, and let <m>r_{\pi/2}\colon \R^2\rightarrow \R^2</m> be reflection across the <m>y</m>-axis. (See <xref ref="ex_transformation_reflection"/>.) Use an argument in the spirit of statement (i) from <xref ref="rm_bases_transformations"/> to show that
+      <me>
+        r_{\pi/2}\circ r_{0}=\rho_{\pi}
+      </me>.
+      (Note: this equality can also be shown using our matrix formulas for rotations and reflections. See <xref ref="ex_transformation_composition_rotations_reflections"/>. )
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Since <m>r_0</m> and <m>r_{\pi/2}</m> are both linear transformations (<xref ref="ex_transformation_reflection"/>), so is the composition <m>T=r_{\pi/2}\circ r_{0}</m>. We wish to show <m>T=\rho_{\pi}</m>. Since <m>\rho_{\pi}</m> is also a linear transformation, it suffices by <xref ref="th_bases_transformations"/> to show that <m>T</m> and <m>\rho_\pi</m> agree on a basis of <m>\R^2</m>. Take the standard basis <m>B=\{(1,0), (0,1)\}</m>. Compute:
+      <md>
+        <mrow>T(1,0) \amp=r_{\pi/2}(r_{0}(1,0)) </mrow>
+        <mrow> \amp =r_{\pi/2}(1,0) </mrow>
+        <mrow>  \amp =(-1,0)</mrow>
+        <mrow>  \amp =\rho_{\pi}(1,0)</mrow>
+        <mrow> T(0,1) \amp </mrow>
+        <mrow>T(0,1) \amp=r_{\pi/2}(r_{0}(0,1)) </mrow>
+        <mrow> \amp =r_{\pi/2}(0,-1) </mrow>
+        <mrow>  \amp =(0,-1)</mrow>
+        <mrow>  \amp =\rho_{\pi}(0,1)</mrow>
+        </md>.
+        Since <m>T</m> and <m>\rho_\pi</m> agree on the basis <m>B</m>, we have <m>T=\rho_\pi</m>.
+    </p>
+  </solution>
+</example>
+<p>
+  As a corollary to <xref ref="th_bases_transformations"/> we can at last complete the partial description of linear transformations of the form <m>T\colon \R^n\rightarrow \R^m</m> given in <xref ref="th_matrix_transform_i"/>.
+</p>
+<corollary xml:id="cor_matrix_transformations">
+  <title>Matrix transformations</title>
+  <statement>
+    <p>
+    Given any linear transformation <m>T\colon \R^n\rightarrow \R^m</m> there is a unique <m>m\times n</m> matrix <m>A</m> such that <m>T=T_A</m>. In fact we have
+    <me>
+    A=\begin{bmatrix}\vert\amp \vert\amp  \amp \vert \\ T(\bolde_1)\amp  T(\bolde_2)\amp \cdots \amp T(\bolde_n)\\ \vert\amp \vert\amp  \amp \vert \end{bmatrix}
+    </me>,
+    where <m>B=\{\bolde_1, \bolde_2, \dots, \bolde_n\}</m> is the standard basis of <m>\R^n</m>.
+    As a result, in the special case where the domain and codomain are both spaces of tuples, all linear transformations are matrix transformations.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Let <m>B=\{\bolde_1, \bolde_2, \dots, \bolde_n\}</m> be the standard basis of <m>\R^n</m>, and let <m>A</m> be the <m>m\times n</m> matrix defined as
+      <me>
+      A=\begin{bmatrix}\vert\amp \vert\amp  \amp \vert \\ T(\bolde_1)\amp  T(\bolde_2)\amp \cdots \amp T(\bolde_n)\\ \vert\amp \vert\amp  \amp \vert \end{bmatrix}
+      </me>.
+      In other words, the <m>j</m>-th column of <m>A</m> is <m>T(\bolde_j)</m>, considered as an <m>m\times 1</m> column vector. The corresponding matrix transformation <m>T_A\colon \R^n\rightarrow \R^m</m> is linear by <xref ref="th_matrix_transform_i"/>. Since <m>T</m> is linear by assumption, <xref ref="th_bases_transformations"/> applies: to show <m>T=T_A</m> we need only show that <m>T(\bolde_j)=T_A(\bolde_j)</m> for all <m>1\leq j\leq n</m>. We have
+      <md>
+        <mrow>T_A(\bolde_j) \amp =A\bolde_j  \amp (<xref ref="d_matrix_transform"/>)</mrow>
+        <mrow> \amp=(j\text{-th column of } A) \amp (<xref ref="th_column_method"/>) </mrow>
+        <mrow>  \amp = T(\bolde_j) \amp (\text{def. of } A)</mrow>
+      </md>.
+      Thus <m>T=T_A</m>, as claimed.
+    </p>
+  </proof>
+</corollary>
+<p>
+  Besides rounding out our theoretical discussion of linear transformations from <m>\R^n</m> to <m>\R^m</m>, computationally <xref ref="cor_matrix_transformations"/> provides a recipe for computing a <q>matrix formula</q> for a linear transformation <m>T\colon \R^n\colon \rightarrow \R^m</m>. In other words, it tells us how to build the <m>A</m>, column by column, such that <m>T\boldx=A\boldx</m> for all <m>\boldx\in R^n</m>. For reasons that will be made more clear in <xref ref="s_matrixreps"/>, we will call <m>A</m> the <em>standard matrix</em> of <m>T</m>.
+</p>
+<definition xml:id="d_transformation_standard_matrix">
+  <title>Standard matrix of linear <m>T\colon \R^n\rightarrow \R^m</m></title>
+  <statement>
+    <p>
+      Let <m>T\colon \R^n\rightarrow \R^m</m> be a linear transformation. The <term>standard matrix</term> of <m>T</m> is the unique <m>m\times n</m> matrix <m>A</m> satisfying <m>T=T_A</m>. Equivalently, <m>A</m> is the unique matrix satisfying
+      <me>
+        T(\boldx)=A\boldx
+      </me>
+      for all <m>\boldx\in \R^n</m>.
+    </p>
+  </statement>
+</definition>
+<example xml:id="eg_standard_matrix">
+  <title>Standard matrix computation</title>
+  <statement>
+    <p>
+      The function <m>T\colon \R^3\rightarrow \R^2</m> defined as <m>T(x,y,z)=T(x+y+z, 2x+3y-4z)</m> is linear.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Use <xref ref="cor_matrix_transformations" text="global"/> to compute the standard matrix of <m>A</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Use <m>A</m> to compute <m>T((-2,3,4))</m>.
+          </p>
+        </li>
+      </ol>
+  </statement>
+  <solution>
+    <p>
+      We have
+      <md>
+        <mrow>A \amp = \begin{amatrix}[ccc]\vert\amp \vert\amp \vert\\
+        T((1,0,0))\amp T((0,1,0))\amp T((0,0,1)) \\
+        \vert\amp \vert\amp vert  \end{amatrix} </mrow>
+        <mrow> \amp =
+        \begin{amatrix}[rrr]
+        1 \amp 1 \amp 1 \\ 2\amp 3 \amp -4 \end{amatrix} </mrow>
+      </md>.
+      Let <m>\boldx=(-2,3,4)</m>. Since <m>A</m> provides a <q>matrix formula</q> for <m>T</m> we have
+      <md>
+        <mrow>T(\boldx) \amp = A\boldx </mrow>
+        <mrow> \amp =
+        \begin{amatrix}[rrr]
+        1 \amp 1 \amp 1 \\ 2\amp 3 \amp -4 \end{amatrix}
+        \colvec{-2\\ 3\\ 4}</mrow>
+        <mrow>  \amp = \colvec{5\\ -9} </mrow>
+      </md>.
+      Thus <m>T((-2,3,4))=(5,-9)</m>, as you can confirm.
+    </p>
+  </solution>
+</example>
+<example xml:id="eg_rotation_via_standard_matrix">
+  <title>Rotation matrices revisited</title>
+  <statement>
+    <p>
+      Fix an angle <m>\alpha</m>. Taking for granted that the rotation operation <m>\rho_\alpha\colon\R^2\rightarrow\R^2</m> is a linear transformation, re-derive the matrix formula for <m>\rho_\alpha\colon \R^2\rightarrow\R^2</m>: <ie />, compute <m>A</m>, the standard matrix of <m>\rho_\alpha</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Let <m>B=\{\bolde_1, \bolde_2\}=\{(1,0), (0,1)\}</m>. According to <xref ref="cor_matrix_transformations"/>
+      <md>
+        <mrow> A \amp=\begin{bmatrix}
+          \vert\amp \vert \\
+          \rho_\alpha(1,0)\amp \rho_\alpha(0,1) \\
+          \vert \amp \vert
+        \end{bmatrix} </mrow>
+        <mrow> \amp=\begin{amatrix}[rr]
+          \cos\alpha \amp -\sin\alpha \\
+          \sin\alpha \amp \cos\alpha
+        \end{amatrix} </mrow>
+      </md>,
+      since <m>(1,0)</m> gets rotated by <m>\rho_\alpha</m> to <m>(\cos\alpha, \sin\alpha)</m>, and <m>(0,1)</m> gets rotated to <m>(-\sin\alpha, \cos\alpha)</m>.
+    </p>
+  </solution>
+</example>
+</subsection>
 
 <xi:include href="./s_transformation_ex.ptx"/>
 

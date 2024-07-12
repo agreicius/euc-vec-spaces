@@ -7,6 +7,9 @@
 </introduction>
 <subsection xml:id="ss_dimension">
   <title>Dimension of a vector space</title>
+  <p>
+    Before getting to the definition of dimension, we introduce the notion of the cardinality of a set, which essentially is just the number of distinct elements the set contains. 
+  </p>
   <definition xml:id="d_cardinality">
     <title>Cardinality of a set</title>
     <idx><h>cardinality</h><h>of a set</h></idx>
@@ -32,7 +35,138 @@
       </p>
     </statement>
   </definition>
-  The following theorem is the crucial result needed to show that any two finite bases of a vector space have the same cardinality.
+  <p>
+    We are now ready to define the dimension of a vector space. 
+  </p>
+  <definition xml:id="d_dimension">
+    <title>Dimension of a vector space</title>
+    <idx><h>dimension</h><h>of a vector space</h></idx>
+    <notation>
+      <usage><m>\dim V</m></usage>
+      <description>dimension of <m>V</m></description>
+    </notation>
+    <statement>
+      <p>
+        Let <m>V</m> be a vector space. The <term>dimension of <m>V</m></term>, denoted <m>\dim V</m>, is defined as follows:
+        <ul>
+          <li>
+            <p>
+            If <m>V</m> has a finite basis <m>B</m>, then the dimension of <m>V</m> is the number of elements of <m>B</m>: <ie />, <m>\dim V=\val{B}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>V</m> does not have a finite basis, then we say <m>V</m> is <term>infinite dimensional</term>, and write <m>\dim V=\infty</m>.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+  <p>
+    There are two subtleties in our definition that we address in <xref first="rm_basis_existence" last="rm_dim_defined"/>.
+  </p>
+  <remark xml:id="rm_basis_existence">
+    <title>Infinite dimension</title>
+    <p>
+    Wouldn't it have been more natural to simply say <m>V</m> is infinite dimensional if it has an infinite basis? That way we could dispense with the cases of <xref ref="d_dimension"/> and simply define <m>\dim V</m> as the cardinality of any basis of <m>V</m>. As it turns out, our defined notion of having infinite dimension is indeed equivalent to not having a finite basis, but to prove this we need to establish the general fact that every vector space has a basis. As intuitive as that claim may sound (<ie />, that bases always exist), its proof requires some set theory methods that are not covered in this text. As such we will not include it in our treatment of dimension, and so will have to make do with our slightly awkward definition of infinite-dimensional vector spaces.
+    </p>
+  </remark>
+  <remark xml:id="rm_dim_defined">
+    <title>Dimension is well-defined</title>
+    <p>
+      Another issue with our definition is the question of whether or not our notion of dimension is well-defined. Recall that a nonzero vector space has infinitely many different bases. For the notion of dimension defined in <xref ref="d_dimension"/> to make sense, each one of these different bases must have the same cardinality. Who's to say that a vector space <m>V</m> cannot have one basis of cardinality two and another of cardinality 5: or worse, one basis that is finite and another that is infinite? It turns out that in fact all bases of a vector space <m>V</m> must have the same cardinality, but this is a nontrivial fact that requires proof. (See <xref ref="th_basis_dimension"/>.)
+    </p>
+  </remark>
+  <p>
+    Before getting to the theory required to show our definition of dimension is well-defined, we illustrate its application to some familiar finite-dimensional vector spaces.  Note that by definition, to show a vector space <m>V</m> has dimension <m>n</m>, we simply must exhibit a basis <m>B</m> with <m>\val{B}=n</m>. 
+  This is especially easy to do for a vector space when we have a basis <m>B</m> at the ready, as is the case for our list of familiar vector spaces.
+  </p>
+  <example xml:id="eg_dimension_familiar">
+    <title>Dimensions of familiar spaces</title>
+  <p>
+  For each <m>V</m> below we provide its standard basis <m>B</m> and compute <m>\dim V=\val{B}</m>.
+  </p>
+  <ul>
+  <li>
+    <title>Zero space</title>
+    <p>
+    <m>V=\{\boldzero\}</m>, <m>B=\emptyset=\{ \}</m>, <m>\dim V=0</m>
+    </p>
+  </li>
+  <li>
+    <title>Tuples</title>
+    <p>
+    <m>V=\R^n</m>, <m>B=\{\bolde_1, \bolde_2,\dots, \bolde_n\}</m>, <m>\dim V=\val{B}=n</m>
+    </p>
+  </li>
+  <li>
+    <title>Matrices</title>
+    <p>
+    <m>V=M_{mn}</m>, <m>B=\{E_{ij}\colon 1\leq i\leq m, 1\leq j\leq n\}</m>, <m>\dim V=\val{B}=m\, n</m>
+    </p>
+  </li>
+  </ul>
+</example>
+<p>
+Even when we do not have a standard basis at our disposal, there are many situations when we can produce a basis of a space by inspection, allowing us to then easily compute the dimension. 
+</p>
+<example xml:base="eg_dim_R5">
+  <title>Dimension of subspace</title>
+  
+  <statement>
+    <p>
+      Use <xref ref="proc_dimension"/> to compute the dimension of the subspace <m>W\subseteq \R^5</m> defined as 
+      <me>  
+        W=\{(x_1,x_2,x_3,x_4,x_5)\in \R^5\colon x_1+x_2=x_4-x_5=0\}
+      </me>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We saw in <xref ref="eg_byinspection_R5"/> that 
+      <me>
+        B=\{(1,-1,0,0,0),(0,0,1,0,0),(0,0,0,1,1)\}
+      </me>
+      is a basis of <m>W</m>. Thus <m>\dim W=3</m>. 
+    </p>
+  </solution>
+</example>
+<example xml:id="eg_dim_symm">
+<title>Dimension of symmetric matrices</title>
+<statement>
+  <p>
+    Let <m>W\subseteq M_{22}</m> be the space of symmetric <m>2\times 2</m> matrices. Compute <m>\dim W</m> using <xref ref="proc_dimension"/>. You may take for granted that <m>W</m> is a subspace. 
+  </p>
+</statement>
+<solution>
+  <p>
+    We saw in <xref ref="eg_byinspection_basis"/> that <m>B=\{A_1, A_2, A_3\}</m> is a basis of <m>W</m>, where 
+    <me>
+      A_1=
+      \begin{bmatrix}
+      1\amp 0\\ 0\amp 0
+      \end{bmatrix}, A_2=\begin{bmatrix}
+      0\amp 1\\ 1\amp 0
+      \end{bmatrix}
+      , A_3=\begin{bmatrix}
+      0\amp 0\\ 0\amp 1
+      \end{bmatrix}
+    </me>.
+    We conclude that <m>\dim W=\abs{B}=3</m>. 
+  </p>
+</solution>
+</example>
+<example xml:id="vid_eg_computing_dim">
+<title>Video example: computing dimension</title>
+<figure xml:id="fig_vid_computing_dim">
+  <title>Video: computing dimension</title>
+<caption>Video: computing dimension</caption>
+<video xml:id="vid_computing_dim" youtube="yzDPJDwkRe4" />
+</figure>
+</example>
+<p>The following theorem about spanning sets is the crucial result needed to show that any two finite bases of a vector space have the same cardinality.
+  </p>
   <theorem xml:id="th_basis_span_bounds">
     <title>Spanning set bound</title>
     <statement>
@@ -116,179 +250,96 @@
       </p>
     </proof>
   </theorem>
-  <definition xml:id="d_dimension">
-    <title>Dimension of a vector space</title>
-    <idx><h>dimension</h><h>of a vector space</h></idx>
-    <notation>
-      <usage><m>\dim V</m></usage>
-      <description>dimension of <m>V</m></description>
-    </notation>
+  <p>
+    The following corollary of <xref ref="th_basis_dimension"/> provides a useful means for showing that a space is infinite dimensional. 
+  </p>
+  <corollary xml:id="cor_dim_infinite">
+    <title>Infinite dimensional spaces</title>
     <statement>
       <p>
-        Let <m>V</m> be a vector space. The <term>dimension of <m>V</m></term>, denoted <m>\dim V</m>, is defined as follows:
-        <ul>
-          <li>
-            <p>
-            If <m>V</m> has a finite basis <m>B</m>, then the dimension of <m>V</m> is the number of elements of <m>B</m>: <ie />, <m>\dim V=\val{B}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              If <m>V</m> does not have a finite basis, then we say <m>V</m> is <term>infinite dimensional</term>, and write <m>\dim V=\infty</m>.
-            </p>
-          </li>
-        </ul>
+        Let <m>V</m> be a vector space. If for all integers <m>n</m> we can find a linearly independent subset <m>S\subseteq V</m> with <m>\abs{S}&gt; n</m>, then <m>V</m> is infinite dimensional. In other words, if <m>V</m> contains linearly independent subsets of arbitrarily large cardinality, then <m>\dim V=\infty</m>. 
       </p>
     </statement>
-  </definition>
-      <remark xml:id="rm_basis_existence">
-    <p>
-    Wouldn't it have been more natural to simply say <m>V</m> is infinite dimensional if it has an infinite basis? As it turns out this is indeed equivalent to not having a finite basis, but to prove this we need to establish the general fact that we can always find a basis for a given vector space <m>V</m>. As intuitive as that claim may sound (<ie />, that bases always exist), its proof requires some set theory methods that are not covered in this text. As such we will not include it in our treatment of dimension, and so will have to make do with our slightly awkward definition of infinite-dimensional vector spaces.
-    </p>
-  </remark>
-    <p>
-      By definition, to show a vector space <m>V</m> has dimension <m>n</m>, we must exhibit a basis <m>B</m> with <m>\val{B}=n</m>. Similarly to show <m>V</m> is infinite dimensional, we must show that it does not have a finite basis: equivalently, if you believe <xref ref="rm_basis_existence"/>, we must exhibit an infinite basis of <m>V</m>.
-    </p>
-    <algorithm xml:id="proc_dimension">
-      <title>Computing dimension</title>
-      <statement>
-        <p>
-          To compute the dimension of a vector space <m>V</m> proceed as follows. 
-          <ol>
-            <li>
-              <title>Basis</title>
-              <p>
-                Attempt to produce a basis of <m>V</m>, possibly with the help of the <xref ref="proc_provide_basis" text="custom">by-inspection basis technique</xref>.  
-              </p>
-            </li>
-            <li>
-              <title>Dimension</title>
-              <p>
-                <ul>
-                  <li>
-                    <p>
-                      If you found a finite basis <m>B</m> in Step 1, then determine the cardinality <m>n=\abs{B}</m> by counting the number of distinct elements of <m>B</m>. We have <m>\dim V=n</m> in this case. 
-                    </p>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <p>
-                      If you found an infinite basis in Step 1, or were able to show that no finite basis exists, then <m>\dim V=\infty</m>. 
-                    </p>
-                  </li>
-                </ul>
-              </p>
-            </li>
-          </ol> 
-        </p>
-      </statement>
-    </algorithm>
-    <p>
-      It is especially easy to carry out <xref ref="proc_dimension"/> for a vector space when we have a basis <m>B</m> at the ready. This is the case for our list of familiar vector spaces, each of which is equipped with a standard basis. 
-    </p>
-    <example xml:id="eg_dimension_familiar">
-      <title>Familiar vector spaces</title>
-    <p>
-    For each <m>V</m> below we provide its standard basis <m>B</m> and compute <m>\dim V=\val{B}</m>.
-    </p>
-    <ul>
-    <li>
-      <title>Zero space</title>
+    <proof>
       <p>
-      <m>V=\{\boldzero\}</m>, <m>B=\emptyset=\{ \}</m>, <m>\dim V=0</m>
+        We give a proof by contradiction. Let <m>V</m> be a vector space satisfying the stated condition: <ie/>, <m>V</m> contains linearly independent sets of arbitrarily large cardinality. Suppose by contradiction that <m>V</m> is finite dimensional. By <xref ref="d_dimension"/> this means there is a finite basis <m>B</m> with <m>\abs{B}=n\in \Z</m>. But then by <xref ref="th_basis_dimension"/> any linearly independent set <m>S\subseteq V</m> must satisfy <m>\abs{S}\leq n</m>. This contradictions the assumption that <m>V</m> contains linearly independent sets of arbitrarily large cardinality. Since we have reached a contradiction, we conclude that <m>V</m> must be infinite dimensional.       
       </p>
-    </li>
-    <li>
-      <title>Tuples</title>
-      <p>
-      <m>V=\R^n</m>, <m>B=\{\bolde_1, \bolde_2,\dots, \bolde_n\}</m>, <m>\dim V=\val{B}=n</m>
-      </p>
-    </li>
-    <li>
-      <title>Matrices</title>
-      <p>
-      <m>V=M_{mn}</m>, <m>B=\{E_{ij}\colon 1\leq i\leq m, 1\leq j\leq n\}</m>, <m>\dim V=\val{B}=m\, n</m>
-      </p>
-    </li>
-    <li>
-      <title>Polynomials of bounded degree</title>
-      <p>
-      <m>V=P_n</m>, <m>B=\{x^n, x^{n-1}, \dots, x, 1\}</m>, <m>\dim V=\val{B}=n+1</m>
-      </p>
-    </li>
-    <li>
-      <title>Polynomials</title>
-      <p>
-      <m>V=P</m>, <m>B=\{1,x, x^2, \dots\}</m>, <m>\dim V=\val{B}=\infty</m>
-      </p>
-    </li>
-    </ul>
-</example>
-<p>
-  Even when we do not have a standard basis at our disposal, there are many situations when we can produce a basis of a space by inspection, allowing us to then easily compute the dimension. 
-</p>
-<example xml:id="eg_dimension_polynomials">
-  <title>Subspace of <m>P_3</m></title>
+    </proof>
+  </corollary>
+<example xml:base="eg_infinite_dim">
+  <title>Infinite dimensional space</title>
   <statement>
     <p>
-      Let <m>W\subseteq P_3</m> be the subspace of polynomials whose leading coefficient is equal to their constant term: <ie/>, 
-      <me>
-        W=\{a_3x^3+a_2x^2+a_1x+a_0\colon a_3=a_0\}
-      </me>. 
-      Compute <m>\dim W</m> using <xref ref="proc_dimension"/>. You may take for granted that <m>W</m> is a subspace. 
+      Let <m>\R^\infty</m> be the vector space of infinite sequences of real numbers. (See <xref ref="eg_infinite_sequences"/>.) Prove that <m>\dim \R^\infty=\infty</m>. 
     </p>
   </statement>
   <solution>
     <p>
-      First we use <xref ref="proc_provide_basis"/> to produce a basis of <m>W</m>. A general element of <m>W</m> has parametric description 
-      <men xml:id="eq_dim_poly">p(x)=ax^3+bx^2+cx+a=a(x^3+1)+bx^2+cx</men>,
-      from which we see immediately that <m>B=\{x^3+1, x^2, x\}</m> is a spanning set of <m>W</m>. From <xref ref="eq_dim_poly"/> we also see that 
-      <md>
-        <mrow>a(x^3+1)+bx^2+cx=\boldzero \amp \iff ax^3+bx^2+cx+a=0x^3+0x^2+0x+0 </mrow>
-        <mrow> \amp \iff a=b=c=0</mrow>
-      </md>.
-      Thus <m>B</m> is a basis of <m>W</m>. Since <m>B</m> contains three distinct elements, we conclude that <m>\dim W=\abs{B}=3</m>. 
-    </p>
-  </solution>
-</example>
-<example xml:id="eg_dim_symm">
-  <title>Dimension of symmetric matrices</title>
-  
-  
-  <statement>
-    <p>
-      Let <m>W\subseteq M_{22}</m> be the space of symmetric <m>2\times 2</m> matrices. Compute <m>\dim W</m> using <xref ref="proc_dimension"/>. You may take for granted that <m>W</m> is a subspace. 
-    </p>
-  </statement>
-  <solution>
-    <p>
-      We saw in <xref ref="eg_byinspection_basis"/> that <m>B=\{A_1, A_2, A_3\}</m> is a basis of <m>W</m>, where 
+      For each positive integer <m>i</m>, define <m>\bolds_i</m> to the infinite sequence whose <m>i</m>-th term is equal to one, and whose other terms are all equal to zero: <ie/>, 
       <me>
-        A_1=
-        \begin{bmatrix}
-        1\amp 0\\ 0\amp 0
-        \end{bmatrix}, A_2=\begin{bmatrix}
-        0\amp 1\\ 1\amp 0
-        \end{bmatrix}
-        , A_3=\begin{bmatrix}
-        0\amp 0\\ 0\amp 1
-        \end{bmatrix}
+        \bolds_i=(0,\dots, 0,\underset{i\text{th term}}{1},0,\dots)
       </me>.
-      We conclude that <m>\dim W=\abs{B}=3</m>. 
+      We will show that for all positive integers <m>n</m> the set 
+      <me>
+        S_n=\{\bolds_1,\bolds_2,\dots, \bolds_n\}
+      </me>
+      is linearly independent. It will then follow from <xref ref="cor_dim_infinite"/> that <m>\R^\infty</m> is infinite dimensional, since it contains linearly independent sets of arbitrarily large cardinality. 
+    </p>
+    <p>
+      To show <m>S_n</m> is linearly independent, assume we have 
+      <me>
+        c_1\bolds_1+c_2\bolds_2+\cdots +c_n\bolds_n=\boldzero=(0,0,\dots)
+      </me>
+      for some scalars <m>c_1,c_2,\dots, c_n\in \R</m>. Since 
+      <me>
+        c_1\bolds_1+c_2\bolds_2+\cdots +c_n\bolds_n=(c_1,c_2,\dots, c_n,0,\dots)
+      </me>,
+      we conclude that <m>c_1=c_2=\cdots=c_n=0</m>, proving that <m>S_n</m> is linearly independent. 
     </p>
   </solution>
 </example>
-<paragraphs xml:id="ss_vid_eg_computing_dim">
-  <title>Video example: computing dimension</title>
-  <figure xml:id="fig_vid_computing_dim">
-    <title>Video: computing dimension</title>
-  <caption>Video: computing dimension</caption>
-  <video xml:id="vid_computing_dim" youtube="yzDPJDwkRe4" />
-  </figure>
-</paragraphs>
 <p>
-
+  We can now describe a complete procedure for computing the dimension of a vector space <m>V</m>: either find a finite basis for <m>V</m> and compute its cardinality, or else show that <m>V</m> is infinite dimensional, perhaps by using <xref ref="cor_dim_infinite"/>.
+  </p>
+  <algorithm xml:id="proc_dimension">
+    <title>Computing dimension</title>
+    <statement>
+      <p>
+        To compute the dimension of a vector space <m>V</m> proceed as follows. 
+        <ol>
+          <li>
+            <title>Basis</title>
+            <p>
+              Attempt to produce a basis of <m>V</m>, possibly with the help of the <xref ref="proc_provide_basis" text="custom">by-inspection basis technique</xref>.  
+            </p>
+          </li>
+          <li>
+            <title>Dimension</title>
+            <p>
+              <ul>
+                <li>
+                  <p>
+                    If you found a finite basis <m>B</m> in Step 1, then determine the cardinality <m>n=\abs{B}</m> by counting the number of distinct elements of <m>B</m>. We have <m>\dim V=n</m> in this case. 
+                  </p>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <p>
+                    If you found an infinite basis in Step 1, or were able to show that no finite basis exists (perhaps by using <xref ref="cor_dim_infinite"/>), then <m>\dim V=\infty</m>. 
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+        </ol> 
+      </p>
+    </statement>
+  </algorithm>
+</subsection>
+<subsection>
+  <title>Further properties of dimension</title>
+<p>
 The <q>contracting and expanding</q> theorem below is very useful theoretical consequence of <xref ref="th_basis_dimension"/>. It allows us to construct a customized basis from a given set <m>S</m>. This method is used prominently in the proof of the <xref ref="th_rank-nullity" text="custom">rank-nullity theorem </xref>.
 </p>
 <theorem xml:id="th_basis_contract_expand">
