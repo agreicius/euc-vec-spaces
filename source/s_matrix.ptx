@@ -1079,7 +1079,6 @@ DL/.style={
     <example xml:id="video_eg_matrix_mult_vid">
       <title>Video example of matrix multiplication</title>
       <figure xml:id="fig_vid_matrix_mult_methods">
-        <title>Video: three methods of matrix multiplication</title>
       <caption>Video: three methods of matrix multiplication</caption>
       <video xml:id="vid_matrix_mult_methods" youtube="Kx4K8TTbl98" />
       </figure>

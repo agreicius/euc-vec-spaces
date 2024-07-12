@@ -202,7 +202,6 @@
     <example xml:id="vid_eg_span">
       <title>Video example: computing span</title>
       <figure xml:id="fig_vid_span">
-        <title>Video: computing span</title>
       <caption>Video: computing span</caption>
       <video xml:id="vid_span" youtube="WN_5qI2r2ks" />
       </figure>

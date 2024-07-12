@@ -152,7 +152,6 @@
 <example xml:id="vid_eg_subspace1">
   <title>Video example: deciding if <m>W\subseteq V</m> is a subspace</title>
   <figure xml:id="fig_vid_subspace1">
-    <title>Video: deciding if <m>W\subseteq V</m> is a subspace</title>
     <caption>Video: deciding if <m>W\subseteq V</m> is a subspace</caption>
     <video xml:id="vid_subspace1" youtube="y1t5ijAopz4" />
   </figure>

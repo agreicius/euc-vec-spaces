@@ -765,7 +765,6 @@
     <example xml:id="vid_eg_inver_alg">
       <title>Video example: inverse algorithm</title>
       <figure xml:id="fig_vid_inver_alg">
-        <title>Video: inverse algorithm</title>
       <caption>Video: inverse algorithm</caption>
       <video xml:id="vid_inver_alg" youtube="yB80PXgNl7E" />
       </figure>

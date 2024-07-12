@@ -365,16 +365,17 @@
 			</solution>
 		</example>
 
-		<example xml:id="ss_vid_eg_basis">
-			<title>Video example: deciding if a set is a basis</title>
+		<example xml:id="vid_eg_basis">
+			<title>Video example: deciding if a set is a basis (<m>\R^n</m>)</title>
 			<figure xml:id="fig_vid_basis">
-				<title>Video: deciding if a set is a basis (<m>\R^n</m>)</title>
 				<caption>Video: deciding if a set is a basis (<m>\R^n</m>)</caption>
 				<video xml:id="vid_basis" youtube="WL2DfblK1BI" />
 			</figure>
-
-			<figure xml:id="fig_vid_basis_exotic">
-				<title>Video: deciding if a set is a basis</title>
+    </example>
+  
+<example xml:id="vid_eg_basis_exotic">
+  <title>Video example: deciding if a set is a basis (<m>M_{nn}</m>)</title>
+  <figure xml:id="fig_vid_basis_exotic">
 				<caption>Video: deciding if a set is a basis</caption>
 				<video xml:id="vid_basis_exotic" youtube="JvPn5X93lGw" />
 			</figure>

@@ -88,7 +88,6 @@
   <example xml:id="eg_vid_prove_matrix_assoc">
     <title>Video example: proving matrix equalities</title>
     <figure xml:id="fig_proof_assoc">
-      <title>Video: matrix multiplication is associative</title>
       <caption>Video: matrix multiplication is associative</caption>
       <video xml:id="vid_proof_assoc" youtube="EDGxkEV5mm0" />
     </figure>
@@ -381,7 +380,6 @@ The example in our warning above is but one instance of the general failure of t
     <example xml:id="eg_vid_prove_matrix_transpose">
       <title>Video example: proving matrix equalities</title>
       <figure xml:id="fig_proof_transp">
-        <title>Video: transpose property</title>
         <caption>Video: transpose property</caption>
         <video xml:id="vid_proof_transp" youtube="twq0_HdpC3w" />
       </figure>
