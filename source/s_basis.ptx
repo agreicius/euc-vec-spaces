@@ -56,7 +56,6 @@
 							</p>
 						</li>
 					</ol>
-					If the basis <m>B</m> comes equipped with an ordering (<ie />, <m>B</m> is an ordered set), then we call <m>B</m> and <term>ordered basis</term>
 				</p>
 			</statement>
 		</definition>
@@ -226,31 +225,27 @@
 
 		<p>
 			Proceeding directly from the definition, to show a set <m>B</m> is a basis of <m>V</m> we have to do two steps: (i) show <m>\Span B= V</m>; (ii) show that <m>B</m> is linearly independent.
-			The following theorem offers gives rise to a one-step technique for proving <m>B</m> is a basis: show that every element of <m>V</m> can be written as a linear combination of elements of <m>B</m> in a <em>unique way</em>.
+			The following theorem gives rise to a convenient one-step technique for proving a finite set <m>B</m> is a basis: show that every element of <m>V</m> can be written as a linear combination of elements of <m>B</m> in a <em>unique way</em>.
 		</p>
 
 		<theorem xml:id="th_basis_equivalence">
 			<title>Basis equivalence</title>
 			<statement>
 				<p>
-					Let <m>B</m> be a subset of the vector space <m>V</m>.
-					The following statements are equivalent:
+					Let <m>V</m> be a vector space, and let <m>B=\{\boldv_1,\boldv_2,\dots, \boldv_n\}\subseteq V</m>, where the <m>\boldv_i</m> are distinct. The following statements are equivalent. 
 				</p>
-
 				<ol>
 					<li>
 						<p>
-							The set <m>B</m> is a basis of <m>V</m>
+							<m>B</m> is a basis of <m>V</m>. 
 						</p>
 					</li>
-
 					<li>
 						<p>
-							Every element <m>\boldv\in V</m> can be written as a linear combination of elements of <m>B</m>, and furthermore this linear combination is unique: <ie />, if we have
+							Every element <m>\boldv\in V</m> can be written as a linear combination of elements of <m>B</m> in a unique way: <ie />, for all <m>\boldv\in V</m> there is a unique <m>n</m>-tuple <m>(c_1,c_2,\dots, c_n)</m> such that 
 							<me>
-								\boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r=d_1\boldv_1+d_2\boldv_2+\cdots +d_s\boldv_r
-							</me>,
-							for some distinct vectors <m>\boldv_i\in B</m>, then <m>c_i=d_i</m> for all <m>1\leq i\leq r</m>.
+								\boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n
+							</me>.
 						</p>
 					</li>
 				</ol>
@@ -267,13 +262,13 @@
 						This follows from the fact that <m>B</m> is linearly independent.
 						Indeed, if
 						<me>
-							c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r=d_1\boldv_1+d_2\boldv_2+\cdots +d_r\boldv_r
+							c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_r=d_1\boldv_1+d_2\boldv_2+\cdots +d_r\boldv_n
 						</me>,
 						then after some algebra we have
 						<me>
-							(c_1-d_1)\boldv_1+(c_2-d_2)\boldv_2+\cdots +(c_r-d_r)\boldv_r=\boldzero
+							(c_1-d_1)\boldv_1+(c_2-d_2)\boldv_2+\cdots +(c_n-d_n)\boldv_n=\boldzero
 						</me>.
-						Since <m>B</m> is linearly independent and since the <m>\boldv_i</m> are distinct, we must have <m>c_i-d_j=0</m>, and hence <m>c_i=d_i</m> for all <m>1\leq i\leq r</m>.
+						Since <m>B</m> is linearly independent and since the <m>\boldv_i</m> are distinct, we must have <m>c_i-d_j=0</m>, and hence <m>c_i=d_i</m> for all <m>1\leq i\leq n</m>.
 					</p>
 				</case>
 
@@ -283,10 +278,11 @@
 						If <m>B</m> satisfies (2), then clearly it spans <m>V</m>.
 						The uniqueness of linear combinations of elements of <m>B</m> now easily implies <m>B</m> is linearly independent:
 						<md>
-							<mrow>c_1\boldv_1+c_2\boldv_2+\cdots c_r\boldv_r=\boldzero \amp \implies
-							c_1\boldv_1+c_2\boldv_2+\cdots c_r\boldv_r=0\boldv_1+0\boldv_2+\cdots 0\boldv_r</mrow>
-							<mrow>  \amp \implies c_1=0, c_2=0, \dots, c_r=0 \amp \text{(by uniqueness condition)}</mrow>
-						</md>.
+							<mrow>c_1\boldv_1+c_2\boldv_2+\cdots c_n\boldv_n=\boldzero \amp \implies
+							c_1\boldv_1+c_2\boldv_2+\cdots c_r\boldv_n=0\boldv_1+0\boldv_2+\cdots 0\boldv_n</mrow>
+							<mrow>  \amp \implies c_1=0, c_2=0, \dots, c_n=0</mrow>
+						</md>,
+						where the last step uses the fact that <m>\boldzero=0\boldv_1+\cdots +0\boldv_n</m> is the unique expression of <m>\boldzero</m> as a linear combination of the elements of <m>B</m>. 
 					</p>
 				</case>
 			</proof>
@@ -300,8 +296,28 @@
 			<title>One-step technique for bases</title>
 			<statement>
 				<p>
-					Let <m>V</m> be a vector space.
-					To prove a subset <m>B\subseteq V</m> is a basis it suffices to show that every <m>\boldv\in V</m> can be written as a linear combination of elements of <m>B</m> in a unique way, as specified in <xref ref="th_basis_equivalence"/>.
+					Let <m>V</m> be a vector space, and let <m>B=\{\boldv_1,\boldv_2,\dots, \boldv_n\}\subseteq V</m>, where the <m>\boldv_i</m> are distinct. To decide whether <m>B</m> is a basis, proceed as follows. 
+					<ol>
+						<li>
+							<p>
+								Write out the vector equation 
+								<men xml:id="eq_onestep_basis">
+									c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldv
+								</men>,
+								where <m>\boldv</m> is an arbitrary element of the vector space <m>V</m>. (Typically you will give some parametric description of <m>\boldv</m> in terms of a finite list of unknowns.)
+							</p>
+						</li>
+						<li>
+							<p>
+								Translate the vector equation <xref ref="eq_onestep_basis"/> into an equivalent linear system of equations in the unknowns <m>c_1,c_2,\dots, c_n</m>. 
+							</p>
+						</li>
+						<li>
+							<p>
+								If the system in (2) has a <em>unique</em> solution no matter what <m>\boldv</m> is chosen, then <m>B</m> is a basis. If there is a choice of <m>\boldv</m> for which either the system in (2) has no solution (<ie/>, is inconsistent) or has infinitely many solutions, then <m>B</m> is not a basis.  
+							</p>
+						</li>
+					</ol>
 				</p>
 			</statement>
 		</algorithm>

@@ -2,17 +2,6 @@
 <subexercises>
   <title>WeBWork Exercises</title>
     <exercise>
-      <!-- basis of space of polynomials -->
-      <webwork source="Library/NAU/setLinearAlgebra/P3subspaceBasis.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- basis of kernel, transformation of polynomials -->
-      <webwork source="Library/NAU/setLinearAlgebra/P3kernelBasis.pg" />
-    </exercise>
-
-
-    <exercise>
       <!-- basis of trace 0 matrices -->
       <webwork source="Library/NAU/setLinearAlgebra/basisTrace0.pg" />
     </exercise>
@@ -49,25 +38,7 @@ For each vector space <m>V</m> and subset <m>S</m>, use the one-step technique (
     </ol>
   </statement>
 </exercise>
-<exercise>
-  <statement>
-    <p>
-      <m>V=P_2</m>
-    </p>
-    <ol>
-      <li>
-        <p>
-          <m>S=\{2x^2+x+1, x^2-2x-1, x^2+1 \}</m>
-        </p>
-      </li>
-      <li>
-        <p>
-          <m>S=\{2x^2-3x+1, 4x^2+x+1, 7x-1\}</m>
-        </p>
-      </li>
-    </ol>
-  </statement>
-</exercise>
+
 <exercise>
   <statement>
     <p>

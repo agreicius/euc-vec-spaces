@@ -207,7 +207,38 @@
       </p>
     </statement>
   </exercise>
-
+  <exercise xml:id="ex_span_independence_transform">
+    <title>Linear transformations, span, and independence</title>
+    <statement>
+      <p>
+        Suppose <m>T\colon V\rightarrow W</m> is a linear transformation.   Let <m>S=\{\boldv_1,\boldv_2,\dots ,\boldv_r\}</m> be a subset of <m>V</m>, and let <m>S'</m> be the image of <m>S</m> under <m>T</m>: <ie />,
+        <me>
+          S'=T(S)=\{T(\boldv_1), T(\boldv_2),\dots, T(\boldv_r)\}
+        </me>.
+        Assume <m>\boldv_i\ne \boldv_j</m> and <m>T(\boldv_i)\ne T(\boldv_j)</m> for all <m>i\ne j</m>.
+      </p>
+      <p>
+        Answer true or false: if true, provide a proof; if false, provide an explicit counterexample. Note: for a complete counterexample you need to specify <m>T\colon V\rightarrow W</m>, and <m>S</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+          If <m>S</m> is linearly independent, then <m>S'</m> is linearly independent.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>S'</m> is linearly independent, then <m>S</m> is linearly independent.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>S</m> is a spanning set for <m>V</m>, then <m>S'</m> is a spanning set for <m>\im T</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
   <exercise xml:id="ex_transformation_reflection">
     <title>Reflection through a line</title>
     <statement>

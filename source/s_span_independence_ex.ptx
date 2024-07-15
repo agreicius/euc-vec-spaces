@@ -43,25 +43,12 @@ In each exercise, determine whether the given subset <m>S</m> of the vector spac
   </statement>
 </exercise>
 <exercise>
-  <statement>
-    <p>
-    <m>V=P_2</m>, <m>S=\{2x^2-x-1, x^2-2x+1, x^2+x+1 \}</m>
-    </p>
-  </statement>
-</exercise>
-<exercise>
-  <statement>
-    <p>
-      <m>V=C([0,1])</m>, <m>S=\{f(x)=x, g(x)=2\val{x} \}</m>
-    </p>
-  </statement>
-</exercise>
-<exercise>
-  <statement>
-    <p>
-      <m>V=C([-1,1])</m>, <m>S=\{f(x)=x, g(x)=2\val{x} \}</m>
-    </p>
-  </statement>
+  <p>
+    <m>V=M_{22}</m>, <m>S=\left\{\begin{amatrix}[rr]1\amp 1\\1\amp -3\end{amatrix},
+      \begin{amatrix}[rr]1\amp -1\\1\amp -1\end{amatrix},
+      \begin{amatrix}[rr]2\amp 1 \\-1\amp -2\end{amatrix},
+      \begin{amatrix}[rr]0\amp 1\\1\amp -2\end{amatrix}   \right\}</m>
+  </p>
 </exercise>
 </exercisegroup>
 <exercise>
@@ -104,11 +91,6 @@ In each exercise, determine whether the given subset <m>S</m> of the vector spac
       Let <m>V</m> be a vector space, and let <m>S=\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m> be a subset of distinct vectors. Assume <m>S</m> is linearly independent. Show that any subset <m>T\subseteq S</m> is linearly independent.
     </p>
   </statement>
-  <hint>
-    <p>
-      The empty set <m>T=\{\, \}</m> is trivially linearly independent. Let <m>T=\{\boldv_{i_1}, \boldv_{i_2}, \dots, \boldv_{i_k}\}</m> represent an arbitrary nonempty set of distinct elements of <m>S</m>. You can show <m>T</m> is linearly independent by <em>extending</em> linear combinations of the elements of <m>T</m> to a linear combination of the elements of <m>S</m> in a certain way.
-    </p>
-  </hint>
 </exercise>
 <exercise xml:id="ex_span_independence_inveribility">
   <title>Span, independence, and invertibility</title>
@@ -141,36 +123,5 @@ In each exercise, determine whether the given subset <m>S</m> of the vector spac
     </p>
   </hint>
 </exercise>
-<exercise xml:id="ex_span_independence_transform">
-  <title>Linear transformations, span, and independence</title>
-  <statement>
-    <p>
-      Suppose <m>T\colon V\rightarrow W</m> is a linear transformation.   Let <m>S=\{\boldv_1,\boldv_2,\dots ,\boldv_r\}</m> be a subset of <m>V</m>, and let <m>S'</m> be the image of <m>S</m> under <m>T</m>: <ie />,
-      <me>
-        S'=T(S)=\{T(\boldv_1), T(\boldv_2),\dots, T(\boldv_r)\}
-      </me>.
-      Assume <m>\boldv_i\ne \boldv_j</m> and <m>T(\boldv_i)\ne T(\boldv_j)</m> for all <m>i\ne j</m>.
-    </p>
-    <p>
-      Answer true or false: if true, provide a proof; if false, provide an explicit counterexample. Note: for a complete counterexample you need to specify <m>T\colon V\rightarrow W</m>, and <m>S</m>.
-    </p>
-    <ol>
-      <li>
-        <p>
-        If <m>S</m> is linearly independent, then <m>S'</m> is linearly independent.
-        </p>
-      </li>
-      <li>
-        <p>
-          If <m>S'</m> is linearly independent, then <m>S</m> is linearly independent.
-        </p>
-      </li>
-      <li>
-        <p>
-          If <m>S</m> is a spanning set for <m>V</m>, then <m>S'</m> is a spanning set for <m>\im T</m>.
-        </p>
-      </li>
-    </ol>
-  </statement>
-</exercise>
+
 </exercises>
