@@ -527,7 +527,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <div class="toc-title-box"><a href="c_vectorspace.html" class="internal"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Subspaces</span></a></div>
+<div class="toc-title-box"><a href="s_subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Subspaces and span</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspace" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Definition of subspace</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspaces_tuples" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Subspaces of <span class="process-math">\(\R^n\)</span></span></a></div></li>
@@ -540,22 +540,23 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence-3" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Span</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#ss_linear_independence" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Linear independence</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence_ex" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#ss_linear_independence_functionspace" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Linear independence in function spaces</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence_ex" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_basis.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Bases</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_basis.html#ss_bases" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Bases of vector spaces</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_basis.html#s_basis_ex" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_basis.html#ss_bases_transformations" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Bases and linear transformations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_basis.html#s_basis_ex" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_dimension.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Dimension</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#ss_dimension" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Dimension of a vector space</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#s_dimension-4" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Further properties of dimension</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_dimension.html#s_dimension_ex" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_dimension.html#s_dimension_ex" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Street smarts!</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -655,14 +656,14 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <span class="codenumber">3.1</span><span class="space"> </span><span class="title">Matrix arithmetic</span>
 </h4>
 <div>
-<a href="s_matrix.html#th_matrix_vector_space" class="xref" data-knowl="./knowl/list-of/th_matrix_vector_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.16: Vector space structure of M_{mn}">Theorem 3.1.16</a> Vector space structure of <span class="process-math">\(M_{mn}\)</span>
+<a href="s_matrix.html#th_matrix_vector_space" class="xref" data-knowl="./knowl/list-of/th_matrix_vector_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.12: Vector space structure of M_{mn}">Theorem 3.1.12</a> Vector space structure of <span class="process-math">\(M_{mn}\)</span>
 </div>
 <div>
-<a href="s_matrix.html#th_matrix_mult_dot_product" class="xref" data-knowl="./knowl/list-of/th_matrix_mult_dot_product.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.25: Dot product and matrix multiplication">Theorem 3.1.25</a> Dot product and matrix multiplication</div>
+<a href="s_matrix.html#th_matrix_mult_dot_product" class="xref" data-knowl="./knowl/list-of/th_matrix_mult_dot_product.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.21: Dot product and matrix multiplication">Theorem 3.1.21</a> Dot product and matrix multiplication</div>
 <div>
-<a href="s_matrix.html#th_column_method" class="xref" data-knowl="./knowl/list-of/th_column_method.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.27: Column method of matrix multiplication">Theorem 3.1.27</a> Column method of matrix multiplication</div>
+<a href="s_matrix.html#th_column_method" class="xref" data-knowl="./knowl/list-of/th_column_method.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.23: Column method of matrix multiplication">Theorem 3.1.23</a> Column method of matrix multiplication</div>
 <div>
-<a href="s_matrix.html#th_row_method" class="xref" data-knowl="./knowl/list-of/th_row_method.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.29: Row method of matrix multiplication">Theorem 3.1.29</a> Row method of matrix multiplication</div>
+<a href="s_matrix.html#th_row_method" class="xref" data-knowl="./knowl/list-of/th_row_method.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.25: Row method of matrix multiplication">Theorem 3.1.25</a> Row method of matrix multiplication</div>
 <h4 class="heading hide-type" title="Section 3.2: Matrix algebra">
 <span class="codenumber">3.2</span><span class="space"> </span><span class="title">Matrix algebra</span>
 </h4>
@@ -713,13 +714,13 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <div>
 <a href="s_invertibility_theorem.html#th_elem_matrices_alg" class="xref" data-knowl="./knowl/list-of/th_elem_matrices_alg.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 3.4.11: Product of elementary matrices algorithm">Procedure 3.4.11</a> Product of elementary matrices algorithm</div>
 <div>
-<a href="s_invertibility_theorem.html#cor_left-right_inverse" class="xref" data-knowl="./knowl/list-of/cor_left-right_inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 3.4.15: Left-inverse if and only if right-inverse">Corollary 3.4.15</a> Left-inverse if and only if right-inverse</div>
+<a href="s_invertibility_theorem.html#cor_left-right_inverse" class="xref" data-knowl="./knowl/list-of/cor_left-right_inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 3.4.14: Left-inverse if and only if right-inverse">Corollary 3.4.14</a> Left-inverse if and only if right-inverse</div>
 <div>
-<a href="s_invertibility_theorem.html#cor_inv_prod_eq" class="xref" data-knowl="./knowl/list-of/cor_inv_prod_eq.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 3.4.16: Invertibility of product equivalence">Corollary 3.4.16</a> Invertibility of product equivalence</div>
+<a href="s_invertibility_theorem.html#cor_inv_prod_eq" class="xref" data-knowl="./knowl/list-of/cor_inv_prod_eq.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 3.4.15: Invertibility of product equivalence">Corollary 3.4.15</a> Invertibility of product equivalence</div>
 <div>
-<a href="s_invertibility_theorem.html#cor_row_equivalence_invertibility" class="xref" data-knowl="./knowl/list-of/cor_row_equivalence_invertibility.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 3.4.17: Row equivalence and invertible matrices">Corollary 3.4.17</a> Row equivalence and invertible matrices</div>
+<a href="s_invertibility_theorem.html#cor_row_equivalence_invertibility" class="xref" data-knowl="./knowl/list-of/cor_row_equivalence_invertibility.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 3.4.16: Row equivalence and invertible matrices">Corollary 3.4.16</a> Row equivalence and invertible matrices</div>
 <div>
-<a href="s_invertibility_theorem.html#cor_RRE_uniqueness" class="xref" data-knowl="./knowl/list-of/cor_RRE_uniqueness.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 3.4.19: Uniqueness of reduced row echelon form">Corollary 3.4.19</a> Uniqueness of reduced row echelon form</div>
+<a href="s_invertibility_theorem.html#cor_RRE_uniqueness" class="xref" data-knowl="./knowl/list-of/cor_RRE_uniqueness.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 3.4.18: Uniqueness of reduced row echelon form">Corollary 3.4.18</a> Uniqueness of reduced row echelon form</div>
 <h4 class="heading hide-type" title="Section 3.5: The determinant">
 <span class="codenumber">3.5</span><span class="space"> </span><span class="title">The determinant</span>
 </h4>
@@ -747,8 +748,8 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <a href="s_det.html#th_det_mult" class="xref" data-knowl="./knowl/list-of/th_det_mult.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.5.26: Determinant is multiplicative">Theorem 3.5.26</a> Determinant is multiplicative</div>
 <div>
 <a href="s_det.html#th_invertibility_expanded" class="xref" data-knowl="./knowl/list-of/th_invertibility_expanded.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.5.27: Invertibility theorem (extended cut)">Theorem 3.5.27</a> Invertibility theorem (extended cut)</div>
-<h4 class="heading hide-type" title="Section 4.1: Subspaces">
-<span class="codenumber">4.1</span><span class="space"> </span><span class="title">Subspaces</span>
+<h4 class="heading hide-type" title="Section 4.1: Subspaces and span">
+<span class="codenumber">4.1</span><span class="space"> </span><span class="title">Subspaces and span</span>
 </h4>
 <div>
 <a href="s_subspace.html#proc_twostep_proof" class="xref" data-knowl="./knowl/list-of/proc_twostep_proof.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.1.4: Two-step proof for subspaces">Procedure 4.1.4</a> Two-step proof for subspaces</div>
@@ -768,39 +769,41 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <span class="codenumber">4.2</span><span class="space"> </span><span class="title">Span and linear independence</span>
 </h4>
 <div>
-<a href="s_span_independence.html#th_span" class="xref" data-knowl="./knowl/list-of/th_span.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.6: Spans are subspaces">Theorem 4.2.6</a> Spans are subspaces</div>
+<a href="s_span_independence.html#th_span" class="xref" data-knowl="./knowl/list-of/th_span.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.5: Spans are subspaces">Theorem 4.2.5</a> Spans are subspaces</div>
 <div>
-<a href="s_span_independence.html#th_lin_ind_finite" class="xref" data-knowl="./knowl/list-of/th_lin_ind_finite.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.12: Linear independence of finite sets">Theorem 4.2.12</a> Linear independence of finite sets</div>
+<a href="s_span_independence.html#proc_linear_independence" class="xref" data-knowl="./knowl/list-of/proc_linear_independence.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.2.12: Investigating linear independence">Procedure 4.2.12</a> Investigating linear independence</div>
 <div>
-<a href="s_span_independence.html#proc_linear_independence" class="xref" data-knowl="./knowl/list-of/proc_linear_independence.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.2.15: Linear independence of a finite set">Procedure 4.2.15</a> Linear independence of a finite set</div>
+<a href="s_span_independence.html#proc_linear_independence_functions" class="xref" data-knowl="./knowl/list-of/proc_linear_independence_functions.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.2.17: Investigating linear independence of functions">Procedure 4.2.17</a> Investigating linear independence of functions</div>
 <h4 class="heading hide-type" title="Section 4.3: Bases">
 <span class="codenumber">4.3</span><span class="space"> </span><span class="title">Bases</span>
 </h4>
 <div>
-<a href="s_basis.html#th_basis_equivalence" class="xref" data-knowl="./knowl/list-of/th_basis_equivalence.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.4: Basis equivalence">Theorem 4.3.4</a> Basis equivalence</div>
+<a href="s_basis.html#th_basis_equivalence" class="xref" data-knowl="./knowl/list-of/th_basis_equivalence.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.7: Basis equivalence">Theorem 4.3.7</a> Basis equivalence</div>
 <div>
-<a href="s_basis.html#proc_basis_onestep" class="xref" data-knowl="./knowl/list-of/proc_basis_onestep.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.3.5: One-step technique for bases">Procedure 4.3.5</a> One-step technique for bases</div>
+<a href="s_basis.html#proc_basis_onestep" class="xref" data-knowl="./knowl/list-of/proc_basis_onestep.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.3.8: One-step technique for bases">Procedure 4.3.8</a> One-step technique for bases</div>
 <div>
-<a href="s_basis.html#proc_provide_basis" class="xref" data-knowl="./knowl/list-of/proc_provide_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.3.11: By-inspection basis technique">Procedure 4.3.11</a> By-inspection basis technique</div>
+<a href="s_basis.html#proc_provide_basis" class="xref" data-knowl="./knowl/list-of/proc_provide_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.3.13: By-inspection basis technique">Procedure 4.3.13</a> By-inspection basis technique</div>
+<div>
+<a href="s_basis.html#th_bases_transformations" class="xref" data-knowl="./knowl/list-of/th_bases_transformations.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.15: Bases and linear transformations">Theorem 4.3.15</a> Bases and linear transformations</div>
+<div>
+<a href="s_basis.html#cor_matrix_transformations" class="xref" data-knowl="./knowl/list-of/cor_matrix_transformations.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.3.18: Matrix transformations">Corollary 4.3.18</a> Matrix transformations</div>
 <h4 class="heading hide-type" title="Section 4.4: Dimension">
 <span class="codenumber">4.4</span><span class="space"> </span><span class="title">Dimension</span>
 </h4>
 <div>
-<a href="s_dimension.html#th_basis_span_bounds" class="xref" data-knowl="./knowl/list-of/th_basis_span_bounds.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.10: Spanning set bound">Theorem 4.4.10</a> Spanning set bound</div>
+<a href="s_dimension.html#th_basis_span_bounds" class="xref" data-knowl="./knowl/list-of/th_basis_span_bounds.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.2: Spanning set bound">Theorem 4.4.2</a> Spanning set bound</div>
 <div>
-<a href="s_dimension.html#th_basis_dimension" class="xref" data-knowl="./knowl/list-of/th_basis_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.11: Basis bounds">Theorem 4.4.11</a> Basis bounds</div>
+<a href="s_dimension.html#th_basis_dimension" class="xref" data-knowl="./knowl/list-of/th_basis_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.3: Basis bounds">Theorem 4.4.3</a> Basis bounds</div>
 <div>
-<a href="s_dimension.html#cor_dim_infinite" class="xref" data-knowl="./knowl/list-of/cor_dim_infinite.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.4.12: Infinite dimensional spaces">Corollary 4.4.12</a> Infinite dimensional spaces</div>
+<a href="s_dimension.html#proc_dimension" class="xref" data-knowl="./knowl/list-of/proc_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.4.6: Computing dimension">Procedure 4.4.6</a> Computing dimension</div>
 <div>
-<a href="s_dimension.html#proc_dimension" class="xref" data-knowl="./knowl/list-of/proc_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.4.14: Computing dimension">Procedure 4.4.14</a> Computing dimension</div>
+<a href="s_dimension.html#th_basis_contract_expand" class="xref" data-knowl="./knowl/list-of/th_basis_contract_expand.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.11: Contracting and expanding to bases">Theorem 4.4.11</a> Contracting and expanding to bases</div>
 <div>
-<a href="s_dimension.html#th_basis_contract_expand" class="xref" data-knowl="./knowl/list-of/th_basis_contract_expand.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.15: Contracting and expanding to bases">Theorem 4.4.15</a> Contracting and expanding to bases</div>
+<a href="s_dimension.html#cor_street_smarts" class="xref" data-knowl="./knowl/list-of/cor_street_smarts.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.4.12: Street smarts">Corollary 4.4.12</a> Street smarts</div>
 <div>
-<a href="s_dimension.html#cor_street_smarts" class="xref" data-knowl="./knowl/list-of/cor_street_smarts.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.4.16: Street smarts">Corollary 4.4.16</a> Street smarts</div>
+<a href="s_dimension.html#cor_dimension_subspace" class="xref" data-knowl="./knowl/list-of/cor_dimension_subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.4.13: Dimension of subspaces">Corollary 4.4.13</a> Dimension of subspaces</div>
 <div>
-<a href="s_dimension.html#cor_dimension_subspace" class="xref" data-knowl="./knowl/list-of/cor_dimension_subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.4.17: Dimension of subspaces">Corollary 4.4.17</a> Dimension of subspaces</div>
-<div>
-<a href="s_dimension.html#th_dimension_compendium" class="xref" data-knowl="./knowl/list-of/th_dimension_compendium.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.20: Dimension theory compendium">Theorem 4.4.20</a> Dimension theory compendium</div>
+<a href="s_dimension.html#th_dimension_compendium" class="xref" data-knowl="./knowl/list-of/th_dimension_compendium.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.16: Dimension theory compendium">Theorem 4.4.16</a> Dimension theory compendium</div>
 <h4 class="heading hide-type" title="Section 4.5: Rank-nullity theorem and fundamental spaces">
 <span class="codenumber">4.5</span><span class="space"> </span><span class="title">Rank-nullity theorem and fundamental spaces</span>
 </h4>

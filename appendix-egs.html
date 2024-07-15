@@ -527,7 +527,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <div class="toc-title-box"><a href="c_vectorspace.html" class="internal"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Subspaces</span></a></div>
+<div class="toc-title-box"><a href="s_subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Subspaces and span</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspace" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Definition of subspace</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspaces_tuples" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Subspaces of <span class="process-math">\(\R^n\)</span></span></a></div></li>
@@ -540,22 +540,23 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence-3" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Span</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#ss_linear_independence" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Linear independence</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence_ex" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#ss_linear_independence_functionspace" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Linear independence in function spaces</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence_ex" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_basis.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Bases</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_basis.html#ss_bases" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Bases of vector spaces</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_basis.html#s_basis_ex" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_basis.html#ss_bases_transformations" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Bases and linear transformations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_basis.html#s_basis_ex" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_dimension.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Dimension</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#ss_dimension" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Dimension of a vector space</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#s_dimension-4" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Further properties of dimension</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_dimension.html#s_dimension_ex" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_dimension.html#s_dimension_ex" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Street smarts!</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -700,21 +701,19 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <span class="codenumber">3.1</span><span class="space"> </span><span class="title">Matrix arithmetic</span>
 </h4>
 <div>
-<a href="s_matrix.html#eg_inequality" class="xref" data-knowl="./knowl/list-of/eg_inequality.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.7: Matrix equality">Example 3.1.7</a> Matrix equality</div>
+<a href="s_matrix.html#eg_inequality" class="xref" data-knowl="./knowl/list-of/eg_inequality.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.6: Matrix equality">Example 3.1.6</a> Matrix equality</div>
 <div>
-<a href="s_matrix.html#eg_matrix_lin_comb" class="xref" data-knowl="./knowl/list-of/eg_matrix_lin_comb.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.18: Matrix linear combinations">Example 3.1.18</a> Matrix linear combinations</div>
+<a href="s_matrix.html#eg_matrix_lin_comb" class="xref" data-knowl="./knowl/list-of/eg_matrix_lin_comb.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.14: Matrix linear combinations">Example 3.1.14</a> Matrix linear combinations</div>
 <div>
-<a href="s_matrix.html#eg_matrix_lin_comb_solve" class="xref" data-knowl="./knowl/list-of/eg_matrix_lin_comb_solve.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.19: Expressing matrix as a linear combination">Example 3.1.19</a> Expressing matrix as a linear combination</div>
+<a href="s_matrix.html#eg_matrix_lin_comb_solve" class="xref" data-knowl="./knowl/list-of/eg_matrix_lin_comb_solve.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.15: Expressing matrix as a linear combination">Example 3.1.15</a> Expressing matrix as a linear combination</div>
 <div>
-<a href="s_matrix.html#eg_matrix_mult" class="xref" data-knowl="./knowl/list-of/eg_matrix_mult.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.24: Matrix multiplication">Example 3.1.24</a> Matrix multiplication</div>
+<a href="s_matrix.html#eg_matrix_mult" class="xref" data-knowl="./knowl/list-of/eg_matrix_mult.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.20: Matrix multiplication">Example 3.1.20</a> Matrix multiplication</div>
 <div>
-<a href="s_matrix.html#eg_matrix_mult_dot_prod" class="xref" data-knowl="./knowl/list-of/eg_matrix_mult_dot_prod.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.26: Matrix multiplication via dot product">Example 3.1.26</a> Matrix multiplication via dot product</div>
+<a href="s_matrix.html#eg_matrix_mult_dot_prod" class="xref" data-knowl="./knowl/list-of/eg_matrix_mult_dot_prod.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.22: Matrix multiplication via dot product">Example 3.1.22</a> Matrix multiplication via dot product</div>
 <div>
-<a href="s_matrix.html#s_matrix_ex_product" class="xref" data-knowl="./knowl/list-of/s_matrix_ex_product.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.30: Column and row methods">Example 3.1.30</a> Column and row methods</div>
+<a href="s_matrix.html#s_matrix_ex_product" class="xref" data-knowl="./knowl/list-of/s_matrix_ex_product.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.26: Column and row methods">Example 3.1.26</a> Column and row methods</div>
 <div>
-<a href="s_matrix.html#video_eg_matrix_mult_vid" class="xref" data-knowl="./knowl/list-of/video_eg_matrix_mult_vid.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.31: Video example of matrix multiplication">Example 3.1.31</a> Video example of matrix multiplication</div>
-<div>
-<a href="s_matrix.html#eg_transpose" class="xref" data-knowl="./knowl/list-of/eg_transpose.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.35: Transpose">Example 3.1.35</a> Transpose</div>
+<a href="s_matrix.html#eg_transpose" class="xref" data-knowl="./knowl/list-of/eg_transpose.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.1.30: Transpose">Example 3.1.30</a> Transpose</div>
 <h4 class="heading hide-type" title="Section 3.2: Matrix algebra">
 <span class="codenumber">3.2</span><span class="space"> </span><span class="title">Matrix algebra</span>
 </h4>
@@ -738,8 +737,6 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <a href="s_invertibility_theorem.html#eg_triang_matrices" class="xref" data-knowl="./knowl/list-of/eg_triang_matrices.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.4.8: Triangular 3\times 3 matrices">Example 3.4.8</a> Triangular <span class="process-math">\(3\times 3\)</span> matrices</div>
 <div>
 <a href="s_invertibility_theorem.html#eg_inv_alg_example" class="xref" data-knowl="./knowl/list-of/eg_inv_alg_example.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.4.12: Inverse algorithms">Example 3.4.12</a> Inverse algorithms</div>
-<div>
-<a href="s_invertibility_theorem.html#vid_eg_inver_alg" class="xref" data-knowl="./knowl/list-of/vid_eg_inver_alg.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.4.13: Video example: inverse algorithm">Example 3.4.13</a> Video example: inverse algorithm</div>
 <h4 class="heading hide-type" title="Section 3.5: The determinant">
 <span class="codenumber">3.5</span><span class="space"> </span><span class="title">The determinant</span>
 </h4>
@@ -749,8 +746,8 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <a href="s_det.html#ss_expansion_rows_columns-17" class="xref" data-knowl="./knowl/list-of/ss_expansion_rows_columns-17.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.5.18">Example 3.5.18</a> </div>
 <div>
 <a href="s_det.html#ss_det_row_ops-9" class="xref" data-knowl="./knowl/list-of/ss_det_row_ops-9.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.5.24: Determinant via row reduction">Example 3.5.24</a> Determinant via row reduction</div>
-<h4 class="heading hide-type" title="Section 4.1: Subspaces">
-<span class="codenumber">4.1</span><span class="space"> </span><span class="title">Subspaces</span>
+<h4 class="heading hide-type" title="Section 4.1: Subspaces and span">
+<span class="codenumber">4.1</span><span class="space"> </span><span class="title">Subspaces and span</span>
 </h4>
 <div>
 <a href="s_subspace.html#ss_subspace-3" class="xref" data-knowl="./knowl/list-of/ss_subspace-3.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.1.2">Example 4.1.2</a> </div>
@@ -769,46 +766,54 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <a href="s_span_independence.html#eg_span_2space" class="xref" data-knowl="./knowl/list-of/eg_span_2space.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.2.3: Examples in \R^2">Example 4.2.3</a> Examples in <span class="process-math">\(\R^2\)</span>
 </div>
 <div>
-<a href="s_span_independence.html#vid_eg_span" class="xref" data-knowl="./knowl/list-of/vid_eg_span.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.2.4: Video example: computing span">Example 4.2.4</a> Video example: computing span</div>
+<a href="s_span_independence.html#s_span_independence-3-13" class="xref" data-knowl="./knowl/list-of/s_span_independence-3-13.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.2.8: Spanning sets are not unique">Example 4.2.8</a> Spanning sets are not unique</div>
 <div>
-<a href="s_span_independence.html#s_span_independence-3-13" class="xref" data-knowl="./knowl/list-of/s_span_independence-3-13.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.2.9: Spanning sets are not unique">Example 4.2.9</a> Spanning sets are not unique</div>
+<a href="s_span_independence.html#eg_independence_basic_examples" class="xref" data-knowl="./knowl/list-of/eg_independence_basic_examples.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.2.11: Elementary examples">Example 4.2.11</a> Elementary examples</div>
 <div>
-<a href="s_span_independence.html#eg_independence_basic_examples" class="xref" data-knowl="./knowl/list-of/eg_independence_basic_examples.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.2.13: Elementary examples">Example 4.2.13</a> Elementary examples</div>
+<a href="s_span_independence.html#ex_linear_independence" class="xref" data-knowl="./knowl/list-of/ex_linear_independence.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.2.13: Linear independence">Example 4.2.13</a> Linear independence</div>
 <div>
-<a href="s_span_independence.html#ex_linear_independence" class="xref" data-knowl="./knowl/list-of/ex_linear_independence.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.2.16: Linear independence">Example 4.2.16</a> Linear independence</div>
+<a href="s_span_independence.html#eg_lin_ind_P" class="xref" data-knowl="./knowl/list-of/eg_lin_ind_P.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.2.16: Linear independence in P">Example 4.2.16</a> Linear independence in <span class="process-math">\(P\)</span>
+</div>
+<div>
+<a href="s_span_independence.html#ss_linear_independence_functionspace-7" class="xref" data-knowl="./knowl/list-of/ss_linear_independence_functionspace-7.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.2.19: Linear independence of functions">Example 4.2.19</a> Linear independence of functions</div>
 <h4 class="heading hide-type" title="Section 4.3: Bases">
 <span class="codenumber">4.3</span><span class="space"> </span><span class="title">Bases</span>
 </h4>
 <div>
 <a href="s_basis.html#ss_bases-5" class="xref" data-knowl="./knowl/list-of/ss_bases-5.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.3: Some nonstandard bases">Example 4.3.3</a> Some nonstandard bases</div>
 <div>
-<a href="s_basis.html#eg_basis_onestep_R3" class="xref" data-knowl="./knowl/list-of/eg_basis_onestep_R3.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.6: One-step technique for \R^3">Example 4.3.6</a> One-step technique for <span class="process-math">\(\R^3\)</span>
+<a href="s_basis.html#ss_bases-7" class="xref" data-knowl="./knowl/list-of/ss_bases-7.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.4: P has no finite basis">Example 4.3.4</a> <span class="process-math">\(P\)</span> has no finite basis</div>
+<div>
+<a href="s_basis.html#ss_bases-9" class="xref" data-knowl="./knowl/list-of/ss_bases-9.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.6: Basis for \R_{&gt;0}">Example 4.3.6</a> Basis for <span class="process-math">\(\R_{&gt;0}\)</span>
 </div>
 <div>
-<a href="s_basis.html#vid_eg_basis" class="xref" data-knowl="./knowl/list-of/vid_eg_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.7: Video example: deciding if a set is a basis (\R^n)">Example 4.3.7</a> Video example: deciding if a set is a basis (<span class="process-math">\(\R^n\)</span>)</div>
+<a href="s_basis.html#eg_basis_onestep_R3" class="xref" data-knowl="./knowl/list-of/eg_basis_onestep_R3.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.9: One-step technique for \R^3">Example 4.3.9</a> One-step technique for <span class="process-math">\(\R^3\)</span>
+</div>
 <div>
-<a href="s_basis.html#vid_eg_basis_exotic" class="xref" data-knowl="./knowl/list-of/vid_eg_basis_exotic.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.9: Video example: deciding if a set is a basis (M_{nn})">Example 4.3.9</a> Video example: deciding if a set is a basis (<span class="process-math">\(M_{nn}\)</span>)</div>
+<a href="s_basis.html#eg_basis_onestep_p1" class="xref" data-knowl="./knowl/list-of/eg_basis_onestep_p1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.10: One-step technique for P_1">Example 4.3.10</a> One-step technique for <span class="process-math">\(P_1\)</span>
+</div>
 <div>
-<a href="s_basis.html#ss_bases-15" class="xref" data-knowl="./knowl/list-of/ss_bases-15.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.12: By-inspection basis technique">Example 4.3.12</a> By-inspection basis technique</div>
+<a href="s_basis.html#eg_byinspection_basis" class="xref" data-knowl="./knowl/list-of/eg_byinspection_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.14: By-inspection basis technique">Example 4.3.14</a> By-inspection basis technique</div>
 <div>
-<a href="s_basis.html#eg_byinspection_basis" class="xref" data-knowl="./knowl/list-of/eg_byinspection_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.13: By-inspection basis technique">Example 4.3.13</a> By-inspection basis technique</div>
+<a href="s_basis.html#ss_bases_transformations-5" class="xref" data-knowl="./knowl/list-of/ss_bases_transformations-5.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.17: Composition of reflections">Example 4.3.17</a> Composition of reflections</div>
+<div>
+<a href="s_basis.html#eg_standard_matrix" class="xref" data-knowl="./knowl/list-of/eg_standard_matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.20: Standard matrix computation">Example 4.3.20</a> Standard matrix computation</div>
+<div>
+<a href="s_basis.html#eg_rotation_via_standard_matrix" class="xref" data-knowl="./knowl/list-of/eg_rotation_via_standard_matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.3.21: Rotation matrices revisited">Example 4.3.21</a> Rotation matrices revisited</div>
 <h4 class="heading hide-type" title="Section 4.4: Dimension">
 <span class="codenumber">4.4</span><span class="space"> </span><span class="title">Dimension</span>
 </h4>
 <div>
-<a href="s_dimension.html#eg_dimension_familiar" class="xref" data-knowl="./knowl/list-of/eg_dimension_familiar.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.4.5: Dimensions of familiar spaces">Example 4.4.5</a> Dimensions of familiar spaces</div>
+<a href="s_dimension.html#eg_dimension_familiar" class="xref" data-knowl="./knowl/list-of/eg_dimension_familiar.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.4.7: Familiar vector spaces">Example 4.4.7</a> Familiar vector spaces</div>
 <div>
-<a href="s_dimension.html#ss_dimension-12" class="xref" data-knowl="./knowl/list-of/ss_dimension-12.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.4.6: Dimension of subspace">Example 4.4.6</a> Dimension of subspace</div>
+<a href="s_dimension.html#eg_dimension_polynomials" class="xref" data-knowl="./knowl/list-of/eg_dimension_polynomials.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.4.8: Subspace of P_3">Example 4.4.8</a> Subspace of <span class="process-math">\(P_3\)</span>
+</div>
 <div>
-<a href="s_dimension.html#eg_dim_symm" class="xref" data-knowl="./knowl/list-of/eg_dim_symm.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.4.7: Dimension of symmetric matrices">Example 4.4.7</a> Dimension of symmetric matrices</div>
+<a href="s_dimension.html#eg_dim_symm" class="xref" data-knowl="./knowl/list-of/eg_dim_symm.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.4.9: Dimension of symmetric matrices">Example 4.4.9</a> Dimension of symmetric matrices</div>
 <div>
-<a href="s_dimension.html#vid_eg_computing_dim" class="xref" data-knowl="./knowl/list-of/vid_eg_computing_dim.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.4.8: Video example: computing dimension">Example 4.4.8</a> Video example: computing dimension</div>
+<a href="s_dimension.html#eg_subspace_dimension" class="xref" data-knowl="./knowl/list-of/eg_subspace_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.4.14: Dimension of subspace">Example 4.4.14</a> Dimension of subspace</div>
 <div>
-<a href="s_dimension.html#ss_dimension-21" class="xref" data-knowl="./knowl/list-of/ss_dimension-21.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.4.13: Infinite dimensional space">Example 4.4.13</a> Infinite dimensional space</div>
-<div>
-<a href="s_dimension.html#eg_subspace_dimension" class="xref" data-knowl="./knowl/list-of/eg_subspace_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.4.18: Dimension of subspace">Example 4.4.18</a> Dimension of subspace</div>
-<div>
-<a href="s_dimension.html#eg_subspaces_R3" class="xref" data-knowl="./knowl/list-of/eg_subspaces_R3.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.4.19: Subspaces of \R^3">Example 4.4.19</a> Subspaces of <span class="process-math">\(\R^3\)</span>
+<a href="s_dimension.html#eg_subspaces_R3" class="xref" data-knowl="./knowl/list-of/eg_subspaces_R3.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 4.4.15: Subspaces of \R^3">Example 4.4.15</a> Subspaces of <span class="process-math">\(\R^3\)</span>
 </div>
 <h4 class="heading hide-type" title="Section 4.5: Rank-nullity theorem and fundamental spaces">
 <span class="codenumber">4.5</span><span class="space"> </span><span class="title">Rank-nullity theorem and fundamental spaces</span>

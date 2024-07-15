@@ -527,7 +527,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <div class="toc-title-box"><a href="c_vectorspace.html" class="internal"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Subspaces</span></a></div>
+<div class="toc-title-box"><a href="s_subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Subspaces and span</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspace" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Definition of subspace</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspaces_tuples" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Subspaces of <span class="process-math">\(\R^n\)</span></span></a></div></li>
@@ -540,22 +540,23 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence-3" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Span</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#ss_linear_independence" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Linear independence</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence_ex" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#ss_linear_independence_functionspace" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Linear independence in function spaces</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence_ex" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_basis.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Bases</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_basis.html#ss_bases" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Bases of vector spaces</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_basis.html#s_basis_ex" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_basis.html#ss_bases_transformations" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Bases and linear transformations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_basis.html#s_basis_ex" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_dimension.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Dimension</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#ss_dimension" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Dimension of a vector space</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#s_dimension-4" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Further properties of dimension</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_dimension.html#s_dimension_ex" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_dimension.html#s_dimension_ex" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Street smarts!</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -861,7 +862,7 @@ a_{1  (j+1)} \amp \text{if } k\leq j
 <div class="para">For any <span class="process-math">\(1\leq j\leq n\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_transpose.html ./knowl/xref/d_det.html ./knowl/xref/th_det_transpose.html" id="cor_expansion_columns-3-1-2">
 \begin{align*}
-\sum_{k=1}^n(-1)^{k+j}a_{kj}M_{kj}\amp =\sum_{k=1}^n(-1)^{k+j}(A^T)_{jk}\det A_{kj} \amp (\knowl{./knowl/xref/d_transpose.html}{\text{Definition 3.1.33}})\\
+\sum_{k=1}^n(-1)^{k+j}a_{kj}M_{kj}\amp =\sum_{k=1}^n(-1)^{k+j}(A^T)_{jk}\det A_{kj} \amp (\knowl{./knowl/xref/d_transpose.html}{\text{Definition 3.1.28}})\\
 \amp = \sum_{k=1}^n(-1)^{k+j}(A^T)_{jk}\det (A^T)_{jk} \amp ( (A^T)_{ij}= A_{ji}) \\
 \amp= \det A^T  \amp (\knowl{./knowl/xref/d_det.html}{\text{Definition 3.5.3}})\\
 \amp=\det A \amp (\knowl{./knowl/xref/th_det_transpose.html}{\text{Theorem 3.5.9}}) \text{.}
@@ -1248,7 +1249,7 @@ A=E_1E_2\cdots E_r\text{.}
 </div></article><details id="th_det_mult-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_det_mult-3-1">We consider two cases based on the invertibility of <span class="process-math">\(A\)</span> and/or <span class="process-math">\(B\text{.}\)</span>
 </div> <article class="case" id="th_det_mult-3-2"><h5 class="heading">
 <span class="process-math">\(A\)</span> or <span class="process-math">\(B\)</span> is not invertible.</h5> <div class="para logical" id="th_det_mult-3-2-2">
-<div class="para">In this case <span class="process-math">\(AB\)</span> is not invertible (<a href="s_invertibility_theorem.html#cor_inv_prod_eq" class="xref" data-knowl="./knowl/xref/cor_inv_prod_eq.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 3.4.16: Invertibility of product equivalence">Corollary 3.4.16</a>), and hence <span class="process-math">\(\det AB=0\)</span> by <a href="s_det.html#th_inv_iff_det" class="xref" data-knowl="./knowl/xref/th_inv_iff_det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.5.25: Determinant and invertibility">Theorem 3.5.25</a>. By the same reasoning we must have <span class="process-math">\(\det A=0\)</span> or <span class="process-math">\(\det B=0\text{.}\)</span> It follows that</div>
+<div class="para">In this case <span class="process-math">\(AB\)</span> is not invertible (<a href="s_invertibility_theorem.html#cor_inv_prod_eq" class="xref" data-knowl="./knowl/xref/cor_inv_prod_eq.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 3.4.15: Invertibility of product equivalence">Corollary 3.4.15</a>), and hence <span class="process-math">\(\det AB=0\)</span> by <a href="s_det.html#th_inv_iff_det" class="xref" data-knowl="./knowl/xref/th_inv_iff_det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.5.25: Determinant and invertibility">Theorem 3.5.25</a>. By the same reasoning we must have <span class="process-math">\(\det A=0\)</span> or <span class="process-math">\(\det B=0\text{.}\)</span> It follows that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_inv_prod_eq.html ./knowl/xref/th_inv_iff_det.html">
 \begin{equation*}
 \det AB=\det A\, \det B=0
