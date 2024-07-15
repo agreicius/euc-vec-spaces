@@ -2506,45 +2506,7 @@ If they are linearly independent, find the only scalars that will make the equat
     <pg source="Library/NAU/setLinearAlgebra/span.pg"/>
   </webwork-reps>
   <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-56" ww-id="webwork-56">
-    <static seed="56" source="Library/NAU/setLinearAlgebra/P3subspaceBasis.pg">
-      <statement><p>Find a basis <m>\lbrace p(x), q(x) \rbrace</m> for the vector space 
-<m>\lbrace f(x)\in{\mathbb P}_3[x] \mid f'(-6)=f(1) \rbrace</m> 
-where <m>{\mathbb P}_3[x]</m> is the vector space of polynomials in <m>x</m> with degree less than 3.</p>
-<p><m>p(x) =</m>
-<fillin name="AnSwEr0001" characters="15"/>, 
-<m>q(x) =</m>
-<fillin name="MuLtIaNsWeR_AnSwEr0001_1" characters="15"/></p>
-</statement>
-      <answer>
-        <p>
-          <m>x^{2}-13;\,x</m>
-        </p>
-      </answer>
-    </static>
-    <server-data sourceFilePath="Library/NAU/setLinearAlgebra/P3subspaceBasis.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
-    <pg source="Library/NAU/setLinearAlgebra/P3subspaceBasis.pg"/>
-  </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-57" ww-id="webwork-57">
-    <static seed="57" source="Library/NAU/setLinearAlgebra/P3kernelBasis.pg">
-      <statement><p>Find a basis <m>\lbrace p(x), q(x) \rbrace</m> for the kernel of the linear transformation  
-<m>L:{\mathbb P}_3[x]\to {\mathbb R}</m> defined by <m>L(f(x)) = f'(-4)-f(1)</m> 
-where <m>{\mathbb P}_3[x]</m> is the vector space of polynomials in <m>x</m> with degree less than 3.</p>
-<p><m>p(x) =</m>
-<fillin name="AnSwEr0001" characters="15"/>, 
-<m>q(x) =</m>
-<fillin name="MuLtIaNsWeR_AnSwEr0001_1" characters="15"/></p>
-</statement>
-      <answer>
-        <p>
-          <m>x^{2}-9;\,x</m>
-        </p>
-      </answer>
-    </static>
-    <server-data sourceFilePath="Library/NAU/setLinearAlgebra/P3kernelBasis.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
-    <pg source="Library/NAU/setLinearAlgebra/P3kernelBasis.pg"/>
-  </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-58" ww-id="webwork-58">
-    <static seed="58" source="Library/NAU/setLinearAlgebra/basisTrace0.pg">
+    <static seed="56" source="Library/NAU/setLinearAlgebra/basisTrace0.pg">
       <statement><p>Find a basis for the vector space 
 <m>\lbrace A\in {\mathbb R}^{2\times 2} \mid \text{tr}(A)=0\rbrace</m> 
 of <m>2\times 2</m> matrices with trace 0.</p>
@@ -2557,8 +2519,8 @@ of <m>2\times 2</m> matrices with trace 0.</p>
     <server-data sourceFilePath="Library/NAU/setLinearAlgebra/basisTrace0.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/NAU/setLinearAlgebra/basisTrace0.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-59" ww-id="webwork-59">
-    <static seed="59" source="Library/NAU/setLinearAlgebra/basisHalfMagic.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-57" ww-id="webwork-57">
+    <static seed="57" source="Library/NAU/setLinearAlgebra/basisHalfMagic.pg">
       <statement><p>A square matrix is half-magic if the sum of the numbers in each row and column is the same. 
 Find a basis <m>B</m> for the vector space of <m>2\times 2</m> half-magic squares.</p>
 <p><m>B = \lbrace</m>
@@ -2570,24 +2532,24 @@ Find a basis <m>B</m> for the vector space of <m>2\times 2</m> half-magic square
     <server-data sourceFilePath="Library/NAU/setLinearAlgebra/basisHalfMagic.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/NAU/setLinearAlgebra/basisHalfMagic.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-60" ww-id="webwork-60">
-    <static seed="60" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.48_54a.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-58" ww-id="webwork-58">
+    <static seed="58" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.48_54a.pg">
       <statement><p>Are the following statements true or false?</p>
 <p><ol>
 <li>
-<p>The set {0} forms a basis for the zero subspace.</p>
+<p>Let <m>m\lt n</m>. Then <m>U =</m> {<m>u_1, u_2,\ldots, u_m</m>} in <m>R^n</m> can form a basis  for <m>R^n</m> if the correct <m>n-m</m> vectors are added to <m>U</m>.</p>
 </li>
 <li>
 <p>If  <m>\  S_1</m> is of dimension 3 and is a subspace of <m>R^4</m>, then there can not exist a subspace<m>S_2</m> of <m>R^4</m> such that <m>S_1 \subset S_2 \subset R^4</m> with <m>S_1 \ne S_2</m> and <m>S_2 \ne R^4</m>.</p>
 </li>
 <li>
+<p>The set {0} forms a basis for the zero subspace.</p>
+</li>
+<li>
+<p>Let <m>m&gt;n</m>. Then <m>U =</m> {<m>u_1, u_2,\ldots, u_m</m>} in <m>R^n</m> can form a basis  for <m>R^n</m> if the correct <m>m-n</m> vectors are removed from <m>U</m>.</p>
+</li>
+<li>
 <p><m>R^n</m> has exactly one subspace of dimension <m>m</m> for each of <m>m = 0,1,2,\ldots, n</m> .</p>
-</li>
-<li>
-<p>The nullity of a matrix A is the same as the dimension of the subspace spanned be the columns of A.</p>
-</li>
-<li>
-<p>If {<m>u_1, u_2, u_3</m>} is a basis for <m>R^3</m>, then span{<m>u_1, u_2</m>} is a plane.</p>
 </li>
 </ol></p>
 </statement>
@@ -2595,8 +2557,8 @@ Find a basis <m>B</m> for the vector space of <m>2\times 2</m> half-magic square
     <server-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.48_54a.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.48_54a.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-61" ww-id="webwork-61">
-    <static seed="61" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.55.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-59" ww-id="webwork-59">
+    <static seed="59" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.55.pg">
       <statement><p>Suppose that <m>S_1</m> and <m>S_2</m> are nonzero subspaces, with <m>S_1</m> contained inside <m>S_2</m>, and suppose that <m>dim(S_2) = 3</m>.</p>
 <p><alert> (a)</alert> What are the possible dimensions of <m>S_1</m>?  <var form="popup" name="AnSwEr0001">
 <li>
@@ -2661,8 +2623,8 @@ Find a basis <m>B</m> for the vector space of <m>2\times 2</m> half-magic square
     <server-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.55.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.55.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-62" ww-id="webwork-62">
-    <static seed="62" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.56.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-60" ww-id="webwork-60">
+    <static seed="60" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.56.pg">
       <statement><p>Suppose that <m>S_1</m> and <m>S_2</m> are nonzero subspaces, with <m>S_1</m> contained inside <m>S_2</m>, and suppose that <m>dim(S_2) = 4</m></p>
 <p><ol>
 <li>
@@ -2687,25 +2649,25 @@ b) If <m>S_1 \ne S_2</m>, then <m>S_1</m> is properly contained in <m>S_2</m>, a
     <server-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.56.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.56.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-63" ww-id="webwork-63">
-    <static seed="63" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.17_21a.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-61" ww-id="webwork-61">
+    <static seed="61" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.17_21a.pg">
       <statement><p>By deleting linearly dependent vectors,
 find a basis of each subspace and give
 the dimension of the subspace.</p>
 <p>A. The dimension of <m>\text{span}
-\left \lbrace \left[\begin{array}{c}6\\-10\\\end{array}\right], \left[\begin{array}{c}-21\\35\\\end{array}\right] \right \rbrace</m>
+\left \lbrace \left[\begin{array}{c}6\\-10\\\end{array}\right], \left[\begin{array}{c}-9\\15\\\end{array}\right] \right \rbrace</m>
 is <fillin name="AnSwEr0001" characters="1"/>.</p>
 <p>B. The dimension of <m>\text{span}
-\left \lbrace \left[\begin{array}{c}5\\-9\\\end{array}\right], \left[\begin{array}{c}-11\\18\\\end{array}\right] \right \rbrace</m>
+\left \lbrace \left[\begin{array}{c}5\\-9\\\end{array}\right], \left[\begin{array}{c}-16\\27\\\end{array}\right] \right \rbrace</m>
 is <fillin name="AnSwEr0002" characters="1"/>.</p>
 <p>C. The dimension of <m>\text{span}
 \left \lbrace \left[\begin{array}{c}1\\1\\1\\\end{array}\right], \left[\begin{array}{c}-3\\-3\\-3\\\end{array}\right], \left[\begin{array}{c}5\\5\\5\\\end{array}\right] \right \rbrace</m>
 is <fillin name="AnSwEr0003" characters="1"/>.</p>
 <p>D. The dimension of <m>\text{span}
-\left \lbrace \left[\begin{array}{c}1\\-1\\1\\\end{array}\right], \left[\begin{array}{c}-5\\5\\-5\\\end{array}\right], \left[\begin{array}{c}2\\7\\8\\\end{array}\right] \right \rbrace</m>
+\left \lbrace \left[\begin{array}{c}1\\-1\\1\\\end{array}\right], \left[\begin{array}{c}-4\\4\\-4\\\end{array}\right], \left[\begin{array}{c}2\\7\\8\\\end{array}\right] \right \rbrace</m>
 is <fillin name="AnSwEr0004" characters="1"/>.</p>
 <p>E. The dimension of <m>\text{span}
-\left \lbrace \left[\begin{array}{c}0\\0\\0\\\end{array}\right], \left[\begin{array}{c}4\\0\\0\\\end{array}\right], \left[\begin{array}{c}5\\-1\\0\\\end{array}\right], \left[\begin{array}{c}1\\5\\5\\\end{array}\right] \right \rbrace</m>
+\left \lbrace \left[\begin{array}{c}0\\0\\0\\\end{array}\right], \left[\begin{array}{c}5\\0\\0\\\end{array}\right], \left[\begin{array}{c}3\\-1\\0\\\end{array}\right], \left[\begin{array}{c}1\\3\\3\\\end{array}\right] \right \rbrace</m>
 is <fillin name="AnSwEr0005" characters="1"/>.</p>
 </statement>
       <answer>
@@ -2737,9 +2699,9 @@ is <fillin name="AnSwEr0005" characters="1"/>.</p>
     <server-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.17_21a.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.17_21a.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-64" ww-id="webwork-64">
-    <static seed="64" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.3.15.pg">
-      <statement><p>Suppose that <m>A</m> is a <m>3 \times 9</m>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-62" ww-id="webwork-62">
+    <static seed="62" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.3.15.pg">
+      <statement><p>Suppose that <m>A</m> is a <m>5 \times 8</m>
 matrix that has an echelon form with
 one zero row.  Find the
 dimension of the row space of <m>A</m>,
@@ -2754,49 +2716,49 @@ is <fillin name="AnSwEr0003" characters="5"/>.</p>
 </statement>
       <answer>
         <p>
-          <m>2</m>
+          <m>4</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>2</m>
+          <m>4</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>7</m>
+          <m>4</m>
         </p>
       </answer>
       <solution><p>The dimension of the row space is the
 number of nonzero rows in the echelon
-form, or <m>3 - 1 = 2.</m>
+form, or <m>5 - 1 = 4.</m>
 The dimension of the column space is
 the same as the dimension of the row
 space, and the dimension of the null
-space is <m>9 -  2 = 7.</m></p>
+space is <m>8 -  4 = 4.</m></p>
 </solution>
     </static>
     <server-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.3.15.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.3.15.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-65" ww-id="webwork-65">
-    <static seed="65" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.48_54a.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-63" ww-id="webwork-63">
+    <static seed="63" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.48_54a.pg">
       <statement><p>Are the following statements true or false?</p>
 <p><ol>
-<li>
-<p>If {<m>u_1, u_2, u_3</m>} is a basis for <m>R^3</m>, then span{<m>u_1, u_2</m>} is a plane.</p>
-</li>
 <li>
 <p>Let <m>m&gt;n</m>. Then <m>U =</m> {<m>u_1, u_2,\ldots, u_m</m>} in <m>R^n</m> can form a basis  for <m>R^n</m> if the correct <m>m-n</m> vectors are removed from <m>U</m>.</p>
 </li>
 <li>
-<p>Let <m>m\lt n</m>. Then <m>U =</m> {<m>u_1, u_2,\ldots, u_m</m>} in <m>R^n</m> can form a basis  for <m>R^n</m> if the correct <m>n-m</m> vectors are added to <m>U</m>.</p>
+<p>The nullity of a matrix A is the same as the dimension of the subspace spanned be the columns of A.</p>
+</li>
+<li>
+<p>If {<m>u_1, u_2, u_3</m>} is a basis for <m>R^3</m>, then span{<m>u_1, u_2</m>} is a plane.</p>
+</li>
+<li>
+<p>If  <m>\  S_1</m> is of dimension 3 and is a subspace of <m>R^4</m>, then there can not exist a subspace<m>S_2</m> of <m>R^4</m> such that <m>S_1 \subset S_2 \subset R^4</m> with <m>S_1 \ne S_2</m> and <m>S_2 \ne R^4</m>.</p>
 </li>
 <li>
 <p><m>R^n</m> has exactly one subspace of dimension <m>m</m> for each of <m>m = 0,1,2,\ldots, n</m> .</p>
-</li>
-<li>
-<p>The nullity of a matrix A is the same as the dimension of the subspace spanned be the columns of A.</p>
 </li>
 </ol></p>
 </statement>
@@ -2804,24 +2766,24 @@ space is <m>9 -  2 = 7.</m></p>
     <server-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.48_54a.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.48_54a.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-66" ww-id="webwork-66">
-    <static seed="66" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.41_47a.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-64" ww-id="webwork-64">
+    <static seed="64" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.41_47a.pg">
       <statement><p>Are the following statements true or false?</p>
 <p><ol>
 <li>
-<p>If  <m>\  S =</m> span{<m>u_1, u_2, u_3</m>},  then  <m>dim(S) = 3</m> .</p>
+<p>If the set of vectors <m>U</m> is linearly independent in a subspace <m>S</m> then vectors can be added to <m>U</m> to create a basis for <m>S</m></p>
 </li>
 <li>
-<p>Three nonzero vectors that lie in a plane in <m>R^3</m> might form a basis for <m>R^3</m>.</p>
+<p>If  <m>\  S_1</m>  and <m>\  S_2</m> are subspaces of <m>R^n</m> of the same dimension, then <m>S_1=S_2</m>.</p>
 </li>
 <li>
 <p>If the set of vectors <m>U</m> is linearly independent in a subspace <m>S</m> then vectors can be removed from <m>U</m> to create a basis for <m>S</m>.</p>
 </li>
 <li>
-<p>If the set of vectors <m>U</m> spans a subspace <m>S</m>, then vectors can be added to <m>U</m> to create a basis for <m>S</m></p>
+<p>If  <m>\  S =</m> span{<m>u_1, u_2, u_3</m>},  then  <m>dim(S) = 3</m> .</p>
 </li>
 <li>
-<p>If the set of vectors <m>U</m> is linearly independent in a subspace <m>S</m> then vectors can be added to <m>U</m> to create a basis for <m>S</m></p>
+<p>Three nonzero vectors that lie in a plane in <m>R^3</m> might form a basis for <m>R^3</m>.</p>
 </li>
 </ol></p>
 </statement>
@@ -2829,12 +2791,12 @@ space is <m>9 -  2 = 7.</m></p>
     <server-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.41_47a.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.41_47a.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-67" ww-id="webwork-67">
-    <static seed="67" source="Library/Rochester/setLinearAlgebra10Bases/ur_la_10_22.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-65" ww-id="webwork-65">
+    <static seed="65" source="Library/Rochester/setLinearAlgebra10Bases/ur_la_10_22.pg">
       <statement><p>Let <me>A = \left[\begin{array}{cccc}
-1 \amp -3 \amp 4 \amp -5\cr
--3 \amp -2 \amp -1 \amp -7\cr
--6 \amp -4 \amp -2 \amp -14
+-3 \amp -3 \amp -9 \amp 0\cr
+-3 \amp -4 \amp -10 \amp 2\cr
+-6 \amp -7 \amp -19 \amp 2
 \end{array}\right].</me>
 Find dimensions of the kernel and image of <m>T(\vec{x}) = A \vec{x}</m>.</p>
 <p><m>{\rm dim } ({\rm Ker } (A)) =</m> <fillin name="AnSwEr0001" characters="5"/>,</p>
@@ -2854,18 +2816,18 @@ Find dimensions of the kernel and image of <m>T(\vec{x}) = A \vec{x}</m>.</p>
     <server-data sourceFilePath="Library/Rochester/setLinearAlgebra10Bases/ur_la_10_22.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/Rochester/setLinearAlgebra10Bases/ur_la_10_22.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-68" ww-id="webwork-68">
-    <static seed="68" source="Library/Hope/Multi1/04-02-Kernel-image/Ker_im_12.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-66" ww-id="webwork-66">
+    <static seed="66" source="Library/Hope/Multi1/04-02-Kernel-image/Ker_im_12.pg">
       <statement><p>Let <m>f : \mathbb{R}^{3} \to \mathbb{R}^{2}</m> be the linear transformation defined by 
 <me>f(x,y,z) = \left[\begin{array}{c}
--5\cr
-3
+-1\cr
+2
 \end{array}\right] x + \left[\begin{array}{c}
-12\cr
--7
+3\cr
+-5
 \end{array}\right] y + \left[\begin{array}{c}
-14\cr
--8
+-16\cr
+28
 \end{array}\right] z.</me>
 Find bases for the kernel and image of <m>f</m>. <url href="/webwork2_files/helpFiles/Entering-Vectors.html">vector</url></p>
 <p>A basis for the kernel of <m>f</m> is <m>\Big\lbrace</m> <fillin name="AnSwEr0001" characters="30"/> <m>\Big\rbrace.</m></p>
@@ -2873,29 +2835,29 @@ Find bases for the kernel and image of <m>f</m>. <url href="/webwork2_files/help
 </statement>
       <answer>
         <p>
-          <m>\left&lt;-2,-2,1\right&gt;</m>
+          <m>\left&lt;-4,4,1\right&gt;</m>
         </p>
       </answer>
       <answer>
         <p>
-          <m>\left&lt;-5,3\right&gt;, \left&lt;12,-7\right&gt;</m>
+          <m>\left&lt;-1,2\right&gt;, \left&lt;3,-5\right&gt;</m>
         </p>
       </answer>
     </static>
     <server-data sourceFilePath="Library/Hope/Multi1/04-02-Kernel-image/Ker_im_12.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/Hope/Multi1/04-02-Kernel-image/Ker_im_12.pg"/>
   </webwork-reps>
-  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-69" ww-id="webwork-69">
-    <static seed="69" source="Library/Mizzou/Matrix_Theory/HW_4/prob_3.pg">
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-67" ww-id="webwork-67">
+    <static seed="67" source="Library/Mizzou/Matrix_Theory/HW_4/prob_3.pg">
       <statement><p>Let <m>L:\mathbb{R}^3 \to \mathbb{R}^3</m> be the linear operator defined by</p>
 <p><me>L(x) = \left[\begin{array}{c}
--17 x_1  - 28 x_2 + 17 x_3\\
--14 x_2\\
--51 x_1  + 51 x_3
+12 x_1 + 36 x_2  - 12 x_3\\
+18 x_2\\
+36 x_1 - 36 x_3
 \end{array}\right]</me></p>
 <p>(a) Find the dimension of the range of <m>L</m>: <fillin name="AnSwEr0001" characters="5"/></p>
 <p>(b) Find the dimension of the kernel of <m>L</m>: <fillin name="AnSwEr0002" characters="5"/></p>
-<p>(c) Let <m>S</m> be the subspace of <m>\mathbb{R}^3</m> spanned by <m>-2 e_1</m> and <m>14 e_2 + 14 e_3</m>. Find the dimension of <m>L(S)</m>: <fillin name="AnSwEr0003" characters="5"/></p>
+<p>(c) Let <m>S</m> be the subspace of <m>\mathbb{R}^3</m> spanned by <m>-2 e_1</m> and <m>10 e_2 + 10 e_3</m>. Find the dimension of <m>L(S)</m>: <fillin name="AnSwEr0003" characters="5"/></p>
 </statement>
       <answer>
         <p>
@@ -2915,9 +2877,9 @@ Find bases for the kernel and image of <m>f</m>. <url href="/webwork2_files/help
       <solution><p><alert>Solution:</alert> 
 (a) Since <m>e_1</m>, <m>e_2</m>, <m>e_3</m> spans <m>\mathbb{R}^3</m>, we get that <m>L(\mathbb{R}^3)</m> is spanned by <m>L(e_1)</m>, <m>L(e_2)</m>, <m>L(e_3)</m>. So</p>
 <p><me>L(\mathbb{R}^3) = \mbox{span}\left( L(e_1),L(e_2),L(e_3)\right) = \mbox{span}\left(
-\left[\begin{array}{c} -17 \\ 0 \\ -51 \end{array}\right], 
-\left[\begin{array}{c} -28 \\ -14 \\ 0 \end{array}\right], 
-\left[\begin{array}{c} 17 \\ 0 \\ 51 \end{array}\right]\right)</me></p>
+\left[\begin{array}{c} 12 \\ 0 \\ 36 \end{array}\right], 
+\left[\begin{array}{c} 36 \\ 18 \\ 0 \end{array}\right], 
+\left[\begin{array}{c} -12 \\ 0 \\ -36 \end{array}\right]\right)</me></p>
 <p><me>= \mbox{span}\left(
 \left[\begin{array}{c} 1 \\ 0 \\ 3 \end{array}\right], 
 \left[\begin{array}{c} 2 \\ 1 \\ 0 \end{array}\right], 
@@ -2928,10 +2890,10 @@ Find bases for the kernel and image of <m>f</m>. <url href="/webwork2_files/help
 <p>and hence the dimension of the range is 2.</p>
 <p>(b) The rank-nullity theorem implies that the dimension of the kernel is <m>3-2 = 1</m>.</p>
 <p>(c)  Notice that
-<me>L(S) = \mbox{span}\left(L(-2 e_1), L(14 e_2 + 14 e_3)\right) = \mbox{span}\left(L(e_1), L(e_2)+L(e_3)\right)</me></p>
+<me>L(S) = \mbox{span}\left(L(-2 e_1), L(10 e_2 + 10 e_3)\right) = \mbox{span}\left(L(e_1), L(e_2)+L(e_3)\right)</me></p>
 <p><me>=  \mbox{span}\left(
-\left[\begin{array}{c} -17 \\ 0 \\ -51 \end{array}\right], 
-\left[\begin{array}{c} -11 \\ -14 \\ 51 \end{array}\right]\right)</me></p>
+\left[\begin{array}{c} 12 \\ 0 \\ 36 \end{array}\right], 
+\left[\begin{array}{c} 24 \\ 18 \\ -36 \end{array}\right]\right)</me></p>
 <p>and it is easy to check that these two vectors are linearly independent. Therefore, the dimension of <m>L(S)</m> is 2.</p>
 </solution>
     </static>
