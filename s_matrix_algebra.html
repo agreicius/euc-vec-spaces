@@ -527,7 +527,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <div class="toc-title-box"><a href="c_vectorspace.html" class="internal"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Subspaces and span</span></a></div>
+<div class="toc-title-box"><a href="s_subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Subspaces</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspace" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Definition of subspace</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspaces_tuples" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Subspaces of <span class="process-math">\(\R^n\)</span></span></a></div></li>
@@ -540,23 +540,22 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence-3" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Span</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#ss_linear_independence" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Linear independence</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#ss_linear_independence_functionspace" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Linear independence in function spaces</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence_ex" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence_ex" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_basis.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Bases</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_basis.html#ss_bases" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Bases of vector spaces</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_basis.html#ss_bases_transformations" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Bases and linear transformations</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_basis.html#s_basis_ex" class="internal"><span class="codenumber">4.3.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_basis.html#s_basis_ex" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_dimension.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Dimension</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#ss_dimension" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Dimension of a vector space</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_dimension.html#s_dimension_ex" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Street smarts!</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#s_dimension-4" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Further properties of dimension</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_dimension.html#s_dimension_ex" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -624,7 +623,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </div>
 </li>
 </ol>
-</div></article><div class="para" id="ss_matrix_mult_props-4">How does one actually prove one of these properties? These are all <em class="emphasis">matrix equalities</em> of the form <span class="process-math">\(X=Y\text{,}\)</span> so according to the <a href="s_matrix.html#d_matrix_equality" class="xref" data-knowl="./knowl/xref/d_matrix_equality.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.5: Matrix equality">matrix equality definition</a> we must show (1) that the matrices <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> have the same size, and (2) that <span class="process-math">\((X)_{ij}=(Y)_{ij}\)</span> for all <span class="process-math">\((i,j)\text{.}\)</span> The proof below illustrates this technique for the <a href="s_matrix_algebra.html#th_matrixmult_assoc" class="xref" data-knowl="./knowl/xref/th_matrixmult_assoc.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1: Associative law">multiplication associative law</a> of <a href="s_matrix_algebra.html#th_matrix_alg_props" class="xref" data-knowl="./knowl/xref/th_matrix_alg_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.1: Properties of matrix multiplication">Theorem 3.2.1</a>.</div>
+</div></article><div class="para" id="ss_matrix_mult_props-4">How does one actually prove one of these properties? These are all <em class="emphasis">matrix equalities</em> of the form <span class="process-math">\(X=Y\text{,}\)</span> so according to the <a href="s_matrix.html#d_matrix_equality" class="xref" data-knowl="./knowl/xref/d_matrix_equality.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.6: Matrix equality">matrix equality definition</a> we must show (1) that the matrices <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> have the same size, and (2) that <span class="process-math">\((X)_{ij}=(Y)_{ij}\)</span> for all <span class="process-math">\((i,j)\text{.}\)</span> The proof below illustrates this technique for the <a href="s_matrix_algebra.html#th_matrixmult_assoc" class="xref" data-knowl="./knowl/xref/th_matrixmult_assoc.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1: Associative law">multiplication associative law</a> of <a href="s_matrix_algebra.html#th_matrix_alg_props" class="xref" data-knowl="./knowl/xref/th_matrix_alg_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.1: Properties of matrix multiplication">Theorem 3.2.1</a>.</div>
 <details id="ss_matrix_mult_props-5" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="title">Proof of (1).</span></h4></summary><article class="hiddenproof knowl__content"> <div class="para logical" id="ss_matrix_mult_props-5-2">
 <div class="para">We prove only the <a href="s_matrix_algebra.html#th_matrixmult_assoc" class="xref" data-knowl="./knowl/xref/th_matrixmult_assoc.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1: Associative law">associative law</a>. Let <span class="process-math">\(A=[a_{ij}]_{m\times r}\text{,}\)</span> <span class="process-math">\(B=[b_{ij}]_{r\times s}\text{,}\)</span> <span class="process-math">\(C=[c_{ij}]_{s\times n}\text{.}\)</span> To show</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_matrixmult_assoc.html">
@@ -642,12 +641,12 @@ A(BC)=(AB)C\text{,}
 </div>
 </div> <div class="para" id="ss_matrix_mult_props-5-3">The usual observation about “inner” and “outer” dimensions shows that both <span class="process-math">\(A(BC)\)</span> and <span class="process-math">\((AB)C\)</span> have dimension <span class="process-math">\(m\times n\text{.}\)</span>
 </div>
-<a href="s_matrix.html#d_matrix_mult" class="xref" data-knowl="./knowl/xref/d_matrix_mult.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.17: Matrix multiplication">Definition 3.1.17</a> <div class="para logical" id="ss_matrix_mult_props-5-5">
+<a href="s_matrix.html#d_matrix_mult" class="xref" data-knowl="./knowl/xref/d_matrix_mult.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.21: Matrix multiplication">Definition 3.1.21</a> <div class="para logical" id="ss_matrix_mult_props-5-5">
 <div class="para">Next, given any  <span class="process-math">\((i,j)\)</span> with <span class="process-math">\(1\leq i\leq m\)</span> and <span class="process-math">\(1\leq j\leq n\text{,}\)</span> we have:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_matrix_mult.html ./knowl/xref/d_matrix_mult.html" id="ss_matrix_mult_props-5-5-4">
 \begin{align*}
-[A(BC)]_{ij}\amp=\sum_{\ell=1}^ra_{i\ell}[BC]_{\ell j}  \amp (\knowl{./knowl/xref/d_matrix_mult.html}{\text{Definition 3.1.17}})\\
-\amp=\sum_{\ell=1}^ra_{i\ell}\left(\sum_{k=1}^sb_{\ell k}c_{kj}\right) \amp (\knowl{./knowl/xref/d_matrix_mult.html}{\text{Definition 3.1.17}})\\
+[A(BC)]_{ij}\amp=\sum_{\ell=1}^ra_{i\ell}[BC]_{\ell j}  \amp (\knowl{./knowl/xref/d_matrix_mult.html}{\text{Definition 3.1.21}})\\
+\amp=\sum_{\ell=1}^ra_{i\ell}\left(\sum_{k=1}^sb_{\ell k}c_{kj}\right) \amp (\knowl{./knowl/xref/d_matrix_mult.html}{\text{Definition 3.1.21}})\\
 =\amp \sum_{\ell=1}^r\sum_{k=1}^sa_{i\ell}(b_{\ell k}c_{kj}) \amp \text{ (real dist.) }\\
 =\amp \sum_{k=1}^s\sum_{\ell=1}^r(a_{i\ell}b_{\ell k})c_{kj} \amp \text{ (real comm., real assoc.) }\\
 =\amp \sum_{k=1}^s\left(\sum_{\ell=1}^ra_{i\ell}b_{\ell k}\right)c_{kj} \amp \text{ (real dist.) }\\
@@ -874,15 +873,15 @@ BD=CD \;\not\!\!\!\!\implies B=C\tag{3.2.3}
 <span class="process-math">\(\left(A^T\right)^T=A\)</span> for all <span class="process-math">\(A\in M_{mn}\text{.}\)</span>
 </div></li>
 </ol>
-</div></article><details id="th_trans_props-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_trans_props-3-1">We prove only the first statement. First observe that if <span class="process-math">\(A\)</span> is <span class="process-math">\(m\times n\text{,}\)</span> then so is <span class="process-math">\(B\)</span> and <span class="process-math">\(A+B\text{.}\)</span> Then <span class="process-math">\((A+B)^T\)</span> is <span class="process-math">\(n\times m\)</span> by <a href="s_matrix.html#d_transpose" class="xref" data-knowl="./knowl/xref/d_transpose.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.28: Matrix transposition">Definition 3.1.28</a>. Similarly, we see that <span class="process-math">\(A^T+B^T\)</span> is <span class="process-math">\(n\times m\text{.}\)</span>
+</div></article><details id="th_trans_props-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_trans_props-3-1">We prove only the first statement. First observe that if <span class="process-math">\(A\)</span> is <span class="process-math">\(m\times n\text{,}\)</span> then so is <span class="process-math">\(B\)</span> and <span class="process-math">\(A+B\text{.}\)</span> Then <span class="process-math">\((A+B)^T\)</span> is <span class="process-math">\(n\times m\)</span> by <a href="s_matrix.html#d_transpose" class="xref" data-knowl="./knowl/xref/d_transpose.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.33: Matrix transposition">Definition 3.1.33</a>. Similarly, we see that <span class="process-math">\(A^T+B^T\)</span> is <span class="process-math">\(n\times m\text{.}\)</span>
 </div> <div class="para logical" id="th_trans_props-3-2">
 <div class="para">Next, given any <span class="process-math">\((i,j)\)</span> with <span class="process-math">\(1\leq i\leq n\text{,}\)</span> <span class="process-math">\(1\leq j\leq m\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_transpose.html ./knowl/xref/d_matrix_add_subtract.html ./knowl/xref/d_transpose.html ./knowl/xref/d_matrix_add_subtract.html" id="th_trans_props-3-2-4">
 \begin{align*}
-\left((A+B)^T\right)_{ij}\amp =(A+B)_{ji} \amp (\knowl{./knowl/xref/d_transpose.html}{\text{Definition 3.1.28}})\\
-\amp = A_{ji}+B_{ji} \amp (\knowl{./knowl/xref/d_matrix_add_subtract.html}{\text{Definition 3.1.10}})\\
-\amp =(A^T)_{ij}+(B^T)_{ij} \amp (\knowl{./knowl/xref/d_transpose.html}{\text{Definition 3.1.28}} \\
-\amp =(A^T+B^T)_{ij} \amp (\knowl{./knowl/xref/d_matrix_add_subtract.html}{\text{Definition 3.1.10}})\text{.}
+\left((A+B)^T\right)_{ij}\amp =(A+B)_{ji} \amp (\knowl{./knowl/xref/d_transpose.html}{\text{Definition 3.1.33}})\\
+\amp = A_{ji}+B_{ji} \amp (\knowl{./knowl/xref/d_matrix_add_subtract.html}{\text{Definition 3.1.11}})\\
+\amp =(A^T)_{ij}+(B^T)_{ij} \amp (\knowl{./knowl/xref/d_transpose.html}{\text{Definition 3.1.33}} \\
+\amp =(A^T+B^T)_{ij} \amp (\knowl{./knowl/xref/d_matrix_add_subtract.html}{\text{Definition 3.1.11}})\text{.}
 \end{align*}
 </div>
 <div class="para">Since the <span class="process-math">\(ij\)</span>-entries of both matrices are equal for each <span class="process-math">\((i,j)\text{,}\)</span> it follows that <span class="process-math">\((A+B)^T=A^T+B^T\text{.}\)</span>

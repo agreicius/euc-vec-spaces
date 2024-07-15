@@ -12,7 +12,7 @@
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Spanning sets are not unique.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Spanning sets are not unique.</span>
 </h4>
 <div class="para logical">
 <div class="para">For each <span class="process-math">\(V\)</span> and <span class="process-math">\(S\)</span> below, verify that <span class="process-math">\(S\)</span> is a spanning set for <span class="process-math">\(V\text{.}\)</span>
@@ -33,9 +33,6 @@ A_3=\begin{amatrix}[rr]0\amp 0\\ 1\amp -1  \end{amatrix},
 A_4=\begin{amatrix}[rr]1\amp 1\\ -1\amp -1  \end{amatrix}\text{.}
 \end{equation*}
 </div>
-</div></li>
-<li><div class="para">
-<span class="process-math">\(V=P_2\text{,}\)</span> <span class="process-math">\(S=\{x^2+x+1, x^2-x, x-1\}\)</span>
 </div></li>
 </ol>
 </div>
@@ -81,31 +78,6 @@ c_1+c_3-c_4\amp c_1-c_3-c_4  \end{amatrix}
 \end{equation*}
 </div>
 <div class="para">Since the last column will never contain a leading one, we conclude that the system is consistent for any choice of <span class="process-math">\(a,b,c,d\text{,}\)</span> and thus that <span class="process-math">\(\Span S=M_{22}\text{,}\)</span> as claimed.</div>
-</div></li>
-<li><div class="para logical">
-<div class="para">We must show that given any <span class="process-math">\(p(x)=ax^2+bx+c\)</span> we can find <span class="process-math">\(c_1,c_2,c_3\)</span> such that</div>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-c_1(x^2+x+1)+c_2(x^2-1)+c_3(x-1)=ax^2+bx+c\text{,}
-\end{equation*}
-</div>
-<div class="para">or</div>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-(c_1+c_2)x^2+(c_1+c_3)x+(c_1-c_2-c_3)=ax^2+bx+c\text{.}
-\end{equation*}
-</div>
-<div class="para">According to <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "th_poly_equality" missing or not unique]</code> this equality holds if and only if</div>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\begin{linsys}{3}
-c_1 \amp +\amp c_2 \amp  \amp \amp = \amp a\\
-c_1 \amp \amp \amp + \amp c_3 \amp = \amp b\\
-c_1 \amp -\amp c_2 \amp - \amp c_3 \amp = \amp c
-\end{linsys}\text{.}
-\end{equation*}
-</div>
-<div class="para">As in the examples above, our reasoning implies  <span class="process-math">\(\Span S=P_2\)</span> if and only if this system is consistent for <em class="emphasis">any</em> choice of <span class="process-math">\(a,b,c\text{.}\)</span> Thus usual Gaussian elimination procedure tells us that this is indeed so. We leave the details to you.</div>
 </div></li>
 </ol></div></div></details></div></article><span class="incontext"><a class="internal" href="s_span_independence.html#s_span_independence-3-13">in-context</a></span>
 </body>
