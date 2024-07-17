@@ -155,10 +155,10 @@
       </ol>
     </statement>
   </exercise>
-  <exercise>
+  <exercise xml:id="ex_col_inv">
     <statement>
       <p>
-        Assume <m>A</m> is invertible, and is row equivalent to the row echelon matrix <m>U</m>. Prove: <m>\CS A=\CS U</m>.
+        Assume <m>A</m> is invertible. Prove: if <m>A</m> is row equivalent to <m>B</m>, then <m>\CS A=\CS B</m>. 
       </p>
     </statement>
   </exercise>
