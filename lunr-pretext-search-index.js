@@ -5019,141 +5019,141 @@ var ptx_lunr_docs = [
   "url": "s_rank_nullity.html",
   "type": "Section",
   "number": "4.5",
-  "title": "Rank-nullity theorem and fundamental spaces",
-  "body": " Rank-nullity theorem and fundamental spaces  This section is in a sense just a long-format example of how to compute bases and dimensions of subspaces. Along the way, however we meet the rank-nullity theorem (sometimes called the fundamental theorem of linear algebra ), and apply this theorem in the context of fundamental spaces of matrices ( ).   The rank-nullity theorem   The rank-nullity theorem relates the the dimensions of the null space and image of a linear transformation , assuming is finite dimensional. Roughly speaking, it says that the bigger the null space, the smaller the image. More precisely, it tells us that . As we will see, this elegant result can be used to significantly simplify computations with linear transformations. For example, in a situation where we wish to compute explicitly both the null space and image of a given linear transformation, we can often get away with just computing one of the two spaces and using the rank-nullity theorem (and a dimension argument) to easily determine the other. Additionally, the rank-nullity theorem will directly imply some intuitively obvious properties of linear transformations. For example, suppose is a finite-dimensional vector space. It seems obvious that if , then there is no linear transformation mapping surjectively onto : , you should not be able to map a smaller vector space onto a bigger one. Similarly, if , then we expect that there is no injective linear transformation mapping injectively into . Both these results are easy consequences of the rank-nullity theorem .  Before proving the theorem we give names to and .    Rank and nullity  rank of a linear transformation  nullity of a linear transformation    the rank of     the nullity of    Let be a linear transformation.   The rank of , denoted , is the dimension of : , .    The nullity of , denoted , is the dimension of : , .        Rank-nullity  rank-nullity theorem   Let be a vector space of dimension , and let be a linear transformation. Then , or alternatively, .    Choose a basis of and extend to a basis , using . Observe that and .  We claim that is a basis of .   Proof of claim   is linearly independent  Suppose . Then the vector satisfies (using linearity of ), and hence . Then, using the fact that is a basis of , we have and hence Since the set is linearly independent, we conclude that for all and . In particular, , as desired.    spans  It is clear that since for all and is closed under linear combinations.  For the other direction, suppose . Then there is a such that . Since is a basis of we may write , in which case . This shows that , as desired.   Having shown is a basis for , we conclude that , and thus that .    Rank-nullity: verification   Verify the rank-nullity theorem for the linear transformation defined as .    To verify the rank-nullity theorem, we must compute bases for and . Consider first . We have . Here the parametric description is obtained using our usual technique for solving systems of equations ( ). From the parametric description, it is clear that the set spans . Since is clearly linearly independent, it is a basis for , and we conclude that . (Alternatively, the equation defines a plane passing through the origin in , and we know such subspaces are of dimension two. )  Next it is fairly clearly that . Thus is a basis for and .  Finally we observe that as predicted by the rank-nullity theorem.     Rank-nullity: application   Show that the linear transformation is surjective: , . Do so by first computing .    We first examine . We have . The system above is already in row echelon form, and so we easily see that . Thus is a basis of , and we conclude that . The rank-nullity theorem now implies that . Since and , we conclude by that . Thus is surjective.      Fundamental spaces of matrices  We now treat the special case of matrix transformations . The fundamenal spaces of a matrix defined below are can each be connected to and , and hence the rank-nullity theorem comes to bear in their analysis. Observe that was defined previously ( ). We include it below to gather all the fundamental spaces together under one definition.   Fundamental spaces  fundamental space of a matrix  null space of a matrix  row space of a matrix  column space of a matrix  rank of a matrix  nullity of a matrix    the null space of matrix     the row space of a matrix     the column space of a matrix     the rank of a matrix     the nullity of a matrix    Let be a an matrix. Let be the rows of , and let be its columns. The following subspaces are called the fundamental subspaces of .    The null space of , denoted is defined as .    The row space of , denoted , is defined as .    The column space of , denoted , is defined as .    The rank and nullity of , denoted and , respectively, are defined as and .    How do the fundamental spaces of a matrix relate to its associated matrix transformation ? It is easy to see that , and indeed we made this connection in . What about ? We claim that . To see why, let be the columns of and consider the following chain of equivalences: . We now highlight three equivalent statments in this chain . The first equivalence tells us that is the set of for which the matrix equation is consistent. The second equivalence tells us that . In sum, we have proven the following result.   Null space and image as fundamental spaces   Let be an matrix, and let be its corresponding matrix transformation. The following equalities hold: .    The next theorem indicates how row reduction affects fundamental spaces.   Fundamental spaces and row equivalence   Let be an matrix, and suppose is row equivalent to . The following equalities hold . Although and have the same dimension, they are in general not equal as subspaces.    First observe that is row equivalent to and yet . Thus we do not have in general.  We now turn to the equalities . Assume that is row equivalent to . Using the formulation of row reduction in terms of multiplication by elementary matrices, we see that there is an invertible matrix such that , and hence also . But then we have . This proves .  Next, by we have , and , . It follows that . Lastly, we turn to the row spaces. We will show that each row of is an element of , from whence it follows that . Let be the -th row of , and let be the -th column of . By , we have , and furthermore, is the linear combination of the rows of whose coefficients come from the entries of . Thus , as desired.  Having shown that , we see that the same argument works mutatis mutandis (swapping the roles of and and using in place of ) to show that . We conclude that .    Now that we better understand the role row reduction plays in fundamental spaces, we investigate the special case of a matrix in row echelon form.   Fundamental spaces and row echelon forms   Let be an matrix, and suppose is row equivalent to the matrix in row echelon form. Let be the number of leading ones in , and let ; , and are the number of leading and free variables, respectively, of the system corresponding to . We have .    By we know that , and . So it is enough to show that and .  First, we will show that the nonzero rows of form a basis for , proving . Clearly the nonzero rows span , since any linear combination of all the rows of can be expressed as a linear combination of the nonzero rows. Furthermore, since is in row echelon form, the staircase pattern of the leading ones appearing in the nonzero rows assures that these row vectors are linearly independent.  Next, we show that the columns of containing leading ones form a basis of . Let be the columns of with leading ones, and let be the columns without leading ones. To prove the form a basis for , we will show that given any there is a unique choice of scalars such that . (Recall that the uniqueness of this choice implies linear independence.) Given , we can find such that ( ), which means the linear system with augmented matrix is consistent. Using our Gaussian elimination theory (specifically, ), we know that the solutions to this system are in 1-1 correspondence with choices for the free variables . (Remember that the columns without leading ones correspond to the free variables.) In particular, there is a unique solution to where we set all the free variables equal to 0. By the column method ( ), this gives us a unique linear combination of only the columns with leading ones equal to . This proves the claim, and shows that the columns with leading ones form a basis for . We conclude that .  Lastly, we have , where the last equality uses the fact that the sum of the number of columns with leading ones ( ) and the number of columns without leading ones ( ) is , the total number of columns.     is now an easy consequence of the foregoing.   Rank-nullity for matrices   Let be an matrix. We have .    We have .    We now gather this suite of results into one overall procedure for computing with fundamental spaces.   Computing bases of fundamental spaces   To compute bases for the fundamental spaces of an matrix , proceed as follow.    Row reduce to a matrix in row echelon form.    We have . Compute a parametric description of the solutions to the linear system following . If the free variables are , a basis of is obtained by letting be the solution corresponding to the choice and for .    We have . The set of nonzero rows of is a basis for .    In general . However, the columns of containing leading ones form a basis of , and the corresponding columns of form a basis for .       Video example: fundamental spaces   Video: computing fundamental spaces  Video: computing fundamental spaces     The results allow us to add seven more equivalent statements to our invertibility theorem, bringing us to a total of fourteen!   Invertibility theorem (supersized)   Let be an matrix. The following statements are equivalent.     is invertible.    The matrix equation has a unique solution for any column vector .    The matrix equation has a solution for any column vector .    The matrix equation has a unique solution : namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.     .                             Any of the following equivalent conditions about the set of columns of hold: is a basis of ; spans ; is linearly independent.    Any of the following equivalent conditions about the set of rows of hold: is a basis of ; spans ; is linearly independent.        Contracting and expanding to bases  Thanks to we know that spanning sets can be contracted to bases, and linearly independent sets can be extended to bases; and we have already seen a few instances where this result has been put to good use. However, neither the theorem nor its proof provide a practical means of performing this contraction or extension. We would like a systematic way of determining which vectors to throw out (when contracting), or which vectors to chuck in (when extending). In the special case where for some , we can adapt to our needs.   Contracting and extending to bases of   Let .    Contracting to a basis  Assume spans . To contract to a basis , proceed as follows.    Let be the matrix whose -th column is given by for all .    Use the column space procedure ( ) to compute a basis of , chosen from among the original columns of .    The subset is a basis for .      Extending to a basis  Assume is linearly independent. To extend to a basis of proceed as follows.    Let be the matrix whose first columns are the elements of , and whose remaining columns consist of , the standard basis elements of .    Use the column space procedure ( ) to compute a basis of , chosen from among the original columns of .    The set is a basis for containing .        Let's see why in both cases the procedure produces a basis of that is either a sub- or superset of .   Contracting to a basis  In this case we have . Thus is a basis for . Since the column space procedure selects columns from among the original columns of , we have , as desired.    Extending to a basis  Since contains for all , we have . Thus is a basis for . Since the first columns of are linearly independent (they are the elements of ), when we row reduce to a matrix in row echelon form, the first columns of will contain leading ones. (To see this, imagine row reducing the submatrix consisting of the first columns of to a row echelon matrix . Since these columns are linearly independent, they already form a basis for . Thus the corresponding colmns of must all have leading ones. ) It follows that the first columns of are selected to be in the basis , and hence that , as desired.      Video example: contracting to a basis   Video: contracting to a basis  Video: contracting to a basis        WeBWork Exercises    Suppose that is a matrix that has an echelon form with one zero row. Find the dimension of the row space of , the dimension of the column space of , and the dimension of the null space of .  The dimension of the row space of is .  The dimension of the column space of is .  The dimension of the null space of is .                  The dimension of the row space is the number of nonzero rows in the echelon form, or The dimension of the column space is the same as the dimension of the row space, and the dimension of the null space is         Are the following statements true or false?    Let . Then { } in can form a basis for if the correct vectors are removed from .    The nullity of a matrix A is the same as the dimension of the subspace spanned be the columns of A.    If { } is a basis for , then span{ } is a plane.    If is of dimension 3 and is a subspace of , then there can not exist a subspace of such that with and .    has exactly one subspace of dimension for each of .           Are the following statements true or false?    If the set of vectors is linearly independent in a subspace then vectors can be added to to create a basis for    If and are subspaces of of the same dimension, then .    If the set of vectors is linearly independent in a subspace then vectors can be removed from to create a basis for .    If span{ }, then .    Three nonzero vectors that lie in a plane in might form a basis for .           Let Find dimensions of the kernel and image of .   ,   .                   Let be the linear transformation defined by Find bases for the kernel and image of . vector  A basis for the kernel of is    A basis for the image of is                     Let be the linear operator defined by   (a) Find the dimension of the range of :  (b) Find the dimension of the kernel of :  (c) Let be the subspace of spanned by and . Find the dimension of :                  Solution: (a) Since , , spans , we get that is spanned by , , . So    and hence the dimension of the range is 2.  (b) The rank-nullity theorem implies that the dimension of the kernel is .  (c) Notice that   and it is easy to check that these two vectors are linearly independent. Therefore, the dimension of is 2.         In this exercise we will show that for any , there is a polynomial satisfying . In other words given any list of values , we can find a polynomial that evaluates to these values at the inputs .    Define by . Show that is linear.    Compute . You may use the fact that a polynomial of degree has at most roots.    Use the rank-nullity theorem to compute . Explain why this implies     Explain why the equality is equivalent to the claim we wish to prove.       Use the rank-nullity theorem to compute the rank of the linear transformation described.     ,      ,      ,        For each linear transformation use the rank-nullity theorem to decide whether .          ,      ,       Let be with . Prove that there is a such that the system is inconsistent.   Use and .    For each matrix (i) row reduce to a matrix in row echelon form, (ii) compute bases for and , (iii) compute and ,and (iv) decide whether .                     Assume is invertible, and is row equivalent to the row echelon matrix . Prove: .    For each matrix below, (i) compute bases for each fundamental space, (ii) identify these spaces as familiar geometric objects in or , and (iii) provide sketches of each space. The sketches of and should be combined in the same coordinate system.                     For each compute bases for each fundamental space. In each case, you can find bases for one of the fundamental spaces by inspection, and then use the rank-nullity theorem to reduce your workload for the other spaces. See first solution for a model example.                 Clearly, is a basis for , and is a basis for . It follows that and hence . Thus we need to find three linearly independent elements of to find a basis. We can do so by inspection with the help of the column method. Namely, observe that are all in (column method). The location of zeros in these vectors make it clear that are linearly independent. Since , and , we conclude that is a basis of ( ).      For each use to compute bases for each fundamental space.                     Find the rank and nullity of each matrix by reducing it to row echelon form.                Let be an matrix.    Prove: if and only if .   Construct a matrix with . Verify that your satisfies .     Suppose is with .  Prove: either the rows of are linearly dependent or the columns of are linearly dependent.    Prove: if and only if is a square matrix.    Suppose and are row equivalent matrices. For each let and be the -th columns of and , respectively.  Prove: columns of are linearly independent if and only if the corresponding columns are linearly independent.   By there is an invertible such that . Let and be the submatrices of and obtained by taking columns . Show that we still have and relate linear independence of the columns to solutions of the matrix equations and .    Prove as follows.    First show that all three statements of (13) are equivalent, and that all three statements of (14) are equivalent. (Use .)    Show that statements (8)-(14) are equivalent with the help of .    Choose a statement from (1)-(7) that can be easily shown to be equivalent to one of the statements from (8)-(14).      "
-},
-{
-  "id": "d_rank_nullity",
-  "level": "2",
-  "url": "s_rank_nullity.html#d_rank_nullity",
-  "type": "Definition",
-  "number": "4.5.1",
-  "title": "Rank and nullity.",
-  "body": " Rank and nullity  rank of a linear transformation  nullity of a linear transformation    the rank of     the nullity of    Let be a linear transformation.   The rank of , denoted , is the dimension of : , .    The nullity of , denoted , is the dimension of : , .      "
-},
-{
-  "id": "th_rank-nullity",
-  "level": "2",
-  "url": "s_rank_nullity.html#th_rank-nullity",
-  "type": "Theorem",
-  "number": "4.5.2",
-  "title": "Rank-nullity.",
-  "body": " Rank-nullity  rank-nullity theorem   Let be a vector space of dimension , and let be a linear transformation. Then , or alternatively, .    Choose a basis of and extend to a basis , using . Observe that and .  We claim that is a basis of .   Proof of claim   is linearly independent  Suppose . Then the vector satisfies (using linearity of ), and hence . Then, using the fact that is a basis of , we have and hence Since the set is linearly independent, we conclude that for all and . In particular, , as desired.    spans  It is clear that since for all and is closed under linear combinations.  For the other direction, suppose . Then there is a such that . Since is a basis of we may write , in which case . This shows that , as desired.   Having shown is a basis for , we conclude that , and thus that .  "
-},
-{
-  "id": "eg_rank-nullity_verification",
-  "level": "2",
-  "url": "s_rank_nullity.html#eg_rank-nullity_verification",
-  "type": "Example",
-  "number": "4.5.3",
-  "title": "Rank-nullity: verification.",
-  "body": " Rank-nullity: verification   Verify the rank-nullity theorem for the linear transformation defined as .    To verify the rank-nullity theorem, we must compute bases for and . Consider first . We have . Here the parametric description is obtained using our usual technique for solving systems of equations ( ). From the parametric description, it is clear that the set spans . Since is clearly linearly independent, it is a basis for , and we conclude that . (Alternatively, the equation defines a plane passing through the origin in , and we know such subspaces are of dimension two. )  Next it is fairly clearly that . Thus is a basis for and .  Finally we observe that as predicted by the rank-nullity theorem.   "
-},
-{
-  "id": "eg_rank-nullity_computation",
-  "level": "2",
-  "url": "s_rank_nullity.html#eg_rank-nullity_computation",
-  "type": "Example",
-  "number": "4.5.4",
-  "title": "Rank-nullity: application.",
-  "body": " Rank-nullity: application   Show that the linear transformation is surjective: , . Do so by first computing .    We first examine . We have . The system above is already in row echelon form, and so we easily see that . Thus is a basis of , and we conclude that . The rank-nullity theorem now implies that . Since and , we conclude by that . Thus is surjective.   "
+  "title": "Fundamental spaces",
+  "body": " Fundamental spaces   This section is in a sense just a long-format example of how to compute bases and dimensions of certain subspaces of . The subspaces in question will be defined as so-called fundamental spaces of matrices. It should thus come as little surprise that the algorithms used in these computations make use of Gaussian elimination, fabled workhorse of linear algebra . Lastly, we will also meet the matrix version of the famous rank-nullity theorem , sometimes called the fundamental theorem of linear algebra .    Fundamental spaces of matrices  Let be an matrix. In addition to its null space , gives rise to two additional naturally defined subspaces, called the row space and column space of the matrix. Taken together, these three subspaces associated to are called its fundamental spaces . Observe that was defined previously ( ). We include it below to gather all the fundamental spaces together under one definition.   Fundamental spaces  fundamental space of a matrix  null space of a matrix  row space of a matrix  column space of a matrix    the null space of matrix     the row space of a matrix     the column space of a matrix    Let be a an matrix. Let be the rows of , and let be its columns. The following subspaces are called the fundamental subspaces of .    Null space  The null space of , denoted is defined as .    Row space  The row space of , denoted , is defined as .    Column space  The column space of , denoted , is defined as .       Fundamental spaces  Note that the fundamental spaces of a matrix are indeed subspaces. This is a simple consequences of theorems and , which tell us that null spaces of matrices and spans of vectors are subspaces.  A good practice when dealing with fundamental spaces of a matrix, is to first sort out the ambient space where each of these subspaces lives: if , then both and are subspaces of , and is a subspace of .   Our goal is to be able to determine the various fundamental spaces of a matrix in an efficient manner. More specifically, we want to be able to compute bases for these spaces, and compute their dimension. Our first example is elementary enough to allow us to do this essentially by inspection.   Fundamental spaces: elementary example   Provide bases and compute the dimension of the three fundamental spaces of .    By definition, we have . We see easily by inspection that , a line in passing through the origin, and , a line in passing through the origin. Since the sets and are each linearly independent, they are clearly bases for their spans and , respectively. It follows that .  Next, by definition is the set of vectors satisfying , or equivalently, the solutions to the linear equation , a plane in passing through the origin. Using we derive the parametric description , from which we see that . Since is linearly independent and spans , it is a basis for . We conclude .    The null space of a matrix has an obvious connection with systems of linear equations, it being the set of solutions to the homogeneous linear system represented by . The next theorem provides an interpretation of the column space of in terms of linear systems.   Column space and linear systems   Let be an matrix, and let . The following statements are equivalent.    .    There exists such that .    The linear system is consistent.   As a consequence, we have .    Statements (2) and (3) are equivalent by virtue of the definition of a consistent system. Statements (1) and (2) are equivalent thanks to the column method of matrix multiplication. Indeed, letting be the columns of , so that , we have . The set equalities follow immediately from the equivalence of statements (1)-(3).     What about the row space?  You might be wondering why we give the row space of a matrix such short shrift here. As it turns out, the null space and column space of a matrix will be of the most importance to us algorithmically, with row space playing more of a supporting role of convenience. That said, as we will be able to show once we know more about inner products, the row space of a matrix also has a connection with linear systems associated to : namely, it is the orthogonal complement of the null space of .   For more matrices more complicated than the one in , the key to computing the various fundamental spaces lies with Gaussian elimination. Our first theorem lays out how exactly this procedure affects the fundamental spaces of a matrix.  The next theorem indicates how row reduction affects fundamental spaces.   Fundamental spaces and row operations   Let be an matrix, and suppose is row equivalent to . The fundamental spaces of and are related as follows.    .     .    In general is not equal to . However, we do have . In fact, letting be the columns of and , respectively, the columns form a basis of if and only if the columns form a basis of .       Assume that is row equivalent to . Using , we see that this means there is an invertible matrix such that , and hence also . We will make use of this matrix below.   The fact that is a consequence of , since if is row equivalent to , then so are the linear systems with augmented matrices and .    First we show that . Since is defined as the span of the rows of , by it is enough to show that each row of is an element of . For all , let denote the th rows of , , and , respectively, treated as row vectors. Applying to the matrix product , we have for all . Furthermore, using again, the row vector is itself a linear combination of the rows of . By definition of row space, this means for all , and hence , as desired.  It remains to show that . But this follows using the same argument as above, using the fact that : , by swapping the roles of and , and replacing with .    We now let be the columns of and , respectively, where . Since , by , there is a subset of columns that forms a basis of . Let be any such a basis, so that . We claim that the corresponding set of columns of is a basis of , in which case . To do so, we will use : in more detail, we will show that given any , we can write , in a unique way. Indeed, we have for a unique -tuple . Here we have used the fact that the subset is a basis of . But this means , since for all by . Furthermore, the coefficients in the linear combination are unique, since our work above shows that .       Before getting to the proof of , we highlight the fact that the column space of a matrix is not preserved by row operations.   Column space and row reduction  The matrix row reduces to the matrix in row echelon form. By inspection we see that . It is clear algebraically from the two set descriptions that . Geometrically, the two spaces are two distinct lines in passing through the origin: is the line defined by the equation and is the -axis.  By contrast consider the matrix , which is row equivalent to . In this case we have , and thus . (See for a more general take on this example.)   Using , to find bases of the fundamental spaces of a matrix, we can first row reduce to a matrix in row echelon form. Some work still needs to be done, however, in determining bases for the fundamental spaces of matrices in row echelon form. We state our results in the form of a procedure, and provide a proof of its validity.   Fundamental spaces computation   To compute bases for the fundamental spaces of an matrix , proceed as follows.   Row reduce to a matrix in row echelon form.    Let be the free parameters appearing in the parametric description of solutions to the linear system , and for all , let be the element of obtained by setting and for all . The set is a basis of .    The set of nonzero rows of is a basis for .    Let be the columns of and , respectively, and let be the columns of that contain a leading one. The set consisting of the corresponding columns of is a basis of .         Null space  We must show that the vectors described form a basis. Let be the unknowns of the linear system corresponding to , and let be the free variables among these unknowns. Thus is the vector obtained from the parametric description of the solutions to obtained by setting and for all . Suppose we have . For each , since is the only vector with a nonzero entry in the -th term, we must have . This proves that the set is linearly independent.    Row space  Since by , it suffices to show that the that the nonzero rows of form a basis of . Clearly the nonzero rows span , since any linear combination of all the rows of can be expressed as a linear combination of the nonzero rows. Furthermore, since is in row echelon form, the staircase pattern of the leading ones appearing in the nonzero rows assures that these row vectors are linearly independent.    Column space  Let be the columns of with leading ones, and let be the columns without leading ones. To prove the form a basis for , we will show that given any there is a unique choice of scalars such that . (Recall that the uniqueness of this choice implies linear independence by .) Given , we can find such that ( ), which means the linear system with augmented matrix is consistent. Using our Gaussian elimination theory (specifically, ), we know that the solutions to this system are in 1-1 correspondence with choices for the free variables . (Remember that the columns without leading ones correspond to the free variables.) In particular, there is a unique solution to where we set all the free variables equal to 0. Using , we see that this gives rise to a unique linear combination the columns with leading ones equal to . This proves the claim, and shows that the columns with leading ones form a basis for . Lastly, by , the corresponding columns form a basis for .      Given and as in , let be the number columns of without leading ones, and let be the number of columns of with leading ones: , is the number of free variables the linear system , and is the number of leading variables. It follows from the bases descriptions in that , and . Furthermore, since has , of which do not have a leading one, and the other of which do contain leading a leading one, we have . It follows that . We have just proved the rank-nullity theorem for matrix, the name of which derives from the following definition.   Rank and nullity of matrix  rank of a matrix  nullity of a matrix    the rank of a matrix     the nullity of a matrix    Let be an matrix. The nullity of , denoted , is defined as the dimension of the null space of ; the rank of , denoted , is defined as the dimension of the column space of . In other words, we have .     Rank-nullity for matrices   Given an matrix , we have .    We now gather this suite of results into one overall procedure for computing with fundamental spaces.   Video example: fundamental spaces   Video: computing fundamental spaces     The results allow us to add seven more equivalent statements to our invertibility theorem, bringing us to a total of fourteen!   Invertibility theorem   Let be an matrix. The following statements are equivalent.     is invertible.    The matrix equation has a unique solution for any column vector .    The matrix equation has a solution for any column vector .    The matrix equation has a unique solution : namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.     .                             Any of the following equivalent conditions about the set of columns of hold: is a basis of ; spans ; is linearly independent.    Any of the following equivalent conditions about the set of rows of hold: is a basis of ; spans ; is linearly independent.        Contracting and expanding to bases  Thanks to we know that spanning sets can be contracted to bases, and linearly independent sets can be extended to bases; and we have already seen a few instances where this result has been put to good use. However, neither the theorem nor its proof provide a practical means of performing this contraction or extension. We would like a systematic way of determining which vectors to throw out (when contracting), or which vectors to chuck in (when extending). When dealing with subspaces of , we can adapt to our needs.   Contracting and extending to bases of   Let .    Contract to a basis  Let . To find a subset of that forms a basis of , proceed as follows.    Let be the matrix whose -th column is given by for all .    Use the column space procedure ( ) to compute a basis of consisting of columns of .    The subset is a basis for .      Extend to a basis  Assume is linearly independent. To extend to a basis of proceed as follows.    Let be the matrix whose first columns are the elements of , and whose remaining columns consist of , the standard basis elements of .    Use the column space procedure ( ) to compute a basis of , chosen from among the original columns of .    The set is a basis for containing .        Let's see why in both cases the procedure produces a basis of that is either a sub- or superset of .   Contracting to a basis  By putting the vectors in as the columns of , we assure that . The column space procedure produces a basis of consisting of columns of . Thus is a basis of and is a subset of the original spanning set .    Extending to a basis  Since contains for all , we have . Thus is a basis for . Since the first columns of are linearly independent (they are the elements of ), when we row reduce to a matrix in row echelon form, the first columns of will contain leading ones. (To see this, imagine row reducing the submatrix consisting of the first columns of to a row echelon matrix . Since these columns are linearly independent, they already form a basis for . Thus the corresponding colmns of must all have leading ones. ) It follows that the first columns of are selected to be in the basis , and hence that , as desired.      Video example: contracting to a basis   Video: contracting to a basis        WeBWork Exercises    Suppose that is a matrix that has an echelon form with one zero row. Find the dimension of the row space of , the dimension of the column space of , and the dimension of the null space of .  The dimension of the row space of is .  The dimension of the column space of is .  The dimension of the null space of is .                  The dimension of the row space is the number of nonzero rows in the echelon form, or The dimension of the column space is the same as the dimension of the row space, and the dimension of the null space is         Are the following statements true or false?    Let . Then { } in can form a basis for if the correct vectors are removed from .    The nullity of a matrix A is the same as the dimension of the subspace spanned be the columns of A.    If { } is a basis for , then span{ } is a plane.    If is of dimension 3 and is a subspace of , then there can not exist a subspace of such that with and .    has exactly one subspace of dimension for each of .           Are the following statements true or false?    If the set of vectors is linearly independent in a subspace then vectors can be added to to create a basis for    If and are subspaces of of the same dimension, then .    If the set of vectors is linearly independent in a subspace then vectors can be removed from to create a basis for .    If span{ }, then .    Three nonzero vectors that lie in a plane in might form a basis for .           Let Find dimensions of the kernel and image of .   ,   .                   Let be the linear transformation defined by Find bases for the kernel and image of . vector  A basis for the kernel of is    A basis for the image of is                     Let be the linear operator defined by   (a) Find the dimension of the range of :  (b) Find the dimension of the kernel of :  (c) Let be the subspace of spanned by and . Find the dimension of :                  Solution: (a) Since , , spans , we get that is spanned by , , . So    and hence the dimension of the range is 2.  (b) The rank-nullity theorem implies that the dimension of the kernel is .  (c) Notice that   and it is easy to check that these two vectors are linearly independent. Therefore, the dimension of is 2.         In this exercise we will show that for any , there is a polynomial satisfying . In other words given any list of values , we can find a polynomial that evaluates to these values at the inputs .    Define by . Show that is linear.    Compute . You may use the fact that a polynomial of degree has at most roots.    Use the rank-nullity theorem to compute . Explain why this implies     Explain why the equality is equivalent to the claim we wish to prove.       Use the rank-nullity theorem to compute the rank of the linear transformation described.     ,      ,      ,        For each linear transformation use the rank-nullity theorem to decide whether .          ,      ,       Let be with . Prove that there is a such that the system is inconsistent.   Use and .    For each matrix (i) row reduce to a matrix in row echelon form, (ii) compute bases for and , (iii) compute and ,and (iv) decide whether .                     Assume is invertible. Prove: if is row equivalent to , then .    For each matrix below, (i) compute bases for each fundamental space, (ii) identify these spaces as familiar geometric objects in or , and (iii) provide sketches of each space. The sketches of and should be combined in the same coordinate system.                     For each compute bases for each fundamental space. In each case, you can find bases for one of the fundamental spaces by inspection, and then use the rank-nullity theorem to reduce your workload for the other spaces. See first solution for a model example.                 Clearly, is a basis for , and is a basis for . It follows that and hence . Thus we need to find three linearly independent elements of to find a basis. We can do so by inspection with the help of the column method. Namely, observe that are all in (column method). The location of zeros in these vectors make it clear that are linearly independent. Since , and , we conclude that is a basis of ( ).      For each use to compute bases for each fundamental space.                     Find the rank and nullity of each matrix by reducing it to row echelon form.                Let be an matrix.    Prove: if and only if .   Construct a matrix with . Verify that your satisfies .     Suppose is with .  Prove: either the rows of are linearly dependent or the columns of are linearly dependent.    Prove: if and only if is a square matrix.    Suppose and are row equivalent matrices. For each let and be the -th columns of and , respectively.  Prove: columns of are linearly independent if and only if the corresponding columns are linearly independent.   By there is an invertible such that . Let and be the submatrices of and obtained by taking columns . Show that we still have and relate linear independence of the columns to solutions of the matrix equations and .    Prove as follows.    First show that all three statements of (13) are equivalent, and that all three statements of (14) are equivalent. (Use .)    Show that statements (8)-(14) are equivalent with the help of .    Choose a statement from (1)-(7) that can be easily shown to be equivalent to one of the statements from (8)-(14).      "
 },
 {
   "id": "d_fundamental_space",
   "level": "2",
   "url": "s_rank_nullity.html#d_fundamental_space",
   "type": "Definition",
-  "number": "4.5.5",
+  "number": "4.5.1",
   "title": "Fundamental spaces.",
-  "body": " Fundamental spaces  fundamental space of a matrix  null space of a matrix  row space of a matrix  column space of a matrix  rank of a matrix  nullity of a matrix    the null space of matrix     the row space of a matrix     the column space of a matrix     the rank of a matrix     the nullity of a matrix    Let be a an matrix. Let be the rows of , and let be its columns. The following subspaces are called the fundamental subspaces of .    The null space of , denoted is defined as .    The row space of , denoted , is defined as .    The column space of , denoted , is defined as .    The rank and nullity of , denoted and , respectively, are defined as and .   "
+  "body": " Fundamental spaces  fundamental space of a matrix  null space of a matrix  row space of a matrix  column space of a matrix    the null space of matrix     the row space of a matrix     the column space of a matrix    Let be a an matrix. Let be the rows of , and let be its columns. The following subspaces are called the fundamental subspaces of .    Null space  The null space of , denoted is defined as .    Row space  The row space of , denoted , is defined as .    Column space  The column space of , denoted , is defined as .     "
 },
 {
-  "id": "th_fundspaces_matrixtransform",
+  "id": "ss_fundamental_spaces-4",
   "level": "2",
-  "url": "s_rank_nullity.html#th_fundspaces_matrixtransform",
+  "url": "s_rank_nullity.html#ss_fundamental_spaces-4",
+  "type": "Remark",
+  "number": "4.5.2",
+  "title": "Fundamental spaces.",
+  "body": " Fundamental spaces  Note that the fundamental spaces of a matrix are indeed subspaces. This is a simple consequences of theorems and , which tell us that null spaces of matrices and spans of vectors are subspaces.  A good practice when dealing with fundamental spaces of a matrix, is to first sort out the ambient space where each of these subspaces lives: if , then both and are subspaces of , and is a subspace of .  "
+},
+{
+  "id": "eg_fund_spaces",
+  "level": "2",
+  "url": "s_rank_nullity.html#eg_fund_spaces",
+  "type": "Example",
+  "number": "4.5.3",
+  "title": "Fundamental spaces: elementary example.",
+  "body": " Fundamental spaces: elementary example   Provide bases and compute the dimension of the three fundamental spaces of .    By definition, we have . We see easily by inspection that , a line in passing through the origin, and , a line in passing through the origin. Since the sets and are each linearly independent, they are clearly bases for their spans and , respectively. It follows that .  Next, by definition is the set of vectors satisfying , or equivalently, the solutions to the linear equation , a plane in passing through the origin. Using we derive the parametric description , from which we see that . Since is linearly independent and spans , it is a basis for . We conclude .   "
+},
+{
+  "id": "th_col_space",
+  "level": "2",
+  "url": "s_rank_nullity.html#th_col_space",
   "type": "Theorem",
-  "number": "4.5.6",
-  "title": "Null space and image as fundamental spaces.",
-  "body": " Null space and image as fundamental spaces   Let be an matrix, and let be its corresponding matrix transformation. The following equalities hold: .   "
+  "number": "4.5.4",
+  "title": "Column space and linear systems.",
+  "body": " Column space and linear systems   Let be an matrix, and let . The following statements are equivalent.    .    There exists such that .    The linear system is consistent.   As a consequence, we have .    Statements (2) and (3) are equivalent by virtue of the definition of a consistent system. Statements (1) and (2) are equivalent thanks to the column method of matrix multiplication. Indeed, letting be the columns of , so that , we have . The set equalities follow immediately from the equivalence of statements (1)-(3).   "
+},
+{
+  "id": "ss_fundamental_spaces-9",
+  "level": "2",
+  "url": "s_rank_nullity.html#ss_fundamental_spaces-9",
+  "type": "Remark",
+  "number": "4.5.5",
+  "title": "What about the row space?",
+  "body": " What about the row space?  You might be wondering why we give the row space of a matrix such short shrift here. As it turns out, the null space and column space of a matrix will be of the most importance to us algorithmically, with row space playing more of a supporting role of convenience. That said, as we will be able to show once we know more about inner products, the row space of a matrix also has a connection with linear systems associated to : namely, it is the orthogonal complement of the null space of .  "
 },
 {
   "id": "th_fundspaces_rowreduce",
   "level": "2",
   "url": "s_rank_nullity.html#th_fundspaces_rowreduce",
   "type": "Theorem",
+  "number": "4.5.6",
+  "title": "Fundamental spaces and row operations.",
+  "body": " Fundamental spaces and row operations   Let be an matrix, and suppose is row equivalent to . The fundamental spaces of and are related as follows.    .     .    In general is not equal to . However, we do have . In fact, letting be the columns of and , respectively, the columns form a basis of if and only if the columns form a basis of .       Assume that is row equivalent to . Using , we see that this means there is an invertible matrix such that , and hence also . We will make use of this matrix below.   The fact that is a consequence of , since if is row equivalent to , then so are the linear systems with augmented matrices and .    First we show that . Since is defined as the span of the rows of , by it is enough to show that each row of is an element of . For all , let denote the th rows of , , and , respectively, treated as row vectors. Applying to the matrix product , we have for all . Furthermore, using again, the row vector is itself a linear combination of the rows of . By definition of row space, this means for all , and hence , as desired.  It remains to show that . But this follows using the same argument as above, using the fact that : , by swapping the roles of and , and replacing with .    We now let be the columns of and , respectively, where . Since , by , there is a subset of columns that forms a basis of . Let be any such a basis, so that . We claim that the corresponding set of columns of is a basis of , in which case . To do so, we will use : in more detail, we will show that given any , we can write , in a unique way. Indeed, we have for a unique -tuple . Here we have used the fact that the subset is a basis of . But this means , since for all by . Furthermore, the coefficients in the linear combination are unique, since our work above shows that .      "
+},
+{
+  "id": "eg_colspace_change",
+  "level": "2",
+  "url": "s_rank_nullity.html#eg_colspace_change",
+  "type": "Example",
   "number": "4.5.7",
-  "title": "Fundamental spaces and row equivalence.",
-  "body": " Fundamental spaces and row equivalence   Let be an matrix, and suppose is row equivalent to . The following equalities hold . Although and have the same dimension, they are in general not equal as subspaces.    First observe that is row equivalent to and yet . Thus we do not have in general.  We now turn to the equalities . Assume that is row equivalent to . Using the formulation of row reduction in terms of multiplication by elementary matrices, we see that there is an invertible matrix such that , and hence also . But then we have . This proves .  Next, by we have , and , . It follows that . Lastly, we turn to the row spaces. We will show that each row of is an element of , from whence it follows that . Let be the -th row of , and let be the -th column of . By , we have , and furthermore, is the linear combination of the rows of whose coefficients come from the entries of . Thus , as desired.  Having shown that , we see that the same argument works mutatis mutandis (swapping the roles of and and using in place of ) to show that . We conclude that .   "
-},
-{
-  "id": "th_fundspaces_rowechelon",
-  "level": "2",
-  "url": "s_rank_nullity.html#th_fundspaces_rowechelon",
-  "type": "Theorem",
-  "number": "4.5.8",
-  "title": "Fundamental spaces and row echelon forms.",
-  "body": " Fundamental spaces and row echelon forms   Let be an matrix, and suppose is row equivalent to the matrix in row echelon form. Let be the number of leading ones in , and let ; , and are the number of leading and free variables, respectively, of the system corresponding to . We have .    By we know that , and . So it is enough to show that and .  First, we will show that the nonzero rows of form a basis for , proving . Clearly the nonzero rows span , since any linear combination of all the rows of can be expressed as a linear combination of the nonzero rows. Furthermore, since is in row echelon form, the staircase pattern of the leading ones appearing in the nonzero rows assures that these row vectors are linearly independent.  Next, we show that the columns of containing leading ones form a basis of . Let be the columns of with leading ones, and let be the columns without leading ones. To prove the form a basis for , we will show that given any there is a unique choice of scalars such that . (Recall that the uniqueness of this choice implies linear independence.) Given , we can find such that ( ), which means the linear system with augmented matrix is consistent. Using our Gaussian elimination theory (specifically, ), we know that the solutions to this system are in 1-1 correspondence with choices for the free variables . (Remember that the columns without leading ones correspond to the free variables.) In particular, there is a unique solution to where we set all the free variables equal to 0. By the column method ( ), this gives us a unique linear combination of only the columns with leading ones equal to . This proves the claim, and shows that the columns with leading ones form a basis for . We conclude that .  Lastly, we have , where the last equality uses the fact that the sum of the number of columns with leading ones ( ) and the number of columns without leading ones ( ) is , the total number of columns.   "
-},
-{
-  "id": "th_rank_nullity_matrix",
-  "level": "2",
-  "url": "s_rank_nullity.html#th_rank_nullity_matrix",
-  "type": "Theorem",
-  "number": "4.5.9",
-  "title": "Rank-nullity for matrices.",
-  "body": " Rank-nullity for matrices   Let be an matrix. We have .    We have .   "
+  "title": "Column space and row reduction.",
+  "body": " Column space and row reduction  The matrix row reduces to the matrix in row echelon form. By inspection we see that . It is clear algebraically from the two set descriptions that . Geometrically, the two spaces are two distinct lines in passing through the origin: is the line defined by the equation and is the -axis.  By contrast consider the matrix , which is row equivalent to . In this case we have , and thus . (See for a more general take on this example.)  "
 },
 {
   "id": "proc_fund_spaces",
   "level": "2",
   "url": "s_rank_nullity.html#proc_fund_spaces",
   "type": "Procedure",
-  "number": "4.5.10",
-  "title": "Computing bases of fundamental spaces.",
-  "body": " Computing bases of fundamental spaces   To compute bases for the fundamental spaces of an matrix , proceed as follow.    Row reduce to a matrix in row echelon form.    We have . Compute a parametric description of the solutions to the linear system following . If the free variables are , a basis of is obtained by letting be the solution corresponding to the choice and for .    We have . The set of nonzero rows of is a basis for .    In general . However, the columns of containing leading ones form a basis of , and the corresponding columns of form a basis for .     "
+  "number": "4.5.8",
+  "title": "Fundamental spaces computation.",
+  "body": " Fundamental spaces computation   To compute bases for the fundamental spaces of an matrix , proceed as follows.   Row reduce to a matrix in row echelon form.    Let be the free parameters appearing in the parametric description of solutions to the linear system , and for all , let be the element of obtained by setting and for all . The set is a basis of .    The set of nonzero rows of is a basis for .    Let be the columns of and , respectively, and let be the columns of that contain a leading one. The set consisting of the corresponding columns of is a basis of .         Null space  We must show that the vectors described form a basis. Let be the unknowns of the linear system corresponding to , and let be the free variables among these unknowns. Thus is the vector obtained from the parametric description of the solutions to obtained by setting and for all . Suppose we have . For each , since is the only vector with a nonzero entry in the -th term, we must have . This proves that the set is linearly independent.    Row space  Since by , it suffices to show that the that the nonzero rows of form a basis of . Clearly the nonzero rows span , since any linear combination of all the rows of can be expressed as a linear combination of the nonzero rows. Furthermore, since is in row echelon form, the staircase pattern of the leading ones appearing in the nonzero rows assures that these row vectors are linearly independent.    Column space  Let be the columns of with leading ones, and let be the columns without leading ones. To prove the form a basis for , we will show that given any there is a unique choice of scalars such that . (Recall that the uniqueness of this choice implies linear independence by .) Given , we can find such that ( ), which means the linear system with augmented matrix is consistent. Using our Gaussian elimination theory (specifically, ), we know that the solutions to this system are in 1-1 correspondence with choices for the free variables . (Remember that the columns without leading ones correspond to the free variables.) In particular, there is a unique solution to where we set all the free variables equal to 0. Using , we see that this gives rise to a unique linear combination the columns with leading ones equal to . This proves the claim, and shows that the columns with leading ones form a basis for . Lastly, by , the corresponding columns form a basis for .     "
 },
 {
-  "id": "fig_vid_fund_space",
+  "id": "d_rank_nullity_matrix",
   "level": "2",
-  "url": "s_rank_nullity.html#fig_vid_fund_space",
-  "type": "Figure",
+  "url": "s_rank_nullity.html#d_rank_nullity_matrix",
+  "type": "Definition",
+  "number": "4.5.9",
+  "title": "Rank and nullity of matrix.",
+  "body": " Rank and nullity of matrix  rank of a matrix  nullity of a matrix    the rank of a matrix     the nullity of a matrix    Let be an matrix. The nullity of , denoted , is defined as the dimension of the null space of ; the rank of , denoted , is defined as the dimension of the column space of . In other words, we have .   "
+},
+{
+  "id": "th_rank_nullity_matrix",
+  "level": "2",
+  "url": "s_rank_nullity.html#th_rank_nullity_matrix",
+  "type": "Corollary",
+  "number": "4.5.10",
+  "title": "Rank-nullity for matrices.",
+  "body": " Rank-nullity for matrices   Given an matrix , we have .   "
+},
+{
+  "id": "ss_vid_eg_fund_space",
+  "level": "2",
+  "url": "s_rank_nullity.html#ss_vid_eg_fund_space",
+  "type": "Example",
   "number": "4.5.11",
-  "title": "Video: computing fundamental spaces",
-  "body": " Video: computing fundamental spaces  Video: computing fundamental spaces   "
+  "title": "Video example: fundamental spaces.",
+  "body": " Video example: fundamental spaces   Video: computing fundamental spaces    "
 },
 {
   "id": "th_invertibility_supersized",
   "level": "2",
   "url": "s_rank_nullity.html#th_invertibility_supersized",
   "type": "Theorem",
-  "number": "4.5.12",
-  "title": "Invertibility theorem (supersized).",
-  "body": " Invertibility theorem (supersized)   Let be an matrix. The following statements are equivalent.     is invertible.    The matrix equation has a unique solution for any column vector .    The matrix equation has a solution for any column vector .    The matrix equation has a unique solution : namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.     .                             Any of the following equivalent conditions about the set of columns of hold: is a basis of ; spans ; is linearly independent.    Any of the following equivalent conditions about the set of rows of hold: is a basis of ; spans ; is linearly independent.     "
+  "number": "4.5.13",
+  "title": "Invertibility theorem.",
+  "body": " Invertibility theorem   Let be an matrix. The following statements are equivalent.     is invertible.    The matrix equation has a unique solution for any column vector .    The matrix equation has a solution for any column vector .    The matrix equation has a unique solution : namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.     .                             Any of the following equivalent conditions about the set of columns of hold: is a basis of ; spans ; is linearly independent.    Any of the following equivalent conditions about the set of rows of hold: is a basis of ; spans ; is linearly independent.     "
 },
 {
   "id": "proc_contract_extend",
   "level": "2",
   "url": "s_rank_nullity.html#proc_contract_extend",
   "type": "Procedure",
-  "number": "4.5.13",
+  "number": "4.5.14",
   "title": "Contracting and extending to bases of <span class=\"process-math\">\\(\\R^n\\)<\/span>.",
-  "body": " Contracting and extending to bases of   Let .    Contracting to a basis  Assume spans . To contract to a basis , proceed as follows.    Let be the matrix whose -th column is given by for all .    Use the column space procedure ( ) to compute a basis of , chosen from among the original columns of .    The subset is a basis for .      Extending to a basis  Assume is linearly independent. To extend to a basis of proceed as follows.    Let be the matrix whose first columns are the elements of , and whose remaining columns consist of , the standard basis elements of .    Use the column space procedure ( ) to compute a basis of , chosen from among the original columns of .    The set is a basis for containing .        Let's see why in both cases the procedure produces a basis of that is either a sub- or superset of .   Contracting to a basis  In this case we have . Thus is a basis for . Since the column space procedure selects columns from among the original columns of , we have , as desired.    Extending to a basis  Since contains for all , we have . Thus is a basis for . Since the first columns of are linearly independent (they are the elements of ), when we row reduce to a matrix in row echelon form, the first columns of will contain leading ones. (To see this, imagine row reducing the submatrix consisting of the first columns of to a row echelon matrix . Since these columns are linearly independent, they already form a basis for . Thus the corresponding colmns of must all have leading ones. ) It follows that the first columns of are selected to be in the basis , and hence that , as desired.    "
+  "body": " Contracting and extending to bases of   Let .    Contract to a basis  Let . To find a subset of that forms a basis of , proceed as follows.    Let be the matrix whose -th column is given by for all .    Use the column space procedure ( ) to compute a basis of consisting of columns of .    The subset is a basis for .      Extend to a basis  Assume is linearly independent. To extend to a basis of proceed as follows.    Let be the matrix whose first columns are the elements of , and whose remaining columns consist of , the standard basis elements of .    Use the column space procedure ( ) to compute a basis of , chosen from among the original columns of .    The set is a basis for containing .        Let's see why in both cases the procedure produces a basis of that is either a sub- or superset of .   Contracting to a basis  By putting the vectors in as the columns of , we assure that . The column space procedure produces a basis of consisting of columns of . Thus is a basis of and is a subset of the original spanning set .    Extending to a basis  Since contains for all , we have . Thus is a basis for . Since the first columns of are linearly independent (they are the elements of ), when we row reduce to a matrix in row echelon form, the first columns of will contain leading ones. (To see this, imagine row reducing the submatrix consisting of the first columns of to a row echelon matrix . Since these columns are linearly independent, they already form a basis for . Thus the corresponding colmns of must all have leading ones. ) It follows that the first columns of are selected to be in the basis , and hence that , as desired.    "
 },
 {
-  "id": "fig_vid_contract_basis",
+  "id": "ss_vid_eg_contract_basis",
   "level": "2",
-  "url": "s_rank_nullity.html#fig_vid_contract_basis",
-  "type": "Figure",
-  "number": "4.5.14",
-  "title": "Video: contracting to a basis",
-  "body": " Video: contracting to a basis  Video: contracting to a basis   "
+  "url": "s_rank_nullity.html#ss_vid_eg_contract_basis",
+  "type": "Example",
+  "number": "4.5.15",
+  "title": "Video example: contracting to a basis.",
+  "body": " Video example: contracting to a basis   Video: contracting to a basis    "
 },
 {
   "id": "s_rank_nullity_ex-1-2",
   "level": "2",
   "url": "s_rank_nullity.html#s_rank_nullity_ex-1-2",
   "type": "Exercise",
-  "number": "4.5.4.1",
+  "number": "4.5.3.1",
   "title": "",
   "body": "  Suppose that is a matrix that has an echelon form with one zero row. Find the dimension of the row space of , the dimension of the column space of , and the dimension of the null space of .  The dimension of the row space of is .  The dimension of the column space of is .  The dimension of the null space of is .                  The dimension of the row space is the number of nonzero rows in the echelon form, or The dimension of the column space is the same as the dimension of the row space, and the dimension of the null space is      "
 },
@@ -5162,7 +5162,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_rank_nullity.html#s_rank_nullity_ex-1-3",
   "type": "Exercise",
-  "number": "4.5.4.2",
+  "number": "4.5.3.2",
   "title": "",
   "body": "  Are the following statements true or false?    Let . Then { } in can form a basis for if the correct vectors are removed from .    The nullity of a matrix A is the same as the dimension of the subspace spanned be the columns of A.    If { } is a basis for , then span{ } is a plane.    If is of dimension 3 and is a subspace of , then there can not exist a subspace of such that with and .    has exactly one subspace of dimension for each of .        "
 },
@@ -5171,7 +5171,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_rank_nullity.html#s_rank_nullity_ex-1-4",
   "type": "Exercise",
-  "number": "4.5.4.3",
+  "number": "4.5.3.3",
   "title": "",
   "body": "  Are the following statements true or false?    If the set of vectors is linearly independent in a subspace then vectors can be added to to create a basis for    If and are subspaces of of the same dimension, then .    If the set of vectors is linearly independent in a subspace then vectors can be removed from to create a basis for .    If span{ }, then .    Three nonzero vectors that lie in a plane in might form a basis for .        "
 },
@@ -5180,7 +5180,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_rank_nullity.html#s_rank_nullity_ex-1-5",
   "type": "Exercise",
-  "number": "4.5.4.4",
+  "number": "4.5.3.4",
   "title": "",
   "body": "  Let Find dimensions of the kernel and image of .   ,   .                "
 },
@@ -5189,7 +5189,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_rank_nullity.html#s_rank_nullity_ex-1-6",
   "type": "Exercise",
-  "number": "4.5.4.5",
+  "number": "4.5.3.5",
   "title": "",
   "body": "  Let be the linear transformation defined by Find bases for the kernel and image of . vector  A basis for the kernel of is    A basis for the image of is                  "
 },
@@ -5198,7 +5198,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_rank_nullity.html#s_rank_nullity_ex-1-7",
   "type": "Exercise",
-  "number": "4.5.4.6",
+  "number": "4.5.3.6",
   "title": "",
   "body": "  Let be the linear operator defined by   (a) Find the dimension of the range of :  (b) Find the dimension of the kernel of :  (c) Let be the subspace of spanned by and . Find the dimension of :                  Solution: (a) Since , , spans , we get that is spanned by , , . So    and hence the dimension of the range is 2.  (b) The rank-nullity theorem implies that the dimension of the kernel is .  (c) Notice that   and it is easy to check that these two vectors are linearly independent. Therefore, the dimension of is 2.      "
 },
@@ -5207,7 +5207,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_rank_nullity.html#s_rank_nullity_ex-2",
   "type": "Exercise",
-  "number": "4.5.4.7",
+  "number": "4.5.3.7",
   "title": "",
   "body": " In this exercise we will show that for any , there is a polynomial satisfying . In other words given any list of values , we can find a polynomial that evaluates to these values at the inputs .    Define by . Show that is linear.    Compute . You may use the fact that a polynomial of degree has at most roots.    Use the rank-nullity theorem to compute . Explain why this implies     Explain why the equality is equivalent to the claim we wish to prove.    "
 },
@@ -5216,7 +5216,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_rank_nullity.html#s_rank_nullity_ex-3",
   "type": "Exercise",
-  "number": "4.5.4.8",
+  "number": "4.5.3.8",
   "title": "",
   "body": "  Use the rank-nullity theorem to compute the rank of the linear transformation described.     ,      ,      ,      "
 },
@@ -5225,7 +5225,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_rank_nullity.html#s_rank_nullity_ex-4",
   "type": "Exercise",
-  "number": "4.5.4.9",
+  "number": "4.5.3.9",
   "title": "",
   "body": " For each linear transformation use the rank-nullity theorem to decide whether .          ,      ,     "
 },
@@ -5234,7 +5234,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_rank_nullity.html#s_rank_nullity_ex-5",
   "type": "Exercise",
-  "number": "4.5.4.10",
+  "number": "4.5.3.10",
   "title": "",
   "body": " Let be with . Prove that there is a such that the system is inconsistent.   Use and .  "
 },
@@ -5243,25 +5243,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_rank_nullity.html#s_rank_nullity_ex-6",
   "type": "Exercise",
-  "number": "4.5.4.11",
+  "number": "4.5.3.11",
   "title": "",
   "body": " For each matrix (i) row reduce to a matrix in row echelon form, (ii) compute bases for and , (iii) compute and ,and (iv) decide whether .                   "
 },
 {
-  "id": "s_rank_nullity_ex-7",
+  "id": "ex_col_inv",
   "level": "2",
-  "url": "s_rank_nullity.html#s_rank_nullity_ex-7",
+  "url": "s_rank_nullity.html#ex_col_inv",
   "type": "Exercise",
-  "number": "4.5.4.12",
+  "number": "4.5.3.12",
   "title": "",
-  "body": " Assume is invertible, and is row equivalent to the row echelon matrix . Prove: .  "
+  "body": " Assume is invertible. Prove: if is row equivalent to , then .  "
 },
 {
   "id": "s_rank_nullity_ex-8",
   "level": "2",
   "url": "s_rank_nullity.html#s_rank_nullity_ex-8",
   "type": "Exercise",
-  "number": "4.5.4.13",
+  "number": "4.5.3.13",
   "title": "",
   "body": " For each matrix below, (i) compute bases for each fundamental space, (ii) identify these spaces as familiar geometric objects in or , and (iii) provide sketches of each space. The sketches of and should be combined in the same coordinate system.                   "
 },
@@ -5270,7 +5270,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_rank_nullity.html#s_rank_nullity_ex-9",
   "type": "Exercise",
-  "number": "4.5.4.14",
+  "number": "4.5.3.14",
   "title": "",
   "body": " For each compute bases for each fundamental space. In each case, you can find bases for one of the fundamental spaces by inspection, and then use the rank-nullity theorem to reduce your workload for the other spaces. See first solution for a model example.                 Clearly, is a basis for , and is a basis for . It follows that and hence . Thus we need to find three linearly independent elements of to find a basis. We can do so by inspection with the help of the column method. Namely, observe that are all in (column method). The location of zeros in these vectors make it clear that are linearly independent. Since , and , we conclude that is a basis of ( ).    "
 },
@@ -5279,7 +5279,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_rank_nullity.html#s_rank_nullity_ex-10",
   "type": "Exercise",
-  "number": "4.5.4.15",
+  "number": "4.5.3.15",
   "title": "",
   "body": " For each use to compute bases for each fundamental space.                   "
 },
@@ -5288,7 +5288,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_rank_nullity.html#s_rank_nullity_ex-11",
   "type": "Exercise",
-  "number": "4.5.4.16",
+  "number": "4.5.3.16",
   "title": "",
   "body": " Find the rank and nullity of each matrix by reducing it to row echelon form.              "
 },
@@ -5297,7 +5297,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_rank_nullity.html#s_rank_nullity_ex-12",
   "type": "Exercise",
-  "number": "4.5.4.17",
+  "number": "4.5.3.17",
   "title": "",
   "body": " Let be an matrix.    Prove: if and only if .   Construct a matrix with . Verify that your satisfies .   "
 },
@@ -5306,7 +5306,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_rank_nullity.html#s_rank_nullity_ex-13",
   "type": "Exercise",
-  "number": "4.5.4.18",
+  "number": "4.5.3.18",
   "title": "",
   "body": " Suppose is with .  Prove: either the rows of are linearly dependent or the columns of are linearly dependent.  "
 },
@@ -5315,7 +5315,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_rank_nullity.html#s_rank_nullity_ex-14",
   "type": "Exercise",
-  "number": "4.5.4.19",
+  "number": "4.5.3.19",
   "title": "",
   "body": " Prove: if and only if is a square matrix.  "
 },
@@ -5324,7 +5324,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_rank_nullity.html#s_rank_nullity_ex-15",
   "type": "Exercise",
-  "number": "4.5.4.20",
+  "number": "4.5.3.20",
   "title": "",
   "body": " Suppose and are row equivalent matrices. For each let and be the -th columns of and , respectively.  Prove: columns of are linearly independent if and only if the corresponding columns are linearly independent.   By there is an invertible such that . Let and be the submatrices of and obtained by taking columns . Show that we still have and relate linear independence of the columns to solutions of the matrix equations and .  "
 },
@@ -5333,7 +5333,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_rank_nullity.html#s_rank_nullity_ex-16",
   "type": "Exercise",
-  "number": "4.5.4.21",
+  "number": "4.5.3.21",
   "title": "",
   "body": " Prove as follows.    First show that all three statements of (13) are equivalent, and that all three statements of (14) are equivalent. (Use .)    Show that statements (8)-(14) are equivalent with the help of .    Choose a statement from (1)-(7) that can be easily shown to be equivalent to one of the statements from (8)-(14).    "
 },

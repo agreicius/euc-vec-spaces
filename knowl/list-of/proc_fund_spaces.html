@@ -12,16 +12,49 @@
 </head>
 <body class="ignore-math">
 <article class="algorithm theorem-like"><h4 class="heading">
-<span class="type">Procedure</span><span class="space"> </span><span class="codenumber">4.5.10</span><span class="period">.</span><span class="space"> </span><span class="title">Computing bases of fundamental spaces.</span>
+<span class="type">Procedure</span><span class="space"> </span><span class="codenumber">4.5.8</span><span class="period">.</span><span class="space"> </span><span class="title">Fundamental spaces computation.</span>
 </h4>
-<div class="para">To compute bases for the fundamental spaces of an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\text{,}\)</span> proceed as follow.</div> <ol class="decimal">
+<div class="para logical">
+<div class="para">To compute bases for the fundamental spaces of an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\text{,}\)</span> proceed as follows.</div>
+<ol class="decimal">
 <li><div class="para">Row reduce <span class="process-math">\(A\)</span> to a matrix <span class="process-math">\(U\)</span> in row echelon form.</div></li>
-<li><div class="para">We have <span class="process-math">\(\NS A=\NS U\text{.}\)</span> Compute a parametric description of the solutions to the linear system <span class="process-math">\(U\boldx=\boldzero\)</span> following <a href="s_solving.html#proc_solveSystem" class="xref" data-knowl="./knowl/xref/proc_solveSystem.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 2.3.6: Solving linear systems">Procedure 2.3.6</a>. If the free variables are <span class="process-math">\(t_1, t_2, \dots, t_k \text{,}\)</span> a basis <span class="process-math">\(B=\{\boldv_1, \boldv_2, \dots, \boldv_k\}\)</span> of <span class="process-math">\(\NS A\)</span> is obtained by letting <span class="process-math">\(\boldv_i\)</span> be the solution corresponding to the choice <span class="process-math">\(t_i=1\)</span> and <span class="process-math">\(t_j=0\)</span> for <span class="process-math">\(j\ne i\text{.}\)</span>
+<li><div class="para logical">
+<div class="para">Let <span class="process-math">\(t_1,t_2,\dots, t_r\)</span> be the free parameters appearing in the parametric description of solutions to the linear system <span class="process-math">\(U\boldx=\boldzero\text{,}\)</span> and for all <span class="process-math">\(1\leq i\leq r\text{,}\)</span> let <span class="process-math">\(\boldv_i\)</span> be the element of <span class="process-math">\(\NS A=\NS U\)</span> obtained by setting <span class="process-math">\(t_i=1\)</span> and <span class="process-math">\(t_j=0\)</span> for all <span class="process-math">\(j\ne i\text{.}\)</span> The set</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B=\{\boldv_1,\boldv_2,\dots, \boldv_r\}
+\end{equation*}
+</div>
+<div class="para">is a basis of <span class="process-math">\(\NS A\text{.}\)</span>
+</div>
 </div></li>
-<li><div class="para">We have <span class="process-math">\(\RS A=\RS U\text{.}\)</span> The set of nonzero rows of <span class="process-math">\(U\)</span> is a basis for <span class="process-math">\(\RS A\text{.}\)</span>
+<li><div class="para">The set of nonzero rows of <span class="process-math">\(U\)</span> is a basis for <span class="process-math">\(\RS A\text{.}\)</span>
 </div></li>
-<li><div class="para">In general <span class="process-math">\(\CS A\ne \CS U\text{.}\)</span> However, the columns of <span class="process-math">\(U\)</span> containing leading ones form a basis of <span class="process-math">\(\CS U\text{,}\)</span> and the <em class="emphasis">corresponding columns</em> of <span class="process-math">\(A\)</span> form a basis for <span class="process-math">\(\CS A\text{.}\)</span>
+<li><div class="para logical">
+<div class="para">Let <span class="process-math">\(\bolda_i, \boldu_i\)</span> be the columns of <span class="process-math">\(A\)</span> and <span class="process-math">\(U\text{,}\)</span> respectively, and let <span class="process-math">\(\boldu_{i_1},\boldu_{i_2},\dots, \boldu_{i_s}\)</span> be the columns of <span class="process-math">\(U\)</span> that contain a leading one. The set</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\{\bolda_{i_1}, \bolda_{i_2},\dots, \bolda_{i_s}\}
+\end{equation*}
+</div>
+<div class="para">consisting of the corresponding columns of <span class="process-math">\(A\)</span> is a basis of <span class="process-math">\(\CS A\text{.}\)</span>
+</div>
 </div></li>
-</ol></article><span class="incontext"><a class="internal" href="s_rank_nullity.html#proc_fund_spaces">in-context</a></span>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">
+<article class="case"><h5 class="heading">Null space.</h5> <div class="para logical">
+<div class="para">We must show that the vectors <span class="process-math">\(\boldv_j\)</span> described form a basis. Let <span class="process-math">\(x_1,x_2,\dots, x_n\)</span> be the unknowns of the linear system corresponding to <span class="process-math">\(U\boldx=\boldzero\text{,}\)</span> and let <span class="process-math">\(x_{i_1},x_{i_2},\dots, x_{i_r}\)</span> be the free variables among these unknowns. Thus <span class="process-math">\(\boldv_j\)</span> is the vector obtained from the parametric description of the solutions to <span class="process-math">\(U\boldx=\boldzero\)</span> obtained by setting <span class="process-math">\(x_{i_j}=1\)</span> and <span class="process-math">\(x_{i_k}=0\)</span> for all <span class="process-math">\(k\ne j\text{.}\)</span> Suppose we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_1\boldv_1+a_2\boldv_2+\cdots +a_r\boldv_r=\boldzero\text{.}
+\end{equation*}
+</div>
+<div class="para">For each <span class="process-math">\(1\leq j\leq r\text{,}\)</span> since <span class="process-math">\(\boldv_j\)</span> is the only vector with a nonzero entry in the <span class="process-math">\(i_j\)</span>-th term, we must have <span class="process-math">\(a_j=0\text{.}\)</span> This proves that the set <span class="process-math">\(B=\{\boldv_1,\boldv_2,\dots, \boldv_r\}\)</span> is linearly independent.</div>
+</div></article> <article class="case"><h5 class="heading">Row space.</h5> <div class="para">Since <span class="process-math">\(\RS A=\RS U\)</span> by <a href="s_rank_nullity.html#th_fundspaces_rowreduce" class="xref" data-knowl="./knowl/xref/th_fundspaces_rowreduce.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.5.6: Fundamental spaces and row operations">Theorem 4.5.6</a>, it suffices to show that the that the nonzero rows of <span class="process-math">\(U\)</span> form a basis of <span class="process-math">\(\RS U\text{.}\)</span> Clearly the nonzero rows span <span class="process-math">\(\RS U\text{,}\)</span> since any linear combination of all the rows of <span class="process-math">\(U\)</span> can be expressed as a linear combination of the nonzero rows. Furthermore, since <span class="process-math">\(U\)</span> is in row echelon form, the staircase pattern of the leading ones appearing in the nonzero rows assures that these row vectors are linearly independent.</div></article> <article class="case"><h5 class="heading">Column space.</h5> <div class="para">Let <span class="process-math">\(\boldu_{i_1},\dots, \boldu_{i_s}\)</span> be the columns of <span class="process-math">\(U\)</span> with leading ones, and let <span class="process-math">\(\boldu_{j_1}, \boldu_{j_2}, \dots, \boldu_{j_r}\)</span> be the columns without leading ones. To prove the <span class="process-math">\(\boldu_{i_k}\)</span> form a basis for <span class="process-math">\(\CS U\text{,}\)</span> we will show that given any <span class="process-math">\(\boldy\in \CS U\)</span> there is a <em class="emphasis">unique</em> choice of scalars <span class="process-math">\(c_1, c_2,\dots,
+c_r\)</span> such that <span class="process-math">\(c_1\boldu_{i_1}+\cdots +c_s\boldu_{i_s}=\boldy\text{.}\)</span> (Recall that the uniqueness of this choice implies linear independence by <a href="s_basis.html#th_basis_equivalence" class="xref" data-knowl="./knowl/xref/th_basis_equivalence.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.4: Basis equivalence">Theorem 4.3.4</a>.) Given <span class="process-math">\(\boldy\in \CS U\text{,}\)</span> we can find <span class="process-math">\(\boldx\in\R^n\)</span> such that <span class="process-math">\(U\boldx=\boldy\)</span> (<a href="s_rank_nullity.html#th_col_space" class="xref" data-knowl="./knowl/xref/th_col_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.5.4: Column space and linear systems">4.5.4</a>), which means the linear system with augmented matrix <span class="process-math">\([\ U\ \vert \ \boldy]\)</span> is consistent. Using our Gaussian elimination theory (specifically, <a href="s_solving.html#proc_solveSystem" class="xref" data-knowl="./knowl/xref/proc_solveSystem.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 2.3.6: Solving linear systems">Procedure 2.3.6</a>), we know that the solutions <span class="process-math">\(\boldx=(x_1,x_2,\dots,
+x_n)\)</span> to this system are in 1-1 correspondence with choices for the free variables <span class="process-math">\(x_{j_1}=t_{j_1}, x_{j_2}=t_{j_2}, \dots,
+x_{j_r}=t_{j_r}\text{.}\)</span> (Remember that the columns <span class="process-math">\(\boldw_{j_k}\)</span> without leading ones correspond to the free variables.) In particular, there is a unique solution to <span class="process-math">\(U\boldx=\boldy\)</span> where we set all the free variables equal to 0. Using <a href="s_matrix.html#th_column_method" class="xref" data-knowl="./knowl/xref/th_column_method.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.27: Column method of matrix multiplication">Theorem 3.1.27</a>, we see that this gives rise to a unique linear combination the columns <span class="process-math">\(\boldu_{i_k}\)</span> with leading ones equal to <span class="process-math">\(\boldy\text{.}\)</span> This proves the claim, and shows that the columns with leading ones form a basis for <span class="process-math">\(\CS U\text{.}\)</span> Lastly, by <a href="s_rank_nullity.html#th_fundspaces_rowreduce" class="xref" data-knowl="./knowl/xref/th_fundspaces_rowreduce.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.5.6: Fundamental spaces and row operations">Theorem 4.5.6</a>, the corresponding columns form a basis for <span class="process-math">\(\CS A\text{.}\)</span>
+</div></article>
+</div></article></details><span class="incontext"><a class="internal" href="s_rank_nullity.html#proc_fund_spaces">in-context</a></span>
 </body>
 </html>
