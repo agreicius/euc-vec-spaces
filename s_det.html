@@ -105,6 +105,506 @@ window.MathJax = {
 <link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<style>
+#d_function_equality-3-1-4 { counter-set: d_function_equality-3-1-4 0; }
+#d_function_equality-3-1-4 > li::marker { content: ""counter(d_function_equality-3-1-4,lower-roman)""; }
+#d_function_equality-3-1-4 > li { counter-increment: d_function_equality-3-1-4; }
+#extracted-webwork-4-1-1-2-1 { counter-set: extracted-webwork-4-1-1-2-1 0; }
+#extracted-webwork-4-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-4-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-4-1-1-2-1 > li { counter-increment: extracted-webwork-4-1-1-2-1; }
+#extracted-webwork-7-1-1-2-1 { counter-set: extracted-webwork-7-1-1-2-1 0; }
+#extracted-webwork-7-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-7-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-7-1-1-2-1 > li { counter-increment: extracted-webwork-7-1-1-2-1; }
+#extracted-webwork-8-1-1-2-1 { counter-set: extracted-webwork-8-1-1-2-1 0; }
+#extracted-webwork-8-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-8-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-8-1-1-2-1 > li { counter-increment: extracted-webwork-8-1-1-2-1; }
+#extracted-webwork-9-1-1-2-1 { counter-set: extracted-webwork-9-1-1-2-1 0; }
+#extracted-webwork-9-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-9-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-9-1-1-2-1 > li { counter-increment: extracted-webwork-9-1-1-2-1; }
+#extracted-webwork-11-1-1-2-1 { counter-set: extracted-webwork-11-1-1-2-1 0; }
+#extracted-webwork-11-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-11-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-11-1-1-2-1 > li { counter-increment: extracted-webwork-11-1-1-2-1; }
+#extracted-webwork-11-1-1-3-1 { counter-set: extracted-webwork-11-1-1-3-1 0; }
+#extracted-webwork-11-1-1-3-1 > li::marker { content: ""counter(extracted-webwork-11-1-1-3-1,upper-alpha)"."; }
+#extracted-webwork-11-1-1-3-1 > li { counter-increment: extracted-webwork-11-1-1-3-1; }
+#sss_function_equality-2-4 { counter-set: sss_function_equality-2-4 0; }
+#sss_function_equality-2-4 > li::marker { content: ""counter(sss_function_equality-2-4,lower-roman)""; }
+#sss_function_equality-2-4 > li { counter-increment: sss_function_equality-2-4; }
+#d_complex_arithmetic-4-2 { counter-set: d_complex_arithmetic-4-2 0; }
+#d_complex_arithmetic-4-2 > li::marker { content: ""counter(d_complex_arithmetic-4-2,decimal)"."; }
+#d_complex_arithmetic-4-2 > li { counter-increment: d_complex_arithmetic-4-2; }
+#th_complex_arithmetic_basic-2-1 { counter-set: th_complex_arithmetic_basic-2-1 0; }
+#th_complex_arithmetic_basic-2-1 > li::marker { content: ""counter(th_complex_arithmetic_basic-2-1,decimal)"."; }
+#th_complex_arithmetic_basic-2-1 > li { counter-increment: th_complex_arithmetic_basic-2-1; }
+#th_complex_conjugation_modulus-2-2 { counter-set: th_complex_conjugation_modulus-2-2 0; }
+#th_complex_conjugation_modulus-2-2 > li::marker { content: ""counter(th_complex_conjugation_modulus-2-2,decimal)"."; }
+#th_complex_conjugation_modulus-2-2 > li { counter-increment: th_complex_conjugation_modulus-2-2; }
+#th_poly_basic-2-1-2 { counter-set: th_poly_basic-2-1-2 0; }
+#th_poly_basic-2-1-2 > li::marker { content: ""counter(th_poly_basic-2-1-2,decimal)"."; }
+#th_poly_basic-2-1-2 > li { counter-increment: th_poly_basic-2-1-2; }
+#cor_poly_equality-2-1-7 { counter-set: cor_poly_equality-2-1-7 0; }
+#cor_poly_equality-2-1-7 > li::marker { content: ""counter(cor_poly_equality-2-1-7,decimal)"."; }
+#cor_poly_equality-2-1-7 > li { counter-increment: cor_poly_equality-2-1-7; }
+#th_poly_degree-2-2 { counter-set: th_poly_degree-2-2 0; }
+#th_poly_degree-2-2 > li::marker { content: ""counter(th_poly_degree-2-2,decimal)"."; }
+#th_poly_degree-2-2 > li { counter-increment: th_poly_degree-2-2; }
+#d_vector_space-6-1-7 { counter-set: d_vector_space-6-1-7 0; }
+#d_vector_space-6-1-7 > li::marker { content: ""counter(d_vector_space-6-1-7,lower-roman)""; }
+#d_vector_space-6-1-7 > li { counter-increment: d_vector_space-6-1-7; }
+#proc_vector_space-2-1-1 { counter-set: proc_vector_space-2-1-1 0; }
+#proc_vector_space-2-1-1 > li::marker { content: ""counter(proc_vector_space-2-1-1,decimal)"."; }
+#proc_vector_space-2-1-1 > li { counter-increment: proc_vector_space-2-1-1; }
+#th_Rn_vector_space-1-1-2 { counter-set: th_Rn_vector_space-1-1-2 0; }
+#th_Rn_vector_space-1-1-2 > li::marker { content: ""counter(th_Rn_vector_space-1-1-2,decimal)"."; }
+#th_Rn_vector_space-1-1-2 > li { counter-increment: th_Rn_vector_space-1-1-2; }
+#th_vectorspace_props-2-1-2 { counter-set: th_vectorspace_props-2-1-2 0; }
+#th_vectorspace_props-2-1-2 > li::marker { content: ""counter(th_vectorspace_props-2-1-2,decimal)"."; }
+#th_vectorspace_props-2-1-2 > li { counter-increment: th_vectorspace_props-2-1-2; }
+#s_Rn_ex-3-1-1-2 { counter-set: s_Rn_ex-3-1-1-2 0; }
+#s_Rn_ex-3-1-1-2 > li::marker { content: "("counter(s_Rn_ex-3-1-1-2,lower-alpha)")"; }
+#s_Rn_ex-3-1-1-2 > li { counter-increment: s_Rn_ex-3-1-1-2; }
+#d_innerproduct-2-1-7 { counter-set: d_innerproduct-2-1-7 0; }
+#d_innerproduct-2-1-7 > li::marker { content: ""counter(d_innerproduct-2-1-7,lower-roman)""; }
+#d_innerproduct-2-1-7 > li { counter-increment: d_innerproduct-2-1-7; }
+#ss_linear_equations-3-2-1-1 { counter-set: ss_linear_equations-3-2-1-1 0; }
+#ss_linear_equations-3-2-1-1 > li::marker { content: ""counter(ss_linear_equations-3-2-1-1,decimal)"."; }
+#ss_linear_equations-3-2-1-1 > li { counter-increment: ss_linear_equations-3-2-1-1; }
+#s_systems_eg_2eqns2varss-2-1-1 { counter-set: s_systems_eg_2eqns2varss-2-1-1 0; }
+#s_systems_eg_2eqns2varss-2-1-1 > li::marker { content: ""counter(s_systems_eg_2eqns2varss-2-1-1,decimal)"."; }
+#s_systems_eg_2eqns2varss-2-1-1 > li { counter-increment: s_systems_eg_2eqns2varss-2-1-1; }
+#s_systems_eg_2eqns2varss-3-1-1 { counter-set: s_systems_eg_2eqns2varss-3-1-1 0; }
+#s_systems_eg_2eqns2varss-3-1-1 > li::marker { content: ""counter(s_systems_eg_2eqns2varss-3-1-1,decimal)"."; }
+#s_systems_eg_2eqns2varss-3-1-1 > li { counter-increment: s_systems_eg_2eqns2varss-3-1-1; }
+#ss_linear_equations-15-5 { counter-set: ss_linear_equations-15-5 0; }
+#ss_linear_equations-15-5 > li::marker { content: ""counter(ss_linear_equations-15-5,decimal)"."; }
+#ss_linear_equations-15-5 > li { counter-increment: ss_linear_equations-15-5; }
+#eg_system_of_lines-3-1-3 { counter-set: eg_system_of_lines-3-1-3 0; }
+#eg_system_of_lines-3-1-3 > li::marker { content: ""counter(eg_system_of_lines-3-1-3,decimal)"."; }
+#eg_system_of_lines-3-1-3 > li { counter-increment: eg_system_of_lines-3-1-3; }
+#pars--2-4 { counter-set: pars--2-4 0; }
+#pars--2-4 > li::marker { content: ""counter(pars--2-4,decimal)"."; }
+#pars--2-4 > li { counter-increment: pars--2-4; }
+#extracted-webwork-18-1-1-2-1 { counter-set: extracted-webwork-18-1-1-2-1 0; }
+#extracted-webwork-18-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-18-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-18-1-1-2-1 > li { counter-increment: extracted-webwork-18-1-1-2-1; }
+#extracted-webwork-21-1-1-2-1 { counter-set: extracted-webwork-21-1-1-2-1 0; }
+#extracted-webwork-21-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-21-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-21-1-1-2-1 > li { counter-increment: extracted-webwork-21-1-1-2-1; }
+#extracted-webwork-22-1-1-2-1 { counter-set: extracted-webwork-22-1-1-2-1 0; }
+#extracted-webwork-22-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-22-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-22-1-1-2-1 > li { counter-increment: extracted-webwork-22-1-1-2-1; }
+#ex_solving_sys_geom-2-1-3 { counter-set: ex_solving_sys_geom-2-1-3 0; }
+#ex_solving_sys_geom-2-1-3 > li::marker { content: "("counter(ex_solving_sys_geom-2-1-3,lower-alpha)")"; }
+#ex_solving_sys_geom-2-1-3 > li { counter-increment: ex_solving_sys_geom-2-1-3; }
+#ex_solving_sys_geom-3-7-4 { counter-set: ex_solving_sys_geom-3-7-4 0; }
+#ex_solving_sys_geom-3-7-4 > li::marker { content: "("counter(ex_solving_sys_geom-3-7-4,lower-alpha)")"; }
+#ex_solving_sys_geom-3-7-4 > li { counter-increment: ex_solving_sys_geom-3-7-4; }
+#ex_row_ops_preserve-2-1-1 { counter-set: ex_row_ops_preserve-2-1-1 0; }
+#ex_row_ops_preserve-2-1-1 > li::marker { content: "("counter(ex_row_ops_preserve-2-1-1,lower-alpha)")"; }
+#ex_row_ops_preserve-2-1-1 > li { counter-increment: ex_row_ops_preserve-2-1-1; }
+#ex_solving_nonlinear_system-2-2 { counter-set: ex_solving_nonlinear_system-2-2 0; }
+#ex_solving_nonlinear_system-2-2 > li::marker { content: "("counter(ex_solving_nonlinear_system-2-2,lower-alpha)")"; }
+#ex_solving_nonlinear_system-2-2 > li { counter-increment: ex_solving_nonlinear_system-2-2; }
+#ex_solving_nonlinear_system-2-2-1-1-3 { counter-set: ex_solving_nonlinear_system-2-2-1-1-3 0; }
+#ex_solving_nonlinear_system-2-2-1-1-3 > li::marker { content: ""counter(ex_solving_nonlinear_system-2-2-1-1-3,lower-roman)"."; }
+#ex_solving_nonlinear_system-2-2-1-1-3 > li { counter-increment: ex_solving_nonlinear_system-2-2-1-1-3; }
+#ex_solving_nonlinear_system-2-2-2-2 { counter-set: ex_solving_nonlinear_system-2-2-2-2 0; }
+#ex_solving_nonlinear_system-2-2-2-2 > li::marker { content: ""counter(ex_solving_nonlinear_system-2-2-2-2,lower-roman)"."; }
+#ex_solving_nonlinear_system-2-2-2-2 > li { counter-increment: ex_solving_nonlinear_system-2-2-2-2; }
+#s_systems_ex-2-5-2-2 { counter-set: s_systems_ex-2-5-2-2 0; }
+#s_systems_ex-2-5-2-2 > li::marker { content: "("counter(s_systems_ex-2-5-2-2,lower-alpha)")"; }
+#s_systems_ex-2-5-2-2 > li { counter-increment: s_systems_ex-2-5-2-2; }
+#s_ge-2-2-1 { counter-set: s_ge-2-2-1 0; }
+#s_ge-2-2-1 > li::marker { content: ""counter(s_ge-2-2-1,decimal)"."; }
+#s_ge-2-2-1 > li { counter-increment: s_ge-2-2-1; }
+#ss_ge_row_echelon-8-3 { counter-set: ss_ge_row_echelon-8-3 0; }
+#ss_ge_row_echelon-8-3 > li::marker { content: ""counter(ss_ge_row_echelon-8-3,decimal)"."; }
+#ss_ge_row_echelon-8-3 > li { counter-increment: ss_ge_row_echelon-8-3; }
+#ss_ge_row_echelon-9-2-2 { counter-set: ss_ge_row_echelon-9-2-2 0; }
+#ss_ge_row_echelon-9-2-2 > li::marker { content: ""counter(ss_ge_row_echelon-9-2-2,decimal)"."; }
+#ss_ge_row_echelon-9-2-2 > li { counter-increment: ss_ge_row_echelon-9-2-2; }
+#ss_ge_row_echelon-9-3-1 { counter-set: ss_ge_row_echelon-9-3-1 0; }
+#ss_ge_row_echelon-9-3-1 > li::marker { content: ""counter(ss_ge_row_echelon-9-3-1,decimal)"."; }
+#ss_ge_row_echelon-9-3-1 > li { counter-increment: ss_ge_row_echelon-9-3-1; }
+#th_matrixforms-2-1 { counter-set: th_matrixforms-2-1 0; }
+#th_matrixforms-2-1 > li::marker { content: ""counter(th_matrixforms-2-1,decimal)"."; }
+#th_matrixforms-2-1 > li { counter-increment: th_matrixforms-2-1; }
+#extracted-webwork-28-1-1-2-1 { counter-set: extracted-webwork-28-1-1-2-1 0; }
+#extracted-webwork-28-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-28-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-28-1-1-2-1 > li { counter-increment: extracted-webwork-28-1-1-2-1; }
+#s_solving_ex-2-3-1-2 { counter-set: s_solving_ex-2-3-1-2 0; }
+#s_solving_ex-2-3-1-2 > li::marker { content: "("counter(s_solving_ex-2-3-1-2,lower-alpha)")"; }
+#s_solving_ex-2-3-1-2 > li { counter-increment: s_solving_ex-2-3-1-2; }
+#s_solving_ex-2-5-1-2 { counter-set: s_solving_ex-2-5-1-2 0; }
+#s_solving_ex-2-5-1-2 > li::marker { content: "("counter(s_solving_ex-2-5-1-2,lower-alpha)")"; }
+#s_solving_ex-2-5-1-2 > li { counter-increment: s_solving_ex-2-5-1-2; }
+#s_solving_ex-2-6-1-1-2 { counter-set: s_solving_ex-2-6-1-1-2 0; }
+#s_solving_ex-2-6-1-1-2 > li::marker { content: "("counter(s_solving_ex-2-6-1-1-2,lower-alpha)")"; }
+#s_solving_ex-2-6-1-1-2 > li { counter-increment: s_solving_ex-2-6-1-1-2; }
+#d_matrix_equality-2-1-6 { counter-set: d_matrix_equality-2-1-6 0; }
+#d_matrix_equality-2-1-6 > li::marker { content: ""counter(d_matrix_equality-2-1-6,decimal)"."; }
+#d_matrix_equality-2-1-6 > li { counter-increment: d_matrix_equality-2-1-6; }
+#th_matrix_vector_space-2-1-3 { counter-set: th_matrix_vector_space-2-1-3 0; }
+#th_matrix_vector_space-2-1-3 > li::marker { content: ""counter(th_matrix_vector_space-2-1-3,decimal)"."; }
+#th_matrix_vector_space-2-1-3 > li { counter-increment: th_matrix_vector_space-2-1-3; }
+#s_matrix_ex_product-3-1-1 { counter-set: s_matrix_ex_product-3-1-1 0; }
+#s_matrix_ex_product-3-1-1 > li::marker { content: "("counter(s_matrix_ex_product-3-1-1,lower-alpha)")"; }
+#s_matrix_ex_product-3-1-1 > li { counter-increment: s_matrix_ex_product-3-1-1; }
+#extracted-webwork-29-1-1-2-1 { counter-set: extracted-webwork-29-1-1-2-1 0; }
+#extracted-webwork-29-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-29-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-29-1-1-2-1 > li { counter-increment: extracted-webwork-29-1-1-2-1; }
+#s_matrix_ex-2-2-1-2 { counter-set: s_matrix_ex-2-2-1-2 0; }
+#s_matrix_ex-2-2-1-2 > li::marker { content: "("counter(s_matrix_ex-2-2-1-2,lower-alpha)")"; }
+#s_matrix_ex-2-2-1-2 > li { counter-increment: s_matrix_ex-2-2-1-2; }
+#s_matrix_ex-2-3-1-1-3 { counter-set: s_matrix_ex-2-3-1-1-3 0; }
+#s_matrix_ex-2-3-1-1-3 > li::marker { content: "("counter(s_matrix_ex-2-3-1-1-3,lower-alpha)")"; }
+#s_matrix_ex-2-3-1-1-3 > li { counter-increment: s_matrix_ex-2-3-1-1-3; }
+#s_matrix_ex-2-4-1-1-2 { counter-set: s_matrix_ex-2-4-1-1-2 0; }
+#s_matrix_ex-2-4-1-1-2 > li::marker { content: "("counter(s_matrix_ex-2-4-1-1-2,lower-alpha)")"; }
+#s_matrix_ex-2-4-1-1-2 > li { counter-increment: s_matrix_ex-2-4-1-1-2; }
+#s_matrix_ex-2-4-2-1-1 { counter-set: s_matrix_ex-2-4-2-1-1 0; }
+#s_matrix_ex-2-4-2-1-1 > li::marker { content: "("counter(s_matrix_ex-2-4-2-1-1,lower-alpha)")"; }
+#s_matrix_ex-2-4-2-1-1 > li { counter-increment: s_matrix_ex-2-4-2-1-1; }
+#th_matrix_alg_props-2-1-2 { counter-set: th_matrix_alg_props-2-1-2 0; }
+#th_matrix_alg_props-2-1-2 > li::marker { content: ""counter(th_matrix_alg_props-2-1-2,decimal)"."; }
+#th_matrix_alg_props-2-1-2 > li { counter-increment: th_matrix_alg_props-2-1-2; }
+#th_matrix_abnormalities-2-1-1 { counter-set: th_matrix_abnormalities-2-1-1 0; }
+#th_matrix_abnormalities-2-1-1 > li::marker { content: ""counter(th_matrix_abnormalities-2-1-1,decimal)"."; }
+#th_matrix_abnormalities-2-1-1 > li { counter-increment: th_matrix_abnormalities-2-1-1; }
+#ss_cancellation-8-2 { counter-set: ss_cancellation-8-2 0; }
+#ss_cancellation-8-2 > li::marker { content: ""counter(ss_cancellation-8-2,decimal)"."; }
+#ss_cancellation-8-2 > li { counter-increment: ss_cancellation-8-2; }
+#th_matrix_cancel-2-1 { counter-set: th_matrix_cancel-2-1 0; }
+#th_matrix_cancel-2-1 > li::marker { content: ""counter(th_matrix_cancel-2-1,decimal)"."; }
+#th_matrix_cancel-2-1 > li { counter-increment: th_matrix_cancel-2-1; }
+#ss_cancellation-11-2 { counter-set: ss_cancellation-11-2 0; }
+#ss_cancellation-11-2 > li::marker { content: ""counter(ss_cancellation-11-2,decimal)"."; }
+#ss_cancellation-11-2 > li { counter-increment: ss_cancellation-11-2; }
+#th_trans_props-2-1-2 { counter-set: th_trans_props-2-1-2 0; }
+#th_trans_props-2-1-2 > li::marker { content: ""counter(th_trans_props-2-1-2,decimal)"."; }
+#th_trans_props-2-1-2 > li { counter-increment: th_trans_props-2-1-2; }
+#extracted-webwork-34-1-1-2-1 { counter-set: extracted-webwork-34-1-1-2-1 0; }
+#extracted-webwork-34-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-34-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-34-1-1-2-1 > li { counter-increment: extracted-webwork-34-1-1-2-1; }
+#s_matrix_algebra_ex-2-2-1-2 { counter-set: s_matrix_algebra_ex-2-2-1-2 0; }
+#s_matrix_algebra_ex-2-2-1-2 > li::marker { content: "("counter(s_matrix_algebra_ex-2-2-1-2,lower-alpha)")"; }
+#s_matrix_algebra_ex-2-2-1-2 > li { counter-increment: s_matrix_algebra_ex-2-2-1-2; }
+#s_matrix_algebra_ex-2-4-1-2 { counter-set: s_matrix_algebra_ex-2-4-1-2 0; }
+#s_matrix_algebra_ex-2-4-1-2 > li::marker { content: "("counter(s_matrix_algebra_ex-2-4-1-2,lower-alpha)")"; }
+#s_matrix_algebra_ex-2-4-1-2 > li { counter-increment: s_matrix_algebra_ex-2-4-1-2; }
+#s_matrix_algebra_ex-2-5-1-2 { counter-set: s_matrix_algebra_ex-2-5-1-2 0; }
+#s_matrix_algebra_ex-2-5-1-2 > li::marker { content: "("counter(s_matrix_algebra_ex-2-5-1-2,lower-alpha)")"; }
+#s_matrix_algebra_ex-2-5-1-2 > li { counter-increment: s_matrix_algebra_ex-2-5-1-2; }
+#th_inverse_cancel-2-1-3 { counter-set: th_inverse_cancel-2-1-3 0; }
+#th_inverse_cancel-2-1-3 > li::marker { content: ""counter(th_inverse_cancel-2-1-3,decimal)"."; }
+#th_inverse_cancel-2-1-3 > li { counter-increment: th_inverse_cancel-2-1-3; }
+#th_inverse_cancel-3-1-1 { counter-set: th_inverse_cancel-3-1-1 0; }
+#th_inverse_cancel-3-1-1 > li::marker { content: ""counter(th_inverse_cancel-3-1-1,decimal)"."; }
+#th_inverse_cancel-3-1-1 > li { counter-increment: th_inverse_cancel-3-1-1; }
+#cor_solving_invertible-2-1-3 { counter-set: cor_solving_invertible-2-1-3 0; }
+#cor_solving_invertible-2-1-3 > li::marker { content: ""counter(cor_solving_invertible-2-1-3,decimal)"."; }
+#cor_solving_invertible-2-1-3 > li { counter-increment: cor_solving_invertible-2-1-3; }
+#cor_solving_invertible-3-1-1 { counter-set: cor_solving_invertible-3-1-1 0; }
+#cor_solving_invertible-3-1-1 > li::marker { content: ""counter(cor_solving_invertible-3-1-1,decimal)"."; }
+#cor_solving_invertible-3-1-1 > li { counter-increment: cor_solving_invertible-3-1-1; }
+#eg_invertible_matrices-2-1-1 { counter-set: eg_invertible_matrices-2-1-1 0; }
+#eg_invertible_matrices-2-1-1 > li::marker { content: ""counter(eg_invertible_matrices-2-1-1,decimal)"."; }
+#eg_invertible_matrices-2-1-1 > li { counter-increment: eg_invertible_matrices-2-1-1; }
+#subsec--22-3-2 { counter-set: subsec--22-3-2 0; }
+#subsec--22-3-2 > li::marker { content: ""counter(subsec--22-3-2,decimal)"."; }
+#subsec--22-3-2 > li { counter-increment: subsec--22-3-2; }
+#th_power_rules-2-1-4 { counter-set: th_power_rules-2-1-4 0; }
+#th_power_rules-2-1-4 > li::marker { content: ""counter(th_power_rules-2-1-4,decimal)"."; }
+#th_power_rules-2-1-4 > li { counter-increment: th_power_rules-2-1-4; }
+#extracted-webwork-39-1-1-2-1 { counter-set: extracted-webwork-39-1-1-2-1 0; }
+#extracted-webwork-39-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-39-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-39-1-1-2-1 > li { counter-increment: extracted-webwork-39-1-1-2-1; }
+#s_invertible_matrices_ex-2-2-1-2 { counter-set: s_invertible_matrices_ex-2-2-1-2 0; }
+#s_invertible_matrices_ex-2-2-1-2 > li::marker { content: "("counter(s_invertible_matrices_ex-2-2-1-2,lower-alpha)")"; }
+#s_invertible_matrices_ex-2-2-1-2 > li { counter-increment: s_invertible_matrices_ex-2-2-1-2; }
+#s_invertible_matrices_ex-2-3-1-2 { counter-set: s_invertible_matrices_ex-2-3-1-2 0; }
+#s_invertible_matrices_ex-2-3-1-2 > li::marker { content: "("counter(s_invertible_matrices_ex-2-3-1-2,lower-alpha)")"; }
+#s_invertible_matrices_ex-2-3-1-2 > li { counter-increment: s_invertible_matrices_ex-2-3-1-2; }
+#s_invertible_matrices_ex-2-5-1-2 { counter-set: s_invertible_matrices_ex-2-5-1-2 0; }
+#s_invertible_matrices_ex-2-5-1-2 > li::marker { content: "("counter(s_invertible_matrices_ex-2-5-1-2,lower-alpha)")"; }
+#s_invertible_matrices_ex-2-5-1-2 > li { counter-increment: s_invertible_matrices_ex-2-5-1-2; }
+#s_invertible_matrices_ex-2-6-1-2 { counter-set: s_invertible_matrices_ex-2-6-1-2 0; }
+#s_invertible_matrices_ex-2-6-1-2 > li::marker { content: "("counter(s_invertible_matrices_ex-2-6-1-2,lower-alpha)")"; }
+#s_invertible_matrices_ex-2-6-1-2 > li { counter-increment: s_invertible_matrices_ex-2-6-1-2; }
+#s_invertible_matrices_ex-2-9-1-2 { counter-set: s_invertible_matrices_ex-2-9-1-2 0; }
+#s_invertible_matrices_ex-2-9-1-2 > li::marker { content: "("counter(s_invertible_matrices_ex-2-9-1-2,lower-alpha)")"; }
+#s_invertible_matrices_ex-2-9-1-2 > li { counter-increment: s_invertible_matrices_ex-2-9-1-2; }
+#th_invertibility-2-1-3 { counter-set: th_invertibility-2-1-3 0; }
+#th_invertibility-2-1-3 > li::marker { content: ""counter(th_invertibility-2-1-3,decimal)"."; }
+#th_invertibility-2-1-3 > li { counter-increment: th_invertibility-2-1-3; }
+#d_diagonal_triangular-6-1-3 { counter-set: d_diagonal_triangular-6-1-3 0; }
+#d_diagonal_triangular-6-1-3 > li::marker { content: ""counter(d_diagonal_triangular-6-1-3,decimal)"."; }
+#d_diagonal_triangular-6-1-3 > li { counter-increment: d_diagonal_triangular-6-1-3; }
+#th_invertibility_algorithm-2-1-4 { counter-set: th_invertibility_algorithm-2-1-4 0; }
+#th_invertibility_algorithm-2-1-4 > li::marker { content: ""counter(th_invertibility_algorithm-2-1-4,decimal)"."; }
+#th_invertibility_algorithm-2-1-4 > li { counter-increment: th_invertibility_algorithm-2-1-4; }
+#th_elem_matrices_alg-2-1-4 { counter-set: th_elem_matrices_alg-2-1-4 0; }
+#th_elem_matrices_alg-2-1-4 > li::marker { content: ""counter(th_elem_matrices_alg-2-1-4,decimal)"."; }
+#th_elem_matrices_alg-2-1-4 > li { counter-increment: th_elem_matrices_alg-2-1-4; }
+#cor_left-right_inverse-2-1-4 { counter-set: cor_left-right_inverse-2-1-4 0; }
+#cor_left-right_inverse-2-1-4 > li::marker { content: ""counter(cor_left-right_inverse-2-1-4,decimal)"."; }
+#cor_left-right_inverse-2-1-4 > li { counter-increment: cor_left-right_inverse-2-1-4; }
+#cor_row_equivalence_invertibility-2-1-4 { counter-set: cor_row_equivalence_invertibility-2-1-4 0; }
+#cor_row_equivalence_invertibility-2-1-4 > li::marker { content: ""counter(cor_row_equivalence_invertibility-2-1-4,decimal)"."; }
+#cor_row_equivalence_invertibility-2-1-4 > li { counter-increment: cor_row_equivalence_invertibility-2-1-4; }
+#rm_row_equivalence_props-2-8 { counter-set: rm_row_equivalence_props-2-8 0; }
+#rm_row_equivalence_props-2-8 > li::marker { content: ""counter(rm_row_equivalence_props-2-8,lower-roman)""; }
+#rm_row_equivalence_props-2-8 > li { counter-increment: rm_row_equivalence_props-2-8; }
+#th_det_zero_repeated_row-2-1-3 { counter-set: th_det_zero_repeated_row-2-1-3 0; }
+#th_det_zero_repeated_row-2-1-3 > li::marker { content: ""counter(th_det_zero_repeated_row-2-1-3,decimal)"."; }
+#th_det_zero_repeated_row-2-1-3 > li { counter-increment: th_det_zero_repeated_row-2-1-3; }
+#th_det_row_ops-2-1-4 { counter-set: th_det_row_ops-2-1-4 0; }
+#th_det_row_ops-2-1-4 > li::marker { content: ""counter(th_det_row_ops-2-1-4,decimal)"."; }
+#th_det_row_ops-2-1-4 > li { counter-increment: th_det_row_ops-2-1-4; }
+#ss_det_row_ops-9-2-1-3 { counter-set: ss_det_row_ops-9-2-1-3 0; }
+#ss_det_row_ops-9-2-1-3 > li::marker { content: ""counter(ss_det_row_ops-9-2-1-3,decimal)"."; }
+#ss_det_row_ops-9-2-1-3 > li { counter-increment: ss_det_row_ops-9-2-1-3; }
+#th_invertibility_expanded-2-1-3 { counter-set: th_invertibility_expanded-2-1-3 0; }
+#th_invertibility_expanded-2-1-3 > li::marker { content: ""counter(th_invertibility_expanded-2-1-3,decimal)"."; }
+#th_invertibility_expanded-2-1-3 > li { counter-increment: th_invertibility_expanded-2-1-3; }
+#s_det_ex-2-2-1-1-2 { counter-set: s_det_ex-2-2-1-1-2 0; }
+#s_det_ex-2-2-1-1-2 > li::marker { content: "("counter(s_det_ex-2-2-1-1-2,lower-alpha)")"; }
+#s_det_ex-2-2-1-1-2 > li { counter-increment: s_det_ex-2-2-1-1-2; }
+#s_det_ex-2-8-1-1-4 { counter-set: s_det_ex-2-8-1-1-4 0; }
+#s_det_ex-2-8-1-1-4 > li::marker { content: "("counter(s_det_ex-2-8-1-1-4,lower-alpha)")"; }
+#s_det_ex-2-8-1-1-4 > li { counter-increment: s_det_ex-2-8-1-1-4; }
+#s_det_ex-2-9-1-2 { counter-set: s_det_ex-2-9-1-2 0; }
+#s_det_ex-2-9-1-2 > li::marker { content: "("counter(s_det_ex-2-9-1-2,lower-alpha)")"; }
+#s_det_ex-2-9-1-2 > li { counter-increment: s_det_ex-2-9-1-2; }
+#d_subspace-4-1-5 { counter-set: d_subspace-4-1-5 0; }
+#d_subspace-4-1-5 > li::marker { content: ""counter(d_subspace-4-1-5,lower-roman)""; }
+#d_subspace-4-1-5 > li { counter-increment: d_subspace-4-1-5; }
+#ss_subspace-3-2-1-2 { counter-set: ss_subspace-3-2-1-2 0; }
+#ss_subspace-3-2-1-2 > li::marker { content: ""counter(ss_subspace-3-2-1-2,lower-roman)""; }
+#ss_subspace-3-2-1-2 > li { counter-increment: ss_subspace-3-2-1-2; }
+#ss_subspace-4-2-1-1 { counter-set: ss_subspace-4-2-1-1 0; }
+#ss_subspace-4-2-1-1 > li::marker { content: ""counter(ss_subspace-4-2-1-1,lower-roman)""; }
+#ss_subspace-4-2-1-1 > li { counter-increment: ss_subspace-4-2-1-1; }
+#proc_twostep_proof-2-1-4 { counter-set: proc_twostep_proof-2-1-4 0; }
+#proc_twostep_proof-2-1-4 > li::marker { content: ""counter(proc_twostep_proof-2-1-4,lower-roman)""; }
+#proc_twostep_proof-2-1-4 > li { counter-increment: proc_twostep_proof-2-1-4; }
+#th_subspace_vectorspace-2-1-3 { counter-set: th_subspace_vectorspace-2-1-3 0; }
+#th_subspace_vectorspace-2-1-3 > li::marker { content: ""counter(th_subspace_vectorspace-2-1-3,decimal)"."; }
+#th_subspace_vectorspace-2-1-3 > li { counter-increment: th_subspace_vectorspace-2-1-3; }
+#eg_subspace_alt-2-1-4 { counter-set: eg_subspace_alt-2-1-4 0; }
+#eg_subspace_alt-2-1-4 > li::marker { content: ""counter(eg_subspace_alt-2-1-4,decimal)"."; }
+#eg_subspace_alt-2-1-4 > li { counter-increment: eg_subspace_alt-2-1-4; }
+#eg_subspace_alt-3-1-1 { counter-set: eg_subspace_alt-3-1-1 0; }
+#eg_subspace_alt-3-1-1 > li::marker { content: ""counter(eg_subspace_alt-3-1-1,decimal)"."; }
+#eg_subspace_alt-3-1-1 > li { counter-increment: eg_subspace_alt-3-1-1; }
+#th_nullspace_linsys-2-1-5 { counter-set: th_nullspace_linsys-2-1-5 0; }
+#th_nullspace_linsys-2-1-5 > li::marker { content: ""counter(th_nullspace_linsys-2-1-5,decimal)"."; }
+#th_nullspace_linsys-2-1-5 > li { counter-increment: th_nullspace_linsys-2-1-5; }
+#th_nullspace_linsys-3-1-1 { counter-set: th_nullspace_linsys-3-1-1 0; }
+#th_nullspace_linsys-3-1-1 > li::marker { content: ""counter(th_nullspace_linsys-3-1-1,decimal)"."; }
+#th_nullspace_linsys-3-1-1 > li { counter-increment: th_nullspace_linsys-3-1-1; }
+#cor_matrix_equations-2-1-4 { counter-set: cor_matrix_equations-2-1-4 0; }
+#cor_matrix_equations-2-1-4 > li::marker { content: ""counter(cor_matrix_equations-2-1-4,decimal)"."; }
+#cor_matrix_equations-2-1-4 > li { counter-increment: cor_matrix_equations-2-1-4; }
+#d_tracezero_symmetric_skewsymmetric-5-1-2 { counter-set: d_tracezero_symmetric_skewsymmetric-5-1-2 0; }
+#d_tracezero_symmetric_skewsymmetric-5-1-2 > li::marker { content: ""counter(d_tracezero_symmetric_skewsymmetric-5-1-2,decimal)"."; }
+#d_tracezero_symmetric_skewsymmetric-5-1-2 > li { counter-increment: d_tracezero_symmetric_skewsymmetric-5-1-2; }
+#th_matrix_subspaces-2-1-3 { counter-set: th_matrix_subspaces-2-1-3 0; }
+#th_matrix_subspaces-2-1-3 > li::marker { content: ""counter(th_matrix_subspaces-2-1-3,decimal)"."; }
+#th_matrix_subspaces-2-1-3 > li { counter-increment: th_matrix_subspaces-2-1-3; }
+#rm_span-1-1-3 { counter-set: rm_span-1-1-3 0; }
+#rm_span-1-1-3 > li::marker { content: ""counter(rm_span-1-1-3,decimal)"."; }
+#rm_span-1-1-3 > li { counter-increment: rm_span-1-1-3; }
+#eg_span_2space-2-2 { counter-set: eg_span_2space-2-2 0; }
+#eg_span_2space-2-2 > li::marker { content: ""counter(eg_span_2space-2-2,decimal)"."; }
+#eg_span_2space-2-2 > li { counter-increment: eg_span_2space-2-2; }
+#eg_span_2space-3-1-1 { counter-set: eg_span_2space-3-1-1 0; }
+#eg_span_2space-3-1-1 > li::marker { content: ""counter(eg_span_2space-3-1-1,decimal)"."; }
+#eg_span_2space-3-1-1 > li { counter-increment: eg_span_2space-3-1-1; }
+#th_span-2-1-3 { counter-set: th_span-2-1-3 0; }
+#th_span-2-1-3 > li::marker { content: ""counter(th_span-2-1-3,decimal)"."; }
+#th_span-2-1-3 > li { counter-increment: th_span-2-1-3; }
+#th_span-3-2-2-2 { counter-set: th_span-3-2-2-2 0; }
+#th_span-3-2-2-2 > li::marker { content: ""counter(th_span-3-2-2-2,decimal)"."; }
+#th_span-3-2-2-2 > li { counter-increment: th_span-3-2-2-2; }
+#s_span_independence-3-13-2-1-5 { counter-set: s_span_independence-3-13-2-1-5 0; }
+#s_span_independence-3-13-2-1-5 > li::marker { content: ""counter(s_span_independence-3-13-2-1-5,decimal)"."; }
+#s_span_independence-3-13-2-1-5 > li { counter-increment: s_span_independence-3-13-2-1-5; }
+#s_span_independence-3-13-3-1-1 { counter-set: s_span_independence-3-13-3-1-1 0; }
+#s_span_independence-3-13-3-1-1 > li::marker { content: ""counter(s_span_independence-3-13-3-1-1,decimal)"."; }
+#s_span_independence-3-13-3-1-1 > li { counter-increment: s_span_independence-3-13-3-1-1; }
+#th_lin_ind_finite-2-1-4 { counter-set: th_lin_ind_finite-2-1-4 0; }
+#th_lin_ind_finite-2-1-4 > li::marker { content: ""counter(th_lin_ind_finite-2-1-4,decimal)"."; }
+#th_lin_ind_finite-2-1-4 > li { counter-increment: th_lin_ind_finite-2-1-4; }
+#eg_independence_basic_examples-2-1-3 { counter-set: eg_independence_basic_examples-2-1-3 0; }
+#eg_independence_basic_examples-2-1-3 > li::marker { content: ""counter(eg_independence_basic_examples-2-1-3,decimal)"."; }
+#eg_independence_basic_examples-2-1-3 > li { counter-increment: eg_independence_basic_examples-2-1-3; }
+#proc_linear_independence-2-1-4 { counter-set: proc_linear_independence-2-1-4 0; }
+#proc_linear_independence-2-1-4 > li::marker { content: ""counter(proc_linear_independence-2-1-4,decimal)"."; }
+#proc_linear_independence-2-1-4 > li { counter-increment: proc_linear_independence-2-1-4; }
+#ex_linear_independence-2-1-4 { counter-set: ex_linear_independence-2-1-4 0; }
+#ex_linear_independence-2-1-4 > li::marker { content: ""counter(ex_linear_independence-2-1-4,decimal)"."; }
+#ex_linear_independence-2-1-4 > li { counter-increment: ex_linear_independence-2-1-4; }
+#ex_linear_independence-3-1 { counter-set: ex_linear_independence-3-1 0; }
+#ex_linear_independence-3-1 > li::marker { content: ""counter(ex_linear_independence-3-1,decimal)"."; }
+#ex_linear_independence-3-1 > li { counter-increment: ex_linear_independence-3-1; }
+#th_invertibility_3-2-1-3 { counter-set: th_invertibility_3-2-1-3 0; }
+#th_invertibility_3-2-1-3 > li::marker { content: ""counter(th_invertibility_3-2-1-3,decimal)"."; }
+#th_invertibility_3-2-1-3 > li { counter-increment: th_invertibility_3-2-1-3; }
+#s_span_independence_ex-4-1-2 { counter-set: s_span_independence_ex-4-1-2 0; }
+#s_span_independence_ex-4-1-2 > li::marker { content: "("counter(s_span_independence_ex-4-1-2,lower-alpha)")"; }
+#s_span_independence_ex-4-1-2 > li { counter-increment: s_span_independence_ex-4-1-2; }
+#ex_span_independence_inveribility-2-3 { counter-set: ex_span_independence_inveribility-2-3 0; }
+#ex_span_independence_inveribility-2-3 > li::marker { content: "("counter(ex_span_independence_inveribility-2-3,lower-alpha)")"; }
+#ex_span_independence_inveribility-2-3 > li { counter-increment: ex_span_independence_inveribility-2-3; }
+#s_basis-2-2-1 { counter-set: s_basis-2-2-1 0; }
+#s_basis-2-2-1 > li::marker { content: ""counter(s_basis-2-2-1,decimal)"."; }
+#s_basis-2-2-1 > li { counter-increment: s_basis-2-2-1; }
+#d_basis-3-1-4 { counter-set: d_basis-3-1-4 0; }
+#d_basis-3-1-4 > li::marker { content: ""counter(d_basis-3-1-4,lower-roman)""; }
+#d_basis-3-1-4 > li { counter-increment: d_basis-3-1-4; }
+#ss_bases-5-2-1-5 { counter-set: ss_bases-5-2-1-5 0; }
+#ss_bases-5-2-1-5 > li::marker { content: ""counter(ss_bases-5-2-1-5,decimal)"."; }
+#ss_bases-5-2-1-5 > li { counter-increment: ss_bases-5-2-1-5; }
+#ss_bases-5-3-2 { counter-set: ss_bases-5-3-2 0; }
+#ss_bases-5-3-2 > li::marker { content: ""counter(ss_bases-5-3-2,decimal)"."; }
+#ss_bases-5-3-2 > li { counter-increment: ss_bases-5-3-2; }
+#th_basis_equivalence-2-2 { counter-set: th_basis_equivalence-2-2 0; }
+#th_basis_equivalence-2-2 > li::marker { content: ""counter(th_basis_equivalence-2-2,decimal)"."; }
+#th_basis_equivalence-2-2 > li { counter-increment: th_basis_equivalence-2-2; }
+#proc_basis_onestep-2-1-5 { counter-set: proc_basis_onestep-2-1-5 0; }
+#proc_basis_onestep-2-1-5 > li::marker { content: ""counter(proc_basis_onestep-2-1-5,decimal)"."; }
+#proc_basis_onestep-2-1-5 > li { counter-increment: proc_basis_onestep-2-1-5; }
+#proc_provide_basis-2-1-4 { counter-set: proc_provide_basis-2-1-4 0; }
+#proc_provide_basis-2-1-4 > li::marker { content: ""counter(proc_provide_basis-2-1-4,decimal)"."; }
+#proc_provide_basis-2-1-4 > li { counter-increment: proc_provide_basis-2-1-4; }
+#eg_byinspection_basis-3-1-2 { counter-set: eg_byinspection_basis-3-1-2 0; }
+#eg_byinspection_basis-3-1-2 > li::marker { content: ""counter(eg_byinspection_basis-3-1-2,decimal)"."; }
+#eg_byinspection_basis-3-1-2 > li { counter-increment: eg_byinspection_basis-3-1-2; }
+#s_basis_ex-2-3-1-2 { counter-set: s_basis_ex-2-3-1-2 0; }
+#s_basis_ex-2-3-1-2 > li::marker { content: "("counter(s_basis_ex-2-3-1-2,lower-alpha)")"; }
+#s_basis_ex-2-3-1-2 > li { counter-increment: s_basis_ex-2-3-1-2; }
+#s_basis_ex-2-4-1-2 { counter-set: s_basis_ex-2-4-1-2 0; }
+#s_basis_ex-2-4-1-2 > li::marker { content: "("counter(s_basis_ex-2-4-1-2,lower-alpha)")"; }
+#s_basis_ex-2-4-1-2 > li { counter-increment: s_basis_ex-2-4-1-2; }
+#s_basis_ex-5-1-2 { counter-set: s_basis_ex-5-1-2 0; }
+#s_basis_ex-5-1-2 > li::marker { content: "("counter(s_basis_ex-5-1-2,lower-alpha)")"; }
+#s_basis_ex-5-1-2 > li { counter-increment: s_basis_ex-5-1-2; }
+#ex_basis_matrix_families-2-2 { counter-set: ex_basis_matrix_families-2-2 0; }
+#ex_basis_matrix_families-2-2 > li::marker { content: "("counter(ex_basis_matrix_families-2-2,lower-alpha)")"; }
+#ex_basis_matrix_families-2-2 > li { counter-increment: ex_basis_matrix_families-2-2; }
+#th_basis_dimension-2-2 { counter-set: th_basis_dimension-2-2 0; }
+#th_basis_dimension-2-2 > li::marker { content: ""counter(th_basis_dimension-2-2,decimal)"."; }
+#th_basis_dimension-2-2 > li { counter-increment: th_basis_dimension-2-2; }
+#th_basis_dimension-3-1-1 { counter-set: th_basis_dimension-3-1-1 0; }
+#th_basis_dimension-3-1-1 > li::marker { content: ""counter(th_basis_dimension-3-1-1,decimal)"."; }
+#th_basis_dimension-3-1-1 > li { counter-increment: th_basis_dimension-3-1-1; }
+#proc_dimension-2-1-2 { counter-set: proc_dimension-2-1-2 0; }
+#proc_dimension-2-1-2 > li::marker { content: ""counter(proc_dimension-2-1-2,decimal)"."; }
+#proc_dimension-2-1-2 > li { counter-increment: proc_dimension-2-1-2; }
+#th_basis_contract_expand-2-2 { counter-set: th_basis_contract_expand-2-2 0; }
+#th_basis_contract_expand-2-2 > li::marker { content: ""counter(th_basis_contract_expand-2-2,decimal)"."; }
+#th_basis_contract_expand-2-2 > li { counter-increment: th_basis_contract_expand-2-2; }
+#th_basis_contract_expand-3-1-2 { counter-set: th_basis_contract_expand-3-1-2 0; }
+#th_basis_contract_expand-3-1-2 > li::marker { content: ""counter(th_basis_contract_expand-3-1-2,decimal)"."; }
+#th_basis_contract_expand-3-1-2 > li { counter-increment: th_basis_contract_expand-3-1-2; }
+#th_basis_contract_expand-3-1-2-2-1-5 { counter-set: th_basis_contract_expand-3-1-2-2-1-5 0; }
+#th_basis_contract_expand-3-1-2-2-1-5 > li::marker { content: ""counter(th_basis_contract_expand-3-1-2-2-1-5,lower-roman)""; }
+#th_basis_contract_expand-3-1-2-2-1-5 > li { counter-increment: th_basis_contract_expand-3-1-2-2-1-5; }
+#cor_street_smarts-2-2 { counter-set: cor_street_smarts-2-2 0; }
+#cor_street_smarts-2-2 > li::marker { content: ""counter(cor_street_smarts-2-2,decimal)"."; }
+#cor_street_smarts-2-2 > li { counter-increment: cor_street_smarts-2-2; }
+#cor_street_smarts-2-2-3-1-2 { counter-set: cor_street_smarts-2-2-3-1-2 0; }
+#cor_street_smarts-2-2-3-1-2 > li::marker { content: ""counter(cor_street_smarts-2-2-3-1-2,lower-roman)""; }
+#cor_street_smarts-2-2-3-1-2 > li { counter-increment: cor_street_smarts-2-2-3-1-2; }
+#cor_dimension_subspace-2-2 { counter-set: cor_dimension_subspace-2-2 0; }
+#cor_dimension_subspace-2-2 > li::marker { content: ""counter(cor_dimension_subspace-2-2,decimal)"."; }
+#cor_dimension_subspace-2-2 > li { counter-increment: cor_dimension_subspace-2-2; }
+#cor_dimension_subspace-3-1-1 { counter-set: cor_dimension_subspace-3-1-1 0; }
+#cor_dimension_subspace-3-1-1 > li::marker { content: ""counter(cor_dimension_subspace-3-1-1,decimal)"."; }
+#cor_dimension_subspace-3-1-1 > li { counter-increment: cor_dimension_subspace-3-1-1; }
+#th_dimension_compendium-2-1-3 { counter-set: th_dimension_compendium-2-1-3 0; }
+#th_dimension_compendium-2-1-3 > li::marker { content: ""counter(th_dimension_compendium-2-1-3,decimal)"."; }
+#th_dimension_compendium-2-1-3 > li { counter-increment: th_dimension_compendium-2-1-3; }
+#th_dimension_compendium-2-1-3-6-2-2 { counter-set: th_dimension_compendium-2-1-3-6-2-2 0; }
+#th_dimension_compendium-2-1-3-6-2-2 > li::marker { content: "("counter(th_dimension_compendium-2-1-3-6-2-2,lower-alpha)")"; }
+#th_dimension_compendium-2-1-3-6-2-2 > li { counter-increment: th_dimension_compendium-2-1-3-6-2-2; }
+#extracted-webwork-58-1-1-2-1 { counter-set: extracted-webwork-58-1-1-2-1 0; }
+#extracted-webwork-58-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-58-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-58-1-1-2-1 > li { counter-increment: extracted-webwork-58-1-1-2-1; }
+#extracted-webwork-60-1-1-2-1 { counter-set: extracted-webwork-60-1-1-2-1 0; }
+#extracted-webwork-60-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-60-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-60-1-1-2-1 > li { counter-increment: extracted-webwork-60-1-1-2-1; }
+#s_dimension_ex-3-1-2 { counter-set: s_dimension_ex-3-1-2 0; }
+#s_dimension_ex-3-1-2 > li::marker { content: "("counter(s_dimension_ex-3-1-2,lower-alpha)")"; }
+#s_dimension_ex-3-1-2 > li { counter-increment: s_dimension_ex-3-1-2; }
+#s_dimension_ex-7-1-1-6 { counter-set: s_dimension_ex-7-1-1-6 0; }
+#s_dimension_ex-7-1-1-6 > li::marker { content: "("counter(s_dimension_ex-7-1-1-6,lower-alpha)")"; }
+#s_dimension_ex-7-1-1-6 > li { counter-increment: s_dimension_ex-7-1-1-6; }
+#ex_dimension_matrix_families-2-2 { counter-set: ex_dimension_matrix_families-2-2 0; }
+#ex_dimension_matrix_families-2-2 > li::marker { content: "("counter(ex_dimension_matrix_families-2-2,lower-alpha)")"; }
+#ex_dimension_matrix_families-2-2 > li { counter-increment: ex_dimension_matrix_families-2-2; }
+#th_col_space-2-1-4 { counter-set: th_col_space-2-1-4 0; }
+#th_col_space-2-1-4 > li::marker { content: ""counter(th_col_space-2-1-4,decimal)"."; }
+#th_col_space-2-1-4 > li { counter-increment: th_col_space-2-1-4; }
+#th_fundspaces_rowreduce-2-1-7 { counter-set: th_fundspaces_rowreduce-2-1-7 0; }
+#th_fundspaces_rowreduce-2-1-7 > li::marker { content: ""counter(th_fundspaces_rowreduce-2-1-7,decimal)"."; }
+#th_fundspaces_rowreduce-2-1-7 > li { counter-increment: th_fundspaces_rowreduce-2-1-7; }
+#th_fundspaces_rowreduce-3-1-8 { counter-set: th_fundspaces_rowreduce-3-1-8 0; }
+#th_fundspaces_rowreduce-3-1-8 > li::marker { content: ""counter(th_fundspaces_rowreduce-3-1-8,decimal)"."; }
+#th_fundspaces_rowreduce-3-1-8 > li { counter-increment: th_fundspaces_rowreduce-3-1-8; }
+#proc_fund_spaces-2-1-3 { counter-set: proc_fund_spaces-2-1-3 0; }
+#proc_fund_spaces-2-1-3 > li::marker { content: ""counter(proc_fund_spaces-2-1-3,decimal)"."; }
+#proc_fund_spaces-2-1-3 > li { counter-increment: proc_fund_spaces-2-1-3; }
+#proc_contract_extend-2-2-1-3 { counter-set: proc_contract_extend-2-2-1-3 0; }
+#proc_contract_extend-2-2-1-3 > li::marker { content: ""counter(proc_contract_extend-2-2-1-3,decimal)"."; }
+#proc_contract_extend-2-2-1-3 > li { counter-increment: proc_contract_extend-2-2-1-3; }
+#proc_contract_extend-2-2-2-3 { counter-set: proc_contract_extend-2-2-2-3 0; }
+#proc_contract_extend-2-2-2-3 > li::marker { content: ""counter(proc_contract_extend-2-2-2-3,decimal)"."; }
+#proc_contract_extend-2-2-2-3 > li { counter-increment: proc_contract_extend-2-2-2-3; }
+#th_invertibility_supersized-2-1-3 { counter-set: th_invertibility_supersized-2-1-3 0; }
+#th_invertibility_supersized-2-1-3 > li::marker { content: ""counter(th_invertibility_supersized-2-1-3,decimal)"."; }
+#th_invertibility_supersized-2-1-3 > li { counter-increment: th_invertibility_supersized-2-1-3; }
+#extracted-webwork-63-1-1-2-1 { counter-set: extracted-webwork-63-1-1-2-1 0; }
+#extracted-webwork-63-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-63-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-63-1-1-2-1 > li { counter-increment: extracted-webwork-63-1-1-2-1; }
+#extracted-webwork-64-1-1-2-1 { counter-set: extracted-webwork-64-1-1-2-1 0; }
+#extracted-webwork-64-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-64-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-64-1-1-2-1 > li { counter-increment: extracted-webwork-64-1-1-2-1; }
+#s_rank_nullity_ex-2-1-2 { counter-set: s_rank_nullity_ex-2-1-2 0; }
+#s_rank_nullity_ex-2-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-2-1-2,lower-alpha)")"; }
+#s_rank_nullity_ex-2-1-2 > li { counter-increment: s_rank_nullity_ex-2-1-2; }
+#s_rank_nullity_ex-3-1-1-2 { counter-set: s_rank_nullity_ex-3-1-1-2 0; }
+#s_rank_nullity_ex-3-1-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-3-1-1-2,lower-alpha)")"; }
+#s_rank_nullity_ex-3-1-1-2 > li { counter-increment: s_rank_nullity_ex-3-1-1-2; }
+#s_rank_nullity_ex-4-1-2 { counter-set: s_rank_nullity_ex-4-1-2 0; }
+#s_rank_nullity_ex-4-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-4-1-2,lower-alpha)")"; }
+#s_rank_nullity_ex-4-1-2 > li { counter-increment: s_rank_nullity_ex-4-1-2; }
+#s_rank_nullity_ex-6-1-2 { counter-set: s_rank_nullity_ex-6-1-2 0; }
+#s_rank_nullity_ex-6-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-6-1-2,lower-alpha)")"; }
+#s_rank_nullity_ex-6-1-2 > li { counter-increment: s_rank_nullity_ex-6-1-2; }
+#s_rank_nullity_ex-8-1-2 { counter-set: s_rank_nullity_ex-8-1-2 0; }
+#s_rank_nullity_ex-8-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-8-1-2,lower-alpha)")"; }
+#s_rank_nullity_ex-8-1-2 > li { counter-increment: s_rank_nullity_ex-8-1-2; }
+#s_rank_nullity_ex-9-1-2 { counter-set: s_rank_nullity_ex-9-1-2 0; }
+#s_rank_nullity_ex-9-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-9-1-2,lower-alpha)")"; }
+#s_rank_nullity_ex-9-1-2 > li { counter-increment: s_rank_nullity_ex-9-1-2; }
+#s_rank_nullity_ex-9-2-1 { counter-set: s_rank_nullity_ex-9-2-1 0; }
+#s_rank_nullity_ex-9-2-1 > li::marker { content: "("counter(s_rank_nullity_ex-9-2-1,lower-alpha)")"; }
+#s_rank_nullity_ex-9-2-1 > li { counter-increment: s_rank_nullity_ex-9-2-1; }
+#s_rank_nullity_ex-10-1-2 { counter-set: s_rank_nullity_ex-10-1-2 0; }
+#s_rank_nullity_ex-10-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-10-1-2,lower-alpha)")"; }
+#s_rank_nullity_ex-10-1-2 > li { counter-increment: s_rank_nullity_ex-10-1-2; }
+#s_rank_nullity_ex-11-1-2 { counter-set: s_rank_nullity_ex-11-1-2 0; }
+#s_rank_nullity_ex-11-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-11-1-2,lower-alpha)")"; }
+#s_rank_nullity_ex-11-1-2 > li { counter-increment: s_rank_nullity_ex-11-1-2; }
+#s_rank_nullity_ex-12-1-2 { counter-set: s_rank_nullity_ex-12-1-2 0; }
+#s_rank_nullity_ex-12-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-12-1-2,lower-alpha)")"; }
+#s_rank_nullity_ex-12-1-2 > li { counter-increment: s_rank_nullity_ex-12-1-2; }
+#ex_invertibility_supersized-2-2 { counter-set: ex_invertibility_supersized-2-2 0; }
+#ex_invertibility_supersized-2-2 > li::marker { content: "("counter(ex_invertibility_supersized-2-2,lower-alpha)")"; }
+#ex_invertibility_supersized-2-2 > li { counter-increment: ex_invertibility_supersized-2-2; }
+</style>
 </head>
 <body id="euclideanvectorspaces" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
@@ -540,7 +1040,8 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence-3" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Span</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#ss_linear_independence" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Linear independence</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence_ex" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#subsec-invertibility-span-and-linear-independence" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Invertibility, span, and linear independence</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence_ex" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -563,12 +1064,9 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rank_nullity.html#ss_fundamental_spaces" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Fundamental spaces of matrices</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rank_nullity.html#ss_expand_contract" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Contracting and expanding to bases</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_rank_nullity.html#s_rank_nullity_ex" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rank_nullity.html#ss_fund_spaces_inv_th" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Fundamental spaces and invertibility</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_rank_nullity.html#s_rank_nullity_ex" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_isom.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Isomorphisms</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_isom.html#ss_isomorphisms" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Isomorphisms</span></a></div></li></ul>
 </li>
 </ul>
 </li>
@@ -613,7 +1111,7 @@ A \text{ is invertible } \iff \det A \ne 0\text{,}
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">The determinant.</span>
 </h4>  <div class="para logical" id="d_det-4-1">
 <div class="para">Let <span class="process-math">\(A=[a_{ij}]_{n\times n}\text{.}\)</span> The determinant is defined as follows:</div>
-<ul class="disc">
+<ul class="disc" id="d_det-4-1-2">
 <li id="d_det-4-1-2-1">
 <span class="heading"><span class="title">Base case: <span class="process-math">\(n=1\)</span>.</span></span><div class="para" id="d_det-4-1-2-1-2">When <span class="process-math">\(n=1\)</span> we have <span class="process-math">\(A=[a_{11}]\)</span> and we define <span class="process-math">\(\det A=a_{11}\text{.}\)</span>
 </div>
@@ -774,7 +1272,7 @@ A=\begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}
 </div>
 <div class="para">The matrix <span class="process-math">\((A_{1j})_{(i-1) k}\)</span> is the result of first deleting row 1 and column <span class="process-math">\(j\)</span> from <span class="process-math">\(A\text{,}\)</span> and then deleting row <span class="process-math">\((i-1)\)</span> and column <span class="process-math">\(k\)</span> of the resulting matrix.  To deal with such iterated submatrices, we make some simple observations relating the rows and columns of <span class="process-math">\(A_{1 j}\)</span> and <span class="process-math">\(A_{i  k}\)</span> with those of <span class="process-math">\(A\text{.}\)</span>
 </div>
-<ul class="disc">
+<ul class="disc" id="th_expansion_row-3-3-2-19">
 <li id="th_expansion_row-3-3-2-19-1"><div class="para" id="th_expansion_row-3-3-2-19-1-1">The <span class="process-math">\((i-1)\)</span>-th row of <span class="process-math">\(A_{1  j}\)</span> corresponds to the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(A\text{,}\)</span> and the first row of <span class="process-math">\(A_{i  k}\)</span> corresponds to the first row of <span class="process-math">\(A\text{.}\)</span>
 </div></li>
 <li id="th_expansion_row-3-3-2-19-2"><div class="para" id="th_expansion_row-3-3-2-19-2-1">If <span class="process-math">\(k\lt j\text{,}\)</span> then the <span class="process-math">\(k\)</span>-th column of <span class="process-math">\(A_{1  j}\)</span> corresponds to the <span class="process-math">\(k\)</span>-th column of <span class="process-math">\(A\text{;}\)</span> if <span class="process-math">\(k\geq j\text{,}\)</span> then the <span class="process-math">\(k\)</span>-th column of <span class="process-math">\(A_{1  j}\)</span> corresponds to the <span class="process-math">\((k+1)\)</span>-th column of <span class="process-math">\(A\text{.}\)</span>
@@ -927,7 +1425,7 @@ A_{24}=\begin{bmatrix}
 </h4>
 <div class="para logical" id="th_det_zero_repeated_row-2-1">
 <div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix.</div>
-<ol class="decimal">
+<ol class="decimal" id="th_det_zero_repeated_row-2-1-3">
 <li id="th_det_zero_repeated_row-2-1-3-1"><div class="para" id="th_det_zero_repeated_row-2-1-3-1-1">If <span class="process-math">\(A\)</span> has a zero row or zero column, then <span class="process-math">\(\det A=0\)</span>
 </div></li>
 <li id="th_det_zero_repeated_row-2-1-3-2"><div class="para logical" id="th_det_zero_repeated_row-2-1-3-2-1">
@@ -1109,7 +1607,7 @@ A^{-1}=\frac{1}{6}\,\adj A=\frac{1}{6}\, \begin{amatrix}[rrr] 4\amp -2 \amp -3\\
 </h4>
 <div class="para logical" id="th_det_row_ops-2-1">
 <div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix. Using the notation from <a href="s_invertibility_theorem.html#d_elementary_matrix" class="xref" data-knowl="./knowl/xref/d_elementary_matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.4.1: Elementary matrices">Definition 3.4.1</a> we have:</div>
-<ol class="decimal">
+<ol class="decimal" id="th_det_row_ops-2-1-4">
 <li id="th_det_row_ops-2-1-4-1"><div class="para" id="th_det_row_ops-2-1-4-1-1"><span class="process-math">\(\displaystyle \det(\underset{c\cdot r_i}{E}\, A)=c\det(A)\)</span></div></li>
 <li id="th_det_row_ops-2-1-4-2"><div class="para" id="th_det_row_ops-2-1-4-2-1"><span class="process-math">\(\displaystyle \det(\underset{r_i\leftrightarrow r_j}{E}\, A)=-\det(A)\)</span></div></li>
 <li id="th_det_row_ops-2-1-4-3"><div class="para" id="th_det_row_ops-2-1-4-3-1"><span class="process-math">\(\det(\underset{r_i+cr_j}{E}\, A)=\det(A)\text{.}\)</span></div></li>
@@ -1147,7 +1645,7 @@ A^{-1}=\frac{1}{6}\,\adj A=\frac{1}{6}\, \begin{amatrix}[rrr] 4\amp -2 \amp -3\\
 </h4>
 <div class="para logical" id="rm_det_row_ops-1-1">
 <div class="para">In the language of row operations, <a href="s_det.html#th_det_row_ops" class="xref" data-knowl="./knowl/xref/th_det_row_ops.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.5.20: Row operations and determinant">Theorem 3.5.20</a> translates as follows:</div>
-<ul class="disc">
+<ul class="disc" id="rm_det_row_ops-1-1-2">
 <li id="rm_det_row_ops-1-1-2-1"><div class="para" id="rm_det_row_ops-1-1-2-1-1">Scaling a row of a matrix by <span class="process-math">\(c\)</span> has the effect of scaling the determinant by <span class="process-math">\(c\text{.}\)</span>
 </div></li>
 <li id="rm_det_row_ops-1-1-2-2"><div class="para" id="rm_det_row_ops-1-1-2-2-1">Swapping two rows of a matrix changes the sign of the determinant.</div></li>
@@ -1186,7 +1684,7 @@ B=\begin{amatrix}[rrr]2\amp -7\amp -8\\ 0\amp -3\amp 4\\ 0\amp 0\amp 2  \end{ama
 \end{equation*}
 </div>
 <div class="para">by perfomring the following sequence of row operations:</div>
-<ol class="decimal">
+<ol class="decimal" id="ss_det_row_ops-9-2-1-3">
 <li id="ss_det_row_ops-9-2-1-3-1"><div class="para" id="ss_det_row_ops-9-2-1-3-1-1">First swap the second and third rows.</div></li>
 <li id="ss_det_row_ops-9-2-1-3-2"><div class="para" id="ss_det_row_ops-9-2-1-3-2-1">Then scale the first row by <span class="process-math">\(3\)</span>
 </div></li>
@@ -1270,49 +1768,52 @@ A \amp E_1E_2\cdots E_r \amp B\amp=E'_1E'_2\cdots E'_s
 \amp=\det A\, \det B \amp (\knowl{./knowl/xref/cor_det_prod_elem.html}{\text{Corollary 3.5.23}}) \text{.}
 \end{align*}
 </div>
-</div></article></article></details><div class="para" id="ss_det_row_ops-13">We end this section (and chapter) by adding the results of <a href="s_det.html#th_inv_iff_det" class="xref" data-knowl="./knowl/xref/th_inv_iff_det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.5.25: Determinant and invertibility">Theorem 3.5.25</a> and one of our homework exercises to our invertibility theorem.</div>
+</div></article></article></details><div class="para" id="ss_det_row_ops-13">We end this section and chapter with a slight expansion of our invertibility theorem. The equivalence of <a href="s_det.html#inv2_statement_det" class="xref" data-knowl="./knowl/xref/inv2_statement_det.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 7">statement 7</a> is a direct consequence of <a href="s_det.html#th_inv_iff_det" class="xref" data-knowl="./knowl/xref/th_inv_iff_det.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.5.25: Determinant and invertibility">Theorem 3.5.25</a>. The equivalence of the equivalence of <a href="s_det.html#inv2_statement_exists_sol" class="xref" data-knowl="./knowl/xref/inv2_statement_exists_sol.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">statement 3</a> was given earlier as an exercise. (See <a href="s_invertibility_theorem.html#ex_th_inv_exists_sol" class="xref" data-knowl="./knowl/xref/ex_th_inv_exists_sol.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 3.4.6.20">Exercise 3.4.6.20</a>.)</div>
 <article class="theorem theorem-like" id="th_invertibility_expanded"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.5.27</span><span class="period">.</span><span class="space"> </span><span class="title">Invertibility theorem (extended cut).</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.5.27</span><span class="period">.</span><span class="space"> </span><span class="title">Invertibility theorem.</span>
 </h4>
-<div class="para" id="th_invertibility_expanded-2-1">Let <span class="process-math">\(A=\)</span> be an <span class="process-math">\(n\times n\)</span> matrix. The following statements are equivalent.</div> <ol class="decimal">
-<li id="th_invertibility_expanded-2-2-1"><div class="para" id="th_invertibility_expanded-2-2-1-1">
+<div class="para logical" id="th_invertibility_expanded-2-1">
+<div class="para">Let <span class="process-math">\(A=\)</span> be an <span class="process-math">\(n\times n\)</span> matrix. The following statements are equivalent.</div>
+<ol class="decimal" id="th_invertibility_expanded-2-1-3">
+<li id="inv2_statement_def"><div class="para" id="inv2_statement_def-1">
 <span class="process-math">\(A\)</span> is invertible.</div></li>
-<li id="th_invertibility_expanded-2-2-2"><div class="para logical" id="th_invertibility_expanded-2-2-2-1">
+<li id="inv2_statement_unique_sol"><div class="para logical" id="inv2_statement_unique_sol-1">
 <div class="para">The matrix equation</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}
 \end{equation*}
 </div>
-<div class="para">has a <em class="emphasis">unique solution</em> for <em class="emphasis">any</em> column vector  <span class="process-math">\(\boldb\text{.}\)</span>
+<div class="para">has a unique solution for any <span class="process-math">\(\boldb\in \R^n\text{.}\)</span>
 </div>
 </div></li>
-<li id="th_invertibility_expanded-2-2-3"><div class="para logical" id="th_invertibility_expanded-2-2-3-1">
+<li id="inv2_statement_exists_sol"><div class="para logical" id="inv2_statement_exists_sol-1">
 <div class="para">The matrix equation</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}
 \end{equation*}
 </div>
-<div class="para">has a solution for <em class="emphasis">any</em> column vector  <span class="process-math">\(\boldb\text{.}\)</span>
+<div class="para">has a solution for any <span class="process-math">\(\boldb\in \R^n\text{.}\)</span>
 </div>
 </div></li>
-<li id="th_invertibility_expanded-2-2-4"><div class="para logical" id="th_invertibility_expanded-2-2-4-1">
+<li id="inv2_statement_trivial_sol"><div class="para logical" id="inv2_statement_trivial_sol-1">
 <div class="para">The matrix equation</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}
 \end{equation*}
 </div>
-<div class="para">has a <em class="emphasis">unique solution</em>: namely, <span class="process-math">\(\boldx=\boldzero_{n\times 1}\text{.}\)</span>
+<div class="para">has a unique solution: namely, <span class="process-math">\(\boldx=\boldzero_{n\times 1}\text{.}\)</span>
 </div>
 </div></li>
-<li id="th_invertibility_expanded-2-2-5"><div class="para" id="th_invertibility_expanded-2-2-5-1">
+<li id="inv2_statement_row_equiv"><div class="para" id="inv2_statement_row_equiv-1">
 <span class="process-math">\(A\)</span> is row equivalent to <span class="process-math">\(I_n\text{,}\)</span> the <span class="process-math">\(n\times n\)</span> identity matrix.</div></li>
-<li id="th_invertibility_expanded-2-2-6"><div class="para" id="th_invertibility_expanded-2-2-6-1">
+<li id="inv2_statement_prod_elems"><div class="para" id="inv2_statement_prod_elems-1">
 <span class="process-math">\(A\)</span> is a product of elementary matrices.</div></li>
-<li id="th_invertibility_expanded-2-2-7"><div class="para" id="th_invertibility_expanded-2-2-7-1"><span class="process-math">\(\det A\ne 0\text{.}\)</span></div></li>
-</ol></article></section><section class="exercises" id="s_det_ex"><h3 class="heading hide-type">
+<li id="inv2_statement_det"><div class="para" id="inv2_statement_det-1"><span class="process-math">\(\det A\ne 0\text{.}\)</span></div></li>
+</ol>
+</div></article></section><section class="exercises" id="s_det_ex"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">3.5.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="subexercises" id="s_det_ex-1"><h4 class="heading"><span class="title">WeBWork Exercises</span></h4>
@@ -1420,7 +1921,7 @@ M = \left[\begin{array}{ccc}
 A = \begin{bmatrix}-1\amp 1\amp 2\\ 3\amp 0\amp -5\\ 1\amp 7\amp 2 \end{bmatrix}
 \end{equation*}
 </div>
-<ol class="lower-alpha">
+<ol class="lower-alpha" id="s_det_ex-2-2-1-1-2">
 <li id="s_det_ex-2-2-1-1-2-1"><div class="para" id="s_det_ex-2-2-1-1-2-1-1">Compute <span class="process-math">\(\det(A)\)</span> by expanding along the second row.</div></li>
 <li id="s_det_ex-2-2-1-1-2-2"><div class="para" id="s_det_ex-2-2-1-1-2-2-1">Compute <span class="process-math">\(\det(A)\)</span> by expanding along the third column.</div></li>
 </ol>
@@ -1509,20 +2010,20 @@ A=\begin{amatrix}[rrr]
 A=\begin{amatrix}[rrrr]1\amp -3\amp 1\amp 1\\ -3\amp 1\amp 1\amp 1\\ 1\amp 1\amp -3\amp 1\\ 1\amp 1\amp 1\amp -3 \end{amatrix}\text{.}
 \end{equation*}
 </div>
-<div class="para">Show <span class="process-math">\(\det A=0\)</span> without computing the determinant directly. In other words, use a row reduction technique or <a href="s_det.html#th_invertibility_expanded" class="xref" data-knowl="./knowl/xref/th_invertibility_expanded.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.5.27: Invertibility theorem (extended cut)">Theorem 3.5.27</a>.</div>
+<div class="para">Show <span class="process-math">\(\det A=0\)</span> without computing the determinant directly. In other words, use a row reduction technique or <a href="s_det.html#th_invertibility_expanded" class="xref" data-knowl="./knowl/xref/th_invertibility_expanded.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.5.27: Invertibility theorem">Theorem 3.5.27</a>.</div>
 </div></article><article class="exercise exercise-like" id="s_det_ex-2-7"><h5 class="heading"><span class="codenumber">16<span class="period">.</span></span></h5>
 <div class="para" id="s_det_ex-2-7-1-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix, and let <span class="process-math">\(c\)</span> be a scalar. State and prove a formula relating <span class="process-math">\(\det(cA)\)</span> with <span class="process-math">\(\det(A)\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="s_det_ex-2-8"><h5 class="heading"><span class="codenumber">17<span class="period">.</span></span></h5>
 <div class="para logical" id="s_det_ex-2-8-1-1">
 <div class="para">Assume <span class="process-math">\(A\)</span> is a <span class="process-math">\(5\times 5\)</span> matrix satisfying <span class="process-math">\(\det A=2\text{.}\)</span> Compute the determinant of the given matrix.</div>
-<ol class="lower-alpha">
+<ol class="lower-alpha" id="s_det_ex-2-8-1-1-4">
 <li id="s_det_ex-2-8-1-1-4-1"><div class="para" id="s_det_ex-2-8-1-1-4-1-1"><span class="process-math">\(\displaystyle \det(-A)\)</span></div></li>
 <li id="s_det_ex-2-8-1-1-4-2"><div class="para" id="s_det_ex-2-8-1-1-4-2-1"><span class="process-math">\(\displaystyle \det(A^{-1})\)</span></div></li>
 <li id="s_det_ex-2-8-1-1-4-3"><div class="para" id="s_det_ex-2-8-1-1-4-3-1"><span class="process-math">\(\displaystyle \det(2A^T)\)</span></div></li>
 <li id="s_det_ex-2-8-1-1-4-4"><div class="para" id="s_det_ex-2-8-1-1-4-4-1"><span class="process-math">\(\displaystyle \det(A^3)\)</span></div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="s_det_ex-2-9"><h5 class="heading"><span class="codenumber">18<span class="period">.</span></span></h5>
-<div class="para" id="s_det_ex-2-9-1-1">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be <span class="process-math">\(n\times n\)</span> matrices, and suppose <span class="process-math">\(B\)</span> is invertible. Prove the following:</div> <ol class="lower-alpha">
+<div class="para" id="s_det_ex-2-9-1-1">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be <span class="process-math">\(n\times n\)</span> matrices, and suppose <span class="process-math">\(B\)</span> is invertible. Prove the following:</div> <ol class="lower-alpha" id="s_det_ex-2-9-1-2">
 <li id="s_det_ex-2-9-1-2-1"><div class="para" id="s_det_ex-2-9-1-2-1-1"><span class="process-math">\(\ds \det(B^{-1})=\frac{1}{\det(B)}\text{.}\)</span></div></li>
 <li id="s_det_ex-2-9-1-2-2"><div class="para" id="s_det_ex-2-9-1-2-2-1"><span class="process-math">\(\ds \det(B^{-1}AB)=\det(A)\text{.}\)</span></div></li>
 </ol></article><article class="exercise exercise-like" id="s_det_ex-2-10"><h5 class="heading"><span class="codenumber">19<span class="period">.</span></span></h5>

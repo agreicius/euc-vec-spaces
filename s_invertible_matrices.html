@@ -117,6 +117,506 @@ sagecell.makeSagecell({
 <link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<style>
+#d_function_equality-3-1-4 { counter-set: d_function_equality-3-1-4 0; }
+#d_function_equality-3-1-4 > li::marker { content: ""counter(d_function_equality-3-1-4,lower-roman)""; }
+#d_function_equality-3-1-4 > li { counter-increment: d_function_equality-3-1-4; }
+#extracted-webwork-4-1-1-2-1 { counter-set: extracted-webwork-4-1-1-2-1 0; }
+#extracted-webwork-4-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-4-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-4-1-1-2-1 > li { counter-increment: extracted-webwork-4-1-1-2-1; }
+#extracted-webwork-7-1-1-2-1 { counter-set: extracted-webwork-7-1-1-2-1 0; }
+#extracted-webwork-7-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-7-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-7-1-1-2-1 > li { counter-increment: extracted-webwork-7-1-1-2-1; }
+#extracted-webwork-8-1-1-2-1 { counter-set: extracted-webwork-8-1-1-2-1 0; }
+#extracted-webwork-8-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-8-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-8-1-1-2-1 > li { counter-increment: extracted-webwork-8-1-1-2-1; }
+#extracted-webwork-9-1-1-2-1 { counter-set: extracted-webwork-9-1-1-2-1 0; }
+#extracted-webwork-9-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-9-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-9-1-1-2-1 > li { counter-increment: extracted-webwork-9-1-1-2-1; }
+#extracted-webwork-11-1-1-2-1 { counter-set: extracted-webwork-11-1-1-2-1 0; }
+#extracted-webwork-11-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-11-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-11-1-1-2-1 > li { counter-increment: extracted-webwork-11-1-1-2-1; }
+#extracted-webwork-11-1-1-3-1 { counter-set: extracted-webwork-11-1-1-3-1 0; }
+#extracted-webwork-11-1-1-3-1 > li::marker { content: ""counter(extracted-webwork-11-1-1-3-1,upper-alpha)"."; }
+#extracted-webwork-11-1-1-3-1 > li { counter-increment: extracted-webwork-11-1-1-3-1; }
+#sss_function_equality-2-4 { counter-set: sss_function_equality-2-4 0; }
+#sss_function_equality-2-4 > li::marker { content: ""counter(sss_function_equality-2-4,lower-roman)""; }
+#sss_function_equality-2-4 > li { counter-increment: sss_function_equality-2-4; }
+#d_complex_arithmetic-4-2 { counter-set: d_complex_arithmetic-4-2 0; }
+#d_complex_arithmetic-4-2 > li::marker { content: ""counter(d_complex_arithmetic-4-2,decimal)"."; }
+#d_complex_arithmetic-4-2 > li { counter-increment: d_complex_arithmetic-4-2; }
+#th_complex_arithmetic_basic-2-1 { counter-set: th_complex_arithmetic_basic-2-1 0; }
+#th_complex_arithmetic_basic-2-1 > li::marker { content: ""counter(th_complex_arithmetic_basic-2-1,decimal)"."; }
+#th_complex_arithmetic_basic-2-1 > li { counter-increment: th_complex_arithmetic_basic-2-1; }
+#th_complex_conjugation_modulus-2-2 { counter-set: th_complex_conjugation_modulus-2-2 0; }
+#th_complex_conjugation_modulus-2-2 > li::marker { content: ""counter(th_complex_conjugation_modulus-2-2,decimal)"."; }
+#th_complex_conjugation_modulus-2-2 > li { counter-increment: th_complex_conjugation_modulus-2-2; }
+#th_poly_basic-2-1-2 { counter-set: th_poly_basic-2-1-2 0; }
+#th_poly_basic-2-1-2 > li::marker { content: ""counter(th_poly_basic-2-1-2,decimal)"."; }
+#th_poly_basic-2-1-2 > li { counter-increment: th_poly_basic-2-1-2; }
+#cor_poly_equality-2-1-7 { counter-set: cor_poly_equality-2-1-7 0; }
+#cor_poly_equality-2-1-7 > li::marker { content: ""counter(cor_poly_equality-2-1-7,decimal)"."; }
+#cor_poly_equality-2-1-7 > li { counter-increment: cor_poly_equality-2-1-7; }
+#th_poly_degree-2-2 { counter-set: th_poly_degree-2-2 0; }
+#th_poly_degree-2-2 > li::marker { content: ""counter(th_poly_degree-2-2,decimal)"."; }
+#th_poly_degree-2-2 > li { counter-increment: th_poly_degree-2-2; }
+#d_vector_space-6-1-7 { counter-set: d_vector_space-6-1-7 0; }
+#d_vector_space-6-1-7 > li::marker { content: ""counter(d_vector_space-6-1-7,lower-roman)""; }
+#d_vector_space-6-1-7 > li { counter-increment: d_vector_space-6-1-7; }
+#proc_vector_space-2-1-1 { counter-set: proc_vector_space-2-1-1 0; }
+#proc_vector_space-2-1-1 > li::marker { content: ""counter(proc_vector_space-2-1-1,decimal)"."; }
+#proc_vector_space-2-1-1 > li { counter-increment: proc_vector_space-2-1-1; }
+#th_Rn_vector_space-1-1-2 { counter-set: th_Rn_vector_space-1-1-2 0; }
+#th_Rn_vector_space-1-1-2 > li::marker { content: ""counter(th_Rn_vector_space-1-1-2,decimal)"."; }
+#th_Rn_vector_space-1-1-2 > li { counter-increment: th_Rn_vector_space-1-1-2; }
+#th_vectorspace_props-2-1-2 { counter-set: th_vectorspace_props-2-1-2 0; }
+#th_vectorspace_props-2-1-2 > li::marker { content: ""counter(th_vectorspace_props-2-1-2,decimal)"."; }
+#th_vectorspace_props-2-1-2 > li { counter-increment: th_vectorspace_props-2-1-2; }
+#s_Rn_ex-3-1-1-2 { counter-set: s_Rn_ex-3-1-1-2 0; }
+#s_Rn_ex-3-1-1-2 > li::marker { content: "("counter(s_Rn_ex-3-1-1-2,lower-alpha)")"; }
+#s_Rn_ex-3-1-1-2 > li { counter-increment: s_Rn_ex-3-1-1-2; }
+#d_innerproduct-2-1-7 { counter-set: d_innerproduct-2-1-7 0; }
+#d_innerproduct-2-1-7 > li::marker { content: ""counter(d_innerproduct-2-1-7,lower-roman)""; }
+#d_innerproduct-2-1-7 > li { counter-increment: d_innerproduct-2-1-7; }
+#ss_linear_equations-3-2-1-1 { counter-set: ss_linear_equations-3-2-1-1 0; }
+#ss_linear_equations-3-2-1-1 > li::marker { content: ""counter(ss_linear_equations-3-2-1-1,decimal)"."; }
+#ss_linear_equations-3-2-1-1 > li { counter-increment: ss_linear_equations-3-2-1-1; }
+#s_systems_eg_2eqns2varss-2-1-1 { counter-set: s_systems_eg_2eqns2varss-2-1-1 0; }
+#s_systems_eg_2eqns2varss-2-1-1 > li::marker { content: ""counter(s_systems_eg_2eqns2varss-2-1-1,decimal)"."; }
+#s_systems_eg_2eqns2varss-2-1-1 > li { counter-increment: s_systems_eg_2eqns2varss-2-1-1; }
+#s_systems_eg_2eqns2varss-3-1-1 { counter-set: s_systems_eg_2eqns2varss-3-1-1 0; }
+#s_systems_eg_2eqns2varss-3-1-1 > li::marker { content: ""counter(s_systems_eg_2eqns2varss-3-1-1,decimal)"."; }
+#s_systems_eg_2eqns2varss-3-1-1 > li { counter-increment: s_systems_eg_2eqns2varss-3-1-1; }
+#ss_linear_equations-15-5 { counter-set: ss_linear_equations-15-5 0; }
+#ss_linear_equations-15-5 > li::marker { content: ""counter(ss_linear_equations-15-5,decimal)"."; }
+#ss_linear_equations-15-5 > li { counter-increment: ss_linear_equations-15-5; }
+#eg_system_of_lines-3-1-3 { counter-set: eg_system_of_lines-3-1-3 0; }
+#eg_system_of_lines-3-1-3 > li::marker { content: ""counter(eg_system_of_lines-3-1-3,decimal)"."; }
+#eg_system_of_lines-3-1-3 > li { counter-increment: eg_system_of_lines-3-1-3; }
+#pars--2-4 { counter-set: pars--2-4 0; }
+#pars--2-4 > li::marker { content: ""counter(pars--2-4,decimal)"."; }
+#pars--2-4 > li { counter-increment: pars--2-4; }
+#extracted-webwork-18-1-1-2-1 { counter-set: extracted-webwork-18-1-1-2-1 0; }
+#extracted-webwork-18-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-18-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-18-1-1-2-1 > li { counter-increment: extracted-webwork-18-1-1-2-1; }
+#extracted-webwork-21-1-1-2-1 { counter-set: extracted-webwork-21-1-1-2-1 0; }
+#extracted-webwork-21-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-21-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-21-1-1-2-1 > li { counter-increment: extracted-webwork-21-1-1-2-1; }
+#extracted-webwork-22-1-1-2-1 { counter-set: extracted-webwork-22-1-1-2-1 0; }
+#extracted-webwork-22-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-22-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-22-1-1-2-1 > li { counter-increment: extracted-webwork-22-1-1-2-1; }
+#ex_solving_sys_geom-2-1-3 { counter-set: ex_solving_sys_geom-2-1-3 0; }
+#ex_solving_sys_geom-2-1-3 > li::marker { content: "("counter(ex_solving_sys_geom-2-1-3,lower-alpha)")"; }
+#ex_solving_sys_geom-2-1-3 > li { counter-increment: ex_solving_sys_geom-2-1-3; }
+#ex_solving_sys_geom-3-7-4 { counter-set: ex_solving_sys_geom-3-7-4 0; }
+#ex_solving_sys_geom-3-7-4 > li::marker { content: "("counter(ex_solving_sys_geom-3-7-4,lower-alpha)")"; }
+#ex_solving_sys_geom-3-7-4 > li { counter-increment: ex_solving_sys_geom-3-7-4; }
+#ex_row_ops_preserve-2-1-1 { counter-set: ex_row_ops_preserve-2-1-1 0; }
+#ex_row_ops_preserve-2-1-1 > li::marker { content: "("counter(ex_row_ops_preserve-2-1-1,lower-alpha)")"; }
+#ex_row_ops_preserve-2-1-1 > li { counter-increment: ex_row_ops_preserve-2-1-1; }
+#ex_solving_nonlinear_system-2-2 { counter-set: ex_solving_nonlinear_system-2-2 0; }
+#ex_solving_nonlinear_system-2-2 > li::marker { content: "("counter(ex_solving_nonlinear_system-2-2,lower-alpha)")"; }
+#ex_solving_nonlinear_system-2-2 > li { counter-increment: ex_solving_nonlinear_system-2-2; }
+#ex_solving_nonlinear_system-2-2-1-1-3 { counter-set: ex_solving_nonlinear_system-2-2-1-1-3 0; }
+#ex_solving_nonlinear_system-2-2-1-1-3 > li::marker { content: ""counter(ex_solving_nonlinear_system-2-2-1-1-3,lower-roman)"."; }
+#ex_solving_nonlinear_system-2-2-1-1-3 > li { counter-increment: ex_solving_nonlinear_system-2-2-1-1-3; }
+#ex_solving_nonlinear_system-2-2-2-2 { counter-set: ex_solving_nonlinear_system-2-2-2-2 0; }
+#ex_solving_nonlinear_system-2-2-2-2 > li::marker { content: ""counter(ex_solving_nonlinear_system-2-2-2-2,lower-roman)"."; }
+#ex_solving_nonlinear_system-2-2-2-2 > li { counter-increment: ex_solving_nonlinear_system-2-2-2-2; }
+#s_systems_ex-2-5-2-2 { counter-set: s_systems_ex-2-5-2-2 0; }
+#s_systems_ex-2-5-2-2 > li::marker { content: "("counter(s_systems_ex-2-5-2-2,lower-alpha)")"; }
+#s_systems_ex-2-5-2-2 > li { counter-increment: s_systems_ex-2-5-2-2; }
+#s_ge-2-2-1 { counter-set: s_ge-2-2-1 0; }
+#s_ge-2-2-1 > li::marker { content: ""counter(s_ge-2-2-1,decimal)"."; }
+#s_ge-2-2-1 > li { counter-increment: s_ge-2-2-1; }
+#ss_ge_row_echelon-8-3 { counter-set: ss_ge_row_echelon-8-3 0; }
+#ss_ge_row_echelon-8-3 > li::marker { content: ""counter(ss_ge_row_echelon-8-3,decimal)"."; }
+#ss_ge_row_echelon-8-3 > li { counter-increment: ss_ge_row_echelon-8-3; }
+#ss_ge_row_echelon-9-2-2 { counter-set: ss_ge_row_echelon-9-2-2 0; }
+#ss_ge_row_echelon-9-2-2 > li::marker { content: ""counter(ss_ge_row_echelon-9-2-2,decimal)"."; }
+#ss_ge_row_echelon-9-2-2 > li { counter-increment: ss_ge_row_echelon-9-2-2; }
+#ss_ge_row_echelon-9-3-1 { counter-set: ss_ge_row_echelon-9-3-1 0; }
+#ss_ge_row_echelon-9-3-1 > li::marker { content: ""counter(ss_ge_row_echelon-9-3-1,decimal)"."; }
+#ss_ge_row_echelon-9-3-1 > li { counter-increment: ss_ge_row_echelon-9-3-1; }
+#th_matrixforms-2-1 { counter-set: th_matrixforms-2-1 0; }
+#th_matrixforms-2-1 > li::marker { content: ""counter(th_matrixforms-2-1,decimal)"."; }
+#th_matrixforms-2-1 > li { counter-increment: th_matrixforms-2-1; }
+#extracted-webwork-28-1-1-2-1 { counter-set: extracted-webwork-28-1-1-2-1 0; }
+#extracted-webwork-28-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-28-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-28-1-1-2-1 > li { counter-increment: extracted-webwork-28-1-1-2-1; }
+#s_solving_ex-2-3-1-2 { counter-set: s_solving_ex-2-3-1-2 0; }
+#s_solving_ex-2-3-1-2 > li::marker { content: "("counter(s_solving_ex-2-3-1-2,lower-alpha)")"; }
+#s_solving_ex-2-3-1-2 > li { counter-increment: s_solving_ex-2-3-1-2; }
+#s_solving_ex-2-5-1-2 { counter-set: s_solving_ex-2-5-1-2 0; }
+#s_solving_ex-2-5-1-2 > li::marker { content: "("counter(s_solving_ex-2-5-1-2,lower-alpha)")"; }
+#s_solving_ex-2-5-1-2 > li { counter-increment: s_solving_ex-2-5-1-2; }
+#s_solving_ex-2-6-1-1-2 { counter-set: s_solving_ex-2-6-1-1-2 0; }
+#s_solving_ex-2-6-1-1-2 > li::marker { content: "("counter(s_solving_ex-2-6-1-1-2,lower-alpha)")"; }
+#s_solving_ex-2-6-1-1-2 > li { counter-increment: s_solving_ex-2-6-1-1-2; }
+#d_matrix_equality-2-1-6 { counter-set: d_matrix_equality-2-1-6 0; }
+#d_matrix_equality-2-1-6 > li::marker { content: ""counter(d_matrix_equality-2-1-6,decimal)"."; }
+#d_matrix_equality-2-1-6 > li { counter-increment: d_matrix_equality-2-1-6; }
+#th_matrix_vector_space-2-1-3 { counter-set: th_matrix_vector_space-2-1-3 0; }
+#th_matrix_vector_space-2-1-3 > li::marker { content: ""counter(th_matrix_vector_space-2-1-3,decimal)"."; }
+#th_matrix_vector_space-2-1-3 > li { counter-increment: th_matrix_vector_space-2-1-3; }
+#s_matrix_ex_product-3-1-1 { counter-set: s_matrix_ex_product-3-1-1 0; }
+#s_matrix_ex_product-3-1-1 > li::marker { content: "("counter(s_matrix_ex_product-3-1-1,lower-alpha)")"; }
+#s_matrix_ex_product-3-1-1 > li { counter-increment: s_matrix_ex_product-3-1-1; }
+#extracted-webwork-29-1-1-2-1 { counter-set: extracted-webwork-29-1-1-2-1 0; }
+#extracted-webwork-29-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-29-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-29-1-1-2-1 > li { counter-increment: extracted-webwork-29-1-1-2-1; }
+#s_matrix_ex-2-2-1-2 { counter-set: s_matrix_ex-2-2-1-2 0; }
+#s_matrix_ex-2-2-1-2 > li::marker { content: "("counter(s_matrix_ex-2-2-1-2,lower-alpha)")"; }
+#s_matrix_ex-2-2-1-2 > li { counter-increment: s_matrix_ex-2-2-1-2; }
+#s_matrix_ex-2-3-1-1-3 { counter-set: s_matrix_ex-2-3-1-1-3 0; }
+#s_matrix_ex-2-3-1-1-3 > li::marker { content: "("counter(s_matrix_ex-2-3-1-1-3,lower-alpha)")"; }
+#s_matrix_ex-2-3-1-1-3 > li { counter-increment: s_matrix_ex-2-3-1-1-3; }
+#s_matrix_ex-2-4-1-1-2 { counter-set: s_matrix_ex-2-4-1-1-2 0; }
+#s_matrix_ex-2-4-1-1-2 > li::marker { content: "("counter(s_matrix_ex-2-4-1-1-2,lower-alpha)")"; }
+#s_matrix_ex-2-4-1-1-2 > li { counter-increment: s_matrix_ex-2-4-1-1-2; }
+#s_matrix_ex-2-4-2-1-1 { counter-set: s_matrix_ex-2-4-2-1-1 0; }
+#s_matrix_ex-2-4-2-1-1 > li::marker { content: "("counter(s_matrix_ex-2-4-2-1-1,lower-alpha)")"; }
+#s_matrix_ex-2-4-2-1-1 > li { counter-increment: s_matrix_ex-2-4-2-1-1; }
+#th_matrix_alg_props-2-1-2 { counter-set: th_matrix_alg_props-2-1-2 0; }
+#th_matrix_alg_props-2-1-2 > li::marker { content: ""counter(th_matrix_alg_props-2-1-2,decimal)"."; }
+#th_matrix_alg_props-2-1-2 > li { counter-increment: th_matrix_alg_props-2-1-2; }
+#th_matrix_abnormalities-2-1-1 { counter-set: th_matrix_abnormalities-2-1-1 0; }
+#th_matrix_abnormalities-2-1-1 > li::marker { content: ""counter(th_matrix_abnormalities-2-1-1,decimal)"."; }
+#th_matrix_abnormalities-2-1-1 > li { counter-increment: th_matrix_abnormalities-2-1-1; }
+#ss_cancellation-8-2 { counter-set: ss_cancellation-8-2 0; }
+#ss_cancellation-8-2 > li::marker { content: ""counter(ss_cancellation-8-2,decimal)"."; }
+#ss_cancellation-8-2 > li { counter-increment: ss_cancellation-8-2; }
+#th_matrix_cancel-2-1 { counter-set: th_matrix_cancel-2-1 0; }
+#th_matrix_cancel-2-1 > li::marker { content: ""counter(th_matrix_cancel-2-1,decimal)"."; }
+#th_matrix_cancel-2-1 > li { counter-increment: th_matrix_cancel-2-1; }
+#ss_cancellation-11-2 { counter-set: ss_cancellation-11-2 0; }
+#ss_cancellation-11-2 > li::marker { content: ""counter(ss_cancellation-11-2,decimal)"."; }
+#ss_cancellation-11-2 > li { counter-increment: ss_cancellation-11-2; }
+#th_trans_props-2-1-2 { counter-set: th_trans_props-2-1-2 0; }
+#th_trans_props-2-1-2 > li::marker { content: ""counter(th_trans_props-2-1-2,decimal)"."; }
+#th_trans_props-2-1-2 > li { counter-increment: th_trans_props-2-1-2; }
+#extracted-webwork-34-1-1-2-1 { counter-set: extracted-webwork-34-1-1-2-1 0; }
+#extracted-webwork-34-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-34-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-34-1-1-2-1 > li { counter-increment: extracted-webwork-34-1-1-2-1; }
+#s_matrix_algebra_ex-2-2-1-2 { counter-set: s_matrix_algebra_ex-2-2-1-2 0; }
+#s_matrix_algebra_ex-2-2-1-2 > li::marker { content: "("counter(s_matrix_algebra_ex-2-2-1-2,lower-alpha)")"; }
+#s_matrix_algebra_ex-2-2-1-2 > li { counter-increment: s_matrix_algebra_ex-2-2-1-2; }
+#s_matrix_algebra_ex-2-4-1-2 { counter-set: s_matrix_algebra_ex-2-4-1-2 0; }
+#s_matrix_algebra_ex-2-4-1-2 > li::marker { content: "("counter(s_matrix_algebra_ex-2-4-1-2,lower-alpha)")"; }
+#s_matrix_algebra_ex-2-4-1-2 > li { counter-increment: s_matrix_algebra_ex-2-4-1-2; }
+#s_matrix_algebra_ex-2-5-1-2 { counter-set: s_matrix_algebra_ex-2-5-1-2 0; }
+#s_matrix_algebra_ex-2-5-1-2 > li::marker { content: "("counter(s_matrix_algebra_ex-2-5-1-2,lower-alpha)")"; }
+#s_matrix_algebra_ex-2-5-1-2 > li { counter-increment: s_matrix_algebra_ex-2-5-1-2; }
+#th_inverse_cancel-2-1-3 { counter-set: th_inverse_cancel-2-1-3 0; }
+#th_inverse_cancel-2-1-3 > li::marker { content: ""counter(th_inverse_cancel-2-1-3,decimal)"."; }
+#th_inverse_cancel-2-1-3 > li { counter-increment: th_inverse_cancel-2-1-3; }
+#th_inverse_cancel-3-1-1 { counter-set: th_inverse_cancel-3-1-1 0; }
+#th_inverse_cancel-3-1-1 > li::marker { content: ""counter(th_inverse_cancel-3-1-1,decimal)"."; }
+#th_inverse_cancel-3-1-1 > li { counter-increment: th_inverse_cancel-3-1-1; }
+#cor_solving_invertible-2-1-3 { counter-set: cor_solving_invertible-2-1-3 0; }
+#cor_solving_invertible-2-1-3 > li::marker { content: ""counter(cor_solving_invertible-2-1-3,decimal)"."; }
+#cor_solving_invertible-2-1-3 > li { counter-increment: cor_solving_invertible-2-1-3; }
+#cor_solving_invertible-3-1-1 { counter-set: cor_solving_invertible-3-1-1 0; }
+#cor_solving_invertible-3-1-1 > li::marker { content: ""counter(cor_solving_invertible-3-1-1,decimal)"."; }
+#cor_solving_invertible-3-1-1 > li { counter-increment: cor_solving_invertible-3-1-1; }
+#eg_invertible_matrices-2-1-1 { counter-set: eg_invertible_matrices-2-1-1 0; }
+#eg_invertible_matrices-2-1-1 > li::marker { content: ""counter(eg_invertible_matrices-2-1-1,decimal)"."; }
+#eg_invertible_matrices-2-1-1 > li { counter-increment: eg_invertible_matrices-2-1-1; }
+#subsec--22-3-2 { counter-set: subsec--22-3-2 0; }
+#subsec--22-3-2 > li::marker { content: ""counter(subsec--22-3-2,decimal)"."; }
+#subsec--22-3-2 > li { counter-increment: subsec--22-3-2; }
+#th_power_rules-2-1-4 { counter-set: th_power_rules-2-1-4 0; }
+#th_power_rules-2-1-4 > li::marker { content: ""counter(th_power_rules-2-1-4,decimal)"."; }
+#th_power_rules-2-1-4 > li { counter-increment: th_power_rules-2-1-4; }
+#extracted-webwork-39-1-1-2-1 { counter-set: extracted-webwork-39-1-1-2-1 0; }
+#extracted-webwork-39-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-39-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-39-1-1-2-1 > li { counter-increment: extracted-webwork-39-1-1-2-1; }
+#s_invertible_matrices_ex-2-2-1-2 { counter-set: s_invertible_matrices_ex-2-2-1-2 0; }
+#s_invertible_matrices_ex-2-2-1-2 > li::marker { content: "("counter(s_invertible_matrices_ex-2-2-1-2,lower-alpha)")"; }
+#s_invertible_matrices_ex-2-2-1-2 > li { counter-increment: s_invertible_matrices_ex-2-2-1-2; }
+#s_invertible_matrices_ex-2-3-1-2 { counter-set: s_invertible_matrices_ex-2-3-1-2 0; }
+#s_invertible_matrices_ex-2-3-1-2 > li::marker { content: "("counter(s_invertible_matrices_ex-2-3-1-2,lower-alpha)")"; }
+#s_invertible_matrices_ex-2-3-1-2 > li { counter-increment: s_invertible_matrices_ex-2-3-1-2; }
+#s_invertible_matrices_ex-2-5-1-2 { counter-set: s_invertible_matrices_ex-2-5-1-2 0; }
+#s_invertible_matrices_ex-2-5-1-2 > li::marker { content: "("counter(s_invertible_matrices_ex-2-5-1-2,lower-alpha)")"; }
+#s_invertible_matrices_ex-2-5-1-2 > li { counter-increment: s_invertible_matrices_ex-2-5-1-2; }
+#s_invertible_matrices_ex-2-6-1-2 { counter-set: s_invertible_matrices_ex-2-6-1-2 0; }
+#s_invertible_matrices_ex-2-6-1-2 > li::marker { content: "("counter(s_invertible_matrices_ex-2-6-1-2,lower-alpha)")"; }
+#s_invertible_matrices_ex-2-6-1-2 > li { counter-increment: s_invertible_matrices_ex-2-6-1-2; }
+#s_invertible_matrices_ex-2-9-1-2 { counter-set: s_invertible_matrices_ex-2-9-1-2 0; }
+#s_invertible_matrices_ex-2-9-1-2 > li::marker { content: "("counter(s_invertible_matrices_ex-2-9-1-2,lower-alpha)")"; }
+#s_invertible_matrices_ex-2-9-1-2 > li { counter-increment: s_invertible_matrices_ex-2-9-1-2; }
+#th_invertibility-2-1-3 { counter-set: th_invertibility-2-1-3 0; }
+#th_invertibility-2-1-3 > li::marker { content: ""counter(th_invertibility-2-1-3,decimal)"."; }
+#th_invertibility-2-1-3 > li { counter-increment: th_invertibility-2-1-3; }
+#d_diagonal_triangular-6-1-3 { counter-set: d_diagonal_triangular-6-1-3 0; }
+#d_diagonal_triangular-6-1-3 > li::marker { content: ""counter(d_diagonal_triangular-6-1-3,decimal)"."; }
+#d_diagonal_triangular-6-1-3 > li { counter-increment: d_diagonal_triangular-6-1-3; }
+#th_invertibility_algorithm-2-1-4 { counter-set: th_invertibility_algorithm-2-1-4 0; }
+#th_invertibility_algorithm-2-1-4 > li::marker { content: ""counter(th_invertibility_algorithm-2-1-4,decimal)"."; }
+#th_invertibility_algorithm-2-1-4 > li { counter-increment: th_invertibility_algorithm-2-1-4; }
+#th_elem_matrices_alg-2-1-4 { counter-set: th_elem_matrices_alg-2-1-4 0; }
+#th_elem_matrices_alg-2-1-4 > li::marker { content: ""counter(th_elem_matrices_alg-2-1-4,decimal)"."; }
+#th_elem_matrices_alg-2-1-4 > li { counter-increment: th_elem_matrices_alg-2-1-4; }
+#cor_left-right_inverse-2-1-4 { counter-set: cor_left-right_inverse-2-1-4 0; }
+#cor_left-right_inverse-2-1-4 > li::marker { content: ""counter(cor_left-right_inverse-2-1-4,decimal)"."; }
+#cor_left-right_inverse-2-1-4 > li { counter-increment: cor_left-right_inverse-2-1-4; }
+#cor_row_equivalence_invertibility-2-1-4 { counter-set: cor_row_equivalence_invertibility-2-1-4 0; }
+#cor_row_equivalence_invertibility-2-1-4 > li::marker { content: ""counter(cor_row_equivalence_invertibility-2-1-4,decimal)"."; }
+#cor_row_equivalence_invertibility-2-1-4 > li { counter-increment: cor_row_equivalence_invertibility-2-1-4; }
+#rm_row_equivalence_props-2-8 { counter-set: rm_row_equivalence_props-2-8 0; }
+#rm_row_equivalence_props-2-8 > li::marker { content: ""counter(rm_row_equivalence_props-2-8,lower-roman)""; }
+#rm_row_equivalence_props-2-8 > li { counter-increment: rm_row_equivalence_props-2-8; }
+#th_det_zero_repeated_row-2-1-3 { counter-set: th_det_zero_repeated_row-2-1-3 0; }
+#th_det_zero_repeated_row-2-1-3 > li::marker { content: ""counter(th_det_zero_repeated_row-2-1-3,decimal)"."; }
+#th_det_zero_repeated_row-2-1-3 > li { counter-increment: th_det_zero_repeated_row-2-1-3; }
+#th_det_row_ops-2-1-4 { counter-set: th_det_row_ops-2-1-4 0; }
+#th_det_row_ops-2-1-4 > li::marker { content: ""counter(th_det_row_ops-2-1-4,decimal)"."; }
+#th_det_row_ops-2-1-4 > li { counter-increment: th_det_row_ops-2-1-4; }
+#ss_det_row_ops-9-2-1-3 { counter-set: ss_det_row_ops-9-2-1-3 0; }
+#ss_det_row_ops-9-2-1-3 > li::marker { content: ""counter(ss_det_row_ops-9-2-1-3,decimal)"."; }
+#ss_det_row_ops-9-2-1-3 > li { counter-increment: ss_det_row_ops-9-2-1-3; }
+#th_invertibility_expanded-2-1-3 { counter-set: th_invertibility_expanded-2-1-3 0; }
+#th_invertibility_expanded-2-1-3 > li::marker { content: ""counter(th_invertibility_expanded-2-1-3,decimal)"."; }
+#th_invertibility_expanded-2-1-3 > li { counter-increment: th_invertibility_expanded-2-1-3; }
+#s_det_ex-2-2-1-1-2 { counter-set: s_det_ex-2-2-1-1-2 0; }
+#s_det_ex-2-2-1-1-2 > li::marker { content: "("counter(s_det_ex-2-2-1-1-2,lower-alpha)")"; }
+#s_det_ex-2-2-1-1-2 > li { counter-increment: s_det_ex-2-2-1-1-2; }
+#s_det_ex-2-8-1-1-4 { counter-set: s_det_ex-2-8-1-1-4 0; }
+#s_det_ex-2-8-1-1-4 > li::marker { content: "("counter(s_det_ex-2-8-1-1-4,lower-alpha)")"; }
+#s_det_ex-2-8-1-1-4 > li { counter-increment: s_det_ex-2-8-1-1-4; }
+#s_det_ex-2-9-1-2 { counter-set: s_det_ex-2-9-1-2 0; }
+#s_det_ex-2-9-1-2 > li::marker { content: "("counter(s_det_ex-2-9-1-2,lower-alpha)")"; }
+#s_det_ex-2-9-1-2 > li { counter-increment: s_det_ex-2-9-1-2; }
+#d_subspace-4-1-5 { counter-set: d_subspace-4-1-5 0; }
+#d_subspace-4-1-5 > li::marker { content: ""counter(d_subspace-4-1-5,lower-roman)""; }
+#d_subspace-4-1-5 > li { counter-increment: d_subspace-4-1-5; }
+#ss_subspace-3-2-1-2 { counter-set: ss_subspace-3-2-1-2 0; }
+#ss_subspace-3-2-1-2 > li::marker { content: ""counter(ss_subspace-3-2-1-2,lower-roman)""; }
+#ss_subspace-3-2-1-2 > li { counter-increment: ss_subspace-3-2-1-2; }
+#ss_subspace-4-2-1-1 { counter-set: ss_subspace-4-2-1-1 0; }
+#ss_subspace-4-2-1-1 > li::marker { content: ""counter(ss_subspace-4-2-1-1,lower-roman)""; }
+#ss_subspace-4-2-1-1 > li { counter-increment: ss_subspace-4-2-1-1; }
+#proc_twostep_proof-2-1-4 { counter-set: proc_twostep_proof-2-1-4 0; }
+#proc_twostep_proof-2-1-4 > li::marker { content: ""counter(proc_twostep_proof-2-1-4,lower-roman)""; }
+#proc_twostep_proof-2-1-4 > li { counter-increment: proc_twostep_proof-2-1-4; }
+#th_subspace_vectorspace-2-1-3 { counter-set: th_subspace_vectorspace-2-1-3 0; }
+#th_subspace_vectorspace-2-1-3 > li::marker { content: ""counter(th_subspace_vectorspace-2-1-3,decimal)"."; }
+#th_subspace_vectorspace-2-1-3 > li { counter-increment: th_subspace_vectorspace-2-1-3; }
+#eg_subspace_alt-2-1-4 { counter-set: eg_subspace_alt-2-1-4 0; }
+#eg_subspace_alt-2-1-4 > li::marker { content: ""counter(eg_subspace_alt-2-1-4,decimal)"."; }
+#eg_subspace_alt-2-1-4 > li { counter-increment: eg_subspace_alt-2-1-4; }
+#eg_subspace_alt-3-1-1 { counter-set: eg_subspace_alt-3-1-1 0; }
+#eg_subspace_alt-3-1-1 > li::marker { content: ""counter(eg_subspace_alt-3-1-1,decimal)"."; }
+#eg_subspace_alt-3-1-1 > li { counter-increment: eg_subspace_alt-3-1-1; }
+#th_nullspace_linsys-2-1-5 { counter-set: th_nullspace_linsys-2-1-5 0; }
+#th_nullspace_linsys-2-1-5 > li::marker { content: ""counter(th_nullspace_linsys-2-1-5,decimal)"."; }
+#th_nullspace_linsys-2-1-5 > li { counter-increment: th_nullspace_linsys-2-1-5; }
+#th_nullspace_linsys-3-1-1 { counter-set: th_nullspace_linsys-3-1-1 0; }
+#th_nullspace_linsys-3-1-1 > li::marker { content: ""counter(th_nullspace_linsys-3-1-1,decimal)"."; }
+#th_nullspace_linsys-3-1-1 > li { counter-increment: th_nullspace_linsys-3-1-1; }
+#cor_matrix_equations-2-1-4 { counter-set: cor_matrix_equations-2-1-4 0; }
+#cor_matrix_equations-2-1-4 > li::marker { content: ""counter(cor_matrix_equations-2-1-4,decimal)"."; }
+#cor_matrix_equations-2-1-4 > li { counter-increment: cor_matrix_equations-2-1-4; }
+#d_tracezero_symmetric_skewsymmetric-5-1-2 { counter-set: d_tracezero_symmetric_skewsymmetric-5-1-2 0; }
+#d_tracezero_symmetric_skewsymmetric-5-1-2 > li::marker { content: ""counter(d_tracezero_symmetric_skewsymmetric-5-1-2,decimal)"."; }
+#d_tracezero_symmetric_skewsymmetric-5-1-2 > li { counter-increment: d_tracezero_symmetric_skewsymmetric-5-1-2; }
+#th_matrix_subspaces-2-1-3 { counter-set: th_matrix_subspaces-2-1-3 0; }
+#th_matrix_subspaces-2-1-3 > li::marker { content: ""counter(th_matrix_subspaces-2-1-3,decimal)"."; }
+#th_matrix_subspaces-2-1-3 > li { counter-increment: th_matrix_subspaces-2-1-3; }
+#rm_span-1-1-3 { counter-set: rm_span-1-1-3 0; }
+#rm_span-1-1-3 > li::marker { content: ""counter(rm_span-1-1-3,decimal)"."; }
+#rm_span-1-1-3 > li { counter-increment: rm_span-1-1-3; }
+#eg_span_2space-2-2 { counter-set: eg_span_2space-2-2 0; }
+#eg_span_2space-2-2 > li::marker { content: ""counter(eg_span_2space-2-2,decimal)"."; }
+#eg_span_2space-2-2 > li { counter-increment: eg_span_2space-2-2; }
+#eg_span_2space-3-1-1 { counter-set: eg_span_2space-3-1-1 0; }
+#eg_span_2space-3-1-1 > li::marker { content: ""counter(eg_span_2space-3-1-1,decimal)"."; }
+#eg_span_2space-3-1-1 > li { counter-increment: eg_span_2space-3-1-1; }
+#th_span-2-1-3 { counter-set: th_span-2-1-3 0; }
+#th_span-2-1-3 > li::marker { content: ""counter(th_span-2-1-3,decimal)"."; }
+#th_span-2-1-3 > li { counter-increment: th_span-2-1-3; }
+#th_span-3-2-2-2 { counter-set: th_span-3-2-2-2 0; }
+#th_span-3-2-2-2 > li::marker { content: ""counter(th_span-3-2-2-2,decimal)"."; }
+#th_span-3-2-2-2 > li { counter-increment: th_span-3-2-2-2; }
+#s_span_independence-3-13-2-1-5 { counter-set: s_span_independence-3-13-2-1-5 0; }
+#s_span_independence-3-13-2-1-5 > li::marker { content: ""counter(s_span_independence-3-13-2-1-5,decimal)"."; }
+#s_span_independence-3-13-2-1-5 > li { counter-increment: s_span_independence-3-13-2-1-5; }
+#s_span_independence-3-13-3-1-1 { counter-set: s_span_independence-3-13-3-1-1 0; }
+#s_span_independence-3-13-3-1-1 > li::marker { content: ""counter(s_span_independence-3-13-3-1-1,decimal)"."; }
+#s_span_independence-3-13-3-1-1 > li { counter-increment: s_span_independence-3-13-3-1-1; }
+#th_lin_ind_finite-2-1-4 { counter-set: th_lin_ind_finite-2-1-4 0; }
+#th_lin_ind_finite-2-1-4 > li::marker { content: ""counter(th_lin_ind_finite-2-1-4,decimal)"."; }
+#th_lin_ind_finite-2-1-4 > li { counter-increment: th_lin_ind_finite-2-1-4; }
+#eg_independence_basic_examples-2-1-3 { counter-set: eg_independence_basic_examples-2-1-3 0; }
+#eg_independence_basic_examples-2-1-3 > li::marker { content: ""counter(eg_independence_basic_examples-2-1-3,decimal)"."; }
+#eg_independence_basic_examples-2-1-3 > li { counter-increment: eg_independence_basic_examples-2-1-3; }
+#proc_linear_independence-2-1-4 { counter-set: proc_linear_independence-2-1-4 0; }
+#proc_linear_independence-2-1-4 > li::marker { content: ""counter(proc_linear_independence-2-1-4,decimal)"."; }
+#proc_linear_independence-2-1-4 > li { counter-increment: proc_linear_independence-2-1-4; }
+#ex_linear_independence-2-1-4 { counter-set: ex_linear_independence-2-1-4 0; }
+#ex_linear_independence-2-1-4 > li::marker { content: ""counter(ex_linear_independence-2-1-4,decimal)"."; }
+#ex_linear_independence-2-1-4 > li { counter-increment: ex_linear_independence-2-1-4; }
+#ex_linear_independence-3-1 { counter-set: ex_linear_independence-3-1 0; }
+#ex_linear_independence-3-1 > li::marker { content: ""counter(ex_linear_independence-3-1,decimal)"."; }
+#ex_linear_independence-3-1 > li { counter-increment: ex_linear_independence-3-1; }
+#th_invertibility_3-2-1-3 { counter-set: th_invertibility_3-2-1-3 0; }
+#th_invertibility_3-2-1-3 > li::marker { content: ""counter(th_invertibility_3-2-1-3,decimal)"."; }
+#th_invertibility_3-2-1-3 > li { counter-increment: th_invertibility_3-2-1-3; }
+#s_span_independence_ex-4-1-2 { counter-set: s_span_independence_ex-4-1-2 0; }
+#s_span_independence_ex-4-1-2 > li::marker { content: "("counter(s_span_independence_ex-4-1-2,lower-alpha)")"; }
+#s_span_independence_ex-4-1-2 > li { counter-increment: s_span_independence_ex-4-1-2; }
+#ex_span_independence_inveribility-2-3 { counter-set: ex_span_independence_inveribility-2-3 0; }
+#ex_span_independence_inveribility-2-3 > li::marker { content: "("counter(ex_span_independence_inveribility-2-3,lower-alpha)")"; }
+#ex_span_independence_inveribility-2-3 > li { counter-increment: ex_span_independence_inveribility-2-3; }
+#s_basis-2-2-1 { counter-set: s_basis-2-2-1 0; }
+#s_basis-2-2-1 > li::marker { content: ""counter(s_basis-2-2-1,decimal)"."; }
+#s_basis-2-2-1 > li { counter-increment: s_basis-2-2-1; }
+#d_basis-3-1-4 { counter-set: d_basis-3-1-4 0; }
+#d_basis-3-1-4 > li::marker { content: ""counter(d_basis-3-1-4,lower-roman)""; }
+#d_basis-3-1-4 > li { counter-increment: d_basis-3-1-4; }
+#ss_bases-5-2-1-5 { counter-set: ss_bases-5-2-1-5 0; }
+#ss_bases-5-2-1-5 > li::marker { content: ""counter(ss_bases-5-2-1-5,decimal)"."; }
+#ss_bases-5-2-1-5 > li { counter-increment: ss_bases-5-2-1-5; }
+#ss_bases-5-3-2 { counter-set: ss_bases-5-3-2 0; }
+#ss_bases-5-3-2 > li::marker { content: ""counter(ss_bases-5-3-2,decimal)"."; }
+#ss_bases-5-3-2 > li { counter-increment: ss_bases-5-3-2; }
+#th_basis_equivalence-2-2 { counter-set: th_basis_equivalence-2-2 0; }
+#th_basis_equivalence-2-2 > li::marker { content: ""counter(th_basis_equivalence-2-2,decimal)"."; }
+#th_basis_equivalence-2-2 > li { counter-increment: th_basis_equivalence-2-2; }
+#proc_basis_onestep-2-1-5 { counter-set: proc_basis_onestep-2-1-5 0; }
+#proc_basis_onestep-2-1-5 > li::marker { content: ""counter(proc_basis_onestep-2-1-5,decimal)"."; }
+#proc_basis_onestep-2-1-5 > li { counter-increment: proc_basis_onestep-2-1-5; }
+#proc_provide_basis-2-1-4 { counter-set: proc_provide_basis-2-1-4 0; }
+#proc_provide_basis-2-1-4 > li::marker { content: ""counter(proc_provide_basis-2-1-4,decimal)"."; }
+#proc_provide_basis-2-1-4 > li { counter-increment: proc_provide_basis-2-1-4; }
+#eg_byinspection_basis-3-1-2 { counter-set: eg_byinspection_basis-3-1-2 0; }
+#eg_byinspection_basis-3-1-2 > li::marker { content: ""counter(eg_byinspection_basis-3-1-2,decimal)"."; }
+#eg_byinspection_basis-3-1-2 > li { counter-increment: eg_byinspection_basis-3-1-2; }
+#s_basis_ex-2-3-1-2 { counter-set: s_basis_ex-2-3-1-2 0; }
+#s_basis_ex-2-3-1-2 > li::marker { content: "("counter(s_basis_ex-2-3-1-2,lower-alpha)")"; }
+#s_basis_ex-2-3-1-2 > li { counter-increment: s_basis_ex-2-3-1-2; }
+#s_basis_ex-2-4-1-2 { counter-set: s_basis_ex-2-4-1-2 0; }
+#s_basis_ex-2-4-1-2 > li::marker { content: "("counter(s_basis_ex-2-4-1-2,lower-alpha)")"; }
+#s_basis_ex-2-4-1-2 > li { counter-increment: s_basis_ex-2-4-1-2; }
+#s_basis_ex-5-1-2 { counter-set: s_basis_ex-5-1-2 0; }
+#s_basis_ex-5-1-2 > li::marker { content: "("counter(s_basis_ex-5-1-2,lower-alpha)")"; }
+#s_basis_ex-5-1-2 > li { counter-increment: s_basis_ex-5-1-2; }
+#ex_basis_matrix_families-2-2 { counter-set: ex_basis_matrix_families-2-2 0; }
+#ex_basis_matrix_families-2-2 > li::marker { content: "("counter(ex_basis_matrix_families-2-2,lower-alpha)")"; }
+#ex_basis_matrix_families-2-2 > li { counter-increment: ex_basis_matrix_families-2-2; }
+#th_basis_dimension-2-2 { counter-set: th_basis_dimension-2-2 0; }
+#th_basis_dimension-2-2 > li::marker { content: ""counter(th_basis_dimension-2-2,decimal)"."; }
+#th_basis_dimension-2-2 > li { counter-increment: th_basis_dimension-2-2; }
+#th_basis_dimension-3-1-1 { counter-set: th_basis_dimension-3-1-1 0; }
+#th_basis_dimension-3-1-1 > li::marker { content: ""counter(th_basis_dimension-3-1-1,decimal)"."; }
+#th_basis_dimension-3-1-1 > li { counter-increment: th_basis_dimension-3-1-1; }
+#proc_dimension-2-1-2 { counter-set: proc_dimension-2-1-2 0; }
+#proc_dimension-2-1-2 > li::marker { content: ""counter(proc_dimension-2-1-2,decimal)"."; }
+#proc_dimension-2-1-2 > li { counter-increment: proc_dimension-2-1-2; }
+#th_basis_contract_expand-2-2 { counter-set: th_basis_contract_expand-2-2 0; }
+#th_basis_contract_expand-2-2 > li::marker { content: ""counter(th_basis_contract_expand-2-2,decimal)"."; }
+#th_basis_contract_expand-2-2 > li { counter-increment: th_basis_contract_expand-2-2; }
+#th_basis_contract_expand-3-1-2 { counter-set: th_basis_contract_expand-3-1-2 0; }
+#th_basis_contract_expand-3-1-2 > li::marker { content: ""counter(th_basis_contract_expand-3-1-2,decimal)"."; }
+#th_basis_contract_expand-3-1-2 > li { counter-increment: th_basis_contract_expand-3-1-2; }
+#th_basis_contract_expand-3-1-2-2-1-5 { counter-set: th_basis_contract_expand-3-1-2-2-1-5 0; }
+#th_basis_contract_expand-3-1-2-2-1-5 > li::marker { content: ""counter(th_basis_contract_expand-3-1-2-2-1-5,lower-roman)""; }
+#th_basis_contract_expand-3-1-2-2-1-5 > li { counter-increment: th_basis_contract_expand-3-1-2-2-1-5; }
+#cor_street_smarts-2-2 { counter-set: cor_street_smarts-2-2 0; }
+#cor_street_smarts-2-2 > li::marker { content: ""counter(cor_street_smarts-2-2,decimal)"."; }
+#cor_street_smarts-2-2 > li { counter-increment: cor_street_smarts-2-2; }
+#cor_street_smarts-2-2-3-1-2 { counter-set: cor_street_smarts-2-2-3-1-2 0; }
+#cor_street_smarts-2-2-3-1-2 > li::marker { content: ""counter(cor_street_smarts-2-2-3-1-2,lower-roman)""; }
+#cor_street_smarts-2-2-3-1-2 > li { counter-increment: cor_street_smarts-2-2-3-1-2; }
+#cor_dimension_subspace-2-2 { counter-set: cor_dimension_subspace-2-2 0; }
+#cor_dimension_subspace-2-2 > li::marker { content: ""counter(cor_dimension_subspace-2-2,decimal)"."; }
+#cor_dimension_subspace-2-2 > li { counter-increment: cor_dimension_subspace-2-2; }
+#cor_dimension_subspace-3-1-1 { counter-set: cor_dimension_subspace-3-1-1 0; }
+#cor_dimension_subspace-3-1-1 > li::marker { content: ""counter(cor_dimension_subspace-3-1-1,decimal)"."; }
+#cor_dimension_subspace-3-1-1 > li { counter-increment: cor_dimension_subspace-3-1-1; }
+#th_dimension_compendium-2-1-3 { counter-set: th_dimension_compendium-2-1-3 0; }
+#th_dimension_compendium-2-1-3 > li::marker { content: ""counter(th_dimension_compendium-2-1-3,decimal)"."; }
+#th_dimension_compendium-2-1-3 > li { counter-increment: th_dimension_compendium-2-1-3; }
+#th_dimension_compendium-2-1-3-6-2-2 { counter-set: th_dimension_compendium-2-1-3-6-2-2 0; }
+#th_dimension_compendium-2-1-3-6-2-2 > li::marker { content: "("counter(th_dimension_compendium-2-1-3-6-2-2,lower-alpha)")"; }
+#th_dimension_compendium-2-1-3-6-2-2 > li { counter-increment: th_dimension_compendium-2-1-3-6-2-2; }
+#extracted-webwork-58-1-1-2-1 { counter-set: extracted-webwork-58-1-1-2-1 0; }
+#extracted-webwork-58-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-58-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-58-1-1-2-1 > li { counter-increment: extracted-webwork-58-1-1-2-1; }
+#extracted-webwork-60-1-1-2-1 { counter-set: extracted-webwork-60-1-1-2-1 0; }
+#extracted-webwork-60-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-60-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-60-1-1-2-1 > li { counter-increment: extracted-webwork-60-1-1-2-1; }
+#s_dimension_ex-3-1-2 { counter-set: s_dimension_ex-3-1-2 0; }
+#s_dimension_ex-3-1-2 > li::marker { content: "("counter(s_dimension_ex-3-1-2,lower-alpha)")"; }
+#s_dimension_ex-3-1-2 > li { counter-increment: s_dimension_ex-3-1-2; }
+#s_dimension_ex-7-1-1-6 { counter-set: s_dimension_ex-7-1-1-6 0; }
+#s_dimension_ex-7-1-1-6 > li::marker { content: "("counter(s_dimension_ex-7-1-1-6,lower-alpha)")"; }
+#s_dimension_ex-7-1-1-6 > li { counter-increment: s_dimension_ex-7-1-1-6; }
+#ex_dimension_matrix_families-2-2 { counter-set: ex_dimension_matrix_families-2-2 0; }
+#ex_dimension_matrix_families-2-2 > li::marker { content: "("counter(ex_dimension_matrix_families-2-2,lower-alpha)")"; }
+#ex_dimension_matrix_families-2-2 > li { counter-increment: ex_dimension_matrix_families-2-2; }
+#th_col_space-2-1-4 { counter-set: th_col_space-2-1-4 0; }
+#th_col_space-2-1-4 > li::marker { content: ""counter(th_col_space-2-1-4,decimal)"."; }
+#th_col_space-2-1-4 > li { counter-increment: th_col_space-2-1-4; }
+#th_fundspaces_rowreduce-2-1-7 { counter-set: th_fundspaces_rowreduce-2-1-7 0; }
+#th_fundspaces_rowreduce-2-1-7 > li::marker { content: ""counter(th_fundspaces_rowreduce-2-1-7,decimal)"."; }
+#th_fundspaces_rowreduce-2-1-7 > li { counter-increment: th_fundspaces_rowreduce-2-1-7; }
+#th_fundspaces_rowreduce-3-1-8 { counter-set: th_fundspaces_rowreduce-3-1-8 0; }
+#th_fundspaces_rowreduce-3-1-8 > li::marker { content: ""counter(th_fundspaces_rowreduce-3-1-8,decimal)"."; }
+#th_fundspaces_rowreduce-3-1-8 > li { counter-increment: th_fundspaces_rowreduce-3-1-8; }
+#proc_fund_spaces-2-1-3 { counter-set: proc_fund_spaces-2-1-3 0; }
+#proc_fund_spaces-2-1-3 > li::marker { content: ""counter(proc_fund_spaces-2-1-3,decimal)"."; }
+#proc_fund_spaces-2-1-3 > li { counter-increment: proc_fund_spaces-2-1-3; }
+#proc_contract_extend-2-2-1-3 { counter-set: proc_contract_extend-2-2-1-3 0; }
+#proc_contract_extend-2-2-1-3 > li::marker { content: ""counter(proc_contract_extend-2-2-1-3,decimal)"."; }
+#proc_contract_extend-2-2-1-3 > li { counter-increment: proc_contract_extend-2-2-1-3; }
+#proc_contract_extend-2-2-2-3 { counter-set: proc_contract_extend-2-2-2-3 0; }
+#proc_contract_extend-2-2-2-3 > li::marker { content: ""counter(proc_contract_extend-2-2-2-3,decimal)"."; }
+#proc_contract_extend-2-2-2-3 > li { counter-increment: proc_contract_extend-2-2-2-3; }
+#th_invertibility_supersized-2-1-3 { counter-set: th_invertibility_supersized-2-1-3 0; }
+#th_invertibility_supersized-2-1-3 > li::marker { content: ""counter(th_invertibility_supersized-2-1-3,decimal)"."; }
+#th_invertibility_supersized-2-1-3 > li { counter-increment: th_invertibility_supersized-2-1-3; }
+#extracted-webwork-63-1-1-2-1 { counter-set: extracted-webwork-63-1-1-2-1 0; }
+#extracted-webwork-63-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-63-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-63-1-1-2-1 > li { counter-increment: extracted-webwork-63-1-1-2-1; }
+#extracted-webwork-64-1-1-2-1 { counter-set: extracted-webwork-64-1-1-2-1 0; }
+#extracted-webwork-64-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-64-1-1-2-1,lower-alpha)")"; }
+#extracted-webwork-64-1-1-2-1 > li { counter-increment: extracted-webwork-64-1-1-2-1; }
+#s_rank_nullity_ex-2-1-2 { counter-set: s_rank_nullity_ex-2-1-2 0; }
+#s_rank_nullity_ex-2-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-2-1-2,lower-alpha)")"; }
+#s_rank_nullity_ex-2-1-2 > li { counter-increment: s_rank_nullity_ex-2-1-2; }
+#s_rank_nullity_ex-3-1-1-2 { counter-set: s_rank_nullity_ex-3-1-1-2 0; }
+#s_rank_nullity_ex-3-1-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-3-1-1-2,lower-alpha)")"; }
+#s_rank_nullity_ex-3-1-1-2 > li { counter-increment: s_rank_nullity_ex-3-1-1-2; }
+#s_rank_nullity_ex-4-1-2 { counter-set: s_rank_nullity_ex-4-1-2 0; }
+#s_rank_nullity_ex-4-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-4-1-2,lower-alpha)")"; }
+#s_rank_nullity_ex-4-1-2 > li { counter-increment: s_rank_nullity_ex-4-1-2; }
+#s_rank_nullity_ex-6-1-2 { counter-set: s_rank_nullity_ex-6-1-2 0; }
+#s_rank_nullity_ex-6-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-6-1-2,lower-alpha)")"; }
+#s_rank_nullity_ex-6-1-2 > li { counter-increment: s_rank_nullity_ex-6-1-2; }
+#s_rank_nullity_ex-8-1-2 { counter-set: s_rank_nullity_ex-8-1-2 0; }
+#s_rank_nullity_ex-8-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-8-1-2,lower-alpha)")"; }
+#s_rank_nullity_ex-8-1-2 > li { counter-increment: s_rank_nullity_ex-8-1-2; }
+#s_rank_nullity_ex-9-1-2 { counter-set: s_rank_nullity_ex-9-1-2 0; }
+#s_rank_nullity_ex-9-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-9-1-2,lower-alpha)")"; }
+#s_rank_nullity_ex-9-1-2 > li { counter-increment: s_rank_nullity_ex-9-1-2; }
+#s_rank_nullity_ex-9-2-1 { counter-set: s_rank_nullity_ex-9-2-1 0; }
+#s_rank_nullity_ex-9-2-1 > li::marker { content: "("counter(s_rank_nullity_ex-9-2-1,lower-alpha)")"; }
+#s_rank_nullity_ex-9-2-1 > li { counter-increment: s_rank_nullity_ex-9-2-1; }
+#s_rank_nullity_ex-10-1-2 { counter-set: s_rank_nullity_ex-10-1-2 0; }
+#s_rank_nullity_ex-10-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-10-1-2,lower-alpha)")"; }
+#s_rank_nullity_ex-10-1-2 > li { counter-increment: s_rank_nullity_ex-10-1-2; }
+#s_rank_nullity_ex-11-1-2 { counter-set: s_rank_nullity_ex-11-1-2 0; }
+#s_rank_nullity_ex-11-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-11-1-2,lower-alpha)")"; }
+#s_rank_nullity_ex-11-1-2 > li { counter-increment: s_rank_nullity_ex-11-1-2; }
+#s_rank_nullity_ex-12-1-2 { counter-set: s_rank_nullity_ex-12-1-2 0; }
+#s_rank_nullity_ex-12-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-12-1-2,lower-alpha)")"; }
+#s_rank_nullity_ex-12-1-2 > li { counter-increment: s_rank_nullity_ex-12-1-2; }
+#ex_invertibility_supersized-2-2 { counter-set: ex_invertibility_supersized-2-2 0; }
+#ex_invertibility_supersized-2-2 > li::marker { content: "("counter(ex_invertibility_supersized-2-2,lower-alpha)")"; }
+#ex_invertibility_supersized-2-2 > li { counter-increment: ex_invertibility_supersized-2-2; }
+</style>
 </head>
 <body id="euclideanvectorspaces" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
@@ -552,7 +1052,8 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence-3" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Span</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#ss_linear_independence" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Linear independence</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence_ex" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#subsec-invertibility-span-and-linear-independence" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Invertibility, span, and linear independence</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence_ex" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -575,12 +1076,9 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rank_nullity.html#ss_fundamental_spaces" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Fundamental spaces of matrices</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rank_nullity.html#ss_expand_contract" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Contracting and expanding to bases</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_rank_nullity.html#s_rank_nullity_ex" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rank_nullity.html#ss_fund_spaces_inv_th" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Fundamental spaces and invertibility</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_rank_nullity.html#s_rank_nullity_ex" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_isom.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Isomorphisms</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_isom.html#ss_isomorphisms" class="internal"><span class="codenumber">4.6.1</span> <span class="title">Isomorphisms</span></a></div></li></ul>
 </li>
 </ul>
 </li>
@@ -646,7 +1144,7 @@ AB=I\text{ and } AC=I \amp\implies  AB=AC\\
 </h4>
 <div class="para logical" id="th_inverse_cancel-2-1">
 <div class="para">Suppose <span class="process-math">\(Q\)</span> is an invertible <span class="process-math">\(n\times n\)</span> matrix.</div>
-<ol class="decimal">
+<ol class="decimal" id="th_inverse_cancel-2-1-3">
 <li id="th_inverse_cancel-2-1-3-1">
 <span class="heading"><span class="title">Left-cancellation.</span></span><div class="para logical" id="th_inverse_cancel-2-1-3-1-2">
 <div class="para">Given <span class="process-math">\(n\times r\)</span> matrices <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{,}\)</span> we have</div>
@@ -668,7 +1166,7 @@ XQ=YQ \iff X=Y\text{.}
 </div>
 </li>
 </ol>
-</div></article><details id="th_inverse_cancel-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_inverse_cancel-3-1"><ol class="decimal">
+</div></article><details id="th_inverse_cancel-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_inverse_cancel-3-1"><ol class="decimal" id="th_inverse_cancel-3-1-1">
 <li id="th_inverse_cancel-3-1-1-1"><div class="para logical" id="th_inverse_cancel-3-1-1-1-1">
 <div class="para">We prove both implications of <span class="process-math">\(QX=QY \iff X=Y\)</span> separately. The reverse implication (<span class="process-math">\(\Leftarrow\)</span>) is obvious:</div>
 <div class="displaymath process-math">
@@ -693,7 +1191,7 @@ QX=QY \amp \implies Q^{-1}(QX)=Q^{-1}(QY) \amp (Q \text{ inv.})\\
 </h4>
 <div class="para logical" id="cor_solving_invertible-2-1">
 <div class="para">Suppose <span class="process-math">\(Q\)</span> is an invertible <span class="process-math">\(n\times n\)</span> matrix.</div>
-<ol class="decimal">
+<ol class="decimal" id="cor_solving_invertible-2-1-3">
 <li id="cor_solving_invertible-2-1-3-1"><div class="para logical" id="cor_solving_invertible-2-1-3-1-1">
 <div class="para">If <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> are <span class="process-math">\(n\times r\)</span> matrices, then</div>
 <div class="displaymath process-math">
@@ -711,7 +1209,7 @@ XQ=Y \iff X=YQ^{-1}\text{.}
 </div>
 </div></li>
 </ol>
-</div></article><details id="cor_solving_invertible-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="cor_solving_invertible-3-1"><ol class="decimal">
+</div></article><details id="cor_solving_invertible-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="cor_solving_invertible-3-1"><ol class="decimal" id="cor_solving_invertible-3-1-1">
 <li id="cor_solving_invertible-3-1-1-1"><div class="para logical" id="cor_solving_invertible-3-1-1-1-1">
 <div class="para">We have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_inverse_cancel.html" id="cor_solving_invertible-3-1-1-1-1-1">
@@ -735,7 +1233,7 @@ XQ=Y \amp \iff XQQ^{-1}=YQ^{-1} \amp (\knowl{./knowl/xref/th_inverse_cancel.html
 <article class="example example-like" id="eg_invertible_matrices"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Invertible matrices.</span>
 </h4>
-<div class="para logical" id="eg_invertible_matrices-2-1"><ol class="decimal">
+<div class="para logical" id="eg_invertible_matrices-2-1"><ol class="decimal" id="eg_invertible_matrices-2-1-1">
 <li id="eg_invertible_matrices-2-1-1-1"><div class="para" id="eg_invertible_matrices-2-1-1-1-1">Identity matrices are invertible, and in fact we have <span class="process-math">\(I^{-1}=I\text{,}\)</span> as witnessed by the fact that <span class="process-math">\(II=I\text{.}\)</span>
 </div></li>
 <li id="eg_invertible_matrices-2-1-1-2"><div class="para logical" id="eg_invertible_matrices-2-1-1-2-1">
@@ -815,7 +1313,7 @@ AB=\boldzero \amp\implies A^{-1}AB=\boldzero \\
 <span class="type">Sage example</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Invertible matrices.</span>
 </h4></summary><article class="project project-like knowl__content"> <div class="para logical" id="subsec--16-2">
 <div class="para">Sage has a number of useful tools related to invertibility. The boolean function <code class="code-inline tex2jax_ignore">is_invertible()</code> tests for invertibility, and the method <code class="code-inline tex2jax_ignore">inverse()</code> computes the inverse of an invertible matrix. Below we generate a random matrix with rational coefficients, test whether it is invertible, and compute its inverse if it is invertible. The <code class="code-inline tex2jax_ignore">density=0.5</code> ensures that roughly half of the matrix entries are zero; and this in turn increases the likelihood that the matrix is singular, for reasons that will become somewhat clearer later.</div>
-<ul class="disc">
+<ul class="disc" id="subsec--16-2-4">
 <li id="subsec--16-2-4-1"><div class="para" id="subsec--16-2-4-1-1">Evaluate the Sage cell below multiple times.</div></li>
 <li id="subsec--16-2-4-2"><div class="para" id="subsec--16-2-4-2-1">When the matrix is invertible, verify that <span class="process-math">\(AA^{-1}=A^{-1}A=I\text{.}\)</span> If you like, use the blank Sage cell to compute <span class="process-math">\(AA^{-1}\)</span> and <span class="process-math">\(A^{-1}A\text{.}\)</span>
 </div></li>
@@ -882,7 +1380,7 @@ C(AB)\amp =\amp (B^{-1}A^{-1})AB=B^{-1}A^{-1}AB=B^{-1}IB=B^{-1}B=I\\
 </h4>
 <div class="para" id="subsec--22-1">Whenever confronted with a logical implication of the form <span class="process-math">\(\mathcal{P}\implies\mathcal{Q}\text{,}\)</span> where <span class="process-math">\(\mathcal{P}\)</span> and <span class="process-math">\(\mathcal{Q}\)</span> denote arbitrary propositions, you should always ask whether the implication “goes the other way”. In other words, does the converse implication  <span class="process-math">\(\mathcal{Q}\implies \mathcal{P} \)</span> also hold?</div> <div class="para" id="subsec--22-2">The answer with regard to the implication <a href="s_invertible_matrices.html#eq_inv_implies_prod" class="xref" data-knowl="./knowl/xref/eq_inv_implies_prod.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.3.2">(3.3.2)</a> is yes, though the proof of this is more difficult then you think. (See <a href="s_invertibility_theorem.html#cor_inv_prod_eq" class="xref" data-knowl="./knowl/xref/cor_inv_prod_eq.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 3.4.16: Invertibility of product equivalence">Corollary 3.4.16</a>.)</div> <div class="para logical" id="subsec--22-3">
 <div class="para">The following argument is a common <em class="emphasis">invalid</em> proof of the reverse implication:</div>
-<ol class="decimal">
+<ol class="decimal" id="subsec--22-3-2">
 <li id="subsec--22-3-2-1"><div class="para" id="subsec--22-3-2-1-1">Assume <span class="process-math">\(AB\)</span> is invertible.</div></li>
 <li id="subsec--22-3-2-2"><div class="para" id="subsec--22-3-2-2-1">Then <span class="process-math">\(AB\)</span> has an inverse matrix.</div></li>
 <li id="subsec--22-3-2-3"><div class="para" id="subsec--22-3-2-3-1">Then the inverse of <span class="process-math">\(AB\)</span> is <span class="process-math">\(B^{-1}A^{-1}\text{.}\)</span>
@@ -999,7 +1497,7 @@ show(B^2-3*B+33)
 </h4>
 <div class="para logical" id="th_power_rules-2-1">
 <div class="para">The following properties hold for all matrices <span class="process-math">\(A, B\text{,}\)</span> all scalars <span class="process-math">\(c\in \R\text{,}\)</span> and all integers <span class="process-math">\(r,s\in\Z\)</span> for which the given expression makes sense.</div>
-<ol class="decimal">
+<ol class="decimal" id="th_power_rules-2-1-4">
 <li id="th_power_rules-2-1-4-1"><div class="para" id="th_power_rules-2-1-4-1-1"><span class="process-math">\(\displaystyle A^{r+s}=A^rA^s\)</span></div></li>
 <li id="th_power_rules-2-1-4-2"><div class="para" id="th_power_rules-2-1-4-2-1"><span class="process-math">\(\displaystyle (A^r)^s=A^{rs}\)</span></div></li>
 <li id="th_power_rules-2-1-4-3"><div class="para" id="th_power_rules-2-1-4-3-1"><span class="process-math">\(\displaystyle (cA)^r=c^rA^r\)</span></div></li>
@@ -1069,7 +1567,7 @@ A^T(A^{-1})^T\amp =\left(A^{-1}A\right)^T \amp (\knowl{./knowl/xref/th_trans_pro
 <div class="para logical" id="extracted-webwork-37-1-1-1">
 <div class="para">If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are invertible <span class="process-math">\(n\times n\)</span> matrices, then the inverse of <span class="process-math">\(A+B\)</span> is <span class="process-math">\(A^{-1}+B^{-1}\text{.}\)</span>
 </div>
-<ul class="square">
+<ul class="square" id="extracted-webwork-37-1-1-1-6">
 <li id="extracted-webwork-37-1-1-1-6-1"><div class="para" id="p-derived-extracted-webwork-37-1-1-1-6-1"></div></li>
 <li id="extracted-webwork-37-1-1-1-6-2"><div class="para" id="extracted-webwork-37-1-1-1-6-2-1">True</div></li>
 <li id="extracted-webwork-37-1-1-1-6-3"><div class="para" id="extracted-webwork-37-1-1-1-6-3-1">False</div></li>
@@ -1108,7 +1606,7 @@ AX(D+BX)^{-1} = C \amp \Rightarrow AX = C(D+BX) = CD + CBX \\
 <div id="webwork-39" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="39" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/Rochester/setLinearAlgebra4InverseMatrix/ur_Ch2_1_4.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
 <div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-39')">Activate</button></div>
 <div class="problem-contents">
-<div class="para" id="extracted-webwork-39-1-1-1">Are the following matrices invertible?</div> <div class="para logical" id="extracted-webwork-39-1-1-2"><ol class="lower-alpha">
+<div class="para" id="extracted-webwork-39-1-1-1">Are the following matrices invertible?</div> <div class="para logical" id="extracted-webwork-39-1-1-2"><ol class="lower-alpha" id="extracted-webwork-39-1-1-2-1">
 <li id="extracted-webwork-39-1-1-2-1-1"><div class="para" id="extracted-webwork-39-1-1-2-1-1-1"><span class="process-math">\(\displaystyle \left[\begin{array}{cc}
 -16 \amp 7\cr
 0 \amp 0
@@ -1181,26 +1679,26 @@ c_{21} \amp  c_{22}
 </div>
 </div></article></article><article class="subexercises" id="s_invertible_matrices_ex-2"><h4 class="heading"><span class="title">Written Exercises</span></h4>
 <article class="exercise exercise-like" id="s_invertible_matrices_ex-2-2"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
-<div class="para" id="s_invertible_matrices_ex-2-2-1-1">For each matrix either provide an inverse or show the matrix is not invertible. Justify your answer.</div> <ol class="lower-alpha">
+<div class="para" id="s_invertible_matrices_ex-2-2-1-1">For each matrix either provide an inverse or show the matrix is not invertible. Justify your answer.</div> <ol class="lower-alpha" id="s_invertible_matrices_ex-2-2-1-2">
 <li id="s_invertible_matrices_ex-2-2-1-2-1"><div class="para" id="s_invertible_matrices_ex-2-2-1-2-1-1"><span class="process-math">\(\displaystyle A=\begin{amatrix}[rr]1\amp 4\\ -2\amp -7  \end{amatrix}\)</span></div></li>
 <li id="s_invertible_matrices_ex-2-2-1-2-2"><div class="para" id="s_invertible_matrices_ex-2-2-1-2-2-1"><span class="process-math">\(\displaystyle A=\begin{amatrix}[rr] 2\amp -1 \\ 1/2 \amp -1/4  \end{amatrix}\)</span></div></li>
 <li id="s_invertible_matrices_ex-2-2-1-2-3"><div class="para" id="s_invertible_matrices_ex-2-2-1-2-3-1">
 <span class="process-math">\(A=p\left( \begin{amatrix}[rr] 1\amp -2 \\ -2 \amp 0  \end{amatrix}\right)\text{,}\)</span> where <span class="process-math">\(p(x)=x^2+x+1\text{.}\)</span>
 </div></li>
 </ol></article><article class="exercise exercise-like" id="s_invertible_matrices_ex-2-3"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
-<div class="para" id="s_invertible_matrices_ex-2-3-1-1">Each <span class="process-math">\(A\)</span> below is invertible. Find <span class="process-math">\(A^{-1}\)</span> by guess and check. You may want to use the row or column method of matrix multiplication to justify your answer.</div> <ol class="lower-alpha">
+<div class="para" id="s_invertible_matrices_ex-2-3-1-1">Each <span class="process-math">\(A\)</span> below is invertible. Find <span class="process-math">\(A^{-1}\)</span> by guess and check. You may want to use the row or column method of matrix multiplication to justify your answer.</div> <ol class="lower-alpha" id="s_invertible_matrices_ex-2-3-1-2">
 <li id="s_invertible_matrices_ex-2-3-1-2-1"><div class="para" id="s_invertible_matrices_ex-2-3-1-2-1-1"><span class="process-math">\(\displaystyle A=\begin{amatrix}[ccc]1\amp 0\amp 0\\ 0\amp 0\amp 1\\ 0\amp 1\amp 0  \end{amatrix}\)</span></div></li>
 <li id="s_invertible_matrices_ex-2-3-1-2-2"><div class="para" id="s_invertible_matrices_ex-2-3-1-2-2-1"><span class="process-math">\(\displaystyle A=\begin{amatrix}[rrr]0\amp 0\amp 1 \\0 \amp -1 \amp 0 \\ -1 \amp 0 \amp 0   \end{amatrix}\)</span></div></li>
 <li id="s_invertible_matrices_ex-2-3-1-2-3"><div class="para" id="s_invertible_matrices_ex-2-3-1-2-3-1"><span class="process-math">\(\displaystyle A=\begin{amatrix}[rrr] 1 \amp 0\amp 0\\ 0\amp 1\amp 2 \\ 0\amp 0\amp 1  \end{amatrix}\)</span></div></li>
 </ol></article><article class="exercise exercise-like" id="s_invertible_matrices_ex-2-4"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
 <div class="para" id="s_invertible_matrices_ex-2-4-1-1">Suppose <span class="process-math">\(A\)</span> is an invertible matrix. Prove: for any <em class="emphasis">nonzero</em> <span class="process-math">\(c\in\R\)</span> the matrix <span class="process-math">\(cA\)</span> is invertible.</div></article><article class="exercise exercise-like" id="s_invertible_matrices_ex-2-5"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
 <div class="para" id="s_invertible_matrices_ex-2-5-1-1">Assume <span class="process-math">\(A\)</span> is a square <span class="process-math">\(n\times n\)</span> matrix with <span class="process-math">\(n\geq 2\text{.}\)</span>
-</div> <ol class="lower-alpha">
+</div> <ol class="lower-alpha" id="s_invertible_matrices_ex-2-5-1-2">
 <li id="s_invertible_matrices_ex-2-5-1-2-1"><div class="para" id="s_invertible_matrices_ex-2-5-1-2-1-1">Prove: if <span class="process-math">\(A\)</span> has two identical columns, then <span class="process-math">\(A\)</span> is not invertible.</div></li>
 <li id="s_invertible_matrices_ex-2-5-1-2-2"><div class="para" id="s_invertible_matrices_ex-2-5-1-2-2-1">Prove: if <span class="process-math">\(A\)</span> has a row that is a scalar multiple of another row, then <span class="process-math">\(A\)</span> is not invertible.</div></li>
 </ol>
 <div class="solutions"><details id="s_invertible_matrices_ex-2-5-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="s_invertible_matrices_ex-2-5-2-1">Use the column and/or row method of matrix multiplication to show directly that <span class="process-math">\(A\)</span> cannot have an inverse matrix.</div></div></details></div></article><article class="exercise exercise-like" id="s_invertible_matrices_ex-2-6"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
-<div class="para" id="s_invertible_matrices_ex-2-6-1-1">Find all <em class="emphasis">invertible</em> matrices <span class="process-math">\(A\)</span> satisfying the given equation, or show there is no such <span class="process-math">\(A\text{.}\)</span> Justify your answer.</div> <ol class="lower-alpha">
+<div class="para" id="s_invertible_matrices_ex-2-6-1-1">Find all <em class="emphasis">invertible</em> matrices <span class="process-math">\(A\)</span> satisfying the given equation, or show there is no such <span class="process-math">\(A\text{.}\)</span> Justify your answer.</div> <ol class="lower-alpha" id="s_invertible_matrices_ex-2-6-1-2">
 <li id="s_invertible_matrices_ex-2-6-1-2-1"><div class="para" id="s_invertible_matrices_ex-2-6-1-2-1-1"><span class="process-math">\(A^5=\boldzero_{n\times n}\text{.}\)</span></div></li>
 <li id="s_invertible_matrices_ex-2-6-1-2-2"><div class="para" id="s_invertible_matrices_ex-2-6-1-2-2-1"><span class="process-math">\(A^{-3}=A^{-4}\text{.}\)</span></div></li>
 <li id="s_invertible_matrices_ex-2-6-1-2-3"><div class="para" id="s_invertible_matrices_ex-2-6-1-2-3-1"><span class="process-math">\(\displaystyle A^2-3A=\boldzero_{n\times n}\)</span></div></li>
@@ -1211,7 +1709,7 @@ c_{21} \amp  c_{22}
 \end{bmatrix}\text{.}\)</span> Find a formula for <span class="process-math">\(A^r\text{,}\)</span> where <span class="process-math">\(r\geq 1\)</span> is an integer. Justify your answer using a proof by induction.</div></article><article class="exercise exercise-like" id="s_invertible_matrices_ex-2-8"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
 <div class="para" id="s_invertible_matrices_ex-2-8-1-1">Let <span class="process-math">\(A=[1]_{n\times n}\text{,}\)</span> the <span class="process-math">\(n\times n\)</span> matrix consisting of all ones. Find a formula for <span class="process-math">\(A^r\text{,}\)</span> where <span class="process-math">\(r\geq 1\)</span> is an integer. Justify your answer using a proof by induction.</div></article><article class="exercise exercise-like" id="s_invertible_matrices_ex-2-9"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
 <div class="para" id="s_invertible_matrices_ex-2-9-1-1">Let <span class="process-math">\(p(x)=x^2-5x+c\text{,}\)</span> where <span class="process-math">\(c\in \R\)</span> is some fixed scalar. Suppose <span class="process-math">\(A\)</span> is an <span class="process-math">\(n\times n\)</span> matrix satisfying <span class="process-math">\(p(A)=\boldzero_{n\times n}\text{.}\)</span>
-</div> <ol class="lower-alpha">
+</div> <ol class="lower-alpha" id="s_invertible_matrices_ex-2-9-1-2">
 <li id="s_invertible_matrices_ex-2-9-1-2-1"><div class="para" id="s_invertible_matrices_ex-2-9-1-2-1-1">Prove: if <span class="process-math">\(c\ne 0\text{,}\)</span> then <span class="process-math">\(A\)</span> is invertible.</div></li>
 <li id="s_invertible_matrices_ex-2-9-1-2-2">
 <div class="para" id="s_invertible_matrices_ex-2-9-1-2-2-1">Suppose further that <span class="process-math">\(A\)</span> is not a scalar multiple of <span class="process-math">\(I_n\text{.}\)</span>
