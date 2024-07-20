@@ -565,7 +565,7 @@
             </p>
           </solution>
         </example>
-        <example xml:base="eg_positive_reals">
+        <example xml:id="eg_positive_reals">
           <title>Vector space of positive reals</title>
           <notation>
             <usage><m>\R_{&gt; 0}</m></usage>

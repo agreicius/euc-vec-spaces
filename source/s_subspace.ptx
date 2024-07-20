@@ -429,7 +429,7 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
     </li>
     <li>
       <p>
-        Let <m>\boldx_p</m> satisfy <xref ref="eq_null_linsys"/>. We show that 
+        Let <m>\boldx_p</m> satisfy <xref ref="eq_nullspace_linsys"/>. We show that 
         <me>
           S=\boldx_p+\NS A
         </me>

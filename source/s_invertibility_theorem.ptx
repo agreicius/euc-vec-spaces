@@ -402,37 +402,41 @@
     <p>
       Let <m>A=[a_{ij}]</m> be an <m>n\times n</m> matrix.
       The following statements are equivalent.
-    </p>
       <ol>
-        <li>
+        <li xml:id="inv_statement_def">
           <p>
             <m>A</m> is invertible.
           </p>
         </li>
 
-        <li>
+        <li xml:id="inv_statement_unique_sol">
           <p>
-            The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a <em>unique solution</em> for <em>any</em> column vector  <m>\boldb</m>.
+            The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a <em>unique solution</em> for any <m>\boldb\in \R^n</m>.
           </p>
         </li>
-        <li>
+        <li xml:id="inv_statement_exists_sol">
           <p>
-            The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}</me> has a <em>unique solution</em>: namely, <m>\boldx=\boldzero_{n\times 1}</m>.
+            The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a solution for any <m>\boldb\in \R^n</m>.
           </p>
         </li>
-        <li>
+        <li xml:id="inv_statement_trivial_sol">
+          <p>
+            The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}</me> has a unique solution: namely, <m>\boldx=\boldzero_{n\times 1}</m>.
+          </p>
+        </li>
+        <li xml:id="inv_statement_row_equiv">
           <p>
             <m>A</m> is row equivalent to <m>I_n</m>,
             the <m>n\times n</m> identity matrix.
           </p>
         </li>
-        <li>
+        <li xml:id="inv_statement_prod_elems">
           <p>
             <m>A</m> is a product of elementary matrices.
           </p>
         </li>
       </ol>
-
+    </p>
   </statement>
   <proof>
     <p>

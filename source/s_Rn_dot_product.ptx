@@ -207,7 +207,7 @@
                 </case>
             </proof>
           </theorem>
-          <example xml:base="eg_weights_positive">
+          <example xml:id="eg_weights_positive">
             <title>Why the weights must be positive</title>
             <statement>
               <p>

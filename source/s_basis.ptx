@@ -434,7 +434,7 @@
 			</statement>
 		</algorithm>
 
-		<example xml:base="eg_byinspection_R5">
+		<example xml:id="eg_byinspection_R5">
 			<title>By-inspection basis technique</title>
 			<statement>
 				<p>

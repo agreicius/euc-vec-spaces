@@ -111,7 +111,7 @@
 <p>
 Even when we do not have a standard basis at our disposal, there are many situations when we can produce a basis of a space by inspection, allowing us to then easily compute the dimension. 
 </p>
-<example xml:base="eg_dim_R5">
+<example xml:id="eg_dim_R5">
   <title>Dimension of subspace</title>
   
   <statement>
@@ -265,7 +265,7 @@ Even when we do not have a standard basis at our disposal, there are many situat
       </p>
     </proof>
   </corollary>
-<example xml:base="eg_infinite_dim">
+<example xml:id="eg_infinite_dim">
   <title>Infinite dimensional space</title>
   <statement>
     <p>
@@ -339,7 +339,7 @@ Even when we do not have a standard basis at our disposal, there are many situat
 <subsection>
   <title>Further properties of dimension</title>
 <p>
-The <q>contracting and expanding</q> theorem below is very useful theoretical consequence of <xref ref="th_basis_dimension"/>. It allows us to construct a customized basis from a given set <m>S</m>. This method is used prominently in the proof of the <xref ref="th_rank-nullity" text="custom">rank-nullity theorem </xref>.
+The <q>contracting and expanding</q> theorem below is a very useful theoretical consequence of <xref ref="th_basis_dimension"/>. It allows us to construct a customized basis from a given set <m>S</m>. This method is used prominently in the proof of the <xref ref="th_rank-nullity" text="custom">rank-nullity theorem </xref>.
 </p>
 <theorem xml:id="th_basis_contract_expand">
   <title>Contracting and expanding to bases</title>
@@ -370,7 +370,7 @@ The <q>contracting and expanding</q> theorem below is very useful theoretical co
           Assume <m>\Span S=V</m>. Let <m>S'</m> be a subset of <m>S</m> of <em>minimal cardinality</em> such that <m>\Span S'</m> is still equal to <m>V</m>. Such a set is guaranteed to exist: since <m>S</m> is finite, it has a finite number of subsets; of these subsets some will span, others will not; of the subsets that do span, there will be one (or more) that has the least number of elements.
           </p>
           <p>
-            We claim that such a spanning subset <m>S'</m> of minimal cardinality is linearly independent, and hence is a basis for <m>V</m>, as desired. We give a proof by contradiction. Suppose <m>S'</m> is linearly dependent. Then some element of <m>S'</m>, call it <m>\boldv_0</m>, can be expressed as a linear combination of the other elements (<xref ref="rm_linear_independence"/>). Then in terms of span, the element <m>\boldv_0</m> is <q>redundant</q>. In other words, if we let <m>S''=S'-\{\boldv_0\}</m>, the set obtained by <q>throwing out</q> <m>\boldv_0</m>, then we have <m>\Span S''=\Span S'=V</m>. Since <m>\val{S''} &lt; \val{S}</m>, this contradicts our choice of <m>S'</m> as a spanning set of minimal cardinality. We conclude that <m>S'</m> is linearly independent, completing the proof.
+            We claim that such a spanning subset <m>S'</m> of minimal cardinality is linearly independent, and hence is a basis for <m>V</m>, as desired. We give a proof by contradiction. Suppose, by contradiction, that <m>S'</m> is linearly dependent. It follows that some element of <m>S'</m>, call it <m>\boldv_0</m>, can be expressed as a linear combination of the other elements (<xref ref="th_lin_ind_finite"/>). This means that the element <m>\boldv_0</m> is <q>redundant</q> with respect to span. In other words, if we let <m>S''=S'-\{\boldv_0\}</m>, the set obtained by <q>throwing out</q> <m>\boldv_0</m>, then we have <m>\Span S''=\Span S'=V</m>. Since <m>\val{S''} &lt; \val{S}</m>, this contradicts our choice of <m>S'</m> as a spanning set of minimal cardinality. We conclude that <m>S'</m> is linearly independent, completing the proof.
           </p>
         </li>
         <li>

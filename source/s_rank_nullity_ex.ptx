@@ -17,20 +17,7 @@
     </exercise>
 
 
-    <exercise>
-      <!-- compute rank and nullity -->
-      <webwork source="Library/Rochester/setLinearAlgebra10Bases/ur_la_10_22.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- computate rank and nullity -->
-      <webwork source="Library/Hope/Multi1/04-02-Kernel-image/Ker_im_12.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- computate rank and nullity -->
-      <webwork source="Library/Mizzou/Matrix_Theory/HW_4/prob_3.pg" />
-    </exercise>
+    
 </subexercises>
 
   <exercise>
@@ -311,7 +298,7 @@
       </p>
     </statement>
   </exercise>
-  <exercise>
+  <!-- <exercise>
     <statement>
       <p>
         Suppose <m>A</m> and <m>B</m> are row equivalent <m>m\times n</m> matrices. For each <m>1\leq j\leq n</m> let <m>\bolda_j</m> and <m>\boldb_j</m> be the <m>j</m>-th columns of <m>A</m> and <m>B</m>, respectively.
@@ -325,8 +312,9 @@
         By <xref ref="cor_row_equivalence_invertibility"/> there is an invertible <m>Q</m> such that <m>QA=B</m>. Let <m>A'</m> and <m>B'</m> be the submatrices of <m>A</m> and <m>B</m> obtained by taking columns <m>i_1, i_2, \dots, i_r</m>. Show that we still have <m>QA'=B'</m> and relate linear independence of the columns to solutions of the matrix equations <m>A'\boldx=\boldzero</m> and <m>B'\boldx=\boldzero</m>.
        </p>
     </hint>
-  </exercise>
-  <exercise>
+  </exercise> -->
+  <exercise xml:id="ex_invertibility_supersized">
+    <title>Invertibility theorem</title>
     <statement>
       <p>
         Prove <xref ref="th_invertibility_supersized"/> as follows.
@@ -334,17 +322,17 @@
       <ol>
         <li>
           <p>
-            First show that all three statements of (13) are equivalent, and that all three statements of (14) are equivalent. (Use <xref ref="th_dimension_compendium"/>.)
+            First show that all three statements of <xref ref="inv4_statement_cols" text="global"/> are equivalent, and that all three statements of <xref ref="inv4_statement_rows" text="global"/> are equivalent. (Use <xref ref="th_dimension_compendium"/>.)
           </p>
         </li>
         <li>
           <p>
-            Show that statements (8)-(14) are equivalent with the help of <xref ref="th_rank_nullity_matrix"/>.
+            Show that statements <xref first="inv4_statement_nullspace" last="inv4_statement_rows" text="global"/> are equivalent with the help of <xref ref="th_rank_nullity_matrix"/>.
           </p>
         </li>
         <li>
           <p>
-            Choose a statement from (1)-(7) that can be easily shown to be equivalent to one of the statements from (8)-(14).
+            Choose a statement from <xref first="inv4_statement_def" last="inv4_statement_det" text="global"/> that can be easily shown to be equivalent to one of the statements from <xref first="inv4_statement_nullspace" last="inv4_statement_rows" text="global"/>.
           </p>
         </li>
       </ol>

@@ -245,7 +245,7 @@
       </statement>
     </exercise>
   </exercisegroup>
-  <exercise>
+  <exercise xml:id="ex_th_inv_exists_sol">
     <statement>
       <p>
         According to Statement (2) of the invertibility theorem, a matrix <m>A</m> is invertible if and only if for all column vectors <m>\boldb</m> the matrix equation <m>A\boldx=\boldb</m> has a <em>unique</em> solution. Show that we can add the following, weaker-looking version of (2) to our list of equivalent statements:

@@ -868,55 +868,54 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
   </proof>
 </theorem>
 <p>
-  We end this section (and chapter) by adding the results of <xref ref="th_inv_iff_det"/> and one of our homework exercises to our invertibility theorem.
+  We end this section and chapter with a slight expansion of our invertibility theorem. The equivalence of <xref ref="inv2_statement_det">statement</xref> is a direct consequence of <xref ref="th_inv_iff_det"/>. The equivalence of the equivalence of <xref ref="inv2_statement_exists_sol">statement</xref> was given earlier as an exercise. (See <xref ref="ex_th_inv_exists_sol"/>.) 
 </p>
 <theorem xml:id="th_invertibility_expanded">
-  <title>Invertibility theorem (extended cut)</title>
+  <title>Invertibility theorem</title>
   <statement>
     <p>
       Let <m>A=</m> be an <m>n\times n</m> matrix.
       The following statements are equivalent.
-    </p>
       <ol>
-        <li>
+        <li xml:id="inv2_statement_def">
           <p>
             <m>A</m> is invertible.
           </p>
         </li>
 
-        <li>
+        <li xml:id="inv2_statement_unique_sol">
           <p>
-            The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a <em>unique solution</em> for <em>any</em> column vector  <m>\boldb</m>.
+            The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a unique solution for any <m>\boldb\in \R^n</m>.
           </p>
         </li>
-        <li>
+        <li xml:id="inv2_statement_exists_sol">
           <p>
-            The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a solution for <em>any</em> column vector  <m>\boldb</m>.
+            The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a solution for any <m>\boldb\in \R^n</m>.
           </p>
         </li>
-        <li>
+        <li xml:id="inv2_statement_trivial_sol">
           <p>
-            The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}</me> has a <em>unique solution</em>: namely, <m>\boldx=\boldzero_{n\times 1}</m>.
+            The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}</me> has a unique solution: namely, <m>\boldx=\boldzero_{n\times 1}</m>.
           </p>
         </li>
-        <li>
+        <li xml:id="inv2_statement_row_equiv">
           <p>
             <m>A</m> is row equivalent to <m>I_n</m>,
             the <m>n\times n</m> identity matrix.
           </p>
         </li>
-        <li>
+        <li xml:id="inv2_statement_prod_elems">
           <p>
             <m>A</m> is a product of elementary matrices.
           </p>
         </li>
-        <li>
+        <li xml:id="inv2_statement_det">
           <p>
             <m>\det A\ne 0</m>.
           </p>
         </li>
       </ol>
-
+    </p>
   </statement>
 </theorem>
 </subsection>

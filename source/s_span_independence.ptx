@@ -501,7 +501,6 @@
       <statement>
         <p>
           Let <m>V</m> be a vector space, and let <m>S</m> be a subset.
-        </p>
         <ol>
           <li>
             <p>
@@ -526,6 +525,7 @@
             </p>
           </li>
         </ol>
+      </p>
       </statement>
     </example>
     <p>
@@ -604,7 +604,6 @@
     <statement>
       <p>
         For each subset <m>S</m> of the given vector space <m>V</m>, decide whether <m>S</m> is linearly independent.
-      </p>
       <ol>
         <li>
           <p>
@@ -621,6 +620,7 @@
           </p>
         </li>
       </ol>
+    </p>
     </statement>
     <solution>
     <ol>
@@ -666,7 +666,89 @@
   
 
   </subsection>
-  
+  <subsection xml:id="subsec-invertibility-span-and-linear-independence">
+    <title>Invertibility, span, and linear independence</title>
+    <p>
+      Equipped with the concepts of span and linear independence, we can add some useful additional statements to our invertibility theorem. 
+    </p>
+    <theorem xml:id="th_invertibility_3">
+      <title>Invertibility theorem</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n\times n</m> matrix.
+          The following statements are equivalent.
+        <ol cols="2">
+          <li xml:id="inv3_statement_def">
+            <p>
+              <m>A</m> is invertible.
+            </p>
+          </li>
+
+          <li xml:id="inv3_statement_unique_sol">
+            <p>
+              The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a unique solution for any <m>\boldb\in \R^n</m>.
+            </p>
+          </li>
+          <li xml:id="inv3_statement_exists_sol">
+            <p>
+              The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a solution for any <m>\boldb\in \R^n</m>.
+            </p>
+          </li>
+          <li xml:id="inv3_statement_trivial_sol">
+            <p>
+              The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}</me> has a unique solution: namely, <m>\boldx=\boldzero_{n\times 1}</m>.
+            </p>
+          </li>
+          <li xml:id="inv3_statement_row_equiv">
+            <p>
+              <m>A</m> is row equivalent to <m>I_n</m>,
+              the <m>n\times n</m> identity matrix.
+            </p>
+          </li>
+          <li xml:id="inv3_statement_prod_elems">
+            <p>
+              <m>A</m> is a product of elementary matrices.
+            </p>
+          </li>
+          <li xml:id="inv3_statement_det">
+            <p>
+              <m>\det A\ne 0</m>.
+            </p>
+          </li>
+          <li xml:id="inv3_statement_cols_span">
+            <p>
+              The set of columns of <m>A</m> spans <m>\R^n</m>.
+            </p>
+          </li>
+          <li xml:id="inv3_statement_cols_ind">
+            <p>
+              The set of columns of <m>A</m> is linearly independent. 
+            </p>
+          </li>
+          <li xml:id="inv3_statement_rows_span">
+            <p>
+              The set of rows of <m>A</m> spans <m>\R^n</m>.
+            </p>
+          </li>
+          <li xml:id="inv3_statement_rows_ind">
+            <p>
+              The set of rows of <m>A</m> is linearly independent. 
+            </p>
+          </li>
+        </ol>
+      </p>
+      </statement>
+      <proof>
+       <p>
+        <xref first="inv3_statement_cols_span" last="inv3_statement_cols_ind">Statements</xref>, can be shown to be equivalent to one of the previous statements of the invertibilty theorem using the <xref ref="th_column_method">column method</xref> of matrix multiplication. Indeed, given <m>\boldb\in \R^n</m> the matrix equation <m>A\boldx=\boldb</m> has a solution if and only if <m>\boldb</m> can be written as a linear combination of the columns of <m>A</m>. Thus, the matrix equation <m>A\boldx=\boldb</m> has a solution for all <m>\boldb\in \R^n</m> if and only if all vectors <m>\boldb\in \R^n</m> lie in the span of the rows of <m>A</m>. This proves <xref ref="inv3_statement_cols_span">statement</xref> is equivalent to <xref ref="inv3_statement_exists_sol">statement</xref>.  Similarly, the matrix equation <m>A\boldx=\boldzero</m> has a nontrivial solution if and only if there is a nontrivial linear combination of the columns of <m>A</m> equal to <m>\boldzero</m>, if and only if the columns of <m>A</m> are linearly independent. This proves <xref ref="inv3_statement_cols_ind">statement</xref> is equivalent to <xref ref="inv3_statement_trivial_sol">statement</xref>. 
+       </p>
+       <p>
+        <xref first="inv3_statement_cols_span" last="inv3_statement_rows_span">Statements</xref> are easily seen to be equivalent to <xref first="inv3_statement_cols_span" last="inv3_statement_rows_span">statements</xref> using the fact that <m>A</m> is invertible if and only if <m>A^T</m> is invertible.  
+       </p>
+      </proof>
+    </theorem>
+
+  </subsection>
 
 <xi:include href="./s_span_independence_ex.ptx"/>
 
