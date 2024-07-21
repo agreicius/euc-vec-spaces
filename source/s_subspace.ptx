@@ -257,6 +257,7 @@
     is guaranteed to be a subspace of <m>\R^n</m>. We call this set the <em>null space</em> of the matrix <m>A</m>. 
   </p>
   <definition xml:id="d_nullspace_matrix">
+    <title>Null space of matrix</title>
     <statement>
       <p>
         Let <m>A\in M_{mn}</m>. The <term>null space</term> of <m>A</m>, denoted <m>\NS A</m>, is the set of all solutions to the matrix equation 
