@@ -82,7 +82,7 @@
     <title>Trace</title>
     <statement>
       <p>
-        Prove <xref ref="th_tr_lin">statement</xref> of <xref ref="th_lin_matrix_operations"/>. 
+        Prove <xref ref="th_tr_linear">statement</xref> of <xref ref="th_lin_matrix_operations"/>. 
       </p>
     </statement>
   </exercise>

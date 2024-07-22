@@ -336,10 +336,10 @@ Even when we do not have a standard basis at our disposal, there are many situat
     </statement>
   </algorithm>
 </subsection>
-<subsection>
+<subsection xml:base="ss_further_props">
   <title>Further properties of dimension</title>
 <p>
-The <q>contracting and expanding</q> theorem below is a very useful theoretical consequence of <xref ref="th_basis_dimension"/>. It allows us to construct a customized basis from a given set <m>S</m>. This method is used prominently in the proof of the <xref ref="th_rank-nullity" text="custom">rank-nullity theorem </xref>.
+The <q>contracting and expanding</q> theorem below is a very useful theoretical consequence of <xref ref="th_basis_dimension"/>. It allows us to construct a customized basis from a given set <m>S</m>.
 </p>
 <theorem xml:id="th_basis_contract_expand">
   <title>Contracting and expanding to bases</title>
