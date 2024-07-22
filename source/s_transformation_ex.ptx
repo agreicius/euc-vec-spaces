@@ -9,14 +9,7 @@
       <webwork source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_18.pg" />
     </exercise>
 
-    <exercise>
-      <webwork source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_17.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- similar question: Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_16.pg -->
-      <webwork source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_3.pg" />
-    </exercise>
+    
 
     <exercise>
       <!-- similar question: Library/TCNJ/TCNJ_IntroLinearTransformations/problem18.pg -->
@@ -39,51 +32,44 @@
     </exercise>
     
   </subexercises>
-  <exercise>
-    <statement>
+  <exercisegroup>
+     <introduction>
       <p>
-        For each of the following functions <m>T</m>,
-        show that <m>T</m> is nonlinear by providing an explicit counterexample to one of the defining axioms or a consequence thereof.
+        Show that the function <m>T</m> defined is nonlinear by providing an explicit counterexample to one of the defining axioms or a consequence thereof.
       </p>
-      <ol>
-        <li>
-          <p>
-            <m>T\colon \R^2\rightarrow \R^2</m>,  <m>T((x,y))=(x,y)+(1,1)</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>T\colon M_{nn}\rightarrow M_{nn}</m>, <m>T(A)=A^2</m>
-          </p>
-        </li>
-
-        <li>
-          <p>
-            <m>T\colon M_{nn}\rightarrow \R</m>, <m>T(A)=\det A</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>T\colon F(\R,\R)\rightarrow F(\R,\R)</m>,
-            <m>T(f)=1+f</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>T\colon\R^3\rightarrow \R^2</m>, <m>T(x,y,z)=(xy,yz)</m>
-          </p>
-        </li>
-      </ol>
-    </statement>
-  </exercise>
-  <exercise xml:id="ex_transformation_transposition">
-    <title>Transposition</title>
-    <statement>
-      <p>
-        Define <m>T\colon M_{mn}\rightarrow M_{nm}</m> as <m>T(A)=A^T</m>: <ie />, the function <m>T</m> takes as input an <m>m\times n</m> matrix and returns as output an <m>n\times m</m> matrix.  Show that <m>T</m> is a linear transformation.
-      </p>
-    </statement>
-  </exercise>
+     </introduction> 
+     <exercise>
+      <statement>
+        <p>
+          <m>T\colon \R^2\rightarrow \R^2</m>,  <m>T((x,y))=(x,y)+(1,1)</m>
+        </p>
+      </statement>
+     </exercise>
+     <exercise>
+      <statement>
+        <p>
+          <m>T\colon M_{nn}\rightarrow M_{nn}</m>, <m>T(A)=A^2</m>
+        </p>
+      </statement>
+     </exercise>
+  
+     <exercise>
+      <statement>
+        <p>
+          <m>T\colon M_{nn}\rightarrow \R</m>, <m>T(A)=\det A</m>
+        </p>
+      </statement>
+     </exercise>
+     <exercise>
+      <statement>
+        <p>
+          <m>T\colon\R^3\rightarrow \R^2</m>, <m>T(x,y,z)=(xy,yz)</m>
+        </p>
+      </statement>
+     </exercise>
+      
+  </exercisegroup>
+  
   <exercise xml:id="ex_transformation_vector_scale">
     <title>Scalar multiplication</title>
     <statement>
@@ -96,11 +82,7 @@
     <title>Trace</title>
     <statement>
       <p>
-      Fix an integer <m>n\geq 1</m>. The <term>trace function</term> is the function <m>\tr\colon M_{nn}\rightarrow \R</m> defined as
-      <me>
-        \tr A=\sum_{i=1}^n a_{ii}=a_{11}+a_{22}+\cdots +a_{nn}
-      </me>.
-      Show that the trace function is a linear transformation.
+        Prove <xref ref="th_tr_lin">statement</xref> of <xref ref="th_lin_matrix_operations"/>. 
       </p>
     </statement>
   </exercise>
@@ -126,10 +108,7 @@
     <title>Conjugation</title>
     <statement>
       <p>
-        Fix an invertible matrix <m>Q\in M_{nn}</m>.
-        Define <m>T\colon M_{nn}\rightarrow M_{nn}</m> as <m>T(A)=QAQ^{-1}</m>.
-        Show that <m>T</m> is a linear transformation.
-        This operation is called <term>conjugation by <m>Q</m></term>.
+        Prove <xref ref="th_conj_lin"/>. 
       </p>
     </statement>
   </exercise>
@@ -150,29 +129,7 @@
       </p>
     </statement>
   </exercise>
-  <exercise xml:id="ex_transformation_function_shift">
-    <title>Function shift operators</title>
-    <statement>
-      <p>
-      Fix <m>a\in \R</m>. Define <m>T\colon F(\R,\R)\rightarrow F(\R,\R)</m> as <m>T(f)=g</m>, where <m>g(x)=f(x+a)</m>. Show that <m>T</m> is a linear transformation.
-      </p>
-    </statement>
-
-  </exercise>
-  <exercise xml:id="ex_transformation_function_scale">
-    <title>Function scaling operators</title>
-    <statement>
-      <p>
-      Fix <m>c\in \R</m> and define the functions <m>T,S \colon F(\R,\R)\rightarrow F(\R,\R)</m> as follows:
-        <md>
-          <mrow>T(f) \amp =g, \text{ where } g(x)=f(cx) </mrow>
-          <mrow> S(f)\amp =g, \text{ where } g(x)=cf(x)  </mrow>
-        </md>.
-        Show that <m>T</m> and <m>S</m> are linear transformations.
-      </p>
-    </statement>
-
-  </exercise>
+  
   <exercise xml:id="ex_transformation_add_scale">
     <title>Adding and scaling linear transformations</title>
     <statement>
@@ -193,14 +150,9 @@
       </ol>
     </statement>
   </exercise>
+  
   <exercise>
-    <statement>
-      <p>
-        Let <m>T\colon F(\R,\R)\rightarrow F(\R,\R)</m> be defined as <m>T(f)=g</m>, where <m>g(x)=f(x)+f(-x)</m>. Show that <m>T</m> is linear. You may use the results of <xref ref="ex_transformation_function_scale"/> and <xref ref="ex_transformation_add_scale"/>.
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
+    <title>Composition of transformations</title>
     <statement>
       <p>
         Prove <xref ref="th_transform_composition"/>.
@@ -312,44 +264,11 @@
       </p>
     </statement>
   </exercise>
+  
   <exercise>
     <statement>
       <p>
-        The set <m>B=\{x^2,x, 1\}</m> is a basis of <m>P_2</m>. Suppose the linear transformation <m>T\colon P_2\rightarrow M_{22}</m> satisfies
-        <me>
-          T(x^2)=\begin{amatrix}[rr] 1 \amp 0\\ 0\amp 0   \end{amatrix},
-          T(x)=\begin{amatrix}[rr]0\amp 1\\ 1\amp 0 \end{amatrix},
-          T(1)=\begin{amatrix}[rr] 0\amp 0\\ 0\amp 1  \end{amatrix}
-        </me>.
-        Find a formula for <m>T(p(x))</m>, where <m>p(x)=ax^2+bx+c</m> is a general element of <m>P_2</m>.
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        The set <m>B=\{x^2+1,x+1, 1\}</m> is a basis of <m>P_2</m>. Suppose the linear transformation <m>T\colon P_2\rightarrow M_{22}</m> satisfies
-        <me>
-          T(x^2+1)=\begin{amatrix}[rr] 2 \amp 1\\ 2\amp 5   \end{amatrix},
-          T(x+1)=\begin{amatrix}[rr]0\amp 1\\ 2\amp 3 \end{amatrix},
-          T(1)=\begin{amatrix}[rr] 1\amp 1\\ 1\amp 1  \end{amatrix}
-        </me>.
-        Show that the general formula for <m>T</m> is given by
-        <me>
-          T(p(x))=\begin{amatrix}[cc] p(-1)\amp p(0)\\ p(1)\amp p(2)  \end{amatrix}
-        </me>.
-      </p>
-    </statement>
-    <hint>
-      <p>
-        Use (1) of <xref ref="th_bases_transformations"/>.
-      </p>
-    </hint>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Suppose <m>T\colon V\rightarrow V</m> is a linear transformation, and <m>B</m> is a basis of <m>V</m> for which <m>T(\boldv)=\boldzero</m> for all <m>\boldv\in B</m>. Show that <m>T=0_{V,W}</m>: <ie />, <m>T</m> is the zero transformation from <m>V</m> to <m>W</m>.
+        Suppose <m>T\colon V\rightarrow V</m> is a linear transformation, and <m>B</m> is a basis of <m>V</m> for which <m>T(\boldv)=\boldzero</m> for all <m>\boldv\in B</m>. Show that <m>T_0</m>: <ie />, <m>T</m> is the zero transformation from <m>V</m> to <m>V</m>.
       </p>
     </statement>
     <hint>
@@ -394,7 +313,7 @@
   <title>Matrix transformations</title>
   <introduction>
   <p>
-  For each linear transformation <m>T\colon \R^n\rightarrow \R^m</m> and <m>\boldx\in \R^n</m> : (a) compute the standard matrix <m>A</m> of <m>T</m> using <xref ref="cor_matrix_transformations"/>; (b) compute <m>T(\boldx)</m> using <m>A</m>. You may take for granted that the given <m>T</m> is linear.
+  For each linear transformation <m>T\colon \R^n\rightarrow \R^m</m> and <m>\boldx\in \R^n</m> : (a) compute the standard matrix <m>A</m> of <m>T</m> using <xref ref="proc_standard_matrix"/>; (b) compute <m>T(\boldx)</m> using <m>A</m>. You may take for granted that the given <m>T</m> is linear.
   </p>
   </introduction>
   <exercise>

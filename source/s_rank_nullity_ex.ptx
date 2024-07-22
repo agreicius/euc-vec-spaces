@@ -20,104 +20,8 @@
     
 </subexercises>
 
-  <exercise>
-    <statement>
-      <p>
-       In this exercise we will show that for any <m>(a,b,c,d)\in \R^4</m>, there is a polynomial <m>p(x)\in P_3</m> satisfying
-        <me>
-          p(-1)=a, p(0)=b, p(1)=c, p(2)=d
-        </me>.
-        In other words given any list of values <m>a, b, c, d</m>, we can find a polynomial that evaluates to these values at the inputs <m>x=-1, 0, 1, 2</m>.
-      </p>
-      <ol>
-        <li>
-          <p>
-            Define <m>T\colon P_3\rightarrow \R^4</m> by <m>T(p(x))=(p(-1), p(0), p(1), p(2))</m>. Show that <m>T</m> is linear.
-          </p>
-        </li>
-        <li>
-          <p>
-            Compute <m>\NS T</m>. You may use the fact that a polynomial of degree <m>n</m> has at most <m>n</m> roots.
-          </p>
-        </li>
-        <li>
-          <p>
-            Use the rank-nullity theorem to compute <m>\dim \im T</m>. Explain why this implies <m>\im T=\R^4</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            Explain why the equality <m>\im T=\R^4</m> is equivalent to the claim we wish to prove.
-          </p>
-        </li>
-      </ol>
-
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        <p>
-          Use the rank-nullity theorem to compute the rank of the linear transformation <m>T</m> described.
-        </p>
-        <ol>
-          <li>
-            <p>
-              <m>T\colon\R^7\rightarrow M_{32}</m>, <m>\nullity T=2</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>T\colon P_3\rightarrow \R^5</m>, <m>\NS T=\{\boldzero\}</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>T\colon P_5 \rightarrow P_5</m>, <m>\NS T=P_4</m>
-            </p>
-          </li>
-        </ol>
-      </p>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        For each linear transformation <m>T\colon V\rightarrow W</m> use the rank-nullity theorem to decide whether <m>\im T=W</m>.
-      </p>
-      <ol>
-        <li>
-          <p>
-            <m>T\colon \R^4\rightarrow \R^5</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>T\colon M_{22}\rightarrow P_2</m>, <m>\nullity T=2</m>
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>T\colon M_{23}\rightarrow M_{32}</m>, <m>\NS T=\{\boldzero\}</m>
-          </p>
-        </li>
-      </ol>
-    </statement>
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        Let <m>A</m> be <m>m\times n</m> with <m>n\lt m</m>.
-        Prove that there is a
-        <m>\boldb\in\R^m</m> such that the system <m>A\boldx=\boldb</m> is inconsistent.
-      </p>
-    </statement>
-    <hint>
-      <p>
-        Use <xref ref="th_fundspaces_matrixtransform"/> and <xref ref="th_rank_nullity_matrix"/>.
-      </p>
-    </hint>
-  </exercise>
+  
+ 
   <exercise>
     <statement>
       <p>
@@ -140,13 +44,6 @@
           </p>
         </li>
       </ol>
-    </statement>
-  </exercise>
-  <exercise xml:id="ex_col_inv">
-    <statement>
-      <p>
-        Assume <m>A</m> is invertible. Prove: if <m>A</m> is row equivalent to <m>B</m>, then <m>\CS A=\CS B</m>. 
-      </p>
     </statement>
   </exercise>
   <exercise>
@@ -263,6 +160,67 @@
         </ol>
     </statement>
   </exercise>
+  <exercisegroup>
+    <title>Rank-nullity theorem for matrices</title>
+    <introduction>
+      <p>
+        For each scenario use the rank-nullity theorem for matrices to compute the desired information from the given information. 
+      </p>
+    </introduction>
+  
+    <exercise>
+      <statement>
+        <p>
+          Suppose <m>A\in M_{7\times 5}</m> and <m>\nullity A=2</m>, compute <m>\rank A</m>. 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Suppose <m>A\in M_{7\times 5}</m> and <m>\nullity A=2</m>, compute <m>\dim \RS A</m>. 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Suppose <m>A\in M_{3\times 5}</m> and <m>\CS A=\R^3</m>, compute <m>\nullity A</m>. 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Suppose <m>A\in M_{7\times 5}</m> and <m>\NS A=\{\boldzero\}</m>, compute <m>\dim \CS A</m>. 
+        </p>
+      </statement>
+    </exercise>
+  </exercisegroup>
+
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A</m> be <m>m\times n</m> with <m>n\lt m</m>.
+        Prove that there is a
+        <m>\boldb\in\R^m</m> such that the system <m>A\boldx=\boldb</m> is inconsistent.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Use <xref ref="th_fundspaces_matrixtransform"/> and <xref ref="th_rank_nullity_matrix"/>.
+      </p>
+    </hint>
+  </exercise>
+
+  <exercise xml:id="ex_col_inv">
+    <statement>
+      <p>
+        We know that in general that row equivalent matrices do not have equal column spaces, but show that this is the case if the matrices are invertible. In other words, prove that if <m>A</m> is invertible and <m>A</m> is row equivalent to <m>B</m>, then <m>\CS A=\CS B</m>. 
+      </p>
+    </statement>
+  </exercise>
+  
   <exercise>
     <statement>
       <p>

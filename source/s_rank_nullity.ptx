@@ -539,12 +539,25 @@
   <title>Rank-nullity for matrices</title>
   <statement>
     <p>
-      Given an <m>m\times n</m> matrix <m>A</m>, we have 
-        <mdn>
-          <mrow xml:id="eq_rank_nullity_rank">n \amp= \nullity A+\rank A </mrow>
-          <mrow xml:id="eq_rank_nullity_col"> \amp =\dim\NS A+\dim\CS A </mrow>
-          <mrow xml:id="eq_rank_nullity_row"> \amp =\dim\NS A+\dim\RS A </mrow>
-        </mdn>.
+      Let <m>A</m> be an <m>m\times n</m> matrix. 
+      <ol>
+        <li>
+          <title>Column and row space dimension</title>
+         <p>
+          <men xml:id="eq_col_row">\dim \CS A=\dim \RS A</men>.
+         </p>
+        </li>
+        <li>
+          <title>Rank-nullity</title>
+          <p>
+            <mdn>
+              <mrow xml:id="eq_rank_nullity_rank">n \amp= \nullity A+\rank A </mrow>
+              <mrow xml:id="eq_rank_nullity_col"> \amp =\dim\NS A+\dim\CS A </mrow>
+              <mrow xml:id="eq_rank_nullity_row"> \amp =\dim\NS A+\dim\RS A </mrow>
+            </mdn>.
+          </p>
+        </li>
+      </ol>
     </p>
   </statement>
 </corollary>
