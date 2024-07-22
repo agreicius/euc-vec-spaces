@@ -3913,7 +3913,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.1",
   "title": "Subspaces",
-  "body": " Subspaces   We return now to our main object of study: vector spaces. Our foray into the theory of matrices will prove to be useful in this regard in two ways: on the one hand, matrix spaces are themselves interesting examples of vector spaces; on the other hand, matrices serve as an essential computational tool for describing and investigating general vector spaces.  In this section we will study subspaces , which are special subsets of vector spaces that respect the defining structure of a vector spaces: namely, the two vector operations. makes precise what we mean here by respect .  Subspaces arise naturally in any setting where vector spaces are at play, and are closely connected to solutions to linear systems. As we will see in , subspaces of vector spaces are themselves examples of vector spaces, furnishing us with yet more interesting examples of vector spaces.    Definition of subspace   Subspace  subspace  vector space subspace   Let be a vector space. A subset is a subspace of if the following conditions hold:   contains the zero vector  We have .    is closed under addition  For all , if , then . Using logical notation: .    is closed under scalar multiplication  For all and , if , then . In logical notation: .         Let and let . Prove that is a subspace.    We must show properties (i)-(iii) hold for .   The zero element of is , which is certainly of the form . Thus .    We must prove the implication . .    We must prove the implication , for any . We have          Let and let . Is a vector space? Decide which of the of properties (i)-(iii) in (if any) are satisfied by .       Clearly .    Suppose . Then , in which case , and hence . Thus is closed under addition.    The set is not closed under scalar multiplication. Indeed, let . Then .        Two-step proof for subspaces   As with proofs regarding linearity of functions, we can merge conditions (ii)-(iii) of into a single statement about linear combinations, deriving the following two-step method for proving a set is a subspace of a vector space .   Show     Show that , for all .        Video example: deciding if is a subspace   Video: deciding if is a subspace      If is a subspace of a vector space , then it inherits a vector space structure from by simply restricting the vector operations defined on to the subset .   Subspaces are vector spaces   Let be a subspace of the vector space .   The vector operations of restrict to operations on that satisfy the vector space axioms.    The zero vector of , considered as a vector space, is the zero vector of .    Given an element , its vector inverse with respect to the vector space structure of is equal to its vector inverse with respect to the vector space structure of .       Since for all , the vector addition on gives rise by restriction to a well-defined operation on ; similarly, since for all and , the scalar multiplication operation on gives rise by restriction to a well-defined scalar multiplication on .  By Axiom , the zero vector of is an element of . Since this element satisfies for all , and since , it also satisfies for all . Thus acts as a zero vector for the subspace .    It is important to understand how Axioms of come into play here. Without them we would not be able to say that restricting the vector operations of to elements of actually gives rise to well-defined operations on . To be well-defined the operations must output elements that lie not just in , but in itself. This is precisely what being closed under addition and scalar multiplication guarantees.  Once we know restriction gives rise to well-defined operations on , verifying the axioms of mostly amounts to observing that if a condition is true for all in , it is certainly true for all in the subset .  The existential axioms (iii) and (iv) of , however, require special consideration. By definition, a subspace contains the zero vector of , and clearly this still acts as the zero vector when we restrict the vector operations to . What about vector inverses? We know that for any there is a vector inverse lying somewhere in . We must show that in fact lies in : we need to show that the operation of taking the vector inverse is well-defined on . We prove this as follows: .  We now know how to determine whether a given subset of a vector space is in fact a subspace. We are also interested in means of constructing subspaces from some given ingredients. The result below tells us that taking the intersection of a given collection of subspaces results in a subspace.   Intersection of subspaces   Let be a vector space. Given a collection , where each is a subspace of , the intersection is a subspace.    Exercise.     Unions of subspaces  While the intersection of subspaces is again a subspace, the same is not true for unions of subspaces.  For example, take , and . Then each is a subspace, but their union is not.  Indeed, observe that and , but . Thus is not closed under addition. (Interestingly, it is closed under scalar multiplication.)     Subspaces of   gives a convenient method of producing a subspace of : namely, given any matrix , the set of all solutions to the homogeneous linear system is guaranteed to be a subspace of . We call this set the null space of the matrix .    Let . The null space of , denoted , is the set of all solutions to the matrix equation . In other words, . Equivalently, thinking in terms of linear systems, is the set of solutions to the homogeneous linear system represented by .     Null spaces of matrices   Given any , its null space is a subspace of .    Following the two-step technique, we first show that the zero vector of lies in . This is clear, since .  Next, we show that for any and any we have . If , then we have , by definition. It then follows that the vector satisfies . Since , we have , as desired.      Alternative subspace method   provides an alternative way of showing that a subset : namely, find an matrix for which we have . This is often much faster than using the two-step technique.    Subspace as null space   Define the subset of as .   Prove that is a subspace by identifying it as the set of solutions to a homogeneous matrix equation.    Use (a) and Gaussian elimination to compute a parametric description of .          It is easy to see that where . We conclude is a subspace.    The augmented matrix row reduces to . Following we conclude that . Geometrically this is the line in passing through with direction vector .        Subspace as null space  As convenient as the method described in and illustrated in may be, bear in mind that it cannot always be used. Indeed, by definition the null space of an matrix is a subset of . Thus this method can only be employed when the ambient vector space is . Don't forget that there are other vector spaces besides . Indeed, in we consider subspaces of matrix vector spaces . In this setting, our null space trick does not apply.   Let be an matrix. If is nonzero , then the set of solutions to is not a subspace of , and for a very simple reason: since , we see that , and thus is not a subspace. Thus, thinking in terms of linear systems, we see that while the set of solutions to a homogenous linear system constitutes a subspace, the set of solutions to a nonhomogeneous system does not. On the other hand, as articulated by , the set of solutions to a nonhomogeneous linear system can be thought of as a translate of a vector space.   Null space and linear systems   Let and , and let be the set of all solutions to the linear system .    is a subspace of if and only if : , if and only if the linear system is homogeneous.    If is a solution to , then we have . In other words, given a particular solution to , the general solution is given by where is a solution to the homogeneous linear system .          If , then , and this is a subspace by . If , then , and hence is not a subspace.    Let satisfy . We show that by showing the two inclusions . If , then we have for some , in which case . This shows that if , then , and thus that . For the other inclusion, if , then we have , showing that . But then we have , where . Thus , showing that .        Null space and linear systems   Let and , and suppose the linear system is consistent.   There is a unique solution to the system if and only if : , if and only if the only solution to is the trivial one .    There are infinitely many solutions if and only if there is a nonzero solution to .        Solving matrix equations  Let's use Sage and to find the set of solutions to the matrix equation . This is the matrix equation form of the linear system we investigated in . The method solve_right can be used to find a particular solution  to .   We get the entire set of solutions by translating by the particular solution : . We can illustrate this in Sage by taking random elements of (computed using right_kernel ), adding them to xp , and verifying that the result is a solution to . Each time you evaluate the cell below, a randomly generated element of will be outputted.   You may wonder just how random these elements of are, considering that the entries always seem to be integers! Indeed, soliciting information about NS from Sage, we see that it has the structure of a free module defined over the the Integer Ring .   Without getting too far into the weeds, this is a result of our initial definition of using Matrix() . Without further information, Sage interprets this as a matrix with integer coefficients, as opposed to real coefficients. All further computations ( , xp and NS ) are done in a similar spirit. More precisely, the object NS generated by Sage consists of all integer linear combinations of the two rows in the echelon basis matrix displayed in the cell above. The next cell shows you how things change when we alert Sage to the fact that we are dealing with matrices over the reals. The only change is adding RR to Matrix() , which specifies that matrix coefficients should be understood as real numbers.     Hyperplanes and subspaces  Recall that a hyperplane is the set of solutions to a linear system of the form , where for some . In terms of , is just the set of solutions to the matrix equation , where . It follows from that is a subspace if and only if : , if and only if passes through the origin. Furthermore, if , we have , where is any solution to , and is the set of solutions to the corresponding homogeneous equation . In other words, although it is not true in general that every hyperplane is a subspace (since it may not pass through the origin), it is true that is a translate of a hyperplane that is a subspace (since passes through the origin).      Important subspaces of  In we met three families of square matrices: namely, the diagonal, upper triangular, and lower triangular matrices. (See ). We now introduce three more naturally occurring families. Before doing so, we give an official definition of the trace function.   Trace of a matrix  trace of a matrix    the trace of    Let be an matrix. The trace of , denoted is defined as the sum of the diagonal entries of : , .     Trace-zero, symmetric, and skew-symmetric  trace-zero matrix  symmetric matrix  skew-symmetric matrix   Fix an integer .   A matrix is said to be a trace-zero matrix if .    A matrix is symmetric if : equivalently, if for all .    A matrix is skew-symmetric if : equivalently, if for all .        Trace-zero symmetric, and skew-symmetric matrices   The set of all trace-zero matrices can be described as . The set of all symmetric matrices can be described as . The set of all skew-symmetric matrices can be described as .     Assume is a skew-symmetric matrix. By definition, for all we must have . It follows that for all . Thus the diagonal entries of a skew-symmetric matrix are always equal to 0.   It will come as no surprise that all of the afore mentioned matrix families are in fact subspaces of .   Matrix subspaces   Fix an integer . Each of the following subsets of is a subspace.   Diagonal matrices       Upper triangular matrices       Lower triangular matrices       Trace-zero matrix       Symmetric matrices       Skew-symmetric matrices          See         For each subset of described below: (a) sketch as a region of , and (b) determine whether is a subspace. Justify your answer either with a proof or explicit counterexample.                     Determine whether the subset of described is a subspace of . Justify your answer either with a proof or explicit counterexample.              Fix a matrix and define , the set of matrices that commute with .      For each given subset : (a) show that is a subspace by identifying it with the set of solutions to a matrix equation, and (b) give a parametric description of .                    Prove .    Prove (1)-(6) of .    "
+  "body": " Subspaces   We return now to our main object of study: vector spaces. Our foray into the theory of matrices will prove to be useful in this regard in two ways: on the one hand, matrix spaces are themselves interesting examples of vector spaces; on the other hand, matrices serve as an essential computational tool for describing and investigating general vector spaces.  In this section we will study subspaces , which are special subsets of vector spaces that respect the defining structure of a vector spaces: namely, the two vector operations. makes precise what we mean here by respect .  Subspaces arise naturally in any setting where vector spaces are at play, and are closely connected to solutions to linear systems. As we will see in , subspaces of vector spaces are themselves examples of vector spaces, furnishing us with yet more interesting examples of vector spaces.    Definition of subspace   Subspace  subspace  vector space subspace   Let be a vector space. A subset is a subspace of if the following conditions hold:   contains the zero vector  We have .    is closed under addition  For all , if , then . Using logical notation: .    is closed under scalar multiplication  For all and , if , then . In logical notation: .         Let and let . Prove that is a subspace.    We must show properties (i)-(iii) hold for .   The zero element of is , which is certainly of the form . Thus .    We must prove the implication . .    We must prove the implication , for any . We have          Let and let . Is a vector space? Decide which of the of properties (i)-(iii) in (if any) are satisfied by .       Clearly .    Suppose . Then , in which case , and hence . Thus is closed under addition.    The set is not closed under scalar multiplication. Indeed, let . Then .        Two-step proof for subspaces   As with proofs regarding linearity of functions, we can merge conditions (ii)-(iii) of into a single statement about linear combinations, deriving the following two-step method for proving a set is a subspace of a vector space .   Show     Show that , for all .        Video example: deciding if is a subspace   Video: deciding if is a subspace      If is a subspace of a vector space , then it inherits a vector space structure from by simply restricting the vector operations defined on to the subset .   Subspaces are vector spaces   Let be a subspace of the vector space .   The vector operations of restrict to operations on that satisfy the vector space axioms.    The zero vector of , considered as a vector space, is the zero vector of .    Given an element , its vector inverse with respect to the vector space structure of is equal to its vector inverse with respect to the vector space structure of .       Since for all , the vector addition on gives rise by restriction to a well-defined operation on ; similarly, since for all and , the scalar multiplication operation on gives rise by restriction to a well-defined scalar multiplication on .  By Axiom , the zero vector of is an element of . Since this element satisfies for all , and since , it also satisfies for all . Thus acts as a zero vector for the subspace .    It is important to understand how Axioms of come into play here. Without them we would not be able to say that restricting the vector operations of to elements of actually gives rise to well-defined operations on . To be well-defined the operations must output elements that lie not just in , but in itself. This is precisely what being closed under addition and scalar multiplication guarantees.  Once we know restriction gives rise to well-defined operations on , verifying the axioms of mostly amounts to observing that if a condition is true for all in , it is certainly true for all in the subset .  The existential axioms (iii) and (iv) of , however, require special consideration. By definition, a subspace contains the zero vector of , and clearly this still acts as the zero vector when we restrict the vector operations to . What about vector inverses? We know that for any there is a vector inverse lying somewhere in . We must show that in fact lies in : we need to show that the operation of taking the vector inverse is well-defined on . We prove this as follows: .  We now know how to determine whether a given subset of a vector space is in fact a subspace. We are also interested in means of constructing subspaces from some given ingredients. The result below tells us that taking the intersection of a given collection of subspaces results in a subspace.   Intersection of subspaces   Let be a vector space. Given a collection , where each is a subspace of , the intersection is a subspace.    Exercise.     Unions of subspaces  While the intersection of subspaces is again a subspace, the same is not true for unions of subspaces.  For example, take , and . Then each is a subspace, but their union is not.  Indeed, observe that and , but . Thus is not closed under addition. (Interestingly, it is closed under scalar multiplication.)     Subspaces of   gives a convenient method of producing a subspace of : namely, given any matrix , the set of all solutions to the homogeneous linear system is guaranteed to be a subspace of . We call this set the null space of the matrix .   Null space of matrix   Let . The null space of , denoted , is the set of all solutions to the matrix equation . In other words, . Equivalently, thinking in terms of linear systems, is the set of solutions to the homogeneous linear system represented by .     Null spaces of matrices   Given any , its null space is a subspace of .    Following the two-step technique, we first show that the zero vector of lies in . This is clear, since .  Next, we show that for any and any we have . If , then we have , by definition. It then follows that the vector satisfies . Since , we have , as desired.      Alternative subspace method   provides an alternative way of showing that a subset : namely, find an matrix for which we have . This is often much faster than using the two-step technique.    Subspace as null space   Define the subset of as .   Prove that is a subspace by identifying it as the set of solutions to a homogeneous matrix equation.    Use (a) and Gaussian elimination to compute a parametric description of .          It is easy to see that where . We conclude is a subspace.    The augmented matrix row reduces to . Following we conclude that . Geometrically this is the line in passing through with direction vector .        Subspace as null space  As convenient as the method described in and illustrated in may be, bear in mind that it cannot always be used. Indeed, by definition the null space of an matrix is a subset of . Thus this method can only be employed when the ambient vector space is . Don't forget that there are other vector spaces besides . Indeed, in we consider subspaces of matrix vector spaces . In this setting, our null space trick does not apply.   Let be an matrix. If is nonzero , then the set of solutions to is not a subspace of , and for a very simple reason: since , we see that , and thus is not a subspace. Thus, thinking in terms of linear systems, we see that while the set of solutions to a homogenous linear system constitutes a subspace, the set of solutions to a nonhomogeneous system does not. On the other hand, as articulated by , the set of solutions to a nonhomogeneous linear system can be thought of as a translate of a vector space.   Null space and linear systems   Let and , and let be the set of all solutions to the linear system .    is a subspace of if and only if : , if and only if the linear system is homogeneous.    If is a solution to , then we have . In other words, given a particular solution to , the general solution is given by where is a solution to the homogeneous linear system .          If , then , and this is a subspace by . If , then , and hence is not a subspace.    Let satisfy . We show that by showing the two inclusions . If , then we have for some , in which case . This shows that if , then , and thus that . For the other inclusion, if , then we have , showing that . But then we have , where . Thus , showing that .        Null space and linear systems   Let and , and suppose the linear system is consistent.   There is a unique solution to the system if and only if : , if and only if the only solution to is the trivial one .    There are infinitely many solutions if and only if there is a nonzero solution to .        Solving matrix equations  Let's use Sage and to find the set of solutions to the matrix equation . This is the matrix equation form of the linear system we investigated in . The method solve_right can be used to find a particular solution  to .   We get the entire set of solutions by translating by the particular solution : . We can illustrate this in Sage by taking random elements of (computed using right_kernel ), adding them to xp , and verifying that the result is a solution to . Each time you evaluate the cell below, a randomly generated element of will be outputted.   You may wonder just how random these elements of are, considering that the entries always seem to be integers! Indeed, soliciting information about NS from Sage, we see that it has the structure of a free module defined over the the Integer Ring .   Without getting too far into the weeds, this is a result of our initial definition of using Matrix() . Without further information, Sage interprets this as a matrix with integer coefficients, as opposed to real coefficients. All further computations ( , xp and NS ) are done in a similar spirit. More precisely, the object NS generated by Sage consists of all integer linear combinations of the two rows in the echelon basis matrix displayed in the cell above. The next cell shows you how things change when we alert Sage to the fact that we are dealing with matrices over the reals. The only change is adding RR to Matrix() , which specifies that matrix coefficients should be understood as real numbers.     Hyperplanes and subspaces  Recall that a hyperplane is the set of solutions to a linear system of the form , where for some . In terms of , is just the set of solutions to the matrix equation , where . It follows from that is a subspace if and only if : , if and only if passes through the origin. Furthermore, if , we have , where is any solution to , and is the set of solutions to the corresponding homogeneous equation . In other words, although it is not true in general that every hyperplane is a subspace (since it may not pass through the origin), it is true that is a translate of a hyperplane that is a subspace (since passes through the origin).      Important subspaces of  In we met three families of square matrices: namely, the diagonal, upper triangular, and lower triangular matrices. (See ). We now introduce three more naturally occurring families. Before doing so, we give an official definition of the trace function.   Trace of a matrix  trace of a matrix    the trace of    Let be an matrix. The trace of , denoted is defined as the sum of the diagonal entries of : , .     Trace-zero, symmetric, and skew-symmetric  trace-zero matrix  symmetric matrix  skew-symmetric matrix   Fix an integer .   A matrix is said to be a trace-zero matrix if .    A matrix is symmetric if : equivalently, if for all .    A matrix is skew-symmetric if : equivalently, if for all .        Trace-zero symmetric, and skew-symmetric matrices   The set of all trace-zero matrices can be described as . The set of all symmetric matrices can be described as . The set of all skew-symmetric matrices can be described as .     Assume is a skew-symmetric matrix. By definition, for all we must have . It follows that for all . Thus the diagonal entries of a skew-symmetric matrix are always equal to 0.   It will come as no surprise that all of the afore mentioned matrix families are in fact subspaces of .   Matrix subspaces   Fix an integer . Each of the following subsets of is a subspace.   Diagonal matrices       Upper triangular matrices       Lower triangular matrices       Trace-zero matrix       Symmetric matrices       Skew-symmetric matrices          See         For each subset of described below: (a) sketch as a region of , and (b) determine whether is a subspace. Justify your answer either with a proof or explicit counterexample.                     Determine whether the subset of described is a subspace of . Justify your answer either with a proof or explicit counterexample.              Fix a matrix and define , the set of matrices that commute with .      For each given subset : (a) show that is a subspace by identifying it with the set of solutions to a matrix equation, and (b) give a parametric description of .                    Prove .    Prove (1)-(6) of .    "
 },
 {
   "id": "d_subspace",
@@ -3993,8 +3993,8 @@ var ptx_lunr_docs = [
   "url": "s_subspace.html#d_nullspace_matrix",
   "type": "Definition",
   "number": "4.1.10",
-  "title": "",
-  "body": "  Let . The null space of , denoted , is the set of all solutions to the matrix equation . In other words, . Equivalently, thinking in terms of linear systems, is the set of solutions to the homogeneous linear system represented by .   "
+  "title": "Null space of matrix.",
+  "body": " Null space of matrix   Let . The null space of , denoted , is the set of all solutions to the matrix equation . In other words, . Equivalently, thinking in terms of linear systems, is the set of solutions to the homogeneous linear system represented by .   "
 },
 {
   "id": "th_subspace_matrix_solutions",
@@ -5356,6 +5356,618 @@ var ptx_lunr_docs = [
   "body": "Invertibility theorem  Prove as follows.    First show that all three statements of are equivalent, and that all three statements of are equivalent. (Use .)    Show that statements are equivalent with the help of .    Choose a statement from that can be easily shown to be equivalent to one of the statements from .    "
 },
 {
+  "id": "s_transformation",
+  "level": "1",
+  "url": "s_transformation.html",
+  "type": "Section",
+  "number": "5.1",
+  "title": "Linear transformations",
+  "body": " Linear transformations   As detailed in a linear transformation is a special type of function between two vector spaces: one that respects in some sense the vector operations of both spaces.  This manner of theorizing is typical in mathematics: first we introduce a special class of objects defined axiomatically, then we introduce special functions or maps between these objects. Since the original objects of study (e.g. vector spaces) come equipped with special structural properties (e.g. vector operations), the functions we wish to study are the ones that somehow acknowledge this structure.  You have already seen this principle at work in your study of calculus. First we give some structure by defining a notion of proximity (i.e., is close to if is small), then we introduce a special family of functions that somehow respects this structure: these are precisely the continuous functions!  As you will see, linear transformations are not just interesting objects of study in their own right, they also serve as invaluable tools in our continued exploration of the intrinsic properties of vector spaces.  In the meantime rejoice in the fact that we can now give a succinct definition of linear algebra: it is the theory of vector spaces and the linear transformations between them. Go shout it from the rooftops!    Linear transformations  First and foremost, a linear transformation is a function. Before continuing on in this section, you may want to reacquaint yourself with the basic function concepts and notation outlined in Section .   Linear transformations   Let and be vector spaces. A function is a linear transformation (or linear ) if it satisfies the following properties:   Respects vector addition  For all , we have .    Respects scalar multiplication  For all and we have .     A function between vector spaces is nonlinear if it is not a linear transformation.     Linear transformations  How precisely does a linear transformation respect vector space structure? In plain English, the two axioms defining a linear transformation read as follows: the image of a sum is the sum of the images, and the image of a scalar multiple is the scalar multiple of the image. Alternatively, we could say that the application of a linear transformation to vectors distributes over vector addition and scalar multiplication.    Linear transformations  A common pitfall is to conflate the definition of a linear transformation with the definition of a subspace . The language and notation of the two definitions share many commonalities, but they are completely different notions. In particular, the linear transformation axioms describe properties of a function between two vector spaces, whereas the subspace axioms describe properties of a subset of a single vector space.   Before getting to examples of linear transformations, it will perhaps be enlightening to consider how a function between two vector spaces could fail to be a linear transformation. is an attempt at visualizing what it means for a function could fail one of the two linear transformation axioms. We will often fall back on these types of conceptual visualizations as a means of organizing our thinking about linear transformations. The diagrams deliberately mirror our general function notation , placing the domain and codomain on the left and right, respectively, and using mapsto notation to indicate where domain elements get mapped to by in the codomain .   Visualizing the failure of linear transformation axioms     fails Axiom : .         fails Axiom : .   T fails axiom ii         Nonlinear function   Let be defined as .   Does satisfy Axiom ? If so, prove it. Otherwise, give an explicit counterexample.    Does satisfy Axiom ? If so, prove it. Otherwise, give an explicit counterexample.           does not satisfy Axiom . Let and . We have . We thus see that .     does not satisfy Axiom . Let and . We have . We thus see that .        Notational quirk   brings to light a notational quirk when dealing with functions of the form . Technically speaking, given an input we should write . And yet our inner aesthete cries out at the unnecessary nested parentheses, and pleads that the notational laws be relaxed in this specific setting. We shall make it so.    Parentheses shall be dropped   In the special case where the domain of function is a subset of , then given input we may write for .    We now turn to functions that do satisfy the linear transformation axioms. As our first examples of linear transformations, we define zero transformations and identity transformations .   Zero and identity transformation  linear transformation zero transformation  linear transformation identity transformation   Let and be vector spaces.  The zero transformation from to , denoted , is defined as follows: , where is the zero vector of . In other words, is the function that maps all elements of to the zero vector of .  The identity transformation of , denoted , is defined as follows: . In other words, for all . When the underlying vector space is clear from the context, we will drop the subscript and write for .     Elementary linear transformation proofs   Let and be vector spaces.   Prove that the zero transformation is a linear transformation.    Prove that the identity transformation is a linear transformation.          Let be the zero function: , for all . We verify each defining property separately.   Given , we have .    Given and , we have .   This proves that is a linear transformation.    Let be the identity function: , for all .   Given , we have .    Given and , we have .   This proves that is a linear transformation.        Basic properties of linear transformations   Let be a linear transformation. Let and be the zero vectors of and , respectively.   We have .    For all , we have .    For any linear combination we have .          We employ some similar trickery to what was done in the proof of . Assuming is linear: . Thus, whatever may be, it satisfies . Canceling on both sides using , we conclude .    The argument is similar: . Since , adding to both sides of the equation yields .    This is an easy proof by induction using the two defining properties of a linear transformation in tandem.        Transformations distribute over combinations   Statement of combines and extends our distributive interpretations of . It says that the application of a linear transformation distributes over linear combinations of vectors.   As a sort of converse to statement of , observe that if satisfies for all and , then is linear. Indeed, taking the special case yields Axiom of ; and choosing yields Axiom of . As a consequence, we have the following one-step procedure for proving whether a function between vector spaces is a linear transformation.   One-step technique for transformations   Let be a function between vector spaces. To prove is a linear transformation, show that for all scalars and all vectors .     Linear transformation: one-step technique   Define as . Use to show is a linear transformation.    Given scalars and vectors , we have . Thus is a linear transformation.    We continue with some examples of linear transformations involving vector spaces other than . Some of the operations we have already defined on matrices can be viewed as transformations.   Linear matrix operations   Let and be positive integers.   Trace operation is linear  The trace function is a linear transformation.    Transposition is linear  The matrix transpose operation is a linear transformation.       We leave the proof of (1) to the reader, and prove that the function is a linear transformation from to . We use the one-step technique. Given scalars and matrices , we have .    Later, when discussing changed of bases and diagonalizable linear transformations, our computational techniques will rely heavily on the notion of conjugation, defined below. As we show in , conjugation is also a linear operation. This ends up being very valuable to us, as it means computing conjugates of matrices interacts nicely with matrix addition and scalar multiplication.   Matrix conjugation   Let be a positive integer, and let be a fixed invertible matrix. Given , the matrix is called the conjugate of by . The operation is called conjugation by .     Conjugation is linear   Let be a positive integer, and let be a fixed invertible matrix. The conjugation by function is a linear transformation.    The proof is left as an exercise.      Bases and linear transformations  In we saw that a vector space is completely and concisely determined by a basis in the sense that all elements of can be expressed in a unique was as a linear combination of elements of . A similar principle applies to linear transformations. Roughly speaking, a linear transformation defined on a vector space is completely determined by where its sends elements of a basis for . This is spelled out in more detail in and the remark that follows.   Bases and linear transformations   Let and be vector spaces, and let be basis of , where for all .   Existence of transformations  Given any choice of vectors , there is a linear transformation satisfying for all .    Uniqueness of transformations  Given linear transformations and from to , if for all , then .        Proof of (1)  Since any has a unique expression of the form , where for all , the formula in defines a function in a well-defined manner. Note also that the formula still applies even if some of the coefficients are equal to 0: if , then , and the right-hand side of is unchanged. We will use this fact below.  We now show that is linear. Given we can find a common collection of elements for which for some . We can no longer assume that and for all , but as observed above we still have . Given any , we have . Thus is a linear transformation.    Proof of (2)  Assume and are linear transformations from to satisfying for all . Given any we can write . It follows that . Since for all , we have .      Transformations determined by behavior on basis   Let's paraphrase the two results of .   A linear transformation is completely determined by its behavior on a basis . Once we know the images for all , the image for any other is then completely determined. Put another way, if two linear transformations out of  agree on the elements of a basis , then they agree for all elements of .    Once we have a basis on hand, it is easy to construct linear transformations : simply choose images for all in any manner you like, and then define for any element using .         Matrix transformations  We now describe what turns out to be an entire family of examples of linear transformations: so-called matrix transformations of the form , where is a given matrix. This is a good place to recall the matrix mantra . Not only can a matrix represent a system of linear equations, it can represent a linear transformation. These are two very different concepts, and the matrix mantra helps us to not confuse the two. In the end a matrix is just a matrix: a mathematical tool that can be employed to diverse ends. Observe that the definition of matrix multiplication marks the first point where comes into play.   Matrix transformations  matrix transformation    the matrix transformation associated to     Let be an matrix. The matrix transformation associated to is the function defined as follows: . In other words, given input , the output is defined as .     Matrix transformations I   Let be an matrix. The function is a linear transformation.    We use the one-step technique. For any and , we have . This proves is a linear transformation.     As the title of suggests, there is a follow-up result ( ), and this states that in fact any linear transformation is of the form for some matrix . In other words, all linear transformations from to are matrix transformations.  As general as these two results are, mark well the restriction that remains: they apply only to functions with domain and codomain equal to a vector spaces of tuples. They say nothing for example about functions from to .     gives rise to an alternative technique for showing a function is a linear transformation: show that for some matrix .  As an example, consider the function . Conflating tuples with column vectors as described in we see that where . In other words, the original formula is just a description in terms of tuples of the function . It follows from that is linear.     Rotations, reflections, and orthogonal projections  We now introduce a number of geometric examples of linear transformations of and : namely, rotations, reflections, and orthogonal projections. These operations are described in detail below; we will use to prove these operations are in fact linear transformations.Our definitions of these operations will be very geometric in nature. As such we will go back and forth between point and arrow interpretations of elements of . (See .) In particular, we will interpret an -tuple both as the point and as the position vector .   Rotation in the plane  rotation as linear transformation    rotation by in the plane    Fix an angle and define to be the function that takes an input vector , considered as the position vector of the point , and returns the output obtained by rotating the vector by an angle of about the origin. The function is called rotation about the origin by the angle .  We can extract a formula from the rule defining by using polar coordinates: if has polar coordinates , then has polar coordinates .     Rotation is a linear transformation   Fix an angle . The rotation function is a linear transformation. In fact, we have , where .    By , we need only show that for the matrix indicated.  If the vector has polar coordinates (so that and ), then its image under our rotation has polar coordinates . Translating back to rectangular coordinates, we see that . It follows that , where , as claimed.     Observe that it is not at all obvious geometrically that the rotation operation is linear : , that it preserves addition and scalar multiplication of vectors in . Indeed, our proof does not even show this directly, but instead first gives a matrix formula for rotation and then uses .  Since matrices of the form can be understood as defining rotations of the plane, we call them rotation matrices .    Rotation matrices   Find formulas for and , expressing your answer in terms of pairs (as opposed to column vectors).    The rotation matrix corresponding to is . Thus has formula . Note: this is as expected! Rotating by 180 degrees produces the vector inverse.  The rotation matrix corresponding to is . Thus has formula . Let's check our formula for for the vectors and : . Confirm for yourself geometrically that these are the vectors you get by rotating the vectors and by an angle of about the origin.    A second example of a geometric linear transformation is furnished by reflection through a line in .   Reflection through a line  reflection through a line   Fix an angle with , and let be the line through the origin that makes an angle of with the positive -axis.  Define to be the function that takes an input , considered as a point , and returns the coordinates of the point obtained by reflecting through the line . In more detail: if lies on , then ; otherwise, is obtained by drawing the perpendicular through that passes through and taking the point on the other side of this line whose distance to is equal to the distance from to .  The function is called reflection through the line  .     Reflection is a linear transformation   Fix an angle . The reflection is a linear transformation. In fact we have , where .    See .     Visualizing reflection and rotation   The GeoGebra interactive below helps visualize rotations and reflections in (thought of as operations on points) by showing how they act on the triangle .   Move or alter the triangle as you see fit.    Check the box of the desired operation, rotation or reflection.    If rotation is selected, the slider adjusts the angle of rotation.    If reflection is selected, the slider adjusts the angle determining the line of reflection. Click the Draw perps box to see the the perpendicular lines used to define the reflections of vertices .      Visualizing reflection and rotation   Visualizing reflection and rotation. Made with GeoGebra .      Left-shift transformation   Define the left-shift operation , as follows: . In other words, we have . Show that is a linear transformation.    Let and be two infinite sequences in . For any we have . This proves is a linear transformation.      Video examples: deciding if is linear    Video: deciding if is linear  Video: deciding if is linear     Video: deciding if is linear  Video: deciding if is linear       Composition of linear transformations and matrix multiplication  We end by making good on a promise we made long ago to retroactively make sense of the definition of matrix multiplication. The key connecting concept, as it turns out, is composition of functions. We first need a result showing that composition preserves linearity.   Composition of linear transformations   Let be vector spaces, and suppose and are linear transformations. Then the composition is a linear transformation.    Exercise.    Turning now to matrix multiplication, suppose is and is . Let be their product. These matrices give rise to linear transformations . According to the composition is a linear transformation from (the domain of ) to (the codomain of ). We claim that . Indeed, identifying elements of with column vectors, for all we have . Thus, we can now understand the definition of matrix multiplication as being chosen precisely to encode how to compute the composition of two matrix transformations. The restriction on the dimension of the ingredient matrices is now understood as guaranteeing that the corresponding matrix transformations can be composed!    Bases and linear transformations   Composition of reflections   Let be reflection across the -axis, and let be reflection across the -axis. (See .) Use an argument in the spirit of statement (i) from to show that . (Note: this equality can also be shown using our matrix formulas for rotations and reflections. See . )    Since and are both linear transformations ( ), so is the composition . We wish to show . Since is also a linear transformation, it suffices by to show that and agree on a basis of . Take the standard basis . Compute: . Since and agree on the basis , we have .    As a corollary to we can at last complete the partial description of linear transformations of the form given in .   Matrix transformations   Given any linear transformation there is a unique matrix such that . In fact we have , where is the standard basis of . As a result, in the special case where the domain and codomain are both spaces of tuples, all linear transformations are matrix transformations.    Let be the standard basis of , and let be the matrix defined as . In other words, the -th column of is , considered as an column vector. The corresponding matrix transformation is linear by . Since is linear by assumption, applies: to show we need only show that for all . We have . Thus , as claimed.    Besides rounding out our theoretical discussion of linear transformations from to , computationally provides a recipe for computing a matrix formula for a linear transformation . In other words, it tells us how to build the , column by column, such that for all . For reasons that will be made more clear in , we will call the standard matrix of .   Standard matrix of linear   Let be a linear transformation. The standard matrix of is the unique matrix satisfying . Equivalently, is the unique matrix satisfying for all .     Standard matrix computation   The function defined as is linear.    Use to compute the standard matrix of .    Use to compute .      We have . Let . Since provides a matrix formula for we have . Thus , as you can confirm.     Rotation matrices revisited   Fix an angle . Taking for granted that the rotation operation is a linear transformation, re-derive the matrix formula for : , compute , the standard matrix of .    Let . According to  , since gets rotated by to , and gets rotated to .       WeBWork Exercises    Let be a linear transformation that sends the vector into and maps into . Use properties of a linear transformation to calculate the following. (Enter your answers as ordered pairs, such as (1,2), including the parentheses.)   ,   ,   .                        Let be a vector space, and a linear transformation such that and . Then      ,      ,      .                                       Let be the linear transformation such that Find , , , and , where , , and are arbitrary real numbers.   ,   ,   ,   .                             If is a linear transformation such that and then  .              Let Let be the linear transformation satisfying Find the image of an arbitrary vector           Let Define the linear transformation by . Find the images of and under .             Let be a vector space, , and let and be linear transformations such that  Find the images of and under the composite of and .   ,   .                   For each of the following functions , show that is nonlinear by providing an explicit counterexample to one of the defining axioms or a consequence thereof.     ,      ,      ,      ,      ,      Transposition  Define as : , the function takes as input an matrix and returns as output an matrix. Show that is a linear transformation.   Scalar multiplication  Let be a vector space. Fix and define as : , is scalar multiplication by . Show that is a linear transformation.   Trace  Fix an integer . The trace function is the function defined as . Show that the trace function is a linear transformation.   Left\/right matrix multiplication  Let be an matrix, and let be an matrix. Define the functions and as follows: . In other words, is the multiply on the left by operation, and is the multiply on the right by C operation Show that and are linear transformations.   Conjugation  Fix an invertible matrix . Define as . Show that is a linear transformation. This operation is called conjugation by .   Sequence shift operators  Let , the space of all infinite sequences. Define the shift left function , , and shift right function , , as follows: Prove that and are linear transformations.   Function shift operators  Fix . Define as , where . Show that is a linear transformation.   Function scaling operators  Fix and define the functions as follows: . Show that and are linear transformations.   Adding and scaling linear transformations  Suppose that and are linear transformations.    Define the function as . Show that is a linear transformation.    Define the function as . Show that is a linear transformation.      Let be defined as , where . Show that is linear. You may use the results of and .    Prove .   Linear transformations, span, and independence  Suppose is a linear transformation. Let be a subset of , and let be the image of under : , . Assume and for all .  Answer true or false: if true, provide a proof; if false, provide an explicit counterexample. Note: for a complete counterexample you need to specify , and .    If is linearly independent, then is linearly independent.    If is linearly independent, then is linearly independent.    If is a spanning set for , then is a spanning set for .     Reflection through a line  Fix an angle with , let be the line through the origin that makes an angle of with the positive -axis, and let be the reflection operation as described in . Prove that is a linear transformation following the steps below.   In a manner similar to , describe in terms of the polar coordinates of . Additionally, it helps to write , where is the angle the line segment from the origin to makes with the line . Include a drawing to support your explanation.    Use your description in (a), along with some trigonometric identities, to show where .      Compositions of rotations and reflections  In this exercise we will show that if we compose a rotation or reflection with another rotation or reflection, as defined in and , the result is yet another rotation or reflection. For each part, express the given composition either as a rotation or reflection , where is expressed in terms of and .                         Use and , along with some trigonometric identities.    The set is a basis of . Suppose the linear transformation satisfies . Find a formula for , where is a general element of .    The set is a basis of . Suppose the linear transformation satisfies . Find a formula for , where is a general element of .    The set is a basis of . Suppose the linear transformation satisfies . Show that the general formula for is given by .   Use (1) of .    Suppose is a linear transformation, and is a basis of for which for all . Show that : , is the zero transformation from to .   Use (1) of .    Suppose is a linear transformation, and is a basis of for which for all . Show that : , is the identity transformation of .   Use (1) of .    Let be a linear transformation. Assume there is a basis of and a constant such that for all . Prove: , where .   Use (1) of .    Matrix transformations   For each linear transformation and : (a) compute the standard matrix of using ; (b) compute using . You may take for granted that the given is linear.               "
+},
+{
+  "id": "d_linear_transform",
+  "level": "2",
+  "url": "s_transformation.html#d_linear_transform",
+  "type": "Definition",
+  "number": "5.1.1",
+  "title": "Linear transformations.",
+  "body": " Linear transformations   Let and be vector spaces. A function is a linear transformation (or linear ) if it satisfies the following properties:   Respects vector addition  For all , we have .    Respects scalar multiplication  For all and we have .     A function between vector spaces is nonlinear if it is not a linear transformation.   "
+},
+{
+  "id": "rm_lin_trans",
+  "level": "2",
+  "url": "s_transformation.html#rm_lin_trans",
+  "type": "Remark",
+  "number": "5.1.2",
+  "title": "Linear transformations.",
+  "body": " Linear transformations  How precisely does a linear transformation respect vector space structure? In plain English, the two axioms defining a linear transformation read as follows: the image of a sum is the sum of the images, and the image of a scalar multiple is the scalar multiple of the image. Alternatively, we could say that the application of a linear transformation to vectors distributes over vector addition and scalar multiplication.  "
+},
+{
+  "id": "ss_linear_transform-5",
+  "level": "2",
+  "url": "s_transformation.html#ss_linear_transform-5",
+  "type": "Warning",
+  "number": "5.1.3",
+  "title": "Linear transformations.",
+  "body": " Linear transformations  A common pitfall is to conflate the definition of a linear transformation with the definition of a subspace . The language and notation of the two definitions share many commonalities, but they are completely different notions. In particular, the linear transformation axioms describe properties of a function between two vector spaces, whereas the subspace axioms describe properties of a subset of a single vector space.  "
+},
+{
+  "id": "fig_nonlinear",
+  "level": "2",
+  "url": "s_transformation.html#fig_nonlinear",
+  "type": "Figure",
+  "number": "5.1.4",
+  "title": "",
+  "body": " Visualizing the failure of linear transformation axioms     fails Axiom : .         fails Axiom : .   T fails axiom ii       "
+},
+{
+  "id": "eg_nonlinear",
+  "level": "2",
+  "url": "s_transformation.html#eg_nonlinear",
+  "type": "Example",
+  "number": "5.1.5",
+  "title": "Nonlinear function.",
+  "body": " Nonlinear function   Let be defined as .   Does satisfy Axiom ? If so, prove it. Otherwise, give an explicit counterexample.    Does satisfy Axiom ? If so, prove it. Otherwise, give an explicit counterexample.           does not satisfy Axiom . Let and . We have . We thus see that .     does not satisfy Axiom . Let and . We have . We thus see that .      "
+},
+{
+  "id": "ss_linear_transform-9",
+  "level": "2",
+  "url": "s_transformation.html#ss_linear_transform-9",
+  "type": "Remark",
+  "number": "5.1.6",
+  "title": "Notational quirk.",
+  "body": " Notational quirk   brings to light a notational quirk when dealing with functions of the form . Technically speaking, given an input we should write . And yet our inner aesthete cries out at the unnecessary nested parentheses, and pleads that the notational laws be relaxed in this specific setting. We shall make it so.  "
+},
+{
+  "id": "fiat_paren_drop",
+  "level": "2",
+  "url": "s_transformation.html#fiat_paren_drop",
+  "type": "Fiat",
+  "number": "5.1.7",
+  "title": "Parentheses shall be dropped.",
+  "body": " Parentheses shall be dropped   In the special case where the domain of function is a subset of , then given input we may write for .   "
+},
+{
+  "id": "d_transform_zero_identity",
+  "level": "2",
+  "url": "s_transformation.html#d_transform_zero_identity",
+  "type": "Definition",
+  "number": "5.1.8",
+  "title": "Zero and identity transformation.",
+  "body": " Zero and identity transformation  linear transformation zero transformation  linear transformation identity transformation   Let and be vector spaces.  The zero transformation from to , denoted , is defined as follows: , where is the zero vector of . In other words, is the function that maps all elements of to the zero vector of .  The identity transformation of , denoted , is defined as follows: . In other words, for all . When the underlying vector space is clear from the context, we will drop the subscript and write for .   "
+},
+{
+  "id": "rm_transform_zero_identity",
+  "level": "2",
+  "url": "s_transformation.html#rm_transform_zero_identity",
+  "type": "Example",
+  "number": "5.1.9",
+  "title": "Elementary linear transformation proofs.",
+  "body": " Elementary linear transformation proofs   Let and be vector spaces.   Prove that the zero transformation is a linear transformation.    Prove that the identity transformation is a linear transformation.          Let be the zero function: , for all . We verify each defining property separately.   Given , we have .    Given and , we have .   This proves that is a linear transformation.    Let be the identity function: , for all .   Given , we have .    Given and , we have .   This proves that is a linear transformation.      "
+},
+{
+  "id": "th_transform_basic_props",
+  "level": "2",
+  "url": "s_transformation.html#th_transform_basic_props",
+  "type": "Theorem",
+  "number": "5.1.10",
+  "title": "Basic properties of linear transformations.",
+  "body": " Basic properties of linear transformations   Let be a linear transformation. Let and be the zero vectors of and , respectively.   We have .    For all , we have .    For any linear combination we have .          We employ some similar trickery to what was done in the proof of . Assuming is linear: . Thus, whatever may be, it satisfies . Canceling on both sides using , we conclude .    The argument is similar: . Since , adding to both sides of the equation yields .    This is an easy proof by induction using the two defining properties of a linear transformation in tandem.      "
+},
+{
+  "id": "rm_transform_dist",
+  "level": "2",
+  "url": "s_transformation.html#rm_transform_dist",
+  "type": "Remark",
+  "number": "5.1.11",
+  "title": "Transformations distribute over combinations.",
+  "body": " Transformations distribute over combinations   Statement of combines and extends our distributive interpretations of . It says that the application of a linear transformation distributes over linear combinations of vectors.  "
+},
+{
+  "id": "proc_transform_onestep",
+  "level": "2",
+  "url": "s_transformation.html#proc_transform_onestep",
+  "type": "Procedure",
+  "number": "5.1.12",
+  "title": "One-step technique for transformations.",
+  "body": " One-step technique for transformations   Let be a function between vector spaces. To prove is a linear transformation, show that for all scalars and all vectors .   "
+},
+{
+  "id": "eg_lin_trans_1step",
+  "level": "2",
+  "url": "s_transformation.html#eg_lin_trans_1step",
+  "type": "Example",
+  "number": "5.1.13",
+  "title": "Linear transformation: one-step technique.",
+  "body": " Linear transformation: one-step technique   Define as . Use to show is a linear transformation.    Given scalars and vectors , we have . Thus is a linear transformation.   "
+},
+{
+  "id": "th_lin_matrix_operations",
+  "level": "2",
+  "url": "s_transformation.html#th_lin_matrix_operations",
+  "type": "Theorem",
+  "number": "5.1.14",
+  "title": "Linear matrix operations.",
+  "body": " Linear matrix operations   Let and be positive integers.   Trace operation is linear  The trace function is a linear transformation.    Transposition is linear  The matrix transpose operation is a linear transformation.       We leave the proof of (1) to the reader, and prove that the function is a linear transformation from to . We use the one-step technique. Given scalars and matrices , we have .   "
+},
+{
+  "id": "d_conjugation",
+  "level": "2",
+  "url": "s_transformation.html#d_conjugation",
+  "type": "Definition",
+  "number": "5.1.15",
+  "title": "Matrix conjugation.",
+  "body": " Matrix conjugation   Let be a positive integer, and let be a fixed invertible matrix. Given , the matrix is called the conjugate of by . The operation is called conjugation by .   "
+},
+{
+  "id": "th_conj_lin",
+  "level": "2",
+  "url": "s_transformation.html#th_conj_lin",
+  "type": "Theorem",
+  "number": "5.1.16",
+  "title": "Conjugation is linear.",
+  "body": " Conjugation is linear   Let be a positive integer, and let be a fixed invertible matrix. The conjugation by function is a linear transformation.    The proof is left as an exercise.   "
+},
+{
+  "id": "th_bases_transformations",
+  "level": "2",
+  "url": "s_transformation.html#th_bases_transformations",
+  "type": "Theorem",
+  "number": "5.1.17",
+  "title": "Bases and linear transformations.",
+  "body": " Bases and linear transformations   Let and be vector spaces, and let be basis of , where for all .   Existence of transformations  Given any choice of vectors , there is a linear transformation satisfying for all .    Uniqueness of transformations  Given linear transformations and from to , if for all , then .        Proof of (1)  Since any has a unique expression of the form , where for all , the formula in defines a function in a well-defined manner. Note also that the formula still applies even if some of the coefficients are equal to 0: if , then , and the right-hand side of is unchanged. We will use this fact below.  We now show that is linear. Given we can find a common collection of elements for which for some . We can no longer assume that and for all , but as observed above we still have . Given any , we have . Thus is a linear transformation.    Proof of (2)  Assume and are linear transformations from to satisfying for all . Given any we can write . It follows that . Since for all , we have .    "
+},
+{
+  "id": "rm_bases_transformations",
+  "level": "2",
+  "url": "s_transformation.html#rm_bases_transformations",
+  "type": "Remark",
+  "number": "5.1.18",
+  "title": "Transformations determined by behavior on basis.",
+  "body": " Transformations determined by behavior on basis   Let's paraphrase the two results of .   A linear transformation is completely determined by its behavior on a basis . Once we know the images for all , the image for any other is then completely determined. Put another way, if two linear transformations out of  agree on the elements of a basis , then they agree for all elements of .    Once we have a basis on hand, it is easy to construct linear transformations : simply choose images for all in any manner you like, and then define for any element using .      "
+},
+{
+  "id": "d_matrix_transform",
+  "level": "2",
+  "url": "s_transformation.html#d_matrix_transform",
+  "type": "Definition",
+  "number": "5.1.19",
+  "title": "Matrix transformations.",
+  "body": " Matrix transformations  matrix transformation    the matrix transformation associated to     Let be an matrix. The matrix transformation associated to is the function defined as follows: . In other words, given input , the output is defined as .   "
+},
+{
+  "id": "th_matrix_transform_i",
+  "level": "2",
+  "url": "s_transformation.html#th_matrix_transform_i",
+  "type": "Theorem",
+  "number": "5.1.20",
+  "title": "Matrix transformations I.",
+  "body": " Matrix transformations I   Let be an matrix. The function is a linear transformation.    We use the one-step technique. For any and , we have . This proves is a linear transformation.   "
+},
+{
+  "id": "rm_matrix_transform",
+  "level": "2",
+  "url": "s_transformation.html#rm_matrix_transform",
+  "type": "Remark",
+  "number": "5.1.21",
+  "title": "",
+  "body": " As the title of suggests, there is a follow-up result ( ), and this states that in fact any linear transformation is of the form for some matrix . In other words, all linear transformations from to are matrix transformations.  As general as these two results are, mark well the restriction that remains: they apply only to functions with domain and codomain equal to a vector spaces of tuples. They say nothing for example about functions from to .  "
+},
+{
+  "id": "rm_matrix_transform_example",
+  "level": "2",
+  "url": "s_transformation.html#rm_matrix_transform_example",
+  "type": "Remark",
+  "number": "5.1.22",
+  "title": "",
+  "body": "  gives rise to an alternative technique for showing a function is a linear transformation: show that for some matrix .  As an example, consider the function . Conflating tuples with column vectors as described in we see that where . In other words, the original formula is just a description in terms of tuples of the function . It follows from that is linear.  "
+},
+{
+  "id": "d_rotation",
+  "level": "2",
+  "url": "s_transformation.html#d_rotation",
+  "type": "Definition",
+  "number": "5.1.23",
+  "title": "Rotation in the plane.",
+  "body": " Rotation in the plane  rotation as linear transformation    rotation by in the plane    Fix an angle and define to be the function that takes an input vector , considered as the position vector of the point , and returns the output obtained by rotating the vector by an angle of about the origin. The function is called rotation about the origin by the angle .  We can extract a formula from the rule defining by using polar coordinates: if has polar coordinates , then has polar coordinates .   "
+},
+{
+  "id": "th_transform_rotation",
+  "level": "2",
+  "url": "s_transformation.html#th_transform_rotation",
+  "type": "Theorem",
+  "number": "5.1.24",
+  "title": "Rotation is a linear transformation.",
+  "body": " Rotation is a linear transformation   Fix an angle . The rotation function is a linear transformation. In fact, we have , where .    By , we need only show that for the matrix indicated.  If the vector has polar coordinates (so that and ), then its image under our rotation has polar coordinates . Translating back to rectangular coordinates, we see that . It follows that , where , as claimed.   "
+},
+{
+  "id": "rm_rotation_matrix",
+  "level": "2",
+  "url": "s_transformation.html#rm_rotation_matrix",
+  "type": "Remark",
+  "number": "5.1.25",
+  "title": "",
+  "body": " Observe that it is not at all obvious geometrically that the rotation operation is linear : , that it preserves addition and scalar multiplication of vectors in . Indeed, our proof does not even show this directly, but instead first gives a matrix formula for rotation and then uses .  Since matrices of the form can be understood as defining rotations of the plane, we call them rotation matrices .  "
+},
+{
+  "id": "ss_rotations_reflections-6",
+  "level": "2",
+  "url": "s_transformation.html#ss_rotations_reflections-6",
+  "type": "Example",
+  "number": "5.1.26",
+  "title": "Rotation matrices.",
+  "body": " Rotation matrices   Find formulas for and , expressing your answer in terms of pairs (as opposed to column vectors).    The rotation matrix corresponding to is . Thus has formula . Note: this is as expected! Rotating by 180 degrees produces the vector inverse.  The rotation matrix corresponding to is . Thus has formula . Let's check our formula for for the vectors and : . Confirm for yourself geometrically that these are the vectors you get by rotating the vectors and by an angle of about the origin.   "
+},
+{
+  "id": "d_reflection",
+  "level": "2",
+  "url": "s_transformation.html#d_reflection",
+  "type": "Definition",
+  "number": "5.1.27",
+  "title": "Reflection through a line.",
+  "body": " Reflection through a line  reflection through a line   Fix an angle with , and let be the line through the origin that makes an angle of with the positive -axis.  Define to be the function that takes an input , considered as a point , and returns the coordinates of the point obtained by reflecting through the line . In more detail: if lies on , then ; otherwise, is obtained by drawing the perpendicular through that passes through and taking the point on the other side of this line whose distance to is equal to the distance from to .  The function is called reflection through the line  .   "
+},
+{
+  "id": "th_transform_reflection",
+  "level": "2",
+  "url": "s_transformation.html#th_transform_reflection",
+  "type": "Theorem",
+  "number": "5.1.28",
+  "title": "Reflection is a linear transformation.",
+  "body": " Reflection is a linear transformation   Fix an angle . The reflection is a linear transformation. In fact we have , where .    See .   "
+},
+{
+  "id": "eg_rot_refl",
+  "level": "2",
+  "url": "s_transformation.html#eg_rot_refl",
+  "type": "Example",
+  "number": "5.1.29",
+  "title": "Visualizing reflection and rotation.",
+  "body": " Visualizing reflection and rotation   The GeoGebra interactive below helps visualize rotations and reflections in (thought of as operations on points) by showing how they act on the triangle .   Move or alter the triangle as you see fit.    Check the box of the desired operation, rotation or reflection.    If rotation is selected, the slider adjusts the angle of rotation.    If reflection is selected, the slider adjusts the angle determining the line of reflection. Click the Draw perps box to see the the perpendicular lines used to define the reflections of vertices .      Visualizing reflection and rotation   Visualizing reflection and rotation. Made with GeoGebra .    "
+},
+{
+  "id": "ss_rotations_reflections-11",
+  "level": "2",
+  "url": "s_transformation.html#ss_rotations_reflections-11",
+  "type": "Example",
+  "number": "5.1.31",
+  "title": "Left-shift transformation.",
+  "body": " Left-shift transformation   Define the left-shift operation , as follows: . In other words, we have . Show that is a linear transformation.    Let and be two infinite sequences in . For any we have . This proves is a linear transformation.   "
+},
+{
+  "id": "vid_eg_transormation",
+  "level": "2",
+  "url": "s_transformation.html#vid_eg_transormation",
+  "type": "Example",
+  "number": "5.1.32",
+  "title": "Video examples: deciding if <span class=\"process-math\">\\(T\\)<\/span> is linear.",
+  "body": " Video examples: deciding if is linear    Video: deciding if is linear  Video: deciding if is linear     Video: deciding if is linear  Video: deciding if is linear     "
+},
+{
+  "id": "th_transform_composition",
+  "level": "2",
+  "url": "s_transformation.html#th_transform_composition",
+  "type": "Theorem",
+  "number": "5.1.35",
+  "title": "Composition of linear transformations.",
+  "body": " Composition of linear transformations   Let be vector spaces, and suppose and are linear transformations. Then the composition is a linear transformation.    Exercise.   "
+},
+{
+  "id": "ss_bases_transformations-2",
+  "level": "2",
+  "url": "s_transformation.html#ss_bases_transformations-2",
+  "type": "Example",
+  "number": "5.1.36",
+  "title": "Composition of reflections.",
+  "body": " Composition of reflections   Let be reflection across the -axis, and let be reflection across the -axis. (See .) Use an argument in the spirit of statement (i) from to show that . (Note: this equality can also be shown using our matrix formulas for rotations and reflections. See . )    Since and are both linear transformations ( ), so is the composition . We wish to show . Since is also a linear transformation, it suffices by to show that and agree on a basis of . Take the standard basis . Compute: . Since and agree on the basis , we have .   "
+},
+{
+  "id": "cor_matrix_transformations",
+  "level": "2",
+  "url": "s_transformation.html#cor_matrix_transformations",
+  "type": "Corollary",
+  "number": "5.1.37",
+  "title": "Matrix transformations.",
+  "body": " Matrix transformations   Given any linear transformation there is a unique matrix such that . In fact we have , where is the standard basis of . As a result, in the special case where the domain and codomain are both spaces of tuples, all linear transformations are matrix transformations.    Let be the standard basis of , and let be the matrix defined as . In other words, the -th column of is , considered as an column vector. The corresponding matrix transformation is linear by . Since is linear by assumption, applies: to show we need only show that for all . We have . Thus , as claimed.   "
+},
+{
+  "id": "d_transformation_standard_matrix",
+  "level": "2",
+  "url": "s_transformation.html#d_transformation_standard_matrix",
+  "type": "Definition",
+  "number": "5.1.38",
+  "title": "Standard matrix of linear <span class=\"process-math\">\\(T\\colon \\R^n\\rightarrow \\R^m\\)<\/span>.",
+  "body": " Standard matrix of linear   Let be a linear transformation. The standard matrix of is the unique matrix satisfying . Equivalently, is the unique matrix satisfying for all .   "
+},
+{
+  "id": "eg_standard_matrix",
+  "level": "2",
+  "url": "s_transformation.html#eg_standard_matrix",
+  "type": "Example",
+  "number": "5.1.39",
+  "title": "Standard matrix computation.",
+  "body": " Standard matrix computation   The function defined as is linear.    Use to compute the standard matrix of .    Use to compute .      We have . Let . Since provides a matrix formula for we have . Thus , as you can confirm.   "
+},
+{
+  "id": "eg_rotation_via_standard_matrix",
+  "level": "2",
+  "url": "s_transformation.html#eg_rotation_via_standard_matrix",
+  "type": "Example",
+  "number": "5.1.40",
+  "title": "Rotation matrices revisited.",
+  "body": " Rotation matrices revisited   Fix an angle . Taking for granted that the rotation operation is a linear transformation, re-derive the matrix formula for : , compute , the standard matrix of .    Let . According to  , since gets rotated by to , and gets rotated to .   "
+},
+{
+  "id": "s_transformation_ex-1-2",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-1-2",
+  "type": "Exercise",
+  "number": "5.1.7.1",
+  "title": "",
+  "body": "  Let be a linear transformation that sends the vector into and maps into . Use properties of a linear transformation to calculate the following. (Enter your answers as ordered pairs, such as (1,2), including the parentheses.)   ,   ,   .                     "
+},
+{
+  "id": "s_transformation_ex-1-3",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-1-3",
+  "type": "Exercise",
+  "number": "5.1.7.2",
+  "title": "",
+  "body": "  Let be a vector space, and a linear transformation such that and . Then      ,      ,      .                                    "
+},
+{
+  "id": "s_transformation_ex-1-4",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-1-4",
+  "type": "Exercise",
+  "number": "5.1.7.3",
+  "title": "",
+  "body": "  Let be the linear transformation such that Find , , , and , where , , and are arbitrary real numbers.   ,   ,   ,   .                          "
+},
+{
+  "id": "s_transformation_ex-1-5",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-1-5",
+  "type": "Exercise",
+  "number": "5.1.7.4",
+  "title": "",
+  "body": "  If is a linear transformation such that and then  .           "
+},
+{
+  "id": "s_transformation_ex-1-6",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-1-6",
+  "type": "Exercise",
+  "number": "5.1.7.5",
+  "title": "",
+  "body": "  Let Let be the linear transformation satisfying Find the image of an arbitrary vector        "
+},
+{
+  "id": "s_transformation_ex-1-7",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-1-7",
+  "type": "Exercise",
+  "number": "5.1.7.6",
+  "title": "",
+  "body": "  Let Define the linear transformation by . Find the images of and under .          "
+},
+{
+  "id": "s_transformation_ex-1-8",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-1-8",
+  "type": "Exercise",
+  "number": "5.1.7.7",
+  "title": "",
+  "body": "  Let be a vector space, , and let and be linear transformations such that  Find the images of and under the composite of and .   ,   .                "
+},
+{
+  "id": "s_transformation_ex-2",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-2",
+  "type": "Exercise",
+  "number": "5.1.7.8",
+  "title": "",
+  "body": " For each of the following functions , show that is nonlinear by providing an explicit counterexample to one of the defining axioms or a consequence thereof.     ,      ,      ,      ,      ,     "
+},
+{
+  "id": "ex_transformation_transposition",
+  "level": "2",
+  "url": "s_transformation.html#ex_transformation_transposition",
+  "type": "Exercise",
+  "number": "5.1.7.9",
+  "title": "Transposition.",
+  "body": "Transposition  Define as : , the function takes as input an matrix and returns as output an matrix. Show that is a linear transformation.  "
+},
+{
+  "id": "ex_transformation_vector_scale",
+  "level": "2",
+  "url": "s_transformation.html#ex_transformation_vector_scale",
+  "type": "Exercise",
+  "number": "5.1.7.10",
+  "title": "Scalar multiplication.",
+  "body": "Scalar multiplication  Let be a vector space. Fix and define as : , is scalar multiplication by . Show that is a linear transformation.  "
+},
+{
+  "id": "ex_transformation_trace",
+  "level": "2",
+  "url": "s_transformation.html#ex_transformation_trace",
+  "type": "Exercise",
+  "number": "5.1.7.11",
+  "title": "Trace.",
+  "body": "Trace  Fix an integer . The trace function is the function defined as . Show that the trace function is a linear transformation.  "
+},
+{
+  "id": "ex_transformation_matrix_mult",
+  "level": "2",
+  "url": "s_transformation.html#ex_transformation_matrix_mult",
+  "type": "Exercise",
+  "number": "5.1.7.12",
+  "title": "Left\/right matrix multiplication.",
+  "body": "Left\/right matrix multiplication  Let be an matrix, and let be an matrix. Define the functions and as follows: . In other words, is the multiply on the left by operation, and is the multiply on the right by C operation Show that and are linear transformations.  "
+},
+{
+  "id": "ex_transformation_conjugation",
+  "level": "2",
+  "url": "s_transformation.html#ex_transformation_conjugation",
+  "type": "Exercise",
+  "number": "5.1.7.13",
+  "title": "Conjugation.",
+  "body": "Conjugation  Fix an invertible matrix . Define as . Show that is a linear transformation. This operation is called conjugation by .  "
+},
+{
+  "id": "ex_transformation_sequence_shift",
+  "level": "2",
+  "url": "s_transformation.html#ex_transformation_sequence_shift",
+  "type": "Exercise",
+  "number": "5.1.7.14",
+  "title": "Sequence shift operators.",
+  "body": "Sequence shift operators  Let , the space of all infinite sequences. Define the shift left function , , and shift right function , , as follows: Prove that and are linear transformations.  "
+},
+{
+  "id": "ex_transformation_function_shift",
+  "level": "2",
+  "url": "s_transformation.html#ex_transformation_function_shift",
+  "type": "Exercise",
+  "number": "5.1.7.15",
+  "title": "Function shift operators.",
+  "body": "Function shift operators  Fix . Define as , where . Show that is a linear transformation.  "
+},
+{
+  "id": "ex_transformation_function_scale",
+  "level": "2",
+  "url": "s_transformation.html#ex_transformation_function_scale",
+  "type": "Exercise",
+  "number": "5.1.7.16",
+  "title": "Function scaling operators.",
+  "body": "Function scaling operators  Fix and define the functions as follows: . Show that and are linear transformations.  "
+},
+{
+  "id": "ex_transformation_add_scale",
+  "level": "2",
+  "url": "s_transformation.html#ex_transformation_add_scale",
+  "type": "Exercise",
+  "number": "5.1.7.17",
+  "title": "Adding and scaling linear transformations.",
+  "body": "Adding and scaling linear transformations  Suppose that and are linear transformations.    Define the function as . Show that is a linear transformation.    Define the function as . Show that is a linear transformation.    "
+},
+{
+  "id": "s_transformation_ex-12",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-12",
+  "type": "Exercise",
+  "number": "5.1.7.18",
+  "title": "",
+  "body": " Let be defined as , where . Show that is linear. You may use the results of and .  "
+},
+{
+  "id": "s_transformation_ex-13",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-13",
+  "type": "Exercise",
+  "number": "5.1.7.19",
+  "title": "",
+  "body": " Prove .  "
+},
+{
+  "id": "ex_span_independence_transform",
+  "level": "2",
+  "url": "s_transformation.html#ex_span_independence_transform",
+  "type": "Exercise",
+  "number": "5.1.7.20",
+  "title": "Linear transformations, span, and independence.",
+  "body": "Linear transformations, span, and independence  Suppose is a linear transformation. Let be a subset of , and let be the image of under : , . Assume and for all .  Answer true or false: if true, provide a proof; if false, provide an explicit counterexample. Note: for a complete counterexample you need to specify , and .    If is linearly independent, then is linearly independent.    If is linearly independent, then is linearly independent.    If is a spanning set for , then is a spanning set for .    "
+},
+{
+  "id": "ex_transformation_reflection",
+  "level": "2",
+  "url": "s_transformation.html#ex_transformation_reflection",
+  "type": "Exercise",
+  "number": "5.1.7.21",
+  "title": "Reflection through a line.",
+  "body": "Reflection through a line  Fix an angle with , let be the line through the origin that makes an angle of with the positive -axis, and let be the reflection operation as described in . Prove that is a linear transformation following the steps below.   In a manner similar to , describe in terms of the polar coordinates of . Additionally, it helps to write , where is the angle the line segment from the origin to makes with the line . Include a drawing to support your explanation.    Use your description in (a), along with some trigonometric identities, to show where .     "
+},
+{
+  "id": "ex_transformation_composition_rotations_reflections",
+  "level": "2",
+  "url": "s_transformation.html#ex_transformation_composition_rotations_reflections",
+  "type": "Exercise",
+  "number": "5.1.7.22",
+  "title": "Compositions of rotations and reflections.",
+  "body": "Compositions of rotations and reflections  In this exercise we will show that if we compose a rotation or reflection with another rotation or reflection, as defined in and , the result is yet another rotation or reflection. For each part, express the given composition either as a rotation or reflection , where is expressed in terms of and .                         Use and , along with some trigonometric identities.  "
+},
+{
+  "id": "s_transformation_ex-17",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-17",
+  "type": "Exercise",
+  "number": "5.1.7.23",
+  "title": "",
+  "body": " The set is a basis of . Suppose the linear transformation satisfies . Find a formula for , where is a general element of .  "
+},
+{
+  "id": "s_transformation_ex-18",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-18",
+  "type": "Exercise",
+  "number": "5.1.7.24",
+  "title": "",
+  "body": " The set is a basis of . Suppose the linear transformation satisfies . Find a formula for , where is a general element of .  "
+},
+{
+  "id": "s_transformation_ex-19",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-19",
+  "type": "Exercise",
+  "number": "5.1.7.25",
+  "title": "",
+  "body": " The set is a basis of . Suppose the linear transformation satisfies . Show that the general formula for is given by .   Use (1) of .  "
+},
+{
+  "id": "s_transformation_ex-20",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-20",
+  "type": "Exercise",
+  "number": "5.1.7.26",
+  "title": "",
+  "body": " Suppose is a linear transformation, and is a basis of for which for all . Show that : , is the zero transformation from to .   Use (1) of .  "
+},
+{
+  "id": "s_transformation_ex-21",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-21",
+  "type": "Exercise",
+  "number": "5.1.7.27",
+  "title": "",
+  "body": " Suppose is a linear transformation, and is a basis of for which for all . Show that : , is the identity transformation of .   Use (1) of .  "
+},
+{
+  "id": "s_transformation_ex-22",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-22",
+  "type": "Exercise",
+  "number": "5.1.7.28",
+  "title": "",
+  "body": " Let be a linear transformation. Assume there is a basis of and a constant such that for all . Prove: , where .   Use (1) of .  "
+},
+{
+  "id": "s_transformation_ex-23-3",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-23-3",
+  "type": "Exercise",
+  "number": "5.1.7.29",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_transformation_ex-23-4",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-23-4",
+  "type": "Exercise",
+  "number": "5.1.7.30",
+  "title": "",
+  "body": "    "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
@@ -5428,9 +6040,9 @@ var ptx_lunr_docs = [
   "body": " Mantras and fiats   "
 },
 {
-  "id": "euc_vec_spaces-8-10",
+  "id": "euc_vec_spaces-9-10",
   "level": "1",
-  "url": "euc_vec_spaces-8-10.html",
+  "url": "euc_vec_spaces-9-10.html",
   "type": "Index",
   "number": "",
   "title": "Index",
