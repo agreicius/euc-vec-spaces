@@ -12,10 +12,10 @@
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.39</span><span class="period">.</span><span class="space"> </span><span class="title">Standard matrix computation.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.28</span><span class="period">.</span><span class="space"> </span><span class="title">Standard matrix computation.</span>
 </h4>
-<div class="para">The function <span class="process-math">\(T\colon \R^3\rightarrow \R^2\)</span> defined as <span class="process-math">\(T(x,y,z)=T(x+y+z, 2x+3y-4z)\)</span> is linear.</div> <ol class="decimal" id="eg_standard_matrix-2-2">
-<li><div class="para">Use <a href="s_transformation.html#cor_matrix_transformations" class="xref" data-knowl="./knowl/xref/cor_matrix_transformations.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 5.1.37: Matrix transformations">5.1.37</a> to compute the standard matrix of <span class="process-math">\(A\text{.}\)</span>
+<div class="para">The function <span class="process-math">\(T\colon \R^3\rightarrow \R^2\)</span> defined as <span class="process-math">\(T(x,y,z)=T(x+y+z, 2x+3y-4z)\)</span> is linear.</div> <ol class="decimal">
+<li><div class="para">Use <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "cor_matrix_transformations" missing or not unique]</code> to compute the standard matrix of <span class="process-math">\(A\text{.}\)</span>
 </div></li>
 <li><div class="para">Use <span class="process-math">\(A\)</span> to compute <span class="process-math">\(T((-2,3,4))\text{.}\)</span>
 </div></li>
@@ -24,15 +24,22 @@
 <div class="para">We have</div>
 <div class="displaymath process-math">
 \begin{align*}
-A \amp = \begin{amatrix}[ccc]\vert\amp \vert\amp \vert\\ T((1,0,0))\amp T((0,1,0))\amp T((0,0,1)) \\ \vert\amp \vert\amp vert  \end{amatrix} \\
-\amp = \begin{amatrix}[rrr] 1 \amp 1 \amp 1 \\ 2\amp 3 \amp -4 \end{amatrix} \text{.}
+A \amp = \begin{amatrix}[ccc]\vert\amp \vert\amp \vert\\
+T((1,0,0))\amp T((0,1,0))\amp T((0,0,1)) \\
+\vert\amp \vert\amp vert  \end{amatrix} \\
+\amp =
+\begin{amatrix}[rrr]
+1 \amp 1 \amp 1 \\ 2\amp 3 \amp -4 \end{amatrix} \text{.}
 \end{align*}
 </div>
 <div class="para">Let <span class="process-math">\(\boldx=(-2,3,4)\text{.}\)</span> Since <span class="process-math">\(A\)</span> provides a “matrix formula” for <span class="process-math">\(T\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{align*}
 T(\boldx) \amp = A\boldx \\
-\amp = \begin{amatrix}[rrr] 1 \amp 1 \amp 1 \\ 2\amp 3 \amp -4 \end{amatrix} \colvec{-2\\ 3\\ 4}\\
+\amp =
+\begin{amatrix}[rrr]
+1 \amp 1 \amp 1 \\ 2\amp 3 \amp -4 \end{amatrix}
+\colvec{-2\\ 3\\ 4}\\
 \amp = \colvec{5\\ -9} \text{.}
 \end{align*}
 </div>
