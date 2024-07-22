@@ -320,6 +320,281 @@
       </p>
     </statement>
   </remark>
+  <p>
+    Next we consider the operation of orthogonally projecting a vector onto a line (in <m>\R^2</m> or <m>\R^3</m>) or a plane in <m>\R^3</m>. See <xref ref="eg_lines_planes_review"/> for a refresher on lines and planes in <m>\R^2</m> and <m>\R^3</m>. 
+         </p>
+   
+         <definition xml:id="d_projection_onto_line">
+           <title>Projection onto a line</title>
+   
+           <statement>
+             <p>
+    Let <m>\boldv=(a_1,a_2,\dots, a_n)</m> be a fixed nonzero vector in <m>\R^n</m>, where <m>n=2</m> or <m>n=3</m>. The set of all scalar multiples of <m>\boldv</m> defines a line <m>\ell</m> in <m>\R^n</m> passing through the origin: we call <m>\boldv</m> the <term>direction vector</term> of this line. Given a point <m>P=(x_1,x_2,\dots, x_n)\in \R^n</m> there is a unique point <m>Q\in \ell</m> such that the vector 
+               <me>
+   \overrightarrow{QP}=(x_1-y_1,x_2-y_2,\dots, x_n-y_n) 
+               </me>
+   is orthogonal to <m>\boldv</m>: <ie/>, there is a unique <m>Q\in \ell</m> such that 
+               <me>
+   \overrightarrow{QP}\cdot \boldv=0 
+               </me>.
+    The point <m>Q</m> is called the <term>orthogonal projection</term> of <m>P</m> onto the line <m>\ell</m>. We define <term>orthogonal projection onto <m>\ell</m></term> to be the function <m>\operatorname{proj}_{\ell}\colon \R^n\rightarrow \R^n</m> that maps a point <m>P</m> to its orthogonal projection <m>Q=\proj{P}{\ell}</m> onto <m>\ell</m>. 
+             </p>
+           </statement>
+         </definition>
+   
+         <theorem xml:id="th_proj_line_linear">
+           <title>Orthogonal projection onto a line</title>
+   
+           <statement>
+             <p>
+    Fix a nonzero vector <m>\boldv\in \R^n</m>, where <m>n=2</m> or <m>n=3</m>, and let <m>\ell</m> be the line obtained by taking all scalar multiples of <m>\boldv</m>. The orthogonal projection function <m>\operatorname{proj}_\ell\colon \R^n\rightarrow \R^n</m> is a linear transformation. In fact, we have <m>\operatorname{proj}_\ell=T_A</m> where <m>A</m> is the <m>n\times n</m> matrix described below for each case (<m>n=2</m> and <m>n=3</m>). 
+               <ul>
+                 <li>
+                   <title>Case: <m>n=2</m></title>
+   
+                   <p>
+    Assume <m>\boldv=(a,b)\ne (0,0)</m>. We have <m>\operatorname{proj}_\ell=T_A</m>, where 
+                     <men xml:id="eq_ortho_proj_line_matrix_2">
+    A=\frac{1}{a^2+b^2}\begin{bmatrix}a^2\amp ab \\ ab \amp b^2 \end{bmatrix} 
+                     </men>.
+                   </p>
+                 </li>
+   
+                 <li>
+                   <title>Case: <m>n=3</m></title>
+   
+                   <p>
+    Assume <m>\boldv=(a,b,c)\ne (0,0,0)</m>. We have <m>\operatorname{proj}_\ell=T_A</m>, where 
+                     <men xml:id="eq_ortho_proj_line_matrix_3">
+    A=\frac{1}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ ab \amp b^2 \amp bc \\ ac\amp bc\amp c^2 \end{bmatrix} 
+                     </men>.
+                   </p>
+                 </li>
+               </ul>
+             </p>
+           </statement>
+   
+   
+           <proof>
+             <p>
+    We prove the matrix formula in the case <m>n=3</m>. (The case <m>n=2</m> is exactly similar.) Let <m>\boldv=(a,b,c)</m>. In multivariable calculus we learn that given a point with position vector <m>\boldx=(x,y,z)</m>, its orthogonal projection onto <m>\ell</m> is the point <m>Q</m> whose position vector is 
+               <md>
+                 <mrow> \overrightarrow{OQ}\amp=\left(\frac{\boldx\cdot \boldv}{\boldv\cdot \boldv}\right)\boldv </mrow>
+                 <mrow> \amp = \frac{ax+by+cz}{a^2+b^2+c^2}(a,b,c)</mrow>
+                 <mrow> \amp = \frac{1}{a^2+b^2+c^2}(a^2x+aby+acz, abx+b^2y+bcz, acx+bcy+c^2z)</mrow>
+                 <mrow> \amp = \frac{1}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ ab \amp b^2 \amp bc \\ ac\amp bc\amp c^2 \end{bmatrix}\colvec{x\\ y\\ z}</mrow>
+               </md>.
+    This proves that 
+               <me>
+    \proj{\boldx}{\ell}=A\boldx 
+               </me>,
+    where 
+               <me>
+    A=\frac{1}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ ab \amp b^2 \amp bc \\ ac\amp bc\amp c^2 \end{bmatrix} 
+               </me>,
+    as desired. 
+             </p>
+           </proof>
+         </theorem>
+   
+         <example xml:id="eg_projection_line_specific">
+           <title>Orthogonal projection onto line</title>
+   
+           <statement>
+             <p>
+    Let <m>T\colon \R^2\rightarrow \R^2</m> be orthogonal projection onto the line <m>\ell</m> passing through the origin with direction vector <m>\boldv=(1,1,1)</m>.  Find the matrix <m>A</m> such that <m>T=T_A</m>. Use <m>A</m> to compute the orthogonal projection of  <m>(-1,3,2)</m> onto <m>\ell</m>. 
+             </p>
+           </statement>
+   
+           <solution>
+             <p>
+    Using the formula for <m>A</m> in <xref ref="th_proj_line_linear"/>, where <m>(a,b,c)=(1,1,1)</m>, we see that 
+               <me>
+    A=\frac{1}{3}\begin{bmatrix}1\amp 1 \amp 1 \\ 1\amp 1\amp 1\\ 1\amp 1\amp 1\end{bmatrix} 
+               </me>
+   and hence for any <m>\boldx=(x,y,z)</m> we have 
+               <me>
+    \proj{\boldx}{\ell}=A\boldx=\frac{1}{3}(x+y+z,x+y+z, x+y+z) 
+               </me>.
+    In particular, we have <m>\proj{(-1,3,2)}{\ell}=(4/3, 4/3, 4/3)</m>. Let's check that this truly is the orthogonal projection of <m>P=(-1,3,2)</m> onto <m>\ell</m>. Letting <m>Q=(4/3,4/3,4/3)</m>, we have <m>\overrightarrow{QP}=(-7/3,5/3, 2/3)</m>, which is indeed orthogonal to <m>\boldv=(1,1,1)</m>: 
+               <me>
+    \boldv\cdot \overrightarrow{QP}=\frac{1}{3}(-7+5+2)=0 
+               </me>.
+    The formula really works! In case you need more convincing, here is a Sage Cell that computes the projections and produces a diagram. 
+             </p>
+   
+             <figure xml:id="fig_proj_onto_line">
+               <title>Orthogonal projection onto a line</title>
+   
+               <caption>Orthogonal projection onto the line passing through the origin with direction vector <m>\boldv=(1,1,1)</m></caption>
+               <image width="75%" xml:id="im_ortho_proj_line">
+                 <description>
+   Orthogonal projection onto a line
+                 </description>
+                 <sageplot variant="3d" aspect="1.0">
+   v=vector((1,1,1))
+   w=vector((-1,3,2))
+   u=vector((4/3,4/3,4/3))
+   O=vector((0,0,0))
+   P=point(w,color="blue", size="10")
+   l=line3d([[0,0,0],[2,2,2]], color="red", radius=.015)
+   A1=arrow(O,w, color="blue")
+   A2=arrow(O,v, color="red")
+   A3=arrow(u,w, color="green")
+   T1=text3d("P=(-1,3,2)", (1.1)*w, color="black", fontsize="20")
+   T2=text3d("Q=(4/3,4/3,4/3)", (1.1)*u+vector((.1,0,.1)), color="black", fontsize="20")
+   T3=text3d("v=(1,1,1)", .5*v+vector((.2,.1,-.4)), color="black", fontsize="20")
+   P=point(w, size="10", color="blue")
+   Q=point(u, size="10", color="blue")
+   A1+A2+A3+l+P+Q+T1+T2+T3
+                 </sageplot>
+               </image>
+             </figure>
+           </solution>
+         </example>
+   
+         <definition xml:id="d_ortho_proj_plane">
+           <title>Orthogonal projection onto a plane</title>
+   
+           <statement>
+             <p>
+               Let <m>\boldn=(a,b,c)</m> be a nonzero vector in <m>\R^3</m>, and let <m>W</m> be the plane passing through the origin with normal vector <m>\boldn</m>: <ie/>, <m>W</m> is the plane with equation
+               <me>
+                 ax+by+cz=0
+               </me>.
+               Given a point <m>P=(x,y,z)\in \R^3</m>, there is a unique point <m>Q\in W</m> such that <m>\overrightarrow{QP}</m> is orthogonal to <m>W</m>.
+               We call <m>Q</m> the <term>orthogonal projection</term> of <m>P</m> onto <m>W</m>.
+               We define <term>orthogonal projection onto <m>W</m></term> to be the function <m>\operatorname{proj}_W\colon \R^3\rightarrow \R^3</m> that maps a point <m>P\in \R^3</m> to its orthogonal projection <m>Q=\proj{P}{W}</m> in <m>W</m>.
+             </p>
+           </statement>
+         </definition>
+   
+         <theorem xml:id="th_ortho_proj_plane_linear">
+           <title>Orthogonal projection onto a plane</title>
+   
+           <statement>
+             <p>
+               Let <m>\boldn=(a,b,c)</m> be a nonzero vector of <m>\R^3</m>, and let <m>W</m> be the plane passing through the origin with normal vector <m>\boldn</m>.
+               The orthogonal projection map <m>\operatorname{proj}_W\colon \R^3\rightarrow \R^3</m> is a linear transformation.
+               In fact, we have <m>\operatorname{proj}_W=T_A</m> where
+               <men xml:id="eq_ortho_proj_plane_matrix">
+                 A=\frac{1}{a^2+b^2+c^2}\begin{amatrix}[rrr] b^2+c^2\amp -ab \amp -ac \\ -ab \amp a^2+c^2 \amp -bc \\ -ac \amp -bc \amp a^2+b^2 \end{amatrix}
+               </men>.
+             </p>
+           </statement>
+   
+   
+           <proof>
+             <p>
+               Let <m>\ell</m> be the line passing through the origin with direction vector <m>\boldn</m>.
+               Given any <m>\boldx=(x,y,z)\in \R^3</m>, let <m>P</m> be the point with coordinates <m>(x,y,z)</m>.
+               The orthogonal projection <m>R=\proj{P}{\ell}</m> of <m>P</m> onto <m>\ell</m> satisfies
+               <me>
+                 \overrightarrow{RP}\cdot \boldn=0
+               </me>.
+               Let <m>Q</m> be the point of <m>\R^3</m> with position vector <m>\overrightarrow{OQ}</m> satisfying
+               <mdn>
+                 <mrow> \overrightarrow{OQ}\amp = \overrightarrow{RP} </mrow>
+                 <mrow xml:id="eq_vec_diff"> \amp=\overrightarrow{OP}-\overrightarrow{OR}</mrow>
+                 <mrow xml:id="eq_vec_formula"> \amp=(x,y,z)-\proj{P}{\ell} </mrow>
+               </mdn>
+               so that
+               <men xml:id="eq_ortho_decomp_P">
+                 \overrightarrow{OP}=\overrightarrow{OQ}+\overrightarrow{OR}
+               </men>.
+               Since
+               <md>
+                 <mrow>\overrightarrow{OQ}\cdot \boldn\amp = \overrightarrow{RP}\cdot \boldn \amp <xref ref="eq_vec_formula"/>
+                 </mrow>
+                 <mrow> \amp = 0 \amp (\text{def. of } R=\proj{P}{\ell})</mrow>
+               </md>,
+               the point <m>Q</m> lies in the plane <m>W</m>.
+               (See <xref ref="eg_lines_planes_review"/>.) Furthermore, we have
+               <md>
+                 <mrow>\overrightarrow{QP} \amp =\overrightarrow{OP}-\overrightarrow{OQ}</mrow>
+                 <mrow> \amp = \overrightarrow{OR} \amp <xref ref="eq_vec_diff"/>
+                 </mrow>
+               </md>.
+               Since <m>R</m> is the orthogonal projection of <m>P</m> onto <m>\ell</m>, we have <m>R\in \ell</m> by definition, which means <m>\overrightarrow{OR}</m> is a scalar multiple of <m>\boldn</m>.
+               Since <m>\boldn</m> is a normal vector to <m>W</m>, we conclude that <m>\overrightarrow{QP}=\overrightarrow{OR}</m> is orthogonal to <m>W</m>.
+               We have shown that <m>Q</m>  lies in <m>W</m> and that <m>\overrightarrow{QP}</m> is orthogonal to <m>W</m>.
+               We conclude that <m>Q</m> is the orthogonal projection of <m>P</m> onto <m>W</m>.
+               Thus, using <xref ref="eq_vec_formula"/> we have
+               <me>
+                 \proj{\boldx}{W}=\boldx-\proj{\boldx}{\ell}
+               </me>.
+               Since <m>\proj{\boldx}{\ell}=B\boldx</m>, where
+               <me>
+                 B=\frac{1}{a^2+b^2+c^2}\begin{bmatrix} a^2\amp ab\amp ac \\ ab\amp b^2\amp bc \\ ac\amp bc\amp c^2\end{bmatrix}
+               </me>
+               by <xref ref="th_proj_line_linear"/>, we have
+               <md>
+                 <mrow>\proj{\boldx}{W} \amp = \boldx-B\boldx</mrow>
+                 <mrow> \amp = I\boldx-B\boldx</mrow>
+                 <mrow> \amp = (I-B)\boldx</mrow>
+                 <mrow> \amp = \frac{1}{a^2+b^2+c^2}\begin{amatrix}[rrr] b^2+c^2\amp -ab \amp -ac \\ -ab \amp a^2+c^2 \amp -bc \\ -ac \amp -bc \amp a^2+b^2 \end{amatrix}\boldx </mrow>
+               </md>.
+               We conclude that <m>\operatorname{proj}_W=T_A</m> where
+               <me>
+                 A=\frac{1}{a^2+b^2+c^2}\begin{amatrix}[rrr] b^2+c^2\amp -ab \amp -ac \\ -ab \amp a^2+c^2 \amp -bc \\ -ac \amp -bc \amp a^2+b^2 \end{amatrix}
+               </me>,
+               as desired.
+             </p>
+           </proof>
+         </theorem>
+   
+         <example xml:id="eg_visualizing_ortho_projs">
+           <title>Visualizing orthogonal projection</title>
+   
+           <p>
+             In the course of the proof of <xref ref="th_ortho_proj_plane_linear"/> we discovered an illuminating relationship between orthogonal projection onto a line and orthogonal projection onto the plane orthogonal to this line.
+             In more detail, let <m>\boldn=(a,b,c)</m> be a nonzero vector, <m>\ell</m> the line passing through the origin with <m>\boldn</m> as a direction vector, and <m>W</m> the plane passing through the origin with normal vector <m>\boldn</m>.
+             From our argument in the proof of <xref ref="th_ortho_proj_plane_linear"/> we see that
+             <men xml:id="eq_proj_plane_line">
+               \proj{\boldx}{W}=\boldx-\proj{\boldx}{\ell}
+             </men>,
+             or
+             <men xml:id="eq_ortho_decomp_x">
+               \boldx=\proj{\boldx}{\ell}+\proj{\boldx}{W}
+             </men>.
+             Equation <xref ref="eq_proj_plane_line"/> indicates how we can derive the orthogonal projection onto <m>W</m> from the orthogonal projection onto <m>\ell</m> (and conversely).
+             Equation <xref ref="eq_ortho_decomp_x"/> shows how every vector <m>\boldx</m> can be <q>decomposed</q> as a sum of two orthogonal vectors: one pointing parallel to <m>\ell</m> and the other pointing parallel to <m>W</m>.
+           </p>
+   
+           <p>
+             The <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url> interactive below helps visualize these two orthogonal projections, understood as operations on <m>\R^3</m>.
+             <ul>
+               <li>
+                 <p>
+                   Drag the point <m>Q</m> to change the normal vector <m>\boldn</m>, and hence also the plane <m>W</m>.
+                 </p>
+               </li>
+   
+               <li>
+                 <p>
+                   Drag the point <m>P</m> to change the input of the transformations <m>\operatorname{proj}_\ell</m> and <m>\operatorname{proj}_W</m>.
+                 </p>
+               </li>
+   
+               <li>
+                 <p>
+                   In keeping with our dual interpretation of vectors in <m>\R^3</m>, all the relevant vectors (<m>P</m>, <m>\proj{P}{\ell}</m>, <m>\proj{P}{W}</m>) are rendered here both as points and the corresponding position vectors of these points.
+                 </p>
+               </li>
+             </ul>
+           </p>
+   
+           <figure xml:id="fig_ortho_proj_line_plane">
+             <title>Orthogonal projection onto plane and normal line</title>
+   
+             <interactive xml:id="geogebra_ortho_proj_line_plane" platform="geogebra" width="100%" aspect="4:3">
+             <slate surface="geogebra" material="f3v85wmx" aspect="4:3" marker="train-distance">
+       enableLabelDrags(true);
+             </slate> </interactive>
+             <caption>Orthogonal projection onto plane and normal line. Made with <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url>. </caption>
+           </figure>
+         </example>
+       </subsection>
   <example>
     <statement>
       <p>

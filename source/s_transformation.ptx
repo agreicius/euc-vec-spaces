@@ -517,8 +517,199 @@
           </p>
         </solution>
       </example>
+      <p>
+        We continue with some examples of linear transformations involving vector spaces other than <m>\R^n</m>. Some of the operations we have already defined on matrices can be viewed as transformations. 
+      </p>
+      <theorem xml:id="th_lin_matrix_operations">
+        <title>Linear matrix operations</title>
+        <statement>
+          <p>
+            Let <m>m</m> and <m>n</m> be positive integers. 
+            <ol>
+              <li>
+                <title>Trace operation is linear</title>
+                <p>
+                  The trace function 
+                  <md>
+                    <mrow>\tr\colon M_{mn} \amp \rightarrow \R</mrow>
+                    <mrow>A \amp \mapsto \tr A</mrow>
+                  </md>
+                  is a linear transformation.
+                </p>
+              </li>
+              <li>
+                <title>Transposition is linear</title>
+                <p>
+                  The matrix transpose operation 
+                  <md>
+                    <mrow>F\colon M_{mn} \amp \rightarrow M_{nm}</mrow>
+                    <mrow>A \amp \mapsto A^T</mrow>
+                  </md>
+                  is a linear transformation. 
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+        <proof>
+          <p>
+            We leave the proof of (1) to the reader, and prove that the function <m>F(A)=A^T</m> is a linear transformation from <m>M_{mn}</m> to <m>M_{nm}</m>. We use the one-step technique. Given scalars <m>c,d\in \R</m> and matrices <m>A,B\in M_{mn}</m>, we have 
+            <md>
+              <mrow>F(cA+dB) \amp = (cA+dB)^T \amp (\text{def. of } F) </mrow>
+              <mrow> \amp = cA^T+dB^T \amp (<xref ref="th_trans_props"/>) </mrow>
+              <mrow> \amp = cF(A)+dF(B) \amp (\text{def. of } F)</mrow> 
+            </md>.
+          </p>
+        </proof>
+      </theorem>
+      <p>
+        Later, when discussing changed of bases and diagonalizable linear transformations, our computational techniques will rely heavily on the notion of conjugation, defined below. As we show in <xref ref="th_conj_lin"/>, conjugation is also a linear operation. This ends up being very valuable to us, as it means computing conjugates of matrices interacts nicely with matrix addition and scalar multiplication. 
+      </p>
+      <definition xml:id="d_conjugation">
+        <title>Matrix conjugation</title>
+        <statement>
+          <p>
+            Let <m>n</m> be a positive integer, and let <m>Q\in M_{nn}</m> be a fixed invertible matrix. Given <m>A\in M_{mn}</m>, the matrix <m>B=Q^{-1}AQ</m> is called the <term>conjugate</term> of <m>A</m> by <m>Q</m>. The operation 
+            <md>
+              <mrow>M_{nn} \amp \rightarrow M_{nn}</mrow>
+              <mrow>A \amp \mapsto Q^{-1}AQ</mrow>
+            </md>
+            is called <term>conjugation</term> by <m>Q</m>. 
+          </p>
+        </statement>
+      </definition>
+      <theorem xml:id="th_conj_lin">
+        <title>Conjugation is linear</title>
+        <statement>
+          <p>
+            Let <m>n</m> be a positive integer, and let <m>Q\in M_{nn}</m> be a fixed invertible matrix. The conjugation by <m>Q</m> function 
+            <md>
+              <mrow>T\colon M_{nn} \amp \rightarrow M_{nn}</mrow>
+              <mrow>A \amp \mapsto Q^{-1}AQ</mrow>
+            </md> 
+            is a linear transformation. 
+          </p>
+        </statement>
+        <proof>
+          <p>
+            The proof is left as an exercise. 
+          </p>
+        </proof>
+      </theorem>
+      
     </subsection>
+    <subsection xml:id="ss_trans_bases">
+      <title>Bases and linear transformations</title>
+      <p>
+        In <xref ref="s_basis"/> we saw that a vector space <m>V</m> is completely and concisely determined by a basis <m>B</m> in the sense that all elements of <m>V</m> can be expressed in a unique was as a linear combination of elements of <m>B</m>. A similar principle applies to linear transformations. Roughly speaking, a linear transformation defined on a vector space <m>V</m> is completely determined by where its sends elements of a basis <m>B</m> for <m>V</m>. This is spelled out in more detail in <xref ref="th_bases_transformations"/> and the remark that follows. 
+      </p>
 
+      <theorem xml:id="th_bases_transformations">
+        <title>Bases and linear transformations</title>
+        <statement>
+          <p>
+            Let <m>V</m> and <m>W</m> be vector spaces, and let <m>B=\{\boldv_1,\boldv_2,\dots, \boldv_n\}</m> be basis of <m>V</m>, where <m>\boldv_i\ne \boldv_j</m> for all <m>i\ne j</m>. 
+          <ol>
+            <li xml:id="th_exist_transf">
+              <title>Existence of transformations</title>
+              <p>
+                Given any choice of vectors <m>\boldw_1,\boldw_2,\dots, \boldw_n\in W</m>, there is a linear transformation <m>T\colon V\rightarrow W</m> satisfying 
+                <me>
+                  T(\boldv_i)=\boldw_i
+                </me>
+                for all <m>1\leq i\leq n</m>. 
+              </p>
+            </li>
+            <li xml:base="th_transf_unique">
+              <title>Uniqueness of transformations</title>
+              <p>
+                Given linear transformations <m>T</m> and <m>T'</m> from <m>V</m> to <m>W</m>, if <m>T(\boldv_i)=T'(\boldv_i)</m> for all <m>1\leq i \leq n</m>, then <m>T=T'</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+        </statement>
+
+
+        <proof>
+          <proof>
+            <title>Proof of (1)</title>
+            <p>
+ Since any <m>\boldv\in V</m> has a <em>unique</em> expression of the form 
+              <me>
+ \boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n 
+              </me>,
+ where <m>c_i\ne 0</m> for all <m>1\leq i\leq r</m>, the formula in <xref ref="eq_bases_transformations"/> defines a function <m>T\colon V\rightarrow W</m> in a well-defined manner. Note also that the formula still applies even if some of the coefficients are equal to 0: if <m>c_i=0</m>, then <m>c_iT(\boldv_i)=\boldzero</m>, and the right-hand side of <xref ref="eq_bases_transformations"/> is unchanged. We will use this fact below. 
+            </p>
+
+            <p>
+ We now show that <m>T</m> is linear. Given <m>\boldv, \boldv'\in V</m> we can find a common collection of elements <m>\boldv_1,\boldv_2,\dots, \boldv_n\in B</m> for which 
+              <md>
+                <mrow>\boldv \amp = c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n</mrow>
+                <mrow> \boldv'\amp=d_1\boldv_1+d_2\boldv_2+\cdots +d_n\boldv_n </mrow>
+              </md>
+for some <m>c_i, d_i\in \R</m>. We can no longer assume that <m>c_i\ne 0</m> and <m>d_i\ne 0</m> for all <m>1\leq i\leq r</m>, but as observed above we still have 
+              <md>
+                <mrow>T(\boldv) \amp = c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots +c_nT(\boldv_n)</mrow>
+                <mrow> T(\boldv')\amp=d_1T(\boldv_1)+d_2T(\boldv_2)+\cdots +d_nT(\boldv_n) </mrow>
+              </md>.
+ Given any <m>c, d\in \R</m>, we have 
+              <md>
+                <mrow> T(c\boldv+d\boldv')\amp=T(cc_1\boldv_1+cc_2\boldv_2+\cdots +cc_n\boldv_n+dd_1\boldv_1+dd_2\boldv_2+\cdots +dd_n\boldv_n) </mrow>
+                <mrow> \amp= T\left((cc_1+dd_1)\boldv_1+(cc_2+dd_2)\boldv_2+\cdots +(cc_n+dd_n)\boldv_n\right) </mrow>
+                <mrow> \amp =(cc_1+dd_1)T(\boldv_1)+(cc_2+dd_2)T(\boldv_2)+\cdots +(cc_n+dd_n)T(\boldv_n) \amp (<xref ref="eq_bases_transformations"/>
+) </mrow> 
+                <mrow> \amp= c(c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots +c_nT(\boldv_n))+d(d_1T(\boldv_1)+d_2T(\boldv_2)+\cdots +d_nT(\boldv_n)</mrow>
+                <mrow>  \amp =cT(\boldv)+dT(\boldv')</mrow>
+              </md>.
+ Thus <m>T</m> is a linear transformation. 
+            </p>
+          </proof>
+
+
+          <proof>
+            <title>Proof of (2)</title>
+            <p>
+ Assume <m>T</m> and <m>T'</m> are linear transformations from <m>V</m> to <m>W</m> satisfying <m>T(\boldv_i)=T'(\boldv_i)</m> for all <m>1\leq i\leq n</m>. Given any <m>\boldv\in V</m> we can write <m>\boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n</m>. It follows that 
+              <md>
+                <mrow>T(\boldv) \amp = T(c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n)</mrow>
+                <mrow> \amp = c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots +c_nT(\boldv_n) \amp (T \text{ is linear})</mrow>
+                <mrow>  \amp =c_1T'(\boldv_1)+c_2T'(\boldv_2)+\cdots +c_nT'(\boldv_n)</mrow>
+                <mrow>  \amp = T'(c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n) \amp (T' \text{ is linear}) </mrow>
+                <mrow>  \amp = T'(\boldv)</mrow>
+              </md>.
+ Since <m>T(\boldv)=T'(\boldv)</m> for all <m>\boldv\in V</m>, we have <m>T=T'</m>. 
+            </p>
+          </proof>
+
+
+          
+        </proof>
+      </theorem>
+
+      <remark xml:id="rm_bases_transformations">
+        <title>Transformations determined by behavior on basis</title>
+
+        <statement>
+          <p>
+ Let's paraphrase the two results of <xref ref="th_bases_transformations"/>. 
+            <ol marker="i">
+              <li>
+                <p>
+ A linear transformation <m>T\colon V\rightarrow W</m> is completely determined by its behavior on a basis <m>B\subseteq V</m>. Once we know the images <m>T(\boldu)</m> for all <m>\boldu\in B</m>, the image <m>T(\boldv)</m> for any other <m>\boldv\in V</m> is then completely determined. Put another way, if two linear transformations out of <m>V</m> <em>agree</em> on the elements of a basis <m>B\subseteq V</m>, then they agree for all elements of <m>V</m>. 
+                </p>
+              </li>
+
+              <li>
+                <p>
+ Once we have a basis <m>B\subseteq V</m> on hand, it is easy to construct linear transformations <m>T\colon V\rightarrow W</m>: simply choose images <m>T(\boldu)\in W</m> for all <m>\boldu\in B</m> in any manner you like, and then define <m>T(\boldv)</m> for any element <m>\boldv\in V</m> using <xref ref="eq_bases_transformations"/>. 
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+      </remark>
+    </subsection>
 
     <subsection xml:id="ss_matrix_transforms">
       <title>Matrix transformations</title>
@@ -844,321 +1035,10 @@
         </statement>
       </example>
 
-      <p>
- Next we consider the operation of orthogonally projecting a vector onto a line (in <m>\R^2</m> or <m>\R^3</m>) or a plane in <m>\R^3</m>. See <xref ref="eg_lines_planes_review"/> for a refresher on lines and planes in <m>\R^2</m> and <m>\R^3</m>. 
-      </p>
-
-      <definition xml:id="d_projection_onto_line">
-        <title>Projection onto a line</title>
-
-        <statement>
-          <p>
- Let <m>\boldv=(a_1,a_2,\dots, a_n)</m> be a fixed nonzero vector in <m>\R^n</m>, where <m>n=2</m> or <m>n=3</m>. The set of all scalar multiples of <m>\boldv</m> defines a line <m>\ell</m> in <m>\R^n</m> passing through the origin: we call <m>\boldv</m> the <term>direction vector</term> of this line. Given a point <m>P=(x_1,x_2,\dots, x_n)\in \R^n</m> there is a unique point <m>Q\in \ell</m> such that the vector 
-            <me>
-\overrightarrow{QP}=(x_1-y_1,x_2-y_2,\dots, x_n-y_n) 
-            </me>
-is orthogonal to <m>\boldv</m>: <ie/>, there is a unique <m>Q\in \ell</m> such that 
-            <me>
-\overrightarrow{QP}\cdot \boldv=0 
-            </me>.
- The point <m>Q</m> is called the <term>orthogonal projection</term> of <m>P</m> onto the line <m>\ell</m>. We define <term>orthogonal projection onto <m>\ell</m></term> to be the function <m>\operatorname{proj}_{\ell}\colon \R^n\rightarrow \R^n</m> that maps a point <m>P</m> to its orthogonal projection <m>Q=\proj{P}{\ell}</m> onto <m>\ell</m>. 
-          </p>
-        </statement>
-      </definition>
-
-      <theorem xml:id="th_proj_line_linear">
-        <title>Orthogonal projection onto a line</title>
-
-        <statement>
-          <p>
- Fix a nonzero vector <m>\boldv\in \R^n</m>, where <m>n=2</m> or <m>n=3</m>, and let <m>\ell</m> be the line obtained by taking all scalar multiples of <m>\boldv</m>. The orthogonal projection function <m>\operatorname{proj}_\ell\colon \R^n\rightarrow \R^n</m> is a linear transformation. In fact, we have <m>\operatorname{proj}_\ell=T_A</m> where <m>A</m> is the <m>n\times n</m> matrix described below for each case (<m>n=2</m> and <m>n=3</m>). 
-            <ul>
-              <li>
-                <title>Case: <m>n=2</m></title>
-
-                <p>
- Assume <m>\boldv=(a,b)\ne (0,0)</m>. We have <m>\operatorname{proj}_\ell=T_A</m>, where 
-                  <men xml:id="eq_ortho_proj_line_matrix_2">
- A=\frac{1}{a^2+b^2}\begin{bmatrix}a^2\amp ab \\ ab \amp b^2 \end{bmatrix} 
-                  </men>.
-                </p>
-              </li>
-
-              <li>
-                <title>Case: <m>n=3</m></title>
-
-                <p>
- Assume <m>\boldv=(a,b,c)\ne (0,0,0)</m>. We have <m>\operatorname{proj}_\ell=T_A</m>, where 
-                  <men xml:id="eq_ortho_proj_line_matrix_3">
- A=\frac{1}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ ab \amp b^2 \amp bc \\ ac\amp bc\amp c^2 \end{bmatrix} 
-                  </men>.
-                </p>
-              </li>
-            </ul>
-          </p>
-        </statement>
+      
 
 
-        <proof>
-          <p>
- We prove the matrix formula in the case <m>n=3</m>. (The case <m>n=2</m> is exactly similar.) Let <m>\boldv=(a,b,c)</m>. In multivariable calculus we learn that given a point with position vector <m>\boldx=(x,y,z)</m>, its orthogonal projection onto <m>\ell</m> is the point <m>Q</m> whose position vector is 
-            <md>
-              <mrow> \overrightarrow{OQ}\amp=\left(\frac{\boldx\cdot \boldv}{\boldv\cdot \boldv}\right)\boldv </mrow>
-              <mrow> \amp = \frac{ax+by+cz}{a^2+b^2+c^2}(a,b,c)</mrow>
-              <mrow> \amp = \frac{1}{a^2+b^2+c^2}(a^2x+aby+acz, abx+b^2y+bcz, acx+bcy+c^2z)</mrow>
-              <mrow> \amp = \frac{1}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ ab \amp b^2 \amp bc \\ ac\amp bc\amp c^2 \end{bmatrix}\colvec{x\\ y\\ z}</mrow>
-            </md>.
- This proves that 
-            <me>
- \proj{\boldx}{\ell}=A\boldx 
-            </me>,
- where 
-            <me>
- A=\frac{1}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ ab \amp b^2 \amp bc \\ ac\amp bc\amp c^2 \end{bmatrix} 
-            </me>,
- as desired. 
-          </p>
-        </proof>
-      </theorem>
-
-      <example xml:id="eg_projection_line_specific">
-        <title>Orthogonal projection onto line</title>
-
-        <statement>
-          <p>
- Let <m>T\colon \R^2\rightarrow \R^2</m> be orthogonal projection onto the line <m>\ell</m> passing through the origin with direction vector <m>\boldv=(1,1,1)</m>.  Find the matrix <m>A</m> such that <m>T=T_A</m>. Use <m>A</m> to compute the orthogonal projection of  <m>(-1,3,2)</m> onto <m>\ell</m>. 
-          </p>
-        </statement>
-
-        <solution>
-          <p>
- Using the formula for <m>A</m> in <xref ref="th_proj_line_linear"/>, where <m>(a,b,c)=(1,1,1)</m>, we see that 
-            <me>
- A=\frac{1}{3}\begin{bmatrix}1\amp 1 \amp 1 \\ 1\amp 1\amp 1\\ 1\amp 1\amp 1\end{bmatrix} 
-            </me>
-and hence for any <m>\boldx=(x,y,z)</m> we have 
-            <me>
- \proj{\boldx}{\ell}=A\boldx=\frac{1}{3}(x+y+z,x+y+z, x+y+z) 
-            </me>.
- In particular, we have <m>\proj{(-1,3,2)}{\ell}=(4/3, 4/3, 4/3)</m>. Let's check that this truly is the orthogonal projection of <m>P=(-1,3,2)</m> onto <m>\ell</m>. Letting <m>Q=(4/3,4/3,4/3)</m>, we have <m>\overrightarrow{QP}=(-7/3,5/3, 2/3)</m>, which is indeed orthogonal to <m>\boldv=(1,1,1)</m>: 
-            <me>
- \boldv\cdot \overrightarrow{QP}=\frac{1}{3}(-7+5+2)=0 
-            </me>.
- The formula really works! In case you need more convincing, here is a Sage Cell that computes the projections and produces a diagram. 
-          </p>
-
-          <figure xml:id="fig_proj_onto_line">
-            <title>Orthogonal projection onto a line</title>
-
-            <caption>Orthogonal projection onto the line passing through the origin with direction vector <m>\boldv=(1,1,1)</m></caption>
-            <image width="75%" xml:id="im_ortho_proj_line">
-              <description>
-Orthogonal projection onto a line
-              </description>
-              <sageplot variant="3d" aspect="1.0">
-v=vector((1,1,1))
-w=vector((-1,3,2))
-u=vector((4/3,4/3,4/3))
-O=vector((0,0,0))
-P=point(w,color="blue", size="10")
-l=line3d([[0,0,0],[2,2,2]], color="red", radius=.015)
-A1=arrow(O,w, color="blue")
-A2=arrow(O,v, color="red")
-A3=arrow(u,w, color="green")
-T1=text3d("P=(-1,3,2)", (1.1)*w, color="black", fontsize="20")
-T2=text3d("Q=(4/3,4/3,4/3)", (1.1)*u+vector((.1,0,.1)), color="black", fontsize="20")
-T3=text3d("v=(1,1,1)", .5*v+vector((.2,.1,-.4)), color="black", fontsize="20")
-P=point(w, size="10", color="blue")
-Q=point(u, size="10", color="blue")
-A1+A2+A3+l+P+Q+T1+T2+T3
-              </sageplot>
-            </image>
-          </figure>
-        </solution>
-      </example>
-
-      <definition xml:id="d_ortho_proj_plane">
-        <title>Orthogonal projection onto a plane</title>
-
-        <statement>
-          <p>
-            Let <m>\boldn=(a,b,c)</m> be a nonzero vector in <m>\R^3</m>, and let <m>W</m> be the plane passing through the origin with normal vector <m>\boldn</m>: <ie/>, <m>W</m> is the plane with equation
-            <me>
-              ax+by+cz=0
-            </me>.
-            Given a point <m>P=(x,y,z)\in \R^3</m>, there is a unique point <m>Q\in W</m> such that <m>\overrightarrow{QP}</m> is orthogonal to <m>W</m>.
-            We call <m>Q</m> the <term>orthogonal projection</term> of <m>P</m> onto <m>W</m>.
-            We define <term>orthogonal projection onto <m>W</m></term> to be the function <m>\operatorname{proj}_W\colon \R^3\rightarrow \R^3</m> that maps a point <m>P\in \R^3</m> to its orthogonal projection <m>Q=\proj{P}{W}</m> in <m>W</m>.
-          </p>
-        </statement>
-      </definition>
-
-      <theorem xml:id="th_ortho_proj_plane_linear">
-        <title>Orthogonal projection onto a plane</title>
-
-        <statement>
-          <p>
-            Let <m>\boldn=(a,b,c)</m> be a nonzero vector of <m>\R^3</m>, and let <m>W</m> be the plane passing through the origin with normal vector <m>\boldn</m>.
-            The orthogonal projection map <m>\operatorname{proj}_W\colon \R^3\rightarrow \R^3</m> is a linear transformation.
-            In fact, we have <m>\operatorname{proj}_W=T_A</m> where
-            <men xml:id="eq_ortho_proj_plane_matrix">
-              A=\frac{1}{a^2+b^2+c^2}\begin{amatrix}[rrr] b^2+c^2\amp -ab \amp -ac \\ -ab \amp a^2+c^2 \amp -bc \\ -ac \amp -bc \amp a^2+b^2 \end{amatrix}
-            </men>.
-          </p>
-        </statement>
-
-
-        <proof>
-          <p>
-            Let <m>\ell</m> be the line passing through the origin with direction vector <m>\boldn</m>.
-            Given any <m>\boldx=(x,y,z)\in \R^3</m>, let <m>P</m> be the point with coordinates <m>(x,y,z)</m>.
-            The orthogonal projection <m>R=\proj{P}{\ell}</m> of <m>P</m> onto <m>\ell</m> satisfies
-            <me>
-              \overrightarrow{RP}\cdot \boldn=0
-            </me>.
-            Let <m>Q</m> be the point of <m>\R^3</m> with position vector <m>\overrightarrow{OQ}</m> satisfying
-            <mdn>
-              <mrow> \overrightarrow{OQ}\amp = \overrightarrow{RP} </mrow>
-              <mrow xml:id="eq_vec_diff"> \amp=\overrightarrow{OP}-\overrightarrow{OR}</mrow>
-              <mrow xml:id="eq_vec_formula"> \amp=(x,y,z)-\proj{P}{\ell} </mrow>
-            </mdn>
-            so that
-            <men xml:id="eq_ortho_decomp_P">
-              \overrightarrow{OP}=\overrightarrow{OQ}+\overrightarrow{OR}
-            </men>.
-            Since
-            <md>
-              <mrow>\overrightarrow{OQ}\cdot \boldn\amp = \overrightarrow{RP}\cdot \boldn \amp <xref ref="eq_vec_formula"/>
-              </mrow>
-              <mrow> \amp = 0 \amp (\text{def. of } R=\proj{P}{\ell})</mrow>
-            </md>,
-            the point <m>Q</m> lies in the plane <m>W</m>.
-            (See <xref ref="eg_lines_planes_review"/>.) Furthermore, we have
-            <md>
-              <mrow>\overrightarrow{QP} \amp =\overrightarrow{OP}-\overrightarrow{OQ}</mrow>
-              <mrow> \amp = \overrightarrow{OR} \amp <xref ref="eq_vec_diff"/>
-              </mrow>
-            </md>.
-            Since <m>R</m> is the orthogonal projection of <m>P</m> onto <m>\ell</m>, we have <m>R\in \ell</m> by definition, which means <m>\overrightarrow{OR}</m> is a scalar multiple of <m>\boldn</m>.
-            Since <m>\boldn</m> is a normal vector to <m>W</m>, we conclude that <m>\overrightarrow{QP}=\overrightarrow{OR}</m> is orthogonal to <m>W</m>.
-            We have shown that <m>Q</m>  lies in <m>W</m> and that <m>\overrightarrow{QP}</m> is orthogonal to <m>W</m>.
-            We conclude that <m>Q</m> is the orthogonal projection of <m>P</m> onto <m>W</m>.
-            Thus, using <xref ref="eq_vec_formula"/> we have
-            <me>
-              \proj{\boldx}{W}=\boldx-\proj{\boldx}{\ell}
-            </me>.
-            Since <m>\proj{\boldx}{\ell}=B\boldx</m>, where
-            <me>
-              B=\frac{1}{a^2+b^2+c^2}\begin{bmatrix} a^2\amp ab\amp ac \\ ab\amp b^2\amp bc \\ ac\amp bc\amp c^2\end{bmatrix}
-            </me>
-            by <xref ref="th_proj_line_linear"/>, we have
-            <md>
-              <mrow>\proj{\boldx}{W} \amp = \boldx-B\boldx</mrow>
-              <mrow> \amp = I\boldx-B\boldx</mrow>
-              <mrow> \amp = (I-B)\boldx</mrow>
-              <mrow> \amp = \frac{1}{a^2+b^2+c^2}\begin{amatrix}[rrr] b^2+c^2\amp -ab \amp -ac \\ -ab \amp a^2+c^2 \amp -bc \\ -ac \amp -bc \amp a^2+b^2 \end{amatrix}\boldx </mrow>
-            </md>.
-            We conclude that <m>\operatorname{proj}_W=T_A</m> where
-            <me>
-              A=\frac{1}{a^2+b^2+c^2}\begin{amatrix}[rrr] b^2+c^2\amp -ab \amp -ac \\ -ab \amp a^2+c^2 \amp -bc \\ -ac \amp -bc \amp a^2+b^2 \end{amatrix}
-            </me>,
-            as desired.
-          </p>
-        </proof>
-      </theorem>
-
-      <example xml:id="eg_visualizing_ortho_projs">
-        <title>Visualizing orthogonal projection</title>
-
-        <p>
-          In the course of the proof of <xref ref="th_ortho_proj_plane_linear"/> we discovered an illuminating relationship between orthogonal projection onto a line and orthogonal projection onto the plane orthogonal to this line.
-          In more detail, let <m>\boldn=(a,b,c)</m> be a nonzero vector, <m>\ell</m> the line passing through the origin with <m>\boldn</m> as a direction vector, and <m>W</m> the plane passing through the origin with normal vector <m>\boldn</m>.
-          From our argument in the proof of <xref ref="th_ortho_proj_plane_linear"/> we see that
-          <men xml:id="eq_proj_plane_line">
-            \proj{\boldx}{W}=\boldx-\proj{\boldx}{\ell}
-          </men>,
-          or
-          <men xml:id="eq_ortho_decomp_x">
-            \boldx=\proj{\boldx}{\ell}+\proj{\boldx}{W}
-          </men>.
-          Equation <xref ref="eq_proj_plane_line"/> indicates how we can derive the orthogonal projection onto <m>W</m> from the orthogonal projection onto <m>\ell</m> (and conversely).
-          Equation <xref ref="eq_ortho_decomp_x"/> shows how every vector <m>\boldx</m> can be <q>decomposed</q> as a sum of two orthogonal vectors: one pointing parallel to <m>\ell</m> and the other pointing parallel to <m>W</m>.
-        </p>
-
-        <p>
-          The <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url> interactive below helps visualize these two orthogonal projections, understood as operations on <m>\R^3</m>.
-          <ul>
-            <li>
-              <p>
-                Drag the point <m>Q</m> to change the normal vector <m>\boldn</m>, and hence also the plane <m>W</m>.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Drag the point <m>P</m> to change the input of the transformations <m>\operatorname{proj}_\ell</m> and <m>\operatorname{proj}_W</m>.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                In keeping with our dual interpretation of vectors in <m>\R^3</m>, all the relevant vectors (<m>P</m>, <m>\proj{P}{\ell}</m>, <m>\proj{P}{W}</m>) are rendered here both as points and the corresponding position vectors of these points.
-              </p>
-            </li>
-          </ul>
-        </p>
-
-        <figure xml:id="fig_ortho_proj_line_plane">
-          <title>Orthogonal projection onto plane and normal line</title>
-
-          <interactive xml:id="geogebra_ortho_proj_line_plane" platform="geogebra" width="100%" aspect="4:3">
-          <slate surface="geogebra" material="f3v85wmx" aspect="4:3" marker="train-distance">
-    enableLabelDrags(true);
-          </slate> </interactive>
-          <caption>Orthogonal projection onto plane and normal line. Made with <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url>. </caption>
-        </figure>
-      </example>
-    </subsection>
-
-
-    <subsection xml:id="ss_transform_exotic_examples">
-      <title>Additional examples</title>
-
-      <p>
- We now proceed to some examples involving our more exotic vector spaces. 
-      </p>
-
-      <example xml:id="eg_transform_transpose">
-        <title>Transposition is linear</title>
-
-        <statement>
-          <p>
- Fix <m>m,n\geq 1</m>. Define the function <m>f\colon M_{mn}\rightarrow M_{nm}</m> as follows: 
-            <me>
- f(A)=A^T 
-            </me>.
- In other words, <m>f</m> maps a matrix to its transpose. 
-          </p>
-
-          <p>
- Show that <m>f</m> is a linear transformation. 
-          </p>
-        </statement>
-
-        <solution>
-          <p>
- We must show <m>f(cA+dB)=cf(A)+df(B)</m> for all scalars <m>c,d\in\R</m> and all matrices <m>A, B\in M_{mn}</m>. This follows easily from properties of transpose: 
-            <md>
-              <mrow>f(cA+dB)\amp =(cA+dB)^T \amp \text{ (by def.) }</mrow>
-              <mrow>\amp =(cA)^T+(dB)^T \amp (<xref ref="th_trans_props"/>
-)</mrow> 
-              <mrow>\amp =cA^T+dB^T \amp (<xref ref="th_trans_props"/>
-)</mrow> 
-              <mrow>\amp =cf(A)+df(B)</mrow>
-            </md>
-          </p>
-        </solution>
-      </example>
+   
 
       <example>
         <title>Left-shift transformation</title>
@@ -1195,9 +1075,8 @@ A1+A2+A3+l+P+Q+T1+T2+T3
     </subsection>
 
 
-    <paragraphs xml:id="ss_transormation_video_examples">
+    <example xml:id="vid_eg_transormation">
       <title>Video examples: deciding if <m>T</m> is linear</title>
-
       <p>
         <figure>
           <title>Video: deciding if <m>T</m> is linear</title>
@@ -1213,7 +1092,7 @@ A1+A2+A3+l+P+Q+T1+T2+T3
           <video xml:id="vid_transform_2" youtube="weETKP8p7cE" />
         </figure>
       </p>
-    </paragraphs>
+    </example>
 
 
     <subsection xml:id="ss_transform_composition">
@@ -1268,126 +1147,7 @@ is a linear transformation.
     <subsection xml:id="ss_bases_transformations">
       <title>Bases and linear transformations</title>
 
-      <introduction>
- In <xref ref="s_basis"/> we saw that a vector space <m>V</m> is completely and concisely determined by a basis <m>B</m> in the sense that all elements of <m>V</m> can be expressed in a unique was as a linear combination of elements of <m>B</m>. A similar principle applies to linear transformations. Roughly speaking, a linear transformation defined on a vector space <m>V</m> is completely determined by where its sends elements of a basis for <m>V</m>. This is spelled out in more detail in <xref ref="th_bases_transformations"/> and the remark that follows. 
-      </introduction>
-
-      <theorem xml:id="th_bases_transformations">
-        <title>Bases and linear transformations</title>
-
-        <statement>
-          <p>
- Let <m>B</m> be a basis for the vector space <m>V</m>. 
-          </p>
-
-          <ol>
-            <li>
-              <p>
- Let <m>T</m> and <m>T'</m> be linear transformations from <m>V</m> to <m>W</m>. If <m>T(\boldu)=T'(\boldu)</m> for all <m>\boldu\in B</m>, then <m>T=T'</m>. 
-              </p>
-            </li>
-
-            <li>
-              <p>
- Let <m>W</m> be a vector space. Any mapping 
-                <me>
- \boldu\mapsto \boldw_\boldu 
-                </me>
-assigning each element of <m>\boldu\in B</m> to a chosen element <m>\boldw_\boldu\in W</m> extends uniquely to a linear transformation <m>T\colon V\rightarrow W</m> satisfying 
-                <me>
- T(\boldu)=\boldw_\boldu 
-                </me>
-for all <m>\boldu\in B</m>. In more detail, given any <m>\boldv\in V</m>, if   <m>\boldv=c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r</m>, where <m>\boldu_i\in B</m>  and <m>c_i\ne 0</m> for all <m>1\leq i\leq r</m>, then 
-                <men xml:id="eq_bases_transformations">
- T(\boldv)=c_1T(\boldu_{1})+c_2T(\boldu_{2})+\cdots +c_rT(\boldu_{r}) 
-                </men>.
-              </p>
-            </li>
-          </ol>
-        </statement>
-
-
-        <proof>
-          <proof>
-            <title>Proof of (i)</title>
-
-            <p>
- Assume <m>T</m> and <m>T'</m> are linear transformations from <m>V</m> to <m>W</m> satisfying <m>T(\boldu)=T'(\boldu)</m> for all <m>\boldu\in B</m>. Given any <m>\boldv\in V</m> we can write <m>\boldv=c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r</m>. It follows that 
-              <md>
-                <mrow>T(\boldv) \amp = T(c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r)</mrow>
-                <mrow> \amp = c_1T(\boldu_1)+c_2T(\boldu_2)+\cdots +c_rT(\boldu_r) \amp (T \text{ is linear})</mrow>
-                <mrow>  \amp =c_1T'(\boldu_1)+c_2T'(\boldu_2)+\cdots +c_rT'(\boldu_r)</mrow>
-                <mrow>  \amp = T'(c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r) \amp (T' \text{ is linear}) </mrow>
-                <mrow>  \amp = T'(\boldv)</mrow>
-              </md>.
- Since <m>T(\boldv)=T'(\boldv)</m> for all <m>\boldv\in V</m>, we have <m>T=T'</m>. 
-            </p>
-          </proof>
-
-
-          <proof>
-            <title>Proof of (ii)</title>
-
-            <p>
- That there can me <em>at most</em> one such <m>T\colon V\rightarrow W</m> follows from (i). Thus we need only show that such a <m>T</m> exists. 
-            </p>
-
-            <p>
- Since any <m>\boldv\in V</m> has a <em>unique</em> expression of the form 
-              <me>
- \boldv=c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r 
-              </me>,
- where <m>c_i\ne 0</m> for all <m>1\leq i\leq r</m>, the formula in <xref ref="eq_bases_transformations"/> defines a function <m>T\colon V\rightarrow W</m> in a well-defined manner. Note also that the formula still applies even if some of the coefficients are equal to 0: if <m>c_i=0</m>, then <m>c_iT(\boldv_i)=\boldzero</m>, and the right-hand side of <xref ref="eq_bases_transformations"/> is unchanged. We will use this fact below. 
-            </p>
-
-            <p>
- We now show that <m>T</m> is linear. Given <m>\boldv, \boldv'\in V</m> we can find a common collection of elements <m>\boldu_1,\boldu_2,\dots, \boldu_r\in B</m> for which 
-              <md>
-                <mrow>\boldv \amp = c_1\boldu_1+c_2\boldu_2+\cdots +c_r\boldu_r</mrow>
-                <mrow> \boldv'\amp=d_1\boldu_1+d_2\boldu_2+\cdots +d_r\boldu_r </mrow>
-              </md>
-for some <m>c_i, d_i\in \R</m>. We can no longer assume that <m>c_i\ne 0</m> and <m>d_i\ne 0</m> for all <m>1\leq i\leq r</m>, but as observed above we still have 
-              <md>
-                <mrow>T(\boldv) \amp = c_1T(\boldu_1)+c_2T(\boldu_2)+\cdots +c_rT(\boldu_r)</mrow>
-                <mrow> T(\boldv')\amp=d_1T(\boldu_1)+d_2T(\boldu_2)+\cdots +d_rT(\boldu_r) </mrow>
-              </md>.
- Given any <m>c, d\in \R</m>, we have 
-              <md>
-                <mrow> T(c\boldv+d\boldv')\amp=T(cc_1\boldu_1+cc_2\boldu_2+\cdots +cc_r\boldu_r+dd_1\boldu_1+dd_2\boldu_2+\cdots +dd_r\boldu_r) </mrow>
-                <mrow> \amp= T\left((cc_1+dd_1)\boldu_1+(cc_2+dd_2)\boldu_2+\cdots +(cc_r+dd_r)\boldu_r\right) </mrow>
-                <mrow> \amp =(cc_1+dd_1)T(\boldu_1)+(cc_2+dd_2)T(\boldu_2)+\cdots +(cc_r+dd_r)T(\boldu_r) \amp (<xref ref="eq_bases_transformations"/>
-) </mrow> 
-                <mrow> \amp= c(c_1T(\boldu_1)+c_2T(\boldu_2)+\cdots +c_rT(\boldu_r))+d(d_1T(\boldu_1)+d_2T(\boldu_2)+\cdots +d_rT(\boldu_r)</mrow>
-                <mrow>  \amp =cT(\boldv)+dT(\boldv')</mrow>
-              </md>.
- Thus <m>T</m> is a linear transformation. 
-            </p>
-          </proof>
-        </proof>
-      </theorem>
-
-      <remark xml:id="rm_bases_transformations">
-        <title>Transformations determined by behavior on basis</title>
-
-        <statement>
-          <p>
- Let's paraphrase the two results of <xref ref="th_bases_transformations"/>. 
-            <ol marker="i">
-              <li>
-                <p>
- A linear transformation <m>T\colon V\rightarrow W</m> is completely determined by its behavior on a basis <m>B\subseteq V</m>. Once we know the images <m>T(\boldu)</m> for all <m>\boldu\in B</m>, the image <m>T(\boldv)</m> for any other <m>\boldv\in V</m> is then completely determined. Put another way, if two linear transformations out of <m>V</m> <em>agree</em> on the elements of a basis <m>B\subseteq V</m>, then they agree for all elements of <m>V</m>. 
-                </p>
-              </li>
-
-              <li>
-                <p>
- Once we have a basis <m>B\subseteq V</m> on hand, it is easy to construct linear transformations <m>T\colon V\rightarrow W</m>: simply choose images <m>T(\boldu)\in W</m> for all <m>\boldu\in B</m> in any manner you like, and then define <m>T(\boldv)</m> for any element <m>\boldv\in V</m> using <xref ref="eq_bases_transformations"/>. 
-                </p>
-              </li>
-            </ol>
-          </p>
-        </statement>
-      </remark>
+ 
 
       <example>
         <title>Composition of reflections</title>
