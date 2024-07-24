@@ -619,8 +619,8 @@
               <mrow>T_\ell(c\boldv+d\boldw) \amp=T_\ell\left((ca_i+db_i)_{i=1}^\infty \right)\amp (<xref ref="ex_vs_infinitesequences"/>
 ) </mrow> 
               <mrow> \amp= (ca_{i+1}+db_{i+1})_{i=1}^\infty \amp (\text{by def.})</mrow>
-              <mrow>  \amp=c(a_{i+1})_{i=1}^\infty+d(b_{i+1})_{i=1}^\infty \amp (<xref ref="ex_vs_infinitesequences"/>
-)</mrow> 
+              <mrow>  \amp=c(a_{i+1})_{i=1}^\infty+d(b_{i+1})_{i=1}^\infty 
+</mrow> 
               <mrow>  \amp=cT_\ell(\boldv)+dT_\ell(\boldw)\amp (\text{by def.}) </mrow>
             </md>.
  This proves <m>T_\ell</m> is a linear transformation. 
