@@ -3,6 +3,7 @@
 <chapter xml:id="c_lin_trans" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Linear transformations</title>
     <xi:include href="./s_transformation.ptx" />
+    <xi:include href="./s_nullspace_image.ptx" />
     
 
 </chapter>

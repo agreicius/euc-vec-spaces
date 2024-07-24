@@ -128,17 +128,20 @@
         <p>
           Let <m>f\colon X\rightarrow Y</m> be a function.
           <ul>
-            <li>
+            <li xml:id="d_injective">
+              <title>Injective</title>
               <p>
                 The function <m>f</m> is <term>injective</term> (or <term>one-to-one</term>) if for all <m>x,x'\in X</m>, if <m>f(x)=f(x')</m>, then <m>x=x'</m>: equivalently, if <m>x\ne x'</m>, then <m>f(x)\ne f(x')</m>.
               </p>
             </li>
-            <li>
+            <li xml:id="d_surjective">
+              <title>Surjective</title>
               <p>
                 The function <m>f</m> is <term>surjective</term> (or <term>onto</term>) if for all <m>y\in Y</m>, there is an <m>x\in X</m> such that <m>f(x)=y</m>: equivalently, <m>\im f=Y</m>.
               </p>
             </li>
-            <li>
+            <li xml:id="d_bijective">
+              <title>Bijective</title>
               <p>
                 The function <m>f</m> is <term>bijective</term> (or a <term>one-to-one correspondence</term>) if it is injective and surjective.
               </p>

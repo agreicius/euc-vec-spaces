@@ -1,12 +1,10 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_nullspace_image">
-  <title>Null space and image</title>
+  <title>Null space, image, and isomophisms</title>
   <introduction>
     <p>
-      In this section we introduce two subspaces that are associated naturally to a linear transformation <m>T\colon V\rightarrow W</m>: the <em>null space</em> and <em>image</em>.
+      Having introduced linear transformations, we now treat them as proper objects of study. Forget for a moment the linear algebraic nature of a linear transformation <m>T\colon V\rightarrow W</m>, and think of it just as a function. Purely along function-theoretic lines, we want to know whether <m>T</m> is <xref ref="d_injective" text="custom">injective</xref>, <xref ref="d_surjective" text="custom">surjective</xref>, and <xref ref="d_invertible_function" text="custom">invertible</xref>. As we will learn, there are two subspaces associated to a linear transformation <m>T</m>, its <em>null space</em> and <em>image</em>, that provide an easy way for answering these questions. We will also see that in the case of a matrix transformation <m>T_A</m>, these associated spaces coincide with two of the fundamental spaces of the matrix <m>A</m>. (You can probably guess one of these.)
     </p>
   </introduction>
-
-
   <subsection xml:id="ss_nullspace_image">
     <title>Null space and image of a linear transformation</title>
     <definition xml:id="d_nullspace_image">
@@ -15,11 +13,9 @@
       <idx><h>linear transformation</h><h>image</h></idx>
       <idx><h>null space</h><h>of a linear transformation</h></idx>
       <idx><h>image</h></idx>
-
       <statement>
         <p>
           Let <m>T\colon V\rightarrow W</m> be a linear transformation.
-        </p>
         <ol>
           <li>
             <title>Null space</title>
@@ -40,13 +36,12 @@
             </p>
           </li>
         </ol>
+      </p>
       </statement>
     </definition>
-      <remark xml:id="rm_nullspace_image">
+    <remark xml:id="rm_nullspace_image">
     <statement>
       <p>
-      A few remarks:
-      </p>
       <ol>
         <li>
           <p>
@@ -55,7 +50,7 @@
         </li>
         <li>
           <p>
-            Note that the image <m>\im T</m> of a linear transformation is just its image when considered simply as a function of sets. (See <xref ref="d_image"/>.)
+            The image <m>\im T</m> of a linear transformation is just its image when considered simply as a function of sets. (See <xref ref="d_image"/>.)
           </p>
         </li>
         <li>
@@ -65,13 +60,14 @@
               \{x\in X\colon f(x)=0\}
             </me>,
             and <q>the zeros of <m>T</m></q> is a useful English shorthand for <m>\NS T</m>.
-             However, there is an important difference between the null space of a linear transformation and the zeros of an arbitrary real-valued function: the null space of a linear transformation comes with the added structure of a vector space (<xref ref="th_nullspace_image"/>), whereas the zeros of an arbitrary function in general do not.
+            However, there is an important difference between the null space of a linear transformation and the zeros of an arbitrary real-valued function: the null space of a linear transformation comes with the added structure of a vector space (<xref ref="th_nullspace_image"/>), whereas the zeros of an arbitrary function in general do not.
           </p>
           <p>
             The same observation can be made about the image of a linear transformation (<xref ref="th_nullspace_image"/>), in comparison to the image of an arbitrary function.
           </p>
         </li>
       </ol>
+    </p>
     </statement>
   </remark>
   <figure xml:id="fig_null_image">
@@ -181,30 +177,7 @@
       </p>
     </solution>
   </example>
-  <p>
-    This first example illustrates that in the special case of a matrix transformation <m>T_A\colon \R^n\rightarrow \R^m</m>, where <m>A</m> is an <m>m\times n</m> matrix, we have
-    <me>
-      \NS T_A=\{\boldx\in \R^n\colon T_A(\boldx)=\boldzero\}=\{\boldx\in \R^n\colon A\boldx=\boldzero\}
-    </me>.
-    In other words, the null space of a matrix transformation <m>T_A</m> is just the set of solutions to the matrix equation <m>A\boldx=\boldzero</m>. The situation arises frequently enough that it deserves its own notation.
-  </p>
-  <definition xml:id="d_nullspace_matrix">
-    <idx><h>null space</h><h>of a matrix</h></idx>
-    <notation>
-      <usage><m>\NS A</m></usage>
-      <description>the null space of <m>A</m></description>
-    </notation>
-    <title>Null space of a matrix</title>
-    <statement>
-      <p>
-        Let <m>A</m> be an <m>m\times n</m> matrix. The <term>null space</term> of <m>A</m>, denoted <m>\NS A</m>,  is defined as
-        <me>
-          W=\{\boldx\in \R^n\colon A\boldx=\boldzero\}
-        </me>.
-        Equivalently, <m>\NS A=\NS T_A</m>.
-      </p>
-    </statement>
-  </definition>
+  
   <example xml:id="eg_nullspace_image_transposition">
     <statement>
       <p>
