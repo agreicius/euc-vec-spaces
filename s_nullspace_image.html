@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Null space, image, and isomophisms</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Euclidean vector spaces">
+<meta property="book:author" content="Aaron Greicius">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="_static/pretext/js/pretext-webwork/2.17/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="euclideanvectorspaces" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="euc_vec_spaces.html"><span class="title">Euclidean vector spaces</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="euc_vec_spaces-9-10.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_transformation.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_lin_trans.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_coordinatevectors.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\T}{{\mathbb T}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\compose}{\circ}
+\newcommand{\bolda}{{\mathbf a}}
+\newcommand{\boldb}{{\mathbf b}}
+\newcommand{\boldc}{{\mathbf c}}
+\newcommand{\boldd}{{\mathbf d}}
+\newcommand{\bolde}{{\mathbf e}}
+\newcommand{\boldi}{{\mathbf i}}
+\newcommand{\boldj}{{\mathbf j}}
+\newcommand{\boldk}{{\mathbf k}}
+\newcommand{\boldn}{{\mathbf n}}
+\newcommand{\boldp}{{\mathbf p}}
+\newcommand{\boldq}{{\mathbf q}}
+\newcommand{\boldr}{{\mathbf r}}
+\newcommand{\bolds}{{\mathbf s}}
+\newcommand{\boldt}{{\mathbf t}}
+\newcommand{\boldu}{{\mathbf u}}
+\newcommand{\boldv}{{\mathbf v}}
+\newcommand{\boldw}{{\mathbf w}}
+\newcommand{\boldx}{{\mathbf x}}
+\newcommand{\boldy}{{\mathbf y}}
+\newcommand{\boldz}{{\mathbf z}}
+\newcommand{\boldzero}{{\mathbf 0}}
+\newcommand{\boldmod}{\boldsymbol{ \bmod }}
+\newcommand{\boldT}{{\mathbf T}}
+\newcommand{\boldN}{{\mathbf N}}
+\newcommand{\boldB}{{\mathbf B}}
+\newcommand{\boldF}{{\mathbf F}}
+\newcommand{\boldS}{{\mathbf S}}
+\newcommand{\boldG}{{\mathbf G}}
+\newcommand{\boldK}{{\mathbf K}}
+\newcommand{\boldL}{{\mathbf L}}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\NS}{null}
+\DeclareMathOperator{\RS}{row}
+\DeclareMathOperator{\CS}{col}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\mdeg}{mdeg}
+\DeclareMathOperator{\Lt}{Lt}
+\DeclareMathOperator{\Lc}{Lc}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\flux}{flux}
+\def\Gal{\operatorname{Gal}}
+\def\ord{\operatorname{ord}}
+\def\ML{\operatorname{M}}
+\def\GL{\operatorname{GL}}
+\def\PGL{\operatorname{PGL}}
+\def\SL{\operatorname{SL}}
+\def\PSL{\operatorname{PSL}}
+\def\GSp{\operatorname{GSp}}
+\def\PGSp{\operatorname{PGSp}}
+\def\Sp{\operatorname{Sp}}
+\def\PSp{\operatorname{PSp}}
+\def\Aut{\operatorname{Aut}}
+\def\Inn{\operatorname{Inn}}
+\def\Hom{\operatorname{Hom}}
+\def\End{\operatorname{End}}
+\def\ch{\operatorname{char}}
+\def\Zp{\Z/p\Z}
+\def\Zm{\Z/m\Z}
+\def\Zn{\Z/n\Z}
+\def\Fp{\F_p}
+\newcommand{\surjects}{\twoheadrightarrow}
+\newcommand{\injects}{\hookrightarrow}
+\newcommand{\bijects}{\leftrightarrow}
+\newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+\newcommand{\mclass}[2][m]{[#2]_{#1}}
+\newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+\newcommand{\bnpoly}{b_nx^n+b_{n-1}x^{n-1}\cdots +b_1x+b_0}
+\newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\normalin}{\trianglelefteq}
+\newcommand{\angvec}[1]{\langle #1\rangle}
+\newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+\newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+\newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\def\ntoinfty{\lim_{n\rightarrow\infty}}
+\def\xtoinfty{\lim_{x\rightarrow\infty}}
+\def\ii{\item}
+\def\bb{\begin{enumerate}}
+\def\ee{\end{enumerate}}
+\def\ds{\displaystyle}
+\def\p{\partial}
+\newcommand{\abcdmatrix}[4]{\begin{bmatrix}#1\amp #2\\ #3\amp #4 \end{bmatrix}
+}
+\newenvironment{amatrix}[1][ccc|c]{\left[\begin{array}{#1}}{\end{array}\right]}
+\newenvironment{linsys}[2][m]{
+\begin{array}[#1]{@{}*{#2}{rc}r@{}}
+}{
+\end{array}}
+\newcommand{\eqsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\numeqsys}{\begin{array}{rrcrcrcr}
+e_1:\amp  a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
+e_2: \amp a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \\
+e_m: \amp a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\homsys}{\begin{array}{rcrcrcr}
+a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp 0\\
+a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp 0\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp \\
+a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp 0
+\end{array}
+}
+\newcommand{\vareqsys}[4]{
+\begin{array}{ccccccc}
+#3_{11}x_{1}\amp +\amp #3_{12}x_{2}\amp +\cdots+\amp  #3_{1#2}x_{#2}\amp =\amp #4_1\\
+#3_{21}x_{1}\amp +\amp #3_{22}x_{2}\amp +\cdots+\amp #3_{2#2}x_{#2}\amp =\amp #4_2\\
+\vdots \amp \amp \vdots \amp  \amp \vdots \amp =\amp  \\
+#3_{#1 1}x_{1}\amp +\amp #3_{#1 2}x_{2}\amp +\cdots +\amp #3_{#1 #2}x_{#2}\amp =\amp #4_{#1}
+\end{array}
+}
+\newcommand{\genmatrix}[1][a]{
+\begin{bmatrix}
+#1_{11} \amp  #1_{12} \amp  \cdots \amp  #1_{1n} \\
+#1_{21} \amp  #1_{22} \amp  \cdots \amp  #1_{2n} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#1_{m1} \amp  #1_{m2} \amp  \cdots \amp  #1_{mn}
+\end{bmatrix}
+}
+\newcommand{\varmatrix}[3]{
+\begin{bmatrix}
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}
+\end{bmatrix}
+}
+\newcommand{\augmatrix}{
+\begin{amatrix}[cccc|c]
+a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n} \amp b_{1}\\
+a_{21} \amp  a_{22} \amp  \cdots \amp  a_{2n} \amp b_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
+\end{amatrix}
+}
+\newcommand{\varaugmatrix}[4]{
+\begin{amatrix}[cccc|c]
+#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \amp #4_{1}\\
+#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \amp #4_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}\amp #4_{#1}
+\end{amatrix}
+}
+\newcommand{\spaceforemptycolumn}{\makebox[\wd\boxofmathplus]{\ }}
+
+\newcommand{\generalmatrix}[3]{
+\left(
+\begin{array}{cccc}
+#1_{1,1}  \amp #1_{1,2}  \amp \ldots  \amp #1_{1,#2}  \\
+#1_{2,1}  \amp #1_{2,2}  \amp \ldots  \amp #1_{2,#2}  \\
+\amp \vdots                         \\
+#1_{#3,1} \amp #1_{#3,2} \amp \ldots  \amp #1_{#3,#2}
+\end{array}
+\right)  }
+\newcommand{\colvec}[2][c]{\begin{amatrix}[#1] #2 \end{amatrix}}
+\newcommand{\rowvec}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\DeclareMathOperator{\size}{size}
+\DeclareMathOperator{\adjoint}{adj}
+\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\restrictionmap}[2]{{#1}\mathpunct\upharpoonright\hbox{}_{#2}}
+\renewcommand{\emptyset}{\varnothing}
+
+\newcommand{\proj}[2]{\mbox{proj}_{#2}({#1}) }
+\renewcommand{\Re}{\operatorname{Re}}
+ \renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_foundations.html" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_sets_functions.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_sets_functions.html#s_sets_functions_ex" class="internal"><span class="codenumber">0.1</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_functions.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Functions</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_functions.html#s_functions_ex" class="internal"><span class="codenumber">0.2</span> <span class="title">Exercises</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_tuples.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Tuples and Cartesian products</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.4</span> <span class="title">Logic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_propositional_calculus" class="internal"><span class="codenumber">0.4.1</span> <span class="title">Propositional logic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_predicate_logic" class="internal"><span class="codenumber">0.4.2</span> <span class="title">Predicate logic</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_logic.html#s_logic_ex" class="internal"><span class="codenumber">0.4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.5</span> <span class="title">Proof techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_logical_structure" class="internal"><span class="codenumber">0.5.1</span> <span class="title">Logical structure</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_implication" class="internal"><span class="title">Implication</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_disjunction" class="internal"><span class="title">Disjunction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_equivalence" class="internal"><span class="title">Equivalence</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_logical_chains" class="internal"><span class="title">Chains of implications/equivalences</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_proof_by_contradiction" class="internal"><span class="title">Proof by contradiction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_Equalities" class="internal"><span class="codenumber">0.5.2</span> <span class="title">Equalities</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_set_properties" class="internal"><span class="codenumber">0.5.3</span> <span class="title">Basic set properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_inclusion" class="internal"><span class="title">Set inclusion</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_equality" class="internal"><span class="title">Set equality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_function_properties" class="internal"><span class="codenumber">0.5.4</span> <span class="title">Basic function properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_function_equality" class="internal"><span class="title">Function equality</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_injective_surjective_bijective" class="internal"><span class="title">Injective, surjective, bijective</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_mathematical_induction" class="internal"><span class="codenumber">0.5.5</span> <span class="title">Mathematical induction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_weak_induction" class="internal"><span class="title">Proof by induction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_strong_induction" class="internal"><span class="title">Proof by strong induction</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_complex_numbers.html" class="internal"><span class="codenumber">0.6</span> <span class="title">Complex numbers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_numbers.html#ss_complex_definition" class="internal"><span class="codenumber">0.6.1</span> <span class="title">Definition of <span class="process-math">\(\C\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_numbers.html#ss_complex_conjugation" class="internal"><span class="codenumber">0.6.2</span> <span class="title">Absolute value and complex conjugation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_complex_numbers.html#s_complex_numbers_ex" class="internal"><span class="codenumber">0.6.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_polynomials.html" class="internal"><span class="codenumber">0.7</span> <span class="title">Polynomials</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polynomials.html#ss_poly_def" class="internal"><span class="codenumber">0.7.1</span> <span class="title">Basic definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polynomials.html#ss_degree" class="internal"><span class="codenumber">0.7.2</span> <span class="title">Degree of a polynomial</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polynomials.html#ss_poly_factoring" class="internal"><span class="codenumber">0.7.3</span> <span class="title">Factoring polynomials</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_polynomials.html#s_polynomials_ex" class="internal"><span class="codenumber">0.7.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_Rn.html" class="internal"><span class="codenumber">1</span> <span class="title">Euclidean <span class="process-math">\(n\)</span>-space</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_Rn.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Vector space structure of <span class="process-math">\(\R^n\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_Rn.html#ss_nspace" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Vector operations on <span class="process-math">\(\R^n\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_Rn.html#ss_vec_spaces" class="internal"><span class="title">Vector spaces</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_Rn.html#ss_Rn_visual" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Visualizing <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_Rn.html#s_Rn_ex" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_Rn_dot_product.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Inner product structure of <span class="process-math">\(\R^n\)</span></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_linear_systems.html" class="internal"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_systems.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Systems of linear equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_systems.html#ss_linear_equations" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Systems of linear equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_systems.html#ss_row_equivalence" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Row operations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_systems.html#s_systems_ex" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_ge.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Gaussian elimination</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ge.html#ss_ge_row_echelon" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Row echelon matrices</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_ge.html#ss_gaussian_elimination" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Gaussian elimination</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ge.html#ss_gaussian_elimination-8" class="internal"><span class="title">Model example</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_ge.html#s_ge_ex" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_solving.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Solving linear systems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#ss_workingExample" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Model example continued</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#ss_solveSystem" class="internal"><span class="codenumber">2.3.2</span> <span class="title">General method for solving linear systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#s_solving-5" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Vector parametrization description</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_solving.html#s_solving_ex" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_matrices.html" class="internal"><span class="codenumber">3</span> <span class="title">Matrices, their arithmetic, and their algebra</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_matrix.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Matrix arithmetic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_attributes" class="internal"><span class="codenumber">3.1.1</span> <span class="title">The basics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_arithmetic" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Vector space structure of <span class="process-math">\(M_{mn}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_mult" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Matrix multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#s_column_row_method" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Alternative methods of multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#s_matrix-7" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Transpose of a matrix</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_matrix.html#s_matrix_ex" class="internal"><span class="codenumber">3.1.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_matrix_algebra.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Matrix algebra</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_matrix_mult_props" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Matrix multiplication properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_cancellation" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Cancellation laws fulfilled and violated</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_transpose_props" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Transpostition properties</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_matrix_algebra.html#s_matrix_algebra_ex" class="internal"><span class="codenumber">3.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_invertible_matrices.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Invertible matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertible_matrices.html#subsec-" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Invertible matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertible_matrices.html#s_invertible_matrices-4" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Powers of matrices, matrix polynomials</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_invertible_matrices.html#s_invertible_matrices_ex" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_invertibility_theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">The invertibility theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_elementary_matrix" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Elementary matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_systems_to_matrix_eqns" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Interlude on matrix equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertibility_th" class="internal"><span class="codenumber">3.4.3</span> <span class="title">The invertibility theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertibility_alg" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Invertibility algorithms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertible_loose_ends" class="internal"><span class="codenumber">3.4.5</span> <span class="title">Some theoretical loose ends</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_invertibility_theorem.html#s_invertibility_theorem_ex" class="internal"><span class="codenumber">3.4.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_det.html" class="internal"><span class="codenumber">3.5</span> <span class="title">The determinant</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_det" class="internal"><span class="codenumber">3.5.1</span> <span class="title">Definition of the determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_expansion_rows_columns" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Expansion along rows and columns</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_det_row_ops" class="internal"><span class="codenumber">3.5.3</span> <span class="title">Row operations and determinant</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_det.html#s_det_ex" class="internal"><span class="codenumber">3.5.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_vectorspace.html" class="internal"><span class="codenumber">4</span> <span class="title">Vector spaces and linear transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Subspaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspace" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Definition of subspace</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspaces_tuples" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Subspaces of <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspace_matrices" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Important subspaces of <span class="process-math">\(M_{nn}\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_subspace.html#s_subspace_ex" class="internal"><span class="codenumber">4.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_span_independence.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Span and linear independence</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence-3" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Span</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#ss_linear_independence" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Linear independence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#subsec-invertibility-span-and-linear-independence" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Invertibility, span, and linear independence</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence_ex" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_basis.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Bases</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_basis.html#ss_bases" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Bases of vector spaces</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_basis.html#s_basis_ex" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_dimension.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Dimension</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#ss_dimension" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Dimension of a vector space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#s_dimension-4" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Further properties of dimension</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_dimension.html#s_dimension_ex" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_rank_nullity.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Fundamental spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rank_nullity.html#ss_fundamental_spaces" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Fundamental spaces of matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rank_nullity.html#ss_expand_contract" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Contracting and expanding to bases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rank_nullity.html#ss_fund_spaces_inv_th" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Fundamental spaces and invertibility</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_rank_nullity.html#s_rank_nullity_ex" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="c_lin_trans.html" class="internal"><span class="codenumber">5</span> <span class="title">Linear transformations</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_transformation.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Linear transformations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_linear_transform" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Linear transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_trans_bases" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Bases and linear transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_matrix_transforms" class="internal"><span class="codenumber">5.1.3</span> <span class="title">Matrix transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#s_transformation-6" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Reflections and rotations in the plane</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_transform_composition" class="internal"><span class="codenumber">5.1.5</span> <span class="title">Composition of linear transformations and matrix multiplication</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_transformation.html#s_transformation_ex" class="internal"><span class="codenumber">5.1.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="s_nullspace_image.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Null space, image, and isomophisms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_nullspace_image.html#ss_nullspace_image" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Null space and image</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_nullspace_image.html#ss_rank-nullity" class="internal"><span class="codenumber">5.2.2</span> <span class="title">The rank-nullity theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_nullspace_image.html#ss_injective_surjective_transforms" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Injective and surjective linear transformations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_nullspace_image.html#s_nullspace_image_ex" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_coordinatevectors.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Coordinate vectors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_coordinatevectors.html#ss_coordinate_vectors" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Coordinate vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_coordinatevectors.html#ss_coordinate_transformation" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Coordinate vector transformation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_coordinatevectors.html#s_coordinatevectors_ex" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_changeofbasis.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Change of basis</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_changeofbasis.html#ss_change_of_basis" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Change of basis matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_changeofbasis.html#s_changeofbasis-4" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Change of basis for transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_changeofbasis.html#ss_changebasis_similarity" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Similarity and the holy commutative tent of linear algebra</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_changeofbasis.html#s_changeofbasis_ex" class="internal"><span class="codenumber">5.4.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="euc_vec_spaces-9.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-notation.html" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-exercises.html" class="internal"><span class="codenumber">B</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-defs.html" class="internal"><span class="codenumber">C</span> <span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-thms.html" class="internal"><span class="codenumber">D</span> <span class="title">Theory and procedures</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-egs.html" class="internal"><span class="codenumber">E</span> <span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-sage.html" class="internal"><span class="codenumber">F</span> <span class="title">Sage examples</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-figures.html" class="internal"><span class="codenumber">G</span> <span class="title">Figures and video examples</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-matnras.html" class="internal"><span class="codenumber">H</span> <span class="title">Mantras and fiats</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="euc_vec_spaces-9-10.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_nullspace_image"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">5.2</span><span class="space"> </span><span class="title">Null space, image, and isomophisms</span>
+</h2>
+<section class="introduction" id="s_nullspace_image-2"><div class="para" id="s_nullspace_image-2-1">Having introduced linear transformations, we now treat them as proper objects of study. Forget for a moment the linear algebraic nature of a linear transformation <span class="process-math">\(T\colon V\rightarrow W\text{,}\)</span> and think of it just as a function. Purely along function-theoretic lines, we want to know whether <span class="process-math">\(T\)</span> is <a href="s_functions.html#d_injective" class="xref" data-knowl="./knowl/xref/d_injective.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Injective">injective</a>, <a href="s_functions.html#d_surjective" class="xref" data-knowl="./knowl/xref/d_surjective.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Surjective">surjective</a>, and <a href="s_functions.html#d_invertible_function" class="xref" data-knowl="./knowl/xref/d_invertible_function.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.2.10: Identity and inverse functions">invertible</a>. As we will learn, there are two subspaces associated to a linear transformation <span class="process-math">\(T\text{,}\)</span> its <em class="emphasis">null space</em> and <em class="emphasis">image</em>, that provide an easy way for answering these questions. We will also see that in the case of a matrix transformation <span class="process-math">\(T_A\text{,}\)</span> these associated spaces coincide with two of the fundamental spaces of the matrix <span class="process-math">\(A\text{.}\)</span> (You can probably guess one of these.)</div></section><section class="subsection" id="ss_nullspace_image"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="space"> </span><span class="title">Null space and image</span>
+</h3>
+<article class="definition definition-like" id="d_nullspace_image"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Null space and image.</span>
+</h4>  <div class="para logical" id="d_nullspace_image-6-1">
+<div class="para">Let <span class="process-math">\(T\colon V\rightarrow W\)</span> be a linear transformation.</div>
+<ol class="decimal">
+<li id="d_nullspace_image-6-1-2-1">
+<span class="heading"><span class="title">Null space.</span></span><div class="para logical" id="d_nullspace_image-6-1-2-1-2">
+<div class="para">The <dfn class="terminology">null space</dfn> of <span class="process-math">\(T\text{,}\)</span> denoted <span class="process-math">\(\NS T\text{,}\)</span> is defined as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\NS T=\{\boldv\in V\colon T(\boldv)=\boldzero_W\}\text{.}
+\end{equation*}
+</div>
+</div>
+</li>
+<li id="d_nullspace_image-6-1-2-2">
+<span class="heading"><span class="title">Image.</span></span><div class="para logical" id="d_nullspace_image-6-1-2-2-2">
+<div class="para">The <dfn class="terminology">image</dfn> (or <dfn class="terminology">range</dfn>) of <span class="process-math">\(T\text{,}\)</span> denoted <span class="process-math">\(\im T\text{,}\)</span> is defined as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\im T=\{\boldw\in W\colon \boldw=T(\boldv) \text{ for some }  \boldv\in V \}\text{.}
+\end{equation*}
+</div>
+</div>
+</li>
+</ol>
+</div></article><div class="para" id="ss_nullspace_image-3">As with the fundamental spaces of a matrix, given a linear transformation <span class="process-math">\(T\colon V\rightarrow W\)</span> it is helpful to keep straight the different ambient spaces where <span class="process-math">\(\NS T\)</span> and <span class="process-math">\(\im T\)</span> live. As illustrated by <a href="s_nullspace_image.html#fig_null_image_ambient" class="xref" data-knowl="./knowl/xref/fig_null_image_ambient.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 5.2.(a)">Figure 5.2.(a)</a>, we have <span class="process-math">\(\NS T\subseteq V\)</span> and <span class="process-math">\(\im T\subseteq W\text{:}\)</span> that is, the null space is a subset of the domain of <span class="process-math">\(T\text{,}\)</span> and the image is a subset of the codomain.  Figures <a href="s_nullspace_image.html#fig_nullspace_to_zero" class="xref" data-knowl="./knowl/xref/fig_nullspace_to_zero.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 5.2.(b)">5.2.(b)</a>and <a href="s_nullspace_image.html#fig_domain_to_image" class="xref" data-knowl="./knowl/xref/fig_domain_to_image.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 5.2.(c)">5.2.(c)</a> go on to convey that <span class="process-math">\(\NS T\)</span> is the set of elements of <span class="process-math">\(V\)</span> that are mapped to <span class="process-math">\(\boldzero_W\text{,}\)</span> and that <span class="process-math">\(\im T\)</span> is the set of outputs of <span class="process-math">\(T\text{.}\)</span>
+</div>
+<figure class="figure figure-like" id="fig_null_image"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel top" style="width:100%;"><figure class="figure figure-like" id="fig_null_image_ambient"><img src="generated/latex-image/im_null_image.svg" role="img" class="contained"><figcaption><span class="codenumber">(a)</span><span class="space"> </span>Null space lives in the domain; image lives in the codomain.</figcaption></figure></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel top" style="width:100%;"><figure class="figure figure-like" id="fig_nullspace_to_zero"><img src="generated/latex-image/im_nullspace_to_zero.svg" role="img" class="contained"><figcaption><span class="codenumber">(b)</span><span class="space"> </span>The entire null space gets mapped to <span class="process-math">\(\boldzero_W\text{.}\)</span></figcaption></figure></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel top" style="width:100%;"><figure class="figure figure-like" id="fig_domain_to_image"><img src="generated/latex-image/im_domain_to_image.svg" role="img" class="contained"><figcaption><span class="codenumber">(c)</span><span class="space"> </span>The entire domain is mapped to <span class="process-math">\(\im T\text{.}\)</span></figcaption></figure></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.2<span class="period">.</span></span><span class="space"> </span>Null space and image</figcaption></figure><div class="para" id="ss_nullspace_image-5">As mentioned at the top, the null space and image of a linear transformation are subspaces, as we now show.</div>
+<article class="theorem theorem-like" id="th_nullspace_image"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Null space and image.</span>
+</h4>
+<div class="para" id="th_nullspace_image-2-1">If <span class="process-math">\(T\colon V\rightarrow W\)</span> is a linear transformation, then <span class="process-math">\(\NS T\)</span> is a subspace of <span class="process-math">\(V\text{,}\)</span> and <span class="process-math">\(\im T\)</span> is a subspace of <span class="process-math">\(W\text{.}\)</span>
+</div></article><details id="th_nullspace_image-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><article class="case" id="th_nullspace_image-3-1"><h5 class="heading">Null space of <span class="process-math">\(T\)</span>.</h5> <div class="para" id="th_nullspace_image-3-1-2">We use the two-step technique to prove <span class="process-math">\(\NS T\)</span> is a subspace.</div> <ol class="decimal">
+<li id="th_nullspace_image-3-1-3-1"><div class="para" id="th_nullspace_image-3-1-3-1-1">Since <span class="process-math">\(T(\boldzero_V)=\boldzero_W\)</span> (<a href="s_matrix_algebra.html#th_trans_props" class="xref" data-knowl="./knowl/xref/th_trans_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.12: Properties of matrix transposition">Theorem 3.2.12</a>), we see that <span class="process-math">\(\boldzero_V\in \NS T\text{.}\)</span>
+</div></li>
+<li id="th_nullspace_image-3-1-3-2"><div class="para logical" id="th_nullspace_image-3-1-3-2-1">
+<div class="para">Suppose <span class="process-math">\(\boldv_1, \boldv_2\in \NS T\text{.}\)</span> Given any <span class="process-math">\(c,d\in \R\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_trans_props.html" id="th_nullspace_image-3-1-3-2-1-3">
+\begin{align*}
+T(c\boldv_1+d\boldv_2) \amp=cT(\boldv_1)+dT(\boldv_2) \amp (T \text{ is linear, } \knowl{./knowl/xref/th_trans_props.html}{\text{Theorem 3.2.12}})\\
+\amp=c\boldzero_W+d\boldzero_W \amp (\boldv_1, \boldv_2\in \NS T) \\
+\amp = \boldzero_W\text{.}
+\end{align*}
+</div>
+<div class="para">This shows that <span class="process-math">\(c\boldv_1+d\boldv_2\in \NS T\text{,}\)</span> completing our proof.</div>
+</div></li>
+</ol></article> <article class="case" id="th_nullspace_image-3-2"><h5 class="heading">Image of <span class="process-math">\(T\)</span>.</h5> <div class="para" id="th_nullspace_image-3-2-2">The proof proceeds in a similar manner, using the two-step technique.</div> <ol class="decimal">
+<li id="th_nullspace_image-3-2-3-1"><div class="para" id="th_nullspace_image-3-2-3-1-1">Since <span class="process-math">\(T(\boldzero_V)=\boldzero_W\)</span> (<a href="s_matrix_algebra.html#th_trans_props" class="xref" data-knowl="./knowl/xref/th_trans_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.12: Properties of matrix transposition">Theorem 3.2.12</a>), we see that <span class="process-math">\(\boldzero_W\)</span> is “hit” by <span class="process-math">\(T\text{,}\)</span> and hence is a member of <span class="process-math">\(\im T\text{.}\)</span>
+</div></li>
+<li id="th_nullspace_image-3-2-3-2"><div class="para logical" id="th_nullspace_image-3-2-3-2-1">
+<div class="para">Assume vectors <span class="process-math">\(\boldw_1, \boldw_2\in W\)</span> are elements of <span class="process-math">\(\im T\text{.}\)</span> By definition, this means there are vectors <span class="process-math">\(\boldv_1, \boldv_2\in V\)</span> such that <span class="process-math">\(T(\boldv_i)=\boldw_i\)</span> for <span class="process-math">\(1\leq i\leq 2\text{.}\)</span> Now given any linear combination <span class="process-math">\(\boldw=c\boldw_1+d\boldw_2\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="th_nullspace_image-3-2-3-2-1-7">
+\begin{align*}
+T(c\boldv_1+d\boldv_2) \amp = cT(\boldv_1)+dT(\boldv_2)\\
+\amp =c\boldw_1+d\boldw_2\\
+\amp =\boldw\text{.}
+\end{align*}
+</div>
+<div class="para">This shows that for any linear combination <span class="process-math">\(\boldw=c\boldw_1+d\boldw_2\text{,}\)</span> there is an element <span class="process-math">\(\boldv=c\boldv_1+d\boldv_2\)</span> such that <span class="process-math">\(T(\boldv)=\boldw\text{.}\)</span> We conclude that if  <span class="process-math">\(\boldw_1, \boldw_2\in \im T\text{,}\)</span> then <span class="process-math">\(\boldw=c\boldw_1+d\boldw_2\in \im T\)</span> for any <span class="process-math">\(c,d\in \R\text{,}\)</span> as desired.</div>
+</div></li>
+</ol></article></article></details><article class="example example-like" id="eg_nullspace_image_transposition"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
+</h4>
+<div class="para" id="eg_nullspace_image_transposition-1-1">Define <span class="process-math">\(F\colon M_{nn}\rightarrow M_{nn}\)</span> as <span class="process-math">\(F(A)=A^T-A\text{.}\)</span>
+</div> <ol class="decimal">
+<li id="eg_nullspace_image_transposition-1-2-1"><div class="para" id="eg_nullspace_image_transposition-1-2-1-1">Prove that <span class="process-math">\(F\)</span> is linear.</div></li>
+<li id="eg_nullspace_image_transposition-1-2-2"><div class="para" id="eg_nullspace_image_transposition-1-2-2-1">Identify <span class="process-math">\(\NS F\)</span> as a familiar matrix subspace.</div></li>
+<li id="eg_nullspace_image_transposition-1-2-3"><div class="para" id="eg_nullspace_image_transposition-1-2-3-1">Identify <span class="process-math">\(\im F\)</span> as a familiar matrix subspace.</div></li>
+</ol>
+<div class="solutions"><details id="eg_nullspace_image_transposition-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_nullspace_image_transposition-2-1"><ol class="decimal">
+<li id="eg_nullspace_image_transposition-2-1-1-1"><div class="para logical" id="eg_nullspace_image_transposition-2-1-1-1-1">
+<div class="para">Linearity is an easy consequence of transpose properties. For any <span class="process-math">\(A_1, A_2\in M_{nn}\)</span> and <span class="process-math">\(c_1,c_2\in \R\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_transp_linear.html" id="eg_nullspace_image_transposition-2-1-1-1-1-3">
+\begin{align*}
+F(c_1A_1+c_2A_2)  \amp= (c_1A_1+c_2A_2)^T-(c_1A_1+c_2A_2)  \\
+\amp = c_1A_1^T+c_2A_2^T-c_1A_1-c_2A_2\amp (\knowl{./knowl/xref/th_transp_linear.html}{\text{2}}) \\
+\amp =c_1(A_1^T-A_1)+c_2(A_2^T-A_2)\\
+\amp =c_1F(A_1)+c_2F(A_2)\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="eg_nullspace_image_transposition-2-1-1-2"><div class="para logical" id="eg_nullspace_image_transposition-2-1-1-2-1">
+<div class="para">We have</div>
+<div class="displaymath process-math" id="eg_nullspace_image_transposition-2-1-1-2-1-1">
+\begin{align*}
+\NS F \amp= \{A\in M_{nn}\colon F(A)=\boldzero\} \\
+\amp=\{A\in M_{22}\colon A^T-A=\boldzero\} \\
+\amp=\{A\in M_{22}\colon A^T=A\} \text{.}
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(\NS F\)</span> is the subspace of symmetric <span class="process-math">\(n\times n\)</span> matrices!</div>
+</div></li>
+<li id="eg_nullspace_image_transposition-2-1-1-3">
+<div class="para" id="eg_nullspace_image_transposition-2-1-1-3-1">Let <span class="process-math">\(W=\{B\in M_{nn}\colon B^T=-B\}\text{,}\)</span> subspace of skew-symmetric <span class="process-math">\(n\times n\)</span> matrices. We claim <span class="process-math">\(\im F=W\text{.}\)</span> As this is a set equality, we prove it by showing the two set inclusions <span class="process-math">\(\im F\subseteq W\)</span> and <span class="process-math">\(W\subseteq \im F\text{.}\)</span> (See <a href="s_proof_technique.html#ss_set_properties" class="internal" title="Subsection 0.5.3: Basic set properties">Basic set properties</a>)</div>
+<div class="para logical" id="eg_nullspace_image_transposition-2-1-1-3-2">
+<div class="para">The inclusion <span class="process-math">\(\im F\subseteq W\)</span> is the easier of the two. If <span class="process-math">\(B\in \im F\text{,}\)</span> then <span class="process-math">\(B=F(A)=A^T-A\)</span> for some <span class="process-math">\(A\in M_{nn}\text{.}\)</span> Using various properties of transposition, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B^T=(A^T-A)^T=(A^T)^T-A^T=-(A^T-A)=-B\text{,}
+\end{equation*}
+</div>
+<div class="para">showing that <span class="process-math">\(B\)</span> is skew-symmetric, and thus <span class="process-math">\(B\in W\text{,}\)</span> as desired.</div>
+</div>
+<div class="para logical" id="eg_nullspace_image_transposition-2-1-1-3-3">
+<div class="para">The inclusion <span class="process-math">\(W\subseteq \im F\)</span> is trickier: we must show that if <span class="process-math">\(B\)</span> is skew-symmetric, then there is an <span class="process-math">\(A\)</span> such that <span class="process-math">\(B=F(A)=A^T-A\text{.}\)</span> Assume we have a <span class="process-math">\(B\)</span> with <span class="process-math">\(B^T=-B\text{.}\)</span> Letting <span class="process-math">\(A=-\frac{1}{2}B\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^T-A=(-\frac{1}{2}B)^T+\frac{1}{2}B=\frac{1}{2}(-B^T+B)=\frac{1}{2}(B+B)=B\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus we have found a matrix <span class="process-math">\(A\)</span> satisfying <span class="process-math">\(F(A)=B\text{.}\)</span> It follows that <span class="process-math">\(B\in\im T\text{.}\)</span>
+</div>
+</div>
+</li>
+</ol></div></div></details></div></article><article class="remark remark-like" id="rm_subspace_as_nullspace"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Subspace as null space.</span>
+</h4> <div class="para" id="rm_subspace_as_nullspace-2">As illustrated by <a href="s_nullspace_image.html#eg_nullspace_image_transposition" class="xref" data-knowl="./knowl/xref/eg_nullspace_image_transposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.2.4">Example 5.2.4</a>, <a href="s_nullspace_image.html#th_nullspace_image" class="xref" data-knowl="./knowl/xref/th_nullspace_image.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.3: Null space and image">Theorem 5.2.3</a> provides an alternative technique for proving that a subset of <span class="process-math">\(W\subseteq V\)</span> is in fact a subspace: namely, find a linear transformation <span class="process-math">\(T\colon V\rightarrow Z\)</span> such that <span class="process-math">\(W=\NS T\text{.}\)</span>
+</div></article><div class="para logical" id="ss_nullspace_image-9">
+<div class="para">Not surprisingly, there is a connection between the null space of a matrix, as defined in <a href="s_subspace.html#d_nullspace_matrix" class="xref" data-knowl="./knowl/xref/d_nullspace_matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 4.1.10: Null space of matrix">Definition 4.1.10</a>, and our new notion of null space. Indeed, given an <span class="process-math">\(m\times n\)</span>  matrix <span class="process-math">\(A\text{,}\)</span> for all <span class="process-math">\(\boldx\in \R^n\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_nullspace_matrix.html" id="ss_nullspace_image-9-5">
+\begin{align*}
+\boldx\in \NS A \amp \iff A\boldx=\boldzero \\
+\amp \iff T_A(\boldx)=\boldzero \amp (\text{def. of } T_A)\\
+\amp \iff \boldx\in \NS T_A\text{,}
+\end{align*}
+</div>
+<div class="para">and thus <span class="process-math">\(\NS A=\NS T_A\text{.}\)</span> Furthermore, as we show next, we have <span class="process-math">\(\CS A=\im T_A\text{.}\)</span>
+</div>
+</div>
+<article class="theorem theorem-like" id="th_null_im_matrix_trans"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Null space and image of matrix transformation.</span>
+</h4>
+<div class="para logical" id="th_null_im_matrix_trans-2-1">
+<div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix, and let <span class="process-math">\(T_A\colon \R^n\rightarrow \R^m\)</span> be its associated matrix transformation. We have</div>
+<div class="displaymath process-math" id="th_null_im_matrix_trans-2-1-4">
+\begin{align}
+\NS A \amp = \NS T_A\tag{5.2.1}\\
+\CS A \amp = \im T_A\text{.}\tag{5.2.2}
+\end{align}
+</div>
+</div></article><details id="th_null_im_matrix_trans-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_null_im_matrix_trans-3-1">
+<div class="para">The first equality was discussed above. As for the second, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_col_space.html" id="th_null_im_matrix_trans-3-1-1">
+\begin{align*}
+\boldy\in \CS A \amp \iff \boldy=A\boldx \text{ for some } \boldx\in \R^n \amp (\knowl{./knowl/xref/th_col_space.html}{\text{4.5.5}}) \\
+\amp \iff \boldy=T_A(\boldx) \text{ for some } \boldx\in \R^n \amp (\text{def. of } T_A)\\
+\amp \iff \boldy\in \im T_A \amp (\text{def. of } \im T_A)\text{.}
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(\CS A=\im T_A\text{.}\)</span>
+</div>
+</div></article></details><article class="example example-like" id="eg_nullspace_image_matrix"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix transformation.</span>
+</h4>
+<div class="para logical" id="eg_nullspace_image_matrix-2-1">
+<div class="para">Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{amatrix}[rrrr] 1\amp 2\amp 3\amp 4\\ 2\amp 4\amp 6\amp 8  \end{amatrix}\text{,}
+\end{equation*}
+</div>
+<div class="para">and let <span class="process-math">\(T_A\colon \R^4\rightarrow \R^2\)</span> be its associated matrix transformation. Provide bases for <span class="process-math">\(\NS T_A\)</span> and <span class="process-math">\(\im T_A\)</span> and compute the dimensions of these spaces.</div>
+</div>
+<div class="solutions"><details id="eg_nullspace_image_matrix-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_nullspace_image_matrix-3-1">
+<div class="para">We have <span class="process-math">\(\NS T_A=\NS A\)</span> and <span class="process-math">\(\im T_A=\CS A\text{.}\)</span> Following <a href="s_rank_nullity.html#proc_fund_spaces" class="xref" data-knowl="./knowl/xref/proc_fund_spaces.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.5.10: Fundamental spaces">Procedure 4.5.10</a>, we first row reduce <span class="process-math">\(A\)</span> to</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_fund_spaces.html">
+\begin{equation*}
+\begin{amatrix}[rrrr] \boxed{1}\amp 2\amp 3\amp 4\\ 0\amp 0\amp 0\amp 0 \end{amatrix}\text{,}
+\end{equation*}
+</div>
+<div class="para">and conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_fund_spaces.html">
+\begin{equation*}
+\NS T_A=\NS A=\{(-2r-3s-4t,r,s,t)\colon r,s,t\in \R\}=\Span\{(-2,1,0,0),(-3,0,1,0),(-4,0,0,1)\}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_fund_spaces.html">
+\begin{equation*}
+\im T_A=\CS A=\Span\{(1,2)}\text{.}
+\end{equation*}
+</div>
+</div></div></details></div></article></section><section class="subsection" id="ss_rank-nullity"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="space"> </span><span class="title">The rank-nullity theorem</span>
+</h3>
+<div class="para logical" id="ss_rank-nullity-2">
+<div class="para">The <a href="s_nullspace_image.html#th_rank-nullity" class="xref" data-knowl="./knowl/xref/th_rank-nullity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.9: Rank-nullity">rank-nullity theorem</a> relates the the dimensions of the null space and image of a linear transformation <span class="process-math">\(T\colon V\rightarrow W\text{,}\)</span> assuming <span class="process-math">\(V\)</span> is finite dimensional. Roughly speaking, it says that the bigger the null space, the smaller the image. More precisely, it tells us that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_rank-nullity.html ./knowl/xref/th_rank-nullity.html">
+\begin{equation*}
+\dim V=\dim\NS T+\dim\im T\text{.}
+\end{equation*}
+</div>
+<div class="para">As we will see, this elegant result can be used to significantly simplify computations with linear transformations. For example, in a situation where we wish to compute explicitly both the null space and image of a given linear transformation, we can often get away with just computing one of the two spaces and using the rank-nullity theorem (and a dimension argument) to easily determine the other. Additionally, the rank-nullity theorem will directly imply some intuitively obvious properties of linear transformations. For example, suppose <span class="process-math">\(V\)</span> is a finite-dimensional vector space. It seems obvious that if <span class="process-math">\(\dim W&gt; \dim V\text{,}\)</span> then there is no linear transformation mapping <span class="process-math">\(V\)</span> surjectively onto <span class="process-math">\(W\text{:}\)</span> i.e., you should not be able to map a “smaller” vector space onto a “bigger” one. Similarly, if <span class="process-math">\(\dim W \lt \dim V\text{,}\)</span> then we expect that there is no injective linear transformation mapping <span class="process-math">\(V\)</span> injectively into <span class="process-math">\(W\text{.}\)</span> Both these results are easy consequences of the <a href="s_nullspace_image.html#th_rank-nullity" class="xref" data-knowl="./knowl/xref/th_rank-nullity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.9: Rank-nullity">rank-nullity theorem</a>.</div>
+</div>
+<div class="para" id="ss_rank-nullity-3">Before proving the theorem we give names to <span class="process-math">\(\dim \NS T\)</span> and <span class="process-math">\(\dim\im T\text{.}\)</span>
+</div>
+<article class="definition definition-like" id="d_rank_nullity"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Rank and nullity.</span>
+</h4>  <div class="para logical" id="d_rank_nullity-6-1">
+<div class="para">Let <span class="process-math">\(T\colon V\rightarrow W\)</span> be a linear transformation.</div>
+<ul class="disc">
+<li id="d_rank_nullity-6-1-2-1"><div class="para logical" id="d_rank_nullity-6-1-2-1-1">
+<div class="para">The <dfn class="terminology">rank</dfn> of <span class="process-math">\(T\text{,}\)</span> denoted <span class="process-math">\(\rank T\text{,}\)</span> is the dimension of <span class="process-math">\(\im T\text{:}\)</span> i.e.,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\rank T=\dim\im T\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li id="d_rank_nullity-6-1-2-2"><div class="para logical" id="d_rank_nullity-6-1-2-2-1">
+<div class="para">The <dfn class="terminology">nullity</dfn> of <span class="process-math">\(T\text{,}\)</span> denoted <span class="process-math">\(\nullity T\text{,}\)</span> is the dimension of <span class="process-math">\(\NS T\text{:}\)</span> i.e.,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nullity T=\dim\NS T\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ul>
+</div></article><article class="theorem theorem-like" id="th_rank-nullity"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Rank-nullity.</span>
+</h4>
+<div class="para logical" id="th_rank-nullity-3-1">
+<div class="para">Let <span class="process-math">\(V\)</span> be a vector space of dimension <span class="process-math">\(n\text{,}\)</span> and let <span class="process-math">\(T\colon V\rightarrow W\)</span> be a linear transformation. Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+n=\dim\NS T+\dim\im T\text{,}
+\end{equation*}
+</div>
+<div class="para">or alternatively,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+n=\nullity T+\rank T\text{.}
+\end{equation*}
+</div>
+</div></article><details id="th_rank-nullity-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_rank-nullity-4-1">Choose a basis <span class="process-math">\(B'=\{\boldv_1, \boldv_2, \dots, \boldv_k\}\)</span> of <span class="process-math">\(\NS T\)</span> and extend <span class="process-math">\(B'\)</span> to a basis <span class="process-math">\(B=\{\boldv_1, \boldv_2,\dots, \boldv_k,\boldv_{k+1},\dots, \boldv_n\}\text{,}\)</span> using <a href="s_dimension.html#th_basis_contract_expand" class="xref" data-knowl="./knowl/xref/th_basis_contract_expand.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.15: Contracting and expanding to bases">Theorem 4.4.15</a>. Observe that <span class="process-math">\(\dim\NS T=\nullity T=k\)</span> and <span class="process-math">\(\dim V=n\text{.}\)</span>
+</div> <div class="para" id="th_rank-nullity-4-2">We claim that <span class="process-math">\(B''=\{T(\boldv_{k+1}),T(\boldv_{k+2}),\dots, T(\boldv_{n})\}\)</span> is a basis of <span class="process-math">\(\im T\text{.}\)</span>
+</div> <details id="th_rank-nullity-4-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="title">Proof of claim.</span></h5></summary><article class="hiddenproof knowl__content"> <article class="case" id="th_rank-nullity-4-3-2"><h5 class="heading">
+<span class="process-math">\(B''\)</span> is linearly independent.</h5> <div class="para logical" id="th_rank-nullity-4-3-2-2">
+<div class="para">Suppose <span class="process-math">\(a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n)=\boldzero\text{.}\)</span> Then the vector <span class="process-math">\(\boldv=a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n\)</span> satisfies <span class="process-math">\(T(\boldv)=\boldzero\)</span> (using linearity of <span class="process-math">\(T\)</span>), and hence <span class="process-math">\(\boldv\in \NS T\text{.}\)</span> Then, using the fact that <span class="process-math">\(B'\)</span> is a basis of <span class="process-math">\(\NS T\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+b_1\boldv_1+b_2\boldv_2+\cdots +\boldv_k=\boldv=a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n,
+\end{equation*}
+</div>
+<div class="para">and hence</div>
+<div class="displaymath process-math">
+\begin{equation*}
+b_1\boldv_1+b_2\boldv_2+\cdots +\boldv_k-a_k\boldv_k-a_{k+1}\boldv_{k+1}-\cdots -a_n\boldv_n=\boldzero.
+\end{equation*}
+</div>
+<div class="para">Since the set <span class="process-math">\(B\)</span> is linearly independent, we conclude that <span class="process-math">\(b_i=a_j=0\)</span> for all <span class="process-math">\(1\leq i\leq k\)</span> and <span class="process-math">\(k+1\leq j\leq n\text{.}\)</span> In particular, <span class="process-math">\(a_{k+1}=a_{k+2}=\cdots=a_n=0\text{,}\)</span> as desired.</div>
+</div></article> <article class="case" id="th_rank-nullity-4-3-3"><h5 class="heading">
+<span class="process-math">\(B''\)</span> spans <span class="process-math">\(\im T\)</span>.</h5> <div class="para" id="th_rank-nullity-4-3-3-2">It is clear that <span class="process-math">\(\Span B''\subseteq \im T\)</span> since <span class="process-math">\(T(\boldv_i)\in \im T\)</span> for all <span class="process-math">\(k+1\leq i\leq n\)</span> and <span class="process-math">\(\im T\)</span> is closed under linear combinations.</div> <div class="para logical" id="th_rank-nullity-4-3-3-3">
+<div class="para">For the other direction, suppose <span class="process-math">\(\boldw\in \im T\text{.}\)</span> Then there is a <span class="process-math">\(\boldv\in V\)</span> such that <span class="process-math">\(\boldw=T(\boldv)\text{.}\)</span> Since <span class="process-math">\(B\)</span> is a basis of <span class="process-math">\(V\)</span> we may write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\boldv=a_1\boldv_1+a_2\boldv_2+\cdots a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n\text{,}
+\end{equation*}
+</div>
+<div class="para">in which case</div>
+<div class="displaymath process-math" id="th_rank-nullity-4-3-3-3-7">
+\begin{align*}
+\boldw=T(\boldv)\amp= T(a_1\boldv_1+a_2\boldv_2+\cdots a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n)\\
+\amp=a_1T(\boldv_1)+a_2T(\boldv_2)+\cdots a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n)
+\amp (T \text{ is linear })\\
+\amp=\boldzero +a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n) \amp (\boldv_i\in\NS T \text{ for } 1\leq i\leq k) \text{.}
+\end{align*}
+</div>
+<div class="para">This shows that <span class="process-math">\(\boldw=a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n)\in \Span B''\text{,}\)</span> as desired.</div>
+</div></article></article></details> Having shown <span class="process-math">\(B''\)</span> is a basis for <span class="process-math">\(\im T\text{,}\)</span> we conclude that <span class="process-math">\(\dim \im T=\val{B''}=n-(k+1)+1=n-k\text{,}\)</span> and thus that<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_basis_contract_expand.html" id="th_rank-nullity-4-7">
+\begin{align*}
+\dim V \amp=k+(n-k) \\
+\amp=\dim\NS T+\dim \im T \\
+\amp = \nullity T+\rank T\text{.}
+\end{align*}
+</div></article></details><article class="example example-like" id="eg_rank-nullity_computation"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Rank-nullity application.</span>
+</h4>
+<div class="para logical" id="eg_rank-nullity_computation-2-1">
+<div class="para">Show that the linear transformation</div>
+<div class="displaymath process-math" id="eg_rank-nullity_computation-2-1-1">
+\begin{align*}
+T\colon \R^4 \amp\rightarrow \R^3 \\
+(x,y,z,w)\amp \mapsto (x+z,y+z+w,z+2w) 
+\end{align*}
+</div>
+<div class="para">is surjective: i.e., <span class="process-math">\(\im T=\R^3\text{.}\)</span> Do so by first computing <span class="process-math">\(\NS T\text{.}\)</span>
+</div>
+</div>
+<div class="solutions"><details id="eg_rank-nullity_computation-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_rank-nullity_computation-3-1">
+<div class="para">We first examine <span class="process-math">\(\NS T\text{.}\)</span> We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_rank-nullity.html ./knowl/xref/cor_dimension_subspace.html">
+\begin{equation*}
+T(x,y,z,w)=\boldzero \iff \begin{linsys}{4}
+x\amp \amp \amp+ \amp z \amp \amp \amp =\amp 0\\
+\amp \amp y\amp+ \amp z \amp + \amp w\amp =\amp 0\\
+\amp \amp \amp\amp z \amp + \amp 2w\amp =\amp 0
+\end{linsys}\text{.}
+\end{equation*}
+</div>
+<div class="para">The system above is already in row echelon form, and so we easily see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_rank-nullity.html ./knowl/xref/cor_dimension_subspace.html">
+\begin{equation*}
+\NS T=\{(2t,t,-2t,t)\colon t\in \R\}=\Span\{(-1,1,-2,1)\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(B=\{(2,1,-2,1)\}\)</span> is a basis of <span class="process-math">\(\NS T\text{,}\)</span> and we conclude that <span class="process-math">\(\dim \NS T=1\text{.}\)</span> The <a href="s_nullspace_image.html#th_rank-nullity" class="xref" data-knowl="./knowl/xref/th_rank-nullity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.9: Rank-nullity">rank-nullity theorem</a> now implies that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_rank-nullity.html ./knowl/xref/cor_dimension_subspace.html">
+\begin{equation*}
+\dim \im T=4-\dim \NS T=4-1=3\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\im T\subseteq \R^3\)</span> and <span class="process-math">\(\dim\im T=\dim \R^3=3\text{,}\)</span> we conclude by <a href="s_dimension.html#cor_dimension_subspace" class="xref" data-knowl="./knowl/xref/cor_dimension_subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.4.17: Dimension of subspaces">Corollary 4.4.17</a> that <span class="process-math">\(\im T=\R^3\text{.}\)</span> Thus <span class="process-math">\(T\)</span> is surjective.</div>
+</div></div></details></div></article><article class="example example-like" id="eg_rank_nullity_skew_sym"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.11</span><span class="period">.</span><span class="space"> </span><span class="title">Rank-nullity application.</span>
+</h4>
+<div class="para logical" id="eg_rank_nullity_skew_sym-2-1">
+<div class="para">Let <span class="process-math">\(F\colon M_{nn}\rightarrow M_{nn}\)</span> be defined as <span class="process-math">\(F(A)=A^T+A\)</span> as in <a href="s_nullspace_image.html#eg_nullspace_image_transposition" class="xref" data-knowl="./knowl/xref/eg_nullspace_image_transposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.2.4">Example 5.2.4</a>. Prove that <span class="process-math">\(\im F\)</span> is the subspace <span class="process-math">\(W\)</span> of all skew-symmetric matrices following the steps below.</div>
+<ul class="disc">
+<li id="eg_rank_nullity_skew_sym-2-1-6-1"><div class="para" id="eg_rank_nullity_skew_sym-2-1-6-1-1">Compute <span class="process-math">\(\NS F\text{.}\)</span>
+</div></li>
+<li id="eg_rank_nullity_skew_sym-2-1-6-2"><div class="para" id="eg_rank_nullity_skew_sym-2-1-6-2-1">Show that <span class="process-math">\(\im F\subseteq W \text{.}\)</span>
+</div></li>
+<li id="eg_rank_nullity_skew_sym-2-1-6-3"><div class="para" id="eg_rank_nullity_skew_sym-2-1-6-3-1">Use the rank-nullity theorem and a dimension argument.</div></li>
+</ul>
+</div>
+<div class="solutions"><details id="eg_rank_nullity_skew_sym-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_rank_nullity_skew_sym-3-1"></div></div></details></div></article></section><section class="subsection" id="ss_injective_surjective_transforms"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="space"> </span><span class="title">Injective and surjective linear transformations</span>
+</h3>
+<div class="para" id="ss_injective_surjective_transforms-2">Recall the notions of injectivity and surjectivity from <a href="s_functions.html#d_injective_surjective_bijective" class="xref" data-knowl="./knowl/xref/d_injective_surjective_bijective.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.2.7: Injective, surjective, bijective">Definition 0.2.7</a>: a function <span class="process-math">\(f\colon X\rightarrow Y\)</span> is injective (or one-to-one) if for all <span class="process-math">\(x,x'\in X\)</span> we have <span class="process-math">\(f(x)=f(x')\)</span> implies <span class="process-math">\(x=x'\text{;}\)</span> it is surjective (or onto) if for all <span class="process-math">\(y\in Y\)</span> there is an <span class="process-math">\(x\in X\)</span> with <span class="process-math">\(f(x)=y\text{.}\)</span> As with all functions, we will be interested to know whether a given linear transformation is injective or surjective; as it turns out, the concepts of null space and image give us a convenient manner of answering these questions. As remarked in <a href="s_functions.html#d_injective_surjective_bijective" class="xref" data-knowl="./knowl/xref/d_injective_surjective_bijective.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.2.7: Injective, surjective, bijective">Definition 0.2.7</a>, there is in general a direct connection between the surjectivity and the image of a function: namely, <span class="process-math">\(f\colon X\rightarrow Y\)</span> is surjective if and only if <span class="process-math">\(\im f=Y\text{.}\)</span> It follows immediately that a linear transformation <span class="process-math">\(T\colon V\rightarrow W\)</span> is surjective if and only if <span class="process-math">\(\im T=W\text{.}\)</span> As for injectivity, it is easy to see that <em class="emphasis">if</em> a linear transformation <span class="process-math">\(T\)</span> is injective, <em class="emphasis">then</em> its null space must consist of just the zero vector of <span class="process-math">\(V\text{.}\)</span> What is somewhat surprising is that the converse is also true, as we now show.</div>
+<article class="theorem theorem-like" id="th_injective_surjective"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.12</span><span class="period">.</span><span class="space"> </span><span class="title">Injectivity and surjectivity.</span>
+</h4>
+<div class="para" id="th_injective_surjective-2-1">Let <span class="process-math">\(T\colon V\rightarrow W\)</span> be a linear transformation.</div> <ol class="decimal">
+<li id="th_injective_surjective-2-2-1"><div class="para" id="th_injective_surjective-2-2-1-1">
+<span class="process-math">\(T\)</span> is injective if and only if <span class="process-math">\(\NS T=\{\boldzero_V\}\text{.}\)</span>
+</div></li>
+<li id="th_injective_surjective-2-2-2"><div class="para" id="th_injective_surjective-2-2-2-1">
+<span class="process-math">\(T\)</span> is surjective if and only if <span class="process-math">\(\im T=W\text{.}\)</span>
+</div></li>
+</ol></article><details id="th_injective_surjective-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><ol class="decimal">
+<li id="th_injective_surjective-3-1-1"><div class="para logical" id="th_injective_surjective-3-1-1-1">
+<div class="para">We have</div>
+<div class="displaymath process-math" data-contains-math-knowls=" " id="th_injective_surjective-3-1-1-1-1">
+\begin{align*}
+T(\boldv)=T(\boldv') \amp \iff T(\boldv')-T(\boldv)=\boldzero\\
+\amp \iff T(\boldv'-\boldv)=\boldzero \amp (T \text{ is linear})\\
+\amp \iff \boldu=\boldv'-\boldv\in\NS T \amp (\text{def. } \NS T)\\
+\amp \iff \boldv'=\boldv+\boldu \text{ for some } \boldu\in\NS T \text{.}
+\end{align*}
+</div>
+<div class="para">Equation <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eq_nullspace_inverseimage" missing or not unique]</code> follows directly from <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eq_nullspace_injective" missing or not unique]</code> by observing that if <span class="process-math">\(T(\boldv)=\boldw\text{,}\)</span> then <span class="process-math">\(T(\boldv')=\boldw\)</span> if and only if <span class="process-math">\(T(\boldv)=T(\boldv')\text{.}\)</span>
+</div>
+</div></li>
+<li id="th_injective_surjective-3-1-2">
+<div class="para" id="th_injective_surjective-3-1-2-1">According to <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eq_nullspace_injective" missing or not unique]</code> we have <span class="process-math">\(T(\boldv)=T(\boldv')\)</span> if and only if <span class="process-math">\(\boldv'=\boldv+\boldu\)</span> for some <span class="process-math">\(\boldu\in \NS T\text{.}\)</span>
+</div>
+<div class="para" id="th_injective_surjective-3-1-2-2">If <span class="process-math">\(\NS T=\{\boldzero_V\}\text{,}\)</span> then <span class="process-math">\(T(\boldv)=T(\boldv')\)</span> implies <span class="process-math">\(\boldv'=\boldv+\boldzero=\boldv\text{.}\)</span> Thus <span class="process-math">\(T\)</span> is injective in this case.</div>
+<div class="para" id="th_injective_surjective-3-1-2-3">Conversely, if <span class="process-math">\(\NS T\ne \{\boldzero_V\}\)</span> we can find a nonzero <span class="process-math">\(\boldu\in \NS T\text{.}\)</span> It follows that for <em class="emphasis">any</em> <span class="process-math">\(\boldv\in V\)</span> we have <span class="process-math">\(T(\boldv)=T(\boldv+\boldu)\text{.}\)</span> Furthermore, since <span class="process-math">\(\boldu\ne\boldzero_V\text{,}\)</span> we have <span class="process-math">\(\boldv\ne \boldv+\boldu\text{.}\)</span> Thus <span class="process-math">\(T\)</span> is not injective in this case.</div>
+</li>
+</ol></article></details><article class="remark remark-like" id="ss_injective_surjective_transforms-4"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.2.13</span><span class="period">.</span>
+</h4>
+<div class="para" id="ss_injective_surjective_transforms-4-1">To determine whether a function of sets <span class="process-math">\(f\colon X\rightarrow Y\)</span> is injective, we normally have to show that <em class="emphasis">for each</em> output <span class="process-math">\(y\)</span> in the image of <span class="process-math">\(f\)</span> there is exactly one input <span class="process-math">\(x\)</span> satisfying <span class="process-math">\(f(x)=y\text{.}\)</span> Think of this as checking injectivity at every output. <a href="s_nullspace_image.html#th_injective_surjective" class="xref" data-knowl="./knowl/xref/th_injective_surjective.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.12: Injectivity and surjectivity">Theorem 5.2.12</a> tells us that in the special case of a linear transformation <span class="process-math">\(T\colon V\rightarrow W\)</span> it is enough to check injectivity at <em class="emphasis">exactly one ouput</em>: namely, <span class="process-math">\(\boldzero\in W\text{.}\)</span>
+</div></article><article class="corollary theorem-like" id="cor_injective_surjective"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.2.14</span><span class="period">.</span><span class="space"> </span><span class="title">Dimension, injectivity, surjectivity.</span>
+</h4>
+<div class="para logical" id="cor_injective_surjective-2-1">
+<div class="para">Let <span class="process-math">\(T\colon V\rightarrow W\)</span> be a linear transformation, and suppose <span class="process-math">\(V\)</span> is finite dimensional.</div>
+<ol class="decimal">
+<li id="cor_injective_surjective-2-1-3-1"><div class="para" id="cor_injective_surjective-2-1-3-1-1">If <span class="process-math">\(\dim V &gt; \dim W\text{,}\)</span> then <span class="process-math">\(T\)</span> is not injective.</div></li>
+<li id="cor_injective_surjective-2-1-3-2"><div class="para" id="cor_injective_surjective-2-1-3-2-1">If <span class="process-math">\(\dim V &lt; \dim W\text{,}\)</span> then <span class="process-math">\(T\)</span> is not surjective.</div></li>
+</ol>
+</div></article><details id="cor_injective_surjective-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor_injective_surjective-3-1">See <a href="s_nullspace_image.html#ex_cor_injective_surjective_1" class="xref" data-knowl="./knowl/xref/ex_cor_injective_surjective_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 5.2.4.23: Dimension, injectivity, surjectivity">Exercise 5.2.4.23–5.2.4.24</a>.</div></article></details><article class="definition definition-like" id="d_isomorphism"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.2.15</span><span class="period">.</span><span class="space"> </span><span class="title">Isomorphism.</span>
+</h4> <div class="para logical" id="d_isomorphism-4-1">
+<div class="para">Let <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> be vector spaces. A linear transformation <span class="process-math">\(T\colon V\rightarrow W\)</span> is an <dfn class="terminology">isomorphism</dfn> if it is invertible as a function: i.e., if there is an inverse function <span class="process-math">\(T^{-1}\colon W\rightarrow V\)</span> satisfying</div>
+<div class="displaymath process-math" id="d_isomorphism-4-1-7">
+\begin{align*}
+T^{-1}\circ T \amp = \id_V\\
+T\circ T^{-1} \amp =\id_W\text{.}
+\end{align*}
+</div>
+<div class="para">The vector spaces <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> are <dfn class="terminology">isomorphic</dfn> if there is an isomorphism from <span class="process-math">\(V\)</span> to <span class="process-math">\(W\text{.}\)</span>
+</div>
+</div></article><div class="para" id="ss_injective_surjective_transforms-7">
+<a href="s_nullspace_image.html#d_isomorphism" class="xref" data-knowl="./knowl/xref/d_isomorphism.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 5.2.15: Isomorphism">Definition 5.2.15</a> leaves open the question of whether the inverse function <span class="process-math">\(T^{-1}\colon W\rightarrow V\)</span> of an isomorphism <span class="process-math">\(T\colon V\rightarrow W\)</span> is a linear transformation. The next theorem resolves that issue.</div>
+<article class="theorem theorem-like" id="th_isom_inverse_linear"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.16</span><span class="period">.</span><span class="space"> </span><span class="title">Inverse of isomorphism is linear.</span>
+</h4>
+<div class="para" id="th_isom_inverse_linear-2-1">Let <span class="process-math">\(T\colon V\rightarrow W\)</span> be an isomorphism. The inverse function <span class="process-math">\(T^{-1}\colon W\rightarrow V\)</span> is a linear transformation.</div></article><details id="th_isom_inverse_linear-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_isom_inverse_linear-3-1">See <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "ex_isom_inverse_linear" missing or not unique]</code>.</div></article></details><article class="remark remark-like" id="ss_injective_surjective_transforms-9"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.2.17</span><span class="period">.</span><span class="space"> </span><span class="title">Proving <span class="process-math">\(T\)</span> is an isomorphism.</span>
+</h4> <div class="para logical" id="ss_injective_surjective_transforms-9-2">
+<div class="para">According to <a href="s_nullspace_image.html#d_isomorphism" class="xref" data-knowl="./knowl/xref/d_isomorphism.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 5.2.15: Isomorphism">Definition 5.2.15</a>, to prove a function <span class="process-math">\(T\colon V\rightarrow W\)</span> is an isomorphism, we must show that</div>
+<ol class="lower-roman">
+<li id="ss_injective_surjective_transforms-9-2-3-1"><div class="para" id="ss_injective_surjective_transforms-9-2-3-1-1">
+<span class="process-math">\(T\)</span> is linear, and</div></li>
+<li id="ss_injective_surjective_transforms-9-2-3-2"><div class="para" id="ss_injective_surjective_transforms-9-2-3-2-1">
+<span class="process-math">\(T\)</span> is invertible.</div></li>
+</ol>
+<div class="para">We know already how to decide whether a function is linear, but how do we decide whether it is invertible? Recall that a function is invertible if and only if it is <a href="s_functions.html#d_bijective" class="xref" data-knowl="./knowl/xref/d_bijective.html" data-reveal-label="Reveal" data-close-label="Close" title="Item: Bijective">bijective</a>. (See <a href="s_functions.html#th_invertible_bijective" class="xref" data-knowl="./knowl/xref/th_invertible_bijective.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.2.11: Invertible is equivalent to bijective">Theorem 0.2.11</a>.) This fact gives rise to two distinct methods for proving that a given linear transformation is invertible:</div>
+<ol class="decimal">
+<li id="ss_injective_surjective_transforms-9-2-6-1"><div class="para" id="ss_injective_surjective_transforms-9-2-6-1-1">we can show directly that <span class="process-math">\(T\)</span> is invertible by providing an inverse <span class="process-math">\(T^{-1}\colon W\rightarrow V\text{;}\)</span>
+</div></li>
+<li id="ss_injective_surjective_transforms-9-2-6-2"><div class="para" id="ss_injective_surjective_transforms-9-2-6-2-1">we can show that <span class="process-math">\(T\)</span> is bijective (i.e., injective and surjective).</div></li>
+</ol>
+<div class="para">Which approach, (1) or (2), is more convenient depends on the linear transformation <span class="process-math">\(T\)</span> in question.</div>
+</div></article><article class="theorem theorem-like" id="th_bijective_transformation"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.18</span><span class="period">.</span><span class="space"> </span><span class="title">Isomorphism equivalence.</span>
+</h4>
+<div class="para logical" id="th_bijective_transformation-2-1">
+<div class="para">Let <span class="process-math">\(T\colon V\rightarrow W\)</span> be a linear transformation. The following are equivalent.</div>
+<ol class="decimal">
+<li id="th_bijective_transformation-2-1-2-1"><div class="para" id="th_bijective_transformation-2-1-2-1-1">
+<span class="process-math">\(T\)</span> is an isomorphism;</div></li>
+<li id="th_bijective_transformation-2-1-2-2"><div class="para" id="th_bijective_transformation-2-1-2-2-1">
+<span class="process-math">\(\NS T=\{\boldzero_V\}\)</span> and <span class="process-math">\(\im T=W\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><div class="para" id="ss_injective_surjective_transforms-11">Why is it useful to know whether two vector spaces are isomorphic? The short answer is that if <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> are isomorphic, then although they may be very different objects when considered as sets, from the linear-algebraic perspective there is essentially no difference between the two: i.e., they satisfy the exact same linear-algebraic properties. Furthermore, an isomorphism <span class="process-math">\(T\colon V\rightarrow W\)</span> witnessing the fact that <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> are isomorphic gives us a perfect bijective dictionary between the two spaces, allowing us to answer questions about the one space by “translating” it to a question about the other, using <span class="process-math">\(T\)</span> or <span class="process-math">\(T^{-1}\text{.}\)</span> <a href="s_nullspace_image.html#th_isomorphism_preserves" class="xref" data-knowl="./knowl/xref/th_isomorphism_preserves.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.19: Properties preserved by isomorphisms">Theorem 5.2.19</a> gives a first glimpse into this dictionary-like nature of isomorphisms. Later in <a href="s_coordinatevectors.html" class="internal" title="Section 5.3: Coordinate vectors">Section 5.3</a> we will introduce a particular isomorphism called the <em class="emphasis">coordinate vector</em>, which illustrates the computational value of being able to translate questions about abstract vector spaces <span class="process-math">\(V\)</span> to questions about our beloved and familiar <span class="process-math">\(\R^n\)</span> spaces.</div>
+<article class="theorem theorem-like" id="th_isomorphism_preserves"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.19</span><span class="period">.</span><span class="space"> </span><span class="title">Properties preserved by isomorphisms.</span>
+</h4>
+<div class="para logical" id="th_isomorphism_preserves-2-1">
+<div class="para">Let <span class="process-math">\(T\colon V\rightarrow W\)</span> be an isomorphism. The following properties hold:</div>
+<ol class="lower-roman">
+<li id="th_isomorphism_preserves-2-1-2-1"><div class="para" id="th_isomorphism_preserves-2-1-2-1-1">
+<span class="process-math">\(S\subseteq V\)</span> is linearly independent if and only if <span class="process-math">\(T(S)\subseteq W\)</span> is linearly independent;</div></li>
+<li id="th_isomorphism_preserves-2-1-2-2"><div class="para" id="th_isomorphism_preserves-2-1-2-2-1">
+<span class="process-math">\(S\subseteq V\)</span> spans <span class="process-math">\(V\)</span> if and only if <span class="process-math">\(T(S)\subseteq W\)</span> spans <span class="process-math">\(W\text{;}\)</span>
+</div></li>
+<li id="th_isomorphism_preserves-2-1-2-3"><div class="para" id="th_isomorphism_preserves-2-1-2-3-1">
+<span class="process-math">\(S\subseteq V\)</span> is a basis of <span class="process-math">\(V\)</span> if and only if <span class="process-math">\(T(S)\subseteq W\)</span> is a basis of <span class="process-math">\(W\)</span>
+</div></li>
+<li id="th_isomorphism_preserves-2-1-2-4"><div class="para" id="th_isomorphism_preserves-2-1-2-4-1"><span class="process-math">\(\dim V=\dim W\text{.}\)</span></div></li>
+</ol>
+</div></article><details id="th_isomorphism_preserves-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_isomorphism_preserves-3-1"></div></article></details><article class="remark remark-like" id="ss_injective_surjective_transforms-13"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.2.20</span><span class="period">.</span>
+</h4>
+<a href="s_nullspace_image.html#th_isomorphism_preserves" class="xref" data-knowl="./knowl/xref/th_isomorphism_preserves.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.19: Properties preserved by isomorphisms">Theorem 5.2.19</a> makes use of <a href="s_functions.html#d_image" class="xref" data-knowl="./knowl/xref/d_image.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.2.6: Image of a set">image of a set</a> notation from general function theory. In general, if <span class="process-math">\(f\colon X\rightarrow Y\)</span> is a function, given a subset <span class="process-math">\(A\subseteq X \text{,}\)</span> the image of <span class="process-math">\(A\)</span> under <span class="process-math">\(f\)</span> is defined as<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_isomorphism_preserves.html ./knowl/xref/d_image.html">
+\begin{equation*}
+f(A)=\{y\in Y\colon y=f(x) \text{ for some } x\in X\}=\{f(a)\colon a\in A\}\text{.}
+\end{equation*}
+</div></article><div class="para" id="ss_injective_surjective_transforms-14">And now for the real shocker: finite-dimensional vector spaces are isomorphic if and only if they have the same dimension. In particular, any <span class="process-math">\(n\)</span>-dimensional vector space is isomorphic to <span class="process-math">\(\R^n\text{!}\)</span>
+</div>
+<article class="theorem theorem-like" id="th_isomorphisms_finite_dim"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.21</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="th_isomorphisms_finite_dim-1-1">
+<div class="para">Let <span class="process-math">\(V\)</span> be a vector space of finite dimension <span class="process-math">\(n\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li id="th_isomorphisms_finite_dim-1-1-3-1"><div class="para" id="th_isomorphisms_finite_dim-1-1-3-1-1">A vector space <span class="process-math">\(W\)</span> is isomorphic to <span class="process-math">\(V\)</span> if and only if <span class="process-math">\(\dim V=\dim W\text{.}\)</span>
+</div></li>
+<li id="th_isomorphisms_finite_dim-1-1-3-2"><div class="para logical" id="th_isomorphisms_finite_dim-1-1-3-2-1">
+<div class="para">Assume <span class="process-math">\(W\)</span> is a vector space satisfying <span class="process-math">\(\dim V=\dim W=n\text{,}\)</span> and let <span class="process-math">\(T\colon V\rightarrow W\)</span> be a linear transformation. The following are equivalent.</div>
+<ol class="lower-alpha">
+<li id="th_isomorphisms_finite_dim-1-1-3-2-1-4-1"><div class="para" id="th_isomorphisms_finite_dim-1-1-3-2-1-4-1-1">
+<span class="process-math">\(T\colon V\rightarrow W\)</span> is an isomorphism.</div></li>
+<li id="th_isomorphisms_finite_dim-1-1-3-2-1-4-2"><div class="para" id="th_isomorphisms_finite_dim-1-1-3-2-1-4-2-1">
+<span class="process-math">\(\NS T=\{\boldzero_V\}\)</span> (i.e., <span class="process-math">\(T\)</span> is injective).</div></li>
+<li id="th_isomorphisms_finite_dim-1-1-3-2-1-4-3"><div class="para" id="th_isomorphisms_finite_dim-1-1-3-2-1-4-3-1">
+<span class="process-math">\(\im T=W\)</span> (i.e., <span class="process-math">\(T\)</span> is surjective).</div></li>
+</ol>
+</div></li>
+</ol>
+</div></article></section><section class="exercises" id="s_nullspace_image_ex"><h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="subexercises" id="s_nullspace_image_ex-1"><h4 class="heading"><span class="title">WeBWork Exercises</span></h4>
+<article class="exercise exercise-like" id="s_nullspace_image_ex-1-2"><h5 class="heading"><span class="codenumber">1<span class="period">.</span></span></h5>
+<div id="webwork-70" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="70" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.34.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-70')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-70-1-1-1">Let <span class="process-math">\(A=\left[\begin{matrix}
+4 \amp  2 \amp  18 \cr 3 \amp  2 \amp  14 \cr \end{matrix}\right]\text{,}\)</span> <span class="process-math">\({\bf b}=\left[\begin{matrix} -4 \cr -1 \cr 1 \cr \end{matrix}\right]\text{,}\)</span> and <span class="process-math">\({\bf c}=\left[\begin{matrix} 10 \cr 9 \cr \end{matrix}\right]\text{.}\)</span> Define <span class="process-math">\(T({\bf x})=A{\bf x}\text{.}\)</span>
+</div> <div class="para" id="extracted-webwork-70-1-1-2">Select true or false for each statement.</div> <div class="para logical" id="extracted-webwork-70-1-1-3"><ol class="lower-alpha">
+<li id="extracted-webwork-70-1-1-3-1-1"><div class="para" id="extracted-webwork-70-1-1-3-1-1-1">The vector <span class="process-math">\({\bf c}\)</span> is in the range of <span class="process-math">\(T\)</span>
+</div></li>
+<li id="extracted-webwork-70-1-1-3-1-2"><div class="para" id="extracted-webwork-70-1-1-3-1-2-1">The vector <span class="process-math">\({\bf b}\)</span> is in the kernel of <span class="process-math">\(T\)</span>
+</div></li>
+</ol></div>
+<div class="solutions"><details id="extracted-webwork-70-1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<span class="process-math">\(A{\bf b}=\left[\begin{matrix} 
+4 \amp  2 \amp  18 \cr 3 \amp  2 \amp  14 \cr \end{matrix}\right]
+\left[\begin{matrix} -4 \cr -1 \cr 1 \cr \end{matrix}\right]=
+\left[\begin{matrix} 0 \cr 0 \cr \end{matrix}\right]\text{,}\)</span> so <span class="process-math">\({\bf b}\in \ker(T)\text{.}\)</span> We row-reduce to determine a solution of <span class="process-math">\(A{\bf x}={\bf c}\text{.}\)</span> <span class="process-math">\(\left[\begin{matrix} 
+4 \amp  2 \amp  18 \amp  10 \cr 3 \amp  2 \amp  14 \amp  9 \cr \end{matrix}\right]\sim
+\left[\begin{matrix} 
+1 \amp  0 \amp  4 \amp  1 \cr 0 \amp  1 \amp  1 \amp  3 \cr \end{matrix}\right].\)</span> Thus <span class="process-math">\(A \left[\begin{matrix} 1 \cr 3 \cr 0 \cr \end{matrix}\right] = {\bf c}\text{,}\)</span> so <span class="process-math">\({\bf c}\in\)</span> range<span class="process-math">\((T)\text{.}\)</span>
+</div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="s_nullspace_image_ex-1-3"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div id="webwork-71" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="71" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.36.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-71')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-71-1-1-1">Let <span class="process-math">\(T({\bf x})=A{\bf x}\)</span> for the matrix <span class="process-math">\(A\)</span> and</div> <div class="para" id="extracted-webwork-71-1-1-2">
+<span class="process-math">\(A=\left[\begin{array}{ccc}
+5 \amp -1 \amp 13\cr
+-2 \amp 0 \amp -6\cr
+7 \amp -5 \amp 11
+\end{array}\right]\text{,}\)</span> <span class="process-math">\({\bf b}=\left[\begin{array}{c}-3\\-2\\1\\\end{array}\right]\text{,}\)</span> and <span class="process-math">\({\bf c}=\left[\begin{array}{c}-1\\0\\-5\\\end{array}\right]\text{.}\)</span>
+</div> <div class="para" id="extracted-webwork-71-1-1-3">Select true or false for each statement.</div> <div class="para logical" id="extracted-webwork-71-1-1-4">
+<div class="para">The vector <span class="process-math">\(\bf{c}\)</span> is in the range of <span class="process-math">\(T\text{.}\)</span>
+</div>
+<ul class="square">
+<li id="extracted-webwork-71-1-1-4-3-1"><div class="para" id="extracted-webwork-71-1-1-4-3-1-1">???</div></li>
+<li id="extracted-webwork-71-1-1-4-3-2"><div class="para" id="extracted-webwork-71-1-1-4-3-2-1">True</div></li>
+<li id="extracted-webwork-71-1-1-4-3-3"><div class="para" id="extracted-webwork-71-1-1-4-3-3-1">False</div></li>
+</ul>
+</div> <div class="para logical" id="extracted-webwork-71-1-1-5">
+<div class="para">The vector <span class="process-math">\(\bf{b}\)</span> is in the kernel of <span class="process-math">\(T\text{.}\)</span>
+</div>
+<ul class="square">
+<li id="extracted-webwork-71-1-1-5-3-1"><div class="para" id="extracted-webwork-71-1-1-5-3-1-1">???</div></li>
+<li id="extracted-webwork-71-1-1-5-3-2"><div class="para" id="extracted-webwork-71-1-1-5-3-2-1">True</div></li>
+<li id="extracted-webwork-71-1-1-5-3-3"><div class="para" id="extracted-webwork-71-1-1-5-3-3-1">False</div></li>
+</ul>
+</div>
+<div class="solutions">
+<details id="extracted-webwork-71-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="extracted-webwork-71-1-2-1"><span class="process-math">\(\text{True}\)</span></div></div></details><details id="extracted-webwork-71-1-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="extracted-webwork-71-1-3-1"><span class="process-math">\(\text{True}\)</span></div></div></details><details id="extracted-webwork-71-1-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<span class="process-math">\(A{\bf b}=\left[\begin{array}{ccc}
+5 \amp -1 \amp 13\cr
+-2 \amp 0 \amp -6\cr
+7 \amp -5 \amp 11
+\end{array}\right] \left[\begin{array}{c}-3\\-2\\1\\\end{array}\right]= \left[\begin{array}{c}0\\0\\0\\\end{array}\right] ={\bf 0}\text{,}\)</span> so <span class="process-math">\({\bf b}\in \ker(T)\text{.}\)</span> Row-reduce to determine a solution of <span class="process-math">\(A{\bf x}={\bf c}\text{.}\)</span> <span class="process-math">\(\left[\begin{array}{cccc}
+5 \amp -1 \amp 13 \amp -1\cr
+-2 \amp 0 \amp -6 \amp 0\cr
+7 \amp -5 \amp 11 \amp -5
+\end{array}\right] \sim \left[\begin{array}{cccc}
+1 \amp 0 \amp 3 \amp 0\cr
+0 \amp 1 \amp 2 \amp 1\cr
+0 \amp 0 \amp 0 \amp 0
+\end{array}\right]\text{.}\)</span> or simply notice that <span class="process-math">\(\bf{c}\)</span> is the second column of <span class="process-math">\(\bf{A}\text{.}\)</span> Row reduction shows that the equation <span class="process-math">\(\bf{A}\bf{x}=\bf{c}\)</span> has infinitely many solutions: <span class="process-math">\(\bf{x} = \left[\begin{array}{c}0\\1\\0\\\end{array}\right] + t \left[\begin{array}{c}-3\\-2\\1\\\end{array}\right]\)</span> for arbitrary <span class="process-math">\(t \in \mathbb{R}\text{,}\)</span> and both approaches lead to the conclusion that <span class="process-math">\(A \left[\begin{array}{c}0\\1\\0\\\end{array}\right] = {\bf c}\text{.}\)</span> Thus <span class="process-math">\({\bf c}\in\)</span> range<span class="process-math">\((T)\text{.}\)</span>
+</div></details>
+</div>
+</div>
+</div></article><article class="exercise exercise-like" id="s_nullspace_image_ex-1-4"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
+<div id="webwork-72" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="72" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.48.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-72')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-72-1-1-1">If <span class="process-math">\(T:{\mathbb R}^8\to {\mathbb R}^2\)</span> is a linear transformation, then consider whether the set ker (<span class="process-math">\(T\)</span> ) is a subspace of  <span class="process-math">\({\mathbb R}^{8}\text{.}\)</span>
+</div> <div class="para logical" id="extracted-webwork-72-1-1-2">
+<div class="para">Select true or false for each statement. first problem looking at subspaces</div>
+<ol class="lower-alpha">
+<li id="extracted-webwork-72-1-1-2-1-1"><div class="para" id="extracted-webwork-72-1-1-2-1-1-1">This set contains the zero vector and is closed under vector addition and scalar multiplication.</div></li>
+<li id="extracted-webwork-72-1-1-2-1-2"><div class="para" id="extracted-webwork-72-1-1-2-1-2-1">This set is a subspace of <span class="process-math">\({\mathbb R}^8\)</span>
+</div></li>
+<li id="extracted-webwork-72-1-1-2-1-3"><div class="para" id="extracted-webwork-72-1-1-2-1-3-1">This set is a subset of the codomain</div></li>
+<li id="extracted-webwork-72-1-1-2-1-4"><div class="para" id="extracted-webwork-72-1-1-2-1-4-1">This set is a subset of the domain.</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="extracted-webwork-72-1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<span class="process-math">\({\mathbb R}^8\text{,}\)</span> that contains the zero vector, and is closed under vector addition and scalar multiplication.</div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="s_nullspace_image_ex-1-5"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div id="webwork-73" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="73" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.35.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-73')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-73-1-1-1">Let <span class="process-math">\(A=\left[\begin{matrix} 1 \amp  3 \cr -5 \amp  7 \cr 7 \amp  -5\cr \end{matrix}\right]\text{,}\)</span> <span class="process-math">\({\bf b}=\left[\begin{matrix} -7 \cr -7 \cr \end{matrix}\right]\text{,}\)</span> and <span class="process-math">\({\bf c}=\left[\begin{matrix} -4 \cr 2 \cr \end{matrix}\right]\text{.}\)</span> Define <span class="process-math">\(T({\bf x})=A{\bf x}\text{.}\)</span>
+</div> <div class="para" id="extracted-webwork-73-1-1-2">Select true or false for each statement.</div> <div class="para logical" id="extracted-webwork-73-1-1-3"><ol class="lower-alpha">
+<li id="extracted-webwork-73-1-1-3-1-1"><div class="para" id="extracted-webwork-73-1-1-3-1-1-1">The vector <span class="process-math">\({\bf c}\)</span> is in the range of <span class="process-math">\(T\)</span>
+</div></li>
+<li id="extracted-webwork-73-1-1-3-1-2"><div class="para" id="extracted-webwork-73-1-1-3-1-2-1">The vector <span class="process-math">\({\bf b}\)</span> is in the kernel of <span class="process-math">\(T\)</span>
+</div></li>
+</ol></div>
+<div class="solutions"><details id="extracted-webwork-73-1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<span class="process-math">\(A{\bf b}=\left[\begin{matrix} 1 \amp  3 \cr -5 \amp  7 \cr 7 \amp  -5\cr \end{matrix}\right]
+\left[\begin{matrix} -7 \cr -7 \cr \end{matrix}\right]=
+\left[\begin{matrix} -28 \cr -14 \cr -14 \cr \end{matrix}\right] \ne {\bf 0}\text{,}\)</span> so <span class="process-math">\({\bf b}\not\in \ker(T)\text{.}\)</span> Since the range of <span class="process-math">\(T\)</span> is a subset of <span class="process-math">\({\mathbb R}^3\)</span> and <span class="process-math">\({\bf c}\in{\mathbb R}^2\text{,}\)</span> <span class="process-math">\({\bf c}\not\in\)</span>  range<span class="process-math">\((T)\text{.}\)</span>
+</div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="s_nullspace_image_ex-1-6"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
+<div id="webwork-74" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="74" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.49.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-74')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-74-1-1-1">If <span class="process-math">\(T:{\mathbb R}^4\to {\mathbb R}^2\)</span> is a linear transformation, then select true or false for each statement about the set <span class="process-math">\(\ker( T)\text{.}\)</span>
+</div> <div class="para logical" id="extracted-webwork-74-1-1-2"><ol class="lower-alpha">
+<li id="extracted-webwork-74-1-1-2-1-1"><div class="para" id="extracted-webwork-74-1-1-2-1-1-1">This set is a subset of the codomain.</div></li>
+<li id="extracted-webwork-74-1-1-2-1-2"><div class="para" id="extracted-webwork-74-1-1-2-1-2-1">This set contains the zero vector and is closed under vector addition and scalar multiplication.</div></li>
+<li id="extracted-webwork-74-1-1-2-1-3"><div class="para" id="extracted-webwork-74-1-1-2-1-3-1">This set is a subset of the domain.</div></li>
+<li id="extracted-webwork-74-1-1-2-1-4"><div class="para" id="extracted-webwork-74-1-1-2-1-4-1">This set is a subspace of <span class="process-math">\(\mathbb{R}^2\text{.}\)</span>
+</div></li>
+</ol></div>
+<div class="solutions"><details id="extracted-webwork-74-1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<span class="process-math">\({\mathbb R}^4\text{,}\)</span> not the codomain <span class="process-math">\({\mathbb R}^2\text{.}\)</span>
+</div></details></div>
+</div>
+</div></article><article class="exercise exercise-like" id="s_nullspace_image_ex-1-7"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div id="webwork-75" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="75" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem16.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-75')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-75-1-1-1">Let <span class="process-math">\(T\)</span> be a one-to-one linear transformation from <span class="process-math">\({\mathbb R}^r\)</span> to <span class="process-math">\({\mathbb R}^s\text{.}\)</span>
+</div> <div class="para logical" id="extracted-webwork-75-1-1-2">
+<ol class="lower-alpha"><li id="extracted-webwork-75-1-1-2-1-1"><div class="para" id="extracted-webwork-75-1-1-2-1-1-1">What can one say about the relationship between <span class="process-math">\(r\)</span> and <span class="process-math">\(s\text{.}\)</span>
+</div></li></ol>
+<ol class="upper-alpha">
+<li id="extracted-webwork-75-1-1-2-2-1"><div class="para" id="extracted-webwork-75-1-1-2-2-1-1"><span class="process-math">\(\displaystyle r\geq s\)</span></div></li>
+<li id="extracted-webwork-75-1-1-2-2-2"><div class="para" id="extracted-webwork-75-1-1-2-2-2-1"><span class="process-math">\(\displaystyle r\lt s\)</span></div></li>
+<li id="extracted-webwork-75-1-1-2-2-3"><div class="para" id="extracted-webwork-75-1-1-2-2-3-1"><span class="process-math">\(\displaystyle r&gt;s\)</span></div></li>
+<li id="extracted-webwork-75-1-1-2-2-4"><div class="para" id="extracted-webwork-75-1-1-2-2-4-1"><span class="process-math">\(\displaystyle r\leq s\)</span></div></li>
+<li id="extracted-webwork-75-1-1-2-2-5"><div class="para" id="extracted-webwork-75-1-1-2-2-5-1">There is not enough information to tell</div></li>
+</ol>
+</div>
+</div>
+</div></article><article class="exercise exercise-like" id="s_nullspace_image_ex-1-8"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
+<div id="webwork-76" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="76" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem25.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-76')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-76-1-1-1">Let <span class="process-math">\(T\)</span> be an onto linear transformation from <span class="process-math">\({\mathbb R}^r\)</span> to <span class="process-math">\({\mathbb R}^s\text{.}\)</span>
+</div> <div class="para logical" id="extracted-webwork-76-1-1-2">
+<ol class="lower-alpha"><li id="extracted-webwork-76-1-1-2-1-1"><div class="para" id="extracted-webwork-76-1-1-2-1-1-1">What can one say about the relationship between <span class="process-math">\(r\)</span> and <span class="process-math">\(s\text{.}\)</span>
+</div></li></ol>
+<ol class="upper-alpha">
+<li id="extracted-webwork-76-1-1-2-2-1"><div class="para" id="extracted-webwork-76-1-1-2-2-1-1"><span class="process-math">\(\displaystyle r\lt s\)</span></div></li>
+<li id="extracted-webwork-76-1-1-2-2-2"><div class="para" id="extracted-webwork-76-1-1-2-2-2-1"><span class="process-math">\(\displaystyle r\leq s\)</span></div></li>
+<li id="extracted-webwork-76-1-1-2-2-3"><div class="para" id="extracted-webwork-76-1-1-2-2-3-1"><span class="process-math">\(\displaystyle r&gt;s\)</span></div></li>
+<li id="extracted-webwork-76-1-1-2-2-4"><div class="para" id="extracted-webwork-76-1-1-2-2-4-1"><span class="process-math">\(\displaystyle r\geq s\)</span></div></li>
+<li id="extracted-webwork-76-1-1-2-2-5"><div class="para" id="extracted-webwork-76-1-1-2-2-5-1">There is not enough information to tell</div></li>
+</ol>
+</div>
+</div>
+</div></article><article class="exercise exercise-like" id="s_nullspace_image_ex-1-9"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+<div id="webwork-77" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="77" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem17.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-77')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-77-1-1-1">Let <span class="process-math">\(T\)</span> be an linear transformation from <span class="process-math">\({\mathbb R}^r\)</span> to <span class="process-math">\({\mathbb R}^s\text{.}\)</span> Let <span class="process-math">\(A\)</span> be the matrix associated to <span class="process-math">\(T\text{.}\)</span>
+</div> <div class="para" id="extracted-webwork-77-1-1-2">Fill in the correct answer for each of the following situations.</div> <div class="para logical" id="extracted-webwork-77-1-1-3">
+<ol class="lower-alpha">
+<li id="extracted-webwork-77-1-1-3-1-1"><div class="para" id="extracted-webwork-77-1-1-3-1-1-1">Two columns in the row-echelon form of <span class="process-math">\(A\)</span> are not pivot columns.</div></li>
+<li id="extracted-webwork-77-1-1-3-1-2"><div class="para" id="extracted-webwork-77-1-1-3-1-2-1">The row-echelon form of <span class="process-math">\(A\)</span> has no column corresponding to a free variable.</div></li>
+<li id="extracted-webwork-77-1-1-3-1-3"><div class="para" id="extracted-webwork-77-1-1-3-1-3-1">Every column in the row-echelon form of <span class="process-math">\(A\)</span> is a pivot column.</div></li>
+<li id="extracted-webwork-77-1-1-3-1-4"><div class="para" id="extracted-webwork-77-1-1-3-1-4-1">The row-echelon form of <span class="process-math">\(A\)</span> has a column corresponding to a free variable.</div></li>
+</ol>
+<ol class="upper-alpha">
+<li id="extracted-webwork-77-1-1-3-2-1"><div class="para" id="extracted-webwork-77-1-1-3-2-1-1">T is one-to-one</div></li>
+<li id="extracted-webwork-77-1-1-3-2-2"><div class="para" id="extracted-webwork-77-1-1-3-2-2-1">T is not one-to-one</div></li>
+<li id="extracted-webwork-77-1-1-3-2-3"><div class="para" id="extracted-webwork-77-1-1-3-2-3-1">There is not enough information to tell.</div></li>
+</ol>
+</div>
+</div>
+</div></article><article class="exercise exercise-like" id="s_nullspace_image_ex-1-10"><h5 class="heading"><span class="codenumber">9<span class="period">.</span></span></h5>
+<div id="webwork-78" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="78" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem23.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-78')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-78-1-1-1">Let <span class="process-math">\(T\)</span> be a linear transformation from <span class="process-math">\({\mathbb R}^3\)</span> to <span class="process-math">\({\mathbb R}^3\)</span> .</div> <div class="para" id="extracted-webwork-78-1-1-2">Determine whether or not <span class="process-math">\(T\)</span> is onto in each of the following situations:</div> <div class="para logical" id="extracted-webwork-78-1-1-3">
+<ol class="lower-alpha">
+<li id="extracted-webwork-78-1-1-3-1-1"><div class="para" id="extracted-webwork-78-1-1-3-1-1-1">Suppose <span class="process-math">\(T(a) = u\text{,}\)</span>  <span class="process-math">\(T(b) = v\text{,}\)</span> <span class="process-math">\(T(c)=u+v\text{,}\)</span> where <span class="process-math">\(a, b, c, u,v\)</span> are vectors in <span class="process-math">\({\mathbb R}^3\text{.}\)</span>
+</div></li>
+<li id="extracted-webwork-78-1-1-3-1-2"><div class="para" id="extracted-webwork-78-1-1-3-1-2-1">Suppose <span class="process-math">\(T\)</span> is a one-to-one function</div></li>
+<li id="extracted-webwork-78-1-1-3-1-3"><div class="para" id="extracted-webwork-78-1-1-3-1-3-1">Suppose <span class="process-math">\(T(1, 4, -2)=u\text{,}\)</span>  <span class="process-math">\(T(1, 3, 2)=v\text{,}\)</span> <span class="process-math">\(T(2, 8, 0)=u+v\text{.}\)</span>
+</div></li>
+</ol>
+<ol class="upper-alpha">
+<li id="extracted-webwork-78-1-1-3-2-1"><div class="para" id="extracted-webwork-78-1-1-3-2-1-1">T is not onto.</div></li>
+<li id="extracted-webwork-78-1-1-3-2-2"><div class="para" id="extracted-webwork-78-1-1-3-2-2-1">T is onto.</div></li>
+<li id="extracted-webwork-78-1-1-3-2-3"><div class="para" id="extracted-webwork-78-1-1-3-2-3-1">There is not enough information to tell</div></li>
+</ol>
+</div>
+</div>
+</div></article><article class="exercise exercise-like" id="s_nullspace_image_ex-1-11"><h5 class="heading"><span class="codenumber">10<span class="period">.</span></span></h5>
+<div id="webwork-79" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="79" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem22.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-79')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-79-1-1-1">Match the following concepts with the correct definitions:</div> <div class="para logical" id="extracted-webwork-79-1-1-2">
+<ol class="lower-alpha">
+<li id="extracted-webwork-79-1-1-2-1-1"><div class="para" id="extracted-webwork-79-1-1-2-1-1-1">
+<span class="process-math">\(f\)</span> is a one-to-one function from <span class="process-math">\({\mathbb  R}^3\)</span> to <span class="process-math">\({\mathbb  R}^3\)</span>
+</div></li>
+<li id="extracted-webwork-79-1-1-2-1-2"><div class="para" id="extracted-webwork-79-1-1-2-1-2-1">
+<span class="process-math">\(f\)</span> is an onto function from <span class="process-math">\({\mathbb  R}^3\)</span> to <span class="process-math">\({\mathbb  R}^3\)</span>
+</div></li>
+<li id="extracted-webwork-79-1-1-2-1-3"><div class="para" id="extracted-webwork-79-1-1-2-1-3-1">
+<span class="process-math">\(f\)</span> is a function from <span class="process-math">\({\mathbb  R}^3\)</span> to <span class="process-math">\({\mathbb  R}^3\)</span>
+</div></li>
+</ol>
+<ol class="upper-alpha">
+<li id="extracted-webwork-79-1-1-2-2-1"><div class="para" id="extracted-webwork-79-1-1-2-2-1-1">For every <span class="process-math">\(y\in {\mathbb R}^3\text{,}\)</span> there is a <span class="process-math">\(x\in {\mathbb R}^3\)</span> such that <span class="process-math">\(f(x)=y\text{.}\)</span>
+</div></li>
+<li id="extracted-webwork-79-1-1-2-2-2"><div class="para" id="extracted-webwork-79-1-1-2-2-2-1">For every <span class="process-math">\(x\in {\mathbb R}^3\text{,}\)</span> there is a <span class="process-math">\(y\in {\mathbb R}^3\)</span> such that <span class="process-math">\(f(x)=y\text{.}\)</span>
+</div></li>
+<li id="extracted-webwork-79-1-1-2-2-3"><div class="para" id="extracted-webwork-79-1-1-2-2-3-1">For every <span class="process-math">\(y\in {\mathbb R}^3\text{,}\)</span> there is a unique <span class="process-math">\(x\in {\mathbb R}^3\)</span> such that <span class="process-math">\(f(x)=y\text{.}\)</span>
+</div></li>
+<li id="extracted-webwork-79-1-1-2-2-4"><div class="para" id="extracted-webwork-79-1-1-2-2-4-1">For every <span class="process-math">\(y \in {\mathbb R}^3\text{,}\)</span> there is at most one <span class="process-math">\(x\in {\mathbb R}^3\)</span> such that <span class="process-math">\(f(x)=y\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+</div>
+</div></article><article class="exercise exercise-like" id="s_nullspace_image_ex-1-12"><h5 class="heading"><span class="codenumber">11<span class="period">.</span></span></h5>
+<div id="webwork-80" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="80" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem26.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-80')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-webwork-80-1-1-1">Let <span class="process-math">\(T\)</span> be an linear transformation from <span class="process-math">\({\mathbb R}^r\)</span> to <span class="process-math">\({\mathbb R}^s\text{.}\)</span> Let <span class="process-math">\(A\)</span> be the matrix associated to <span class="process-math">\(T\text{.}\)</span>
+</div> <div class="para" id="extracted-webwork-80-1-1-2">Fill in the correct answer for each of the following situations.</div> <div class="para logical" id="extracted-webwork-80-1-1-3">
+<ol class="lower-alpha">
+<li id="extracted-webwork-80-1-1-3-1-1"><div class="para" id="extracted-webwork-80-1-1-3-1-1-1">The row-echelon form of <span class="process-math">\(A\)</span> has a pivot in every column.</div></li>
+<li id="extracted-webwork-80-1-1-3-1-2"><div class="para" id="extracted-webwork-80-1-1-3-1-2-1">Two rows in the row-echelon form of <span class="process-math">\(A\)</span> do not have pivots.</div></li>
+<li id="extracted-webwork-80-1-1-3-1-3"><div class="para" id="extracted-webwork-80-1-1-3-1-3-1">Every row in the row-echelon form of <span class="process-math">\(A\)</span> has a pivot.</div></li>
+<li id="extracted-webwork-80-1-1-3-1-4"><div class="para" id="extracted-webwork-80-1-1-3-1-4-1">The row-echelon form of <span class="process-math">\(A\)</span> has a row of zeros.</div></li>
+</ol>
+<ol class="upper-alpha">
+<li id="extracted-webwork-80-1-1-3-2-1"><div class="para" id="extracted-webwork-80-1-1-3-2-1-1">T is onto</div></li>
+<li id="extracted-webwork-80-1-1-3-2-2"><div class="para" id="extracted-webwork-80-1-1-3-2-2-1">T is not onto</div></li>
+<li id="extracted-webwork-80-1-1-3-2-3"><div class="para" id="extracted-webwork-80-1-1-3-2-3-1">There is not enough information to tell.</div></li>
+</ol>
+</div>
+</div>
+</div></article><article class="exercise exercise-like" id="s_nullspace_image_ex-1-13"><h5 class="heading"><span class="codenumber">12<span class="period">.</span></span></h5>
+<div id="webwork-81" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="81" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/TCNJ/TCNJ_IntroLinearTransformations/problem23.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-81')">Activate</button></div>
+<div class="problem-contents">
+<div class="para logical" id="extracted-webwork-81-1-1-1">
+<div class="para">Let <span class="process-math">\(T: {\mathbb R}^3 \rightarrow {\mathbb R}^3\)</span> be the linear transformation defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T(x_1, x_2, x_3 )= (x_1- x_2, x_2- x_3, x_3-x_1).
+\end{equation*}
+</div>
+<div class="para">Find a vector  <span class="process-math">\(\vec{w} \in {\mathbb R}^3\)</span> that is <em class="alert">NOT</em> in the image of <span class="process-math">\(T\text{.}\)</span>
+</div>
+</div> <div class="para" id="extracted-webwork-81-1-1-2">
+<span class="process-math">\(\vec{w} =\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> (3 <span class="times-sign">×</span> 1 array)</div> <div class="para" id="extracted-webwork-81-1-1-3">and find a different, nonzero vector <span class="process-math">\(\vec{v} \in {\mathbb R}^3\)</span> that <em class="alert">IS</em> in the image of <span class="process-math">\(T\text{.}\)</span>
+</div> <div class="para" id="extracted-webwork-81-1-1-4">
+<span class="process-math">\(\vec{v} =\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> (3 <span class="times-sign">×</span> 1 array).</div>
+</div>
+</div></article><article class="exercise exercise-like" id="s_nullspace_image_ex-1-14"><h5 class="heading"><span class="codenumber">13<span class="period">.</span></span></h5>
+<div id="webwork-82" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="82" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/TCNJ/TCNJ_IntroLinearTransformations/problem11.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-82')">Activate</button></div>
+<div class="problem-contents">
+<div class="para logical" id="extracted-webwork-82-1-1-1">
+<div class="para">Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \left[\begin{array}{cc}
+6 \amp 5\cr
+-5 \amp -2\cr
+31 \amp 15
+\end{array}\right] \ \mbox{ and } \ \vec{b} = \left[\begin{array}{c}
+7\cr
+5\cr
+-18
+\end{array}\right].
+\end{equation*}
+</div>
+<div class="para">Define the linear transformation <span class="process-math">\(T: {\mathbb R}^2 \rightarrow {\mathbb R}^3\)</span> by <span class="process-math">\(T(\vec{x}) = A\vec{x}\text{.}\)</span> Find a vector <span class="process-math">\(\vec{x}\)</span> whose image under <span class="process-math">\(T\)</span> is <span class="process-math">\(\vec{b}\text{.}\)</span>
+</div>
+</div> <div class="para" id="extracted-webwork-82-1-1-2">
+<span class="process-math">\(\vec{x} =\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> (2 <span class="times-sign">×</span> 1 array).</div> <div class="para logical" id="extracted-webwork-82-1-1-3">
+<div class="para">Is the vector <span class="process-math">\(\vec{x}\)</span> unique?</div>
+<ul class="square">
+<li id="extracted-webwork-82-1-1-3-2-1"><div class="para" id="extracted-webwork-82-1-1-3-2-1-1">choose</div></li>
+<li id="extracted-webwork-82-1-1-3-2-2"><div class="para" id="extracted-webwork-82-1-1-3-2-2-1">unique</div></li>
+<li id="extracted-webwork-82-1-1-3-2-3"><div class="para" id="extracted-webwork-82-1-1-3-2-3-1">not unique</div></li>
+</ul>
+</div>
+<div class="solutions"><details id="extracted-webwork-82-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para" id="extracted-webwork-82-1-2-1"><span class="process-math">\(\text{unique}\)</span></div></div></details></div>
+</div>
+</div></article></article><article class="subexercises" id="s_nullspace_image_ex-2"><h4 class="heading"><span class="title">Written Exercises</span></h4>
+<div class="exercisegroup" id="s_nullspace_image_ex-2-2">
+<h5 class="heading"><span class="title">Computing <span class="process-math">\(\NS T\)</span> and <span class="process-math">\(\im T\)</span> parametrically.</span></h5>
+<div class="introduction" id="s_nullspace_image_ex-2-2-2"><div class="para" id="s_nullspace_image_ex-2-2-2-1">For each linear transformation <span class="process-math">\(T\)</span> give parametric descriptions of <span class="process-math">\(\NS T\)</span> and <span class="process-math">\(\im T\text{.}\)</span> To do so you will want to relate each computation to a system of linear equations. (See <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eg_subspace_image" missing or not unique]</code> for an example of computing an image.)</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="s_nullspace_image_ex-2-2-3"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<div class="para logical" id="s_nullspace_image_ex-2-2-3-1-1"><div class="displaymath process-math" id="s_nullspace_image_ex-2-2-3-1-1-1">
+\begin{align*}
+T\colon \R^4 \amp \rightarrow \R^3 \\
+(x,y,z,w)\amp\mapsto (x+z+w, x-y-z,-2x+y-w) 
+\end{align*}
+</div></div></article><article class="exercise exercise-like" id="s_nullspace_image_ex-2-2-4"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<div class="para logical" id="s_nullspace_image_ex-2-2-4-1-1"><div class="displaymath process-math" id="s_nullspace_image_ex-2-2-4-1-1-1">
+\begin{align*}
+T\colon M_{22}\amp \rightarrow M_{22} \\
+A \amp\mapsto \begin{amatrix}[rr]1\amp 1\\ 1\amp 1  \end{amatrix}A 
+\end{align*}
+</div></div></article><article class="exercise exercise-like" id="s_nullspace_image_ex-2-2-5"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<div class="para logical" id="s_nullspace_image_ex-2-2-5-1-1"><div class="displaymath process-math" id="s_nullspace_image_ex-2-2-5-1-1-1">
+\begin{align*}
+T\colon P_2\amp \rightarrow P_2 \\
+f \amp\mapsto f(x)+f'(x)
+\end{align*}
+</div></div></article>
+</div>
+</div>
+<div class="exercisegroup" id="s_nullspace_image_ex-2-3">
+<h5 class="heading"><span class="title">Identifying <span class="process-math">\(\im T\)</span>.</span></h5>
+<div class="introduction" id="s_nullspace_image_ex-2-3-2"><div class="para" id="s_nullspace_image_ex-2-3-2-1">For the given linear transformation <span class="process-math">\(T\)</span> prove the claim about <span class="process-math">\(\im T\text{.}\)</span>
+</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="s_nullspace_image_ex-2-3-3"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<div class="para logical" id="s_nullspace_image_ex-2-3-3-1-1">
+<div class="displaymath process-math" id="s_nullspace_image_ex-2-3-3-1-1-1">
+\begin{align*}
+T\colon \R^\infty \amp \rightarrow \R^\infty \\
+s=(a_1,a_2,\dots)\amp\mapsto T(s)=(a_2,a_3,\dots) \text{.}
+\end{align*}
+</div>
+<div class="para">Claim: <span class="process-math">\(\im T=\R^\infty\)</span>
+</div>
+</div></article><article class="exercise exercise-like" id="s_nullspace_image_ex-2-3-4"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<div class="para logical" id="s_nullspace_image_ex-2-3-4-1-1">
+<div class="displaymath process-math" id="s_nullspace_image_ex-2-3-4-1-1-1">
+\begin{align*}
+T\colon C(\R) \amp \rightarrow C(\R) \\
+f(x)\amp\mapsto g(x)=f(x)+f(-x)\text{.}
+\end{align*}
+</div>
+<div class="para">Claim: <span class="process-math">\(\im T\)</span> is the set of all continuous symmetric functions. In other words,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\im T=\{f\in C(\R)\colon f(-x)=f(x)\}.
+\end{equation*}
+</div>
+</div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="s_nullspace_image_ex-2-4"><h5 class="heading"><span class="codenumber">19<span class="period">.</span></span></h5>
+<div class="para" id="s_nullspace_image_ex-2-4-1-1">Define <span class="process-math">\(T\colon P_5\rightarrow \R^3\)</span> as <span class="process-math">\(T(p(x))=(p(-2), p(3), p(7))\text{:}\)</span> i.e., the value of <span class="process-math">\(T\)</span> at the input polynomial <span class="process-math">\(p(x)\in P_5\)</span> is computed by evaluating <span class="process-math">\(p\)</span> at the inputs <span class="process-math">\(x=-2,3,7\text{.}\)</span>
+</div> <ol class="lower-alpha">
+<li id="s_nullspace_image_ex-2-4-1-2-1"><div class="para" id="s_nullspace_image_ex-2-4-1-2-1-1">Prove: <span class="process-math">\(T\)</span> is a linear transformation.</div></li>
+<li id="s_nullspace_image_ex-2-4-1-2-2"><div class="para" id="s_nullspace_image_ex-2-4-1-2-2-1">Prove: the <span class="process-math">\(W=\{p(x)\in P_5\colon p(-2)=p(3)=p(7)=0\}\)</span> is a subspace of <span class="process-math">\(P_5\text{.}\)</span>
+</div></li>
+</ol>
+<div class="solutions"><details id="s_nullspace_image_ex-2-4-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="s_nullspace_image_ex-2-4-2-1">Use <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "proc_subspace_nullspace" missing or not unique]</code>.</div></div></details></div></article><div class="exercisegroup" id="s_nullspace_image_ex-2-5">
+<h5 class="heading"><span class="title">Identifying <span class="process-math">\(W\)</span> as a null space.</span></h5>
+<div class="introduction" id="s_nullspace_image_ex-2-5-2"><div class="para" id="s_nullspace_image_ex-2-5-2-1">For each subset <span class="process-math">\(W\subseteq V\)</span> show <span class="process-math">\(W\)</span> is a subspace by identifying it with the null space of a linear transformation <span class="process-math">\(T\text{.}\)</span> You may use any of the examples from <a href="s_transformation.html" class="internal" title="Section 5.1: Linear transformations">Section 5.1</a>, and any of the results from the exercises in <a href="s_transformation.html#s_transformation_ex" class="internal" title="Exercises 5.1.6">Exercises 5.1.6</a>.</div></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="s_nullspace_image_ex-2-5-3"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<div class="para logical" id="s_nullspace_image_ex-2-5-3-1-1"><div class="displaymath process-math">
+\begin{equation*}
+W=\{A\in M_{nn}\colon \tr A=0\}
+\end{equation*}
+</div></div></article><article class="exercise exercise-like" id="s_nullspace_image_ex-2-5-4"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<div class="para logical" id="s_nullspace_image_ex-2-5-4-1-1"><div class="displaymath process-math">
+\begin{equation*}
+W=\{A\in M_{nn}\colon A^T=-A\}
+\end{equation*}
+</div></div></article><article class="exercise exercise-like" id="s_nullspace_image_ex-2-5-5"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<div class="para logical" id="s_nullspace_image_ex-2-5-5-1-1"><div class="displaymath process-math">
+\begin{equation*}
+W=\{f\in C^2(\R)\colon f''=2f'-3f\}
+\end{equation*}
+</div></div></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="ex_cor_injective_surjective_1"><h5 class="heading">
+<span class="codenumber">23<span class="period">.</span></span><span class="space"> </span><span class="title">Dimension, injectivity, surjectivity.</span>
+</h5>
+<div class="para" id="ex_cor_injective_surjective_1-2-1">Prove statement (1) of <a href="s_nullspace_image.html#cor_injective_surjective" class="xref" data-knowl="./knowl/xref/cor_injective_surjective.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 5.2.14: Dimension, injectivity, surjectivity">Corollary 5.2.14</a>. Use <a href="s_nullspace_image.html#th_injective_surjective" class="xref" data-knowl="./knowl/xref/th_injective_surjective.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.12: Injectivity and surjectivity">Theorem 5.2.12</a> and <a href="s_nullspace_image.html#th_rank-nullity" class="xref" data-knowl="./knowl/xref/th_rank-nullity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.9: Rank-nullity">Theorem 5.2.9</a>.</div></article><article class="exercise exercise-like" id="ex_cor_injective_surjective_2"><h5 class="heading"><span class="codenumber">24<span class="period">.</span></span></h5>
+<div class="para" id="ex_cor_injective_surjective_2-1-1">Prove statement (2) of <a href="s_nullspace_image.html#cor_injective_surjective" class="xref" data-knowl="./knowl/xref/cor_injective_surjective.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 5.2.14: Dimension, injectivity, surjectivity">Corollary 5.2.14</a>. Use <a href="s_nullspace_image.html#th_injective_surjective" class="xref" data-knowl="./knowl/xref/th_injective_surjective.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.12: Injectivity and surjectivity">Theorem 5.2.12</a> and <a href="s_nullspace_image.html#th_rank-nullity" class="xref" data-knowl="./knowl/xref/th_rank-nullity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.9: Rank-nullity">Theorem 5.2.9</a>.</div></article><article class="exercise exercise-like" id="s_nullspace_image_ex-2-8"><h5 class="heading"><span class="codenumber">25<span class="period">.</span></span></h5>
+<div class="para logical" id="s_nullspace_image_ex-2-8-1-1">
+<div class="para">Prove <a href="s_nullspace_image.html#th_isom_inverse_linear" class="xref" data-knowl="./knowl/xref/th_isom_inverse_linear.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.16: Inverse of isomorphism is linear">Theorem 5.2.16</a>. Use the defining identities of the inverse function: namely, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_isom_inverse_linear.html" id="s_nullspace_image_ex-2-8-1-1-2">
+\begin{align*}
+T^{-1}(T(\boldv)) \amp = \boldv \text{ for all } \boldv\in V\\
+T(T^{-1}(\boldw)) \amp = \boldw \text{ for all } \boldw\in W\text{.}
+\end{align*}
+</div>
+</div></article></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="s_transformation.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_coordinatevectors.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
