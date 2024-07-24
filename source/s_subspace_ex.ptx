@@ -100,5 +100,63 @@ For each given subset <m>W\subseteq \R^n</m>: (a) show that <m>W</m> is a subspa
       </p>
     </statement>
   </exercise>
+
+  <exercisegroup>
+    <title>Nonhomogeneous solutions related to homogeneous solutions</title>
+    <introduction>
+    <p>
+    For each <m>m\times n</m> matrix <m>A</m> and vector <m>\boldb\in \R^m</m>:
+    <ol>
+      <li>
+        <p>
+          Find a <em>particular</em> solution <m>\boldx_p</m> to <m>A\boldx=\boldb</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Find all solutions to the corresponding homogeneous matrix equation <m>A\boldx=\boldzero</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Use (a), (b), and <xref ref="cor_matrix_equations"/> to describe <em>all</em> solutions to <m>A\boldx=\boldb</m>.
+        </p>
+      </li>
+    </ol>
+    </p>
+    </introduction>
+    <exercise>
+      <statement>
+        <p>
+          <me>
+            A=\begin{amatrix}[rrrr]1\amp 2\amp 1\amp 1\\ 1\amp 1\amp 2\amp 3  \end{amatrix},
+            \boldb=(3,2)
+          </me>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <me>
+            A=\begin{amatrix}[rrr]1\amp 1\amp -3 \\ 3\amp -1\amp -1 \\
+            1\amp 0\amp -1  \end{amatrix},
+            \boldb=(2,1,-4)
+          </me>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <me>
+            A=\begin{amatrix}[rrr]1\amp 2\amp 1 \\ 1\amp 1\amp -3 \\ 1\amp 0\amp -1  \end{amatrix},
+            \boldb=(1,1,1)
+          </me>
+        </p>
+      </statement>
+    </exercise>
+    </exercisegroup>
+    
 </exercises>
 
