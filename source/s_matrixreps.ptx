@@ -96,7 +96,7 @@
   </solution>
 </example>
 <p>
-  The formula for <m>[T]_{B}^{B'}</m> should remind you of the formula from <xref ref="cor_matrix_transformations"/> used for computing the standard matrix for a linear transformation <m>T\colon \R^n\rightarrow \R^m</m>: <ie />, the matrix <m>A</m> such that <m>T(\boldx)=A\boldx</m> for all <m>\boldx\in \R^n</m>. <xref ref="th_matrixreps_matrixtransforms"/> explicates this resemblance.
+  The formula for <m>[T]_{B}^{B'}</m> should remind you of the formula from <xref ref="th_matrix_transform"/> used for computing the standard matrix for a linear transformation <m>T\colon \R^n\rightarrow \R^m</m>: <ie />, the matrix <m>A</m> such that <m>T(\boldx)=A\boldx</m> for all <m>\boldx\in \R^n</m>. <xref ref="th_matrixreps_matrixtransforms"/> explicates this resemblance.
 </p>
 <theorem xml:id="th_matrixreps_matrixtransforms">
   <title>Standard matrix as a matrix representation</title>
@@ -111,7 +111,7 @@
 </statement>
 <proof>
   <p>
-    According to the recipe in <xref ref="cor_matrix_transformations"/> we have
+    According to the recipe in <xref ref="th_matrix_transform"/> we have
     <me>
     A= \begin{bmatrix}\vert\amp \vert\amp  \amp \vert \\ T(\bolde_1)\amp  T(\bolde_2)\amp \cdots \amp T(\bolde_n)\\ \vert\amp \vert\amp  \amp \vert \end{bmatrix}
     </me>.
@@ -307,7 +307,7 @@
         The diagram being commutative here means that starting with an element <m>\boldv\in V</m> in the top left of the diagram, whether we travel to the bottom right of the diagram either by first applying <m>T</m> and then applying <m>[\hspace{5pt}]_{B'}</m> (<q>go right, then down</q>), or else by first applying <m>[\hspace{5pt}]_B</m> and then applying <m>[T]_B^{B'}</m> (<q>go down, then right</q>), we get the same result! (The bottom map should technically be labeled <m>T_A</m>, where <m>A=[T]_B^{B'}</m>, but this would detract from the elegance of the diagram.)
     </p>
     <p>
-      Besides commutativity, the other import feature of <xref ref="fig_comm_diag"/> is that the two vertical coordinate transformations identify the domain and codomain of <m>T</m> with the familiar spaces <m>\R^n</m> and <m>\R^m</m> in a one-to-one manner. (Using the language of <xref ref="s_isom"/>, these maps are isomorphisms.)
+      Besides commutativity, the other import feature of <xref ref="fig_comm_diag"/> is that the two vertical coordinate transformations identify the domain and codomain of <m>T</m> with the familiar spaces <m>\R^n</m> and <m>\R^m</m> in a one-to-one manner. (Using the language of <xref ref="s_nullspace_image_isom"/>, these maps are isomorphisms.)
       These properties together allow us to translate any linear algebraic question about <m>T</m> to an equivalent question about the matrix <m>A</m>, as the following theorem indicates.
     </p>
       <theorem xml:id="th_matrixreps_model">
@@ -437,7 +437,7 @@
   <p>
     Given a linear transformation <m>T\colon V\rightarrow W</m>, different choice of bases for <m>V</m> and <m>W</m> give rise to different matrix representations of <m>T</m>. This observation immediately gives rise to two questions: What is the precise relationship between two different matrix representations?; How should we choose our bases so that the resulting matrix representation is useful to us? We will take up these questions in earnest in the subsequent sections. For now we content ourselves with an illustrative, long-format example.
   </p>
-  <example xml:id="eg_matrixreps_proj">
+  <!-- <example xml:id="eg_matrixreps_proj">
     <title>Two representations of orthogonal projection</title>
 
     <statement>
@@ -488,7 +488,7 @@
         Furthermore, understanding that the columns of <m>A'</m> describe how <m>\operatorname{proj}_W</m> acts on the basis <m>B'</m>, we see easily that <m>\operatorname{proj}_W</m> acts as the identity on the 2-dimensional space spanned by the first two basis elements, and sends the subspace spanned by the third basis element to <m>\boldzero</m>. In other words, <m>A'</m> neatly encodes the conceptual picture of <m>\operatorname{proj}_W</m> as an operator that fixes the plane <m>W=\Span\{(1,-1,0),(1,0,-1)\}</m> and sends everything in <m>W^\perp=\Span\{(1,1,1)\}</m> to <m>\boldzero</m>.
       </p>
     </statement>
-  </example>
+  </example> -->
 
   </subsection>
   <xi:include href="./s_matrixreps_ex.ptx"/>

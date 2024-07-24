@@ -1,4 +1,4 @@
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_nullspace_image">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_nullspace_image_isom">
   <title>Null space, image, and isomophisms</title>
   <introduction>
     <p>
@@ -516,7 +516,8 @@ As we will see, this elegant result can be used to significantly simplify comput
         </ol>
       </statement>
       <proof>
-        <ol>
+        <p>
+          <ol>
           <li>
             <p>
               We have
@@ -526,19 +527,10 @@ As we will see, this elegant result can be used to significantly simplify comput
                 <mrow>  \amp \iff \boldu=\boldv'-\boldv\in\NS T \amp (\text{def. } \NS T)</mrow>
                 <mrow>  \amp \iff \boldv'=\boldv+\boldu \text{ for some } \boldu\in\NS T </mrow>
               </md>.
-            Equation <xref ref="eq_nullspace_inverseimage"/> follows directly from <xref ref="eq_nullspace_injective"/> by observing that if <m>T(\boldv)=\boldw</m>, then <m>T(\boldv')=\boldw</m> if and only if <m>T(\boldv)=T(\boldv')</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              According to <xref ref="eq_nullspace_injective"/> we have <m>T(\boldv)=T(\boldv')</m> if and only if <m>\boldv'=\boldv+\boldu</m> for some <m>\boldu\in \NS T</m>.</p>
-            <p>If <m>\NS T=\{\boldzero_V\}</m>, then <m>T(\boldv)=T(\boldv')</m> implies <m>\boldv'=\boldv+\boldzero=\boldv</m>. Thus <m>T</m> is injective in this case.
-            </p>
-            <p>
-              Conversely, if <m>\NS T\ne \{\boldzero_V\}</m> we can find a nonzero <m>\boldu\in \NS T</m>. It follows that for <em>any</em> <m>\boldv\in V</m> we have <m>T(\boldv)=T(\boldv+\boldu)</m>. Furthermore, since <m>\boldu\ne\boldzero_V</m>, we have <m>\boldv\ne \boldv+\boldu</m>. Thus <m>T</m> is not injective in this case.
             </p>
           </li>
         </ol>
+      </p>
       </proof>
     </theorem>
     <remark>

@@ -4,7 +4,7 @@
   In this section we utilize bases, dimension, and the <xref ref="th_rank-nullity" text="custom">rank-nullity theorem</xref> to investigate properties of linear transformations. The main focus will be the notion of an <em>isomorphism</em>, which is simply a linear transformation that is invertible when considered as a function. We begin, however, with an enlightening discussion relating linear transformations and bases.
 </introduction>
 
-<subsection xml:id="ss_isomorphisms">
+<subsection xml:id="s_isom">
   <title>Isomorphisms</title>
   <p>
     We spoke of the coordinate vector map as a means of <q>translating</q> questions about an abstract vector space <m>V</m> to equivalent ones about the more familiar vector space <m>\R^n</m>.  Properties (1)-(3) of <xref ref="th_coordinates"/> are what guarantee that nothing is lost in this translation. Axiomitizing these properties, we obtain an important family of linear transformations called <em>isomorphisms</em>. The word <q>isomorphism</q> is derived from the Greek terms <foreign>iso</foreign>, meaning <q>same</q>, and <foreign>morphe</foreign>, meaning <q>form</q>. As we will see, isomorphic vector spaces <m>V</m> and <m>W</m> are essentially the same creature, at least as far as linear algebraic properties are concerned. Furthermore, an isomorphism <m>T\colon V\rightarrow W</m> provides a one-to-one correspondence between them: a dictionary that allows us to translate statements about <m>V</m> to statements about <m>W</m>, and vice versa.

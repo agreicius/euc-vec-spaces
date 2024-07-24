@@ -208,7 +208,7 @@
     </statement>
     <hint>
       <p>
-        Use <xref ref="th_fundspaces_matrixtransform"/> and <xref ref="th_rank_nullity_matrix"/>.
+        Use <xref ref="th_col_space"/> and <xref ref="th_rank_nullity_matrix"/>.
       </p>
     </hint>
   </exercise>

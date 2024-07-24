@@ -5,5 +5,6 @@
     <xi:include href="./s_transformation.ptx" />
     <xi:include href="./s_nullspace_image_isom.ptx" />
     <xi:include href="./s_coordinatevectors.ptx" />
+    <xi:include href="./s_matrixreps.ptx" />
     <xi:include href="./s_changeofbasis.ptx" />
 </chapter>

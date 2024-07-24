@@ -19,7 +19,7 @@
 <exercise xml:id="ex_verify_Rinfty">
   <statement>
     <p>
-      Verify that <m>\R^\infty</m> along with the vector operations defined as in <xref ref="ex_vs_infinitesequences"/>
+      Verify that <m>\R^\infty</m> along with the vector operations defined as in <xref ref="eg_infinite_sequences"/>
     satisfies the axioms of a vector space.
     </p>
   </statement>

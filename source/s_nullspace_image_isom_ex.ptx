@@ -79,7 +79,7 @@
   <title>Computing <m>\NS T</m> and <m>\im T</m> parametrically</title>
     <introduction>
       <p>
-        For each linear transformation <m>T</m> give parametric descriptions of <m>\NS T</m> and <m>\im T</m>. To do so you will want to relate each computation to a system of linear equations. (See <xref ref="eg_subspace_image"/> for an example of computing an image.)
+        For each linear transformation <m>T</m> give parametric descriptions of <m>\NS T</m> and <m>\im T</m>. To do so you will want to relate each computation to a system of linear equations.
       </p>
     </introduction>
     <exercise>
@@ -147,30 +147,7 @@
     </statement>
   </exercise>
   </exercisegroup>
-<exercise>
-  <statement>
-    <p>
-      Define <m>T\colon P_5\rightarrow \R^3</m> as <m>T(p(x))=(p(-2), p(3), p(7))</m>: <ie />, the value of <m>T</m> at the input polynomial <m>p(x)\in P_5</m> is computed by evaluating <m>p</m> at the inputs <m>x=-2,3,7</m>.
-    </p>
-    <ol>
-      <li>
-        <p>
-          Prove: <m>T</m> is a linear transformation.
-        </p>
-      </li>
-      <li>
-        <p>
-          Prove: the <m>W=\{p(x)\in P_5\colon p(-2)=p(3)=p(7)=0\}</m> is a subspace of <m>P_5</m>.
-        </p>
-      </li>
-    </ol>
-  </statement>
-  <hint>
-    <p>
-      Use <xref ref="proc_subspace_nullspace"/>.
-    </p>
-  </hint>
-</exercise>
+
 <exercisegroup>
 <title>Identifying <m>W</m> as a null space</title>
 <introduction>
@@ -222,7 +199,7 @@ For each subset <m>W\subseteq V</m> show <m>W</m> is a subspace by identifying i
     </p>
   </statement>
 </exercise>
-<exercise>
+<exercise xml:id="ex_isom_inverse_linear">
   <statement>
     <p>
       Prove <xref ref="th_isom_inverse_linear"/>. Use the defining identities of the inverse function: namely, we have 

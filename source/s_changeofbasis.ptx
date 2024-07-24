@@ -607,10 +607,10 @@
   </solution>
 </example>
 <p>
-  Consider the special case where <m>T\colon \R^n\rightarrow \R^n</m>: that is, when <m>V=\R^n</m> is a space of <m>n</m>-tuples. We know from <xref ref="cor_matrix_transformations"/> that <m>T=T_A</m> for a unique <m>n\times n</m> matrix <m>A</m>. Recall that <m>A</m> is called the standard matrix of <m>T</m> (<xref ref="d_transformation_standard_matrix" text="global"/>), and satisfies <m>T(\boldx)=A\boldx</m> for all <m>\boldx\in \R^n</m>. We often wish to compute <m>A</m>, as it provides a convenient matrix formula for <m>T</m>.
+  Consider the special case where <m>T\colon \R^n\rightarrow \R^n</m>: that is, when <m>V=\R^n</m> is a space of <m>n</m>-tuples. We know from <xref ref="th_matrix_transform"/> that <m>T=T_A</m> for a unique <m>n\times n</m> matrix <m>A</m>. Recall that <m>A</m> is called the standard matrix of <m>T</m> (<xref ref="d_transformation_standard_matrix" text="global"/>), and satisfies <m>T(\boldx)=A\boldx</m> for all <m>\boldx\in \R^n</m>. We often wish to compute <m>A</m>, as it provides a convenient matrix formula for <m>T</m>.
 </p>
 <p>
-  To compute <m>A</m> <em>directly</em> using the recipe in <xref ref="cor_matrix_transformations" text="global"/>, we must compute <m>T(\bolde_j)</m> for each of the standard basis elements <m>\bolde_j</m>. For many naturally occurring transformations <m>T</m>, this is often not so easy to do. <xref ref="th_change_of_basis_transformations"/> provides an indirect method in such cases.
+  To compute <m>A</m> <em>directly</em> using the recipe in <xref ref="th_matrix_transform" text="global"/>, we must compute <m>T(\bolde_j)</m> for each of the standard basis elements <m>\bolde_j</m>. For many naturally occurring transformations <m>T</m>, this is often not so easy to do. <xref ref="th_change_of_basis_transformations"/> provides an indirect method in such cases.
 </p>
 <p>
   According to <xref ref="th_matrixreps_matrixtransforms"/> we have <m>A=[T]_B</m>: <ie />, the standard matrix of <m>T</m> is none other than the matrix representing <m>T</m> with respect to the standard basis. This connection allows us to compute <m>A=[T]_B</m> by first computing <m>[T]_{B'}</m> for some more convenient basis <m>B'</m>, and then using the change of basis formula.
@@ -646,7 +646,7 @@
 <p>
   <xref ref="proc_standard_matrix_via_change_of_basis"/> is a powerful technique for computing matrix formulas for many interesting geometric linear transformations of <m>\R^n</m>: <eg />, rotations, reflections, and orthogonal projections. Often the very definition of such transformations will suggest a more convenient nonstandard basis <m>B'</m>: one that reflects the geometry involved. The next example illustrates this nicely.
 </p>
-<example>
+<!-- <example>
   <title>Orthogonal projection (again)</title>
   <statement>
     <p>
@@ -684,10 +684,11 @@
       \end{amatrix}
       </mrow>
       </md>.
-    Lo and behold, we've discovered our matrix formula for projection onto <m>W</m> once again! (Compare with  <xref ref="eg_projection_plane"/> and <xref ref="eg_matrixreps_proj"/>.)
+    Lo and behold, we've discovered our matrix formula for projection onto <m>W</m> once again! 
+    (Compare with  <xref ref="eg_projection_plane"/> and <xref ref="eg_matrixreps_proj"/>.)
   </p>
   </statement>
-</example>
+</example> -->
 <paragraphs xml:id="ss_vid_eg_changebasis_transform">
   <title>Video example: change of basis for transformations</title>
   <figure xml:id="fig_vid_changebasis_transform">

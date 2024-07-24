@@ -739,7 +739,7 @@
     <title>Orthogonal projection in <m>\R^2</m> and <m>\R^3</m></title>
     <introduction>
       <p>
-        For this subsection we will always work within Euclidean space: <ie />, <m>V=\R^n</m> with the dot product. In applications we often want to compute the projection of a point onto a line (in <m>\R^2</m> or <m>\R^3</m>) or plane (in <m>\R^3</m>). According to <xref ref="cor_orthoproj_linear"/> the operation of projecting onto any subspace <m>W\subseteq \R^n</m> is in fact a linear transformation <m>\operatorname{proj}_W\colon \R^n\rightarrow \R^n</m>. By <xref ref="cor_matrix_transformations"/> we have <m>\operatorname{proj}_W=T_A</m>, where
+        For this subsection we will always work within Euclidean space: <ie />, <m>V=\R^n</m> with the dot product. In applications we often want to compute the projection of a point onto a line (in <m>\R^2</m> or <m>\R^3</m>) or plane (in <m>\R^3</m>). According to <xref ref="cor_orthoproj_linear"/> the operation of projecting onto any subspace <m>W\subseteq \R^n</m> is in fact a linear transformation <m>\operatorname{proj}_W\colon \R^n\rightarrow \R^n</m>. By <xref ref="th_matrix_transform"/> we have <m>\operatorname{proj}_W=T_A</m>, where
       <me>
         A=\begin{bmatrix}
         \vert \amp \vert \amp \amp \vert \\

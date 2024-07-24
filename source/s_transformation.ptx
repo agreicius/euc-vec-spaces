@@ -616,7 +616,7 @@
           <p>
  Let <m>\boldv=(a_i)_{i=1}^\infty</m> and <m>\boldw=(b_i)_{i=1}^\infty</m> be two infinite sequences in <m>\R^\infty</m>. For any <m>c,d\in\R</m> we have 
             <md>
-              <mrow>T_\ell(c\boldv+d\boldw) \amp=T_\ell\left((ca_i+db_i)_{i=1}^\infty \right)\amp (<xref ref="ex_vs_infinitesequences"/>
+              <mrow>T_\ell(c\boldv+d\boldw) \amp=T_\ell\left((ca_i+db_i)_{i=1}^\infty \right)\amp (<xref ref="eg_infinite_sequences"/>
 ) </mrow> 
               <mrow> \amp= (ca_{i+1}+db_{i+1})_{i=1}^\infty \amp (\text{by def.})</mrow>
               <mrow>  \amp=c(a_{i+1})_{i=1}^\infty+d(b_{i+1})_{i=1}^\infty 
@@ -687,41 +687,6 @@
           <proof>
             <title>Proof of (1)</title>
             <p>
- Since any <m>\boldv\in V</m> has a <em>unique</em> expression of the form 
-              <me>
- \boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n 
-              </me>,
- where <m>c_i\ne 0</m> for all <m>1\leq i\leq r</m>, the formula in <xref ref="eq_bases_transformations"/> defines a function <m>T\colon V\rightarrow W</m> in a well-defined manner. Note also that the formula still applies even if some of the coefficients are equal to 0: if <m>c_i=0</m>, then <m>c_iT(\boldv_i)=\boldzero</m>, and the right-hand side of <xref ref="eq_bases_transformations"/> is unchanged. We will use this fact below. 
-            </p>
-
-            <p>
- We now show that <m>T</m> is linear. Given <m>\boldv, \boldv'\in V</m> we can find a common collection of elements <m>\boldv_1,\boldv_2,\dots, \boldv_n\in B</m> for which 
-              <md>
-                <mrow>\boldv \amp = c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n</mrow>
-                <mrow> \boldv'\amp=d_1\boldv_1+d_2\boldv_2+\cdots +d_n\boldv_n </mrow>
-              </md>
-for some <m>c_i, d_i\in \R</m>. We can no longer assume that <m>c_i\ne 0</m> and <m>d_i\ne 0</m> for all <m>1\leq i\leq r</m>, but as observed above we still have 
-              <md>
-                <mrow>T(\boldv) \amp = c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots +c_nT(\boldv_n)</mrow>
-                <mrow> T(\boldv')\amp=d_1T(\boldv_1)+d_2T(\boldv_2)+\cdots +d_nT(\boldv_n) </mrow>
-              </md>.
- Given any <m>c, d\in \R</m>, we have 
-              <md>
-                <mrow> T(c\boldv+d\boldv')\amp=T(cc_1\boldv_1+cc_2\boldv_2+\cdots +cc_n\boldv_n+dd_1\boldv_1+dd_2\boldv_2+\cdots +dd_n\boldv_n) </mrow>
-                <mrow> \amp= T\left((cc_1+dd_1)\boldv_1+(cc_2+dd_2)\boldv_2+\cdots +(cc_n+dd_n)\boldv_n\right) </mrow>
-                <mrow> \amp =(cc_1+dd_1)T(\boldv_1)+(cc_2+dd_2)T(\boldv_2)+\cdots +(cc_n+dd_n)T(\boldv_n) \amp (<xref ref="eq_bases_transformations"/>
-) </mrow> 
-                <mrow> \amp= c(c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots +c_nT(\boldv_n))+d(d_1T(\boldv_1)+d_2T(\boldv_2)+\cdots +d_nT(\boldv_n)</mrow>
-                <mrow>  \amp =cT(\boldv)+dT(\boldv')</mrow>
-              </md>.
- Thus <m>T</m> is a linear transformation. 
-            </p>
-          </proof>
-
-
-          <proof>
-            <title>Proof of (2)</title>
-            <p>
  Assume <m>T</m> and <m>T'</m> are linear transformations from <m>V</m> to <m>W</m> satisfying <m>T(\boldv_i)=T'(\boldv_i)</m> for all <m>1\leq i\leq n</m>. Given any <m>\boldv\in V</m> we can write <m>\boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n</m>. It follows that 
               <md>
                 <mrow>T(\boldv) \amp = T(c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n)</mrow>
@@ -733,6 +698,43 @@ for some <m>c_i, d_i\in \R</m>. We can no longer assume that <m>c_i\ne 0</m> and
  Since <m>T(\boldv)=T'(\boldv)</m> for all <m>\boldv\in V</m>, we have <m>T=T'</m>. 
             </p>
           </proof>
+          <proof>
+            <title>Proof of (2)</title>
+            <p>
+ Since any <m>\boldv\in V</m> has a <em>unique</em> expression of the form 
+              <me>
+ \boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n 
+              </me>,
+ the formula in <xref ref="eq_bases_transformations"/> defines a function <m>T\colon V\rightarrow W</m> in a well-defined manner.
+            </p>
+            <p>
+ We now show that <m>T</m> is linear. To minimize the unwieldiness of our expressions, we will use sigma notation. We use the 1-step technique. Given andy scalars <m>c,d\in \R</m> and vectors <m>\boldv, \boldv'\in V</m>, we first write  
+              <md>
+                <mrow>\boldv \amp = c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n</mrow>
+                <mrow> \amp =\sum_{i=1}^nc_i\boldv_i</mrow>
+                <mrow> \boldv'\amp=d_1\boldv_1+d_2\boldv_2+\cdots +d_n\boldv_n </mrow>
+                <mrow> \amp =\sum_{i=1}^nd_i\boldv_i</mrow>
+              </md>,
+where <m>c_i, d_i\in \R</m>. By definition <xref ref="eq_bases_transformations"/> we thus have, using sigma notation, 
+<md>
+  <mrow>T(\boldv) \amp = \sum_{i=1}^nc_i\boldw_i</mrow>
+  <mrow>T(\boldv') \amp = \sum_{i=1}^nd_i\boldw_i</mrow>
+</md>.
+It follows that 
+              <md>
+                <mrow> T(c\boldv+d\boldv')\amp=T(c\sum_{i=1}^nc_i\boldv_i+d\sum_{i=1}^nd_i\boldv_i) </mrow>
+                <mrow> \amp= T\left(\sum_{i=1}^n(cc_i+dd_i)\boldv_i\right) </mrow>
+                <mrow> \amp =\sum_{i=1}^n(cc_1+dd_1)\boldwi+(cc_2+dd_2)\boldw_2+\cdots +(cc_n+dd_n)\boldw_n \amp (<xref ref="eq_bases_transformations"/>
+) </mrow> 
+                <mrow> \amp= c(c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots +c_nT(\boldv_n))+d(d_1T(\boldv_1)+d_2T(\boldv_2)+\cdots +d_nT(\boldv_n)</mrow>
+                <mrow>  \amp =cT(\boldv)+dT(\boldv')</mrow>
+              </md>.
+ Thus <m>T</m> is a linear transformation. 
+            </p>
+          </proof>
+
+
+          
 
 
           
@@ -878,7 +880,7 @@ for some <m>c_i, d_i\in \R</m>. We can no longer assume that <m>c_i\ne 0</m> and
             <ol>
               <li>
                 <p>
-                  Use <xref ref="cor_matrix_transformations" text="global"/> to compute the standard matrix of <m>A</m>.
+                  Use <xref ref="th_matrix_transform" text="global"/> to compute the standard matrix of <m>A</m>.
                 </p>
               </li>
               <li>
