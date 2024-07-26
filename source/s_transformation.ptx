@@ -658,7 +658,7 @@
           <p>
             Let <m>V</m> and <m>W</m> be vector spaces, and let <m>B=\{\boldv_1,\boldv_2,\dots, \boldv_n\}</m> be basis of <m>V</m>, where <m>\boldv_i\ne \boldv_j</m> for all <m>i\ne j</m>. 
           <ol>
-            <li xml:base="th_transf_unique">
+            <li xml:id="th_transf_unique">
               <title>Uniqueness of transformations</title>
               <p>
                 Given linear transformations <m>T</m> and <m>T'</m> from <m>V</m> to <m>W</m>, if <m>T(\boldv_i)=T'(\boldv_i)</m> for all <m>1\leq i \leq n</m>, then <m>T=T'</m>.
@@ -767,7 +767,57 @@ It follows that
         </statement>
       </principle>
     </subsection>
-
+    <example xml:id="eg_bases_transformations">
+      <title>Bases and transformations</title>
+      <statement>
+        <p>
+          Assume <m>T\colon \R^2\rightarrow \R^3</m> satisfies <m>T(1,1)=(0,1,1)</m> and <m>T(1,-1)=(2,1,-1)</m>. 
+          <ol>
+            <li>
+              <p>
+                Use the fact that <m>(1,0)=\frac{1}{2}\left((1,1)+(1,-1)\right)</m> to compute <m>T(1,0)</m>. 
+              </p>
+            </li>
+            <li>
+              <p>
+                Use <xref ref="th_transf_unique" text="title"/> to prove that <m>T(x,y)=(x-y,x,y)</m> for all <m>(x,y)\in \R^2</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Let <m>\boldx_1=(1,1)</m> and <m>\boldx_2=(1,-1)</m>. 
+          <ol>
+            <li>
+              <p>
+                Since <m>(1,0)=\frac{1}{2}(\boldx_1+\boldx_2)</m>, we have 
+                <md>
+                  <mrow>T(1,0) \amp =T\left(\frac{1}{2}(\boldx_1+\boldx_2) \right)</mrow>
+                  <mrow> \amp = \frac{1}{2}(T(\boldx_1)+T(\boldx_2))</mrow>
+                  <mrow> \amp = \frac{1}{2}((0,1,1)+(2,1,-1))=(1,1,0)</mrow>
+                </md>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Let <m>T'\colon \R^2\rightarrow \R^2</m> be defined as <m>T'(x,y)=(x-y,x,y)</m>. We wish to show that <m>T=T'</m>. First, it is not difficult to show, using the 1-step technique, that <m>T'</m> is a linear transformation. Next, since <m>B=\{(1,1),(1,-1)\}</m> is clearly linearly independent, and since <m>\R^2</m> has dimension two, we see that <m>B</m> is a basis of <m>\R^2</m>. Thus, according to <xref ref="th_transf_unique" text="title"/>, to show <m>T=T'</m> it suffices to show that <m>T(1,1)=T'(1,1)</m> and <m>T(1,-1)=T'(1,-1)</m>. This is easy: 
+                <md>
+                  <mrow>T'(1,1) \amp =(1-1,1,1)</mrow>
+                  <mrow> \amp = (0,1,1) \amp \text{(def. of ) T'}</mrow>
+                  <mrow> \amp = T(1,1) \amp \text{(given)}</mrow>
+                  <mrow>T'(1,-1) \amp =(1-(-1),1,-1)</mrow>
+                  <mrow> \amp = (2,1,-1) \amp \text{(def. of ) T'}</mrow>
+                  <mrow> \amp = T(1,-1) \amp \text{(given)}</mrow>
+                </md>.
+                Since <m>T</m> and <m>T'</m> are both linear and agree on the basis <m>B</m>, we conclude that <m>T=T'</m>. 
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
     <subsection xml:id="ss_matrix_transforms">
       <title>Matrix transformations</title>
 
@@ -829,26 +879,49 @@ It follows that
 
 
         <proof>
-          <p>
-            We use the one-step technique.
-            For any <m>c,d\in \R</m> and <m>\boldx_1, \boldx_2\in \R^n</m>, we have
-            <md>
-              <mrow>T_A(c\boldx_1+d\boldx_2) \amp =A(c\boldx_1+d\boldx_2)</mrow>
-              <mrow> \amp =A(c\boldx_1)+A(d\boldx_2) \amp (<xref ref="th_matrix_alg_props"/>
-              ) </mrow>
-              <mrow>  \amp =cA\boldx_1+dA\boldx_2 \amp (<xref ref="th_matrix_alg_props"/>
-              )</mrow>
-              <mrow>  \amp =cT_A(\boldx_1)+dT_A(\boldx_2)</mrow>
-            </md>.
-            This proves <m>T_A</m> is a linear transformation.
-          </p>
+          <ol>
+            <li>
+              <p>
+                We use the one-step technique.
+                For any <m>c,d\in \R</m> and <m>\boldx_1, \boldx_2\in \R^n</m>, we have
+                <md>
+                  <mrow>T_A(c\boldx_1+d\boldx_2) \amp =A(c\boldx_1+d\boldx_2)</mrow>
+                  <mrow> \amp =A(c\boldx_1)+A(d\boldx_2) \amp (<xref ref="th_matrix_alg_props"/>
+                  ) </mrow>
+                  <mrow>  \amp =cA\boldx_1+dA\boldx_2 \amp (<xref ref="th_matrix_alg_props"/>
+                  )</mrow>
+                  <mrow>  \amp =cT_A(\boldx_1)+dT_A(\boldx_2)</mrow>
+                </md>.
+                This proves <m>T_A</m> is a linear transformation.
+              </p>
+            </li>
+            <li>
+              <p>
+                Let <m>B=\{\bolde_1,\bolde_2,\dots, \bolde_n\}</m> be the <xref ref="rm_standard_bases" text="custom">standard basis</xref> of <m>\R^n</m>. 
+                Let <m>A\in M_{mn}</m> and let <m>\bolda_j</m> denote the <m>j</m>-th column of <m>A</m> for all <m>1\leq j\leq n</m>. We have 
+                <md>
+                  <mrow>T=T_{A} \amp \iff T(\bolde_j)=T_A(\bolde_j) \text{ for all } 1\leq j\leq n \amp (<xref ref="th_bases_transformations"/>, <xref ref="th_transf_unique" text="custom">(1)</xref> ) </mrow>
+                  <mrow> \amp \iff T(\bolde_j)=\bolda_j \text{ for all } 1\leq j\leq n </mrow>
+                </md>,
+                where the last equality follows from the column method of matrix multiplication: 
+                <me>
+                  A\bolde_j= \begin{bmatrix}\vert\amp \vert\amp  \amp \vert \\ \bolda_1\amp  \bolda_2\amp \cdots \amp \bolda_n\\ \vert\amp \vert\amp  \amp \vert \end{bmatrix}\colvec{0\\ \vdots \\ 1 \\ \vdots \\0}=1\bolda_j
+                </me>.
+                It follows that <m>T=T_A</m> if and only if <m>A</m> is the matrix whose <m>j</m>-th column is <m>T(\bolde_j)</m> for all <m>1\leq j\leq n</m>. In other words, 
+                <me>
+                  A=\begin{bmatrix}\vert\amp \vert\amp  \amp \vert \\ T(\bolde_1)\amp  T(\bolde_2)\amp \cdots \amp T(\bolde_n)\\ \vert\amp \vert\amp  \amp \vert \end{bmatrix}
+                </me>
+                is the unique <m>m\times n</m> matrix satisfying <m>T=T_A</m>. 
+              </p>
+            </li>
+          </ol>
         </proof>
       </theorem>
       <warning>
         Although <xref ref="th_matrix_transform"/> is very powerful, mark well its restriction: it only applies in the setting of linear transformations from <m>\R^n</m> to <m>\R^m</m>. It says nothing about linear transformations whose domain or codomain is a vector space like <m>M_{mn}</m> or <m>\R^\infty</m>. 
       </warning>
       <p>
-        Besides giving a complete description of linear transformations from <m>\R^n</m> to <m>\R^m</m> (they all come from matrices), <xref ref="th_matrix_transform"/>, or rather its proof, provides a recipe for computing a <q>matrix formula</q> for a linear transformation <m>T\colon \R^n\colon \rightarrow \R^m</m>. In other words, it tells us how to build the <m>A</m>, column by column, such that <m>T\boldx=A\boldx</m> for all <m>\boldx\in R^n</m>. We call this <m>A</m> the <em>standard matrix</em> of <m>T</m>.
+        Besides giving a complete description of linear transformations from <m>\R^n</m> to <m>\R^m</m> (they all come from matrices), <xref ref="th_matrix_transform"/>, or rather its proof, provides a recipe for computing a <q>matrix formula</q> for a linear transformation <m>T\colon \R^n\colon \rightarrow \R^m</m>. In other words, it tells us how to build the unique matrix <m>A\in M_{mn}</m> satisfying <m>T\boldx=A\boldx</m> for all <m>\boldx\in R^n</m>. We call this matrix the <em>standard matrix</em> of <m>T</m>.
       </p>
       <definition xml:id="d_transformation_standard_matrix">
         <title>Standard matrix of linear <m>T\colon \R^n\rightarrow \R^m</m></title>
@@ -866,7 +939,7 @@ It follows that
         <title>Standard matrix</title>
         <statement>
           <p>
-            Let <m>T\colon \R^n\rightarrow \R^m</m> be a linear transformation, and let <m>A</m> be the standard matrix of <m>T</m>: <ie/>, <m>A</m> satisfies <m>T=T_A</m>. We have 
+            Let <m>T\colon \R^n\rightarrow \R^m</m> be a linear transformation and let <m>B=\{\bolde_1,\bolde_2,\dots, \bolde_n\}</m> be the standard basis of <m>\R^n</m>. The standard matrix of <m>T</m> is the matrix whose <m>j</m>-th column is the result of applying <m>T</m> to <m>\bolde_j</m>: <ie/>, 
             <men xml:id="eq_standard_matrix">
               A=\begin{bmatrix}\vert\amp \vert\amp  \amp \vert \\ T(\bolde_1)\amp  T(\bolde_2)\amp \cdots \amp T(\bolde_n)\\ \vert\amp \vert\amp  \amp \vert \end{bmatrix}
               </men>.
@@ -924,11 +997,14 @@ It follows that
           </me>.
         </p>
       </remark>
+      <warning>
+        Although <xref ref="th_matrix_transform"/> and <xref ref="proc_standard_matrix"/> are powerful results, mark well the restriction on their application: these results can only be used for linear transformations from <m>\R^n</m> to <m>\R^m</m>. In particular, they say nothing about linear transformations whose domain or codomain is a vector space like <m>M_{mn}</m> or <m>\R^\infty</m>. 
+      </warning>
     </subsection>
-    <subsection xml:base="ss_refl_rot">
+    <subsection xml:id="ss_refl_rot">
       <title>Reflections and rotations in the plane</title>
     <p>
-      <xref ref="th_matrix_transform"/> provides a convenient means of showing that allows that certain familiar geometric transformations of the plane are in fact linear transformations. In this subsection we consider rotations about the origin and reflections through a line.  
+      <xref ref="th_matrix_transform"/> provides a convenient means of showing that certain familiar geometric transformations of the plane are in fact linear transformations. In this subsection we consider rotations about the origin and reflections through a line.  
       </p>
 
       <definition xml:id="d_rotation">

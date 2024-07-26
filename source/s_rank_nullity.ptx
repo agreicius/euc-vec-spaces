@@ -584,7 +584,7 @@
       </p>
     </solution>
   </example>
-  <example xml:base="eg_rank_nullity">
+  <example xml:id="eg_rank_nullity">
     <title>Using the rank-nullity theorem</title>
     <statement>
       <p>

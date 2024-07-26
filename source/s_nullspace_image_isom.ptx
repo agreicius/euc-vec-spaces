@@ -462,7 +462,7 @@ As we will see, this elegant result can be used to significantly simplify comput
   <title>Rank-nullity application</title>
   <statement>
     <p>
-      Let <m>F\colon M_{nn}\rightarrow M_{nn}</m> be defined as <m>F(A)=A^T+A</m> as in <xref ref="eg_nullspace_image_transposition"/>. Prove that <m>\im F</m> is the subspace <m>W</m> of all skew-symmetric matrices following the steps below. 
+      Let <m>F\colon M_{nn}\rightarrow M_{nn}</m> be defined as <m>F(A)=A^T-A</m> as in <xref ref="eg_nullspace_image_transposition"/>. Prove that <m>\im F</m> is the subspace <m>W</m> of all skew-symmetric matrices following the steps below. 
     <ul>
       <li>
         <p>
@@ -484,7 +484,23 @@ As we will see, this elegant result can be used to significantly simplify comput
   </statement>
   <solution>
     <p>
-      
+      We compute 
+      <md>
+        <mrow>\NS F \amp =\{A\in M_{nn}\colon F(A)=\boldzero\}</mrow>
+        <mrow> \amp =\{A\in M_{nn}\colon A^T-A=\boldzero\}</mrow>
+        <mrow> \amp =\{A\in M_{nn}\colon A^T=A\}</mrow>
+      </md>.
+      Thus <m>\NS F</m> is the subspace of all symmetric matrices. It can be shown that this space has dimension <m>\frac{n(n+1)}{2}</m>. To see why this is true intuitively, note that a symmetric matrix is completely determined by the entries on and above the diagonal: there are  
+      <me>
+        1+2+\cdots n=\frac{n(n+1)}{2}
+      </me>
+      of these. Next, the rank-nullity theorem implies that 
+      <md>
+        <mrow>\dim \im F \amp =\dim M_{nn}-\dim \NS F</mrow>
+        <mrow> \amp =n^2-\frac{n(n+1)}{2}</mrow>
+        <mrow> \amp =\frac{n(n-1)}{2}</mrow>
+      </md>.
+      As we showed in <xref ref="eg_nullspace_image_transposition"/>, any matrix <m>B=F(A)\in \im F</m> satisfies <m>B^T=-B</m>: <ie/>, <m>\im F\subseteq W</m>, where <m>W</m> is the subspace of all skew-symmetric <m>n\times n</m> matrices. Similarly to the space of symmetric matrices, we can show that <m>\dim W=\frac{n(n-1)}{2}</m>: intuitively, a skew-symmetric matrix is determined by the <m>n(n-1)/2</m> entries strictly above the diagonal (the diagonal entries must be equal to zero). Since <m>\im F\subseteq W</m> and <m>\dim \im F=\dim W=\frac{n(n-1)}{2}</m>, we conclude that <m>\im F=W</m>, by <xref ref="cor_dimension_subspace"/>. This proves that <m>\im F</m> is the space of all skew-symmetric matrices.
     </p>
   </solution>
 </example>
@@ -503,12 +519,13 @@ As we will see, this elegant result can be used to significantly simplify comput
           Let <m>T\colon V\rightarrow W</m> be a linear transformation.
         </p>
         <ol>
-            <li>
+            <li xml:id="th_inj_null">
+              <title>Injectivity and null space</title>
               <p>
                 <m>T</m> is injective if and only if <m>\NS T=\{\boldzero_V\}</m>.
               </p>
             </li>
-            <li>
+            <li xml:id="th_sur_im">
               <p>
                 <m>T</m> is surjective if and only if <m>\im T=W</m>. 
               </p>
@@ -517,19 +534,31 @@ As we will see, this elegant result can be used to significantly simplify comput
       </statement>
       <proof>
         <p>
-          <ol>
-          <li>
-            <p>
-              We have
-              <md>
-                <mrow>T(\boldv)=T(\boldv') \amp \iff T(\boldv')-T(\boldv)=\boldzero</mrow>
-                <mrow> \amp \iff T(\boldv'-\boldv)=\boldzero \amp (T \text{ is linear})</mrow>
-                <mrow>  \amp \iff \boldu=\boldv'-\boldv\in\NS T \amp (\text{def. } \NS T)</mrow>
-                <mrow>  \amp \iff \boldv'=\boldv+\boldu \text{ for some } \boldu\in\NS T </mrow>
-              </md>.
-            </p>
-          </li>
-        </ol>
+          Statement (2) is true of any function, whether it is a linear transformation or not; it follows directly from the definitions of surjectivity and image. Thus it remains to prove statement (1). We prove both implications separately. 
+        </p>
+        <case>
+        <title>Implication <m>\implies</m></title>
+        <p>
+          Assume <m>T</m> is injective. Since <m>T(\boldzero_V)=\boldzero_W</m>, we see that for any <m>\boldv\in V</m> we have 
+          <md>
+            <mrow>T(\boldv)=\boldzero_W \amp \implies T(\boldv)=T(\boldzero_V)</mrow>
+            <mrow> \amp \implies \boldv=\boldzero_V \amp (T \text{ is injective})</mrow>
+          </md>.
+          It follows that <m>\boldzero_V</m> is the only element of <m>\NS T</m>: equivalently, we have <m>\NS T=\{\boldzero_V\}</m>, as desired. 
+        </p>
+        </case>
+        <case>
+          <title>Implication <m>\impliedby</m></title>
+          <p>
+            Assume <m>\NS T=\{\boldzero_V\}</m>. Given any vectors <m>\boldv,\boldv'\in V</m> we have 
+            <md>
+              <mrow>T(\boldv)=T(\boldv') \amp \implies T(v)-T(v')=\boldzero_W</mrow>
+              <mrow> \amp \implies T(\boldv-\boldv')=\boldzero_W</mrow>
+              <mrow> \amp \implies \boldv-\boldv'\in \NS T</mrow>
+              <mrow> \amp \implies \boldv-\boldv'=\boldzero_V\amp (\NS T=\boldzero_V)</mrow>
+              <mrow> \amp \implies \boldv=\boldv'</mrow>
+            </md>.
+            This proves <m>T</m> is injective, as desired. 
       </p>
       </proof>
     </theorem>

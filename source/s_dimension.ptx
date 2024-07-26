@@ -336,7 +336,7 @@ Even when we do not have a standard basis at our disposal, there are many situat
     </statement>
   </algorithm>
 </subsection>
-<subsection xml:base="ss_further_props">
+<subsection xml:id="ss_further_props">
   <title>Further properties of dimension</title>
 <p>
 The <q>contracting and expanding</q> theorem below is a very useful theoretical consequence of <xref ref="th_basis_dimension"/>. It allows us to construct a customized basis from a given set <m>S</m>.
