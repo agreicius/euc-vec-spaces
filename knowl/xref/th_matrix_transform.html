@@ -12,7 +12,7 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.25</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix transformations.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.26</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix transformations.</span>
 </h4>
 <div class="para logical">
 <div class="para">Let <span class="process-math">\(m\)</span> and <span class="process-math">\(n\)</span> be positive integers.</div>
@@ -24,7 +24,8 @@
 <span class="heading"><span class="title">Transformations from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span>.</span></span><div class="para">If <span class="process-math">\(T\colon \R^n\rightarrow \R^m\text{,}\)</span> there is a unique matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(T=T_A\text{.}\)</span> In other words, every linear transformation from <span class="process-math">\(\R^n\)</span> to <span class="process-math">\(\R^m\)</span> is a matrix transformation.</div>
 </li>
 </ol>
-</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><ol class="decimal" id="th_matrix_transform-3-1">
+<li><div class="para logical">
 <div class="para">We use the one-step technique. For any <span class="process-math">\(c,d\in \R\)</span> and <span class="process-math">\(\boldx_1, \boldx_2\in \R^n\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_matrix_alg_props.html ./knowl/xref/th_matrix_alg_props.html">
 \begin{align*}
@@ -37,6 +38,30 @@ T_A(c\boldx_1+d\boldx_2) \amp =A(c\boldx_1+d\boldx_2)\\
 \end{align*}
 </div>
 <div class="para">This proves <span class="process-math">\(T_A\)</span> is a linear transformation.</div>
-</div></article></details><span class="incontext"><a class="internal" href="s_transformation.html#th_matrix_transform">in-context</a></span>
+</div></li>
+<li><div class="para logical">
+<div class="para">Let <span class="process-math">\(B=\{\bolde_1,\bolde_2,\dots, \bolde_n\}\)</span> be the <a href="s_basis.html#rm_standard_bases" class="xref" data-knowl="./knowl/xref/rm_standard_bases.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 4.3.2: Some standard bases">standard basis</a> of <span class="process-math">\(\R^n\text{.}\)</span> Let <span class="process-math">\(A\in M_{mn}\)</span> and let <span class="process-math">\(\bolda_j\)</span> denote the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A\)</span> for all <span class="process-math">\(1\leq j\leq n\text{.}\)</span> We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/rm_standard_bases.html ./knowl/xref/th_bases_transformations.html ./knowl/xref/th_transf_unique.html">
+\begin{align*}
+T=T_{A} \amp \iff T(\bolde_j)=T_A(\bolde_j) \text{ for all } 1\leq j\leq n \amp (\knowl{./knowl/xref/th_bases_transformations.html}{\text{Theorem 5.1.21}}, \knowl{./knowl/xref/th_transf_unique.html}{\text{(1)}} ) \\
+\amp \iff T(\bolde_j)=\bolda_j \text{ for all } 1\leq j\leq n \text{,}
+\end{align*}
+</div>
+<div class="para">where the last equality follows from the column method of matrix multiplication:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/rm_standard_bases.html ./knowl/xref/th_bases_transformations.html ./knowl/xref/th_transf_unique.html">
+\begin{equation*}
+A\bolde_j= \begin{bmatrix}\vert\amp \vert\amp  \amp \vert \\ \bolda_1\amp  \bolda_2\amp \cdots \amp \bolda_n\\ \vert\amp \vert\amp  \amp \vert \end{bmatrix}\colvec{0\\ \vdots \\ 1 \\ \vdots \\0}=1\bolda_j\text{.}
+\end{equation*}
+</div>
+<div class="para">It follows that <span class="process-math">\(T=T_A\)</span> if and only if <span class="process-math">\(A\)</span> is the matrix whose <span class="process-math">\(j\)</span>-th column is <span class="process-math">\(T(\bolde_j)\)</span> for all <span class="process-math">\(1\leq j\leq n\text{.}\)</span> In other words,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/rm_standard_bases.html ./knowl/xref/th_bases_transformations.html ./knowl/xref/th_transf_unique.html">
+\begin{equation*}
+A=\begin{bmatrix}\vert\amp \vert\amp  \amp \vert \\ T(\bolde_1)\amp  T(\bolde_2)\amp \cdots \amp T(\bolde_n)\\ \vert\amp \vert\amp  \amp \vert \end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">is the unique <span class="process-math">\(m\times n\)</span> matrix satisfying <span class="process-math">\(T=T_A\text{.}\)</span>
+</div>
+</div></li>
+</ol></article></details><span class="incontext"><a class="internal" href="s_transformation.html#th_matrix_transform">in-context</a></span>
 </body>
 </html>

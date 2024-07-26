@@ -637,9 +637,18 @@ window.MathJax = {
 #rm_bases_transformations-2-1-2 { counter-set: rm_bases_transformations-2-1-2 0; }
 #rm_bases_transformations-2-1-2 > li::marker { content: ""counter(rm_bases_transformations-2-1-2,decimal)"."; }
 #rm_bases_transformations-2-1-2 > li { counter-increment: rm_bases_transformations-2-1-2; }
+#eg_bases_transformations-2-1-4 { counter-set: eg_bases_transformations-2-1-4 0; }
+#eg_bases_transformations-2-1-4 > li::marker { content: ""counter(eg_bases_transformations-2-1-4,decimal)"."; }
+#eg_bases_transformations-2-1-4 > li { counter-increment: eg_bases_transformations-2-1-4; }
+#eg_bases_transformations-3-1-3 { counter-set: eg_bases_transformations-3-1-3 0; }
+#eg_bases_transformations-3-1-3 > li::marker { content: ""counter(eg_bases_transformations-3-1-3,decimal)"."; }
+#eg_bases_transformations-3-1-3 > li { counter-increment: eg_bases_transformations-3-1-3; }
 #th_matrix_transform-2-1-3 { counter-set: th_matrix_transform-2-1-3 0; }
 #th_matrix_transform-2-1-3 > li::marker { content: ""counter(th_matrix_transform-2-1-3,decimal)"."; }
 #th_matrix_transform-2-1-3 > li { counter-increment: th_matrix_transform-2-1-3; }
+#th_matrix_transform-3-1 { counter-set: th_matrix_transform-3-1 0; }
+#th_matrix_transform-3-1 > li::marker { content: ""counter(th_matrix_transform-3-1,decimal)"."; }
+#th_matrix_transform-3-1 > li { counter-increment: th_matrix_transform-3-1; }
 #eg_standard_matrix-2-2 { counter-set: eg_standard_matrix-2-2 0; }
 #eg_standard_matrix-2-2 > li::marker { content: ""counter(eg_standard_matrix-2-2,decimal)"."; }
 #eg_standard_matrix-2-2 > li { counter-increment: eg_standard_matrix-2-2; }
@@ -1346,7 +1355,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <div class="toc-title-box"><a href="s_dimension.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Dimension</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#ss_dimension" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Dimension of a vector space</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#s_dimension-4" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Further properties of dimension</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#ss_further_props" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Further properties of dimension</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_dimension.html#s_dimension_ex" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
@@ -1370,7 +1379,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_linear_transform" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Linear transformations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_trans_bases" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Bases and linear transformations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_matrix_transforms" class="internal"><span class="codenumber">5.1.3</span> <span class="title">Matrix transformations</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#s_transformation-6" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Reflections and rotations in the plane</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_refl_rot" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Reflections and rotations in the plane</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_transform_composition" class="internal"><span class="codenumber">5.1.5</span> <span class="title">Composition of linear transformations and matrix multiplication</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_transformation.html#s_transformation_ex" class="internal"><span class="codenumber">5.1.6</span> <span class="title">Exercises</span></a></div></li>
 </ul>
@@ -1736,12 +1745,12 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <td><span class="process-math">\(T_A\)</span></td>
 <td>the matrix transformation associated to <span class="process-math">\(A\)</span>
 </td>
-<td><a href="s_transformation.html#d_matrix_transform" class="xref" data-knowl="./knowl/notation/d_matrix_transform.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 5.1.24: Matrix transformations">Definition 5.1.24</a></td>
+<td><a href="s_transformation.html#d_matrix_transform" class="xref" data-knowl="./knowl/notation/d_matrix_transform.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 5.1.25: Matrix transformations">Definition 5.1.25</a></td>
 </tr>
 <tr>
 <td><span class="process-math">\(\rho_\alpha\)</span></td>
 <td>rotation by <span class="process-math">\(\alpha\)</span> in the plane</td>
-<td><a href="s_transformation.html#d_rotation" class="xref" data-knowl="./knowl/notation/d_rotation.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 5.1.31: Rotation in the plane">Definition 5.1.31</a></td>
+<td><a href="s_transformation.html#d_rotation" class="xref" data-knowl="./knowl/notation/d_rotation.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 5.1.33: Rotation in the plane">Definition 5.1.33</a></td>
 </tr>
 <tr>
 <td><span class="process-math">\(\rank T\)</span></td>

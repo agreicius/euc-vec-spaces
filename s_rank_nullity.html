@@ -637,9 +637,18 @@ window.MathJax = {
 #rm_bases_transformations-2-1-2 { counter-set: rm_bases_transformations-2-1-2 0; }
 #rm_bases_transformations-2-1-2 > li::marker { content: ""counter(rm_bases_transformations-2-1-2,decimal)"."; }
 #rm_bases_transformations-2-1-2 > li { counter-increment: rm_bases_transformations-2-1-2; }
+#eg_bases_transformations-2-1-4 { counter-set: eg_bases_transformations-2-1-4 0; }
+#eg_bases_transformations-2-1-4 > li::marker { content: ""counter(eg_bases_transformations-2-1-4,decimal)"."; }
+#eg_bases_transformations-2-1-4 > li { counter-increment: eg_bases_transformations-2-1-4; }
+#eg_bases_transformations-3-1-3 { counter-set: eg_bases_transformations-3-1-3 0; }
+#eg_bases_transformations-3-1-3 > li::marker { content: ""counter(eg_bases_transformations-3-1-3,decimal)"."; }
+#eg_bases_transformations-3-1-3 > li { counter-increment: eg_bases_transformations-3-1-3; }
 #th_matrix_transform-2-1-3 { counter-set: th_matrix_transform-2-1-3 0; }
 #th_matrix_transform-2-1-3 > li::marker { content: ""counter(th_matrix_transform-2-1-3,decimal)"."; }
 #th_matrix_transform-2-1-3 > li { counter-increment: th_matrix_transform-2-1-3; }
+#th_matrix_transform-3-1 { counter-set: th_matrix_transform-3-1 0; }
+#th_matrix_transform-3-1 > li::marker { content: ""counter(th_matrix_transform-3-1,decimal)"."; }
+#th_matrix_transform-3-1 > li { counter-increment: th_matrix_transform-3-1; }
 #eg_standard_matrix-2-2 { counter-set: eg_standard_matrix-2-2 0; }
 #eg_standard_matrix-2-2 > li::marker { content: ""counter(eg_standard_matrix-2-2,decimal)"."; }
 #eg_standard_matrix-2-2 > li { counter-increment: eg_standard_matrix-2-2; }
@@ -1346,7 +1355,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <div class="toc-title-box"><a href="s_dimension.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Dimension</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#ss_dimension" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Dimension of a vector space</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#s_dimension-4" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Further properties of dimension</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#ss_further_props" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Further properties of dimension</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_dimension.html#s_dimension_ex" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
@@ -1370,7 +1379,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_linear_transform" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Linear transformations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_trans_bases" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Bases and linear transformations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_matrix_transforms" class="internal"><span class="codenumber">5.1.3</span> <span class="title">Matrix transformations</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#s_transformation-6" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Reflections and rotations in the plane</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_refl_rot" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Reflections and rotations in the plane</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_transform_composition" class="internal"><span class="codenumber">5.1.5</span> <span class="title">Composition of linear transformations and matrix multiplication</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_transformation.html#s_transformation_ex" class="internal"><span class="codenumber">5.1.6</span> <span class="title">Exercises</span></a></div></li>
 </ul>
@@ -1883,14 +1892,14 @@ A=\begin{amatrix}[rrrrr]
 \end{equation*}
 </div>
 <div class="para">the number of columns of <span class="process-math">\(A\text{,}\)</span> as predicted by the rank-nullity theorem for matrices.</div>
-</div></div></details></div></article><article class="example example-like" id="ss_fundamental_spaces-24"><h4 class="heading">
+</div></div></details></div></article><article class="example example-like" id="eg_rank_nullity"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.5.15</span><span class="period">.</span><span class="space"> </span><span class="title">Using the rank-nullity theorem.</span>
 </h4>
-<div class="para" id="ss_fundamental_spaces-24-2-1">Suppose <span class="process-math">\(A\)</span> is a <span class="process-math">\(3\times 7\)</span> matrix, and that <span class="process-math">\(\nullity A=4\text{.}\)</span> Show that <span class="process-math">\(\CS A=\R^3\text{.}\)</span>
+<div class="para" id="eg_rank_nullity-2-1">Suppose <span class="process-math">\(A\)</span> is a <span class="process-math">\(3\times 7\)</span> matrix, and that <span class="process-math">\(\nullity A=4\text{.}\)</span> Show that <span class="process-math">\(\CS A=\R^3\text{.}\)</span>
 </div>
-<div class="solutions"><details id="ss_fundamental_spaces-24-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="ss_fundamental_spaces-24-3-1">
+<div class="solutions"><details id="eg_rank_nullity-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_rank_nullity-3-1">
 <div class="para">By the rank-nullity theorem we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_dimension_subspace.html" id="ss_fundamental_spaces-24-3-1-1">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_dimension_subspace.html" id="eg_rank_nullity-3-1-1">
 \begin{align*}
 \dim\CS A \amp =7-\dim \NS A \\
 \amp =7-4\\

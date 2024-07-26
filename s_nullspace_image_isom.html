@@ -637,9 +637,18 @@ window.MathJax = {
 #rm_bases_transformations-2-1-2 { counter-set: rm_bases_transformations-2-1-2 0; }
 #rm_bases_transformations-2-1-2 > li::marker { content: ""counter(rm_bases_transformations-2-1-2,decimal)"."; }
 #rm_bases_transformations-2-1-2 > li { counter-increment: rm_bases_transformations-2-1-2; }
+#eg_bases_transformations-2-1-4 { counter-set: eg_bases_transformations-2-1-4 0; }
+#eg_bases_transformations-2-1-4 > li::marker { content: ""counter(eg_bases_transformations-2-1-4,decimal)"."; }
+#eg_bases_transformations-2-1-4 > li { counter-increment: eg_bases_transformations-2-1-4; }
+#eg_bases_transformations-3-1-3 { counter-set: eg_bases_transformations-3-1-3 0; }
+#eg_bases_transformations-3-1-3 > li::marker { content: ""counter(eg_bases_transformations-3-1-3,decimal)"."; }
+#eg_bases_transformations-3-1-3 > li { counter-increment: eg_bases_transformations-3-1-3; }
 #th_matrix_transform-2-1-3 { counter-set: th_matrix_transform-2-1-3 0; }
 #th_matrix_transform-2-1-3 > li::marker { content: ""counter(th_matrix_transform-2-1-3,decimal)"."; }
 #th_matrix_transform-2-1-3 > li { counter-increment: th_matrix_transform-2-1-3; }
+#th_matrix_transform-3-1 { counter-set: th_matrix_transform-3-1 0; }
+#th_matrix_transform-3-1 > li::marker { content: ""counter(th_matrix_transform-3-1,decimal)"."; }
+#th_matrix_transform-3-1 > li { counter-increment: th_matrix_transform-3-1; }
 #eg_standard_matrix-2-2 { counter-set: eg_standard_matrix-2-2 0; }
 #eg_standard_matrix-2-2 > li::marker { content: ""counter(eg_standard_matrix-2-2,decimal)"."; }
 #eg_standard_matrix-2-2 > li { counter-increment: eg_standard_matrix-2-2; }
@@ -1346,7 +1355,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <div class="toc-title-box"><a href="s_dimension.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Dimension</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#ss_dimension" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Dimension of a vector space</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#s_dimension-4" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Further properties of dimension</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#ss_further_props" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Further properties of dimension</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_dimension.html#s_dimension_ex" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
@@ -1370,7 +1379,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_linear_transform" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Linear transformations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_trans_bases" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Bases and linear transformations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_matrix_transforms" class="internal"><span class="codenumber">5.1.3</span> <span class="title">Matrix transformations</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#s_transformation-6" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Reflections and rotations in the plane</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_refl_rot" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Reflections and rotations in the plane</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_transform_composition" class="internal"><span class="codenumber">5.1.5</span> <span class="title">Composition of linear transformations and matrix multiplication</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_transformation.html#s_transformation_ex" class="internal"><span class="codenumber">5.1.6</span> <span class="title">Exercises</span></a></div></li>
 </ul>
@@ -1754,7 +1763,7 @@ x\amp \amp \amp+ \amp z \amp \amp \amp =\amp 0\\
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.11</span><span class="period">.</span><span class="space"> </span><span class="title">Rank-nullity application.</span>
 </h4>
 <div class="para logical" id="eg_rank_nullity_skew_sym-2-1">
-<div class="para">Let <span class="process-math">\(F\colon M_{nn}\rightarrow M_{nn}\)</span> be defined as <span class="process-math">\(F(A)=A^T+A\)</span> as in <a href="s_nullspace_image_isom.html#eg_nullspace_image_transposition" class="xref" data-knowl="./knowl/xref/eg_nullspace_image_transposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.2.4">Example 5.2.4</a>. Prove that <span class="process-math">\(\im F\)</span> is the subspace <span class="process-math">\(W\)</span> of all skew-symmetric matrices following the steps below.</div>
+<div class="para">Let <span class="process-math">\(F\colon M_{nn}\rightarrow M_{nn}\)</span> be defined as <span class="process-math">\(F(A)=A^T-A\)</span> as in <a href="s_nullspace_image_isom.html#eg_nullspace_image_transposition" class="xref" data-knowl="./knowl/xref/eg_nullspace_image_transposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.2.4">Example 5.2.4</a>. Prove that <span class="process-math">\(\im F\)</span> is the subspace <span class="process-math">\(W\)</span> of all skew-symmetric matrices following the steps below.</div>
 <ul class="disc" id="eg_rank_nullity_skew_sym-2-1-6">
 <li id="eg_rank_nullity_skew_sym-2-1-6-1"><div class="para" id="eg_rank_nullity_skew_sym-2-1-6-1-1">Compute <span class="process-math">\(\NS F\text{.}\)</span>
 </div></li>
@@ -1763,7 +1772,31 @@ x\amp \amp \amp+ \amp z \amp \amp \amp =\amp 0\\
 <li id="eg_rank_nullity_skew_sym-2-1-6-3"><div class="para" id="eg_rank_nullity_skew_sym-2-1-6-3-1">Use the rank-nullity theorem and a dimension argument.</div></li>
 </ul>
 </div>
-<div class="solutions"><details id="eg_rank_nullity_skew_sym-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_rank_nullity_skew_sym-3-1"></div></div></details></div></article></section><section class="subsection" id="ss_injective_surjective_transforms"><h3 class="heading hide-type">
+<div class="solutions"><details id="eg_rank_nullity_skew_sym-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_rank_nullity_skew_sym-3-1">
+<div class="para">We compute</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_nullspace_image_transposition.html ./knowl/xref/cor_dimension_subspace.html" id="eg_rank_nullity_skew_sym-3-1-1">
+\begin{align*}
+\NS F \amp =\{A\in M_{nn}\colon F(A)=\boldzero\}\\
+\amp =\{A\in M_{nn}\colon A^T-A=\boldzero\}\\
+\amp =\{A\in M_{nn}\colon A^T=A\}\text{.}
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(\NS F\)</span> is the subspace of all symmetric matrices. It can be shown that this space has dimension <span class="process-math">\(\frac{n(n+1)}{2}\text{.}\)</span> To see why this is true intuitively, note that a symmetric matrix is completely determined by the entries on and above the diagonal: there are</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_nullspace_image_transposition.html ./knowl/xref/cor_dimension_subspace.html">
+\begin{equation*}
+1+2+\cdots n=\frac{n(n+1)}{2}
+\end{equation*}
+</div>
+<div class="para">of these. Next, the rank-nullity theorem implies that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_nullspace_image_transposition.html ./knowl/xref/cor_dimension_subspace.html" id="eg_rank_nullity_skew_sym-3-1-5">
+\begin{align*}
+\dim \im F \amp =\dim M_{nn}-\dim \NS F\\
+\amp =n^2-\frac{n(n+1)}{2}\\
+\amp =\frac{n(n-1)}{2}\text{.}
+\end{align*}
+</div>
+<div class="para">As we showed in <a href="s_nullspace_image_isom.html#eg_nullspace_image_transposition" class="xref" data-knowl="./knowl/xref/eg_nullspace_image_transposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.2.4">Example 5.2.4</a>, any matrix <span class="process-math">\(B=F(A)\in \im F\)</span> satisfies <span class="process-math">\(B^T=-B\text{:}\)</span> i.e., <span class="process-math">\(\im F\subseteq W\text{,}\)</span> where <span class="process-math">\(W\)</span> is the subspace of all skew-symmetric <span class="process-math">\(n\times n\)</span> matrices. Similarly to the space of symmetric matrices, we can show that <span class="process-math">\(\dim W=\frac{n(n-1)}{2}\text{:}\)</span> intuitively, a skew-symmetric matrix is determined by the <span class="process-math">\(n(n-1)/2\)</span> entries strictly above the diagonal (the diagonal entries must be equal to zero). Since <span class="process-math">\(\im F\subseteq W\)</span> and <span class="process-math">\(\dim \im F=\dim W=\frac{n(n-1)}{2}\text{,}\)</span> we conclude that <span class="process-math">\(\im F=W\text{,}\)</span> by <a href="s_dimension.html#cor_dimension_subspace" class="xref" data-knowl="./knowl/xref/cor_dimension_subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.4.17: Dimension of subspaces">Corollary 4.4.17</a>. This proves that <span class="process-math">\(\im F\)</span> is the space of all skew-symmetric matrices.</div>
+</div></div></details></div></article></section><section class="subsection" id="ss_injective_surjective_transforms"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="space"> </span><span class="title">Injective and surjective linear transformations</span>
 </h3>
 <div class="para" id="ss_injective_surjective_transforms-2">Recall the notions of injectivity and surjectivity from <a href="s_functions.html#d_injective_surjective_bijective" class="xref" data-knowl="./knowl/xref/d_injective_surjective_bijective.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.2.7: Injective, surjective, bijective">Definition 0.2.7</a>: a function <span class="process-math">\(f\colon X\rightarrow Y\)</span> is injective (or one-to-one) if for all <span class="process-math">\(x,x'\in X\)</span> we have <span class="process-math">\(f(x)=f(x')\)</span> implies <span class="process-math">\(x=x'\text{;}\)</span> it is surjective (or onto) if for all <span class="process-math">\(y\in Y\)</span> there is an <span class="process-math">\(x\in X\)</span> with <span class="process-math">\(f(x)=y\text{.}\)</span> As with all functions, we will be interested to know whether a given linear transformation is injective or surjective; as it turns out, the concepts of null space and image give us a convenient manner of answering these questions. As remarked in <a href="s_functions.html#d_injective_surjective_bijective" class="xref" data-knowl="./knowl/xref/d_injective_surjective_bijective.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.2.7: Injective, surjective, bijective">Definition 0.2.7</a>, there is in general a direct connection between the surjectivity and the image of a function: namely, <span class="process-math">\(f\colon X\rightarrow Y\)</span> is surjective if and only if <span class="process-math">\(\im f=Y\text{.}\)</span> It follows immediately that a linear transformation <span class="process-math">\(T\colon V\rightarrow W\)</span> is surjective if and only if <span class="process-math">\(\im T=W\text{.}\)</span> As for injectivity, it is easy to see that <em class="emphasis">if</em> a linear transformation <span class="process-math">\(T\)</span> is injective, <em class="emphasis">then</em> its null space must consist of just the zero vector of <span class="process-math">\(V\text{.}\)</span> What is somewhat surprising is that the converse is also true, as we now show.</div>
