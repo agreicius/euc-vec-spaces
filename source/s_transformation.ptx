@@ -724,12 +724,11 @@ It follows that
               <md>
                 <mrow> T(c\boldv+d\boldv')\amp=T(c\sum_{i=1}^nc_i\boldv_i+d\sum_{i=1}^nd_i\boldv_i) </mrow>
                 <mrow> \amp= T\left(\sum_{i=1}^n(cc_i+dd_i)\boldv_i\right) </mrow>
-                <mrow> \amp =\sum_{i=1}^n(cc_1+dd_1)\boldwi+(cc_2+dd_2)\boldw_2+\cdots +(cc_n+dd_n)\boldw_n \amp (<xref ref="eq_bases_transformations"/>
-) </mrow> 
-                <mrow> \amp= c(c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots +c_nT(\boldv_n))+d(d_1T(\boldv_1)+d_2T(\boldv_2)+\cdots +d_nT(\boldv_n)</mrow>
+                <mrow> \amp =\sum_{i=1}^n(cc_i+dd_i)\boldw_i \amp <xref ref="eq_bases_transformations"/></mrow> 
+                <mrow> \amp = c\sum_{i=1}^nc_i\boldw_i+d\sum_{i=1}^nd_i\boldw_i</mrow>
                 <mrow>  \amp =cT(\boldv)+dT(\boldv')</mrow>
-              </md>.
- Thus <m>T</m> is a linear transformation. 
+              </md>,
+              as desired. 
             </p>
           </proof>
 
@@ -758,8 +757,6 @@ It follows that
  A linear transformation <m>T\colon V\rightarrow W</m> is completely determined by its behavior on a basis <m>B=\{\boldv_1,\boldv_2,\dots, \boldv_n\}</m> of <m>V</m>. Once we know the images <m>T(\boldv_i)</m> for all <m>1\leq i\leq n</m>, the image <m>T(\boldv)</m> for any other <m>\boldv\in V</m> is then completely determined. Put another way, if two linear transformations from <m>V</m> to <m>W</m> agree on the elements of a basis <m>B\subseteq V</m>, then they agree for all elements of <m>V</m>. 
                 </p>
               </li>
-
-              
             </ol>
           </p>
         </statement>
