@@ -731,12 +731,6 @@ It follows that
               as desired. 
             </p>
           </proof>
-
-
-          
-
-
-          
         </proof>
       </theorem>
 
@@ -761,6 +755,17 @@ It follows that
           </p>
         </statement>
       </remark>
+      <p>
+        Our remarks are worthy of another mantra. 
+      </p>
+      <principle xml:id="mantra_bases_transformation">
+        <title>Bases and transformations</title>
+        <statement>
+          <p>
+            We know a linear transformation by its action on a basis. 
+          </p>
+        </statement>
+      </principle>
     </subsection>
 
     <subsection xml:id="ss_matrix_transforms">
