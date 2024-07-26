@@ -16,7 +16,7 @@
 </h4>
 <div class="para logical">
 <div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix. To test for invertibility of <span class="process-math">\(A\)</span> proceed as follows.</div>
-<ol class="decimal">
+<ol class="decimal" id="th_invertibility_algorithm-2-1-4">
 <li>
 <div class="para">Build the <span class="process-math">\(n\times 2n\)</span> augmented matrix <span class="process-math">\(\begin{amatrix}[c|c]A\amp I_n\end{amatrix}\)</span> and use Gaussian elimination to row reduce to the form <span class="process-math">\(\begin{amatrix}[c|c]U\amp B\end{amatrix} \text{,}\)</span> where <span class="process-math">\(U\)</span> is in row echelon form.</div>
 <div class="para">The matrix <span class="process-math">\(A\)</span> is invertible if and only if <span class="process-math">\(U\)</span> has <span class="process-math">\(n\)</span> leading ones.</div>
