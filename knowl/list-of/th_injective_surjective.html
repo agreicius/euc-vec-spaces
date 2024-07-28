@@ -15,22 +15,35 @@
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.12</span><span class="period">.</span><span class="space"> </span><span class="title">Injectivity and surjectivity.</span>
 </h4>
 <div class="para">Let <span class="process-math">\(T\colon V\rightarrow W\)</span> be a linear transformation.</div> <ol class="decimal" id="th_injective_surjective-2-2">
-<li><div class="para">
+<li>
+<span class="heading"><span class="title">Injectivity and null space.</span></span><div class="para">
 <span class="process-math">\(T\)</span> is injective if and only if <span class="process-math">\(\NS T=\{\boldzero_V\}\text{.}\)</span>
-</div></li>
+</div>
+</li>
 <li><div class="para">
 <span class="process-math">\(T\)</span> is surjective if and only if <span class="process-math">\(\im T=W\text{.}\)</span>
 </div></li>
-</ol></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal" id="th_injective_surjective-3-1-1"><li><div class="para logical">
-<div class="para">We have</div>
+</ol></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">Statement (2) is true of any function, whether it is a linear transformation or not; it follows directly from the definitions of surjectivity and image. Thus it remains to prove statement (1). We prove both implications separately.</div> <article class="case"><h5 class="heading">Implication <span class="process-math">\(\implies\)</span>.</h5> <div class="para logical">
+<div class="para">Assume <span class="process-math">\(T\)</span> is injective. Since <span class="process-math">\(T(\boldzero_V)=\boldzero_W\text{,}\)</span> we see that for any <span class="process-math">\(\boldv\in V\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{align*}
-T(\boldv)=T(\boldv') \amp \iff T(\boldv')-T(\boldv)=\boldzero\\
-\amp \iff T(\boldv'-\boldv)=\boldzero \amp (T \text{ is linear})\\
-\amp \iff \boldu=\boldv'-\boldv\in\NS T \amp (\text{def. } \NS T)\\
-\amp \iff \boldv'=\boldv+\boldu \text{ for some } \boldu\in\NS T \text{.}
+T(\boldv)=\boldzero_W \amp \implies T(\boldv)=T(\boldzero_V)\\
+\amp \implies \boldv=\boldzero_V \amp (T \text{ is injective})\text{.}
 \end{align*}
 </div>
-</div></li></ol></div></article></details><span class="incontext"><a class="internal" href="s_nullspace_image_isom.html#th_injective_surjective">in-context</a></span>
+<div class="para">It follows that <span class="process-math">\(\boldzero_V\)</span> is the only element of <span class="process-math">\(\NS T\text{:}\)</span> equivalently, we have <span class="process-math">\(\NS T=\{\boldzero_V\}\text{,}\)</span> as desired.</div>
+</div></article> <article class="case"><h5 class="heading">Implication <span class="process-math">\(\impliedby\)</span>.</h5> <div class="para logical">
+<div class="para">Assume <span class="process-math">\(\NS T=\{\boldzero_V\}\text{.}\)</span> Given any vectors <span class="process-math">\(\boldv,\boldv'\in V\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+T(\boldv)=T(\boldv') \amp \implies T(v)-T(v')=\boldzero_W\\
+\amp \implies T(\boldv-\boldv')=\boldzero_W\\
+\amp \implies \boldv-\boldv'\in \NS T\\
+\amp \implies \boldv-\boldv'=\boldzero_V\amp (\NS T=\boldzero_V)\\
+\amp \implies \boldv=\boldv'\text{.}
+\end{align*}
+</div>
+<div class="para">This proves <span class="process-math">\(T\)</span> is injective, as desired.</div>
+</div></article></article></details><span class="incontext"><a class="internal" href="s_nullspace_image_isom.html#th_injective_surjective">in-context</a></span>
 </body>
 </html>
