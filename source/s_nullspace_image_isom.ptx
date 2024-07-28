@@ -560,6 +560,7 @@ As we will see, this elegant result can be used to significantly simplify comput
             </md>.
             This proves <m>T</m> is injective, as desired. 
       </p>
+    </case>
       </proof>
     </theorem>
     <remark>
