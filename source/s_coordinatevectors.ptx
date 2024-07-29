@@ -275,53 +275,24 @@
       <title>Coordinate vector transformation</title>
       <statement>
         <p>
-          Let <m>B=(\boldv_1,\boldv_2,\dots, \boldv_n)</m> be an ordered basis for the vector space <m>V</m>.
-          <ol>
-            <li>
-              <p>
-                The function <m>T\colon V\rightarrow \R^n</m> defined as <m>T(\boldv)=[\boldv]_B</m> is a linear transformation.
-                We call <m>T</m> the <term>coordinate vector transformation</term> with respect to <m>B</m>.
-              </p>
-            </li>
-            <li>
-              <p>We have
-                <m>[\boldv]_B=[\boldw]_B</m> if and only if <m>\boldv=\boldw</m>: <ie />,  <m>T</m> is <xref ref="d_injective_surjective_bijective" text="custom">injective</xref>.
-              </p>
-            </li>
-            <li>
-              <p>For all <m>\boldx=(c_1,c_2,\dots, c_n)\in \R^n</m>, there is <m>\boldv\in V</m> with <m>[\boldv]_B=\boldx</m> : <ie />, <m>T</m> is <xref ref="d_injective_surjective_bijective" text="custom">surjective</xref>.
-              </p>
-            </li>
-            <li>
-              <p>
-                Given a subset <m>S=\{\boldv_1,\boldv_2,\dots,
-                \boldv_r\}\subseteq V</m>, let <m>S'=T(S)=\{[\boldv_1]_B,[\boldv_2]_B,\dots,
-                [\boldv_r]_B\}\subseteq \R^n</m>. We have the following equivalences:
-                <ol>
-                  <li>
-                    <p>
-                      <m>\boldv\in\Span S</m> if and only if <m>[\boldv]_{B}\in \Span S'</m>;
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <m>S</m> is linearly independent if and only if <m>S'</m> is linearly independent.
-                    </p>
-                  </li>
-                </ol>
-              </p>
-            </li>
-          </ol>
+          Let <m>B=(\boldv_1,\boldv_2,\dots, \boldv_n)</m> be an ordered basis for the vector space <m>V</m>. The function 
+          <md>
+            <mrow>T\colon V \amp \rightarrow \R^n</mrow>
+            <mrow>\boldv \amp \mapsto [\boldv]_B</mrow>
+          </md>
+          is an isomorphism: <ie/>, <m>T</m> is an invertible linear transformation. 
         </p>
       </statement>
     </theorem>
     <proof>
-        <ol>
-          <li>
             <p>
-              Suppose <m>T(\boldv)=[\boldv]_B=(a_1,a_2,\dots, a_n), T(\boldw)=[\boldw]_B=(b_1, b_2, \dots, b_n)</m>. By definition this means
+              We first prove <m>T</m> is linear using the 1-step technique. Given any scalars <m>c,d\in \R</m> and vectors <m>\boldv,\boldw\in V</m>, we write 
               <md>
                 <mrow>\boldv \amp =\sum_{i=1}^na_i\boldv_i,  \amp \boldw\amp =\sum_{i=1}^nb_i\boldv_i</mrow>
+              </md>
+              for scalars <m>c_i,d_i\in \R</m>, in which case 
+              <md>
+                <mrow>[\boldv]_B \amp = (c_1,c_2,\dots, c_n) \amp [\boldw]_B\amp =(d_1,d_2,\dots, d_n)</mrow>
               </md>.
               It follows that
               <me>
@@ -329,63 +300,23 @@
               </me>,
               and hence
               <md>
-                <mrow>T(c\boldv+d\boldw)\amp =[c\boldv+d\boldw]_B \amp (\text{def. of } [\phantom{\boldv}]_B) </mrow>
-                <mrow> \amp =(ca_1+db_1,ca_2+db_2,\dots, ca_n+db_n) </mrow>
+                <mrow>T(c\boldv+d\boldw)\amp =[c\boldv+d\boldw]_B  \amp (\text{def. of } T) </mrow>
+                <mrow> \amp =(ca_1+db_1,ca_2+db_2,\dots, ca_n+db_n) \amp (\text{def. of } [\phantom{\boldv}]_B) </mrow>
                 <mrow>  \amp =c(a_1,a_2,\dots, a_n)+d(b_1,b_2,\dots, b_n)</mrow>
                 <mrow>  \amp =c[\boldv]_B+d[\boldw]_B</mrow>
                 <mrow>  \amp =cT(\boldv)+dT(\boldw) </mrow>
               </md>.
-              This proves <m>T</m> is linear.
+            Next, since <m>\dim V=\dim \R^n</m>, using <xref ref="th_isomorphisms_finite_dim"/>, to prove <m>T</m> is an isomorphism, it suffices to show <m>\im T=\R^n</m>, or equivalently, that <m>T</m> is surjective. But this is easy: given any <m>\boldy=(c_1,c_2,\dots, c_n)\in \R^n</m>, the vector 
+            <me>
+              \boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n
+            </me>
+            satisfies 
+            <me>T(\boldv)=[\boldv]_{B}=(c_1,c_2,\dots, c_n)</me>.
+            This shows <m>T</m> is surjective, and hence an isomorphism. 
             </p>
-          </li>
-          <li>
-            <p>
-              Clearly, if <m>\boldv=\boldw</m>, then <m>[\boldv]_B=[\boldw]_B</m>. If <m>T(\boldv)=T(\boldw)=(c_1,c_2,\dots, c_n)</m>, then by definition of <m>[\phantom{\boldv}]_B</m> we must have
-              <me>
-                \boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n==\boldw
-              </me>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Given any <m>\boldb=(b_1,b_2,\dots, b_n)\in \R^n</m>, we have <m>\boldb=T(\boldv)</m>, where
-              <me>
-                \boldv=b_1\boldv_1+b_2\boldv_2+\cdots +b_n\boldv_n
-              </me>.
-              This proves <m>\im T=\R^n</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              We have
-              <md>
-                <mrow>\boldv\in \Span S \amp \iff \boldv=\sum_{i=1}^rc_i\boldv_i</mrow>
-                <mrow> \amp\iff [\boldv]_{B}=\left[ \sum_{i=1}^rc_i\boldv_i\right] </mrow>
-                <mrow>  \amp \iff [\boldv]_B=\sum_{i=1}^rc_i[\boldv_i]_B\amp ([\phantom{\boldv}]_B \text{ is linear})</mrow>
-                <mrow>  \amp \iff [\boldv]_B\in \Span S'</mrow>
-              </md>.
-            </p>
-            <p>
-              Similarly, we have
-              <md>
-                <mrow>\sum_{i=1}^rc_i\boldv_i=\boldzero \amp \iff \left[\sum_{i=1}^rc_i\boldv_i\right]_B=[\boldzero]_B \amp (\boldv=\boldw\iff [\boldv]_B=[\boldw]_B) </mrow>
-                <mrow> \amp\iff \sum_{i=1}^rc_i[\boldv_i]_B=(0,0,\dots, 0) \amp ([\phantom{\boldv}]_B \text{ is linear}) </mrow>
-              </md>.
-              From this equivalence we see that there is a nontrivial linear combination of <m>S</m> yielding <m>\boldzero\in V</m> if and only if there is a nontrivial linear combination of <m>S'</m> yielding <m>\boldzero\in \R^n</m>. In other words, <m>S</m> is linearly independent if and only if <m>S'</m> is linearly independent.
-            </p>
-          </li>
-        </ol>
     </proof>
-        <remark xml:id="rm_coordinate_transform_invertible">
-      <statement>
-        <p>
-          Statements (2) and (3) of <xref ref="th_coordinates"/> tell us that the coordinate transformation is injective (or one-to-one) and surjective (or onto), respectively. (See <xref ref="d_injective_surjective_bijective"/>).
-        </p>
-      </statement>
-    </remark>
-
   <p>
-    As an illustration of the <xref ref="mantra_coordinate_vectors" text="custom">coordinate vector mantra</xref>, we describe a general method of contracting and extending subsets of a general finite-dimensional vector space <m>V</m> to bases. The method translates the problem into <m>\R^n</m> using the coordinate transformation, applies the relevant algorithm available to us for subsets of <m>\R^n</m>, and then <q>lifts</q> the results back to <m>V</m> using the coordinate transformation again.
+    Knowing the that the coordinate vector transformation is an isomorphism, <xref ref="th_isomorphism_preserves"/> allows us to translate any linear-algebraic question about a finite-dimensional vector space <m>V</m> into a corresponding question about <m>\R^n</m> for some <m>n</m>. As an illustration of this principle, we describe a general method of contracting and extending subsets of a general finite-dimensional vector space <m>V</m> to bases. The method translates the problem into <m>\R^n</m> using the coordinate transformation, applies the relevant algorithm available to us for subsets of <m>\R^n</m>, and then <q>lifts</q> the results back to <m>V</m> using the coordinate transformation again.
   </p>
   <algorithm xml:id="proc_contract_extend_general">
     <title>Contracting and extending to bases in general spaces</title>
@@ -456,11 +387,6 @@
         and determine whether <m>W'=W</m>.
       </p>
     </statement>
-    <hint>
-      <p>
-        Choose an ordered basis <m>B</m> of <m>M_{22}</m> and use the coordinate vector map to translate to a question about subspaces of <m>\R^4</m>. Answer this question and translate back to <m>M_{22}</m>.
-      </p>
-    </hint>
     <solution>
       <p>
         Let <m>B=(E_{11}, E_{12}, E_{21}, E_{22})</m> be the standard basis of <m>M_{22}</m>.

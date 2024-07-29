@@ -526,6 +526,7 @@ As we will see, this elegant result can be used to significantly simplify comput
               </p>
             </li>
             <li xml:id="th_sur_im">
+              <title>Surjectivity and image</title>
               <p>
                 <m>T</m> is surjective if and only if <m>\im T=W</m>. 
               </p>
@@ -552,7 +553,7 @@ As we will see, this elegant result can be used to significantly simplify comput
           <p>
             Assume <m>\NS T=\{\boldzero_V\}</m>. Given any vectors <m>\boldv,\boldv'\in V</m> we have 
             <md>
-              <mrow>T(\boldv)=T(\boldv') \amp \implies T(v)-T(v')=\boldzero_W</mrow>
+              <mrow>T(\boldv)=T(\boldv') \amp \implies T(\boldv)-T(\boldv')=\boldzero_W</mrow>
               <mrow> \amp \implies T(\boldv-\boldv')=\boldzero_W</mrow>
               <mrow> \amp \implies \boldv-\boldv'\in \NS T</mrow>
               <mrow> \amp \implies \boldv-\boldv'=\boldzero_V\amp (\NS T=\boldzero_V)</mrow>
@@ -618,29 +619,36 @@ As we will see, this elegant result can be used to significantly simplify comput
       </statement>
       <proof>
         <p>
-          See <xref ref="ex_isom_inverse_linear"/>.
+         Let <m>T\colon V\rightarrow W</m> be an isomorphism, and let <m>T^{-1}\colon W\rightarrow V</m> be its inverse function. We use the 1-step technique to show <m>T^{-1}</m> is linear, but with a slight twist:
+         given any <m>c,d\in \R</m> and vectors <m>\boldw_1,\boldw_2\in W</m> we will show that 
+         <me>
+          T\left(T^{-1}(c\boldw_1+d\boldw_2)\right)=T\left(cT^{-1}(\boldw_1)+dT^{-1}(\boldw_2)\right)
+         </me>;
+         since <m>T</m> is injective, it will then follow that 
+         <me>
+          T^{-1}(c\boldw_1+d\boldw_2)=cT^{-1}(\boldw_1)+dT^{-1}(\boldw_2)
+         </me>.
+         To this end, we compute 
+         <md>
+          <mrow>  T\left(T^{-1}(c\boldw_1+d\boldw_2)\right)\amp = c\boldw_1+d\boldw_2 \amp (T\circ T^{-1}=\id_W) </mrow>
+          <mrow>T\left(cT^{-1}(\boldw_1)+dT^{-1}(\boldw_2)\right) \amp =cT(T^{-1}(\boldw_1))+dT(T^{-1}(\boldw_2)) \amp (T \text{ is linear}) </mrow>
+          <mrow> \amp =c\boldw_1+d\boldw_2 \amp (T\circ T^{-1}=\id_W)</mrow>
+         </md>.
+         Thus we have 
+         <me>
+          T\left(T^{-1}(c\boldw_1+d\boldw_2)\right)=T\left(cT^{-1}(\boldw_1)+dT^{-1}(\boldw_2)\right)=c\boldw_1+d\boldw_2
+         </me>,
+         as desired. 
         </p>
       </proof>
     </theorem>
     
     
   
-  <remark>
+  <remark xml:id="rm_isom">
     <title>Proving <m>T</m> is an isomorphism</title>
     <p>
-      According to <xref ref="d_isomorphism"/>, to prove a function <m>T\colon V\rightarrow W</m> is an isomorphism, we must show that
-      <ol marker="i">
-        <li>
-          <p>
-            <m>T</m> is linear, and
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>T</m> is invertible.
-          </p>
-        </li>
-      </ol>
+      According to <xref ref="d_isomorphism"/>, to prove a function <m>T\colon V\rightarrow W</m> is an isomorphism, we must show both that <m>T</m> is linear and that it is invertible. 
       We know already how to decide whether a function is linear, but how do we decide whether it is invertible? Recall that a function is invertible if and only if it is <xref ref="d_bijective" text="custom">bijective</xref>. (See <xref ref="th_invertible_bijective"/>.) This fact gives rise to two distinct methods for proving that a given linear transformation is invertible:
       <ol>
         <li>
@@ -654,10 +662,12 @@ As we will see, this elegant result can be used to significantly simplify comput
           </p>
         </li>
       </ol>
-      Which approach, (1) or (2), is more convenient depends on the linear transformation <m>T</m> in question.
     </p>
      </remark>
-  <theorem xml:id="th_bijective_transformation">
+     <p>
+      One of the two methods described in <xref ref="rm_isom"/> for determining whether a linear transformation is invertible may be more convenient than the other, depending on the linear transformation in question. Thanks to <xref ref="th_injective_surjective"/>, we can decide whether a linear transformation is bijective by looking at its two associated subspaces <m>\NS T</m> and <m>\im T</m>. 
+     </p>
+  <theorem xml:id="th_isom_null_im">
     <title>Isomorphism equivalence</title>
     <statement>
       <p>
@@ -676,7 +686,69 @@ As we will see, this elegant result can be used to significantly simplify comput
         </ol>
       </p>
     </statement>
+    <proof>
+      <p>
+        The result follows directly from <xref ref="th_injective_surjective"/> and the fact that a function is invertible if and only if it is bijective: 
+        <md>
+          <mrow>T \text{ is an isomorphism} \amp \iff T \text{ is bijective}</mrow>
+          <mrow> \amp \iff T \text{ is injective and surjective}</mrow>
+          <mrow> \amp \iff \NS T=\{\boldzero_V\} \text{ and } \im T=W</mrow>
+        </md>. 
+      </p>
+    </proof>
   </theorem>
+  <example xml:id="eg_transpose_isom">
+    <title>Transposition is an isomorphism</title>
+    <statement>
+      <p>
+        Let <m>F\colon M_{mn}\rightarrow M_{nm}</m> be defined as <m>F(A)=A^T</m>. Prove that <m>F</m> is an isomorphism. 
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We know already that <m>F</m> is a linear transformation. It remains to show that it is invertible.  In the spirit of <xref ref="rm_isom"/>, we give two proofs, corresponding to methods (1) and (2). 
+      </p>
+      <case>
+      <title>First proof</title>
+      <p>
+      Define <m>G\colon M_{nm}\rightarrow M_{mn}</m> as <m>G(B)=B^T</m>. We claim that <m>G=F^{-1}</m>, and hence that <m>F</m> is an isomorphism. To do show we must show 
+      <md>
+        <mrow>G\circ F \amp = \id_{M_{mn}} \amp F\circ G\amp =\id_{M_{nm}}</mrow>
+      </md>.
+      For any <m>A\in M_{mn}</m>, we have 
+      <md>
+        <mrow>G(F(A)) \amp =G(A^T)</mrow>
+        <mrow> \amp(A^T)^T </mrow>
+        <mrow> \amp = A</mrow>
+      </md>.
+      Thus <m>G\circ F=\id_{M_{mn}}</m>. Similarly, for any <m>B\in M_{nm}</m>, we have 
+      <md>
+        <mrow>F(G(B)) \amp = F(B^T)</mrow>
+        <mrow> \amp = (B^T)^T</mrow>
+        <mrow> \amp = B</mrow>
+      </md>.
+      </p>
+      </case>
+      <case>
+      <title>Second proof</title>
+      <p>
+      We will show that <m>F</m> is bijective, and hence invertible. To do so it suffices to show <m>\NS F=\{\boldzero\}</m> and <m>\im F=M_{nm}</m>. We have 
+      <md>
+        <mrow>F(A) = \boldzero \amp \iff A^T=\boldzero</mrow>
+        <mrow> \amp \iff A=\boldzero</mrow>
+      </md>.
+      Thus <m>\NS F=\{\boldzero\}</m>, showing <m>F</m> is injective. Next given any <m>B\in M_{nm}</m>, let <m>A=B^T</m>; then 
+      <me>
+        F(A)=F(B^T)=(B^T)^T=B
+      </me>.
+      This proves that for any <m>B\in M_{nm}</m> there is a matrix  <m>A\in M_{mn}</m> such that <m>F(A)=B</m>. Thus <m>\im F=M_{nm}</m>. 
+      </p>
+
+      </case>
+      
+    </solution>
+    
+  </example>
   <p>
     Why is it useful to know whether two vector spaces are isomorphic? The short answer is that if <m>V</m> and <m>W</m> are isomorphic, then although they may be very different objects when considered as sets, from the linear-algebraic perspective there is essentially no difference between the two: <ie/>, they satisfy the exact same linear-algebraic properties. Furthermore, an isomorphism <m>T\colon V\rightarrow W</m> witnessing the fact that <m>V</m> and <m>W</m> are isomorphic gives us a perfect bijective dictionary between the two spaces, allowing us to answer questions about the one space by <q>translating</q> it to a question about the other, using <m>T</m> or <m>T^{-1}</m>. <xref ref="th_isomorphism_preserves"/> gives a first glimpse into this dictionary-like nature of isomorphisms. Later in <xref ref="s_coordinatevectors"/> we will introduce a particular isomorphism called the <em>coordinate vector</em>, which illustrates the computational value of being able to translate questions about abstract vector spaces <m>V</m> to questions about our beloved and familiar <m>\R^n</m> spaces. 
   </p>
@@ -685,7 +757,7 @@ As we will see, this elegant result can be used to significantly simplify comput
     <statement>
       <p>
         Let <m>T\colon V\rightarrow W</m> be an isomorphism. The following properties hold:
-        <ol marker="i">
+        <ol>
           <li>
             <p>
               <m>S\subseteq V</m> is linearly independent if and only if <m>T(S)\subseteq W</m> is linearly independent;
@@ -711,7 +783,23 @@ As we will see, this elegant result can be used to significantly simplify comput
     </statement>
     <proof>
       <p>
-        
+        We prove <m>(1)</m> and leave the remaining statements as an exercise. Let <m>T\colon V\rightarrow W</m> be an isomorphism, and let <m>S\subseteq V </m> be a linearly independent set. Define 
+        <me>
+          S'=T(S)=\{T(\boldv)\colon \boldv\in S\}
+        </me>.
+        Suppose 
+        <me>\boldw_1=T(\boldv_1), \boldw_2=T(\boldv_2),\dots, \boldw_n=T(\boldv_n)\</me>
+        are distinct elements of <m>S'</m>, and suppose we have 
+        <me>
+          c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots +c_nT(\boldv_n)=\boldzero
+        </me>.
+        Let <m>T^{-1}\colon W\rightarrow V</m> be the inverse function of <m>T</m>, and recall that <m>T^{-1}</m> is linear by <xref ref="th_isom_inverse_linear"/>. Now applying <m>T^{-1}</m> to both sides of the equation above and simplify
+        <md>
+          <mrow> T^{-1}(c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots +c_nT(\boldv_n))\amp =T^{-1}(\boldzero) </mrow>
+          <mrow>c_1T^{-1}T(\boldv_1)+c_2T^{-1}(T(\boldv_2))+\cdots c_nT^{-1}T(\boldv_n) \amp = \boldzero \amp (T^{-1} \text{ is linear})</mrow>
+          <mrow>c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n \amp =\boldzero \amp (T^{-1}\circ T=\id_V) </mrow>
+        </md>.
+        Since <m>S</m> is assumed to be linearly independent, we conclude that <m>c_1=c_2=\cdots =c_n=0</m>, as desired. 
       </p>
     </proof>
   </theorem>
@@ -722,7 +810,7 @@ As we will see, this elegant result can be used to significantly simplify comput
     </me>.
   </remark>
   <p>
-    And now for the real shocker: finite-dimensional vector spaces are isomorphic if and only if they have the same dimension. In particular, any <m>n</m>-dimensional vector space is isomorphic to <m>\R^n</m>! 
+    We now state a powerful theorem that applies specifically to finite-dimensional spaces. 
   </p>
   <theorem xml:id="th_isomorphisms_finite_dim">
     <statement>
@@ -759,7 +847,191 @@ As we will see, this elegant result can be used to significantly simplify comput
         </ol>
       </p>
     </statement>
+    <proof>
+      <p>
+        <ol>
+          <li>
+            <p>
+              We prove both implications separately. 
+            </p>
+            <p>
+              If <m>V</m> and <m>W</m> are isomorphic, then there is an isomorphism <m>T\colon V\rightarrow W</m>. It follows from <xref ref="th_isomorphism_preserves"/> that <m>\dim V=\dim W</m>. 
+            </p>
+            <p>
+              Now assume <m>\dim V=\dim W=n</m>. By definition there are bases <m>B=\{\boldv_1,\boldv_2,\dots, \boldv_n\}</m> and <m>B'=\{\boldw_1,\boldw_2,\dots, \boldw_n\}</m> of <m>V</m> and <m>W</m>, respectively, satisfying <m>\abs{B}=\abs{B'}=n</m>. Using <xref ref="th_exist_transf" text="title"/> there is a linear transformation 
+              <md>
+                <mrow>T\colon V \amp \rightarrow W</mrow>
+              </md>
+              satisfying <m>T(\boldv_i)=\boldw_i</m> for all <m>1\leq i\leq n</m>, and a linear transformation 
+              <md>
+                <mrow>T'\colon W\rightarrow  \amp V</mrow>
+              </md>
+              satisfying <m>T'(\boldw_i)=\boldv_i</m> for all <m>1\leq i\leq n</m>. We now use <xref ref="th_transf_unique" text="title"/> to prove that 
+              <md>
+                <mrow>T'\circ T \amp =\id_V \amp T\circ T'\amp =\id_W</mrow>
+              </md>,
+              and hence that <m>T'=T^{-1}</m>. To do so we observe that for all <m>1\leq i\leq n</m> we have 
+              <md>
+                <mrow>T'\circ T(\boldv_i) \amp = T'(\boldw_i) \amp (\text{def. of } T)</mrow>
+                <mrow> \amp = \boldv_i \amp (\text{def. of } T') </mrow>
+                <mrow> \amp = \id_V(\boldv_i) \amp (\text{def. of } \id_V</mrow>
+              </md>.
+              Since <m>T'\circ T</m> and <m>\id_V</m> agree on the basis <m>B</m> (<m>T'\circ T(\boldv_i)=\id_V(\boldv_i)</m> for all <m>1\leq i\leq n</m>), we conclude that <m>T'\circ T=\id V</m>. A very similar argument shows <m>T\circ T'=\id_W</m>. Having shown that <m>T'=T^{-1}</m>, we conclude that <m>T</m> is an isomorphism, and hence that <m>V</m> and <m>W</m> are isomorphic. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Assume that <m>T\colon V\rightarrow W</m> and that <m>\dim V=\dim W=n</m>. We will establish the cycle of implications (a)<m>\implies</m>(b)<m>\implies</m>(c)<m>\implies</m>(a).
+            </p>
+            <case>
+            <title>(a)<m>\implies </m>(b)</title>
+            <p>
+            By <xref ref="th_isom_null_im"/>, if <m>T</m> is an isomorphism, then <m>\NS T=\{\boldzero\}</m>. 
+            </p>
+            </case>
+            <case>
+            <title>(b)<m>\implies</m>(c)</title>
+            <p>
+            Using the rank-nullity theorem, if <m>\NS T=\{\boldzero\}</m>, then 
+            <md>
+              <mrow>\dim \im T \amp =\dim V-\dim \NS T</mrow>
+              <mrow> \amp = n-0 \amp (\NS T=\{\boldzero\})</mrow>
+              <mrow> \amp =n </mrow>
+            </md>.
+            Since <m>\im T\subseteq W</m> and <m>\dim \im T=\dim W=n</m>, we conclude using <xref ref="cor_dimension_subspace"/> that <m>\im T=W</m>.
+            </p>
+            </case>
+            <case>
+            <title>(c)<m>\implies</m>(a)</title>
+            <p>
+            Assume <m>\im T=W</m>. Again, using the rank-nullity theorem, we see that 
+            <md>
+              <mrow>\dim \NS T \amp =\dim V-\dim \im T</mrow>
+              <mrow> \amp = n-n \amp (\im T=W)</mrow>
+              <mrow> \amp = 0</mrow>
+            </md>.
+            It follows that <m>\NS T=\{\boldzero\}</m>, and hence, by <xref ref="th_isom_null_im"/>, that <m>T</m> is an isomorphism. 
+            </p>
+            </case>
+          </li>
+        </ol>
+      </p>
+    </proof>
   </theorem>
+  <p>
+    A shocking consequence of <xref ref="th_isomorphisms_finite_dim"/>, is that any two vector spaces of the same dimension are isomorphic: in particular, any <m>n</m>-dimensional vector space is isomorphic to <m>\R^n</m>! 
+  </p>
+  <corollary xml:id="cor_isom_Rn">
+    <title>Isomorphic to <m>\R^n</m></title>
+    <statement>
+      <p>
+        If <m>V</m> is a finite-dimensional vector space, then <m>V</m> is isomorphic to <m>\R^n</m>, where <m>n=\dim V</m>. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        The corollary follows immediately from (1) of <xref ref="th_isomorphisms_finite_dim"/> and the fact that <m>\dim \R^n=n</m>. 
+      </p>
+    </proof>
+  </corollary>
+  <p>
+    We have finally delivered on a promise made way back in <xref ref="c_Rn"/>: namely, we now see how any finite-dimensional vector space is isomorphic (and thus structurally equivalent) to one of our Euclidean spaces <m>\R^n</m>. There is something almost anticlimactic about <xref ref="cor_isom_Rn"/>. Having devoted much time and energy to introducing and studying various <q>exotic</q> finite-dimensional vector spaces, we now learn that they are essentially no different than our familiar spaces <m>\R^n</m>. Be not disappointed! By establishing an isomorphism between an exotic vector space <m>V</m> and a Euclidean space <m>\R^n</m>, we are able to transport to <m>V</m> all the wonderful computational techniques we have at our disposal in the <m>\R^n</m> context. Furthermore, it is still up to us to <em>choose</em> our isomorphism <m>T\colon V\rightarrow \R^n</m>, and as we will see, there is a subtle art to choosing the isomorphism <m>T</m> to suit our particular needs. 
+  </p>
+    </subsection>
+    <subsection xml:id="ss_invert_isom">
+      <title>Invertibility and isomorphisms</title>
+      <p>
+        We end this section by making a connection between invertible matrices and isomorphisms. It follows easily from <xref ref="th_isomorphisms_finite_dim"/> that a matrix <m>A\in M_{nn}</m> is invertible if and only if its corresponding matrix transformation <m>T_A\colon \R^n\rightarrow \R^n</m> is an isomorphism. Indeed, <m>T_A</m> is an isomorphism if and only if <m>\NS T_A=\{\boldzero\}</m>, if and only if <m>\NS A=\{\boldzero\}</m>, if and only if <m>A</m> is invertible. Furthermore, we see in this case that the inverse function of <m>T_A</m> is the matrix transformation <m>T_{A^{-1}}</m>: <ie/>, <m>(T_A)^{-1}=T_{A^{-1}}</m>. We add this statement to our ever-growing list of equivalent formulations of invertibility.  
+      </p>
+      <theorem xml:id="th_invertibility_with_isom">
+        <title>Invertibility theorem</title>
+        <statement>
+          <p>
+            Let <m>A</m> be an <m>n\times n</m> matrix.
+            The following statements are equivalent.
+          <ol cols="2">
+            <li xml:id="inv5_statement_def">
+              <p>
+                <m>A</m> is invertible.
+              </p>
+            </li>
+  
+            <li xml:id="inv5_statement_unique_sol">
+              <p>
+                The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a <em>unique solution</em> for any <m>\boldb\in \R^n</m>.
+              </p>
+            </li>
+            <li xml:id="inv5_statement_exists_sol">
+              <p>
+                The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a solution for any <m>\boldb\in \R^n</m>.
+              </p>
+            </li>
+            <li xml:id="inv5_statement_trivial_sol">
+              <p>
+                The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}</me> has a unique solution: namely, <m>\boldx=\boldzero_{n\times 1}</m>.
+              </p>
+            </li>
+            <li xml:id="inv5_statement_row_equiv">
+              <p>
+                <m>A</m> is row equivalent to <m>I_n</m>,
+                the <m>n\times n</m> identity matrix.
+              </p>
+            </li>
+            <li xml:id="inv5_statement_prod_elems">
+              <p>
+                <m>A</m> is a product of elementary matrices.
+              </p>
+            </li>
+            <li xml:id="inv5_statement_det">
+              <p>
+                <m>\det A\ne 0</m>.
+              </p>
+            </li>
+            <li xml:id="inv5_statement_nullspace">
+              <p>
+                <m>\NS A=\{\boldzero\}</m>
+              </p>
+            </li>
+            <li xml:id="inv5_statement_nullity">
+              <p>
+                <m>\nullity A=0</m>
+              </p>
+            </li>
+            <li xml:id="inv5_statement_rank">
+              <p>
+                <m>\rank A=n</m>
+              </p>
+            </li>
+            <li xml:id="inv5_statement_rowspace">
+              <p>
+                <m>\RS A=\R^n</m>
+              </p>
+            </li>
+            <li xml:id="inv5_statement_colspace">
+              <p>
+                <m>\CS A=\R^n</m>
+              </p>
+            </li>
+            <li xml:id="inv5_statement_cols">
+              <p>
+                Any of the following equivalent conditions about the set <m>S</m> of columns of <m>A</m> hold: <m>S</m> is a basis of <m>\R^n</m>; <m>S</m> spans <m>\R^n</m>; <m>S</m> is linearly independent.
+              </p>
+            </li>
+            <li xml:id="inv5_statement_rows">
+              <p>
+                Any of the following equivalent conditions about the set <m>S</m> of rows of <m>A</m> hold: <m>S</m> is a basis of <m>\R^n</m>; <m>S</m> spans <m>\R^n</m>; <m>S</m> is linearly independent.
+              </p>
+            </li>
+            <li xml:id="inv5_isom">
+              <p>
+                The matrix transformationn <m>T_A\colon \R^n\rightarrow \R^n</m> is an isomorphism. 
+              </p>
+            </li>
+          </ol>
+        </p>
+        </statement>
+      </theorem>
+ 
     </subsection>
 <xi:include href="./s_nullspace_image_isom_ex.ptx"/>
 
