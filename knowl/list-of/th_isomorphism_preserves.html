@@ -12,11 +12,11 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.19</span><span class="period">.</span><span class="space"> </span><span class="title">Properties preserved by isomorphisms.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.20</span><span class="period">.</span><span class="space"> </span><span class="title">Properties preserved by isomorphisms.</span>
 </h4>
 <div class="para logical">
 <div class="para">Let <span class="process-math">\(T\colon V\rightarrow W\)</span> be an isomorphism. The following properties hold:</div>
-<ol class="lower-roman" id="th_isomorphism_preserves-2-1-2">
+<ol class="decimal" id="th_isomorphism_preserves-2-1-2">
 <li><div class="para">
 <span class="process-math">\(S\subseteq V\)</span> is linearly independent if and only if <span class="process-math">\(T(S)\subseteq W\)</span> is linearly independent;</div></li>
 <li><div class="para">
@@ -27,6 +27,34 @@
 </div></li>
 <li><div class="para"><span class="process-math">\(\dim V=\dim W\text{.}\)</span></div></li>
 </ol>
-</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para"></div></article></details><span class="incontext"><a class="internal" href="s_nullspace_image_isom.html#th_isomorphism_preserves">in-context</a></span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">We prove <span class="process-math">\((1)\)</span> and leave the remaining statements as an exercise. Let <span class="process-math">\(T\colon V\rightarrow W\)</span> be an isomorphism, and let <span class="process-math">\(S\subseteq V \)</span> be a linearly independent set. Define</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_isom_inverse_linear.html">
+\begin{equation*}
+S'=T(S)=\{T(\boldv)\colon \boldv\in S\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Suppose</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_isom_inverse_linear.html">
+\begin{equation*}
+\boldw_1=T(\boldv_1), \boldw_2=T(\boldv_2),\dots, \boldw_n=T(\boldv_n)\
+\end{equation*}
+</div>
+<div class="para">are distinct elements of <span class="process-math">\(S'\text{,}\)</span> and suppose we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_isom_inverse_linear.html">
+\begin{equation*}
+c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots +c_nT(\boldv_n)=\boldzero\text{.}
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(T^{-1}\colon W\rightarrow V\)</span> be the inverse function of <span class="process-math">\(T\text{,}\)</span> and recall that <span class="process-math">\(T^{-1}\)</span> is linear by <a href="s_nullspace_image_isom.html#th_isom_inverse_linear" class="xref" data-knowl="./knowl/xref/th_isom_inverse_linear.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.16: Inverse of isomorphism is linear">Theorem 5.2.16</a>. Now applying <span class="process-math">\(T^{-1}\)</span> to both sides of the equation above and simplify</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_isom_inverse_linear.html">
+\begin{align*}
+T^{-1}(c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots +c_nT(\boldv_n))\amp =T^{-1}(\boldzero) \\
+c_1T^{-1}T(\boldv_1)+c_2T^{-1}(T(\boldv_2))+\cdots c_nT^{-1}T(\boldv_n) \amp = \boldzero \amp (T^{-1} \text{ is linear})\\
+c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n \amp =\boldzero \amp (T^{-1}\circ T=\id_V) \text{.}
+\end{align*}
+</div>
+<div class="para">Since <span class="process-math">\(S\)</span> is assumed to be linearly independent, we conclude that <span class="process-math">\(c_1=c_2=\cdots =c_n=0\text{,}\)</span> as desired.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_nullspace_image_isom.html#th_isomorphism_preserves">in-context</a></span>
 </body>
 </html>

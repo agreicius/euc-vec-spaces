@@ -14,6 +14,34 @@
 <article class="theorem theorem-like"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.16</span><span class="period">.</span><span class="space"> </span><span class="title">Inverse of isomorphism is linear.</span>
 </h4>
-<div class="para">Let <span class="process-math">\(T\colon V\rightarrow W\)</span> be an isomorphism. The inverse function <span class="process-math">\(T^{-1}\colon W\rightarrow V\)</span> is a linear transformation.</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">See <a href="s_nullspace_image_isom.html#ex_isom_inverse_linear" class="xref" data-knowl="./knowl/xref/ex_isom_inverse_linear.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 5.2.4.24">Exercise 5.2.4.24</a>.</div></article></details><span class="incontext"><a class="internal" href="s_nullspace_image_isom.html#th_isom_inverse_linear">in-context</a></span>
+<div class="para">Let <span class="process-math">\(T\colon V\rightarrow W\)</span> be an isomorphism. The inverse function <span class="process-math">\(T^{-1}\colon W\rightarrow V\)</span> is a linear transformation.</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Let <span class="process-math">\(T\colon V\rightarrow W\)</span> be an isomorphism, and let <span class="process-math">\(T^{-1}\colon W\rightarrow V\)</span> be its inverse function. We use the 1-step technique to show <span class="process-math">\(T^{-1}\)</span> is linear, but with a slight twist: given any <span class="process-math">\(c,d\in \R\)</span> and vectors <span class="process-math">\(\boldw_1,\boldw_2\in W\)</span> we will show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T\left(T^{-1}(c\boldw_1+d\boldw_2)\right)=T\left(cT^{-1}(\boldw_1)+dT^{-1}(\boldw_2)\right)\text{;}
+\end{equation*}
+</div>
+<div class="para">since <span class="process-math">\(T\)</span> is injective, it will then follow that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T^{-1}(c\boldw_1+d\boldw_2)=cT^{-1}(\boldw_1)+dT^{-1}(\boldw_2)\text{.}
+\end{equation*}
+</div>
+<div class="para">To this end, we compute</div>
+<div class="displaymath process-math">
+\begin{align*}
+T\left(T^{-1}(c\boldw_1+d\boldw_2)\right)\amp = c\boldw_1+d\boldw_2 \amp (T\circ T^{-1}=\id_W) \\
+T\left(cT^{-1}(\boldw_1)+dT^{-1}(\boldw_2)\right) \amp =cT(T^{-1}(\boldw_1))+dT(T^{-1}(\boldw_2)) \amp (T \text{ is linear}) \\
+\amp =c\boldw_1+d\boldw_2 \amp (T\circ T^{-1}=\id_W)\text{.}
+\end{align*}
+</div>
+<div class="para">Thus we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+T\left(T^{-1}(c\boldw_1+d\boldw_2)\right)=T\left(cT^{-1}(\boldw_1)+dT^{-1}(\boldw_2)\right)=c\boldw_1+d\boldw_2\text{,}
+\end{equation*}
+</div>
+<div class="para">as desired.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_nullspace_image_isom.html#th_isom_inverse_linear">in-context</a></span>
 </body>
 </html>
