@@ -119,14 +119,14 @@
       <ol>
         <li>
           <p>
-          Let <m>V=\R^3</m> and <m>B=(\bolde_1, \bolde_2, \bolde_3)</m>. For any <m>\boldv=(a,b,c)\in \R^3</m> we have <m>[\boldv]_{B}=(a,b,c)</m>, since <m>(a,b,c)=a\bolde_1+b\bolde_2+c\bolde_3</m>.
+          Consider the standard basis <m>B=(\bolde_1, \bolde_2, \bolde_3)</m> of <m>\R^3</m>. For any <m>\boldv=(a,b,c)\in \R^3</m> we have <m>[\boldv]_{B}=(a,b,c)</m>, since <m>(a,b,c)=a\bolde_1+b\bolde_2+c\bolde_3</m>.
           </p>
         </li>
         <li>
           <p>
-            Let <m>V=M_{22}</m> and <m>B=(E_{11}, E_{12}, E_{21}, E_{22})</m>. For any <m>A=\begin{amatrix}[rr]a\amp b\\ c\amp d \end{amatrix}</m> we have <m>[A]_B=(a,b,c,d)</m> since
+            Consider the standard basis <m>B=(E_{11}, E_{12}, E_{21}, E_{22})</m> of <m>M_{22}</m>. For any <m>A=\begin{bmatrix}a\amp b\\ c\amp d \end{bmatrix}</m> we have <m>[A]_B=(a,b,c,d)</m> since
             <me>
-              A=aE_{11}+bE_{12}+cE_{21}+dE_{22}
+              \underset{A}{\begin{bmatrix}a\amp b\\ c\amp d \end{bmatrix}}=a\underset{E_{11}}{\begin{bmatrix}1\amp 0 \\ 0\amp 0\end{bmatrix}}+b\underset{E_{12}}{\begin{bmatrix}0\amp 1 \\ 0\amp 0\end{bmatrix}}+c\underset{E_{21}}{\begin{bmatrix}0\amp 0 \\ 1\amp 0\end{bmatrix}}+d\underset{E_{22}}{\begin{bmatrix}0\amp 0 \\ 0\amp 1\end{bmatrix}}
             </me>.
           </p>
         </li>
@@ -143,7 +143,7 @@
       <ol>
         <li>
           <p>
-            Let <m>V=\R^3</m> and <m>B=(\bolde_2, \bolde_1, \bolde_3)</m>. Given <m>\boldv=(a,b,c)\in \R^3</m> we have <m>[\boldv]_B=(b,a,c)</m>, since
+            Consider the reordered basis <m>B=(\bolde_2, \bolde_1, \bolde_3)</m> of <m>\R^3</m>. Given <m>\boldv=(a,b,c)\in \R^3</m> we have <m>[\boldv]_B=(b,a,c)</m>, since
             <me>
             \boldv=b\bolde_2+a\bolde_1+c\bolde_3
             </me>.
@@ -151,9 +151,12 @@
         </li>
         <li>
           <p>
-            Let <m>P=P_3</m> and <m>B=(1,x,x^2, x^3)</m>. Given <m>p(x)=ax^3+bx^2+cx+d</m> we have <m>[p(x)]_B=(d, c, b, a)</m>, since
+            Consider the reordered basis <m>B=(E_{22},E_{21},E_{12},E_{11})</m> of <m>M_{22}</m>. Given <m>A=\begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}</m>, we have <m>[A]_B=(d,c,b,a)</m>, since 
             <me>
-              p(x)=(d)1+cx+bx^2+ax^3
+              \underset{A}{\begin{bmatrix}a\amp b\\ c\amp d \end{bmatrix}}=d\underset{E_{22}}{\begin{bmatrix}0\amp 0 \\ 0\amp 1\end{bmatrix}}+
+              c\underset{E_{21}}{\begin{bmatrix}0\amp 0 \\ 1\amp 0\end{bmatrix}}+
+              b\underset{E_{12}}{\begin{bmatrix}0\amp 1 \\ 0\amp 0\end{bmatrix}}+
+              a\underset{E_{22}}{\begin{bmatrix}1\amp 0 \\ 0\amp 0\end{bmatrix}}
             </me>.
           </p>
         </li>
@@ -170,12 +173,12 @@
       <ol>
         <li>
           <p>
-            Let <m>V=\R^2</m>, <m>B=((1,2),(1,1))</m>, and <m>\boldv=(3,3)</m>. Compute <m>[\boldv]_B</m>. More generally, compute <m>[(a,b)]_B</m> for an arbitrary <m>(a,b)\in \R^2</m>.
+            Let <m>V=\R^2</m>, <m>B=(\boldx_1=(1,2),\boldx_2=(1,1))</m>, and <m>\boldx=(3,3)</m>. Compute <m>[\boldx]_B</m>. More generally, compute <m>[(a,b)]_B</m> for an arbitrary <m>(a,b)\in \R^2</m>.
           </p>
         </li>
         <li>
           <p>
-          Let <m>V=P_2</m>, <m>B=(x^2+x+1, x^2-x, x^2-1)</m>, and <m>p(x)=x^2</m>. Compute <m>[p(x)]_B</m>. More generally, compute <m>[ax^2+bx+c]</m> for an arbitrary element <m>ax^2+bx+c\in P_2</m>.
+          Let <m>V=\R^3</m>, <m>B=(\boldx_1=(1,1,1), \boldx_2=(1,-1,0), \boldx_3=(1,0,-1))</m>, and <m>\boldx=(1,0,0)</m>. Compute <m>[\boldx]_B</m>. More generally, compute <m>[(a,b,c)]_B</m> for an arbitrary element <m>(a,b,c)\in \R^3</m>. 
           </p>
         </li>
       </ol>
@@ -194,9 +197,9 @@
             </me>.
             We conclude that
             <me>
-              [\boldv]_{B}=(0,3)
+              [\boldx]_{B}=(0,3)
             </me>.
-            More generally, to compute <m>[\boldv]_B</m> for an arbitrary <m>\boldv=(a,b)\in \R^2</m>, we must find the pair <m>(c_1,c_2)</m> satisfying <m>(a,b)=c_1(1,2)+c_2(1,1)</m>, or equivalently
+            More generally, to compute <m>[\boldx]_B</m> for an arbitrary <m>\boldx=(a,b)\in \R^2</m>, we must find the pair <m>(c_1,c_2)</m> satisfying <m>(a,b)=c_1(1,2)+c_2(1,1)</m>, or equivalently
             <me>
               \begin{linsys}{2}
                 c_1\amp +\amp c_2 \amp =\amp a\\
@@ -205,16 +208,16 @@
             </me>.
              The usual Gaussian elimination technique yields the unique solution <m>(c_1,c_2)=(-a+b,2a-b)</m>, and thus
              <me>
-               [\boldv]_B=(-a+b, 2a-b)
+               [\boldx]_B=(-a+b, 2a-b)
              </me>
-             for <m>\boldv=(a,b)</m>.
+             for <m>\boldx=(a,b)</m>.
           </p>
         </li>
         <li>
           <p>
-           To compute <m>[x^2]_B</m> we must find the unique triple <m>(c_1,c_2,c_3)</m> satisfying
+           To compute <m>[\boldx]_B</m> we must find the unique triple <m>(c_1,c_2,c_3)</m> satisfying
           <me>
-            x^2=c_1(x^2+x+1)+c_2(x^2-x)+c_3(x^2-1)
+            (1,0,0)=c_1(1,1,1)+c_2(1,-1,0)+c_3(1,0,-1)
           </me>.
           The equivalent linear system once we combine like terms and equate coefficients is
           <me>
@@ -226,25 +229,24 @@
           </me>.
           The unique solution to this system is <m>(c_1,c_2,c_3)=(1/3, 1/3, 1/3)</m>. We conclude
           <me>
-            [x^2]_B=\frac{1}{3}(1, 1, 1)
+            [\boldx]_B=\frac{1}{3}(1, 1, 1)
           </me>.
-          The same reasoning shows that more generally, given polynomial <m>p(x)=ax^2+bx+c</m>, we have
+          The same reasoning shows that more generally, given <m>\boldx=(a,b,c)</m>, we have
           <me>
-            [p(x)]_B=\frac{1}{3}(a+b+c, a-2b+c, a+b-2)
+            [\boldx]_B=\frac{1}{3}(a+b+c, a-2b+c, a+b-2)
           </me>.
           </p>
         </li>
       </ol>
     </solution>
   </example>
-  <paragraphs xml:id="ss_vid_eg_coordinatevec">
+  <example xml:id="ss_vid_eg_coordinatevec">
     <title>Video example: coordinate vectors</title>
     <figure xml:id="fig_vid_coordvecs">
-      <title>Video: coordinate vectors</title>
     <caption>Video: coordinate vectors</caption>
     <video xml:id="vid_coordvecs" youtube="QOIogczPF0c" />
     </figure>
-  </paragraphs>
+  </example>
    
 </subsection>
 <subsection xml:id="ss_coordinate_transformation">
