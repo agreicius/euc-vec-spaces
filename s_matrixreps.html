@@ -1605,7 +1605,7 @@ T(\bolde_1)\amp T(\bolde_2)\\
 c_1\\ c_2\\ \vdots \\ v_n
 \end{bmatrix} \\
 \amp=c_1[T(\boldv_1)]_{B'}+c_n[T(\boldv_n)]_{B'}+\cdots +c_n[T(\boldv_n)]_{B'} \amp (\text{column method})\\
-\amp = [c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots +c_nT(\boldv_n)]_{B'} \amp (\knowl{./knowl/xref/th_coordinates.html}{\text{5.3.10}})\\
+\amp = [c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots +c_nT(\boldv_n)]_{B'} \amp (\knowl{./knowl/xref/th_coordinates.html}{\text{5.3.11}})\\
 \amp=[T(c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n)]_{B'} \amp (T \text{ is linear})\\
 \amp =[T(\boldv)]_{B'}\text{,}
 \end{align*}
@@ -1644,7 +1644,7 @@ A[\boldv]_B=[T(\boldv)]_{B'}
 </div>
 <div class="para">for all <span class="process-math">\(\boldv\in V\text{.}\)</span> Since there is only one such matrix, we must have <span class="process-math">\(A=[T]_B^{B'}\)</span> in this case.</div>
 </div></article><div class="para" id="ss_matrixreps_models-5">Let <span class="process-math">\(T\colon V\rightarrow W\text{,}\)</span> <span class="process-math">\(B\text{,}\)</span> and <span class="process-math">\(B'\)</span> be as in <a href="s_matrixreps.html#th_matrixrep" class="xref" data-knowl="./knowl/xref/th_matrixrep.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.4.6: Defining property of matrix representation">Theorem 5.4.6</a>. The defining property <a href="s_matrixreps.html#eq_matrixrep_prop" class="xref" data-knowl="./knowl/xref/eq_matrixrep_prop.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.4.2">(5.4.2)</a> of <span class="process-math">\([T]_B^{B'}\)</span> can be summarized by saying that the following diagram is <em class="emphasis">commutative</em>.</div>
-<figure class="figure figure-like" id="fig_comm_diag"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="generated/latex-image/im_comm_diag.svg" role="img" class="contained"></div>
+<figure class="figure figure-like" id="fig_comm_diag"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/im_comm_diag.svg" role="img" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.4.8<span class="period">.</span></span><span class="space"> </span>Commutative diagram for <span class="process-math">\([T]_B^{B'}\)</span></figcaption></figure><div class="para" id="ss_matrixreps_models-7">The diagram being commutative here means that starting with an element <span class="process-math">\(\boldv\in V\)</span> in the top left of the diagram, whether we travel to the bottom right of the diagram either by first applying <span class="process-math">\(T\)</span> and then applying <span class="process-math">\([\hspace{5pt}]_{B'}\)</span> (“go right, then down”), or else by first applying <span class="process-math">\([\hspace{5pt}]_B\)</span> and then applying <span class="process-math">\([T]_B^{B'}\)</span> (“go down, then right”), we get the same result! (The bottom map should technically be labeled <span class="process-math">\(T_A\text{,}\)</span> where <span class="process-math">\(A=[T]_B^{B'}\text{,}\)</span> but this would detract from the elegance of the diagram.)</div>
 <div class="para" id="ss_matrixreps_models-8">Besides commutativity, the other import feature of <a href="s_matrixreps.html#fig_comm_diag" class="xref" data-knowl="./knowl/xref/fig_comm_diag.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 5.4.8: Commutative diagram for [T]_B^{B'}">Figure 5.4.8</a> is that the two vertical coordinate transformations identify the domain and codomain of <span class="process-math">\(T\)</span> with the familiar spaces <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(\R^m\)</span> in a one-to-one manner. (Using the language of <a href="s_nullspace_image_isom.html" class="internal" title="Section 5.2: Null space, image, and isomophisms">Section 5.2</a>, these maps are isomorphisms.) These properties together allow us to translate any linear algebraic question about <span class="process-math">\(T\)</span> to an equivalent question about the matrix <span class="process-math">\(A\text{,}\)</span> as the following theorem indicates.</div>
 <article class="theorem theorem-like" id="th_matrixreps_model"><h4 class="heading">
@@ -1671,7 +1671,7 @@ A[\boldv]_B=[T(\boldv)]_{B'}
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_coordinates.html ./knowl/xref/eq_matrixrep_prop.html" id="th_matrixreps_model-3-1-2-1">
 \begin{align*}
 \boldv\in \NS T \amp\iff T(\boldv)=\boldzero \\
-\amp\iff [T(\boldv)]_{B'}=[\boldzero]_{B'} \amp (\knowl{./knowl/xref/th_coordinates.html}{\text{Theorem 5.3.10}}, (2))\\
+\amp\iff [T(\boldv)]_{B'}=[\boldzero]_{B'} \amp (\knowl{./knowl/xref/th_coordinates.html}{\text{Theorem 5.3.11}}, (2))\\
 \amp \iff [T]_{B}^{B'}[\boldv]_B=\boldzero \amp (\knowl{./knowl/xref/eq_matrixrep_prop.html}{\text{(5.4.2)}})\\
 \amp [\boldv]_B\in\NS A \amp (A=[T]_B^{B'}) \text{.}
 \end{align*}
@@ -1681,9 +1681,9 @@ A[\boldv]_B=[T(\boldv)]_{B'}
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_coordinates.html ./knowl/xref/eq_matrixrep_prop.html ./knowl/xref/th_coordinates.html" id="th_matrixreps_model-3-2-2-1">
 \begin{align*}
 \boldw\in \im T \amp\iff \boldw=T(\boldv) \text{ for some } \boldv\in V \\
-\amp\iff [\boldw]_{B'}=[T(\boldv)]_{B'} \text{ for some } \boldv \in V\amp (\knowl{./knowl/xref/th_coordinates.html}{\text{Theorem 5.3.10}}-(2)) \\
+\amp\iff [\boldw]_{B'}=[T(\boldv)]_{B'} \text{ for some } \boldv \in V\amp (\knowl{./knowl/xref/th_coordinates.html}{\text{Theorem 5.3.11}}-(2)) \\
 \amp\iff [\boldw]_{B'}=[T]_{B}^{B'}[\boldv]_B \text{ for some } \boldv\in V \amp (\knowl{./knowl/xref/eq_matrixrep_prop.html}{\text{(5.4.2)}}) \\
-\amp\iff [\boldw]_{B'}=A\boldx \text{ for some } \boldx\in \R^n  \amp (A=[T]_B^{B'}, \knowl{./knowl/xref/th_coordinates.html}{\text{Theorem 5.3.10}}-(3))\\
+\amp\iff [\boldw]_{B'}=A\boldx \text{ for some } \boldx\in \R^n  \amp (A=[T]_B^{B'}, \knowl{./knowl/xref/th_coordinates.html}{\text{Theorem 5.3.11}}-(3))\\
 \amp \iff [\boldw]_{B'}\in \CS A\text{.}
 \end{align*}
 </div>
@@ -1693,7 +1693,7 @@ A[\boldv]_B=[T(\boldv)]_{B'}
 \CS A=\im T_A=\{\boldb\in \R^m\colon \boldb=A\boldx \text{ for some } \boldx\in \R^n\}\text{.}
 \end{equation*}
 </div>
-</div></article></details> <details id="th_matrixreps_model-3-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="title">Proof (3)-(4).</span></h5></summary><article class="hiddenproof knowl__content"> <div class="para" id="th_matrixreps_model-3-3-2">These now follow from (1)-(2) and statement (4) of <a href="s_coordinatevectors.html#th_coordinates" class="xref" data-knowl="./knowl/xref/th_coordinates.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.10: Coordinate vector transformation">Theorem 5.3.10</a>.</div></article></details></article></details><article class="example example-like" id="eg_matrixreps_derivative_contd"><h4 class="heading">
+</div></article></details> <details id="th_matrixreps_model-3-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="title">Proof (3)-(4).</span></h5></summary><article class="hiddenproof knowl__content"> <div class="para" id="th_matrixreps_model-3-3-2">These now follow from (1)-(2) and statement (4) of <a href="s_coordinatevectors.html#th_coordinates" class="xref" data-knowl="./knowl/xref/th_coordinates.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.11: Coordinate vector transformation">Theorem 5.3.11</a>.</div></article></details></article></details><article class="example example-like" id="eg_matrixreps_derivative_contd"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.10</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="eg_matrixreps_derivative_contd-1-1">

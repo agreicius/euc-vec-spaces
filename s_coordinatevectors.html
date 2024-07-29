@@ -1512,13 +1512,13 @@ B_5 \amp =(\bolde_3, \bolde_1, \bolde_2) \amp B_6\amp =(\bolde_3, \bolde_2, \bol
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Standard bases.</span>
 </h4>
 <div class="para" id="eg_coordinatevector_standard-2-1">Computing coordinate vectors relative to one of our standard ordered bases for <span class="process-math">\(\R^n\text{,}\)</span> <span class="process-math">\(M_{mn}\text{,}\)</span> or <span class="process-math">\(P_{n}\)</span> amounts to just listing the coefficients or entries used to specify the given vector. The examples below serve to illustrate the general method in this setting.</div> <ol class="decimal" id="eg_coordinatevector_standard-2-2">
-<li id="eg_coordinatevector_standard-2-2-1"><div class="para" id="eg_coordinatevector_standard-2-2-1-1">Let <span class="process-math">\(V=\R^3\)</span> and <span class="process-math">\(B=(\bolde_1, \bolde_2, \bolde_3)\text{.}\)</span> For any <span class="process-math">\(\boldv=(a,b,c)\in \R^3\)</span> we have <span class="process-math">\([\boldv]_{B}=(a,b,c)\text{,}\)</span> since <span class="process-math">\((a,b,c)=a\bolde_1+b\bolde_2+c\bolde_3\text{.}\)</span>
+<li id="eg_coordinatevector_standard-2-2-1"><div class="para" id="eg_coordinatevector_standard-2-2-1-1">Consider the standard basis <span class="process-math">\(B=(\bolde_1, \bolde_2, \bolde_3)\)</span> of <span class="process-math">\(\R^3\text{.}\)</span> For any <span class="process-math">\(\boldv=(a,b,c)\in \R^3\)</span> we have <span class="process-math">\([\boldv]_{B}=(a,b,c)\text{,}\)</span> since <span class="process-math">\((a,b,c)=a\bolde_1+b\bolde_2+c\bolde_3\text{.}\)</span>
 </div></li>
 <li id="eg_coordinatevector_standard-2-2-2"><div class="para logical" id="eg_coordinatevector_standard-2-2-2-1">
-<div class="para">Let <span class="process-math">\(V=M_{22}\)</span> and <span class="process-math">\(B=(E_{11}, E_{12}, E_{21}, E_{22})\text{.}\)</span> For any <span class="process-math">\(A=\begin{amatrix}[rr]a\amp b\\ c\amp d \end{amatrix}\)</span> we have <span class="process-math">\([A]_B=(a,b,c,d)\)</span> since</div>
+<div class="para">Consider the standard basis <span class="process-math">\(B=(E_{11}, E_{12}, E_{21}, E_{22})\)</span> of <span class="process-math">\(M_{22}\text{.}\)</span> For any <span class="process-math">\(A=\begin{bmatrix}a\amp b\\ c\amp d \end{bmatrix}\)</span> we have <span class="process-math">\([A]_B=(a,b,c,d)\)</span> since</div>
 <div class="displaymath process-math">
 \begin{equation*}
-A=aE_{11}+bE_{12}+cE_{21}+dE_{22}\text{.}
+\underset{A}{\begin{bmatrix}a\amp b\\ c\amp d \end{bmatrix}}=a\underset{E_{11}}{\begin{bmatrix}1\amp 0 \\ 0\amp 0\end{bmatrix}}+b\underset{E_{12}}{\begin{bmatrix}0\amp 1 \\ 0\amp 0\end{bmatrix}}+c\underset{E_{21}}{\begin{bmatrix}0\amp 0 \\ 1\amp 0\end{bmatrix}}+d\underset{E_{22}}{\begin{bmatrix}0\amp 0 \\ 0\amp 1\end{bmatrix}}\text{.}
 \end{equation*}
 </div>
 </div></li>
@@ -1527,7 +1527,7 @@ A=aE_{11}+bE_{12}+cE_{21}+dE_{22}\text{.}
 </h4>
 <div class="para" id="ss_coordinate_vectors-10-2-1">If we choose an alternate ordering of one of the standard ordered bases, the entries of the coordinate vector are reordered accordingly, as illustrated by the examples below.</div> <ol class="decimal" id="ss_coordinate_vectors-10-2-2">
 <li id="ss_coordinate_vectors-10-2-2-1"><div class="para logical" id="ss_coordinate_vectors-10-2-2-1-1">
-<div class="para">Let <span class="process-math">\(V=\R^3\)</span> and <span class="process-math">\(B=(\bolde_2, \bolde_1, \bolde_3)\text{.}\)</span> Given <span class="process-math">\(\boldv=(a,b,c)\in \R^3\)</span> we have <span class="process-math">\([\boldv]_B=(b,a,c)\text{,}\)</span> since</div>
+<div class="para">Consider the reordered basis <span class="process-math">\(B=(\bolde_2, \bolde_1, \bolde_3)\)</span> of <span class="process-math">\(\R^3\text{.}\)</span> Given <span class="process-math">\(\boldv=(a,b,c)\in \R^3\)</span> we have <span class="process-math">\([\boldv]_B=(b,a,c)\text{,}\)</span> since</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \boldv=b\bolde_2+a\bolde_1+c\bolde_3\text{.}
@@ -1535,10 +1535,13 @@ A=aE_{11}+bE_{12}+cE_{21}+dE_{22}\text{.}
 </div>
 </div></li>
 <li id="ss_coordinate_vectors-10-2-2-2"><div class="para logical" id="ss_coordinate_vectors-10-2-2-2-1">
-<div class="para">Let <span class="process-math">\(P=P_3\)</span> and <span class="process-math">\(B=(1,x,x^2, x^3)\text{.}\)</span> Given <span class="process-math">\(p(x)=ax^3+bx^2+cx+d\)</span> we have <span class="process-math">\([p(x)]_B=(d, c, b, a)\text{,}\)</span> since</div>
+<div class="para">Consider the reordered basis <span class="process-math">\(B=(E_{22},E_{21},E_{12},E_{11})\)</span> of <span class="process-math">\(M_{22}\text{.}\)</span> Given <span class="process-math">\(A=\begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}\text{,}\)</span> we have <span class="process-math">\([A]_B=(d,c,b,a)\text{,}\)</span> since</div>
 <div class="displaymath process-math">
 \begin{equation*}
-p(x)=(d)1+cx+bx^2+ax^3\text{.}
+\underset{A}{\begin{bmatrix}a\amp b\\ c\amp d \end{bmatrix}}=d\underset{E_{22}}{\begin{bmatrix}0\amp 0 \\ 0\amp 1\end{bmatrix}}+
+c\underset{E_{21}}{\begin{bmatrix}0\amp 0 \\ 1\amp 0\end{bmatrix}}+
+b\underset{E_{12}}{\begin{bmatrix}0\amp 1 \\ 0\amp 0\end{bmatrix}}+
+a\underset{E_{22}}{\begin{bmatrix}1\amp 0 \\ 0\amp 0\end{bmatrix}}\text{.}
 \end{equation*}
 </div>
 </div></li>
@@ -1546,9 +1549,9 @@ p(x)=(d)1+cx+bx^2+ax^3\text{.}
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Nonstandard bases.</span>
 </h4>
 <div class="para" id="ss_coordinate_vectors-11-2-1">For a nonstandard ordered basis, we compute coordinate vectors by solving a relevant system of linear equations, as the examples below illustrate.</div> <ol class="decimal" id="ss_coordinate_vectors-11-2-2">
-<li id="ss_coordinate_vectors-11-2-2-1"><div class="para" id="ss_coordinate_vectors-11-2-2-1-1">Let <span class="process-math">\(V=\R^2\text{,}\)</span> <span class="process-math">\(B=((1,2),(1,1))\text{,}\)</span> and <span class="process-math">\(\boldv=(3,3)\text{.}\)</span> Compute <span class="process-math">\([\boldv]_B\text{.}\)</span> More generally, compute <span class="process-math">\([(a,b)]_B\)</span> for an arbitrary <span class="process-math">\((a,b)\in \R^2\text{.}\)</span>
+<li id="ss_coordinate_vectors-11-2-2-1"><div class="para" id="ss_coordinate_vectors-11-2-2-1-1">Let <span class="process-math">\(V=\R^2\text{,}\)</span> <span class="process-math">\(B=(\boldx_1=(1,2),\boldx_2=(1,1))\text{,}\)</span> and <span class="process-math">\(\boldx=(3,3)\text{.}\)</span> Compute <span class="process-math">\([\boldx]_B\text{.}\)</span> More generally, compute <span class="process-math">\([(a,b)]_B\)</span> for an arbitrary <span class="process-math">\((a,b)\in \R^2\text{.}\)</span>
 </div></li>
-<li id="ss_coordinate_vectors-11-2-2-2"><div class="para" id="ss_coordinate_vectors-11-2-2-2-1">Let <span class="process-math">\(V=P_2\text{,}\)</span> <span class="process-math">\(B=(x^2+x+1, x^2-x, x^2-1)\text{,}\)</span> and <span class="process-math">\(p(x)=x^2\text{.}\)</span> Compute <span class="process-math">\([p(x)]_B\text{.}\)</span> More generally, compute <span class="process-math">\([ax^2+bx+c]\)</span> for an arbitrary element <span class="process-math">\(ax^2+bx+c\in P_2\text{.}\)</span>
+<li id="ss_coordinate_vectors-11-2-2-2"><div class="para" id="ss_coordinate_vectors-11-2-2-2-1">Let <span class="process-math">\(V=\R^3\text{,}\)</span> <span class="process-math">\(B=(\boldx_1=(1,1,1), \boldx_2=(1,-1,0), \boldx_3=(1,0,-1))\text{,}\)</span> and <span class="process-math">\(\boldx=(1,0,0)\text{.}\)</span> Compute <span class="process-math">\([\boldx]_B\text{.}\)</span> More generally, compute <span class="process-math">\([(a,b,c)]_B\)</span> for an arbitrary element <span class="process-math">\((a,b,c)\in \R^3\text{.}\)</span>
 </div></li>
 </ol>
 <div class="solutions"><details id="ss_coordinate_vectors-11-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><ol class="decimal" id="ss_coordinate_vectors-11-3-1">
@@ -1568,10 +1571,10 @@ p(x)=(d)1+cx+bx^2+ax^3\text{.}
 <div class="para">We conclude that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_coor_vec.html">
 \begin{equation*}
-[\boldv]_{B}=(0,3)\text{.}
+[\boldx]_{B}=(0,3)\text{.}
 \end{equation*}
 </div>
-<div class="para">More generally, to compute <span class="process-math">\([\boldv]_B\)</span> for an arbitrary <span class="process-math">\(\boldv=(a,b)\in \R^2\text{,}\)</span> we must find the pair <span class="process-math">\((c_1,c_2)\)</span> satisfying <span class="process-math">\((a,b)=c_1(1,2)+c_2(1,1)\text{,}\)</span> or equivalently</div>
+<div class="para">More generally, to compute <span class="process-math">\([\boldx]_B\)</span> for an arbitrary <span class="process-math">\(\boldx=(a,b)\in \R^2\text{,}\)</span> we must find the pair <span class="process-math">\((c_1,c_2)\)</span> satisfying <span class="process-math">\((a,b)=c_1(1,2)+c_2(1,1)\text{,}\)</span> or equivalently</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_coor_vec.html">
 \begin{equation*}
 \begin{linsys}{2}
@@ -1583,17 +1586,17 @@ c_1\amp +\amp c_2 \amp =\amp a\\
 <div class="para">The usual Gaussian elimination technique yields the unique solution <span class="process-math">\((c_1,c_2)=(-a+b,2a-b)\text{,}\)</span> and thus</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_coor_vec.html">
 \begin{equation*}
-[\boldv]_B=(-a+b, 2a-b)
+[\boldx]_B=(-a+b, 2a-b)
 \end{equation*}
 </div>
-<div class="para">for <span class="process-math">\(\boldv=(a,b)\text{.}\)</span>
+<div class="para">for <span class="process-math">\(\boldx=(a,b)\text{.}\)</span>
 </div>
 </div></li>
 <li id="ss_coordinate_vectors-11-3-1-2"><div class="para logical" id="ss_coordinate_vectors-11-3-1-2-1">
-<div class="para">To compute <span class="process-math">\([x^2]_B\)</span> we must find the unique triple <span class="process-math">\((c_1,c_2,c_3)\)</span> satisfying</div>
+<div class="para">To compute <span class="process-math">\([\boldx]_B\)</span> we must find the unique triple <span class="process-math">\((c_1,c_2,c_3)\)</span> satisfying</div>
 <div class="displaymath process-math">
 \begin{equation*}
-x^2=c_1(x^2+x+1)+c_2(x^2-x)+c_3(x^2-1)\text{.}
+(1,0,0)=c_1(1,1,1)+c_2(1,-1,0)+c_3(1,0,-1)\text{.}
 \end{equation*}
 </div>
 <div class="para">The equivalent linear system once we combine like terms and equate coefficients is</div>
@@ -1609,18 +1612,20 @@ c_1\amp \amp \amp -\amp c_3\amp =\amp 0\\
 <div class="para">The unique solution to this system is <span class="process-math">\((c_1,c_2,c_3)=(1/3, 1/3, 1/3)\text{.}\)</span> We conclude</div>
 <div class="displaymath process-math">
 \begin{equation*}
-[x^2]_B=\frac{1}{3}(1, 1, 1)\text{.}
+[\boldx]_B=\frac{1}{3}(1, 1, 1)\text{.}
 \end{equation*}
 </div>
-<div class="para">The same reasoning shows that more generally, given polynomial <span class="process-math">\(p(x)=ax^2+bx+c\text{,}\)</span> we have</div>
+<div class="para">The same reasoning shows that more generally, given <span class="process-math">\(\boldx=(a,b,c)\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
-[p(x)]_B=\frac{1}{3}(a+b+c, a-2b+c, a+b-2)\text{.}
+[\boldx]_B=\frac{1}{3}(a+b+c, a-2b+c, a+b-2)\text{.}
 \end{equation*}
 </div>
 </div></li>
-</ol></div></details></div></article><section class="paragraphs" id="ss_vid_eg_coordinatevec"><h4 class="heading"><span class="title">Video example: coordinate vectors.</span></h4> <figure class="figure figure-like" id="fig_vid_coordvecs"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/QOIogczPF0c?&amp;modestbranding=1&amp;rel=0" id="vid_coordvecs"></iframe></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.8<span class="period">.</span></span><span class="space"> </span>Video: coordinate vectors</figcaption></figure></section></section><section class="subsection" id="ss_coordinate_transformation"><h3 class="heading hide-type">
+</ol></div></details></div></article><article class="example example-like" id="ss_vid_eg_coordinatevec"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Video example: coordinate vectors.</span>
+</h4> <figure class="figure figure-like" id="fig_vid_coordvecs"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/QOIogczPF0c?&amp;modestbranding=1&amp;rel=0" id="vid_coordvecs"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.3.9<span class="period">.</span></span><span class="space"> </span>Video: coordinate vectors</figcaption></figure></article></section><section class="subsection" id="ss_coordinate_transformation"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.3.2</span><span class="space"> </span><span class="title">Coordinate vector transformation</span>
 </h3>
 <div class="para logical" id="ss_coordinate_transformation-2">
@@ -1640,11 +1645,11 @@ c_1\amp \amp \amp -\amp c_3\amp =\amp 0\\
 <div class="para">is a one-to-one correspondence between <span class="process-math">\(V\)</span> and <span class="process-math">\(\R^n\text{,}\)</span> allowing us to identify the vectors <span class="process-math">\(\boldv\in V\)</span> with <span class="process-math">\(n\)</span>-tuples in <span class="process-math">\(\R^n\text{.}\)</span> In the language of <a href="s_nullspace_image_isom.html" class="internal" title="Section 5.2: Null space, image, and isomophisms">Section 5.2</a>, these two facts taken together mean that the coordinate vector transformation is an <a href="s_nullspace_image_isom.html#d_isomorphism" class="xref" data-knowl="./knowl/xref/d_isomorphism.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 5.2.15: Isomorphism">isomorphism</a> between <span class="process-math">\(V\)</span> and <span class="process-math">\(\R^n\text{.}\)</span> Practically speaking, this means any question regarding the vector space structure of <span class="process-math">\(V\)</span> can be translated to an equivalent question about the vector space <span class="process-math">\(\R^n\text{.}\)</span> As a result, given any “exotic” vector space <span class="process-math">\(V\)</span> of finite dimension, once we choose an ordered basis <span class="process-math">\(B\)</span> of <span class="process-math">\(V\text{,}\)</span> questions about <span class="process-math">\(V\)</span> can be answered by taking coordinate vectors with respect to <span class="process-math">\(B\)</span> and answering the corresponding question in the more familiar setting of <span class="process-math">\(\R^n\text{,}\)</span> where we have a wealth of computational procedures at our disposal. We memorialize this principle as a mantra.</div>
 </div>
 <article class="principle theorem-like" id="mantra_coordinate_vectors"><h4 class="heading">
-<span class="type">Mantra</span><span class="space"> </span><span class="codenumber">5.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Coordinate vector mantra.</span>
+<span class="type">Mantra</span><span class="space"> </span><span class="codenumber">5.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Coordinate vector mantra.</span>
 </h4>
 <div class="para" id="mantra_coordinate_vectors-2-1">Coordinate vectors allow us to treat any <span class="process-math">\(n\)</span>-dimensional vector space as if it were <span class="process-math">\(\R^n\text{.}\)</span>
 </div></article><article class="theorem theorem-like" id="th_coordinates"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Coordinate vector transformation.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.3.11</span><span class="period">.</span><span class="space"> </span><span class="title">Coordinate vector transformation.</span>
 </h4>
 <div class="para logical" id="th_coordinates-2-1">
 <div class="para">Let <span class="process-math">\(B=(\boldv_1,\boldv_2,\dots, \boldv_n)\)</span> be an ordered basis for the vector space <span class="process-math">\(V\text{.}\)</span> The function</div>
@@ -1699,7 +1704,7 @@ T(\boldv)=[\boldv]_{B}=(c_1,c_2,\dots, c_n)\text{.}
 <div class="para">This shows <span class="process-math">\(T\)</span> is surjective, and hence an isomorphism.</div>
 </div></article></details><div class="para" id="ss_coordinate_transformation-6">Knowing the that the coordinate vector transformation is an isomorphism, <a href="s_nullspace_image_isom.html#th_isomorphism_preserves" class="xref" data-knowl="./knowl/xref/th_isomorphism_preserves.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.20: Properties preserved by isomorphisms">Theorem 5.2.20</a> allows us to translate any linear-algebraic question about a finite-dimensional vector space <span class="process-math">\(V\)</span> into a corresponding question about <span class="process-math">\(\R^n\)</span> for some <span class="process-math">\(n\text{.}\)</span> As an illustration of this principle, we describe a general method of contracting and extending subsets of a general finite-dimensional vector space <span class="process-math">\(V\)</span> to bases. The method translates the problem into <span class="process-math">\(\R^n\)</span> using the coordinate transformation, applies the relevant algorithm available to us for subsets of <span class="process-math">\(\R^n\text{,}\)</span> and then “lifts” the results back to <span class="process-math">\(V\)</span> using the coordinate transformation again.</div>
 <article class="algorithm theorem-like" id="proc_contract_extend_general"><h4 class="heading">
-<span class="type">Procedure</span><span class="space"> </span><span class="codenumber">5.3.11</span><span class="period">.</span><span class="space"> </span><span class="title">Contracting and extending to bases in general spaces.</span>
+<span class="type">Procedure</span><span class="space"> </span><span class="codenumber">5.3.12</span><span class="period">.</span><span class="space"> </span><span class="title">Contracting and extending to bases in general spaces.</span>
 </h4>
 <div class="para" id="proc_contract_extend_general-2-1">Let <span class="process-math">\(V\)</span> be a vector space of dimension <span class="process-math">\(n\text{,}\)</span> and let <span class="process-math">\(S=\{\boldv_1, \boldv_2,\dots, \boldv_r\}\subseteq V\text{.}\)</span>
 </div> <dl class="description-list">
@@ -1723,12 +1728,12 @@ T(\boldv)=[\boldv]_{B}=(c_1,c_2,\dots, c_n)\text{.}
 </div></li>
 <li id="proc_contract_extend_general-2-2-2-3-2"><div class="para" id="proc_contract_extend_general-2-2-2-3-2-1">Use the relevant procedure of <a href="s_rank_nullity.html#proc_contract_extend" class="xref" data-knowl="./knowl/xref/proc_contract_extend.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.5.18: Contracting and extending to bases of \R^n">Procedure 4.5.18</a> to extend <span class="process-math">\(S'\)</span> to a basis <span class="process-math">\(T'=\{[\boldv_1]_B, [\boldv_2]_B, \dots, [\boldv_r]_B, \boldx_{r+1}, \dots, \boldx_n \}\)</span> of <span class="process-math">\(\R^n\text{.}\)</span>
 </div></li>
-<li id="proc_contract_extend_general-2-2-2-3-3"><div class="para" id="proc_contract_extend_general-2-2-2-3-3-1">By (3) of <a href="s_coordinatevectors.html#th_coordinates" class="xref" data-knowl="./knowl/xref/th_coordinates.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.10: Coordinate vector transformation">Theorem 5.3.10</a>, for all <span class="process-math">\(r+1\leq i\leq n\)</span> there are vectors <span class="process-math">\(\boldv_{i}\in V\)</span> satisfying <span class="process-math">\([\boldv_i]_B=\boldx_i\text{.}\)</span> The set <span class="process-math">\(T=\{\boldv_1,\dots, \boldv_r,\boldv_{r+1},\dots,\boldv_n\}\)</span> is a basis of <span class="process-math">\(V\)</span> containing <span class="process-math">\(S\text{.}\)</span>
+<li id="proc_contract_extend_general-2-2-2-3-3"><div class="para" id="proc_contract_extend_general-2-2-2-3-3-1">By (3) of <a href="s_coordinatevectors.html#th_coordinates" class="xref" data-knowl="./knowl/xref/th_coordinates.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.11: Coordinate vector transformation">Theorem 5.3.11</a>, for all <span class="process-math">\(r+1\leq i\leq n\)</span> there are vectors <span class="process-math">\(\boldv_{i}\in V\)</span> satisfying <span class="process-math">\([\boldv_i]_B=\boldx_i\text{.}\)</span> The set <span class="process-math">\(T=\{\boldv_1,\dots, \boldv_r,\boldv_{r+1},\dots,\boldv_n\}\)</span> is a basis of <span class="process-math">\(V\)</span> containing <span class="process-math">\(S\text{.}\)</span>
 </div></li>
 </ol>
 </dd>
 </dl></article><article class="example example-like" id="ss_coordinate_transformation-8"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.12</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.13</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="ss_coordinate_transformation-8-1-1">
 <div class="para">The set</div>
@@ -1911,18 +1916,18 @@ a\amp b\\ c\amp d
 </ol></article><article class="exercise exercise-like" id="s_coordinatevectors_ex-5"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
 <div class="para" id="s_coordinatevectors_ex-5-1-1">Let <span class="process-math">\(S=\{p_1(x)=2x^2+x+1, p_2(x)=x-1, p_3(x)=x^2+1, p_4(x)=x^2-x-1\}\subseteq P_2 \text{.}\)</span>
 </div> <ol class="lower-alpha" id="s_coordinatevectors_ex-5-1-2">
-<li id="s_coordinatevectors_ex-5-1-2-1"><div class="para" id="s_coordinatevectors_ex-5-1-2-1-1">Use one of the techniques described in <a href="s_coordinatevectors.html#proc_contract_extend_general" class="xref" data-knowl="./knowl/xref/proc_contract_extend_general.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 5.3.11: Contracting and extending to bases in general spaces">Procedure 5.3.11</a> to contract <span class="process-math">\(S\)</span> to a basis of <span class="process-math">\(W=\Span S\text{.}\)</span> To begin, choose your favorite ordered basis of <span class="process-math">\(P_2\text{.}\)</span>
+<li id="s_coordinatevectors_ex-5-1-2-1"><div class="para" id="s_coordinatevectors_ex-5-1-2-1-1">Use one of the techniques described in <a href="s_coordinatevectors.html#proc_contract_extend_general" class="xref" data-knowl="./knowl/xref/proc_contract_extend_general.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 5.3.12: Contracting and extending to bases in general spaces">Procedure 5.3.12</a> to contract <span class="process-math">\(S\)</span> to a basis of <span class="process-math">\(W=\Span S\text{.}\)</span> To begin, choose your favorite ordered basis of <span class="process-math">\(P_2\text{.}\)</span>
 </div></li>
 <li id="s_coordinatevectors_ex-5-1-2-2"><div class="para" id="s_coordinatevectors_ex-5-1-2-2-1">Use your result in (a) to describe <span class="process-math">\(W\)</span> is as simple a manner as possible.</div></li>
 </ol></article><article class="exercise exercise-like" id="s_coordinatevectors_ex-6"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
 <div class="para" id="s_coordinatevectors_ex-6-1-1">Let <span class="process-math">\(S=\{ p_1=x^3+1, p_2=2x^3+x+1, p_3=3x^3+2x+1, p_4=2x^3+x^2+x+1\}\subseteq P_3\text{.}\)</span>
 </div> <ol class="lower-alpha" id="s_coordinatevectors_ex-6-1-2">
-<li id="s_coordinatevectors_ex-6-1-2-1"><div class="para" id="s_coordinatevectors_ex-6-1-2-1-1">Use one of the techniques described in <a href="s_coordinatevectors.html#proc_contract_extend_general" class="xref" data-knowl="./knowl/xref/proc_contract_extend_general.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 5.3.11: Contracting and extending to bases in general spaces">Procedure 5.3.11</a> to contract <span class="process-math">\(S\)</span> to a basis of <span class="process-math">\(W=\Span S\text{.}\)</span> To begin, choose your favorite ordered basis of <span class="process-math">\(P_3\text{.}\)</span>
+<li id="s_coordinatevectors_ex-6-1-2-1"><div class="para" id="s_coordinatevectors_ex-6-1-2-1-1">Use one of the techniques described in <a href="s_coordinatevectors.html#proc_contract_extend_general" class="xref" data-knowl="./knowl/xref/proc_contract_extend_general.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 5.3.12: Contracting and extending to bases in general spaces">Procedure 5.3.12</a> to contract <span class="process-math">\(S\)</span> to a basis of <span class="process-math">\(W=\Span S\text{.}\)</span> To begin, choose your favorite ordered basis of <span class="process-math">\(P_3\text{.}\)</span>
 </div></li>
 <li id="s_coordinatevectors_ex-6-1-2-2"><div class="para" id="s_coordinatevectors_ex-6-1-2-2-1">Using your result in (a) to decide whether <span class="process-math">\(W=P_3\text{.}\)</span>
 </div></li>
 </ol></article><article class="exercise exercise-like" id="s_coordinatevectors_ex-7"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
-<div class="para" id="s_coordinatevectors_ex-7-1-1">Let <span class="process-math">\(S=\{p_1(x)=x^2+x+1, p_2(x)=3x^2+6x\}\subseteq P_2\text{.}\)</span> Use one of the techniques described in <a href="s_coordinatevectors.html#proc_contract_extend_general" class="xref" data-knowl="./knowl/xref/proc_contract_extend_general.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 5.3.11: Contracting and extending to bases in general spaces">Procedure 5.3.11</a> to extend <span class="process-math">\(S\)</span> to a basis of <span class="process-math">\(P_2\text{.}\)</span>
+<div class="para" id="s_coordinatevectors_ex-7-1-1">Let <span class="process-math">\(S=\{p_1(x)=x^2+x+1, p_2(x)=3x^2+6x\}\subseteq P_2\text{.}\)</span> Use one of the techniques described in <a href="s_coordinatevectors.html#proc_contract_extend_general" class="xref" data-knowl="./knowl/xref/proc_contract_extend_general.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 5.3.12: Contracting and extending to bases in general spaces">Procedure 5.3.12</a> to extend <span class="process-math">\(S\)</span> to a basis of <span class="process-math">\(P_2\text{.}\)</span>
 </div></article><article class="exercise exercise-like" id="s_coordinatevectors_ex-8"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
 <div class="para logical" id="s_coordinatevectors_ex-8-1-1">
 <div class="para">Let</div>
@@ -1932,7 +1937,7 @@ S=\left\{A_1=\begin{amatrix}[rr]1\amp 2\\1\amp 1 \end{amatrix}, \ A_2=\begin{ama
 \end{equation*}
 </div>
 <ol class="lower-alpha" id="s_coordinatevectors_ex-8-1-1-2">
-<li id="s_coordinatevectors_ex-8-1-1-2-1"><div class="para" id="s_coordinatevectors_ex-8-1-1-2-1-1">Use one of the techniques described in <a href="s_coordinatevectors.html#proc_contract_extend_general" class="xref" data-knowl="./knowl/xref/proc_contract_extend_general.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 5.3.11: Contracting and extending to bases in general spaces">Procedure 5.3.11</a> to contract <span class="process-math">\(S\)</span> to a basis of <span class="process-math">\(W=\Span S\text{.}\)</span>
+<li id="s_coordinatevectors_ex-8-1-1-2-1"><div class="para" id="s_coordinatevectors_ex-8-1-1-2-1-1">Use one of the techniques described in <a href="s_coordinatevectors.html#proc_contract_extend_general" class="xref" data-knowl="./knowl/xref/proc_contract_extend_general.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 5.3.12: Contracting and extending to bases in general spaces">Procedure 5.3.12</a> to contract <span class="process-math">\(S\)</span> to a basis of <span class="process-math">\(W=\Span S\text{.}\)</span>
 </div></li>
 <li id="s_coordinatevectors_ex-8-1-1-2-2"><div class="para logical" id="s_coordinatevectors_ex-8-1-1-2-2-1">
 <div class="para">Show that</div>
