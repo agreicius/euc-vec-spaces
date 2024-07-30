@@ -6667,7 +6667,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.4",
   "title": "Matrix representations of linear transformations",
-  "body": " Matrix representations of linear transformations   We have seen how the coordinate vector map can be used to translate a linear algebraic question posed about a finite-dimensional vector space into a question about , where we have many computational algorithms at our disposal. We would like to extend this technique to linear transformations , where both and are finite-dimensional . The basic idea, to be fleshed out below, can be described as follows:   Pick a basis for , and a basis for .     Identify  with and with using the coordinate vector isomorphisms and , respectively.     Model the linear transformation with a certain linear transformation .   The matrix defining will be called the matrix representing with respect to our choice of basis for and for .  In what sense does  model  ? All the properties of we are interested in ( , , , , etc.) are perfectly mirrored by the matrix . As a result, this technique allows us to answer questions about the original essentially by applying a relevant matrix algorithm to .    Matrix representations of linear transformations  Given a linear transformation and choice of ordered bases and of and , respectively, we define the matrix representing column by column, using a familiar looking formula.   Matrix representations of linear transformations   Let and be vector spaces with ordered bases and , respectively. Given a linear transformation , the matrix representing with respect to and , is the matrix whose -th column is , considered as a column vector: , . In the special case where and we pick we write simply .      Consider the linear transformation defined as . Compute , where and are the standard bases for and , respectively.    We have and . Denote by the -th column of . We use to compute: . Thus .    The formula for should remind you of the formula from used for computing the standard matrix for a linear transformation : , the matrix such that for all . explicates this resemblance.   Standard matrix as a matrix representation   Let be a linear transformation, and let be its standard matrix: , satisfies for all . We have where and are the standard bases of and , respectively. In other words, the matrix representing with respect to the standard bases of and is none other than the standard matrix of .    According to the recipe in we have . Let and be the standard ordered bases of and , respectively. To see why , observe that for all the -th column of is and the -th column of is . That these are equal is a result of the fact that for all vectors we have : that is, the coordinate vector of a vector with respect to the standard basis is just itself. (See ).      Let be a linear transformation, and let be its standard matrix: , is the matrix satisfying for all . According to , the standard matrix is just one way of representing : namely, the representation with respect to the standard bases of and . This begs the question of whether a different choice of bases might give rise to a more convenient matrix representation of . The answer is yes, as we will see over the course of this chapter.      Define as .    Compute , where is the standard basis of .    Compute , where .        According to , since is the standard basis is the matrix such that : .    We have , where the last equality uses the fact that and , as you can verify yourself.    So we have and . Moral: different choices of bases yield different matrix representations.      Matrix representations as models  Before moving to more examples, we describe in what precise sense the matrix models the original linear transformation , and how we can use to answer questions about . The next theorem is key to understanding this.   Defining property of matrix representation   Let be a linear transformation, where and , and let be ordered bases for and , respectively.   For all we have . As usual is treated here as an column vector.    Property defines : , if is an matrix satisfying for all , then .       Let .    By definition we have . Given any , we can write for some . Then , as desired.    Assume satisfies for all . Then in particular we have for all . Since is the -th element of , we have , the -th standard basis element of . Using the column method ( ), we see that where is the -th column of . Thus implies that the -th column of is equal to , the -th column of , for all . Since and have identical columns, we conclude that , as desired.       Uniqueness of   The uniqueness property described in (2) of provides an alternative way of computing that can be useful in certain situations: namely, simply provide an matrix that satisfies the defining property for all . Since there is only one such matrix, we must have in this case.    Let , , and be as in . The defining property of can be summarized by saying that the following diagram is commutative .   Commutative diagram for  Commutative diagram for       The diagram being commutative here means that starting with an element in the top left of the diagram, whether we travel to the bottom right of the diagram either by first applying and then applying ( go right, then down ), or else by first applying and then applying ( go down, then right ), we get the same result! (The bottom map should technically be labeled , where , but this would detract from the elegance of the diagram.)  Besides commutativity, the other import feature of is that the two vertical coordinate transformations identify the domain and codomain of with the familiar spaces and in a one-to-one manner. (Using the language of , these maps are isomorphisms.) These properties together allow us to translate any linear algebraic question about to an equivalent question about the matrix , as the following theorem indicates.   Computing with matrix representations   Let be linear, and let and be ordered bases of and , respectively. The matrix satisfies the following properties:     if and only if ;     if and only if ;     is a basis of if and only if is a basis of ;     is a basis of if and only if is a basis of ;     and .       Proof of (1)  We have .    Proof of (2)  We have . The last equivalence follows from the fact that .    Proof (3)-(4)  These now follow from (1)-(2) and statement (4) of .       Consider again , where we modeled the linear transformation as . Here and are the respective standard bases of and .  Let . By inspection, we see easily that . Using we can lift these spanning sets back to and to conclude that . What do these results tell us about the differential operation ?  From , we conclude that if and only if for some : , the polynomials whose derivative is equal to the zero function are precisely the constant polynomials.  From , we conclude that for all there is a such that . Using the language of calculus, this means that every polynomial of degree at most two has an antiderivative that itself is a polynomial of degree at most three.  Linear algebra here reveals some properties of the derivative, in the restricted context of polynomial functions, that calculus shows to be true more generally: namely, that a function satisfies if and only if is a constant function, and that every continuous function has an antiderivative.     Video example: matrix representations   Video: matrix representations  Video: matrix representations       Choice of basis  Given a linear transformation , different choice of bases for and give rise to different matrix representations of . This observation immediately gives rise to two questions: What is the precise relationship between two different matrix representations?; How should we choose our bases so that the resulting matrix representation is useful to us? We will take up these questions in earnest in the subsequent sections. For now we content ourselves with an illustrative, long-format example.      WeBWork Exercises    To every linear transformation from to , there is an associated matrix. Match the following linear transformations with their associated matrix.    Reflection about the y-axis    Counter-clockwise rotation by radians    Reflection about the line y=x    The projection onto the x-axis given by T(x,y)=(x,0)    Reflection about the -axis    Clockwise rotation by radians                        None of the above           Find the matrix of the linear transformation from to with respect to the standard basis for , .           The matrices  form a basis for the linear space Write the matrix of the linear transformation such that relative to this basis.         Find the matrix of the linear transformation from to (upper triangular matrices) with respect to the standard basis for given by           Find the matrix of the linear transformation from to (upper triangular matrices) with respect to the basis           Let be the space spanned by the two functions and . Find the matrix of the linear transformation from into itself with respect to the basis .           Let be the plane with equation in . The linear transformation maps into so, by restricting it to , we may regard it as a linear transformation .  Find the matrix of the restricted map with respect to the basis           Consider the multiplication operator defined by where . Find an ordered basis for such that . Hint: where is the standard basis.   ,           Compute for each provided and choice of bases and of and . You may assume that the given is a linear transformation.     , ; ;      , ; ;      , where ;      Suppose is a linear transformation with matrix representation , where and . Use the defining property of to determine the formula for for an arbitrary polynomial .    Suppose is a linear transformation with matrix representation , where     Use the defining property of to compute and . (You will first need to compute and . )    Use (a) and the fact that is linear to give a general formula for in terms of and .      The function defined as is a linear transformation.    Compute , where is the standard basis of .    Use to lift bases of and back to bases for and .    Identify and as familiar subspaces of matrices.      The function defined by is a linear transformation.    Compute , where and are the standard bases of and .    Use to lift bases of and back to bases for and .      Let be the linear transformation defined as , and let , ,     Compute .    Compute .      Let be the linear transformation defined as , and let , , (the standard basis of ).    Compute .    Compute .      Let and be linear transformations, and suppose are ordered bases for , , and , respectively. Prove: .   Let and . Show that the matrix satisfies the defining property of : , for all .    "
+  "body": " Matrix representations of linear transformations   We have seen how the coordinate vector map can be used to translate a linear algebraic question posed about a finite-dimensional vector space into a question about , where we have many computational algorithms at our disposal. We would like to extend this technique to linear transformations , where both and are finite-dimensional . The basic idea, to be fleshed out below, can be described as follows:   Pick a basis for , and a basis for .     Identify  with and with using the coordinate vector isomorphisms and , respectively.     Model the linear transformation with a certain linear transformation .   The matrix defining will be called the matrix representing with respect to our choice of basis for and for .  In what sense does  model  ? All the properties of we are interested in ( , , , , etc.) are perfectly mirrored by the matrix . As a result, this technique allows us to answer questions about the original essentially by applying a relevant matrix algorithm to .    Matrix representations of linear transformations  Given a linear transformation and choice of ordered bases and of and , respectively, we define the matrix representing column by column, using a familiar looking formula.   Matrix representations of linear transformations   Let and be vector spaces with ordered bases and , respectively. Given a linear transformation , the matrix representing with respect to and , is the matrix whose -th column is , considered as a column vector: , . In the special case where and we pick we write simply .     Matrix representation   The function is linear. Compute , where and are the standard bases for and , respectively.    We have and . By definition, we have . We first compute for each : . To finish our computation, we must compute for each . Since is the standard basis of , this is not difficult: in general we have . Thus and .    The formula for should remind you of the formula from used for computing the standard matrix for a linear transformation : , the matrix such that for all . explicates this resemblance.   Standard matrix as a matrix representation   Let be a linear transformation, and let be its standard matrix: , satisfies for all . We have where and are the standard bases of and , respectively. In other words, the matrix representing with respect to the standard bases of and is none other than the standard matrix of .    According to the recipe in we have . Let and be the standard ordered bases of and , respectively. To see why , observe that for all the -th column of is and the -th column of is . That these are equal is a result of the fact that for all vectors we have : that is, the coordinate vector of a vector with respect to the standard basis is just itself. (See ).      Let be a linear transformation, and let be its standard matrix: , is the matrix satisfying for all . According to , the standard matrix is just one way of representing : namely, the representation with respect to the standard bases of and . This begs the question of whether a different choice of bases might give rise to a more convenient matrix representation of . The answer is yes, as we will see over the course of this chapter.     Different choice of bases   Define as .    Compute , where is the standard basis of .    Compute , where .        According to , since is the standard basis is the matrix such that : .    We have , where the last equality uses the fact that and , as you can verify yourself.    So we have and . Moral: different choices of bases yield different matrix representations.      Matrix representations as models  Before moving to more examples, we describe in what precise sense the matrix models the original linear transformation , and how we can use to answer questions about . The next theorem is key to understanding this.   Defining property of matrix representation   Let be a linear transformation, where and , and let be ordered bases for and , respectively.   For all we have . As usual is treated here as an column vector.    Property defines : , if is an matrix satisfying for all , then .       Let .    By definition we have . Given any , we can write for some . Then , as desired.    Assume satisfies for all . Then in particular we have for all . Since is the -th element of , we have , the -th standard basis element of . Using the column method ( ), we see that where is the -th column of . Thus implies that the -th column of is equal to , the -th column of , for all . Since and have identical columns, we conclude that , as desired.       Uniqueness of   The uniqueness property described in (2) of provides an alternative way of computing that can be useful in certain situations: namely, simply provide an matrix that satisfies the defining property for all . Since there is only one such matrix, we must have in this case.    Let , , and be as in . The defining property of can be summarized by saying that the following diagram is commutative .   Commutative diagram for  Commutative diagram for       The diagram being commutative here means that starting with an element in the top left of the diagram, whether we travel to the bottom right of the diagram either by first applying and then applying ( go right, then down ), or else by first applying and then applying ( go down, then right ), we get the same result! (The bottom map should technically be labeled , where , but this would detract from the elegance of the diagram.)  Besides commutativity, the other import feature of is that the two vertical coordinate transformations identify the domain and codomain of with the familiar spaces and in a one-to-one manner. (Using the language of , these maps are isomorphisms.) These properties together allow us to translate any linear algebraic question about to an equivalent question about the matrix , as the following theorem indicates.   Computing with matrix representations   Let be linear, let and be ordered bases of and , respectively, and let .     if and only if .     if and only if .     is a basis of if and only if is a basis of .     is a basis of if and only if is a basis of .     and .       Proof of (1)  We have .    Proof of (2)  We have . The last equivalence follows from the fact that .    Proof (3)-(4)  These now follow from (1)-(2) and statement (4) of .     As an illustration of , we treat again the linear transformation , treated in and . Recall that we concluded in these examples that is the space of all symmetric matrices, and that is the space of all skew-symmetric matrices. In we derive this result yet again in a slightly more computational manner, in the case where .   Computing with matrix representations   The function is linear.   Compute , where is the standard basis of .    Compute bases of and .     Lift these bases to bases of and , using the coordinate vector isomorphism . Use these bases to identify and as familiar subspaces of matrices.       First compute Next, using the fact that for the standard basis of we have , we see that . It is not difficult to compute bases for and using , but the matrix is simple enough that we will compute these by inspection. For example, we see easily that . From the rank-nullity theorem, it then follows that . Thus we need just three linearly independent elements of to get a basis. Again, by inspection (using ) we see that . It is fairly easy to see the three vectors are independent, and thus form a basis of .  To lift the bases and to bases of and , we simply find the matrices in that correspond to these -vectors via the coordinate vector isomorphism : , the matrices that have these -vectors as their coordinate vectors. This is easily done by inspection. We conclude that is a basis of , and is a basis of .  Lastly, since are all symmetric, is a subspace of the space of symmetric matrices. Since both spaces have dimension three, we conclude that they are equal. A similar argument shows that is precisely the space of skew-symmetric matrices.     Video example: matrix representations   Video: matrix representations          WeBWork Exercises    To every linear transformation from to , there is an associated matrix. Match the following linear transformations with their associated matrix.    Reflection about the y-axis    Counter-clockwise rotation by radians    Reflection about the line y=x    The projection onto the x-axis given by T(x,y)=(x,0)    Reflection about the -axis    Clockwise rotation by radians                        None of the above           Find the matrix of the linear transformation from to with respect to the standard basis for , .           The matrices  form a basis for the linear space Write the matrix of the linear transformation such that relative to this basis.         Find the matrix of the linear transformation from to (upper triangular matrices) with respect to the standard basis for given by           Find the matrix of the linear transformation from to (upper triangular matrices) with respect to the basis           Let be the space spanned by the two functions and . Find the matrix of the linear transformation from into itself with respect to the basis .           Let be the plane with equation in . The linear transformation maps into so, by restricting it to , we may regard it as a linear transformation .  Find the matrix of the restricted map with respect to the basis           Consider the multiplication operator defined by where . Find an ordered basis for such that . Hint: where is the standard basis.   ,           Compute for each provided and choice of bases and of and . You may assume that the given is a linear transformation.     , ; ;      , ; ;      , where ;      Suppose is a linear transformation with matrix representation , where and . Use the defining property of to determine the formula for for an arbitrary polynomial .    Suppose is a linear transformation with matrix representation , where     Use the defining property of to compute and . (You will first need to compute and . )    Use (a) and the fact that is linear to give a general formula for in terms of and .      The function defined as is a linear transformation.    Compute , where is the standard basis of .    Use to lift bases of and back to bases for and .    Identify and as familiar subspaces of matrices.      The function defined by is a linear transformation.    Compute , where and are the standard bases of and .    Use to lift bases of and back to bases for and .      Let be the linear transformation defined as , and let , ,     Compute .    Compute .      Let be the linear transformation defined as , and let , , (the standard basis of ).    Compute .    Compute .      Let and be linear transformations, and suppose are ordered bases for , , and , respectively. Prove: .   Let and . Show that the matrix satisfies the defining property of : , for all .    "
 },
 {
   "id": "d_matrix_representation",
@@ -6679,13 +6679,13 @@ var ptx_lunr_docs = [
   "body": " Matrix representations of linear transformations   Let and be vector spaces with ordered bases and , respectively. Given a linear transformation , the matrix representing with respect to and , is the matrix whose -th column is , considered as a column vector: , . In the special case where and we pick we write simply .   "
 },
 {
-  "id": "eg_matrixreps_derivative",
+  "id": "eg_matrixreps_std_basis",
   "level": "2",
-  "url": "s_matrixreps.html#eg_matrixreps_derivative",
+  "url": "s_matrixreps.html#eg_matrixreps_std_basis",
   "type": "Example",
   "number": "5.4.2",
-  "title": "",
-  "body": "  Consider the linear transformation defined as . Compute , where and are the standard bases for and , respectively.    We have and . Denote by the -th column of . We use to compute: . Thus .   "
+  "title": "Matrix representation.",
+  "body": " Matrix representation   The function is linear. Compute , where and are the standard bases for and , respectively.    We have and . By definition, we have . We first compute for each : . To finish our computation, we must compute for each . Since is the standard basis of , this is not difficult: in general we have . Thus and .   "
 },
 {
   "id": "th_matrixreps_matrixtransforms",
@@ -6706,13 +6706,13 @@ var ptx_lunr_docs = [
   "body": "  Let be a linear transformation, and let be its standard matrix: , is the matrix satisfying for all . According to , the standard matrix is just one way of representing : namely, the representation with respect to the standard bases of and . This begs the question of whether a different choice of bases might give rise to a more convenient matrix representation of . The answer is yes, as we will see over the course of this chapter.   "
 },
 {
-  "id": "ss_matrix_reps-8",
+  "id": "eg_matrixreps_different_bases",
   "level": "2",
-  "url": "s_matrixreps.html#ss_matrix_reps-8",
+  "url": "s_matrixreps.html#eg_matrixreps_different_bases",
   "type": "Example",
   "number": "5.4.5",
-  "title": "",
-  "body": "  Define as .    Compute , where is the standard basis of .    Compute , where .        According to , since is the standard basis is the matrix such that : .    We have , where the last equality uses the fact that and , as you can verify yourself.    So we have and . Moral: different choices of bases yield different matrix representations.   "
+  "title": "Different choice of bases.",
+  "body": " Different choice of bases   Define as .    Compute , where is the standard basis of .    Compute , where .        According to , since is the standard basis is the matrix such that : .    We have , where the last equality uses the fact that and , as you can verify yourself.    So we have and . Moral: different choices of bases yield different matrix representations.   "
 },
 {
   "id": "th_matrixrep",
@@ -6748,32 +6748,32 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "5.4.9",
   "title": "Computing with matrix representations.",
-  "body": " Computing with matrix representations   Let be linear, and let and be ordered bases of and , respectively. The matrix satisfies the following properties:     if and only if ;     if and only if ;     is a basis of if and only if is a basis of ;     is a basis of if and only if is a basis of ;     and .       Proof of (1)  We have .    Proof of (2)  We have . The last equivalence follows from the fact that .    Proof (3)-(4)  These now follow from (1)-(2) and statement (4) of .    "
+  "body": " Computing with matrix representations   Let be linear, let and be ordered bases of and , respectively, and let .     if and only if .     if and only if .     is a basis of if and only if is a basis of .     is a basis of if and only if is a basis of .     and .       Proof of (1)  We have .    Proof of (2)  We have . The last equivalence follows from the fact that .    Proof (3)-(4)  These now follow from (1)-(2) and statement (4) of .    "
 },
 {
-  "id": "eg_matrixreps_derivative_contd",
+  "id": "eg_matrixreps_sym_skewsym",
   "level": "2",
-  "url": "s_matrixreps.html#eg_matrixreps_derivative_contd",
+  "url": "s_matrixreps.html#eg_matrixreps_sym_skewsym",
   "type": "Example",
   "number": "5.4.10",
-  "title": "",
-  "body": "  Consider again , where we modeled the linear transformation as . Here and are the respective standard bases of and .  Let . By inspection, we see easily that . Using we can lift these spanning sets back to and to conclude that . What do these results tell us about the differential operation ?  From , we conclude that if and only if for some : , the polynomials whose derivative is equal to the zero function are precisely the constant polynomials.  From , we conclude that for all there is a such that . Using the language of calculus, this means that every polynomial of degree at most two has an antiderivative that itself is a polynomial of degree at most three.  Linear algebra here reveals some properties of the derivative, in the restricted context of polynomial functions, that calculus shows to be true more generally: namely, that a function satisfies if and only if is a constant function, and that every continuous function has an antiderivative.   "
+  "title": "Computing with matrix representations.",
+  "body": " Computing with matrix representations   The function is linear.   Compute , where is the standard basis of .    Compute bases of and .     Lift these bases to bases of and , using the coordinate vector isomorphism . Use these bases to identify and as familiar subspaces of matrices.       First compute Next, using the fact that for the standard basis of we have , we see that . It is not difficult to compute bases for and using , but the matrix is simple enough that we will compute these by inspection. For example, we see easily that . From the rank-nullity theorem, it then follows that . Thus we need just three linearly independent elements of to get a basis. Again, by inspection (using ) we see that . It is fairly easy to see the three vectors are independent, and thus form a basis of .  To lift the bases and to bases of and , we simply find the matrices in that correspond to these -vectors via the coordinate vector isomorphism : , the matrices that have these -vectors as their coordinate vectors. This is easily done by inspection. We conclude that is a basis of , and is a basis of .  Lastly, since are all symmetric, is a subspace of the space of symmetric matrices. Since both spaces have dimension three, we conclude that they are equal. A similar argument shows that is precisely the space of skew-symmetric matrices.   "
 },
 {
-  "id": "fig_vid_matrix_reps",
+  "id": "ss_vid_eg_coordinatemaps",
   "level": "2",
-  "url": "s_matrixreps.html#fig_vid_matrix_reps",
-  "type": "Figure",
+  "url": "s_matrixreps.html#ss_vid_eg_coordinatemaps",
+  "type": "Example",
   "number": "5.4.11",
-  "title": "Video: matrix representations",
-  "body": " Video: matrix representations  Video: matrix representations   "
+  "title": "Video example: matrix representations.",
+  "body": " Video example: matrix representations   Video: matrix representations    "
 },
 {
   "id": "s_matrixreps_ex-1-2",
   "level": "2",
   "url": "s_matrixreps.html#s_matrixreps_ex-1-2",
   "type": "Exercise",
-  "number": "5.4.4.1",
+  "number": "5.4.3.1",
   "title": "",
   "body": "  To every linear transformation from to , there is an associated matrix. Match the following linear transformations with their associated matrix.    Reflection about the y-axis    Counter-clockwise rotation by radians    Reflection about the line y=x    The projection onto the x-axis given by T(x,y)=(x,0)    Reflection about the -axis    Clockwise rotation by radians                        None of the above        "
 },
@@ -6782,7 +6782,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrixreps.html#s_matrixreps_ex-1-3",
   "type": "Exercise",
-  "number": "5.4.4.2",
+  "number": "5.4.3.2",
   "title": "",
   "body": "  Find the matrix of the linear transformation from to with respect to the standard basis for , .        "
 },
@@ -6791,7 +6791,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrixreps.html#s_matrixreps_ex-1-4",
   "type": "Exercise",
-  "number": "5.4.4.3",
+  "number": "5.4.3.3",
   "title": "",
   "body": "  The matrices  form a basis for the linear space Write the matrix of the linear transformation such that relative to this basis.      "
 },
@@ -6800,7 +6800,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrixreps.html#s_matrixreps_ex-1-5",
   "type": "Exercise",
-  "number": "5.4.4.4",
+  "number": "5.4.3.4",
   "title": "",
   "body": "  Find the matrix of the linear transformation from to (upper triangular matrices) with respect to the standard basis for given by        "
 },
@@ -6809,7 +6809,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrixreps.html#s_matrixreps_ex-1-6",
   "type": "Exercise",
-  "number": "5.4.4.5",
+  "number": "5.4.3.5",
   "title": "",
   "body": "  Find the matrix of the linear transformation from to (upper triangular matrices) with respect to the basis        "
 },
@@ -6818,7 +6818,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrixreps.html#s_matrixreps_ex-1-7",
   "type": "Exercise",
-  "number": "5.4.4.6",
+  "number": "5.4.3.6",
   "title": "",
   "body": "  Let be the space spanned by the two functions and . Find the matrix of the linear transformation from into itself with respect to the basis .        "
 },
@@ -6827,7 +6827,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrixreps.html#s_matrixreps_ex-1-8",
   "type": "Exercise",
-  "number": "5.4.4.7",
+  "number": "5.4.3.7",
   "title": "",
   "body": "  Let be the plane with equation in . The linear transformation maps into so, by restricting it to , we may regard it as a linear transformation .  Find the matrix of the restricted map with respect to the basis        "
 },
@@ -6836,7 +6836,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrixreps.html#s_matrixreps_ex-1-9",
   "type": "Exercise",
-  "number": "5.4.4.8",
+  "number": "5.4.3.8",
   "title": "",
   "body": "  Consider the multiplication operator defined by where . Find an ordered basis for such that . Hint: where is the standard basis.   ,       "
 },
@@ -6845,7 +6845,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrixreps.html#s_matrixreps_ex-2-2",
   "type": "Exercise",
-  "number": "5.4.4.9",
+  "number": "5.4.3.9",
   "title": "",
   "body": "  , ; ;   "
 },
@@ -6854,7 +6854,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrixreps.html#s_matrixreps_ex-2-3",
   "type": "Exercise",
-  "number": "5.4.4.10",
+  "number": "5.4.3.10",
   "title": "",
   "body": "  , ; ;   "
 },
@@ -6863,7 +6863,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrixreps.html#s_matrixreps_ex-2-4",
   "type": "Exercise",
-  "number": "5.4.4.11",
+  "number": "5.4.3.11",
   "title": "",
   "body": "  , where ;   "
 },
@@ -6872,7 +6872,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrixreps.html#s_matrixreps_ex-3",
   "type": "Exercise",
-  "number": "5.4.4.12",
+  "number": "5.4.3.12",
   "title": "",
   "body": " Suppose is a linear transformation with matrix representation , where and . Use the defining property of to determine the formula for for an arbitrary polynomial .  "
 },
@@ -6881,7 +6881,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrixreps.html#s_matrixreps_ex-4",
   "type": "Exercise",
-  "number": "5.4.4.13",
+  "number": "5.4.3.13",
   "title": "",
   "body": " Suppose is a linear transformation with matrix representation , where     Use the defining property of to compute and . (You will first need to compute and . )    Use (a) and the fact that is linear to give a general formula for in terms of and .    "
 },
@@ -6890,7 +6890,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrixreps.html#s_matrixreps_ex-5",
   "type": "Exercise",
-  "number": "5.4.4.14",
+  "number": "5.4.3.14",
   "title": "",
   "body": " The function defined as is a linear transformation.    Compute , where is the standard basis of .    Use to lift bases of and back to bases for and .    Identify and as familiar subspaces of matrices.    "
 },
@@ -6899,7 +6899,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrixreps.html#s_matrixreps_ex-6",
   "type": "Exercise",
-  "number": "5.4.4.15",
+  "number": "5.4.3.15",
   "title": "",
   "body": " The function defined by is a linear transformation.    Compute , where and are the standard bases of and .    Use to lift bases of and back to bases for and .    "
 },
@@ -6908,7 +6908,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrixreps.html#s_matrixreps_ex-7",
   "type": "Exercise",
-  "number": "5.4.4.16",
+  "number": "5.4.3.16",
   "title": "",
   "body": " Let be the linear transformation defined as , and let , ,     Compute .    Compute .    "
 },
@@ -6917,7 +6917,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrixreps.html#s_matrixreps_ex-8",
   "type": "Exercise",
-  "number": "5.4.4.17",
+  "number": "5.4.3.17",
   "title": "",
   "body": " Let be the linear transformation defined as , and let , , (the standard basis of ).    Compute .    Compute .    "
 },
@@ -6926,7 +6926,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrixreps.html#s_matrixreps_ex-9",
   "type": "Exercise",
-  "number": "5.4.4.18",
+  "number": "5.4.3.18",
   "title": "",
   "body": " Let and be linear transformations, and suppose are ordered bases for , , and , respectively. Prove: .   Let and . Show that the matrix satisfies the defining property of : , for all .  "
 },
