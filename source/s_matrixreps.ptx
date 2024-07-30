@@ -65,33 +65,53 @@
     </p>
   </statement>
 </definition>
-<example xml:id="eg_matrixreps_derivative">
+<example xml:id="eg_matrixreps_std_basis">
+  <title>Matrix representation</title>
   <statement>
     <p>
-      Consider the linear transformation <m>T\colon P_{3}\rightarrow P_{2}</m> defined as <m>T(p(x))=p'(x)</m>.
-      Compute <m>A=[T]_{B}^{B'}</m>,
-      where <m>B</m> and <m>B'</m> are the standard bases for <m>P_3</m> and <m>P_2</m>,
+      The function 
+      <md>
+        <mrow>T\colon \R^3 \amp \rightarrow M_{22}</mrow>
+        <mrow>(x,y,z) \amp \mapsto \begin{bmatrix}
+        x+y+z\amp x-z\\
+        x+2y\amp y-z
+        \end{bmatrix}
+        </mrow>
+      </md>
+        is linear. Compute <m>[T]_{B}^{B'}</m>,
+      where <m>B</m> and <m>B'</m> are the standard bases for <m>\R^3</m> and <m>M_{22}</m>,
       respectively.
     </p>
   </statement>
   <solution>
     <p>
-      We have <m>B=(x^3, x^2, x, 1)</m> and <m>B'=(x^2, x, 1)</m>.
-      Denote by <m>\boldc_j</m> the <m>j</m>-th column of <m>A</m>.
-      We use <xref ref="eq_matrixrep_formula"/> to compute:
+      We have <m>B=(\bolde_1,\bolde_2, \bolde_3)</m> and <m>B'=(E_{11},E_{12},E_{21},E_{22})</m>.
+      By definition, we have 
       <md>
-      <mrow>\boldc_1\amp =[T(x^3)]_{B'}=[3x^2]_{B'}=\begin{bmatrix} 3</mrow>
-      <mrow>0</mrow>
-      <mrow>0 \end{bmatrix} \amp \boldc_2\amp =[T(x^2)]_{B'}=[2x]_{B'}=\begin{bmatrix} 0</mrow>
-      <mrow>2</mrow>
-      <mrow>0 \end{bmatrix}</mrow>
-      <mrow>\boldc_3\amp =[T(x)]_{B'}=[1]_{B'}=\begin{bmatrix} 0</mrow>
-      <mrow>0</mrow>
-      <mrow>1 \end{bmatrix} \amp \boldc_4\amp =[T(1)]_{B'}=[0]_{B'}=\begin{bmatrix} 0</mrow>
-      <mrow>0</mrow>
-      <mrow>0 \end{bmatrix}</mrow>
+        <mrow>[T]_{B}^{B'} \amp =\begin{bmatrix}
+          \vert \amp \vert \amp \vert \\
+          [T(bolde_1)]_{B'} \amp [T(\bolde_2)]_{B'}\amp [T(\bolde_3)]_{B'} \end{bmatrix} </mrow>
       </md>.
-      Thus <m>A=\begin{bmatrix}3\amp 0\amp 0\amp 0\\ 0\amp 2\amp 0\amp 0\\ 0\amp 0\amp 1\amp 0 \end{bmatrix}</m>.
+      We first compute <m>T(\bolde_i)</m> for each <m>1\leq i\leq 3</m>: 
+      <md>
+        <mrow>T(\bolde_1) \amp = T(1,0,0)=\begin{bmatrix}1\amp 1\\ 1 \amp 0\end{bmatrix}</mrow>
+        <mrow>T(\bolde_2) \amp = T(0,1,0)=\begin{bmatrix}1\amp 0 \\ 2 \amp 1 \end{bmatrix}</mrow>
+        <mrow>T(\bolde_3) \amp = T(0,0,1)=\begin{bmatrix}1\amp -1 \\ 0 \amp -1\end{bmatrix} </mrow>
+      </md>.
+      To finish our computation, we must compute <m>[T(\bolde_i)]_{B'}</m> for each <m>1\leq i\leq 3</m>. Since <m>B'</m> is the standard basis of <m>M_{22}</m>, this is not difficult: in general we have 
+      <me>
+       \left[ \begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}\right]_{B'}=(a,b,c,d)
+      </me>.
+      Thus
+      <md>
+        <mrow>[T(\bolde_1)]_{B'} \amp = (1,1,1,0)</mrow>
+        <mrow>[T(\bolde_2)]_{B'} \amp = (1,0,2,1)</mrow>
+        <mrow>[T(\bolde_3)]_{B'} \amp = (1,-1,0,-1)</mrow>
+      </md>
+      and 
+      <me>
+        [T]_{B}^{B'}=\begin{amatrix}[rrr] 1\amp 1\ \amp 1\\ 1\amp 0\amp -1\\ 1\amp 2\amp 0\\ 0\amp 1\amp -1\end{amatrix}
+      </me>.
     </p>
   </solution>
 </example>
@@ -126,7 +146,8 @@
     </p>
   </statement>
 </remark>
-<example>
+<example xml:id="eg_matrixreps_different_bases">
+  <title>Different choice of bases</title>
   <statement>
     <p>
       Define <m>T\colon \R^2\rightarrow \R^2</m> as  <m>T(x,y)=(4x-3y,2x-y)</m>.
@@ -314,27 +335,27 @@
         <title>Computing with matrix representations</title>
         <statement>
           <p>
-            Let <m>T\colon V\rightarrow W</m> be linear, and let <m>B</m> and <m>B'</m> be ordered bases of <m>V</m> and <m>W</m>, respectively. The matrix   <m>A=[T]_{B}^{B'}</m> satisfies the following properties:
+            Let <m>T\colon V\rightarrow W</m> be linear, let <m>B</m> and <m>B'</m> be ordered bases of <m>V</m> and <m>W</m>, respectively, and let <m>A=[T]_{B}^{B'}</m>.
           </p>
           <ol>
             <li>
               <p>
-                <m>\boldv\in \NS T</m> if and only if <m>[\boldv]_B\in \NS A</m>;
+                <m>\boldv\in \NS T</m> if and only if <m>[\boldv]_B\in \NS A</m>. 
               </p>
             </li>
             <li>
               <p>
-                <m>\boldw\in \im T</m> if and only if <m>[\boldw]_{B'}\in \CS A</m>;
+                <m>\boldw\in \im T</m> if and only if <m>[\boldw]_{B'}\in \CS A</m>.
               </p>
             </li>
             <li>
               <p>
-                <m>\{\boldv_1,\boldv_2,\dots, \boldv_r\}</m> is a basis of <m>\NS T</m> if and only if <m>\{[\boldv_1]_B, [\boldv_2]_B, \dots, [\boldv_r]_B\}</m> is a basis of <m>\NS A</m>;
+                <m>\{\boldv_1,\boldv_2,\dots, \boldv_r\}</m> is a basis of <m>\NS T</m> if and only if <m>\{[\boldv_1]_B, [\boldv_2]_B, \dots, [\boldv_r]_B\}</m> is a basis of <m>\NS A</m>.
               </p>
             </li>
             <li>
               <p>
-                <m>\{\boldw_1,\boldw_2,\dots, \boldw_s\}</m> is a basis of <m>\im T</m> if and only if <m>\{[\boldw_1]_{B'}, [\boldw_2]_{B'}, \dots, [\boldv_s]_{B'}\}</m> is a basis of <m>\CS A</m>;
+                <m>\{\boldw_1,\boldw_2,\dots, \boldw_s\}</m> is a basis of <m>\im T</m> if and only if <m>\{[\boldw_1]_{B'}, [\boldw_2]_{B'}, \dots, [\boldv_s]_{B'}\}</m> is a basis of <m>\CS A</m>.
               </p>
             </li>
             <li>
@@ -386,57 +407,103 @@
         </proof>
 
       </theorem>
-<example xml:id="eg_matrixreps_derivative_contd">
-  <statement>
-    <p>
-      Consider again <xref ref="eg_matrixreps_derivative"/>, where we modeled the linear transformation
-      <md>
-        <mrow>T\colon P_3 \amp\rightarrow P_2 </mrow>
-        <mrow>  p(x)\amp\mapsto p'(x) </mrow>
-      </md>
-      as
-      <me>
-        [T]_B^{B'}=\begin{bmatrix}3\amp 0\amp 0\amp 0\\ 0\amp 2\amp 0\amp 0\\ 0\amp 0\amp 1\amp 0 \end{bmatrix}
-      </me>.
-      Here <m>B=(x^3, x^2, x, 1)</m> and <m>B'=(x^2, x, 1)</m> are the respective standard bases of <m>P_3</m> and <m>P_2</m>.
-    </p>
-    <p>
-      Let <m>A=[T]_B^{B'}</m>. By inspection, we see easily that
-      <md>
-        <mrow>\NS \amp= \Span\{(0,0,0,1)\}\amp \CS A\amp =\Span \{(3,0,0), (0,2,0),(0,0,1)\}=\R^3 </mrow>
-      </md>.
-      Using <xref ref="th_matrixreps_model"/> we can lift these spanning sets back to <m>P_3</m> and <m>P_2</m> to conclude that
-      <md>
-        <mrow>\NS T \amp =\Span\{1\}\subseteq P_3 \amp \im T\amp =\Span\{3x^2, x, 1\}=P_2 </mrow>
-      </md>.
-      What do these results tell us about the differential operation <m>T(p)=p'</m>?
-    </p>
+  <p>
+    As an illustration of <xref ref="th_matrixreps_model"/>, we treat again the linear transformation <m>T\colon M_{nn}\rightarrow M_{nn}</m>, <m>T(A)=A^T-A</m> treated in <xref ref="eg_nullspace_image_transposition"/> and <xref ref="eg_rank_nullity_skew_sym"/>. Recall that we concluded in these examples that <m>\NS T</m> is the space of all symmetric matrices, and that <m>\im T</m> is the space of all skew-symmetric matrices. In <xref ref="eg_matrixreps_sym_skewsym"/> we derive this result yet again in a slightly more computational manner, in the case where <m>n=2</m>.
+  </p>
+  <example xml:id="eg_matrixreps_sym_skewsym">
+    <title>Computing with matrix representations</title>
+    <statement>
       <p>
-        From <m>\NS T=\Span\{1\}=\{p(x)\in P_2\colon p(x)=c \text{ for all x}\}</m>, we conclude that <m>T(p)=p'=\boldzero</m> if and only if <m>p(x)=c</m> for some <m>c\in \R</m>: <ie />, the polynomials whose derivative is equal to the zero function are precisely the constant polynomials.
+        The function 
+        <md>
+          <mrow>F\colon M_{22} \amp \rightarrow M_{22}</mrow>
+          <mrow>A \amp \mapsto A^T-A</mrow>
+        </md>
+        is linear. 
+        <ol>
+          <li>
+            <p>
+              Compute <m>A=[T]_{B}</m>, where <m>B=(E_{11},E_{12},E_{21},E_{22})</m> is the standard basis of <m>M_{22}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Compute bases of <m>\NS A</m> and <m>\CS A</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              <q>Lift</q> these bases to bases of <m>\NS T</m> and <m>\im T</m>, using the coordinate vector isomorphism <m>[\phantom{\boldv}]_B</m>. Use these bases to identify <m>\NS T</m> and <m>\im T</m> as familiar subspaces of <m>2\times 2</m> matrices. 
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        First compute 
+        <md>
+          <mrow>F(E_{11}) \amp =E_{11}^T-E_{11}=\begin{amatrix}[rr]0\amp 0 \\ 0 \amp 0\end{amatrix}</mrow>
+          <mrow>F(E_{12}) \amp =E_{12}^T-E_{12}=\begin{amatrix}[rr]0\amp -1 \\ 1 \amp 0\end{amatrix}</mrow>
+          <mrow>F(E_{21}) \amp =E_{21}^T-E_{21}=\begin{amatrix}[rr]0\amp 1 \\ -1 \amp 0\end{amatrix}</mrow>
+          <mrow>F(E_{22}) \amp =E_{22}^T-E_{22}=\begin{amatrix}[rr]0 \amp 0 \\ 0 \amp 0\end{amatrix}</mrow>
+        </md>
+        Next, using the fact that for the standard basis <m>B</m> of <m>M_{22}</m> we have 
+        <me>
+          \left[ \begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}\right]_B=(a,b,c,d)
+        </me>,
+        we see that 
+        <md>
+          <mrow>A\amp =\begin{bmatrix}
+          \vert\amp \vert \amp \vert \amp \vert \\
+          [F(E_{11})]_{B}\amp [F(E_{12})]_{B} \amp [F(E_{21})]_{B} \amp [F(E_{22})]_{B} \\
+          \vert\amp \vert \amp \vert \amp \vert
+          \end{bmatrix}
+          </mrow>
+          <mrow> \amp = \begin{amatrix}[rrrr]
+          0\amp 0\amp 0\amp 0 \\
+          0\amp -1\amp 1\amp 0 \\
+          0\amp 1\amp -1 \amp 0\\
+          0\amp 0\amp 0\amp 0
+          \end{amatrix}
+          </mrow>
+        </md>.
+        It is not difficult to compute bases for <m>\NS A</m> and <m>\CS A</m> using <xref ref="proc_fund_spaces"/>, but the matrix <m>A</m> is simple enough that we will compute these by inspection.  For example, we see easily that <m>\CS A=\Span\{(0,-1,1,0)\}</m>. From the rank-nullity theorem, it then follows that <m>\dim \NS A=4-\dim \CS A=4-1=3</m>. Thus we need just three linearly independent elements of <m>\NS A</m> to get a basis. Again, by inspection (using <xref ref="th_column_method" text="global"/>) we see that <m>(1,0,0,0),(0,0,0,1),(0,1,1,0)\in \NS A</m>. It is fairly easy to see the three vectors are independent, and thus form a basis of <m>\NS A</m>.
       </p>
       <p>
-        From <m>\im T=P_2</m>, we conclude that for all <m>q(x)\in P_2</m> there is a <m>p(x)\in P_3</m> such that <m>p'(x)=q(x)</m>. Using the language of calculus, this means that every polynomial of degree at most two has an antiderivative that itself is a polynomial of degree at most three.
+        To <q>lift</q> the bases <m>\{(1,0,0,0),(0,0,0,1),(0,1,1,0)\}</m> and <m>\{(0,-1,1,0)\}</m> to bases of <m>\NS F</m> and <m>\im F</m>, we simply find the matrices in <m>M_{22}</m> that correspond to these <m>4</m>-vectors via the coordinate vector isomorphism <m>[\phantom{\boldv}]_B</m>: <ie/>, the matrices that have these <m>4</m>-vectors as their coordinate vectors. This is easily done by inspection. We conclude that
+        <me>
+          B_1=\left\{A_1=\begin{bmatrix}1\amp 0\\ 0\amp 0\end{bmatrix}, A_2=\begin{amatrix}[cc]0\amp 0 \\ 0\amp 1\end{amatrix}, A_3=\begin{amatrix}[cc]0\amp 1 \\ 1\amp 0\end{amatrix}\right\}
+        </me>
+        is a basis of <m>\NS F</m>, and 
+        <me>
+          B_2=\left\{\begin{amatrix}[rr]0\amp -1 \\ 1\amp 0\end{amatrix}\right\}
+        </me>
+        is a basis of <m>\im F</m>.
       </p>
       <p>
-        Linear algebra here reveals some properties of the derivative, in the restricted context of polynomial functions, that calculus shows to be true more generally: namely, that a function <m>f\in C^1(\R)</m> satisfies <m>f'=\boldzero</m> if and only if <m>f</m> is a constant function, and that every continuous function <m>g\in C(\R)</m> has an antiderivative.
+        Lastly, since <m>A_1,A_2,A_3</m> are all symmetric, <m>\NS F=\Span \{A_1,A_2,A_3\}</m> is a subspace of the space of symmetric matrices. Since both spaces have dimension three, we conclude that they are equal. A similar argument shows that 
+        <me>
+          \im F=\Span\left\{\begin{amatrix}[rr]0\amp -1 \\ 1\amp 0\end{amatrix} \right\}
+        </me>
+        is precisely the space of skew-symmetric matrices. 
       </p>
-  </statement>
-</example>
-<paragraphs xml:id="ss_vid_eg_coordinatemaps">
+    </solution>
+  </example>
+
+<example xml:id="ss_vid_eg_coordinatemaps">
   <title>Video example: matrix representations </title>
   <figure xml:id="fig_vid_matrix_reps">
-    <title>Video: matrix representations</title>
   <caption>Video: matrix representations</caption>
   <video xml:id="vid_vid_matrix_reps" youtube="aIxeh_1Ztr4" />
   </figure>
-</paragraphs>
-</subsection>
+</example>
 
-<subsection>
+<!-- <subsection>
   <title>Choice of basis</title>
   <p>
     Given a linear transformation <m>T\colon V\rightarrow W</m>, different choice of bases for <m>V</m> and <m>W</m> give rise to different matrix representations of <m>T</m>. This observation immediately gives rise to two questions: What is the precise relationship between two different matrix representations?; How should we choose our bases so that the resulting matrix representation is useful to us? We will take up these questions in earnest in the subsequent sections. For now we content ourselves with an illustrative, long-format example.
-  </p>
+  </p> -->
   <!-- <example xml:id="eg_matrixreps_proj">
     <title>Two representations of orthogonal projection</title>
 
