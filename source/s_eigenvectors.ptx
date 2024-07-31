@@ -2,7 +2,7 @@
   <title>Eigenvectors and eigenvalues</title>
   <introduction>
     <p>
-      For the remaining sections of this chapter we will focus our investigation on linear transformations of the form <m>T\colon V\rightarrow V</m>: that is, transformations from a space <m>V</m> into itself. When <m>V</m> is finite-dimensional we can get a computational grip on <m>T</m> by choosing an ordered basis <m>B</m> and considering the matrix representation <m>[T]_B</m>. As was illustrated in <xref ref="eg_matrixreps_proj"/>, different matrix representations <m>[T]_B</m> and <m>[T]_{B'}</m> provide different insights into the nature of <m>T</m>. Furthermore, we see from this example that if the action of <m>T</m> on a chosen basis is simple to describe, then so too is the matrix representation of <m>T</m> with respect to that basis.
+      For the remaining sections of this chapter we will focus our investigation on linear transformations of the form <m>T\colon V\rightarrow V</m>: that is, transformations from a space <m>V</m> into itself. When <m>V</m> is finite-dimensional we can get a computational grip on <m>T</m> by choosing an ordered basis <m>B</m> and considering the matrix representation <m>[T]_B</m>. As was illustrated in <xref ref="eg_changebasis_reflection"/>, different matrix representations <m>[T]_B</m> and <m>[T]_{B'}</m> provide different insights into the nature of <m>T</m>. Furthermore, we see from this example that if the action of <m>T</m> on a chosen basis is simple to describe, then so too is the matrix representation of <m>T</m> with respect to that basis.
     </p>
     <p>
       A particularly agreeable situation arises when the basis <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> satisfies
@@ -251,7 +251,7 @@
         In summation, our analysis shows that the transposition operator <m>S</m> has exactly two eigenvalues, <m>\lambda_1=1</m> and <m>\lambda_2=-1</m>, that the eigenvectors of <m>S</m> with eigenvalue 1 are the nonzero symmetric matrices, and that the eigenvalues of <m>S</m> with eigenvalue <m>-1</m> are the nonzero skew-symmetric matrices.
       </solution>
     </example>
-    <example xml:id="eg_eigenvectors_adhoc_derivative">
+    <!-- <example xml:id="eg_eigenvectors_adhoc_derivative">
       <title>Differentiation</title>
       <statement>
         <p>
@@ -268,7 +268,7 @@
           We conclude that (a) every <m>\lambda\in \R</m> is an eigenvalue of <m>T</m>, and (b) for a given <m>\lambda</m>, the <m>\lambda</m>-eigenvectors of <m>T</m> are precisely the functions of the form <m>f(x)=Ce^{\lambda x}</m> for some <m>C\ne 0</m>.
         </p>
       </solution>
-    </example>
+    </example> -->
   </subsection>
 
   <subsection>
@@ -290,7 +290,7 @@
           </li>
           <li>
             <p>
-             A value <m>\lambda\in \R</m> is an eigenvalue of <m>T</m> if and only if it is an eigenvalue of <m>A</m>. Thus <m>T</m> and <m>A</m> have the same set of eigenvalues.
+             A real number <m>\lambda\in \R</m> is an eigenvalue of <m>T</m> if and only if it is an eigenvalue of <m>A</m>. Thus <m>T</m> and <m>A</m> have the same set of eigenvalues.
             </p>
           </li>
         </ol>
@@ -631,7 +631,7 @@ We will show below that <m>p(t)=\det(tI-A)</m> is indeed a polynomial (<xref ref
 
 </corollary>
 <p>
-  Of course statement (2) of <xref ref="cor_eigenvalue_invertible"/> gives rise to yet another equivalent formulation of invertibility, and we include this in our ever-expanding <xref ref="th_invertibility_penultimate" text="custom">invertibility theorem</xref> at the end of the section. We end our current discussion with an example illustrating how to compute the eigenvalues and eigenvectors of an arbitrary linear transformation <m>T\colon V\rightarrow V</m> of a finite-dimensional space. The idea is to first represent <m>T</m> as a matrix with respect to some basis <m>B</m>, apply <xref ref="proc_eigenspaces_matrix"/> to this matrix, and then <q>lift</q> the results back to <m>V</m>.
+  Of course statement (2) of <xref ref="cor_eigenvalue_invertible"/> gives rise to yet another equivalent formulation of invertibility, and we include this in our ever-expanding <xref ref="th_invertibility_with_eigenvalue" text="custom">invertibility theorem</xref> at the end of the section. We end our current discussion with an example illustrating how to compute the eigenvalues and eigenvectors of an arbitrary linear transformation <m>T\colon V\rightarrow V</m> of a finite-dimensional space. The idea is to first represent <m>T</m> as a matrix with respect to some basis <m>B</m>, apply <xref ref="proc_eigenspaces_matrix"/> to this matrix, and then <q>lift</q> the results back to <m>V</m>.
 </p>
 <algorithm xml:id="proc_eigenspaces_transformation">
   <title>Computing eigenspaces of a linear transformation</title>
@@ -868,92 +868,97 @@ We will show below that <m>p(t)=\det(tI-A)</m> is indeed a polynomial (<xref ref
 <p>
   Lastly, as promised we end by incorporating statement (2) of <xref ref="cor_eigenvalue_invertible"/> into our invertibility theorem.
 </p>
-<theorem xml:id="th_invertibility_penultimate">
-  <title>Invertibility theorem (final version)</title>
+<theorem xml:id="th_invertibility_with_eigenvalue">
+  <title>Invertibility theorem</title>
   <statement>
     <p>
       Let <m>A</m> be an <m>n\times n</m> matrix.
       The following statements are equivalent.
-    </p>
-    <ol>
-      <li>
+    <ol cols="2">
+      <li xml:id="inv6_statement_def">
         <p>
           <m>A</m> is invertible.
         </p>
       </li>
 
-      <li>
+      <li xml:id="inv6_statement_unique_sol">
         <p>
-          The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a <em>unique solution</em> for <em>any</em> column vector  <m>\boldb</m>.
+          The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a <em>unique solution</em> for any <m>\boldb\in \R^n</m>.
         </p>
       </li>
-      <li>
+      <li xml:id="inv6_statement_exists_sol">
         <p>
-          The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a solution for <em>any</em> column vector  <m>\boldb</m>.
+          The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a solution for any <m>\boldb\in \R^n</m>.
         </p>
       </li>
-      <li>
+      <li xml:id="inv6_statement_trivial_sol">
         <p>
-          The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}</me> has a <em>unique solution</em>: namely, <m>\boldx=\boldzero_{n\times 1}</m>.
+          The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}</me> has a unique solution: namely, <m>\boldx=\boldzero_{n\times 1}</m>.
         </p>
       </li>
-      <li>
+      <li xml:id="inv6_statement_row_equiv">
         <p>
           <m>A</m> is row equivalent to <m>I_n</m>,
           the <m>n\times n</m> identity matrix.
         </p>
       </li>
-      <li>
+      <li xml:id="inv6_statement_prod_elems">
         <p>
           <m>A</m> is a product of elementary matrices.
         </p>
       </li>
-      <li>
+      <li xml:id="inv6_statement_det">
         <p>
           <m>\det A\ne 0</m>.
         </p>
       </li>
-      <li>
+      <li xml:id="inv6_statement_nullspace">
         <p>
           <m>\NS A=\{\boldzero\}</m>
         </p>
       </li>
-      <li>
+      <li xml:id="inv6_statement_nullity">
         <p>
           <m>\nullity A=0</m>
         </p>
       </li>
-      <li>
+      <li xml:id="inv6_statement_rank">
         <p>
-          <m>\rank A=0</m>
+          <m>\rank A=n</m>
         </p>
       </li>
-      <li>
+      <li xml:id="inv6_statement_rowspace">
         <p>
           <m>\RS A=\R^n</m>
         </p>
       </li>
-      <li>
+      <li xml:id="inv6_statement_colspace">
         <p>
           <m>\CS A=\R^n</m>
         </p>
       </li>
-      <li>
+      <li xml:id="inv6_statement_cols">
         <p>
-          Any of the following equivalent conditions about the set <m>S</m> of <em>columns</em> of <m>A</m> hold: <m>S</m> is a basis of <m>\R^n</m>; <m>S</m> spans <m>\R^n</m>; <m>S</m> is linearly independent.
+          Any of the following equivalent conditions about the set <m>S</m> of columns of <m>A</m> hold: <m>S</m> is a basis of <m>\R^n</m>; <m>S</m> spans <m>\R^n</m>; <m>S</m> is linearly independent.
         </p>
       </li>
-      <li>
+      <li xml:id="inv6_statement_rows">
         <p>
-          Any of the following equivalent conditions about the set <m>S</m> of <em>rows</em> of <m>A</m> hold: <m>S</m> is a basis of <m>\R^n</m>; <m>S</m> spans <m>\R^n</m>; <m>S</m> is linearly independent.
+          Any of the following equivalent conditions about the set <m>S</m> of rows of <m>A</m> hold: <m>S</m> is a basis of <m>\R^n</m>; <m>S</m> spans <m>\R^n</m>; <m>S</m> is linearly independent.
         </p>
       </li>
-      <li>
+      <li xml:id="inv6_isom">
         <p>
-          <m>\lambda=0</m> is not an eigenvalue of <m>A</m>.
+          The matrix transformationn <m>T_A\colon \R^n\rightarrow \R^n</m> is an isomorphism. 
+        </p>
+      </li>
+      <li xml:id="inv7_eigenvalue">
+        <p>
+          <m>0</m> is not an eigenvalue of <m>A</m>. 
         </p>
       </li>
     </ol>
+  </p>
   </statement>
 </theorem>
 </subsection>

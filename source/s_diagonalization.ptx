@@ -223,7 +223,7 @@ from the three eigenspaces. You can verify for yourself that these three vectors
 <xref ref="th_independent_eigenvectors"/>
 makes no assumption about the dimension of <m>V</m> and can thus can be applied to linear transformations of infinite-dimensional spaces. The differential operator <m>T(f)=f'</m> provides an interesting example.
 </p>
-<example>
+<!-- <example>
 <statement>
   <title>Differentiation</title>
   <p>
@@ -233,7 +233,7 @@ makes no assumption about the dimension of <m>V</m> and can thus can be applied 
     is linearly independent, and thus that the (uncountably) infinite set  <m>S=\{e^{\lambda x}\colon \lambda\in \R\}\subseteq C^{\infty}(\R)</m> is linearly independent.
   </p>
 </statement>
-</example>
+</example> -->
 <p>
   The next corollary is a useful strengthening of <xref ref="th_independent_eigenvectors"/>, and will be used to prove <xref ref="th_diagonalizability_eigenspaces"/>. Roughly speaking, it says that eigenspaces associated to distinct eigenvalues are <q>linearly independent</q>. Be careful: the phrase in quotes currently has no real meaning for us. We know what it means for <em>vectors</em> to be linearly independent, but not <em>subspaces</em>. However, it is a decent shorthand for the precise statement of <xref ref="cor_independent_eigenspaces"/>.
 </p>

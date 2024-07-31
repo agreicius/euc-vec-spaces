@@ -16,7 +16,7 @@
     <xi:include href="./c_matrices.ptx"/>
     <xi:include href="./c_vectorspace.ptx"/>
     <xi:include href="./c_lin_trans.ptx" />
-    <!-- <xi:include href="./c_eigenvectors_diagonalization.ptx"/> -->
+    <xi:include href="./c_eigenvectors.ptx"/>
     <!-- <xi:include href="./c_innerproductspaces.ptx"/> -->
     <backmatter>
       <title>Backmatter</title>

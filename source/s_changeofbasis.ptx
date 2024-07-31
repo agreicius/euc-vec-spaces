@@ -123,6 +123,7 @@
 
   </theorem>
 <example>
+  <title>Change of basis</title>
   <statement>
     <p>
       Let <m>V=\R^2</m>, <m>B=(\boldv_1=(1,1),\boldv_2=(1,-1))</m>, <m>B'=(\boldw_1=(1,2), \boldw_2=(2,-1))</m>. 
@@ -175,10 +176,12 @@
   </solution>
 </example>
 <example>
+  <title>Change of basis</title>
+  
+  
   <statement>
     <p>
-      Let <m>V=P_2</m>, <m>B=(x^2,x,1)</m>, <m>B'=(p_1(x)=(x-2)^2, p_2(x)=x-2, p_3(x)=1)</m>.
-    
+      Let <m>B=(\bolde_1,\bolde_2,\bolde_3)</m> be the standard basis of <m>\R^3</m> and consider the nonstandard basis <m>B'=(\boldx_1=(1,-4,4),\boldx_2=(0,1,-2), \boldx_3=(0,0,1))</m>.
     <ol>
       <li>
         <p>
@@ -187,7 +190,7 @@
       </li>
       <li>
         <p>
-          Compute <m>[x^2+x+1]_{B'}</m> using <xref ref="eq_changebasis_matrix_prop"/>.
+          Compute <m>[(1,1,1)]_{B'}</m> using <xref ref="eq_changebasis_matrix_prop"/>.
         </p>
       </li>
     </ol>
@@ -202,7 +205,7 @@
             <md>
               <mrow>\underset{B\rightarrow B'}{P} \amp = \begin{bmatrix}
                 \vert \amp \vert \amp \vert \\
-                [x^2]_{B'}\amp [x]_{B'}\amp [1]_{B'} \\
+                [\bolde_1]_{B'}\amp [\bolde_2]_{B'}\amp [\bolde_3]_{B'} \\
                 \vert \amp \vert \amp \vert
               \end{bmatrix} </mrow>
               <mrow> \amp = \begin{bmatrix}
@@ -211,14 +214,25 @@
                 4\amp 2\amp 1
               \end{bmatrix} </mrow>
             </md>.
-            The first two coordinate vector computations are nontrivial; you can verify for yourself that <m>x^2=1(x-2)^2+4(x-2)+4</m> and  <m>x=0(x-2)^2+1(x-2)+2</m>. Alternatively, see  <xref ref="rm_change_of_basis_taylors"/>) for a neat trick for computing these coordinate vectors.
+            The first two coordinate vector computations are nontrivial, but can be computed as usual using <xref ref="proc_coor_vec"/>; you can verify for yourself that 
+            <md>
+              <mrow> (1,0,0)\amp =1(1,-4,4)+4(0,1,-2)+4(0,0,1)</mrow>
+              <mrow>(0,1,0) \amp =0(1,-4,4)+1(0,1,-2)+2(0,0,1)</mrow>
+            </md>.
+            The third coordinate vector computation, <m>[(0,0,1)]_{B'}</m> is easier: since <m>(0,0,1)=\boldv_3</m>, we have 
+            <me>
+              (0,0,1)=0\boldx_1+0\boldx_2+1\boldx_3
+            </me>,
+            and thus <m>[(0,0,1)]_{B'}=(0,0,1)</m>. 
+            
           </p>
         </li>
         <li>
           <p>
-            Since <m>B</m> is the standard basis, we see easily that <m>[x^2+x+1]_{B}=(1,1,1)</m>. Using <xref ref="eq_changebasis_matrix_prop"/> we have
+            Since <m>B</m> is the standard basis, we see easily that <m>[(1,1,1)]_{B}=(1,1,1)</m>. Using <xref ref="eq_changebasis_matrix_prop"/> we have
             <md>
-              <mrow>[x^2+x+1]_{B'} \amp = \underset{B\rightarrow B'}{P}\begin{bmatrix}
+              <mrow>[(1,1,1)]_{B'} \amp = \underset{B\rightarrow B'}{P}[(1,1,1)]_{B}</mrow>
+              <mrow> \amp  = \underset{B\rightarrow B'}{P}\begin{bmatrix}
                 1\\ 1\\ 1
               \end{bmatrix}</mrow>
               <mrow> \amp =\begin{bmatrix}
@@ -227,7 +241,7 @@
             </md>.
             Verify for yourself that we do indeed have
             <me>
-              x^2+x+1=1(x-2)^2+5(x-2)+7
+              (1,1,1)=1(1,-4,4)+5(0,1,-2)+7(0,0,1)
             </me>.
           </p>
         </li>
@@ -235,7 +249,7 @@
     </p>
   </solution>
 </example>
-    <remark xml:id="rm_change_of_basis_taylors">
+  <!-- <remark xml:id="rm_change_of_basis_taylors">
   <title>Taylor's formula and change of basis</title>
   <p>
     Let <m>B=(x^n, x^{n-1}, \dots, x, 1)</m> be the standard basis of <m>P_n</m>. Fix any constant <m>a\in \R</m>, and let <m>B'=((x-a)^n, (x-a)^{n-1}, \dots, (x-a), 1)</m>. It is easy to see that <m>B'</m> is also an ordered basis: a simple degree argument shows that the polynomials <m>p_k(x)=(x-a)^k</m> are linearly independent. It follows from Taylor's theorem (from single-variable calculus) that given any polynomial <m>p\in P_n</m> we have
@@ -248,7 +262,7 @@
     </men>.
     In other words, Taylor's theorem provides a simple derivative formula for computing coordinate vectors with respect to the basis <m>B'</m>.
   </p>
-</remark>
+</remark> -->
 <p>
   The following properties are often useful when computing various change of basis matrices.
 </p>
@@ -263,8 +277,8 @@
           <p>
             We have
             <me>
-            \underset{B\rightarrow B}{P}=I
-            </me>.
+            \underset{B\rightarrow B'}{P}=[\id_V]_{B}^{B'}
+            </me>. As a consequence, <m>\underset{B\rightarrow B}{P}=I</m>. 
           </p>
         </li>
         <li>
@@ -293,7 +307,7 @@
       <ol>
         <li>
           <p>
-            Let <m>B=(\boldv_1, \boldv_2,\dots, \boldv_n)</m>. From formula <xref ref="eq_matrixrep_formula"/> applied to <m>I_v</m>, we see that the <m>j</m>-th column of <m>[I_V]_B^{B'}</m> is 
+            Let <m>B=(\boldv_1, \boldv_2,\dots, \boldv_n)</m>. From formula <xref ref="eq_matrixrep_formula"/> applied to <m>\id_v</m>, we see that the <m>j</m>-th column of <m>[\id_V]_B^{B'}</m> is 
             <me>
               [\boldv_j]_{B'}
             </me>
@@ -301,6 +315,17 @@
             <me>
             [I_V]_B^{B'} = \underset{B\rightarrow B'}{P}
             </me>.
+            Choosing <m>B'=B</m>, we see that 
+            <md>
+              <mrow>\underset{B\rightarrow B}{P} \amp =[\id_V]_{B}^{B} </mrow>
+              <mrow> \amp = I</mrow>
+            </md>.
+            The last equality above follows since the <m>j</m>-th column of <m>[\id_V]_{B}^{B}</m> is 
+            <me>
+              [\id_V(\bolde_j)]_{B}=[\bolde_j]_{B}=\bolde_j
+            </me>,
+            since <m>B</m> is the standard basis. 
+            
           </p>
         </li>
         <li>
@@ -343,6 +368,9 @@
 </example>
 
 <example>
+  <title>Change of basis, <m>B</m> standard</title>
+  
+  
   <statement>
     <p>
       Let <m>V=\R^2</m>, <m>B=((1,0),(0,1))</m>, <m>B'=\{(1,\sqrt{3}),(-\sqrt{3},1)\}</m>. Compute <m>\underset{B\rightarrow B'}{P}</m> and <m>\underset{B'\rightarrow B}{P}</m>.
@@ -365,6 +393,7 @@
     </p>
 </remark>
 <example xml:id="eg_changebasis_standard_mat">
+  <title>Change of basis, <m>B</m> standard</title>
   <statement>
     <p>
       Let <m>V=M_{22}</m>, <m>B=(E_{11}, E_{12}, E_{21}, E_{22})</m> (standard basis) and <m>B'=(A_1,A_2,A_3,A_4)</m>, where
@@ -420,14 +449,13 @@
   </solution>
 </example>
 
-<paragraphs xml:id="ss_vid_eg_changeofbasis">
+<example xml:id="ss_vid_eg_changeofbasis">
   <title>Video example: change of basis matrix</title>
   <figure xml:id="fig_vid_changeofbasis">
-    <title>Video: change of basis matrix</title>
   <caption>Video: change of basis matrix</caption>
   <video xml:id="vid_changeofbasis" youtube="Se4F3CRay-k" />
   </figure>
-</paragraphs>
+</example>
 
 
 
@@ -549,20 +577,31 @@
     </statement>
   </remark>
 <example>
+  <title>Matrix representations and change of basis</title>
+  
+  
   <statement>
     <p>
-      Let <m>T\colon P_2\rightarrow P_2</m> be defined as <m>T(p(x))=p(x)+2p'(x)+xp''(x)</m>.
+      The function 
+      <md>
+        <mrow>T\colon \R^3 \amp \rightarrow \R^3</mrow>
+        <mrow> (x,y,z)\amp\mapsto (2x-y-z, -x+2y-z, -x-y+2z) </mrow>
+      </md>
+      is linear. 
       <ol>
         <li>
           <p>
-            Let <m>B=(x^2, x, 1)</m>.
-            Compute <m>[T]_B</m>.
+            Compute <m>[T]_B</m>, where <m>B=(\bolde_1,\bolde_2,\bolde_3)</m> is the the standard basis of <m>\R^3</m>.
           </p>
         </li>
         <li>
           <p>
-            Let <m>B'=(x^2+x+1, x^2+1, x+1)</m>.
-            Use the change of basis formula to compute <m>[T]_{B'}</m>.
+            Consider the nonstandard basis <m>B'=((1,-1,0),(1,1,-2),(1,1,1))</m> of <m>\R^3</m>. Compute <m>[T]_{B'}</m> directly using <xref ref="d_matrix_representation"/>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            Now compute <m>[T]_{B'}</m> using <m>[T]_B</m> and the change of basis formula <xref ref="eq_changebasis_transform_inverse"/>. 
           </p>
         </li>
       </ol>
@@ -572,45 +611,64 @@
     <ol>
       <li>
         <p>
-            We easily compute <m>[T]_B=\begin{bmatrix}1\amp 0\amp 0\\ 6\amp 1\amp 0\\ 0\amp 2\amp 1 \end{bmatrix}</m> using our usual recipe.
+          According to <xref ref="th_matrixreps_matrixtransforms"/>, since <m>B</m> is the standard basis of <m>\R^3</m>, <m>[T]_B</m> is just the standard matrix of <m>T</m>. Thus we can use <xref ref="proc_standard_matrix"/> to compute  
+          <me>
+            [T]_B=\begin{amatrix}[rrr] 2\amp -1 \amp -1 \\ -1\amp 2 \amp -1 \\ -1 \amp -1 \amp 2 \end{amatrix}
+          </me>.
         </p>
       </li>
       <li>
         <p>
-          We need to compute both change of basis matrices. Since <m>B</m> is standard we compute
-          <me>
-            \underset{B'\rightarrow B}{P}=\begin{bmatrix}1\amp 1\amp 0\\ 1\amp 0\amp 1\\ 1\amp 1\amp 1 \end{bmatrix}
-          </me>
-          essentially by inspection. It follows that
-          <me>
-            \underset{B\rightarrow B'}{P}=(\underset{B'\rightarrow B}{P})^{-1}=\begin{amatrix}[rrr]
-            1\amp 1\amp -1\\ 0\amp -1\amp 1\\ -1\amp 0\amp 1
-            \end{amatrix}
-          </me>.
-          Lastly, using <xref ref="eq_changebasis_transform"/> we have
+          We compute <m>[T]_{B'}</m> directly using <xref ref="d_matrix_representation"/>:
           <md>
-            <mrow> [T]_{B'}\amp =\underset{B\rightarrow B'}{P}[T]_B\underset{B'\rightarrow B}{P} </mrow>
-            <mrow>  \amp = \begin{amatrix}[rrr]
-            1\amp 1\amp -1\\ 0\amp -1\amp 1\\ -1\amp 0\amp 1
-            \end{amatrix}
-            \begin{bmatrix}1\amp 0\amp 0\\ 6\amp 1\amp 0\\ 0\amp 2\amp 1 \end{bmatrix}
-              \begin{bmatrix}1\amp 1\amp 0\\ 1\amp 0\amp 1\\ 1\amp 1\amp 1 \end{bmatrix}
-            </mrow>
-            <mrow>  \amp = \begin{amatrix}[rrr]
-            5\amp 6\amp -2\\ -4\amp -5\amp 2\\ 2\amp 0\amp 3
-            \end{amatrix}
-            </mrow>
+            <mrow>[T]_{B'} \amp = \begin{bmatrix} \vert \amp \vert \amp \vert \\ [T(1,-1,0)]_{B'} \amp [T(1,1,-2)]_{B'}\amp [T(1,1,1)]_{B'}\\ \vert \amp \vert \amp \vert \end{bmatrix}</mrow>
+            <mrow> \amp = \begin{bmatrix} \vert \amp \vert \amp \vert \\ [(3,-3,0)]_{B'} \amp [(3,3,-6)]_{B'}\amp [(0,0,0)]_{B'}\\ \vert \amp \vert \amp \vert \end{bmatrix}</mrow>
+            <mrow> \amp = \begin{bmatrix} 3\amp 0 \amp 0 \\ 0\amp 3\amp 0 \\ 0 \amp 0 \amp 0\end{bmatrix}</mrow>
           </md>.
+          The coordinate vector computations in the last equality were all done by inspection: 
+          <md>
+            <mrow>(3,-3,0) \amp =3(1,-1,0)+0(1,1,-2)+0(1,1,1)</mrow>
+            <mrow>(3,3,-6) \amp =0(1,-1,0)+3(1,1,-2)+0(1,1,1)</mrow>
+            <mrow>(0,0,0) \amp =0(1,-1,0)+0(1,1,-2)+0(1,1,1)</mrow>
+          </md>.
+        </p>
+      </li>
+      <li>
+        <p>
+          To use the change of basis formula <xref ref="eq_changebasis_transform_inverse"/>, we need to compute <m>\underset{B'\rightarrow B}{P}</m> and <m>\left( \underset{B'\rightarrow B}{P}\right)^{-1}</m>. Since <m>B</m> is the standard basis of <m>\R^3</m>, using <xref ref="rm_changebasis_standard"/> we see that we can build <m>\underset{B'\rightarrow B}{P}</m> simply by placing the elements of <m>B'</m> in as its columns: 
+          <me>
+            \underset{B'\rightarrow B}{P}=\begin{amatrix}[rrr]1\amp 1\amp 1\\ -1\amp 1\amp 1\\ 0\amp -2\amp 1\end{amatrix}
+          </me>.
+          We then compute the inverse
+          <me>
+            \left( \underset{B'\rightarrow B}{P}\right)^{-1}=\begin{amatrix}[rrr]
+            \frac{1}{2} \amp -\frac{1}{2} \amp 0 \\
+\frac{1}{6} \amp \frac{1}{6} \amp -\frac{1}{3} \\
+\frac{1}{3} \amp \frac{1}{3} \amp \frac{1}{3}
+\end{amatrix}
+          </me>.
+          Lastly, we compute 
+          <md>
+            <mrow>[T]_{B'} \amp = \left( \underset{B'\rightarrow B}{P}\right)^{-1}\,[T]_B\, \underset{B'\rightarrow B}{P}</mrow>
+            <mrow> \amp =\begin{amatrix}[rrr]
+              \frac{1}{2} \amp -\frac{1}{2} \amp 0 \\
+  \frac{1}{6} \amp \frac{1}{6} \amp -\frac{1}{3} \\
+  \frac{1}{3} \amp \frac{1}{3} \amp \frac{1}{3}
+  \end{amatrix}
+  \begin{amatrix}[rrr] 2\amp -1 \amp -1 \\ -1\amp 2 \amp -1 \\ -1 \amp -1 \amp 2 \end{amatrix}
+  \begin{amatrix}[rrr]1\amp 1\amp 1\\ -1\amp 1\amp 1\\ 0\amp -2\amp 1\end{amatrix}
+ </mrow>
+ <mrow> \amp = \begin{bmatrix} 3\amp 0 \amp 0 \\ 0\amp 3\amp 0 \\ 0 \amp 0 \amp 0\end{bmatrix}</mrow>
+          </md>,
+          as we expected. 
         </p>
       </li>
     </ol>
   </solution>
 </example>
 <p>
-  Consider the special case where <m>T\colon \R^n\rightarrow \R^n</m>: that is, when <m>V=\R^n</m> is a space of <m>n</m>-tuples. We know from <xref ref="th_matrix_transform"/> that <m>T=T_A</m> for a unique <m>n\times n</m> matrix <m>A</m>. Recall that <m>A</m> is called the standard matrix of <m>T</m> (<xref ref="d_transformation_standard_matrix" text="global"/>), and satisfies <m>T(\boldx)=A\boldx</m> for all <m>\boldx\in \R^n</m>. We often wish to compute <m>A</m>, as it provides a convenient matrix formula for <m>T</m>.
-</p>
-<p>
-  To compute <m>A</m> <em>directly</em> using the recipe in <xref ref="th_matrix_transform" text="global"/>, we must compute <m>T(\bolde_j)</m> for each of the standard basis elements <m>\bolde_j</m>. For many naturally occurring transformations <m>T</m>, this is often not so easy to do. <xref ref="th_change_of_basis_transformations"/> provides an indirect method in such cases.
+  Consider the special case where <m>T\colon \R^n\rightarrow \R^n</m>: that is, when <m>V=\R^n</m> is a space of <m>n</m>-tuples. We know from <xref ref="th_matrix_transform"/> that <m>T=T_A</m> for a unique <m>n\times n</m> matrix <m>A</m>: the standard matrix of <m>T</m>. The standard matrix of <m>T</m> is useful, as it  provides a convenient matrix formula for <m>T</m>.
+  To compute <m>A</m> <em>directly</em> using the recipe in <xref ref="th_matrix_transform" text="global"/>, we must compute <m>T(\bolde_j)</m> for each of the standard basis elements <m>\bolde_j</m>. For many naturally occurring transformations <m>T</m>, this is often not so easy to do. <xref ref="th_change_of_basis_transformations"/> provides an indirect method in such cases, as we now explain.
 </p>
 <p>
   According to <xref ref="th_matrixreps_matrixtransforms"/> we have <m>A=[T]_B</m>: <ie />, the standard matrix of <m>T</m> is none other than the matrix representing <m>T</m> with respect to the standard basis. This connection allows us to compute <m>A=[T]_B</m> by first computing <m>[T]_{B'}</m> for some more convenient basis <m>B'</m>, and then using the change of basis formula.
@@ -646,6 +704,117 @@
 <p>
   <xref ref="proc_standard_matrix_via_change_of_basis"/> is a powerful technique for computing matrix formulas for many interesting geometric linear transformations of <m>\R^n</m>: <eg />, rotations, reflections, and orthogonal projections. Often the very definition of such transformations will suggest a more convenient nonstandard basis <m>B'</m>: one that reflects the geometry involved. The next example illustrates this nicely.
 </p>
+<example xml:id="eg_changebasis_reflection">
+  <title>Reflection in <m>\R^2</m></title>
+  <statement>
+    <p>
+    Let <m>T\colon \R^2\rightarrow \R^2</m> be reflection through the line <m>\ell</m> with equation <m>y=2x</m>. We showed in <xref ref="th_transform_reflection"/> that such a reflection is a linear transformation. 
+    <ol>
+      <li>
+        <p>
+          Using the geometric definition of reflection (see <xref ref="d_reflection"/>), come up with a basis <m>B'=(\boldx_1,\boldx_2)</m> such that <m>T(\boldx_1)=\boldx_1</m> and <m>T(\boldx_2)=-\boldx_2</m>: <ie/> the reflection <m>T</m> <q>fixes</q> <m>\boldx_1</m> and <q>flips</q> <m>\boldx_2</m>. You might use the interactive in <xref ref="fig_rot_refl"/>  to see how you should choose <m>B'</m>.  
+        </p>
+      </li>
+      <li>
+        <p>
+          Show that
+          <md>
+            <mrow>[T]_{B'} \amp = \begin{amatrix}[rr] 1\amp 0 \\ 0\amp -1\end{amatrix}</mrow>
+          </md>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Use the change of basis formula <xref ref="eq_changebasis_transform_inverse"/> to compute <m>[T]_{B}</m>, the standard matrix of <m>T</m>. 
+        </p>
+      </li>
+      <li>
+        <p>
+          Explain how your expression for <m>[T]_B</m> is consistent with the matrix formula given in <xref ref="th_transform_reflection"/>. 
+        </p>
+      </li>
+    </ol>
+  </p>
+</statement>
+<solution>
+  <p>
+    <ol>
+      <li>
+        <p>
+          Geometrically, reflection through the line <m>\ell</m> defined by <m>y=2x</m> fixes any vector that points along <m>\ell</m> and flips any vector that points perpendicularly to <m>\ell</m>. The vector <m>\boldx_1=(1,2)</m> points along <m>\ell</m>; and the vector <m>\boldx_2=(2,-1)</m> points perpendicularly to <m>(1,2)</m> (and hence <m>\ell</m>). It follows that <m>B'=(\boldx_1,\boldx_2)</m> is a basis satisfying <m>T(\boldx_1)=\boldx_1</m> and <m>T(\boldx_2)=-\boldx_2</m>. 
+        </p>
+      </li>
+      <li>
+        <p>
+          We compute 
+          <md>
+            <mrow>[T]_{B'} \amp = \begin{bmatrix}\vert \amp \vert \\ [T(\boldx_1)]_{B'}\amp [T(\boldx_2)]_{B'}\\ \vert \amp \vert \end{bmatrix}</mrow>
+            <mrow> \amp = \begin{bmatrix}\vert \amp \vert \\ [\boldx_1]_{B'}\amp [-\boldx_2]_{B'}\\ \vert \amp \vert \end{bmatrix} \amp (T(\boldx_1)=\boldx_1, T(\boldx_2)=-\boldx_2)</mrow>
+            <mrow> \amp =\begin{amatrix}[rr] 1\amp 0\\ 0 \amp -1\end{amatrix}</mrow>
+          </md>.
+          The coordinate vectors in the last equality were computed by inspection: 
+          <md>
+            <mrow>\boldx_1 \amp =1\boldx_1+0\boldx_2</mrow>
+            <mrow>-\boldx_2 \amp =0\boldx_1+(-1)\boldx_2</mrow>
+          </md>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Using <xref ref="rm_changebasis_standard"/>, we have 
+          <me>
+            \underset{B'\rightarrow B}{P}=\begin{amatrix}[rr] 1\amp 2 \\ 2\amp -1 \end{amatrix}
+          </me>,
+          and thus 
+          <me>
+            \underset{B\rightarrow B'}{P}=\left(\underset{B'\rightarrow B}{P}\right)^{-1}=\frac{1}{5}\begin{amatrix}[rr]1\amp 2 \\2\amp -1\end{amatrix}
+          </me>.
+          We conclude that 
+          <md>
+            <mrow>[T]_B \amp =\underset{B'\rightarrow B}{P}\, [T]_{B'}\, \underset{B\rightarrow B'}{P}</mrow>
+            <mrow> \amp = \begin{amatrix}[rr] 1\amp 2 \\ 2\amp -1 \end{amatrix}
+              \begin{amatrix}[rr] 1\amp 0\\ 0 \amp -1\end{amatrix}
+              \left( \frac{1}{5}\begin{amatrix}[rr]1\amp 2 \\2\amp -1\end{amatrix} \right)
+               </mrow>
+               <mrow> \amp = \frac{1}{5}\begin{amatrix}[rr] 1\amp 2 \\ 2\amp -1 \end{amatrix}
+                \begin{amatrix}[rr] 1\amp 0\\ 0 \amp -1\end{amatrix}
+                \begin{amatrix}[rr]1\amp 2 \\2\amp -1\end{amatrix} 
+                 </mrow>
+               <mrow> \amp =\frac{1}{5}\begin{amatrix}[rr]-3\amp 4\\ 4\amp 3\end{amatrix} </mrow>
+          </md>.
+        </p>
+      </li>
+      <li>
+        <p>
+          According to <xref ref="th_transform_reflection"/>, we should have 
+          <me>
+            [T]_B=\begin{amatrix}[rr]\cos 2\alpha \amp \sin 2\alpha \\
+            \sin 2\alpha \amp -\cos 2\alpha \end{amatrix}
+          </me>,
+          where <m>\alpha</m> is the angle that <m>\ell</m> makes with the positive <m>x</m>-axis. Since <m>(1,2)</m> lies along <m>\ell</m>, it follows by drawing the relevant right triangle that 
+          <md>
+            <mrow>\cos \alpha\amp =\frac{1}{\sqrt{5}} \amp \sin \alpha=\frac{2}{\sqrt{5}} </mrow>
+          </md>,
+          and hence that 
+          <md>
+            <mrow>\cos 2\alpha \amp = \cos^2\alpha-\sin^2\alpha</mrow>
+            <mrow> \amp = \frac{1}{5}-\frac{4}{5}=-\frac{3}{5}</mrow>
+            <mrow>\sin 2\alpha \amp =2\sin\alpha\cos\alpha=\frac{4}{5}</mrow>
+          </md>.
+          This shows 
+          <me>
+            \begin{amatrix}[rr]\cos 2\alpha \amp \sin 2\alpha \\
+            \sin 2\alpha \amp -\cos 2\alpha \end{amatrix}= 
+            \frac{1}{5}\begin{amatrix}[rr]-3\amp 4\\ 4\amp 3\end{amatrix}
+          </me>
+          in this case, as expected.   
+        </p>
+      </li>
+    </ol>
+  </p>
+</solution>
+  
+</example>
 <!-- <example>
   <title>Orthogonal projection (again)</title>
   <statement>
@@ -689,22 +858,20 @@
   </p>
   </statement>
 </example> -->
-<paragraphs xml:id="ss_vid_eg_changebasis_transform">
+<example xml:id="ss_vid_eg_changebasis_transform">
   <title>Video example: change of basis for transformations</title>
   <figure xml:id="fig_vid_changebasis_transform">
-    <title>Video: change of basis for transformations</title>
   <caption>Video: change of basis for transformations</caption>
   <video xml:id="vid_changebasis_transform" youtube="zvsIs1N195c" />
   </figure>
-</paragraphs>
-<paragraphs xml:id="ss_vid_eg_changebasis_reflection">
+</example>
+<example xml:id="ss_vid_eg_changebasis_reflection">
   <title>Video example: change of basis and reflection</title>
   <figure xml:id="fig_vid_changebasis_reflection">
-    <title>Video: computing reflection via change of basis</title>
   <caption>Video: computing reflection via change of basis</caption>
   <video xml:id="vid_changebasis_reflection" youtube="4LNYEeVE8Ms" />
   </figure>
-</paragraphs>
+</example>
 </subsection>
 <subsection xml:id="ss_changebasis_similarity">
 <title>Similarity and the holy commutative tent of linear algebra</title>

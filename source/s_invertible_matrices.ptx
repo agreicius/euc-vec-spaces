@@ -273,7 +273,7 @@
   which is a contradiction. We have proved that if <m>ad-bc=0</m>, then <m>A</m> is not invertible.
   </p>
 </proof>
-<project>
+<project xml:id="sage_inv_matrix">
   <title>Invertible matrices</title>
   <p>
   Sage has a number of useful tools related to invertibility. The boolean function <c>is_invertible()</c> tests for invertibility, and the method <c>inverse()</c> computes the inverse of an invertible matrix. Below we generate a random matrix with rational coefficients, test whether it is invertible, and compute its inverse if it is invertible. The <c>density=0.5</c> ensures that roughly half of the matrix entries are zero; and this in turn increases the likelihood that the matrix is singular, for reasons that will become somewhat clearer later.

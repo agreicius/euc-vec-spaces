@@ -90,7 +90,8 @@
       <md>
         <mrow>[T]_{B}^{B'} \amp =\begin{bmatrix}
           \vert \amp \vert \amp \vert \\
-          [T(bolde_1)]_{B'} \amp [T(\bolde_2)]_{B'}\amp [T(\bolde_3)]_{B'} \end{bmatrix} </mrow>
+          [T(\bolde_1)]_{B'} \amp [T(\bolde_2)]_{B'}\amp [T(\bolde_3)]_{B'} \\
+          \vert \amp \vert \amp \vert \end{bmatrix} </mrow>
       </md>.
       We first compute <m>T(\bolde_i)</m> for each <m>1\leq i\leq 3</m>: 
       <md>
