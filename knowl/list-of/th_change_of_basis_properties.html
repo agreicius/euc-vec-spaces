@@ -12,7 +12,7 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Change of basis matrix properties.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Change of basis matrix properties.</span>
 </h4>
 <div class="para logical">
 <div class="para">Let <span class="process-math">\(B, B', B''\)</span> be ordered bases for the <span class="process-math">\(n\)</span>-dimensional vector space <span class="process-math">\(V\text{.}\)</span>
@@ -22,15 +22,17 @@
 <div class="para">We have</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\underset{B\rightarrow B}{P}=I\text{.}
+\underset{B\rightarrow B'}{P}=[\id_V]_{B}^{B'}\text{.}
 \end{equation*}
+</div>
+<div class="para">As a consequence, <span class="process-math">\(\underset{B\rightarrow B}{P}=I\text{.}\)</span>
 </div>
 </div></li>
 <li><div class="para logical">
 <div class="para">The matrix <span class="process-math">\(\underset{B\rightarrow B'}{P}\)</span> is invertible. In fact, we have</div>
 <div class="displaymath process-math">
 \begin{equation}
-\left(\underset{B\rightarrow B'}{P}\right)^{-1}=\underset{B'\rightarrow B}{P}\tag{5.5.4}
+\left(\underset{B\rightarrow B'}{P}\right)^{-1}=\underset{B'\rightarrow B}{P}\tag{5.5.3}
 \end{equation}
 </div>
 </div></li>
@@ -45,7 +47,7 @@
 </ol>
 </div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><ol class="decimal" id="th_change_of_basis_properties-3-1">
 <li><div class="para logical">
-<div class="para">Let <span class="process-math">\(B=(\boldv_1, \boldv_2,\dots, \boldv_n)\text{.}\)</span> From formula <a href="s_matrixreps.html#eq_matrixrep_formula" class="xref" data-knowl="./knowl/xref/eq_matrixrep_formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.4.1">(5.4.1)</a> applied to <span class="process-math">\(I_v\text{,}\)</span> we see that the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\([I_V]_B^{B'}\)</span> is</div>
+<div class="para">Let <span class="process-math">\(B=(\boldv_1, \boldv_2,\dots, \boldv_n)\text{.}\)</span> From formula <a href="s_matrixreps.html#eq_matrixrep_formula" class="xref" data-knowl="./knowl/xref/eq_matrixrep_formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.4.1">(5.4.1)</a> applied to <span class="process-math">\(\id_v\text{,}\)</span> we see that the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\([\id_V]_B^{B'}\)</span> is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_matrixrep_formula.html ./knowl/xref/eq_change_basis_matrix.html ./knowl/xref/d_change_of_basis.html">
 \begin{equation*}
 [\boldv_j]_{B'}
@@ -57,6 +59,20 @@
 [I_V]_B^{B'} = \underset{B\rightarrow B'}{P}\text{.}
 \end{equation*}
 </div>
+<div class="para">Choosing <span class="process-math">\(B'=B\text{,}\)</span> we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_matrixrep_formula.html ./knowl/xref/eq_change_basis_matrix.html ./knowl/xref/d_change_of_basis.html">
+\begin{align*}
+\underset{B\rightarrow B}{P} \amp =[\id_V]_{B}^{B} \\
+\amp = I\text{.}
+\end{align*}
+</div>
+<div class="para">The last equality above follows since the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\([\id_V]_{B}^{B}\)</span> is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_matrixrep_formula.html ./knowl/xref/eq_change_basis_matrix.html ./knowl/xref/d_change_of_basis.html">
+\begin{equation*}
+[\id_V(\bolde_j)]_{B}=[\bolde_j]_{B}=\bolde_j\text{,}
+\end{equation*}
+</div>
+<div class="para">since <span class="process-math">\(B\)</span> is the standard basis.</div>
 </div></li>
 <li><div class="para logical">
 <div class="para">This follows from (1) and <a href="s_matrixreps.html#th_matrixrep" class="xref" data-knowl="./knowl/xref/th_matrixrep.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.4.6: Defining property of matrix representation">Theorem 5.4.6</a>:</div>

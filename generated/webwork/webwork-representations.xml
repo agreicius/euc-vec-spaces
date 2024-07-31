@@ -3826,4 +3826,283 @@ Find the matrix <m>\lbrack D \rbrack_{\mathcal{B}}^{\mathcal{C}}</m> for <m>D</m
     <server-data sourceFilePath="Library/Hope/Multi1/04-04-Basis-and-functions/Matrix_rep_07.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="Library/Hope/Multi1/04-04-Basis-and-functions/Matrix_rep_07.pg"/>
   </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-100" ww-id="webwork-100">
+    <static seed="100" source="Library/TCNJ/TCNJ_Eigenvalues/problem3.pg">
+      <statement><p>Find the eigenvalues of <m>A</m>, given that <m>A = \left[\begin{array}{ccc}
+9 \amp 4 \amp -18\cr
+10 \amp 3 \amp -18\cr
+5 \amp 4 \amp -14
+\end{array}\right]</m></p>
+<p>and its eigenvectors are <m>v_1 = \left[\begin{array}{c}
+-1\cr
+-1\cr
+-1
+\end{array}\right], v_2 = \left[\begin{array}{c}
+1\cr
+2\cr
+1
+\end{array}\right]</m> and <m>v_3 = \left[\begin{array}{c}
+-2\cr
+-2\cr
+-1
+\end{array}\right]</m>.</p>
+<p>The corresponding eigenvalues are <m>\lambda_1 =</m><fillin name="AnSwEr0001" characters="10"/>, 
+<m>\lambda_2 =</m><fillin name="AnSwEr0002" characters="10"/>, and <m>\lambda_2 =</m><fillin name="AnSwEr0003" characters="10"/>.</p>
+</statement>
+      <answer>
+        <p>
+          <m>-5</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-1</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>4</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/TCNJ/TCNJ_Eigenvalues/problem3.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/TCNJ/TCNJ_Eigenvalues/problem3.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-101" ww-id="webwork-101">
+    <static seed="101" source="Library/TCNJ/TCNJ_Eigenvalues/problem13.pg">
+      <statement><p>Find the eigenvalues <m>\lambda_1 \lt  \lambda_2 \lt  \lambda_3</m> and corresponding eigenvectors of the matrix
+<me>A = \left[\begin{array}{ccc}
+-4 \amp 20 \amp 44\cr
+0 \amp 0 \amp -4\cr
+0 \amp 0 \amp 4
+\end{array}\right].</me></p>
+<p>The eigenvalue
+<m>\lambda_1 =</m><fillin name="AnSwEr0001" characters="5"/> corresponds to the eigenvector <fillin rows="3"/>.</p>
+<p>The eigenvalue
+<m>\lambda_2 =</m><fillin name="AnSwEr0003" characters="5"/> corresponds to the eigenvector <fillin rows="3"/>.</p>
+<p>The eigenvalue
+<m>\lambda_3 =</m><fillin name="AnSwEr0005" characters="5"/> corresponds to the eigenvector <fillin rows="3"/>.</p>
+</statement>
+      <answer>
+        <p>
+          <m>-4</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>0</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>4</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/TCNJ/TCNJ_Eigenvalues/problem13.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/TCNJ/TCNJ_Eigenvalues/problem13.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-102" ww-id="webwork-102">
+    <static seed="102" source="Library/TCNJ/TCNJ_CharacteristicPolynomial/problem4.pg">
+      <statement><p>Find the eigenvalues of the matrix <m>A</m>.
+<me>A = \left[\begin{array}{cccc}
+-1 \amp 6 \amp 0 \amp 0\cr
+0 \amp -7 \amp 0 \amp 0\cr
+0 \amp 0 \amp -4 \amp 4\cr
+0 \amp 0 \amp -24 \amp 16
+\end{array}\right].</me></p>
+<p>The eigenvalues are <m>\lambda_1 \lt  \lambda_2 \lt  \lambda_3 \lt  \lambda_4</m>, where</p>
+<p><m>\lambda_1 =</m> <fillin name="AnSwEr0001" characters="5"/>
+has an eigenvector <fillin rows="4"/>,
+<m>\lambda_2 =</m> <fillin name="AnSwEr0003" characters="5"/>
+has an eigenvector <fillin rows="4"/>,</p>
+<p><m>\lambda_3 =</m> <fillin name="AnSwEr0005" characters="5"/>
+has an eigenvector <fillin rows="4"/>,
+<m>\lambda_4 =</m> <fillin name="AnSwEr0007" characters="5"/>
+has an eigenvector <fillin rows="4"/>.</p>
+<p><alert>Note:</alert> you may want to use a graphing calculator to estimate the roots of the polynomial which defines
+the eigenvalues.</p>
+</statement>
+      <answer>
+        <p>
+          <m>-7</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-1</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>4</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>8</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/TCNJ/TCNJ_CharacteristicPolynomial/problem4.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/TCNJ/TCNJ_CharacteristicPolynomial/problem4.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-103" ww-id="webwork-103">
+    <static seed="103" source="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_13.pg">
+      <statement><p>Suppose a <m>3\times 3</m> matrix <m>A</m> has only two distinct eigenvalues. Suppose that <m>{\rm tr}(A)=-1</m> and 
+<m>{\rm det}(A)=112</m>. Find the eigenvalues of <m>A</m> with their algebraic multiplicities.</p>
+<p>The smaller eigenvalue = <fillin name="AnSwEr0001" characters="5"/> has multiplicity <fillin name="AnSwEr0002" characters="5"/>, and</p>
+<p>the larger eigenvalue = <fillin name="AnSwEr0003" characters="5"/> has multiplicity <fillin name="AnSwEr0004" characters="5"/>.</p>
+</statement>
+      <answer>
+        <p>
+          <m>-4</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>2</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>7</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>1</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_13.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_13.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-104" ww-id="webwork-104">
+    <static seed="104" source="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_26.pg">
+      <statement><p>If <m>\vec{v}_1 = \left[\begin{array}{c}
+5\cr
+-4
+\end{array}\right]</m> and <m>\vec{v}_2=\left[\begin{array}{c}
+-2\cr
+1
+\end{array}\right]</m> 
+are eigenvectors of a matrix <m>A</m> corresponding 
+to the eigenvalues <m>\lambda_1=1</m> and <m>\lambda_2=6</m>, respectively,</p>
+<p>then <m>A(\vec{v}_1 + \vec{v}_2) =</m> <fillin rows="2"/></p>
+<p>and <m>A(-3 \vec{v}_1)=</m> <fillin rows="2"/></p>
+</statement>
+    </static>
+    <server-data sourceFilePath="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_26.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_26.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-105" ww-id="webwork-105">
+    <static seed="105" source="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_27.pg">
+      <statement><p>Let <me>\vec{v}_1=\left[\begin{array}{c}
+0\cr
+1\cr
+2
+\end{array}\right], \vec{v}_2 = \left[\begin{array}{c}
+1\cr
+-1\cr
+0
+\end{array}\right], \vec{v}_3 = \left[\begin{array}{c}
+1\cr
+0\cr
+-1
+\end{array}\right]</me>
+be eigenvectors of the matrix <m>A</m> which correspond to the eigenvalues <m>\lambda_1 = -2</m>, 
+<m>\lambda_2 = -1</m>, and <m>\lambda_3 = 1</m>, respectively, and let 
+<me>\vec{x}=\left[\begin{array}{c}
+4\cr
+-1\cr
+0
+\end{array}\right].</me></p>
+<p>Express <m>\vec{x}</m> as a linear combination of <m>\vec{v}_1</m>, <m>\vec{v}_2</m>, and <m>\vec{v}_3</m>, and find <m>A\vec{x}</m>.</p>
+<p><m>\vec{x}=</m> <fillin name="AnSwEr0001" characters="15"/> <m>\vec{v}_1+</m> <fillin name="AnSwEr0002" characters="15"/> <m>\vec{v}_2+</m> <fillin name="AnSwEr0003" characters="15"/> <m>\vec{v}_3</m>.</p>
+<p><m>A\vec{x}=</m> <fillin rows="3"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>1</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>2</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>2</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_27.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_27.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-106" ww-id="webwork-106">
+    <static seed="106" source="Library/TCNJ/TCNJ_Diagonalization/problem4.pg">
+      <statement><p>Let <m>A</m> = <m>\left[\begin{array}{cc}
+14 \amp -6\cr
+18 \amp -7
+\end{array}\right]</m></p>
+<p>Find a matrix <m>S</m>, a diagonal matrix <m>D</m> and <m>S^{-1}</m> such that <m>A=SDS^{-1}</m>.</p>
+<p><m>S =</m> <fillin rows="2" cols="2"/>,  <m>D =</m> <fillin rows="2" cols="2"/>,  <m>S^{-1} =</m> <fillin rows="2" cols="2"/></p>
+</statement>
+    </static>
+    <server-data sourceFilePath="Library/TCNJ/TCNJ_Diagonalization/problem4.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/TCNJ/TCNJ_Diagonalization/problem4.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-107" ww-id="webwork-107">
+    <static seed="107" source="Library/NAU/setLinearAlgebra/diag3x3.pg">
+      <statement><p>Let <m>A = \left[\begin{array}{ccc}
+12 \amp 12 \amp -3\cr
+-6 \amp -5 \amp 2\cr
+6 \amp 8 \amp 1
+\end{array}\right]</m>. Find an invertible matrix <m>P</m> and a diagonal matrix <m>D</m> such that <m>D = P^{-1}AP</m>.</p>
+<p><m>P=</m> <fillin rows="3" cols="3"/>, <m>D=</m> <fillin rows="3" cols="3"/></p>
+</statement>
+    </static>
+    <server-data sourceFilePath="Library/NAU/setLinearAlgebra/diag3x3.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/NAU/setLinearAlgebra/diag3x3.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-108" ww-id="webwork-108">
+    <static seed="108" source="Library/NAU/setLinearAlgebra/similarB.pg">
+      <statement><p>Show that <m>A=\left[\begin{array}{ccc}
+3 \amp 0 \amp 0\cr
+-1 \amp 2 \amp -1\cr
+0 \amp 0 \amp 3
+\end{array}\right]</m> and <m>B=\left[\begin{array}{ccc}
+6 \amp 1 \amp -1\cr
+21 \amp 10 \amp -7\cr
+33 \amp 11 \amp -8
+\end{array}\right]</m> are similar matrices by finding an invertible matrix <m>P</m>
+satisfying <m>A=P^{-1} B P</m>.</p>
+<p><m>P^{-1} =</m>
+<fillin rows="3" cols="3"/>, 
+<m>P =</m>
+<fillin rows="3" cols="3"/></p>
+</statement>
+    </static>
+    <server-data sourceFilePath="Library/NAU/setLinearAlgebra/similarB.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/NAU/setLinearAlgebra/similarB.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-109" ww-id="webwork-109">
+    <static seed="109" source="Library/Hope/Multi1/05-04-Diagonalization/DiagR_05.pg">
+      <statement><p>Suppose <me>A = \left[\begin{array}{cc}
+10 \amp 8\cr
+-12 \amp -10
+\end{array}\right].</me>
+Find an invertible matrix <m>P</m> and a diagonal matrix <m>D</m> so that <m>A = P D P^{-1}</m>.
+Use your answer to find an expression for <m>A^{5}</m> in terms of <m>P</m>, a power of <m>D</m>, and <m>P^{-1}</m> in that order.</p>
+<p><m>A^{5} =</m> 
+<fillin rows="2" cols="2"/>
+<fillin rows="2" cols="2"/>
+<fillin rows="2" cols="2"/>.</p>
+</statement>
+    </static>
+    <server-data sourceFilePath="Library/Hope/Multi1/05-04-Diagonalization/DiagR_05.pg" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/Hope/Multi1/05-04-Diagonalization/DiagR_05.pg"/>
+  </webwork-reps>
 </webwork-representations>

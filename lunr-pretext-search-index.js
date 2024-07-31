@@ -2737,9 +2737,9 @@ var ptx_lunr_docs = [
   "body": " If , the proposed matrix is indeed an inverse of , as one readily verifies.  Assume . If , then is not invertible, as we saw in the example above. Thus we can assume is nonzero, in which case is also nonzero. An easy computation shows This implies is not invertible. Indeed if it were, then the inverse would exist, and we'd have , which is a contradiction. We have proved that if , then is not invertible.  "
 },
 {
-  "id": "subsec--16",
+  "id": "sage_inv_matrix",
   "level": "2",
-  "url": "s_invertible_matrices.html#subsec--16",
+  "url": "s_invertible_matrices.html#sage_inv_matrix",
   "type": "Sage example",
   "number": "3.3.1",
   "title": "Invertible matrices.",
@@ -6937,7 +6937,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.5",
   "title": "Change of basis",
-  "body": " Change of basis   Coordinate vectors and matrix representations work in tandem to model vectors in an abstract vector space as column vectors in , and linear transformations as matrices. In both cases the model depends on our choice of basis. In this section we investigate how different basis choices affect these various models. Specifically, we consider the two questions below.   Given and two ordered bases and , what is the algebraic relation between and ?    Given and two ordered bases and , what is the relation between and ?     We will tackle each question in turn. Both answers rely on something called a change of basis matrix  .    Change of basis matrix  We define change of basis matrices via a column-by-column formula and motivate the definition retroactively with .   Change of basis matrix  change of basis matrix    change of basis matrix    Let and be two ordered bases for the vector space . The change of basis from to is the matrix defined as . In other words, the -th column of is obtained by computing the coordinate vector of the -th element of the original basis with respect to the new basis .     Change of basis for coordinate vectors   Let and be two ordered bases of the -dimensional vector space .   Recall that is the identity transformation ( ), defined as for all . We have .    For all we have . In other words, to convert the -coordinates of a vector to -coordinates, simply multiply on the left by the matrix .    Property defines uniquely: , if satisfies for all , then .         Let . From formula applied to , we see that the -th column of is for all . Using formula from this is precisely the -th column of for all . We conclude that .    This follows from (1) and : .    By (2) of (the uniqueness claim), if satisfies for all , then . Since , we conclude .        Let , , .   Compute .    Let . Compute using the change of basis formula .          Using , we have . The two coordinate vector computations and were done as usual using : that is, by setting up in turn the vector equations and solving for using Gaussian elimination.    The usual application of produces the coordinate vector . We leave the details to you. To compute , we use the change of basis formula : . This should come as now surprise since .         Let , , .   Compute .    Compute using .          We have . The first two coordinate vector computations are nontrivial; you can verify for yourself that and . Alternatively, see ) for a neat trick for computing these coordinate vectors.    Since is the standard basis, we see easily that . Using we have . Verify for yourself that we do indeed have .        Taylor's formula and change of basis  Let be the standard basis of . Fix any constant , and let . It is easy to see that is also an ordered basis: a simple degree argument shows that the polynomials are linearly independent. It follows from Taylor's theorem (from single-variable calculus) that given any polynomial we have . We call this expression the expansion of about . In terms of coordinate vectors, this means that . In other words, Taylor's theorem provides a simple derivative formula for computing coordinate vectors with respect to the basis .   The following properties are often useful when computing various change of basis matrices.   Change of basis matrix properties   Let be ordered bases for the -dimensional vector space .   We have .    The matrix is invertible. In fact, we have     We have .         Let . From formula applied to , we see that the -th column of is for all . Using formula from this is precisely the -th column of for all . We conclude that .    This follows from (1) and : .    By (2) of (the uniqueness claim), if satisfies for all , then . Since , we conclude .       , standard basis   Consider the special situation where , is the standard basis, and is some nonstandard basis. In this case we have . In other words, is the matrix whose -th column is just the -th element of . Thus, in this situation we can compute by placing the elements of as columns of a matrix, and then use (2) of to compute .      Let , , . Compute and .    According to we have . We then compute .     standard basis of  The observation from applies more generally when is the standard basis of the given vector space and is nonstandard. In this case computing will be easy as the coordinate vectors can be produced by inspection. See .     Let , (standard basis) and , where . Compute .    We have . Here the coordinate vectors are easily computed by inspection since is the standard basis.  It turns out that is not so difficult to compute in this case since the columns of satisfy . From this observation and it is easy to see that .     Video example: change of basis matrix   Video: change of basis matrix  Video: change of basis matrix     Before connecting change of basis matrices with matrix representations of linear transformations, it is worth gathering some the different techniques for computing change of basis matrices we have discussed so far.   Change of basis computational tips   Let and be ordered bases of the vector space . Below you find a variety of techniques for computing and .    To compute directly, we must compute for each . This typically involves setting up and solving a linear system.    We have . This observation is useful in situations where (a) one change of basis matrix is easier to compute than the other and (b) computing inverse matrices is not too onerous.    If is the standard basis of , then is easy to compute. (See .)        Change of basis for transformations  We now investigate how our choice of basis affects matrix representations of linear transformations. We will only consider the special case where and we are comparing matrix representations and for two different ordered bases of .   Change of basis for transformations   Let be finite-dimensional, let be linear, and let and be two ordered bases for . We have , or equivalently .    First observe that follows from and (2) of . Next, to prove , it suffices by (2) of to show that the matrix satisfies for all . To this end, given any , we have .     Getting change of basis formulas correct   It is easy to get the various details of the change of basis formula wrong. Here is a potential way to keep things organized in your mind.   We wish to relate and with an equation of the form , where the asterisks are to be replaced with change of basis matrices or their inverses. Think of the three matrices on the right-hand side of this equation as a sequence of three things done to coordinate vectors, reading from right to left.     takes as inputs -coordinates of vectors, and outputs -coordinates. Thus the same should be true for .    Since takes as inputs -coordinates, we must first convert from -coordinates to -coordinates. So we should have .    Since outputs -coordinates, we need to then convert back to -coordinates. Thus .    If desired you may replace with .         Let be defined as .   Let . Compute .    Let . Use the change of basis formula to compute .         We easily compute using our usual recipe.    We need to compute both change of basis matrices. Since is standard we compute essentially by inspection. It follows that . Lastly, using we have .      Consider the special case where : that is, when is a space of -tuples. We know from that for a unique matrix . Recall that is called the standard matrix of ( ), and satisfies for all . We often wish to compute , as it provides a convenient matrix formula for .  To compute  directly using the recipe in , we must compute for each of the standard basis elements . For many naturally occurring transformations , this is often not so easy to do. provides an indirect method in such cases.  According to we have : , the standard matrix of is none other than the matrix representing with respect to the standard basis. This connection allows us to compute by first computing for some more convenient basis , and then using the change of basis formula.   Computing the standard matrix using change of basis   Let be a linear transformation, and let be its standard matrix. To compute using the change of basis formula , proceed as follows.    Find a convenient basis for which the action of is easily understood.    Compute .    Let be the standard basis of . Recall that . Now compute using the change of basis formula as .       is a powerful technique for computing matrix formulas for many interesting geometric linear transformations of : , rotations, reflections, and orthogonal projections. Often the very definition of such transformations will suggest a more convenient nonstandard basis : one that reflects the geometry involved. The next example illustrates this nicely.    Video example: change of basis for transformations   Video: change of basis for transformations  Video: change of basis for transformations      Video example: change of basis and reflection   Video: computing reflection via change of basis  Video: computing reflection via change of basis       Similarity and the holy commutative tent of linear algebra   supplies an algebraic answer to the question: What is the relation between two matrix representations and ? Letting , equation becomes . Matrices satisfying such a relation are said to be similar .   Similar matrices  similar matrices  Matrices are similar if there is an invertible matrix such that .    So any two matrix representations of a linear transformation are similar in the technical sense of . In fact, a converse of sorts is also true, as articulated in the theorem below.   Similarity and matrix representations   Two matrices and are similar if and only if there is a linear transformation and bases of satisfying and .    The discussion above shows that if and , then , where ; thus and are similar in this case.  Now assume that and are similar. By definition this means there is an invertible matrix such that . Define as the matrix transformation . According to we have where is the standard basis of . Next, letting be the ordered basis whose -th element is the -th column of , we have ( ), and hence , as desired.    We will see in that similar matrices are indeed similar algebraically speaking: , they share many of the same properties. provides the theoretical foundation to understand why this should be so: if and are similar, then they are two matrix representations of a common linear transformation ; their many shared properties are simply inherited from the single overlying linear transformation that they both represent! This circle of ideas is neatly encompassed by .   The holy commutative tent of linear algebra  The holy commutative tent of linear algebra. Here we have and .       Perhaps a little exegesis is in order here. Think of the map as a linear transformation up in abstract heaven; and think of the two matrices and as two earthly shadows of . OK, this gets at the holy bit somewhat, but why commutative? Each face of the tent is a commutative diagram, as we now explain.   Slanted sides of the tent  The commutativity of the two slanted sides of the tent is a consequence of : .    Triangular ends of the tent  Let , so that . The commutativity of the two triangular ends of the tent are consequences of : .    Base of tent  Lastly the commutativity of the base of the tent is a consequence of : or equivalently, .   In summary, the holy commutative tent conveys a close connection between the three maps . Since the base of the tent is commutative, and since the maps given by and are invertible, we can translate back and forth between the matrices and . Furthermore, since the two slanted sides of the tent are commutative, and since the coordinate vector transformations are invertible, we can translate up and down between our two matrix representations and and the overlying linear transformation . There is one true !   Similar matrices mantra   Similar matrices are but two shadows of a single overlying linear transformation.       WeBWork Exercises    Consider the ordered bases and for the vector space .  a. Find the transition matrix from to the standard ordered basis .    b. Find the transition matrix from to .    c. Find the transition matrix from to .    d. Find the transition matrix from to .    e. Find the coordinates of in the ordered basis . Note that .    f. Find the coordinates of in the ordered basis if the coordinate vector of in is .           Consider the ordered bases and for the vector space of lower triangular matrices with zero trace.  a. Find the transition matrix from to .    b. Find the coordinates of in the ordered basis if the coordinate vector of in is .    c. Find .           Let be the linear transformation defined by Let be bases for and , respectively. Find the matrix for relative to the basis in the domain and in the codomain.           Let be the vector space of all polynomials of degree or less in the variable . Let be the linear transformation defined by . That is, is the derivative operator. Let be ordered bases for and , respectively. Find the matrix for relative to the basis in the domain and in the codomain.           Let be the vector space of all polynomials of degree or less in the variable . Let be the linear transformation defined by . That is, is the derivative operator. Let be ordered bases for and , respectively. Find the matrix for relative to the basis in the domain and in the codomain.           Change of basis matrix   In each exercise a vector space is given along with two ordered bases and . Compute and .     , ,      , ,      , ,      , ,      Let , , , as in .    Compute directly using .    Compute using the change of basis matrix and .      Let , , , as in .    Compute directly using .    Compute using the change of basis matrix and the change of basis formula .      Let be the standard basis of . Find the ordered basis for which the change of basis matrix is given by .    Let be the standard basis of . Find the ordered basis for which the change of basis matrix is given by .    Suppose and are two bases for the space related by the change of basis matrix .   Let . Compute and .    Let . Compute and .       Let , , and be three ordered bases of the vector space .    Show that . To do so, set and and show that the matrix satisfies the defining property of : , for all .    Using (a), show that .      Change of basis methods   In each exercise a vector space is given along with two ordered bases and .    Compute directly using     Let be the standard basis for . Compute using formula from .       , ,      , ,      Let be the linear transformation defined as . Let be the standard basis of , and let .    Compute .    Compute using .      Let be the linear transformation defined as . Let be the standard basis of , and let .    Compute .    Compute using .     Reflection in  Let be nonzero and define , the line passing through the origin with direction vector . Let be reflection through . (See .) In this exercise we will use a change of basis argument to find a formula for the standard matrix of : , the matrix satisfying for all . Our answer will be expressed in terms of and .    Pick a basis where points along and is orthogonal to . (Both vectors will be expressed in terms of and .) Compute .    Let be the standard basis of . Use to compute .    How do we know that is the standard matrix of ?    Explain why your matrix , expressed in terms of and for agrees with the matrix formula provided in , which is expressed in terms of the angle that makes with the -axis.      "
+  "body": " Change of basis   Coordinate vectors and matrix representations work in tandem to model vectors in an abstract vector space as column vectors in , and linear transformations as matrices. In both cases the model depends on our choice of basis. In this section we investigate how different basis choices affect these various models. Specifically, we consider the two questions below.   Given and two ordered bases and , what is the algebraic relation between and ?    Given and two ordered bases and , what is the relation between and ?     We will tackle each question in turn. Both answers rely on something called a change of basis matrix  .    Change of basis matrix  We define change of basis matrices via a column-by-column formula and motivate the definition retroactively with .   Change of basis matrix  change of basis matrix    change of basis matrix    Let and be two ordered bases for the vector space . The change of basis from to is the matrix defined as . In other words, the -th column of is obtained by computing the coordinate vector of the -th element of the original basis with respect to the new basis .     Change of basis for coordinate vectors   Let and be two ordered bases of the -dimensional vector space .   Recall that is the identity transformation ( ), defined as for all . We have .    For all we have . In other words, to convert the -coordinates of a vector to -coordinates, simply multiply on the left by the matrix .    Property defines uniquely: , if satisfies for all , then .         Let . From formula applied to , we see that the -th column of is for all . Using formula from this is precisely the -th column of for all . We conclude that .    This follows from (1) and : .    By (2) of (the uniqueness claim), if satisfies for all , then . Since , we conclude .       Change of basis   Let , , .   Compute .    Let . Compute using the change of basis formula .          Using , we have . The two coordinate vector computations and were done as usual using : that is, by setting up in turn the vector equations and solving for using Gaussian elimination.    The usual application of produces the coordinate vector . We leave the details to you. To compute , we use the change of basis formula : . This should come as now surprise since .        Change of basis   Let be the standard basis of and consider the nonstandard basis .   Compute .    Compute using .          We have . The first two coordinate vector computations are nontrivial, but can be computed as usual using ; you can verify for yourself that . The third coordinate vector computation, is easier: since , we have , and thus .    Since is the standard basis, we see easily that . Using we have . Verify for yourself that we do indeed have .        The following properties are often useful when computing various change of basis matrices.   Change of basis matrix properties   Let be ordered bases for the -dimensional vector space .   We have . As a consequence, .    The matrix is invertible. In fact, we have     We have .         Let . From formula applied to , we see that the -th column of is for all . Using formula from this is precisely the -th column of for all . We conclude that . Choosing , we see that . The last equality above follows since the -th column of is , since is the standard basis.    This follows from (1) and : .    By (2) of (the uniqueness claim), if satisfies for all , then . Since , we conclude .       , standard basis   Consider the special situation where , is the standard basis, and is some nonstandard basis. In this case we have . In other words, is the matrix whose -th column is just the -th element of . Thus, in this situation we can compute by placing the elements of as columns of a matrix, and then use (2) of to compute .     Change of basis, standard   Let , , . Compute and .    According to we have . We then compute .     standard basis of  The observation from applies more generally when is the standard basis of the given vector space and is nonstandard. In this case computing will be easy as the coordinate vectors can be produced by inspection. See .    Change of basis, standard   Let , (standard basis) and , where . Compute .    We have . Here the coordinate vectors are easily computed by inspection since is the standard basis.  It turns out that is not so difficult to compute in this case since the columns of satisfy . From this observation and it is easy to see that .     Video example: change of basis matrix   Video: change of basis matrix     Before connecting change of basis matrices with matrix representations of linear transformations, it is worth gathering some the different techniques for computing change of basis matrices we have discussed so far.   Change of basis computational tips   Let and be ordered bases of the vector space . Below you find a variety of techniques for computing and .    To compute directly, we must compute for each . This typically involves setting up and solving a linear system.    We have . This observation is useful in situations where (a) one change of basis matrix is easier to compute than the other and (b) computing inverse matrices is not too onerous.    If is the standard basis of , then is easy to compute. (See .)        Change of basis for transformations  We now investigate how our choice of basis affects matrix representations of linear transformations. We will only consider the special case where and we are comparing matrix representations and for two different ordered bases of .   Change of basis for transformations   Let be finite-dimensional, let be linear, and let and be two ordered bases for . We have , or equivalently .    First observe that follows from and (2) of . Next, to prove , it suffices by (2) of to show that the matrix satisfies for all . To this end, given any , we have .     Getting change of basis formulas correct   It is easy to get the various details of the change of basis formula wrong. Here is a potential way to keep things organized in your mind.   We wish to relate and with an equation of the form , where the asterisks are to be replaced with change of basis matrices or their inverses. Think of the three matrices on the right-hand side of this equation as a sequence of three things done to coordinate vectors, reading from right to left.     takes as inputs -coordinates of vectors, and outputs -coordinates. Thus the same should be true for .    Since takes as inputs -coordinates, we must first convert from -coordinates to -coordinates. So we should have .    Since outputs -coordinates, we need to then convert back to -coordinates. Thus .    If desired you may replace with .        Matrix representations and change of basis   The function is linear.   Compute , where is the the standard basis of .    Consider the nonstandard basis of . Compute directly using .    Now compute using and the change of basis formula .         According to , since is the standard basis of , is just the standard matrix of . Thus we can use to compute .    We compute directly using : . The coordinate vector computations in the last equality were all done by inspection: .    To use the change of basis formula , we need to compute and . Since is the standard basis of , using we see that we can build simply by placing the elements of in as its columns: . We then compute the inverse . Lastly, we compute , as we expected.      Consider the special case where : that is, when is a space of -tuples. We know from that for a unique matrix : the standard matrix of . The standard matrix of is useful, as it provides a convenient matrix formula for . To compute  directly using the recipe in , we must compute for each of the standard basis elements . For many naturally occurring transformations , this is often not so easy to do. provides an indirect method in such cases, as we now explain.  According to we have : , the standard matrix of is none other than the matrix representing with respect to the standard basis. This connection allows us to compute by first computing for some more convenient basis , and then using the change of basis formula.   Computing the standard matrix using change of basis   Let be a linear transformation, and let be its standard matrix. To compute using the change of basis formula , proceed as follows.    Find a convenient basis for which the action of is easily understood.    Compute .    Let be the standard basis of . Recall that . Now compute using the change of basis formula as .       is a powerful technique for computing matrix formulas for many interesting geometric linear transformations of : , rotations, reflections, and orthogonal projections. Often the very definition of such transformations will suggest a more convenient nonstandard basis : one that reflects the geometry involved. The next example illustrates this nicely.   Reflection in   Let be reflection through the line with equation . We showed in that such a reflection is a linear transformation.   Using the geometric definition of reflection (see ), come up with a basis such that and : the reflection  fixes  and flips  . You might use the interactive in to see how you should choose .    Show that .    Use the change of basis formula to compute , the standard matrix of .    Explain how your expression for is consistent with the matrix formula given in .          Geometrically, reflection through the line defined by fixes any vector that points along and flips any vector that points perpendicularly to . The vector points along ; and the vector points perpendicularly to (and hence ). It follows that is a basis satisfying and .    We compute . The coordinate vectors in the last equality were computed by inspection: .    Using , we have , and thus . We conclude that .    According to , we should have , where is the angle that makes with the positive -axis. Since lies along , it follows by drawing the relevant right triangle that , and hence that . This shows in this case, as expected.         Video example: change of basis for transformations   Video: change of basis for transformations      Video example: change of basis and reflection   Video: computing reflection via change of basis       Similarity and the holy commutative tent of linear algebra   supplies an algebraic answer to the question: What is the relation between two matrix representations and ? Letting , equation becomes . Matrices satisfying such a relation are said to be similar .   Similar matrices  similar matrices  Matrices are similar if there is an invertible matrix such that .    So any two matrix representations of a linear transformation are similar in the technical sense of . In fact, a converse of sorts is also true, as articulated in the theorem below.   Similarity and matrix representations   Two matrices and are similar if and only if there is a linear transformation and bases of satisfying and .    The discussion above shows that if and , then , where ; thus and are similar in this case.  Now assume that and are similar. By definition this means there is an invertible matrix such that . Define as the matrix transformation . According to we have where is the standard basis of . Next, letting be the ordered basis whose -th element is the -th column of , we have ( ), and hence , as desired.    We will see in that similar matrices are indeed similar algebraically speaking: , they share many of the same properties. provides the theoretical foundation to understand why this should be so: if and are similar, then they are two matrix representations of a common linear transformation ; their many shared properties are simply inherited from the single overlying linear transformation that they both represent! This circle of ideas is neatly encompassed by .   The holy commutative tent of linear algebra  The holy commutative tent of linear algebra. Here we have and .       Perhaps a little exegesis is in order here. Think of the map as a linear transformation up in abstract heaven; and think of the two matrices and as two earthly shadows of . OK, this gets at the holy bit somewhat, but why commutative? Each face of the tent is a commutative diagram, as we now explain.   Slanted sides of the tent  The commutativity of the two slanted sides of the tent is a consequence of : .    Triangular ends of the tent  Let , so that . The commutativity of the two triangular ends of the tent are consequences of : .    Base of tent  Lastly the commutativity of the base of the tent is a consequence of : or equivalently, .   In summary, the holy commutative tent conveys a close connection between the three maps . Since the base of the tent is commutative, and since the maps given by and are invertible, we can translate back and forth between the matrices and . Furthermore, since the two slanted sides of the tent are commutative, and since the coordinate vector transformations are invertible, we can translate up and down between our two matrix representations and and the overlying linear transformation . There is one true !   Similar matrices mantra   Similar matrices are but two shadows of a single overlying linear transformation.       WeBWork Exercises    Consider the ordered bases and for the vector space .  a. Find the transition matrix from to the standard ordered basis .    b. Find the transition matrix from to .    c. Find the transition matrix from to .    d. Find the transition matrix from to .    e. Find the coordinates of in the ordered basis . Note that .    f. Find the coordinates of in the ordered basis if the coordinate vector of in is .           Consider the ordered bases and for the vector space of lower triangular matrices with zero trace.  a. Find the transition matrix from to .    b. Find the coordinates of in the ordered basis if the coordinate vector of in is .    c. Find .           Let be the linear transformation defined by Let be bases for and , respectively. Find the matrix for relative to the basis in the domain and in the codomain.           Let be the vector space of all polynomials of degree or less in the variable . Let be the linear transformation defined by . That is, is the derivative operator. Let be ordered bases for and , respectively. Find the matrix for relative to the basis in the domain and in the codomain.           Let be the vector space of all polynomials of degree or less in the variable . Let be the linear transformation defined by . That is, is the derivative operator. Let be ordered bases for and , respectively. Find the matrix for relative to the basis in the domain and in the codomain.           Change of basis matrix   In each exercise a vector space is given along with two ordered bases and . Compute and .     , ,      , ,      , ,      , ,      Let , , , as in .    Compute directly using .    Compute using the change of basis matrix and .      Let , , , as in .    Compute directly using .    Compute using the change of basis matrix and the change of basis formula .      Let be the standard basis of . Find the ordered basis for which the change of basis matrix is given by .    Let be the standard basis of . Find the ordered basis for which the change of basis matrix is given by .    Suppose and are two bases for the space related by the change of basis matrix .   Let . Compute and .    Let . Compute and .       Let , , and be three ordered bases of the vector space .    Show that . To do so, set and and show that the matrix satisfies the defining property of : , for all .    Using (a), show that .      Change of basis methods   In each exercise a vector space is given along with two ordered bases and .    Compute directly using     Let be the standard basis for . Compute using formula from .       , ,      , ,      Let be the linear transformation defined as . Let be the standard basis of , and let .    Compute .    Compute using .      Let be the linear transformation defined as . Let be the standard basis of , and let .    Compute .    Compute using .     Reflection in  Let be nonzero and define , the line passing through the origin with direction vector . Let be reflection through . (See .) In this exercise we will use a change of basis argument to find a formula for the standard matrix of : , the matrix satisfying for all . Our answer will be expressed in terms of and .    Pick a basis where points along and is orthogonal to . (Both vectors will be expressed in terms of and .) Compute .    Let be the standard basis of . Use to compute .    How do we know that is the standard matrix of ?    Explain why your matrix , expressed in terms of and for agrees with the matrix formula provided in , which is expressed in terms of the angle that makes with the -axis.      "
 },
 {
   "id": "d_change_of_basis",
@@ -6963,8 +6963,8 @@ var ptx_lunr_docs = [
   "url": "s_changeofbasis.html#ss_change_of_basis-5",
   "type": "Example",
   "number": "5.5.3",
-  "title": "",
-  "body": "  Let , , .   Compute .    Let . Compute using the change of basis formula .          Using , we have . The two coordinate vector computations and were done as usual using : that is, by setting up in turn the vector equations and solving for using Gaussian elimination.    The usual application of produces the coordinate vector . We leave the details to you. To compute , we use the change of basis formula : . This should come as now surprise since .      "
+  "title": "Change of basis.",
+  "body": " Change of basis   Let , , .   Compute .    Let . Compute using the change of basis formula .          Using , we have . The two coordinate vector computations and were done as usual using : that is, by setting up in turn the vector equations and solving for using Gaussian elimination.    The usual application of produces the coordinate vector . We leave the details to you. To compute , we use the change of basis formula : . This should come as now surprise since .      "
 },
 {
   "id": "ss_change_of_basis-6",
@@ -6972,51 +6972,42 @@ var ptx_lunr_docs = [
   "url": "s_changeofbasis.html#ss_change_of_basis-6",
   "type": "Example",
   "number": "5.5.4",
-  "title": "",
-  "body": "  Let , , .   Compute .    Compute using .          We have . The first two coordinate vector computations are nontrivial; you can verify for yourself that and . Alternatively, see ) for a neat trick for computing these coordinate vectors.    Since is the standard basis, we see easily that . Using we have . Verify for yourself that we do indeed have .      "
-},
-{
-  "id": "rm_change_of_basis_taylors",
-  "level": "2",
-  "url": "s_changeofbasis.html#rm_change_of_basis_taylors",
-  "type": "Remark",
-  "number": "5.5.5",
-  "title": "Taylor’s formula and change of basis.",
-  "body": " Taylor's formula and change of basis  Let be the standard basis of . Fix any constant , and let . It is easy to see that is also an ordered basis: a simple degree argument shows that the polynomials are linearly independent. It follows from Taylor's theorem (from single-variable calculus) that given any polynomial we have . We call this expression the expansion of about . In terms of coordinate vectors, this means that . In other words, Taylor's theorem provides a simple derivative formula for computing coordinate vectors with respect to the basis .  "
+  "title": "Change of basis.",
+  "body": " Change of basis   Let be the standard basis of and consider the nonstandard basis .   Compute .    Compute using .          We have . The first two coordinate vector computations are nontrivial, but can be computed as usual using ; you can verify for yourself that . The third coordinate vector computation, is easier: since , we have , and thus .    Since is the standard basis, we see easily that . Using we have . Verify for yourself that we do indeed have .      "
 },
 {
   "id": "th_change_of_basis_properties",
   "level": "2",
   "url": "s_changeofbasis.html#th_change_of_basis_properties",
   "type": "Theorem",
-  "number": "5.5.6",
+  "number": "5.5.5",
   "title": "Change of basis matrix properties.",
-  "body": " Change of basis matrix properties   Let be ordered bases for the -dimensional vector space .   We have .    The matrix is invertible. In fact, we have     We have .         Let . From formula applied to , we see that the -th column of is for all . Using formula from this is precisely the -th column of for all . We conclude that .    This follows from (1) and : .    By (2) of (the uniqueness claim), if satisfies for all , then . Since , we conclude .     "
+  "body": " Change of basis matrix properties   Let be ordered bases for the -dimensional vector space .   We have . As a consequence, .    The matrix is invertible. In fact, we have     We have .         Let . From formula applied to , we see that the -th column of is for all . Using formula from this is precisely the -th column of for all . We conclude that . Choosing , we see that . The last equality above follows since the -th column of is , since is the standard basis.    This follows from (1) and : .    By (2) of (the uniqueness claim), if satisfies for all , then . Since , we conclude .     "
 },
 {
   "id": "eg_changebasis_standard",
   "level": "2",
   "url": "s_changeofbasis.html#eg_changebasis_standard",
   "type": "Example",
-  "number": "5.5.7",
+  "number": "5.5.6",
   "title": "<span class=\"process-math\">\\(V=\\R^n\\text{,}\\)<\/span> <span class=\"process-math\">\\(B\\)<\/span> standard basis.",
   "body": " , standard basis   Consider the special situation where , is the standard basis, and is some nonstandard basis. In this case we have . In other words, is the matrix whose -th column is just the -th element of . Thus, in this situation we can compute by placing the elements of as columns of a matrix, and then use (2) of to compute .   "
 },
 {
-  "id": "ss_change_of_basis-11",
+  "id": "ss_change_of_basis-10",
   "level": "2",
-  "url": "s_changeofbasis.html#ss_change_of_basis-11",
+  "url": "s_changeofbasis.html#ss_change_of_basis-10",
   "type": "Example",
-  "number": "5.5.8",
-  "title": "",
-  "body": "  Let , , . Compute and .    According to we have . We then compute .   "
+  "number": "5.5.7",
+  "title": "Change of basis, <span class=\"process-math\">\\(B\\)<\/span> standard.",
+  "body": " Change of basis, standard   Let , , . Compute and .    According to we have . We then compute .   "
 },
 {
   "id": "rm_changebasis_standard",
   "level": "2",
   "url": "s_changeofbasis.html#rm_changebasis_standard",
   "type": "Remark",
-  "number": "5.5.9",
+  "number": "5.5.8",
   "title": "<span class=\"process-math\">\\(B\\)<\/span> standard basis of <span class=\"process-math\">\\(V\\)<\/span>.",
   "body": " standard basis of  The observation from applies more generally when is the standard basis of the given vector space and is nonstandard. In this case computing will be easy as the coordinate vectors can be produced by inspection. See .  "
 },
@@ -7025,18 +7016,18 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_changeofbasis.html#eg_changebasis_standard_mat",
   "type": "Example",
-  "number": "5.5.10",
-  "title": "",
-  "body": "  Let , (standard basis) and , where . Compute .    We have . Here the coordinate vectors are easily computed by inspection since is the standard basis.  It turns out that is not so difficult to compute in this case since the columns of satisfy . From this observation and it is easy to see that .   "
+  "number": "5.5.9",
+  "title": "Change of basis, <span class=\"process-math\">\\(B\\)<\/span> standard.",
+  "body": " Change of basis, standard   Let , (standard basis) and , where . Compute .    We have . Here the coordinate vectors are easily computed by inspection since is the standard basis.  It turns out that is not so difficult to compute in this case since the columns of satisfy . From this observation and it is easy to see that .   "
 },
 {
-  "id": "fig_vid_changeofbasis",
+  "id": "ss_vid_eg_changeofbasis",
   "level": "2",
-  "url": "s_changeofbasis.html#fig_vid_changeofbasis",
-  "type": "Figure",
-  "number": "5.5.11",
-  "title": "Video: change of basis matrix",
-  "body": " Video: change of basis matrix  Video: change of basis matrix   "
+  "url": "s_changeofbasis.html#ss_vid_eg_changeofbasis",
+  "type": "Example",
+  "number": "5.5.10",
+  "title": "Video example: change of basis matrix.",
+  "body": " Video example: change of basis matrix   Video: change of basis matrix    "
 },
 {
   "id": "proc_changebasis_tips",
@@ -7071,8 +7062,8 @@ var ptx_lunr_docs = [
   "url": "s_changeofbasis.html#s_changeofbasis-4-5",
   "type": "Example",
   "number": "5.5.15",
-  "title": "",
-  "body": "  Let be defined as .   Let . Compute .    Let . Use the change of basis formula to compute .         We easily compute using our usual recipe.    We need to compute both change of basis matrices. Since is standard we compute essentially by inspection. It follows that . Lastly, using we have .     "
+  "title": "Matrix representations and change of basis.",
+  "body": " Matrix representations and change of basis   The function is linear.   Compute , where is the the standard basis of .    Consider the nonstandard basis of . Compute directly using .    Now compute using and the change of basis formula .         According to , since is the standard basis of , is just the standard matrix of . Thus we can use to compute .    We compute directly using : . The coordinate vector computations in the last equality were all done by inspection: .    To use the change of basis formula , we need to compute and . Since is the standard basis of , using we see that we can build simply by placing the elements of in as its columns: . We then compute the inverse . Lastly, we compute , as we expected.     "
 },
 {
   "id": "proc_standard_matrix_via_change_of_basis",
@@ -7084,29 +7075,38 @@ var ptx_lunr_docs = [
   "body": " Computing the standard matrix using change of basis   Let be a linear transformation, and let be its standard matrix. To compute using the change of basis formula , proceed as follows.    Find a convenient basis for which the action of is easily understood.    Compute .    Let be the standard basis of . Recall that . Now compute using the change of basis formula as .     "
 },
 {
-  "id": "fig_vid_changebasis_transform",
+  "id": "eg_changebasis_reflection",
   "level": "2",
-  "url": "s_changeofbasis.html#fig_vid_changebasis_transform",
-  "type": "Figure",
+  "url": "s_changeofbasis.html#eg_changebasis_reflection",
+  "type": "Example",
   "number": "5.5.17",
-  "title": "Video: change of basis for transformations",
-  "body": " Video: change of basis for transformations  Video: change of basis for transformations   "
+  "title": "Reflection in <span class=\"process-math\">\\(\\R^2\\)<\/span>.",
+  "body": " Reflection in   Let be reflection through the line with equation . We showed in that such a reflection is a linear transformation.   Using the geometric definition of reflection (see ), come up with a basis such that and : the reflection  fixes  and flips  . You might use the interactive in to see how you should choose .    Show that .    Use the change of basis formula to compute , the standard matrix of .    Explain how your expression for is consistent with the matrix formula given in .          Geometrically, reflection through the line defined by fixes any vector that points along and flips any vector that points perpendicularly to . The vector points along ; and the vector points perpendicularly to (and hence ). It follows that is a basis satisfying and .    We compute . The coordinate vectors in the last equality were computed by inspection: .    Using , we have , and thus . We conclude that .    According to , we should have , where is the angle that makes with the positive -axis. Since lies along , it follows by drawing the relevant right triangle that , and hence that . This shows in this case, as expected.      "
 },
 {
-  "id": "fig_vid_changebasis_reflection",
+  "id": "ss_vid_eg_changebasis_transform",
   "level": "2",
-  "url": "s_changeofbasis.html#fig_vid_changebasis_reflection",
-  "type": "Figure",
+  "url": "s_changeofbasis.html#ss_vid_eg_changebasis_transform",
+  "type": "Example",
   "number": "5.5.18",
-  "title": "Video: computing reflection via change of basis",
-  "body": " Video: computing reflection via change of basis  Video: computing reflection via change of basis   "
+  "title": "Video example: change of basis for transformations.",
+  "body": " Video example: change of basis for transformations   Video: change of basis for transformations    "
+},
+{
+  "id": "ss_vid_eg_changebasis_reflection",
+  "level": "2",
+  "url": "s_changeofbasis.html#ss_vid_eg_changebasis_reflection",
+  "type": "Example",
+  "number": "5.5.20",
+  "title": "Video example: change of basis and reflection.",
+  "body": " Video example: change of basis and reflection   Video: computing reflection via change of basis    "
 },
 {
   "id": "d_similar",
   "level": "2",
   "url": "s_changeofbasis.html#d_similar",
   "type": "Definition",
-  "number": "5.5.19",
+  "number": "5.5.22",
   "title": "Similar matrices.",
   "body": " Similar matrices  similar matrices  Matrices are similar if there is an invertible matrix such that .   "
 },
@@ -7115,7 +7115,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_changeofbasis.html#th_similarity_matrixreps",
   "type": "Theorem",
-  "number": "5.5.20",
+  "number": "5.5.23",
   "title": "Similarity and matrix representations.",
   "body": " Similarity and matrix representations   Two matrices and are similar if and only if there is a linear transformation and bases of satisfying and .    The discussion above shows that if and , then , where ; thus and are similar in this case.  Now assume that and are similar. By definition this means there is an invertible matrix such that . Define as the matrix transformation . According to we have where is the standard basis of . Next, letting be the ordered basis whose -th element is the -th column of , we have ( ), and hence , as desired.   "
 },
@@ -7124,7 +7124,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_changeofbasis.html#fig_comm_tent",
   "type": "Figure",
-  "number": "5.5.21",
+  "number": "5.5.24",
   "title": "The holy commutative tent of linear algebra",
   "body": " The holy commutative tent of linear algebra  The holy commutative tent of linear algebra. Here we have and .      "
 },
@@ -7133,7 +7133,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_changeofbasis.html#princ_similar_matrices",
   "type": "Mantra",
-  "number": "5.5.22",
+  "number": "5.5.25",
   "title": "Similar matrices mantra.",
   "body": " Similar matrices mantra   Similar matrices are but two shadows of a single overlying linear transformation.   "
 },
@@ -7318,6 +7318,924 @@ var ptx_lunr_docs = [
   "body": "Reflection in  Let be nonzero and define , the line passing through the origin with direction vector . Let be reflection through . (See .) In this exercise we will use a change of basis argument to find a formula for the standard matrix of : , the matrix satisfying for all . Our answer will be expressed in terms of and .    Pick a basis where points along and is orthogonal to . (Both vectors will be expressed in terms of and .) Compute .    Let be the standard basis of . Use to compute .    How do we know that is the standard matrix of ?    Explain why your matrix , expressed in terms of and for agrees with the matrix formula provided in , which is expressed in terms of the angle that makes with the -axis.    "
 },
 {
+  "id": "s_eigenvectors",
+  "level": "1",
+  "url": "s_eigenvectors.html",
+  "type": "Section",
+  "number": "6.1",
+  "title": "Eigenvectors and eigenvalues",
+  "body": " Eigenvectors and eigenvalues   For the remaining sections of this chapter we will focus our investigation on linear transformations of the form : that is, transformations from a space into itself. When is finite-dimensional we can get a computational grip on by choosing an ordered basis and considering the matrix representation . As was illustrated in , different matrix representations and provide different insights into the nature of . Furthermore, we see from this example that if the action of on a chosen basis is simple to describe, then so too is the matrix representation of with respect to that basis.  A particularly agreeable situation arises when the basis satisfies for all . Using recipe we in this case that the corresponding matrix representation is diagonal! Diagonal matrices are about as simple as they come: they wear all of their properties (rank, nullity, invertibility, ) on their sleeve. If we hope to find a diagonal matrix representation of , then we should seek nonzero vectors satisfying for some : these are called eigenvectors of .    Eigenvectors  We further motivate the notion of an eigenvector with an illustrative example.    Consider where . It turns out that has a simple geometric description, though you would not have guessed this from the standard matrix . To reveal the geometry at play, we represent with respect to the nonstandard basis . We compute . It follows, using the formula , that . The alternative representation given by nicely summarizes the action of : it fixes the vector and maps the vector , which is orthogonal to , to . We claim this implies that is none other than reflection through the line ! This follows from . In more detail, from the geometry of the setup, it is easy to see that we have (reflection fixes the line ) and (reflection ``flips\" vectors perpendicular to ). Since and agree on the basis , we must have .  In even more detail, since is a basis, for any vector we can write for some . It follows that . Together, formulas give us a satisfying geometric understanding of our reflection operator . Let : this is the line perpendicular to passing through the origin. Formula gives a decomposition of the vector in terms of its components along and . Formula tells us what does to this decomposition: namely, it leaves the component along unchanged and ``flips\" the component along .  Reflection through   Reflection ,      The success of our analysis in depended on finding the vectors and satisfying and , as they provided a basis on which the action of is particularly simple. As we make official in the vectors are called eigenvectors of .   eigenvector  eigenvalue  Eigenvectors and eigenvalues   Let be a linear transformation. A nonzero vector satisfying for some is called an eigenvector of with eigenvalue  .  Similarly, given a square matrix , a nonzero satisfying for some is called an eigenvector of with eigenvalue  . In other words, an eigenvector (resp., eigenvalue) of is just an eigenvector (resp., eigenvalue) of the matrix transformation .  In both cases (linear transformation or matrix) we call an eigenvector with eigenvalue a -eigenvector .      You ask: Why use instead of or ? My answer: tradition!      Note well the important condition that an eigenvector must be nonzero. This means the zero vector by definition is not an eigenvector. If we allowed as an eigenvector, then the notion of the eigenvalue of an eigenvector would no longer be well-defined. This is because for any linear transformation we have which implies that for all .     Visualizing eigenvectors   Suppose is an eigenvector of the linear transformation . Letting , this means that : , maps an eigenvector to some other element of the one-dimensional subspace it defines. The special case where is easy to visualize and can help guide your intuition in the general case. (See ) Here the space is a line passing through origin. If is an eigenvector of a given linear transformation, then it must be mapped to some other vector pointing along : , or . It it is not an eigenvector, it gets mapped to a vector that does not point along .     Visualizing eigenvectors  Visualizing eigenvectors     Given a linear transformation we wish to (a) determine which values are eigenvalues of , and (b) find all the eigenvectors corresponding to a given eigenvalue . In the next examples we carry out such an investigation in an ad hoc manner.   Zero and identity transformations   Assume is nonzero. Recall that the zero transformation and identity transformation are defined as and for all . Find all eigenvalues and eigenvectors of and .    Since for all , we see that is the only eigenvalue of , and that all nonzero vectors of are -eigenvectors.  Similarly, since for all , we see that is the only eigenvalue of , and that all nonzero vectors of are -eigenvectors.     Reflection   Let be a line in passing through the origin, and define to be reflection through . (See .) Find all eigenvectors and eigenvalues of . Use a geometric argument.    Since the reflection operator fixes all elements of the line , we have for any . This shows that any nonzero element of is an eigenvectors of with eigenvalue .  Similarly, since is orthogonal to , reflection through takes any element and maps it to . Thus any nonzero element is an eigenvector of with eigenvalue .  We claim that these two cases exhaust all eigenvectors of . Indeed, in general a nonzero vector lies in the line , and its reflection lies in the line , which itself is the result of reflecting the line through . Now assume . We must have , since if ; but if it follows that the line and its reflection are equal. Clearly the only lines that are mapped to themselves by reflection through are and . Thus if is an eigenvector of it must lie in or .     Rotation   Fix and define to be rotation by . (See ) Find all eigenvectors and eigenvalues of . Use a geometric argument. Your answer will depend on the choice of .      Case:  Rotation by sends every vector to : , . It follows that is the only eigenvalue of and all nonzero elements of are eigenvectors with eigenvalue .    Case:  A similar argument to the one in shows that has no eigenvalues in this case. In more detail, a nonzero vector lies in the line , and its rotation lies in the line , which is the result of rotating by the angle . Since , it is clear that , and thus we cannot have for some .       Transposition   Consider the linear transformation . Determine all eigenvectors and eigenvalues of .    To be an eigenvector of a nonzero matrix must satisfy for some . Using the definition of , this means . We ask for which scalars does there exist a nonzero matrix satisfying . Let's consider some specific choices of .   Case:  In this case reads . Thus the eigenvectors of with eigenvalue are precisely the nonzero symmetric matrices: , .    Case:  For this choice of we seek nonzero matrices satisfying . These are precisely the nonzero skew-symmetric matrices: , .    Case:  Suppose satisfies . Equating the entries of these two matrices yields the system . The first two equations imply , using the fact that . The second two equations imply further that and . Since , . It follows that . We conclude that for , if , then . It follows that is not an eigenvalue of in this case.  In summation, our analysis shows that the transposition operator has exactly two eigenvalues, and , that the eigenvectors of with eigenvalue 1 are the nonzero symmetric matrices, and that the eigenvalues of with eigenvalue are the nonzero skew-symmetric matrices.      Finding eigenvalues and eigenvectors systematically  You can imagine that our ad hoc approach to finding eigenvalues and eigenvectors will break down once the linear transformation under consideration becomes complicated enough. As such it is vital to have a systematic method of finding all eigenvalues and eigenvectors of a linear transformation . The rest of this section is devoted to describing just such a method in the special case where . The first key observation is that we can answer the eigenvalues\/eigenvectors of by answering the same question about , where is an ordered basis of .   Eigenvectors of a linear transformation   Let be a linear transformation, let be an ordered basis of , and let .    A vector is an eigenvector of with eigenvalue if and only if is an eigenvector of with eigenvalue .    A real number is an eigenvalue of if and only if it is an eigenvalue of . Thus and have the same set of eigenvalues.      We prove statement (1) as a chain of equivalences: . From (1) it follows directly that if is an an eigenvalue of , then it is an eigenvalue of . Conversely, if is an eigenvalue of , then there is a nonzero such that . Since is surjective ( , (3)), there is a vector such that . It follows from (1) that is a -eigenvector of , and thus that is an eigenvalue of .    Thanks to , we can boil down the eigenvector\/eigenvalue question for linear transformations of finite vector spaces to the analogous question about square matrices. The next theorem is the key result.   Eigenvectors of matrices   Let be an matrix. Fix .   The eigenvectors of with eigenvalue are the nonzero elements of the subspace .    As a consequence, is an eigenvalue of if and only if the matrix is singular ( , not invertible).       First observe that . From this equivalence it follows that . Since an eigenvector must be nonzero, we conclude that the -eigenvectors of are precisely the nonzero elements of . This proves statement (1). As a consequence, we see that has as an eigenvalue if and only if contains nonzero element elements: , if and only if . By the invertibility theorem this is true if and only if is not invertible.    According to , the eigenvectors of live in null spaces of matrices of the form . Accordingly, we call these spaces eigenspaces .   Eigenspaces   Let be an matrix. Given the -eigenspace of is the subspace defined as . Similarly, given a linear transformation and , the -eigenspace of is the subspace defined as . In both cases the nonzero elements of are precisely the -eigenvectors.    We nearly have a complete method for computing the eigenvalues and eigenvectors of a square matrix . The last step is to identify the values of for which is not invertible. By the invertibility theorem , the matrix is not invertible if and only if . Thus the eigenvalues of are precisely the zeros of the function . We have proved the following corollary.   Eigenvalues of a matrix   Let be an matrix, let , and let . The following are equivalent:     is an eigenvalue of ;     is singular;     ;     .       Rotation (again)   Fix and let be rotation by . Recall that we have where . Now compute . We can use the quadratic formula to find the roots of : . When , this reduces to , confirming our conclusion in that is the only eigenvalue of the rotation by operator.  When and , then and we see that has no real roots. This confirms our conclusion in that such rotations have no eigenvalues.    Clearly the function deserves a name; we call it the characteristic polynomial of .   characteristic polynomial of a matrix  Characteristic polynomial of a matrix   Let be . The characteristic polynomial of is the function .    We will show below that is indeed a polynomial ( ). We postpone that discussion for now in order to present some examples of systematically computing eigenvalues and eigenvectors of matrices. Below you find the the complete description of this procedure.   Computing eigenspaces of a matrix   Let be an matrix. To find all eigenvalues of and compute a basis for the corresponding eigenspace , proceed as follows.    Compute . Let be the distinct real roots of . These are the eigenvalues of .    For each , the corresponding eigenspace is . Use the null space algorithm ( ) to compute a basis for .        Let .   Find all eigenvalue of .    Compute a basis for the eigenspace for each eigenvalue .       We compute . Thus the eigenvalues of are and .   Basis for  We have . Thus all -eigenvectors of are of the form , where .    Basis for  We have . Thus all -eigenvectors of are of the form , where .       Let .    Find all eigenvalues of .    Compute a basis for the eigenspace for each eigenvalue .      First compute . We see that the eigenvalues of are and . Now compute bases for their corresponding eigenspaces.   Basis of  We have . (We have skipped the Gaussian elimination steps involved in computing a basis for .)    Basis of  We have .  We conclude that the -eigenvectors of are the nonzero scalar multiples of , and that the -eigenvectors are all nonzero vectors of the form .    bring to light a connection between eigenvalues and invertibility that is worth highlighting.   Null space as eigenspace   Let be an matrix.   The -eigenspace of is equal to the null space of : , .    Zero is an eigenvalue of if and only if is not invertible.         We have Since if and only if , we conclude that , and hence .    Zero is an eigenvalue of if and only if is nontrivial, if and only if is nontrivial (by (1)), if and only if is not invertible.      Of course statement (2) of gives rise to yet another equivalent formulation of invertibility, and we include this in our ever-expanding invertibility theorem at the end of the section. We end our current discussion with an example illustrating how to compute the eigenvalues and eigenvectors of an arbitrary linear transformation of a finite-dimensional space. The idea is to first represent as a matrix with respect to some basis , apply to this matrix, and then lift the results back to .   Computing eigenspaces of a linear transformation   Let be a linear transformation of a finite-dimensional vector space . To compute the eigenvalues and eigenspaces of , proceed as follows.    Pick any ordered basis of and compute .    Apply to to compute bases of for each eigenvalue of .    For each eigenvalue , lift the basis of back up to using the coordinate transformation . The result is the basis for the -eigenspace of .       Transposition (again)   Let be defined as .    Find all eigenvalues of .    For each eigenvalue of compute a basis for .      Let , the standard ordered basis of . Compute : . Now apply to . From we conclude that and are the only eigenvalues of (and hence also ). Bases for the corresponding eigenspaces of are easily computed as . Now lift these up to bases of the eigenspaces and of : . It is easy to see that and are the subspaces of symmetric and skew-symmetric matrices, respectively. This is consistent with our analysis in .      Properties of the characteristic polynomial  We turn now to some very useful properties of the characteristic polynomial of a square matrix .   Characteristic polynomial   Let be an matrix.    The function is a monic polynomial of degree with real coefficients: , .    Over the complex numbers we can factor completely as where the are the (not necessarily distinct) roots of .    The eigenvalues of are precisely the real roots of : , the for which .    The coefficient in satisfies .    The coefficient in satisfies .    We conclude that .       Proof of (1)  We show the claim by induction on . The claim is easily seen to be true for all and matrices.  Fix and assume the claim is true for all matrices. Let . Expanding along the first row yields . (Recall that for any matrix the notation denotes the submatrix obtained by removing the -th row and -th column of .) First observe that , and thus is the characteristic polynomial of the matrix . By induction this is a monic polynomial of degree , and hence the first term of , is a monic polynomial of degree . Unfortunately, the remaining terms in the expansion do not lend themselves to a direct application of the induction hypothesis. However, we observe that the submatrices for all satisfy the following property: their first columns contains only scalars; the remaining columns contain exactly one entry of the form , while the rest of the entries are scalars. An easy (additional) induction argument shows that the determinant of such a matrix is polynomial of degree at most . (We leave this to you!) Since the first term of is a monic polynomial of degree and the rest of the terms are polynomials of degree at most , we conclude that itself is a monic polynomial of degree , as desired.    Proof of (2)-(3)  Statement (2) is the fundamental theorem of algebra: every polynomial with real coeofficients factors completely over the complex numbers. Statement (3) follows from .    Proof of (4)-(6)  Statement (6) clearly follows from statements (4) and (5). From (1) and (2) we conclude . Expanding out the right-hand side of this polynomial equality yields a polynomial of the form . Going back and equating coefficients between the left- and right-hand sides of yields . This proves half of statements (4) and (5). The fact that can be proved by induction using a modified version of the argument from the proof of (1) above. It remains to show that . We have .      Characteristic polynomial for matrices   Let be a matrix, and let . Using we have . This is a useful trick if you want to produce a matrix with a prescribed characteristic polynomial. For example, a matrix with characteristic polynomial has trace equal to 0 and determinant equal to . Such matrices are easy to construct: , .    An important consequence of is that an matrix can have at most distinct eigenvalues. Indeed, the eigenvalues of are the real roots appearing among the in the factorization . This proves the following corollary.   Number of eigenvalues   An matrix has at most distinct eigenvalues.    Lastly, as promised we end by incorporating statement (2) of into our invertibility theorem.   Invertibility theorem   Let be an matrix. The following statements are equivalent.    is invertible.    The matrix equation has a unique solution for any .    The matrix equation has a solution for any .    The matrix equation has a unique solution: namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.     .                             Any of the following equivalent conditions about the set of columns of hold: is a basis of ; spans ; is linearly independent.    Any of the following equivalent conditions about the set of rows of hold: is a basis of ; spans ; is linearly independent.    The matrix transformationn is an isomorphism.     is not an eigenvalue of .          WeBWork Exercises    Find the eigenvalues of , given that  and its eigenvectors are and .  The corresponding eigenvalues are , , and .                        Find the eigenvalues and corresponding eigenvectors of the matrix  The eigenvalue corresponds to the eigenvector .  The eigenvalue corresponds to the eigenvector .  The eigenvalue corresponds to the eigenvector .                        Find the eigenvalues of the matrix .  The eigenvalues are , where   has an eigenvector ,  has an eigenvector ,   has an eigenvector ,  has an eigenvector .  Note: you may want to use a graphing calculator to estimate the roots of the polynomial which defines the eigenvalues.                             Suppose a matrix has only two distinct eigenvalues. Suppose that and . Find the eigenvalues of with their algebraic multiplicities.  The smaller eigenvalue = has multiplicity , and  the larger eigenvalue = has multiplicity .                             If and are eigenvectors of a matrix corresponding to the eigenvalues and , respectively,  then   and          Let be eigenvectors of the matrix which correspond to the eigenvalues , , and , respectively, and let  Express as a linear combination of , , and , and find .        .                           For each matrix below (a) compute the characteristic polynomial , (b) find all eigenvalues of the matrix, and (c) compute bases for eigenspaces of each eigenvalue.                   A=                         Matrices and below both have characteristic polynomial . For each matrix compute a basis of for each eigenvalue .                Let be an invertible matrix. Prove: is an eigenvalue of if and only if is an eigenvalue of .    Let be a square matrix.   Prove: and have the same characteristic polynomial.   First show that , then use a relevant property of the determinant.   Prove: and have the same eigenvalues.   Fix and let be the -eigenspaces of and , respectively. Prove: .   First show that , then use the rank-nullity theorem.    Let be an eigenvalue of the matrix .   Prove by induction: is an eigenvalue of for any positive integer .    Assume that is invertible. Prove: is an eigenvalue of for any integer .       Assume is a square matrix satisfying for some positive integer . Show that is the only eigenvalue of . Your argument must make clear that is in fact an eigenvalue of .    Assume is a square matrix satisfying    Prove: if is an eigenvalue of , then or .    Prove: if does not have as an eigenvalue, then .        "
+},
+{
+  "id": "eg_reflection_eigenvectors",
+  "level": "2",
+  "url": "s_eigenvectors.html#eg_reflection_eigenvectors",
+  "type": "Example",
+  "number": "6.1.1",
+  "title": "",
+  "body": "  Consider where . It turns out that has a simple geometric description, though you would not have guessed this from the standard matrix . To reveal the geometry at play, we represent with respect to the nonstandard basis . We compute . It follows, using the formula , that . The alternative representation given by nicely summarizes the action of : it fixes the vector and maps the vector , which is orthogonal to , to . We claim this implies that is none other than reflection through the line ! This follows from . In more detail, from the geometry of the setup, it is easy to see that we have (reflection fixes the line ) and (reflection ``flips\" vectors perpendicular to ). Since and agree on the basis , we must have .  In even more detail, since is a basis, for any vector we can write for some . It follows that . Together, formulas give us a satisfying geometric understanding of our reflection operator . Let : this is the line perpendicular to passing through the origin. Formula gives a decomposition of the vector in terms of its components along and . Formula tells us what does to this decomposition: namely, it leaves the component along unchanged and ``flips\" the component along .  Reflection through   Reflection ,     "
+},
+{
+  "id": "d_eigenvectors",
+  "level": "2",
+  "url": "s_eigenvectors.html#d_eigenvectors",
+  "type": "Definition",
+  "number": "6.1.3",
+  "title": "Eigenvectors and eigenvalues.",
+  "body": " eigenvector  eigenvalue  Eigenvectors and eigenvalues   Let be a linear transformation. A nonzero vector satisfying for some is called an eigenvector of with eigenvalue  .  Similarly, given a square matrix , a nonzero satisfying for some is called an eigenvector of with eigenvalue  . In other words, an eigenvector (resp., eigenvalue) of is just an eigenvector (resp., eigenvalue) of the matrix transformation .  In both cases (linear transformation or matrix) we call an eigenvector with eigenvalue a -eigenvector .   "
+},
+{
+  "id": "rm_eigenvector_lambda",
+  "level": "2",
+  "url": "s_eigenvectors.html#rm_eigenvector_lambda",
+  "type": "Remark",
+  "number": "6.1.4",
+  "title": "",
+  "body": "  You ask: Why use instead of or ? My answer: tradition!   "
+},
+{
+  "id": "rm_eigenvector_nonzero",
+  "level": "2",
+  "url": "s_eigenvectors.html#rm_eigenvector_nonzero",
+  "type": "Remark",
+  "number": "6.1.5",
+  "title": "",
+  "body": "  Note well the important condition that an eigenvector must be nonzero. This means the zero vector by definition is not an eigenvector. If we allowed as an eigenvector, then the notion of the eigenvalue of an eigenvector would no longer be well-defined. This is because for any linear transformation we have which implies that for all .   "
+},
+{
+  "id": "rm_eigenvectors_visual",
+  "level": "2",
+  "url": "s_eigenvectors.html#rm_eigenvectors_visual",
+  "type": "Remark",
+  "number": "6.1.6",
+  "title": "Visualizing eigenvectors.",
+  "body": " Visualizing eigenvectors   Suppose is an eigenvector of the linear transformation . Letting , this means that : , maps an eigenvector to some other element of the one-dimensional subspace it defines. The special case where is easy to visualize and can help guide your intuition in the general case. (See ) Here the space is a line passing through origin. If is an eigenvector of a given linear transformation, then it must be mapped to some other vector pointing along : , or . It it is not an eigenvector, it gets mapped to a vector that does not point along .   "
+},
+{
+  "id": "fig_eigenvector_visual",
+  "level": "2",
+  "url": "s_eigenvectors.html#fig_eigenvector_visual",
+  "type": "Figure",
+  "number": "6.1.7",
+  "title": "Visualizing eigenvectors",
+  "body": " Visualizing eigenvectors  Visualizing eigenvectors    "
+},
+{
+  "id": "eg_eigenvectors_zerotransform",
+  "level": "2",
+  "url": "s_eigenvectors.html#eg_eigenvectors_zerotransform",
+  "type": "Example",
+  "number": "6.1.8",
+  "title": "Zero and identity transformations.",
+  "body": " Zero and identity transformations   Assume is nonzero. Recall that the zero transformation and identity transformation are defined as and for all . Find all eigenvalues and eigenvectors of and .    Since for all , we see that is the only eigenvalue of , and that all nonzero vectors of are -eigenvectors.  Similarly, since for all , we see that is the only eigenvalue of , and that all nonzero vectors of are -eigenvectors.   "
+},
+{
+  "id": "eg_eigenvector_adhoc_reflection",
+  "level": "2",
+  "url": "s_eigenvectors.html#eg_eigenvector_adhoc_reflection",
+  "type": "Example",
+  "number": "6.1.9",
+  "title": "Reflection.",
+  "body": " Reflection   Let be a line in passing through the origin, and define to be reflection through . (See .) Find all eigenvectors and eigenvalues of . Use a geometric argument.    Since the reflection operator fixes all elements of the line , we have for any . This shows that any nonzero element of is an eigenvectors of with eigenvalue .  Similarly, since is orthogonal to , reflection through takes any element and maps it to . Thus any nonzero element is an eigenvector of with eigenvalue .  We claim that these two cases exhaust all eigenvectors of . Indeed, in general a nonzero vector lies in the line , and its reflection lies in the line , which itself is the result of reflecting the line through . Now assume . We must have , since if ; but if it follows that the line and its reflection are equal. Clearly the only lines that are mapped to themselves by reflection through are and . Thus if is an eigenvector of it must lie in or .   "
+},
+{
+  "id": "eg_eigenvector_adhoc_rotation",
+  "level": "2",
+  "url": "s_eigenvectors.html#eg_eigenvector_adhoc_rotation",
+  "type": "Example",
+  "number": "6.1.10",
+  "title": "Rotation.",
+  "body": " Rotation   Fix and define to be rotation by . (See ) Find all eigenvectors and eigenvalues of . Use a geometric argument. Your answer will depend on the choice of .      Case:  Rotation by sends every vector to : , . It follows that is the only eigenvalue of and all nonzero elements of are eigenvectors with eigenvalue .    Case:  A similar argument to the one in shows that has no eigenvalues in this case. In more detail, a nonzero vector lies in the line , and its rotation lies in the line , which is the result of rotating by the angle . Since , it is clear that , and thus we cannot have for some .     "
+},
+{
+  "id": "eg_eigenvector_adhoc_transposition",
+  "level": "2",
+  "url": "s_eigenvectors.html#eg_eigenvector_adhoc_transposition",
+  "type": "Example",
+  "number": "6.1.11",
+  "title": "Transposition.",
+  "body": " Transposition   Consider the linear transformation . Determine all eigenvectors and eigenvalues of .    To be an eigenvector of a nonzero matrix must satisfy for some . Using the definition of , this means . We ask for which scalars does there exist a nonzero matrix satisfying . Let's consider some specific choices of .   Case:  In this case reads . Thus the eigenvectors of with eigenvalue are precisely the nonzero symmetric matrices: , .    Case:  For this choice of we seek nonzero matrices satisfying . These are precisely the nonzero skew-symmetric matrices: , .    Case:  Suppose satisfies . Equating the entries of these two matrices yields the system . The first two equations imply , using the fact that . The second two equations imply further that and . Since , . It follows that . We conclude that for , if , then . It follows that is not an eigenvalue of in this case.  In summation, our analysis shows that the transposition operator has exactly two eigenvalues, and , that the eigenvectors of with eigenvalue 1 are the nonzero symmetric matrices, and that the eigenvalues of with eigenvalue are the nonzero skew-symmetric matrices.  "
+},
+{
+  "id": "th_eigenvectors_transformation_matrixrep",
+  "level": "2",
+  "url": "s_eigenvectors.html#th_eigenvectors_transformation_matrixrep",
+  "type": "Theorem",
+  "number": "6.1.12",
+  "title": "Eigenvectors of a linear transformation.",
+  "body": " Eigenvectors of a linear transformation   Let be a linear transformation, let be an ordered basis of , and let .    A vector is an eigenvector of with eigenvalue if and only if is an eigenvector of with eigenvalue .    A real number is an eigenvalue of if and only if it is an eigenvalue of . Thus and have the same set of eigenvalues.      We prove statement (1) as a chain of equivalences: . From (1) it follows directly that if is an an eigenvalue of , then it is an eigenvalue of . Conversely, if is an eigenvalue of , then there is a nonzero such that . Since is surjective ( , (3)), there is a vector such that . It follows from (1) that is a -eigenvector of , and thus that is an eigenvalue of .   "
+},
+{
+  "id": "th_eigenvectors_matrices",
+  "level": "2",
+  "url": "s_eigenvectors.html#th_eigenvectors_matrices",
+  "type": "Theorem",
+  "number": "6.1.13",
+  "title": "Eigenvectors of matrices.",
+  "body": " Eigenvectors of matrices   Let be an matrix. Fix .   The eigenvectors of with eigenvalue are the nonzero elements of the subspace .    As a consequence, is an eigenvalue of if and only if the matrix is singular ( , not invertible).       First observe that . From this equivalence it follows that . Since an eigenvector must be nonzero, we conclude that the -eigenvectors of are precisely the nonzero elements of . This proves statement (1). As a consequence, we see that has as an eigenvalue if and only if contains nonzero element elements: , if and only if . By the invertibility theorem this is true if and only if is not invertible.   "
+},
+{
+  "id": "d_eigenspace",
+  "level": "2",
+  "url": "s_eigenvectors.html#d_eigenspace",
+  "type": "Definition",
+  "number": "6.1.14",
+  "title": "Eigenspaces.",
+  "body": " Eigenspaces   Let be an matrix. Given the -eigenspace of is the subspace defined as . Similarly, given a linear transformation and , the -eigenspace of is the subspace defined as . In both cases the nonzero elements of are precisely the -eigenvectors.   "
+},
+{
+  "id": "cor_eigenvalues",
+  "level": "2",
+  "url": "s_eigenvectors.html#cor_eigenvalues",
+  "type": "Corollary",
+  "number": "6.1.15",
+  "title": "Eigenvalues of a matrix.",
+  "body": " Eigenvalues of a matrix   Let be an matrix, let , and let . The following are equivalent:     is an eigenvalue of ;     is singular;     ;     .     "
+},
+{
+  "id": "eg_eigenvalues_rotation",
+  "level": "2",
+  "url": "s_eigenvectors.html#eg_eigenvalues_rotation",
+  "type": "Example",
+  "number": "6.1.16",
+  "title": "Rotation (again).",
+  "body": " Rotation (again)   Fix and let be rotation by . Recall that we have where . Now compute . We can use the quadratic formula to find the roots of : . When , this reduces to , confirming our conclusion in that is the only eigenvalue of the rotation by operator.  When and , then and we see that has no real roots. This confirms our conclusion in that such rotations have no eigenvalues.   "
+},
+{
+  "id": "s_eigenvectors-4-12",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors-4-12",
+  "type": "Definition",
+  "number": "6.1.17",
+  "title": "Characteristic polynomial of a matrix.",
+  "body": " characteristic polynomial of a matrix  Characteristic polynomial of a matrix   Let be . The characteristic polynomial of is the function .   "
+},
+{
+  "id": "proc_eigenspaces_matrix",
+  "level": "2",
+  "url": "s_eigenvectors.html#proc_eigenspaces_matrix",
+  "type": "Procedure",
+  "number": "6.1.18",
+  "title": "Computing eigenspaces of a matrix.",
+  "body": " Computing eigenspaces of a matrix   Let be an matrix. To find all eigenvalues of and compute a basis for the corresponding eigenspace , proceed as follows.    Compute . Let be the distinct real roots of . These are the eigenvalues of .    For each , the corresponding eigenspace is . Use the null space algorithm ( ) to compute a basis for .     "
+},
+{
+  "id": "eg_eigenspaces_A",
+  "level": "2",
+  "url": "s_eigenvectors.html#eg_eigenspaces_A",
+  "type": "Example",
+  "number": "6.1.19",
+  "title": "",
+  "body": "  Let .   Find all eigenvalue of .    Compute a basis for the eigenspace for each eigenvalue .       We compute . Thus the eigenvalues of are and .   Basis for  We have . Thus all -eigenvectors of are of the form , where .    Basis for  We have . Thus all -eigenvectors of are of the form , where .    "
+},
+{
+  "id": "eg_eigenspaces_B",
+  "level": "2",
+  "url": "s_eigenvectors.html#eg_eigenspaces_B",
+  "type": "Example",
+  "number": "6.1.20",
+  "title": "",
+  "body": "  Let .    Find all eigenvalues of .    Compute a basis for the eigenspace for each eigenvalue .      First compute . We see that the eigenvalues of are and . Now compute bases for their corresponding eigenspaces.   Basis of  We have . (We have skipped the Gaussian elimination steps involved in computing a basis for .)    Basis of  We have .  We conclude that the -eigenvectors of are the nonzero scalar multiples of , and that the -eigenvectors are all nonzero vectors of the form .  "
+},
+{
+  "id": "cor_eigenvalue_invertible",
+  "level": "2",
+  "url": "s_eigenvectors.html#cor_eigenvalue_invertible",
+  "type": "Corollary",
+  "number": "6.1.21",
+  "title": "Null space as eigenspace.",
+  "body": " Null space as eigenspace   Let be an matrix.   The -eigenspace of is equal to the null space of : , .    Zero is an eigenvalue of if and only if is not invertible.         We have Since if and only if , we conclude that , and hence .    Zero is an eigenvalue of if and only if is nontrivial, if and only if is nontrivial (by (1)), if and only if is not invertible.     "
+},
+{
+  "id": "proc_eigenspaces_transformation",
+  "level": "2",
+  "url": "s_eigenvectors.html#proc_eigenspaces_transformation",
+  "type": "Procedure",
+  "number": "6.1.22",
+  "title": "Computing eigenspaces of a linear transformation.",
+  "body": " Computing eigenspaces of a linear transformation   Let be a linear transformation of a finite-dimensional vector space . To compute the eigenvalues and eigenspaces of , proceed as follows.    Pick any ordered basis of and compute .    Apply to to compute bases of for each eigenvalue of .    For each eigenvalue , lift the basis of back up to using the coordinate transformation . The result is the basis for the -eigenspace of .     "
+},
+{
+  "id": "eg_eigenvector_systematic_transposition",
+  "level": "2",
+  "url": "s_eigenvectors.html#eg_eigenvector_systematic_transposition",
+  "type": "Example",
+  "number": "6.1.23",
+  "title": "Transposition (again).",
+  "body": " Transposition (again)   Let be defined as .    Find all eigenvalues of .    For each eigenvalue of compute a basis for .      Let , the standard ordered basis of . Compute : . Now apply to . From we conclude that and are the only eigenvalues of (and hence also ). Bases for the corresponding eigenspaces of are easily computed as . Now lift these up to bases of the eigenspaces and of : . It is easy to see that and are the subspaces of symmetric and skew-symmetric matrices, respectively. This is consistent with our analysis in .   "
+},
+{
+  "id": "th_characteristic_polynomial",
+  "level": "2",
+  "url": "s_eigenvectors.html#th_characteristic_polynomial",
+  "type": "Theorem",
+  "number": "6.1.24",
+  "title": "Characteristic polynomial.",
+  "body": " Characteristic polynomial   Let be an matrix.    The function is a monic polynomial of degree with real coefficients: , .    Over the complex numbers we can factor completely as where the are the (not necessarily distinct) roots of .    The eigenvalues of are precisely the real roots of : , the for which .    The coefficient in satisfies .    The coefficient in satisfies .    We conclude that .       Proof of (1)  We show the claim by induction on . The claim is easily seen to be true for all and matrices.  Fix and assume the claim is true for all matrices. Let . Expanding along the first row yields . (Recall that for any matrix the notation denotes the submatrix obtained by removing the -th row and -th column of .) First observe that , and thus is the characteristic polynomial of the matrix . By induction this is a monic polynomial of degree , and hence the first term of , is a monic polynomial of degree . Unfortunately, the remaining terms in the expansion do not lend themselves to a direct application of the induction hypothesis. However, we observe that the submatrices for all satisfy the following property: their first columns contains only scalars; the remaining columns contain exactly one entry of the form , while the rest of the entries are scalars. An easy (additional) induction argument shows that the determinant of such a matrix is polynomial of degree at most . (We leave this to you!) Since the first term of is a monic polynomial of degree and the rest of the terms are polynomials of degree at most , we conclude that itself is a monic polynomial of degree , as desired.    Proof of (2)-(3)  Statement (2) is the fundamental theorem of algebra: every polynomial with real coeofficients factors completely over the complex numbers. Statement (3) follows from .    Proof of (4)-(6)  Statement (6) clearly follows from statements (4) and (5). From (1) and (2) we conclude . Expanding out the right-hand side of this polynomial equality yields a polynomial of the form . Going back and equating coefficients between the left- and right-hand sides of yields . This proves half of statements (4) and (5). The fact that can be proved by induction using a modified version of the argument from the proof of (1) above. It remains to show that . We have .    "
+},
+{
+  "id": "rm_char_poly_trick",
+  "level": "2",
+  "url": "s_eigenvectors.html#rm_char_poly_trick",
+  "type": "Remark",
+  "number": "6.1.25",
+  "title": "Characteristic polynomial for <span class=\"process-math\">\\(2\\times 2\\)<\/span> matrices.",
+  "body": " Characteristic polynomial for matrices   Let be a matrix, and let . Using we have . This is a useful trick if you want to produce a matrix with a prescribed characteristic polynomial. For example, a matrix with characteristic polynomial has trace equal to 0 and determinant equal to . Such matrices are easy to construct: , .   "
+},
+{
+  "id": "cor_eigenvalues_atmost_n",
+  "level": "2",
+  "url": "s_eigenvectors.html#cor_eigenvalues_atmost_n",
+  "type": "Corollary",
+  "number": "6.1.26",
+  "title": "Number of eigenvalues.",
+  "body": " Number of eigenvalues   An matrix has at most distinct eigenvalues.   "
+},
+{
+  "id": "th_invertibility_with_eigenvalue",
+  "level": "2",
+  "url": "s_eigenvectors.html#th_invertibility_with_eigenvalue",
+  "type": "Theorem",
+  "number": "6.1.27",
+  "title": "Invertibility theorem.",
+  "body": " Invertibility theorem   Let be an matrix. The following statements are equivalent.    is invertible.    The matrix equation has a unique solution for any .    The matrix equation has a solution for any .    The matrix equation has a unique solution: namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.     .                             Any of the following equivalent conditions about the set of columns of hold: is a basis of ; spans ; is linearly independent.    Any of the following equivalent conditions about the set of rows of hold: is a basis of ; spans ; is linearly independent.    The matrix transformationn is an isomorphism.     is not an eigenvalue of .      "
+},
+{
+  "id": "s_eigenvectors_ex-1-2",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-1-2",
+  "type": "Exercise",
+  "number": "6.1.4.1",
+  "title": "",
+  "body": "  Find the eigenvalues of , given that  and its eigenvectors are and .  The corresponding eigenvalues are , , and .                     "
+},
+{
+  "id": "s_eigenvectors_ex-1-3",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-1-3",
+  "type": "Exercise",
+  "number": "6.1.4.2",
+  "title": "",
+  "body": "  Find the eigenvalues and corresponding eigenvectors of the matrix  The eigenvalue corresponds to the eigenvector .  The eigenvalue corresponds to the eigenvector .  The eigenvalue corresponds to the eigenvector .                     "
+},
+{
+  "id": "s_eigenvectors_ex-1-4",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-1-4",
+  "type": "Exercise",
+  "number": "6.1.4.3",
+  "title": "",
+  "body": "  Find the eigenvalues of the matrix .  The eigenvalues are , where   has an eigenvector ,  has an eigenvector ,   has an eigenvector ,  has an eigenvector .  Note: you may want to use a graphing calculator to estimate the roots of the polynomial which defines the eigenvalues.                          "
+},
+{
+  "id": "s_eigenvectors_ex-1-5",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-1-5",
+  "type": "Exercise",
+  "number": "6.1.4.4",
+  "title": "",
+  "body": "  Suppose a matrix has only two distinct eigenvalues. Suppose that and . Find the eigenvalues of with their algebraic multiplicities.  The smaller eigenvalue = has multiplicity , and  the larger eigenvalue = has multiplicity .                          "
+},
+{
+  "id": "s_eigenvectors_ex-1-6",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-1-6",
+  "type": "Exercise",
+  "number": "6.1.4.5",
+  "title": "",
+  "body": "  If and are eigenvectors of a matrix corresponding to the eigenvalues and , respectively,  then   and       "
+},
+{
+  "id": "s_eigenvectors_ex-1-7",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-1-7",
+  "type": "Exercise",
+  "number": "6.1.4.6",
+  "title": "",
+  "body": "  Let be eigenvectors of the matrix which correspond to the eigenvalues , , and , respectively, and let  Express as a linear combination of , , and , and find .        .                       "
+},
+{
+  "id": "s_eigenvectors_ex-2-2",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-2",
+  "type": "Exercise",
+  "number": "6.1.4.7",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_eigenvectors_ex-2-3",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-3",
+  "type": "Exercise",
+  "number": "6.1.4.8",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_eigenvectors_ex-2-4",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-4",
+  "type": "Exercise",
+  "number": "6.1.4.9",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_eigenvectors_ex-2-5",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-5",
+  "type": "Exercise",
+  "number": "6.1.4.10",
+  "title": "",
+  "body": " A=   "
+},
+{
+  "id": "s_eigenvectors_ex-2-6",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-6",
+  "type": "Exercise",
+  "number": "6.1.4.11",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_eigenvectors_ex-2-7",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-7",
+  "type": "Exercise",
+  "number": "6.1.4.12",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_eigenvectors_ex-2-8",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-8",
+  "type": "Exercise",
+  "number": "6.1.4.13",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_eigenvectors_ex-2-9",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-9",
+  "type": "Exercise",
+  "number": "6.1.4.14",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_eigenvectors_ex-2-10",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-10",
+  "type": "Exercise",
+  "number": "6.1.4.15",
+  "title": "",
+  "body": " Matrices and below both have characteristic polynomial . For each matrix compute a basis of for each eigenvalue .              "
+},
+{
+  "id": "s_eigenvectors_ex-2-11",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-11",
+  "type": "Exercise",
+  "number": "6.1.4.16",
+  "title": "",
+  "body": " Let be an invertible matrix. Prove: is an eigenvalue of if and only if is an eigenvalue of .  "
+},
+{
+  "id": "s_eigenvectors_ex-2-12",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-12",
+  "type": "Exercise",
+  "number": "6.1.4.17",
+  "title": "",
+  "body": " Let be a square matrix.   Prove: and have the same characteristic polynomial.   First show that , then use a relevant property of the determinant.   Prove: and have the same eigenvalues.   Fix and let be the -eigenspaces of and , respectively. Prove: .   First show that , then use the rank-nullity theorem.  "
+},
+{
+  "id": "s_eigenvectors_ex-2-13",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-13",
+  "type": "Exercise",
+  "number": "6.1.4.18",
+  "title": "",
+  "body": " Let be an eigenvalue of the matrix .   Prove by induction: is an eigenvalue of for any positive integer .    Assume that is invertible. Prove: is an eigenvalue of for any integer .     "
+},
+{
+  "id": "s_eigenvectors_ex-2-14",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-14",
+  "type": "Exercise",
+  "number": "6.1.4.19",
+  "title": "",
+  "body": " Assume is a square matrix satisfying for some positive integer . Show that is the only eigenvalue of . Your argument must make clear that is in fact an eigenvalue of .  "
+},
+{
+  "id": "s_eigenvectors_ex-2-15",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-15",
+  "type": "Exercise",
+  "number": "6.1.4.20",
+  "title": "",
+  "body": " Assume is a square matrix satisfying    Prove: if is an eigenvalue of , then or .    Prove: if does not have as an eigenvalue, then .     "
+},
+{
+  "id": "s_diagonalization",
+  "level": "1",
+  "url": "s_diagonalization.html",
+  "type": "Section",
+  "number": "6.2",
+  "title": "Diagonalization",
+  "body": " Diagonalization   Our treatment of eigenvectors in was motivated in part by the objective of finding particularly simple matrix representations of a linear transformation . The simplest situation we could hope for is that there is a choice of basis for which is diagonal. We say that the basis  diagonalizes the transformation in this case, and that is diagonalizable . In this section we develop theoretical and computational tools for determining whether a linear transformation is diagonalizable, and for finding a diagonalizing basis when is in fact diagonalizable.    Diagonalizable transformations   diagonalizable  diagonalizing basis  Diagonalizable   Let be a finite-dimensional vector space. A linear transformation is diagonalizable if there exists an ordered basis of for which is a diagonal matrix. In this case, we say the basis  diagonalizes  .  An matrix is diagonalizable if the matrix transformation is diagonalizable.    As was already laid out in a matrix representation is diagonal if the elements of are eigenvectors of . According to , the converse is also true.   Diagonalizabilty: basis of eigenvectors   Let be a linear transformation, and let be an ordered basis of .    The matrix is diagonal if and only if consists of eigenvectors of .    If is diagonal, then the -th diagonal entry of is the eigenvalue associated to the eigenvector .    The transformation is diagonalizable if and only if there is an ordered basis of consisting of eigenvectors of .      Let be an ordered basis of . The matrix will be diagonal if and only if for each the -th column of is of the form for some . By the -th column of is the coordinate vector . Thus is diagonal if and only if for all we have for some . Next, by definition of , we have . We conclude that is diagonal if and only if is an eigenvector of for all . Furthermore, when this is the case, we see that the -th diagonal entry of is the corresponding eigenvalue . This proves statements (1) and (2). Statement (3) follows from (1) and .    The phrase an ordered basis consisting of eigenvectors of is a bit of a mouthful. The definition below allows us to shorten this to simply an eigenbasis of .   eigenbasis  Eigenbasis   Let be a linear transformation. An ordered basis is an eigenbasis of if is an eigenvector of for all .      Let , where . We saw in that and are eigenvectors of with eigenvalues , respectively. It is clear that the two eigenvectors are linearly independent, and hence that is an eigenbasis of . It follows from that is diagonalizable, and that in fact , as one easily verifies.      Let be rotation by : , , where . As discussed in , has no eigenvectors whatsoever. It follows that there is no eigenbasis of , and hence that is not diagonalizable.      Let , where . As is easily computed, is the only eigenvalue of , and . It follows that any two eigenvectors and lie in the one-dimensional space , and hence are scalar multiples of one another. Thus we cannot find two linearly independent eigenvectors of . We conclude that does not have an eigenbasis, and hence is not diagonalizable.      Linear independence of eigenvectors  Roughly put, tells us that is diagonalizable if it has enough eigenvectors: more precisely, if we can find a large enough collection of linearly independent eigenvectors. So when exactly can we do this? Our first examples were deceptively simple in this regard due to their low-dimensional setting. For transformations of higher-dimensional spaces we need more theory, which we now develop. will serve as one of the key results for our purposes. It tells us that eigenvectors chosen from different eigenspaces are linearly independent.   Linear independence of eigenvectors   Let be a linear transformation, and let be a set of eigenvectors of satisfying . If the eigenvalues are distinct ( , for ), then is linearly independent.    We prove the result by contradiction. Suppose we can find a finite set of eigenvectors with distinct eigenvalues that is linearly dependent. It follows that we can find such a set of minimum cardinality . In other words, there is positive integer satisfying the following properties: (i) we can find a linearly dependent set of eigenvectors of with distinct eigenvalues; (ii) for all , any set of eigenvectors of with distinct eigenvalues is linearly independent That we can find a minimal in this sense is plausible enough, but we are secretly using the well-ordering principle of the integers here. .  Now assume is a set of minimal cardinality satisfying for all and for all . First observe that we must have : eigenvectors are nonzero by definition, and thus any set consisting of a single eigenvector is linearly independent. Next, since is linearly dependent we have , where for some . After reordering, we may assume without loss of generality that . Next we apply to both sides of : . From equation and the equation in we have , and hence . Since and , we have . Thus equation implies that the set is a linearly dependent set of eigenvectors of with distinct eigenvalues, contradicting the minimality of . This completes our proof by contradiction.     Diagonalizable if distinct eigenvalues   Let be a linear transformation, and suppose . If has distinct eigenvalues, then is diagonalizable.    Let be a set eigenvectors of with distinct eigenvalues. According to the set is linearly independent. Since it follows that is an eigenbasis for and hence is diagonalizable.      Let , where . The characteristic polynomial of is . Since has three distinct eigenvalues the linear transformation is diagonalizable. Indeed, any choice of eigenvectors with is guaranteed to be linearly independent, and hence gives rise to an eigenbasis of . For example the usual procedure allows us to easily find eigenvectors from the three eigenspaces. You can verify for yourself that these three vectors are indeed linearly independent.      Let be a linear transformation, . It cannot be stressed enough that having distinct eigenvalues is a sufficient , but not necessary condition for to be diagonalizable. In other words we have but . A good counterexample to keep in mind is , where is the identity matrix. The transformation is clearly diagonalizable since , where is the standard basis; and yet is the only eigenvalue of .     makes no assumption about the dimension of and can thus can be applied to linear transformations of infinite-dimensional spaces. The differential operator provides an interesting example.   The next corollary is a useful strengthening of , and will be used to prove . Roughly speaking, it says that eigenspaces associated to distinct eigenvalues are linearly independent . Be careful: the phrase in quotes currently has no real meaning for us. We know what it means for vectors to be linearly independent, but not subspaces . However, it is a decent shorthand for the precise statement of .   Independence of eigenspaces   Let be a linear transformation, where . Let be distinct eigenvalues of , and for each let be the -eigenspace. If , where , then for all .    Before proving the result, we point out one subtlety here: although the for all , we cannot assume that each is an eigenvector. Indeed, is an eigenvector in this case if and only if . This observation guides the proof that follows.  To pick out the terms of that are nonzero (if any), we define . Assume by contradiction that is nonempty: , . In this case we would have , since for all . But then would be a nontrivial linear combination of the eigenvectors equal to . Since the eigenvectors have distinct eigenvalues, this contradicts . Thus . Equivalently, for all , as desired.    At last we are ready to state and prove what will be our main tool for determining whether a linear transformation is diagonalizable.   Diagonalizability: dimension of eigenspaces   Let be a linear transformation, where . Let be the distinct eigenvalues of , and for each , let be the -eigenspace. We have .   We prove the two implications separately. In each we use the equivalence , proved in .  Proof: diagonalizable  Assume is diagonalizable. From , there is an eigenbasis of . After reordering we may assume that , where for each and each , the element is an eigenvector with eigenvalue : , . Observer that since is a list of vectors, we have . We claim that for all the set is a basis of . The desired result follows in this case since . Proceeding then to the claim, observe that each set is linearly independent, since the underlying set of is linearly independent. Thus it suffices to show that for all . To this end, fix an with and take any . Since is a basis we can write , where for each we have . Bringing to the right-hand side of the equation above yields . Recall that , and thus . Since for all , it follows from that . Thus , showing that , as desired.    Proof: is diagonalizable  Let for all . We assume that . For each , let be a basis of the eigenspace . We claim is an eigenbasis of . Since for all and , we see that consists of eigenvectors of . Since , to show that is a basis it suffices to show that it is linearly independent. To this end, assume we have , where for each we have . By we must have for all . Finally, since the set is linearly independent for each , we must have for all and . This proves that is linearly independent, hence a basis.     We now collect our various results about diagonalizability into one procedure that (a) decides whether a linear transformation is diagonalizable, and (b) if it is, computes an eigenbasis for . The procedure applies to any linear transformation of a finite-dimensional vector space, not just matrix transformations. As usual, the first step is to choose a matrix representation for .   Deciding whether a linear transformation is diagonalizable   Let be a linear transformation, where . To decide whether is diagonalizable proceed as follows.    Pick any ordered basis of and compute . We have diagonalizable if and only if diagonalizable.    Let be the distinct eigenvalues of . Compute for each . We have .    Assume is diagonalizable according to Step (2). For each compute a basis of . The ordered list , is an eigenbasis of .     Lifting the basis back to via the coordinate transformation yields an eigenbasis of . The matrix is diagonal, of the form .      For the most part the validity of this procedure is a direct consequence of and . However, there are two details that need to be pointed out.   That is diagonalizable if and only if is diagonalizable follows from the fact that a basis of the -eigenspace of to a basis of the -eigenspace of using the coordinate vector transformation .    That the ordered list described in Step 3 is in fact a basis is shown in the proof of .         Let , where . Decide whether is diagonalizable. If yes, find an eigenbasis of and compute the corresponding matrix representing .    Note first that where is the standard basis of . (See .) Since is upper triangular, we easily see that its characteristic polynomial is . Next we investigate the eigenspaces: . By inspection we see that both and have rank 2, and hence nullity by the rank-nullity theorem. Thus both eigenspaces have dimension one, and we have . We conclude that , and hence , is not diagonalizable.    The diagonalizability examples in this text will focus largely on the special case of matrix transformations . However, our conscience demands that we give at least one full example of a more abstract linear transformation.   Transposition   Let be the linear transformation defined as . Decide whether is diagonalizable. If yes, find an eigenbasis for and compute the corresponding matrix representing .    We saw in that , where is the standard ordered basis of . Furthermore, we saw that and are the distinct eigenvalues of , and that are bases of and , respectively. It follows that , that is diagonalizable, and that is an eigenbasis of . We conclude that is diagonalizable, and we lift via to the eigenbasis of . Lastly, we have .     Video example: deciding if diagonalizable   Video: deciding if diagonalizable  Video: deciding if diagonalizable       Diagonalizable matrices  In this subsection we will focus on matrix transformations . Recall ( ) that in this situation we have where is the standard basis of . As such boils down to steps (2)-(3), and the eigenbasis of found in (3) is itself an eigenbasis for . Letting the change of basis formula ( ) yields , where . Lastly, since is the standard basis of , the change of basis matrix is obtained by placing the -th element of as the -th column for all . We record these observations as a separate procedure specifically for matrix transformations.   Deciding whether a matrix is diagonalizable   Let be an matrix, and let be its corresponding matrix transformation. To decide whether is diagonalizable, proceed as follows.    Let be the nonzero eigenspaces of . We have .    Assume is diagonalizable and let be an eigenbasis of satisfying for all . (We do not assume the are distinct here.) Letting , we have .      The process of finding and satisfying is called diagonalizing the matrix ; and we say that the matrix  diagonalizes  in this case. (Of course this is possible if and only if is diagonalizable.)    The matrix has characteristic polynomial . Decide whether is diagonalizable. If yes, find an invertible matrix and diagonal matrix such that .    To factor , we first look for integer roots dividing the constant term : , we test whether any of are roots. Luckily, we see that is a root of . Doing polynomial division of by yields . Repeating this factoring technique on , we see that , and thus can continue to factor: . We conclude that the eigenvalues of are , , and . We now compute bases for the corresponding eigenspaces. The bases below were obtained using . We omit the details of the Gaussian elimination performed in each case. (Check for yourself!) . Since , we conclude that is diagonalizable. Furthermore, we have , where .    Recall that two square matrices and are similar if for some invertible matrix ( ). From the foregoing discussion it follows that a matrix is diagonalizable if and only if it is similar to a diagonal matrix.   Diagonalizabilty and similarity   An matrix is diagonalizable if and only if it is similar to a diagonal matrix: , if and only if there is an invertible matrix and a diagonal matrix such that .    According to the matrix is similar to a diagonal matrix if and only if there is a linear transformation and ordered bases of such that and . By definition such a would be diagonalizable, since is diagonal. Since is diagonalizable if and only if is diagonalizable, we conclude that is similar to a diagonal matrix if and only if is diagonalizable.    We know from that similar matrices can be thought of as two matrix representations of the same overlying linear transformation . As such similar matrices share many of the same algebraic properties, as details.   Properties of similarity   Suppose is similar to : , there is an invertible matrix such that . The following hold:    is similar to : , there is an invertible matrix such that .     and have the same characteristic polynomial.     and have the same eigenvalues.     and have the same trace and determinant.     and have the same rank.    For any we have , where are the -eigenspaces of and , respectively.       Statement (1) follows by taking .  Let and be the characteristic polynomials of and , repsectively. We have . This proves statement (2).  Statement (3) follows from (2) since the eigenvalues of a matrix are the real roots of its characteristic polynomial. Furthermore, by the trace and determinant of a matrix are equal to the sum and product of the roots of its characteristic polynomial. Thus (4) also follows from (2).  The proofs of statements (5)-(6) are left as exercises.    A diagonalizable matrix is similar to a diagonal matrix ( ) and similar matrices share many essential properties ( , ) In this spirit, a good way of thinking about a diagonalizable matrix is that it is as good as diagonal .   Diagonalizable mantra   A diagonalizable matrix is as good as diagonal.    In practical terms, if is diagonalizable, then we have where is diagonal. This allows us to answer questions about by first answering the question for and then use the equations in to translate the results back to . What makes this method effective is that algebraic questions involving diagonal matrices are easy to answer! Before getting to some illustrative examples, we need a few results about the operation , which is called conjugation by .   Properties of conjugation   Let be an invertible matrix.   Conjugation is linear  For all and , we have .    Conjugation commutes with powers  For all and integers , we have . If is invertible, this equality holds for all integers .    Conjugation commutes with polynomials  Given any polynomial with real coefficients, we have .       The proof is left as an exercise.     Diagonalizable: matrix powers   Assume , where is diagonal. The normally difficult computation can be accomplished by first computing (easy) and then observing that . For example, the matrix is diagonalizable and satisfies , where . It follows that for any we have .     Diagonalizable: matrix polynomials   Assume , where is a diagonal matrix. Let . Given any polynomial , we have . Furthermore, since is diagonal, it follows that is also diagonal, and in fact its diagonal entries are given by . This gives us an easy method of computing arbitrary polynomials of the matrix .  Consider again the matrix (and and ) from . Let . Since , it follows that . We conclude that , as you can check directly.      A square-root of an matrix is a matrix such that . If and are similar matrices, satisfying , then has a square-root if and only if has a square-root. Indeed, if satisfies , then satisfies . Similarly, if satisfies , then satisfies . As an example, the matrix satisfies , where . Since is a square-root of , is a square-root of .  So when exactly does a diagonal matrix have a square-root? Clearly, it is sufficient that the diagonal entries satisfy for all , as in the example above. Interestingly, this is not a necessary condition! Indeed, consider the following example: .      Algebraic and geometric multiplicity  We end this section with a deeper look at what the characteristic polynomial reveals about eigenspaces. To begin with, we first define the characteristic polynomial of a general linear transformation , where is a finite-dimensional vector space.   Characteristic polynomial of a transformation   Let be a linear transformation, where is finite-dimensional. Let be an ordered basis of , and let . We define the characteristic polynomial of to be the characteristic polynomial of : , the characteristic polynomial of is .      For the characteristic polynomial of a linear transformation to be well-defined, it should not depend on the choice of basis. This is true thanks to and . Indeed, given two choice of ordered bases of , the matrices and are similar ( ), and thus their characteristic polynomials are equal ( ,(2)).    Let be a linear transformation, where is finite-dimensional. If is an eigenvalue of , then we can factor the chacteristic polynomial of as , where is not a root of . As we will see, the exponent is an upper bound for the dimension of . We call the algebraic multiplicity of the eigenvalue .   multiplicity of an eigenvalue algebraic  multiplicity of an eigenvalue geometric  Algebraic\/geometric multiplicity   Let be a linear transformation, where is finite-dimensional, and let be the characteristic polynomial of . Given an eigenvalue of , we can factor as , where is not a root of the polynomial : , . We call the geometric multiplicity of the eigenvalue , and we call its geometric multiplicity . If , we say is a repeated eigenvalue of .     Algebraic and geometric multiplicity   Let be a linear transformation, where , let be the characteristic polynomial of , and suppose is an eigenvalue of of algebraic multiplicity : , and . We have . In other words, the geometric multiplicity of an eigenvalue is bounded above by its algebraic multiplicity.    Since is an eigenvalue, we have , and thus . Assume by contradiction that . Let , and let be a basis for . We can extend to an ordered basis of . By definition, the characteristic polynomial of is given my , where w. Since are -eigenvectors of , the matrix is of the form   An easy proof by induction on shows that for such a matrix we have for some polynomial . On the other hand, since has algebraic multiplicity we have for some polynomial with . Setting these two expressions equal to one another we see that , or equivalently, . Since it follows that . Contradiction! We conclude that , as desired.     Algebraic and geometric multiplicity   Let be a linear transformation, where , and suppose the characteristic polynomial of factors over as , where for all . The following are equivalent:    is diagonalizable.    For all we have and .   In other words, is diagonalizable if and only if all roots of are real, and the geometric multiplicity of each eigenvalue is equal to its algebraic multiplicity.     Implication:  If (2) is true, then each is an eigenvalue of and we have , by counting degrees in . It follows from that is diagonalizable.    Implication:  If is diagonalizable, then there is an ordered basis of for which is diagonal. Letting be the -th diagonal element of , we have . This expression tells us that are the roots of , and hence that all roots are real since since for all . On the other hand each is a root of , and thus for all . It follows that are the distinct eigenvalues of . By , since is diagonalizable we must have . Since for all ( ), and since (counting degrees in ), for the equality to hold we must have for all , as desired.     From and we can deduce a much finer picture of the eigenspaces of a linear transformation from its factored characteristic polynomial. This often reduces our workload when treating questions of diagonalizability, as the next examples illustrate.    The matrix has characteristic polynomial . Decide whether is diagonalizable.    The eigenvalues of are . Since the eigenvalues and both have algebraic multiplicity , we have by  , and hence . It follows that is diagonalizable if and only if . We have , where . This matrix clearly has rank 2 (the first two columns form a basis for its column space), and hence nullity . We conclude that is diagonalizable.      The matrix has characterisic polynomial . Decide whether is diagonalizable.    The eigenvalues of are and , and each has algebraic multiplicity . Thus , and is diagonalizable if and only if . By inspection we see that and are -eigenvectors, and thus we must have . Next we have where . It is not difficult to see (either using Gaussian elimination or inspection) that this matrix has rank 3, and hence nullity 1. We conclude that , and hence is not diagonalizable.       WeBWork Exercises    Let =  Find a matrix , a diagonal matrix and such that .   ,  ,          Let . Find an invertible matrix and a diagonal matrix such that .   ,          Show that and are similar matrices by finding an invertible matrix satisfying .   ,          Suppose Find an invertible matrix and a diagonal matrix so that . Use your answer to find an expression for in terms of , a power of , and in that order.     .          For each matrix use to determine whether it is diagonalizable. If yes, then produce an invertible matrix and diagonal matrix satisfying . For the last matrix the characteristic polynomial is provided for convenience.                         ;      Let . Show that is diagonalizable if and only if either or ( , and ).    Prove .   Show that for any we have .     For each exercise construct a matrix satisfying the given conditions. Begin by showing that the given must be diagonalizable.     has eigenspaces and .     for all , for .     Assume is a matrix with eigenvalues , , and .    Show that is diagonalizable. Provide an explicit diagonal matrix that is similar to.    Prove that for all odd integers .      Prove statement (5) of .   Use and .    Prove statement (6) of .   Use and .    According to if and are similar, then they have the same rank. Show that the converse is false by showing that the matrices have the same rank, but are not similar.    According to if and are similar, then they have the same characteristic polynomial. Show that the converse is false by showing that the matrices have the same characteristic polynomial, but are not similar.    Prove all statements of .    In each case information about a matrix is given. Decide whether is diagonalizable.    , ,     ,     , ,    See .    Each matrix below has characteristic polynomial . Use to decide whether is diagonalizable. If yes, provide an invertible and diagonal satisfying .                Let . Use your work from to find a matrix satisfying .    "
+},
+{
+  "id": "d_diagonalizable",
+  "level": "2",
+  "url": "s_diagonalization.html#d_diagonalizable",
+  "type": "Definition",
+  "number": "6.2.1",
+  "title": "Diagonalizable.",
+  "body": " diagonalizable  diagonalizing basis  Diagonalizable   Let be a finite-dimensional vector space. A linear transformation is diagonalizable if there exists an ordered basis of for which is a diagonal matrix. In this case, we say the basis  diagonalizes  .  An matrix is diagonalizable if the matrix transformation is diagonalizable.   "
+},
+{
+  "id": "th_diagonalizability_eigenbasis",
+  "level": "2",
+  "url": "s_diagonalization.html#th_diagonalizability_eigenbasis",
+  "type": "Theorem",
+  "number": "6.2.2",
+  "title": "Diagonalizabilty: basis of eigenvectors.",
+  "body": " Diagonalizabilty: basis of eigenvectors   Let be a linear transformation, and let be an ordered basis of .    The matrix is diagonal if and only if consists of eigenvectors of .    If is diagonal, then the -th diagonal entry of is the eigenvalue associated to the eigenvector .    The transformation is diagonalizable if and only if there is an ordered basis of consisting of eigenvectors of .      Let be an ordered basis of . The matrix will be diagonal if and only if for each the -th column of is of the form for some . By the -th column of is the coordinate vector . Thus is diagonal if and only if for all we have for some . Next, by definition of , we have . We conclude that is diagonal if and only if is an eigenvector of for all . Furthermore, when this is the case, we see that the -th diagonal entry of is the corresponding eigenvalue . This proves statements (1) and (2). Statement (3) follows from (1) and .   "
+},
+{
+  "id": "d_eigenbasis",
+  "level": "2",
+  "url": "s_diagonalization.html#d_eigenbasis",
+  "type": "Definition",
+  "number": "6.2.3",
+  "title": "Eigenbasis.",
+  "body": " eigenbasis  Eigenbasis   Let be a linear transformation. An ordered basis is an eigenbasis of if is an eigenvector of for all .   "
+},
+{
+  "id": "eg_diagonalizable_matrix",
+  "level": "2",
+  "url": "s_diagonalization.html#eg_diagonalizable_matrix",
+  "type": "Example",
+  "number": "6.2.4",
+  "title": "",
+  "body": "  Let , where . We saw in that and are eigenvectors of with eigenvalues , respectively. It is clear that the two eigenvectors are linearly independent, and hence that is an eigenbasis of . It follows from that is diagonalizable, and that in fact , as one easily verifies.   "
+},
+{
+  "id": "ss_diagonalizable-8",
+  "level": "2",
+  "url": "s_diagonalization.html#ss_diagonalizable-8",
+  "type": "Example",
+  "number": "6.2.5",
+  "title": "",
+  "body": "  Let be rotation by : , , where . As discussed in , has no eigenvectors whatsoever. It follows that there is no eigenbasis of , and hence that is not diagonalizable.   "
+},
+{
+  "id": "ss_diagonalizable-9",
+  "level": "2",
+  "url": "s_diagonalization.html#ss_diagonalizable-9",
+  "type": "Example",
+  "number": "6.2.6",
+  "title": "",
+  "body": "  Let , where . As is easily computed, is the only eigenvalue of , and . It follows that any two eigenvectors and lie in the one-dimensional space , and hence are scalar multiples of one another. Thus we cannot find two linearly independent eigenvectors of . We conclude that does not have an eigenbasis, and hence is not diagonalizable.   "
+},
+{
+  "id": "th_independent_eigenvectors",
+  "level": "2",
+  "url": "s_diagonalization.html#th_independent_eigenvectors",
+  "type": "Theorem",
+  "number": "6.2.7",
+  "title": "Linear independence of eigenvectors.",
+  "body": " Linear independence of eigenvectors   Let be a linear transformation, and let be a set of eigenvectors of satisfying . If the eigenvalues are distinct ( , for ), then is linearly independent.    We prove the result by contradiction. Suppose we can find a finite set of eigenvectors with distinct eigenvalues that is linearly dependent. It follows that we can find such a set of minimum cardinality . In other words, there is positive integer satisfying the following properties: (i) we can find a linearly dependent set of eigenvectors of with distinct eigenvalues; (ii) for all , any set of eigenvectors of with distinct eigenvalues is linearly independent That we can find a minimal in this sense is plausible enough, but we are secretly using the well-ordering principle of the integers here. .  Now assume is a set of minimal cardinality satisfying for all and for all . First observe that we must have : eigenvectors are nonzero by definition, and thus any set consisting of a single eigenvector is linearly independent. Next, since is linearly dependent we have , where for some . After reordering, we may assume without loss of generality that . Next we apply to both sides of : . From equation and the equation in we have , and hence . Since and , we have . Thus equation implies that the set is a linearly dependent set of eigenvectors of with distinct eigenvalues, contradicting the minimality of . This completes our proof by contradiction.   "
+},
+{
+  "id": "cor_independent_eigenvectors",
+  "level": "2",
+  "url": "s_diagonalization.html#cor_independent_eigenvectors",
+  "type": "Corollary",
+  "number": "6.2.8",
+  "title": "Diagonalizable if distinct eigenvalues.",
+  "body": " Diagonalizable if distinct eigenvalues   Let be a linear transformation, and suppose . If has distinct eigenvalues, then is diagonalizable.    Let be a set eigenvectors of with distinct eigenvalues. According to the set is linearly independent. Since it follows that is an eigenbasis for and hence is diagonalizable.   "
+},
+{
+  "id": "ss_diagonalizable_independent_eigenvectors-5",
+  "level": "2",
+  "url": "s_diagonalization.html#ss_diagonalizable_independent_eigenvectors-5",
+  "type": "Example",
+  "number": "6.2.9",
+  "title": "",
+  "body": "  Let , where . The characteristic polynomial of is . Since has three distinct eigenvalues the linear transformation is diagonalizable. Indeed, any choice of eigenvectors with is guaranteed to be linearly independent, and hence gives rise to an eigenbasis of . For example the usual procedure allows us to easily find eigenvectors from the three eigenspaces. You can verify for yourself that these three vectors are indeed linearly independent.   "
+},
+{
+  "id": "rm_independent_eigenvectors",
+  "level": "2",
+  "url": "s_diagonalization.html#rm_independent_eigenvectors",
+  "type": "Remark",
+  "number": "6.2.10",
+  "title": "",
+  "body": "  Let be a linear transformation, . It cannot be stressed enough that having distinct eigenvalues is a sufficient , but not necessary condition for to be diagonalizable. In other words we have but . A good counterexample to keep in mind is , where is the identity matrix. The transformation is clearly diagonalizable since , where is the standard basis; and yet is the only eigenvalue of .   "
+},
+{
+  "id": "cor_independent_eigenspaces",
+  "level": "2",
+  "url": "s_diagonalization.html#cor_independent_eigenspaces",
+  "type": "Corollary",
+  "number": "6.2.11",
+  "title": "Independence of eigenspaces.",
+  "body": " Independence of eigenspaces   Let be a linear transformation, where . Let be distinct eigenvalues of , and for each let be the -eigenspace. If , where , then for all .    Before proving the result, we point out one subtlety here: although the for all , we cannot assume that each is an eigenvector. Indeed, is an eigenvector in this case if and only if . This observation guides the proof that follows.  To pick out the terms of that are nonzero (if any), we define . Assume by contradiction that is nonempty: , . In this case we would have , since for all . But then would be a nontrivial linear combination of the eigenvectors equal to . Since the eigenvectors have distinct eigenvalues, this contradicts . Thus . Equivalently, for all , as desired.   "
+},
+{
+  "id": "th_diagonalizability_eigenspaces",
+  "level": "2",
+  "url": "s_diagonalization.html#th_diagonalizability_eigenspaces",
+  "type": "Theorem",
+  "number": "6.2.12",
+  "title": "Diagonalizability: dimension of eigenspaces.",
+  "body": " Diagonalizability: dimension of eigenspaces   Let be a linear transformation, where . Let be the distinct eigenvalues of , and for each , let be the -eigenspace. We have .   We prove the two implications separately. In each we use the equivalence , proved in .  Proof: diagonalizable  Assume is diagonalizable. From , there is an eigenbasis of . After reordering we may assume that , where for each and each , the element is an eigenvector with eigenvalue : , . Observer that since is a list of vectors, we have . We claim that for all the set is a basis of . The desired result follows in this case since . Proceeding then to the claim, observe that each set is linearly independent, since the underlying set of is linearly independent. Thus it suffices to show that for all . To this end, fix an with and take any . Since is a basis we can write , where for each we have . Bringing to the right-hand side of the equation above yields . Recall that , and thus . Since for all , it follows from that . Thus , showing that , as desired.    Proof: is diagonalizable  Let for all . We assume that . For each , let be a basis of the eigenspace . We claim is an eigenbasis of . Since for all and , we see that consists of eigenvectors of . Since , to show that is a basis it suffices to show that it is linearly independent. To this end, assume we have , where for each we have . By we must have for all . Finally, since the set is linearly independent for each , we must have for all and . This proves that is linearly independent, hence a basis.    "
+},
+{
+  "id": "proc_diagonalize",
+  "level": "2",
+  "url": "s_diagonalization.html#proc_diagonalize",
+  "type": "Procedure",
+  "number": "6.2.13",
+  "title": "Deciding whether a linear transformation is diagonalizable.",
+  "body": " Deciding whether a linear transformation is diagonalizable   Let be a linear transformation, where . To decide whether is diagonalizable proceed as follows.    Pick any ordered basis of and compute . We have diagonalizable if and only if diagonalizable.    Let be the distinct eigenvalues of . Compute for each . We have .    Assume is diagonalizable according to Step (2). For each compute a basis of . The ordered list , is an eigenbasis of .     Lifting the basis back to via the coordinate transformation yields an eigenbasis of . The matrix is diagonal, of the form .      For the most part the validity of this procedure is a direct consequence of and . However, there are two details that need to be pointed out.   That is diagonalizable if and only if is diagonalizable follows from the fact that a basis of the -eigenspace of to a basis of the -eigenspace of using the coordinate vector transformation .    That the ordered list described in Step 3 is in fact a basis is shown in the proof of .      "
+},
+{
+  "id": "eg_diagonalizable_uppertriang",
+  "level": "2",
+  "url": "s_diagonalization.html#eg_diagonalizable_uppertriang",
+  "type": "Example",
+  "number": "6.2.14",
+  "title": "",
+  "body": "  Let , where . Decide whether is diagonalizable. If yes, find an eigenbasis of and compute the corresponding matrix representing .    Note first that where is the standard basis of . (See .) Since is upper triangular, we easily see that its characteristic polynomial is . Next we investigate the eigenspaces: . By inspection we see that both and have rank 2, and hence nullity by the rank-nullity theorem. Thus both eigenspaces have dimension one, and we have . We conclude that , and hence , is not diagonalizable.   "
+},
+{
+  "id": "eg_diagonalizable_transposition",
+  "level": "2",
+  "url": "s_diagonalization.html#eg_diagonalizable_transposition",
+  "type": "Example",
+  "number": "6.2.15",
+  "title": "Transposition.",
+  "body": " Transposition   Let be the linear transformation defined as . Decide whether is diagonalizable. If yes, find an eigenbasis for and compute the corresponding matrix representing .    We saw in that , where is the standard ordered basis of . Furthermore, we saw that and are the distinct eigenvalues of , and that are bases of and , respectively. It follows that , that is diagonalizable, and that is an eigenbasis of . We conclude that is diagonalizable, and we lift via to the eigenbasis of . Lastly, we have .   "
+},
+{
+  "id": "fig_vid_diag",
+  "level": "2",
+  "url": "s_diagonalization.html#fig_vid_diag",
+  "type": "Figure",
+  "number": "6.2.16",
+  "title": "Video: deciding if diagonalizable",
+  "body": " Video: deciding if diagonalizable  Video: deciding if diagonalizable   "
+},
+{
+  "id": "proc_diagonalize_matrixtransform",
+  "level": "2",
+  "url": "s_diagonalization.html#proc_diagonalize_matrixtransform",
+  "type": "Procedure",
+  "number": "6.2.17",
+  "title": "Deciding whether a matrix is diagonalizable.",
+  "body": " Deciding whether a matrix is diagonalizable   Let be an matrix, and let be its corresponding matrix transformation. To decide whether is diagonalizable, proceed as follows.    Let be the nonzero eigenspaces of . We have .    Assume is diagonalizable and let be an eigenbasis of satisfying for all . (We do not assume the are distinct here.) Letting , we have .     "
+},
+{
+  "id": "eg_diagonalizable_big",
+  "level": "2",
+  "url": "s_diagonalization.html#eg_diagonalizable_big",
+  "type": "Example",
+  "number": "6.2.18",
+  "title": "",
+  "body": "  The matrix has characteristic polynomial . Decide whether is diagonalizable. If yes, find an invertible matrix and diagonal matrix such that .    To factor , we first look for integer roots dividing the constant term : , we test whether any of are roots. Luckily, we see that is a root of . Doing polynomial division of by yields . Repeating this factoring technique on , we see that , and thus can continue to factor: . We conclude that the eigenvalues of are , , and . We now compute bases for the corresponding eigenspaces. The bases below were obtained using . We omit the details of the Gaussian elimination performed in each case. (Check for yourself!) . Since , we conclude that is diagonalizable. Furthermore, we have , where .   "
+},
+{
+  "id": "cor_diagonalizable_matrix",
+  "level": "2",
+  "url": "s_diagonalization.html#cor_diagonalizable_matrix",
+  "type": "Corollary",
+  "number": "6.2.19",
+  "title": "Diagonalizabilty and similarity.",
+  "body": " Diagonalizabilty and similarity   An matrix is diagonalizable if and only if it is similar to a diagonal matrix: , if and only if there is an invertible matrix and a diagonal matrix such that .    According to the matrix is similar to a diagonal matrix if and only if there is a linear transformation and ordered bases of such that and . By definition such a would be diagonalizable, since is diagonal. Since is diagonalizable if and only if is diagonalizable, we conclude that is similar to a diagonal matrix if and only if is diagonalizable.   "
+},
+{
+  "id": "th_similarity",
+  "level": "2",
+  "url": "s_diagonalization.html#th_similarity",
+  "type": "Theorem",
+  "number": "6.2.20",
+  "title": "Properties of similarity.",
+  "body": " Properties of similarity   Suppose is similar to : , there is an invertible matrix such that . The following hold:    is similar to : , there is an invertible matrix such that .     and have the same characteristic polynomial.     and have the same eigenvalues.     and have the same trace and determinant.     and have the same rank.    For any we have , where are the -eigenspaces of and , respectively.       Statement (1) follows by taking .  Let and be the characteristic polynomials of and , repsectively. We have . This proves statement (2).  Statement (3) follows from (2) since the eigenvalues of a matrix are the real roots of its characteristic polynomial. Furthermore, by the trace and determinant of a matrix are equal to the sum and product of the roots of its characteristic polynomial. Thus (4) also follows from (2).  The proofs of statements (5)-(6) are left as exercises.   "
+},
+{
+  "id": "mantra_diagonalizable",
+  "level": "2",
+  "url": "s_diagonalization.html#mantra_diagonalizable",
+  "type": "Mantra",
+  "number": "6.2.21",
+  "title": "Diagonalizable mantra.",
+  "body": " Diagonalizable mantra   A diagonalizable matrix is as good as diagonal.   "
+},
+{
+  "id": "th_conjugation",
+  "level": "2",
+  "url": "s_diagonalization.html#th_conjugation",
+  "type": "Theorem",
+  "number": "6.2.22",
+  "title": "Properties of conjugation.",
+  "body": " Properties of conjugation   Let be an invertible matrix.   Conjugation is linear  For all and , we have .    Conjugation commutes with powers  For all and integers , we have . If is invertible, this equality holds for all integers .    Conjugation commutes with polynomials  Given any polynomial with real coefficients, we have .       The proof is left as an exercise.   "
+},
+{
+  "id": "eg_diagonalizable_matrix_powers",
+  "level": "2",
+  "url": "s_diagonalization.html#eg_diagonalizable_matrix_powers",
+  "type": "Example",
+  "number": "6.2.23",
+  "title": "Diagonalizable: matrix powers.",
+  "body": " Diagonalizable: matrix powers   Assume , where is diagonal. The normally difficult computation can be accomplished by first computing (easy) and then observing that . For example, the matrix is diagonalizable and satisfies , where . It follows that for any we have .   "
+},
+{
+  "id": "eg_diagonalizable_matrix_polynomials",
+  "level": "2",
+  "url": "s_diagonalization.html#eg_diagonalizable_matrix_polynomials",
+  "type": "Example",
+  "number": "6.2.24",
+  "title": "Diagonalizable: matrix polynomials.",
+  "body": " Diagonalizable: matrix polynomials   Assume , where is a diagonal matrix. Let . Given any polynomial , we have . Furthermore, since is diagonal, it follows that is also diagonal, and in fact its diagonal entries are given by . This gives us an easy method of computing arbitrary polynomials of the matrix .  Consider again the matrix (and and ) from . Let . Since , it follows that . We conclude that , as you can check directly.   "
+},
+{
+  "id": "ss_diagonalizable_matrices-16",
+  "level": "2",
+  "url": "s_diagonalization.html#ss_diagonalizable_matrices-16",
+  "type": "Example",
+  "number": "6.2.25",
+  "title": "",
+  "body": "  A square-root of an matrix is a matrix such that . If and are similar matrices, satisfying , then has a square-root if and only if has a square-root. Indeed, if satisfies , then satisfies . Similarly, if satisfies , then satisfies . As an example, the matrix satisfies , where . Since is a square-root of , is a square-root of .  So when exactly does a diagonal matrix have a square-root? Clearly, it is sufficient that the diagonal entries satisfy for all , as in the example above. Interestingly, this is not a necessary condition! Indeed, consider the following example: .   "
+},
+{
+  "id": "d_char_poly_transform",
+  "level": "2",
+  "url": "s_diagonalization.html#d_char_poly_transform",
+  "type": "Definition",
+  "number": "6.2.26",
+  "title": "Characteristic polynomial of a transformation.",
+  "body": " Characteristic polynomial of a transformation   Let be a linear transformation, where is finite-dimensional. Let be an ordered basis of , and let . We define the characteristic polynomial of to be the characteristic polynomial of : , the characteristic polynomial of is .   "
+},
+{
+  "id": "rm_char_poly_transform",
+  "level": "2",
+  "url": "s_diagonalization.html#rm_char_poly_transform",
+  "type": "Remark",
+  "number": "6.2.27",
+  "title": "",
+  "body": "  For the characteristic polynomial of a linear transformation to be well-defined, it should not depend on the choice of basis. This is true thanks to and . Indeed, given two choice of ordered bases of , the matrices and are similar ( ), and thus their characteristic polynomials are equal ( ,(2)).   "
+},
+{
+  "id": "d_alg_geom_mult",
+  "level": "2",
+  "url": "s_diagonalization.html#d_alg_geom_mult",
+  "type": "Definition",
+  "number": "6.2.28",
+  "title": "Algebraic\/geometric multiplicity.",
+  "body": " multiplicity of an eigenvalue algebraic  multiplicity of an eigenvalue geometric  Algebraic\/geometric multiplicity   Let be a linear transformation, where is finite-dimensional, and let be the characteristic polynomial of . Given an eigenvalue of , we can factor as , where is not a root of the polynomial : , . We call the geometric multiplicity of the eigenvalue , and we call its geometric multiplicity . If , we say is a repeated eigenvalue of .   "
+},
+{
+  "id": "th_alg_geom_mult",
+  "level": "2",
+  "url": "s_diagonalization.html#th_alg_geom_mult",
+  "type": "Theorem",
+  "number": "6.2.29",
+  "title": "Algebraic and geometric multiplicity.",
+  "body": " Algebraic and geometric multiplicity   Let be a linear transformation, where , let be the characteristic polynomial of , and suppose is an eigenvalue of of algebraic multiplicity : , and . We have . In other words, the geometric multiplicity of an eigenvalue is bounded above by its algebraic multiplicity.    Since is an eigenvalue, we have , and thus . Assume by contradiction that . Let , and let be a basis for . We can extend to an ordered basis of . By definition, the characteristic polynomial of is given my , where w. Since are -eigenvectors of , the matrix is of the form   An easy proof by induction on shows that for such a matrix we have for some polynomial . On the other hand, since has algebraic multiplicity we have for some polynomial with . Setting these two expressions equal to one another we see that , or equivalently, . Since it follows that . Contradiction! We conclude that , as desired.   "
+},
+{
+  "id": "cor_alg_geom_mult",
+  "level": "2",
+  "url": "s_diagonalization.html#cor_alg_geom_mult",
+  "type": "Corollary",
+  "number": "6.2.30",
+  "title": "Algebraic and geometric multiplicity.",
+  "body": " Algebraic and geometric multiplicity   Let be a linear transformation, where , and suppose the characteristic polynomial of factors over as , where for all . The following are equivalent:    is diagonalizable.    For all we have and .   In other words, is diagonalizable if and only if all roots of are real, and the geometric multiplicity of each eigenvalue is equal to its algebraic multiplicity.     Implication:  If (2) is true, then each is an eigenvalue of and we have , by counting degrees in . It follows from that is diagonalizable.    Implication:  If is diagonalizable, then there is an ordered basis of for which is diagonal. Letting be the -th diagonal element of , we have . This expression tells us that are the roots of , and hence that all roots are real since since for all . On the other hand each is a root of , and thus for all . It follows that are the distinct eigenvalues of . By , since is diagonalizable we must have . Since for all ( ), and since (counting degrees in ), for the equality to hold we must have for all , as desired.    "
+},
+{
+  "id": "eg_alg_geom_1",
+  "level": "2",
+  "url": "s_diagonalization.html#eg_alg_geom_1",
+  "type": "Example",
+  "number": "6.2.31",
+  "title": "",
+  "body": "  The matrix has characteristic polynomial . Decide whether is diagonalizable.    The eigenvalues of are . Since the eigenvalues and both have algebraic multiplicity , we have by  , and hence . It follows that is diagonalizable if and only if . We have , where . This matrix clearly has rank 2 (the first two columns form a basis for its column space), and hence nullity . We conclude that is diagonalizable.   "
+},
+{
+  "id": "eg_alg_geom_2",
+  "level": "2",
+  "url": "s_diagonalization.html#eg_alg_geom_2",
+  "type": "Example",
+  "number": "6.2.32",
+  "title": "",
+  "body": "  The matrix has characterisic polynomial . Decide whether is diagonalizable.    The eigenvalues of are and , and each has algebraic multiplicity . Thus , and is diagonalizable if and only if . By inspection we see that and are -eigenvectors, and thus we must have . Next we have where . It is not difficult to see (either using Gaussian elimination or inspection) that this matrix has rank 3, and hence nullity 1. We conclude that , and hence is not diagonalizable.   "
+},
+{
+  "id": "s_diagonalization_ex-1-2",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-1-2",
+  "type": "Exercise",
+  "number": "6.2.5.1",
+  "title": "",
+  "body": "  Let =  Find a matrix , a diagonal matrix and such that .   ,  ,       "
+},
+{
+  "id": "s_diagonalization_ex-1-3",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-1-3",
+  "type": "Exercise",
+  "number": "6.2.5.2",
+  "title": "",
+  "body": "  Let . Find an invertible matrix and a diagonal matrix such that .   ,       "
+},
+{
+  "id": "s_diagonalization_ex-1-4",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-1-4",
+  "type": "Exercise",
+  "number": "6.2.5.3",
+  "title": "",
+  "body": "  Show that and are similar matrices by finding an invertible matrix satisfying .   ,       "
+},
+{
+  "id": "s_diagonalization_ex-1-5",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-1-5",
+  "type": "Exercise",
+  "number": "6.2.5.4",
+  "title": "",
+  "body": "  Suppose Find an invertible matrix and a diagonal matrix so that . Use your answer to find an expression for in terms of , a power of , and in that order.     .      "
+},
+{
+  "id": "s_diagonalization_ex-2-2",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-2-2",
+  "type": "Exercise",
+  "number": "6.2.5.5",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_diagonalization_ex-2-3",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-2-3",
+  "type": "Exercise",
+  "number": "6.2.5.6",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_diagonalization_ex-2-4",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-2-4",
+  "type": "Exercise",
+  "number": "6.2.5.7",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_diagonalization_ex-2-5",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-2-5",
+  "type": "Exercise",
+  "number": "6.2.5.8",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_diagonalization_ex-2-6",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-2-6",
+  "type": "Exercise",
+  "number": "6.2.5.9",
+  "title": "",
+  "body": "  ;   "
+},
+{
+  "id": "s_diagonalization_ex-3",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-3",
+  "type": "Exercise",
+  "number": "6.2.5.10",
+  "title": "",
+  "body": " Let . Show that is diagonalizable if and only if either or ( , and ).  "
+},
+{
+  "id": "s_diagonalization_ex-4",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-4",
+  "type": "Exercise",
+  "number": "6.2.5.11",
+  "title": "",
+  "body": " Prove .   Show that for any we have .  "
+},
+{
+  "id": "s_diagonalization_ex-5-2",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-5-2",
+  "type": "Exercise",
+  "number": "6.2.5.12",
+  "title": "",
+  "body": "  has eigenspaces and .  "
+},
+{
+  "id": "s_diagonalization_ex-5-3",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-5-3",
+  "type": "Exercise",
+  "number": "6.2.5.13",
+  "title": "",
+  "body": "  for all , for .  "
+},
+{
+  "id": "s_diagonalization_ex-6",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-6",
+  "type": "Exercise",
+  "number": "6.2.5.14",
+  "title": "",
+  "body": " Assume is a matrix with eigenvalues , , and .    Show that is diagonalizable. Provide an explicit diagonal matrix that is similar to.    Prove that for all odd integers .    "
+},
+{
+  "id": "s_diagonalization_ex-7",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-7",
+  "type": "Exercise",
+  "number": "6.2.5.15",
+  "title": "",
+  "body": " Prove statement (5) of .   Use and .  "
+},
+{
+  "id": "s_diagonalization_ex-8",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-8",
+  "type": "Exercise",
+  "number": "6.2.5.16",
+  "title": "",
+  "body": " Prove statement (6) of .   Use and .  "
+},
+{
+  "id": "s_diagonalization_ex-9",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-9",
+  "type": "Exercise",
+  "number": "6.2.5.17",
+  "title": "",
+  "body": " According to if and are similar, then they have the same rank. Show that the converse is false by showing that the matrices have the same rank, but are not similar.  "
+},
+{
+  "id": "s_diagonalization_ex-10",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-10",
+  "type": "Exercise",
+  "number": "6.2.5.18",
+  "title": "",
+  "body": " According to if and are similar, then they have the same characteristic polynomial. Show that the converse is false by showing that the matrices have the same characteristic polynomial, but are not similar.  "
+},
+{
+  "id": "s_diagonalization_ex-11",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-11",
+  "type": "Exercise",
+  "number": "6.2.5.19",
+  "title": "",
+  "body": " Prove all statements of .  "
+},
+{
+  "id": "s_diagonalization_ex-12",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-12",
+  "type": "Exercise",
+  "number": "6.2.5.20",
+  "title": "",
+  "body": " In each case information about a matrix is given. Decide whether is diagonalizable.    , ,     ,     , ,    See .  "
+},
+{
+  "id": "ex_diagonalization",
+  "level": "2",
+  "url": "s_diagonalization.html#ex_diagonalization",
+  "type": "Exercise",
+  "number": "6.2.5.21",
+  "title": "",
+  "body": " Each matrix below has characteristic polynomial . Use to decide whether is diagonalizable. If yes, provide an invertible and diagonal satisfying .              "
+},
+{
+  "id": "s_diagonalization_ex-14",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-14",
+  "type": "Exercise",
+  "number": "6.2.5.22",
+  "title": "",
+  "body": " Let . Use your work from to find a matrix satisfying .  "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
@@ -7390,9 +8308,9 @@ var ptx_lunr_docs = [
   "body": " Mantras and fiats   "
 },
 {
-  "id": "euc_vec_spaces-9-10",
+  "id": "euc_vec_spaces-10-10",
   "level": "1",
-  "url": "euc_vec_spaces-9-10.html",
+  "url": "euc_vec_spaces-10-10.html",
   "type": "Index",
   "number": "",
   "title": "Index",
