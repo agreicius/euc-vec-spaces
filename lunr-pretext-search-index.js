@@ -8236,6 +8236,1635 @@ var ptx_lunr_docs = [
   "body": " Let . Use your work from to find a matrix satisfying .  "
 },
 {
+  "id": "s_innerproducts",
+  "level": "1",
+  "url": "s_innerproducts.html",
+  "type": "Section",
+  "number": "7.1",
+  "title": "Inner product spaces",
+  "body": " Inner product spaces   An inner product is an additional layer of structure we can define on a vector space . It takes a pair of elements and returns a scalar . As with the vector addition and scalar multiplication, we define inner products axiomatically, taking as our model the dot product on and . Our definition ( ) simply promulgates a few important properties enjoyed by the dot product that may be familiar to you from studying calculus.  The addition of an inner product enriches the structure of a vector space considerably, and gives rise to a number of additional useful analytic tools. We highlight a few below.   Distance and angle  A notion of distance and angle between two vectors can be defined relative to a given inner product. These provide a numeric measurement of how close (distance) or closely oriented (angle) two vectors in our space are.    Orthogonality  Two vectors are orthogonal , relative to a given inner product, if . Orthogonality leads further to a general notion of orthogonal projection onto a subspace .    Orthogonal bases  An orthogonal basis of a vector space , relative to a given inner product, is one whose elements are pairwise orthogonal. As we will see there are many computational advantages of working with an orthogonal basis.       Inner products   Inner products of linear combinations   We will have many opportunities to expand out an inner product of two linear combinations of vectors. Using axioms (i) and (ii) in series, this process resembles the procedure for multiplying two polynomials. For example, we have . Note how in the last step we are able to group the cross terms , using the symmetry axiom.  More generally, given linear combinations , the same reasoning shows that . In particular, we have .    We now present a series of important examples of inner products defined on our various inner product spaces. Each is presented as a theorem, as we must prove that the proposed operation satisfies the axios of an inner product. The first example, the weighted dot product is itself a vast generalization of the familiar dot product operations defined on and .   Weighted dot product   Let . Let be any list of real numbers. Define an operation on as follows: given , let . This operation is an inner product if and only if for all .  We call this inner product a weighted dot product on , or more specifically, the dot product with weights . In the special case where for all we call this the (standard) dot product and write instead of .    First we show that axioms (i) and (ii) are satsified for any choice of . Let , the diagonal matrix whose -th diagonal entry is . Then for all we have . Here we treat as column vectors, and we treat the resulting matrix as a scalar. Axioms (i)-(ii) now follow from various matrix properties. For linearity, for example, we have . Symmetry requires a little more trickery: . Note that as is just a matrix.  Lastly, we show that axiom (iii) is satisfied if and only if for all . To this end consider the formula . If , then since for all , we have for any , and if and only if for all if and only if .  For the other direction suppose for some . Let , the -th element of the standard basis of . Then : a counterexample to the definiteness property of axiom (iii).     Euclidean -space  Weighted Euclidean space  (Weighted) Euclidean space   Fix a positive integer . Euclidean -space is the inner product space with underlying vector space and inner product given by the dot product. More generally, a weighted Eulidean space is an inner product space of the form , where is a weighted dot product.     Dot product on   Let . Then , and .     Weighted dot product   The dot product with weights on is defined as . Let and . We have , and .     Why the weights must be positive   Consider the operation on defined as where . This operation satisfies axioms (i) and (ii) of . (See proof of .) However, it fails both the positivity and definiteness properties of axiom (iii): .      It is worth highlighting the observation in the proof of that a dot product with weights can be expressed as a matrix product: , where is the diagonal matrix whose -th diagonal entry is . Here are treated as column vectors, and we identify the resulting matrix with a scalar.  In particular for the standard dot product this matrix formula reduces to . Conversely, the dot product gives another way to formulate general matrix multiplication. as the next theorem articulates.     Dot product and matrix multiplication     Given -tuples and , we have , where in the last equality and are treated as column vectors.    Let be an matrix, and let be a matrix. Let be the -th row of , and let be the -th column of . For all , we have , where and are considered as -tuples. In other words, the -th entry of is the dot product of the -th row of and the -th column of .        See and the proof of .    Let and . Then , since and .    Next we introduce an important family of inner products defined on polynomials spaces called evaluation inner products . These are useful when we wish to compare polynomials by how they behave at a specified list of inputs.   Evaluation inner products on   Let , and let be any list of distinct real numbers. For any define . This defines an inner product on called an evaluation inner product , or more precisely, evaluation at the inputs .    That axioms (i)-(ii) are satisfied is left as an exercise. For axiom (iii), note that , and we have equality if and only if . Since a nonzero polynomial of degree or less has at most  distinct roots, we conclude that , the zero polynomial.     Evaluation at   Let , and let be the evaluation at inner product. Compute and     Let , . We have and .    Our last example defines an integral inner product on the space of continuous functions on an interval . This inner product plays an important role in Fourier analysis, which studies the approximation of arbibitrary continuous functions with linear combinations of certain trigonometric funtions.   Integral inner product   Fix an interval , and let , the space of all continuous functions on . For any define . This defines an inner product on called the integral inner product .    First observe that the integral defining the inner product always exists since the product is a continuous function on the closed interval .  Axioms (i)-(ii) follow directly from the definition and various properties of the integral. This is left as an exercise. As for (iii), we have , since for all . (This is a property of integration.) Furthermore, since is continuous and , we have if and only if for all (a property of integrals of continuous functions) if and only if for all if and only if , the zero function.     Integral inner product   Let , equipped with integral inner product. Let , . Compute and .    We have and .      Norm and distance  As mentioned above, once an inner product is established, we can define further notions like norm (or length), distance, and angle in terms of the given inner product. When the inner product in question is the standard dot product on or , then these are precisely the familiar notions you may have met in multivariable calculus. Things get really interesting when we treat a more exotic inner product space. For example, consider : the integral inner product on ( ) gives rise to useful notions of the length of a function , as well as the distance or angle between two functions .   Norm (or length) of a vector  norm of a vector    norm of    Let be an inner product space. Given we define its norm (or length ), denoted as . A unit vector is a vector of length one: , a vector satisfying .     Norm with respect to dot product   Consider with the standard dot product. Compute .    We have .     Norm with respect to weighted dot product   Consider equipped with the dot product with weights . Compute .    We have .     Norm with respect to integral inner product   Consider equipped with the integral inner product. Compute , where     We have .     Unit vectors   Given any , the vector is a unit vector. To verify this, let and compute .     Unit vectors   For each inner product space and compute the associated unit vector     with dot product,      with dot product with weights ,      with integral inner product,        The norms of the vectors in each case were computed in . We simply scale to compute the corresponding unit vectors.                     Next, we define the distance between two vectors in an inner product space as the length of their vector difference.   distance between two vectors    the distance between and   Distance between vectors   Let be an inner product space. The distance between , denoted , is defined as .      For each inner product space , compute the distance between the given vectors.     with the dot product, ,      with the evaluation at inner product, ,      with the integral inner product, ,         We have .    We have     We have        Basic properties of norm and distance   Let be an inner product space.    For all we have , and equality holds if and only if .    For all and we have .    For all we have , and equality holds if and only if .      We prove (2) and leave the rest as an exercise ( ).  Given and we have .      Cauchy-Schwarz inequality, triangle inequalities, and angles between vectors  The famous Cauchy-Schwarz inequality has a knack of cropping up all over the world of science: from properties of covariance in statistics, to the Heisenberg uncertainty principle of quantum mechanics. More directly pertinent to our discussion, the Cauchy-Schwarz inequality implies the triangle inequalities ( ) and ensures that our notion of the angle between two nonzero vectors ( ) is well-defined.   Cauchy-Schwarz inequality   Let be an inner product space. For all we have , and equality holds if and only if for some .     Fix vectors and . For any we have by positivity , where . Since for all the quadratic polynomial has at most one root. Using the quadratic formula we conclude that we must have , since otherwise would have two distinct roots. It follows that , or equivalently . Taking square-roots yields the desired inequality.  The same reasoning shows that the Cauchy-Schwarz inequality is an actual equality if and only if for some if and only if if and only if for some (by positivity).   The following triangle inequalities are more or less direct consequences of the Cauchy-Schwarz inequality.   Triangle Inequalities   Let be an inner product space.   For all we have .    For all we have        This is an elementary exercise of unpacking the definitions of norm and distance in terms of the inner product, and then applying the Cauchy-Schwarz inequality appropriately. The proof is left as an exercise.    Let be an inner product space. For any nonzero vectors , the Cauchy-Schwarz inequality tells us that , or equivalently, . It follows that there is a unique real number satisfying . We call the angle between and .   Angle between vectors  angle between vectors   Let be an inner product space. Given nonzero vectors , the angle between and is defined to be the unique satisfying . Equivalently, we have .      Our definition of the angle between two vectors may remind you of the dot product angle formula for vectors in : . Interestingly, whereas is typically treated as a theorem , derived from properties of the dot product and the law of cosines, in a general inner product space the equation is understood as the definition of the angle between two vectors.      Consider along with the dot product. Verify that our definition of the angle between and is consistent with our planar geometry notion of angle.    According to , is the unique element of satisfying . We recognize as the familiar angle , as expected.      Consider with the weighted dot product Compute the angle between and with respect to this inner product    First compute By definition is the unique value in satisfying . We see that is not one of our familiar angles from the unit circle ( , , ) and so express in terms of the function: .      Consider with the integral inner product. Compute the angle between and with respect to this inner product.    First compute It follows that , and hence that .      Choosing your inner product  Why, given a fixed vector space , would we prefer one inner product definition to another? One way of understanding a particular choice of inner product is to ask what its corresponding notion of distance measures.   Weighted dot product distance   Consider with a choice of weighted dot product where are fixed positive constants. With respect to this inner product the distance between two vectors and is . Thus is an aggregate measure of the difference between the corresponding entries of and , as weighted by our choice of the constants .  Imagine that each element of is a data point collected by measuring different properties of a sample : , is the measured value of property on for all . Given samples and with corresponding measurement vectors and , the weighted distance is then a quantitative way of saying how close the two samples are to one another. The choice of weights allows us to adjust the relative influence of a given property in determining this closeness. For example, the standard dot product ( for all ) yields a notion of distance that gives each property equal standing.     Evaluation inner product distance   Consider with the evaluation inner product at a fixed choice of inputs . Given two polynomials , the distance between them with respect to this inner product is . We see that with respect to this inner product, the distance between two polynomials is a measure of how much their values at the inputs differ. This inner product may be useful if you are interested in how a polynomial behaves at this finite list of inputs.     Integral inner product and distance   Take with the standard inner product . Here the distance between two functions is defined as , which we can think of as an aggregate measure of the difference of values for all . Thus is a global measure of the similarity between and that takes into account their values over the entire interval .       WeBWork Exercises    Find the norm of and the unit vector in the direction of if   ,                Find the angle between the vectors   .              If and are arbitrary polynomials of degree at most 2, then the mapping defines an inner product in . Use this inner product to find , , , and the angle between and for   ,   ,   ,   .                             If and are arbitrary real matrices, then the mapping defines an inner product in . Use this inner product to find , the norms and , and the angle between and for   ,   ,   ,   .                             Use the inner product in the vector space of continuous functions on the domain to find , , , and the angle between and for   ,   ,   ,   .                             For each of the following operations on , determine whether it defines an inner product on . If it fails to be an inner product, identify which of the three inner product axioms (if any) it does satisfy, and provide explicit counterexamples for any axiom that fails.     .     .     .     The operation in (b) is an inner product. Use that fact that , where we treat as column vectors. This helps to prove axioms (i)-(ii). For axiom (iii), use either a complete the square or quadratic formula argument on the expression .    We work within the inner product space given by together with the evaluation at 0, 1, 2 inner product.  Let . Give a parametric description of the set .    We work in the inner product space given by together with the integral inner product.   Let . Compute and .    Show that if is an odd function (i.e., for all ) and is an even function ( for all ), then . Hint : use the area interpretation of the integral and properties of even\/odd functions.        Compute the angle between the given vectors with respect to the given inner product. The exercises are designed to be done by hand: , do not express your answer in terms of .    with the standard dot product;      with the dot product with weights ;      with the integral inner product;      with evaluation at inner product;      Let be an inner product space. Prove that for all .    Let and be nonzero vectors of the inner product space , and let be the angle between them. Prove the following equivalence: . Your proof should be a chain of equivalences with each step justified.   The equality is true if and only if it is true after squaring both sides. (Why?) Use the definition and expand the inner product.    Let be an inner product space. Suppose vectors satisfy and . Using the Cauchy-Schwarz inequality ( ) find the maximum and minimum possible values of , and give explicit examples where those values occur.    Prove statements (1) and (3) of .    Prove each inequality below using the Cauchy-Schwarz inequality ( ) applied to a judicious choice of inner product space, and possibly a judicious choice of vector in said inner product space.   For all  .    For all , .    For all  .      Isometries of inner product spaces  Let be an inner product space. An isometry of is a function that preserves distance: i.e., . In this exercise we will show that any isometry that maps to is a linear transformation. This is a very useful fact. For example, it implies the linearity of many geometric transformations we have considered: rotation about the origin in , reflection through a line in , .  In what follows assume that is an isometry of satisfying .    Prove that : i.e., preserves norms.    Prove : i.e., preserves inner products. Hint: first prove that .    To prove is linear it is enough to show for all , . To do so, use the above parts to show that .      "
+},
+{
+  "id": "rm_innerproduct_algebra",
+  "level": "2",
+  "url": "s_innerproducts.html#rm_innerproduct_algebra",
+  "type": "Remark",
+  "number": "7.1.1",
+  "title": "Inner products of linear combinations.",
+  "body": " Inner products of linear combinations   We will have many opportunities to expand out an inner product of two linear combinations of vectors. Using axioms (i) and (ii) in series, this process resembles the procedure for multiplying two polynomials. For example, we have . Note how in the last step we are able to group the cross terms , using the symmetry axiom.  More generally, given linear combinations , the same reasoning shows that . In particular, we have .   "
+},
+{
+  "id": "th_weighted_dotproduct",
+  "level": "2",
+  "url": "s_innerproducts.html#th_weighted_dotproduct",
+  "type": "Theorem",
+  "number": "7.1.2",
+  "title": "Weighted dot product.",
+  "body": " Weighted dot product   Let . Let be any list of real numbers. Define an operation on as follows: given , let . This operation is an inner product if and only if for all .  We call this inner product a weighted dot product on , or more specifically, the dot product with weights . In the special case where for all we call this the (standard) dot product and write instead of .    First we show that axioms (i) and (ii) are satsified for any choice of . Let , the diagonal matrix whose -th diagonal entry is . Then for all we have . Here we treat as column vectors, and we treat the resulting matrix as a scalar. Axioms (i)-(ii) now follow from various matrix properties. For linearity, for example, we have . Symmetry requires a little more trickery: . Note that as is just a matrix.  Lastly, we show that axiom (iii) is satisfied if and only if for all . To this end consider the formula . If , then since for all , we have for any , and if and only if for all if and only if .  For the other direction suppose for some . Let , the -th element of the standard basis of . Then : a counterexample to the definiteness property of axiom (iii).   "
+},
+{
+  "id": "d_euclidean_space",
+  "level": "2",
+  "url": "s_innerproducts.html#d_euclidean_space",
+  "type": "Definition",
+  "number": "7.1.3",
+  "title": "(Weighted) Euclidean space.",
+  "body": " Euclidean -space  Weighted Euclidean space  (Weighted) Euclidean space   Fix a positive integer . Euclidean -space is the inner product space with underlying vector space and inner product given by the dot product. More generally, a weighted Eulidean space is an inner product space of the form , where is a weighted dot product.   "
+},
+{
+  "id": "ss_inner_products-6",
+  "level": "2",
+  "url": "s_innerproducts.html#ss_inner_products-6",
+  "type": "Example",
+  "number": "7.1.4",
+  "title": "Dot product on <span class=\"process-math\">\\(\\R^4\\)<\/span>.",
+  "body": " Dot product on   Let . Then , and .   "
+},
+{
+  "id": "ss_inner_products-7",
+  "level": "2",
+  "url": "s_innerproducts.html#ss_inner_products-7",
+  "type": "Example",
+  "number": "7.1.5",
+  "title": "Weighted dot product.",
+  "body": " Weighted dot product   The dot product with weights on is defined as . Let and . We have , and .   "
+},
+{
+  "id": "ss_inner_products-8",
+  "level": "2",
+  "url": "s_innerproducts.html#ss_inner_products-8",
+  "type": "Example",
+  "number": "7.1.6",
+  "title": "Why the weights must be positive.",
+  "body": " Why the weights must be positive   Consider the operation on defined as where . This operation satisfies axioms (i) and (ii) of . (See proof of .) However, it fails both the positivity and definiteness properties of axiom (iii): .   "
+},
+{
+  "id": "rm_dotproduct",
+  "level": "2",
+  "url": "s_innerproducts.html#rm_dotproduct",
+  "type": "Remark",
+  "number": "7.1.7",
+  "title": "",
+  "body": "  It is worth highlighting the observation in the proof of that a dot product with weights can be expressed as a matrix product: , where is the diagonal matrix whose -th diagonal entry is . Here are treated as column vectors, and we identify the resulting matrix with a scalar.  In particular for the standard dot product this matrix formula reduces to . Conversely, the dot product gives another way to formulate general matrix multiplication. as the next theorem articulates.   "
+},
+{
+  "id": "th_dotproduct_method",
+  "level": "2",
+  "url": "s_innerproducts.html#th_dotproduct_method",
+  "type": "Theorem",
+  "number": "7.1.8",
+  "title": "Dot product and matrix multiplication.",
+  "body": " Dot product and matrix multiplication     Given -tuples and , we have , where in the last equality and are treated as column vectors.    Let be an matrix, and let be a matrix. Let be the -th row of , and let be the -th column of . For all , we have , where and are considered as -tuples. In other words, the -th entry of is the dot product of the -th row of and the -th column of .        See and the proof of .    Let and . Then , since and .   "
+},
+{
+  "id": "th_evaluation_innerproduct",
+  "level": "2",
+  "url": "s_innerproducts.html#th_evaluation_innerproduct",
+  "type": "Theorem",
+  "number": "7.1.9",
+  "title": "Evaluation inner products on <span class=\"process-math\">\\(P_n\\)<\/span>.",
+  "body": " Evaluation inner products on   Let , and let be any list of distinct real numbers. For any define . This defines an inner product on called an evaluation inner product , or more precisely, evaluation at the inputs .    That axioms (i)-(ii) are satisfied is left as an exercise. For axiom (iii), note that , and we have equality if and only if . Since a nonzero polynomial of degree or less has at most  distinct roots, we conclude that , the zero polynomial.   "
+},
+{
+  "id": "ss_inner_products-13",
+  "level": "2",
+  "url": "s_innerproducts.html#ss_inner_products-13",
+  "type": "Example",
+  "number": "7.1.10",
+  "title": "Evaluation at <span class=\"process-math\">\\(-1, 0, 1\\)<\/span>.",
+  "body": " Evaluation at   Let , and let be the evaluation at inner product. Compute and     Let , . We have and .   "
+},
+{
+  "id": "th_integral_innerproduct",
+  "level": "2",
+  "url": "s_innerproducts.html#th_integral_innerproduct",
+  "type": "Theorem",
+  "number": "7.1.11",
+  "title": "Integral inner product.",
+  "body": " Integral inner product   Fix an interval , and let , the space of all continuous functions on . For any define . This defines an inner product on called the integral inner product .    First observe that the integral defining the inner product always exists since the product is a continuous function on the closed interval .  Axioms (i)-(ii) follow directly from the definition and various properties of the integral. This is left as an exercise. As for (iii), we have , since for all . (This is a property of integration.) Furthermore, since is continuous and , we have if and only if for all (a property of integrals of continuous functions) if and only if for all if and only if , the zero function.   "
+},
+{
+  "id": "ss_inner_products-16",
+  "level": "2",
+  "url": "s_innerproducts.html#ss_inner_products-16",
+  "type": "Example",
+  "number": "7.1.12",
+  "title": "Integral inner product.",
+  "body": " Integral inner product   Let , equipped with integral inner product. Let , . Compute and .    We have and .   "
+},
+{
+  "id": "d_norm",
+  "level": "2",
+  "url": "s_innerproducts.html#d_norm",
+  "type": "Definition",
+  "number": "7.1.13",
+  "title": "Norm (or length) of a vector.",
+  "body": " Norm (or length) of a vector  norm of a vector    norm of    Let be an inner product space. Given we define its norm (or length ), denoted as . A unit vector is a vector of length one: , a vector satisfying .   "
+},
+{
+  "id": "eg_norm_dot",
+  "level": "2",
+  "url": "s_innerproducts.html#eg_norm_dot",
+  "type": "Example",
+  "number": "7.1.14",
+  "title": "Norm with respect to dot product.",
+  "body": " Norm with respect to dot product   Consider with the standard dot product. Compute .    We have .   "
+},
+{
+  "id": "eg_norm_weighteddot",
+  "level": "2",
+  "url": "s_innerproducts.html#eg_norm_weighteddot",
+  "type": "Example",
+  "number": "7.1.15",
+  "title": "Norm with respect to weighted dot product.",
+  "body": " Norm with respect to weighted dot product   Consider equipped with the dot product with weights . Compute .    We have .   "
+},
+{
+  "id": "eg_norm_integral",
+  "level": "2",
+  "url": "s_innerproducts.html#eg_norm_integral",
+  "type": "Example",
+  "number": "7.1.16",
+  "title": "Norm with respect to integral inner product.",
+  "body": " Norm with respect to integral inner product   Consider equipped with the integral inner product. Compute , where     We have .   "
+},
+{
+  "id": "rm_unit_vectors",
+  "level": "2",
+  "url": "s_innerproducts.html#rm_unit_vectors",
+  "type": "Remark",
+  "number": "7.1.17",
+  "title": "Unit vectors.",
+  "body": " Unit vectors   Given any , the vector is a unit vector. To verify this, let and compute .   "
+},
+{
+  "id": "eg_unit_vectors",
+  "level": "2",
+  "url": "s_innerproducts.html#eg_unit_vectors",
+  "type": "Example",
+  "number": "7.1.18",
+  "title": "Unit vectors.",
+  "body": " Unit vectors   For each inner product space and compute the associated unit vector     with dot product,      with dot product with weights ,      with integral inner product,        The norms of the vectors in each case were computed in . We simply scale to compute the corresponding unit vectors.                    "
+},
+{
+  "id": "d_distance",
+  "level": "2",
+  "url": "s_innerproducts.html#d_distance",
+  "type": "Definition",
+  "number": "7.1.19",
+  "title": "Distance between vectors.",
+  "body": " distance between two vectors    the distance between and   Distance between vectors   Let be an inner product space. The distance between , denoted , is defined as .   "
+},
+{
+  "id": "eg_distance",
+  "level": "2",
+  "url": "s_innerproducts.html#eg_distance",
+  "type": "Example",
+  "number": "7.1.20",
+  "title": "",
+  "body": "  For each inner product space , compute the distance between the given vectors.     with the dot product, ,      with the evaluation at inner product, ,      with the integral inner product, ,         We have .    We have     We have      "
+},
+{
+  "id": "th_norm_basic_props",
+  "level": "2",
+  "url": "s_innerproducts.html#th_norm_basic_props",
+  "type": "Theorem",
+  "number": "7.1.21",
+  "title": "Basic properties of norm and distance.",
+  "body": " Basic properties of norm and distance   Let be an inner product space.    For all we have , and equality holds if and only if .    For all and we have .    For all we have , and equality holds if and only if .      We prove (2) and leave the rest as an exercise ( ).  Given and we have .   "
+},
+{
+  "id": "th_Cauchy-Schwarz",
+  "level": "2",
+  "url": "s_innerproducts.html#th_Cauchy-Schwarz",
+  "type": "Theorem",
+  "number": "7.1.22",
+  "title": "Cauchy-Schwarz inequality.",
+  "body": " Cauchy-Schwarz inequality   Let be an inner product space. For all we have , and equality holds if and only if for some .   "
+},
+{
+  "id": "s_innerproducts-5-4",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts-5-4",
+  "type": "Proof",
+  "number": "7.1.3.1",
+  "title": "",
+  "body": " Fix vectors and . For any we have by positivity , where . Since for all the quadratic polynomial has at most one root. Using the quadratic formula we conclude that we must have , since otherwise would have two distinct roots. It follows that , or equivalently . Taking square-roots yields the desired inequality.  The same reasoning shows that the Cauchy-Schwarz inequality is an actual equality if and only if for some if and only if if and only if for some (by positivity).  "
+},
+{
+  "id": "th_triangle_inequalities",
+  "level": "2",
+  "url": "s_innerproducts.html#th_triangle_inequalities",
+  "type": "Theorem",
+  "number": "7.1.23",
+  "title": "Triangle Inequalities.",
+  "body": " Triangle Inequalities   Let be an inner product space.   For all we have .    For all we have        This is an elementary exercise of unpacking the definitions of norm and distance in terms of the inner product, and then applying the Cauchy-Schwarz inequality appropriately. The proof is left as an exercise.   "
+},
+{
+  "id": "d_angle",
+  "level": "2",
+  "url": "s_innerproducts.html#d_angle",
+  "type": "Definition",
+  "number": "7.1.24",
+  "title": "Angle between vectors.",
+  "body": " Angle between vectors  angle between vectors   Let be an inner product space. Given nonzero vectors , the angle between and is defined to be the unique satisfying . Equivalently, we have .   "
+},
+{
+  "id": "rm_general_angles",
+  "level": "2",
+  "url": "s_innerproducts.html#rm_general_angles",
+  "type": "Remark",
+  "number": "7.1.25",
+  "title": "",
+  "body": "  Our definition of the angle between two vectors may remind you of the dot product angle formula for vectors in : . Interestingly, whereas is typically treated as a theorem , derived from properties of the dot product and the law of cosines, in a general inner product space the equation is understood as the definition of the angle between two vectors.   "
+},
+{
+  "id": "eg_angle_dotproduct",
+  "level": "2",
+  "url": "s_innerproducts.html#eg_angle_dotproduct",
+  "type": "Example",
+  "number": "7.1.26",
+  "title": "",
+  "body": "  Consider along with the dot product. Verify that our definition of the angle between and is consistent with our planar geometry notion of angle.    According to , is the unique element of satisfying . We recognize as the familiar angle , as expected.   "
+},
+{
+  "id": "eg_angle_weighted",
+  "level": "2",
+  "url": "s_innerproducts.html#eg_angle_weighted",
+  "type": "Example",
+  "number": "7.1.27",
+  "title": "",
+  "body": "  Consider with the weighted dot product Compute the angle between and with respect to this inner product    First compute By definition is the unique value in satisfying . We see that is not one of our familiar angles from the unit circle ( , , ) and so express in terms of the function: .   "
+},
+{
+  "id": "eg_angle_function",
+  "level": "2",
+  "url": "s_innerproducts.html#eg_angle_function",
+  "type": "Example",
+  "number": "7.1.28",
+  "title": "",
+  "body": "  Consider with the integral inner product. Compute the angle between and with respect to this inner product.    First compute It follows that , and hence that .   "
+},
+{
+  "id": "eg_why_weightedproduct",
+  "level": "2",
+  "url": "s_innerproducts.html#eg_why_weightedproduct",
+  "type": "Example",
+  "number": "7.1.29",
+  "title": "Weighted dot product distance.",
+  "body": " Weighted dot product distance   Consider with a choice of weighted dot product where are fixed positive constants. With respect to this inner product the distance between two vectors and is . Thus is an aggregate measure of the difference between the corresponding entries of and , as weighted by our choice of the constants .  Imagine that each element of is a data point collected by measuring different properties of a sample : , is the measured value of property on for all . Given samples and with corresponding measurement vectors and , the weighted distance is then a quantitative way of saying how close the two samples are to one another. The choice of weights allows us to adjust the relative influence of a given property in determining this closeness. For example, the standard dot product ( for all ) yields a notion of distance that gives each property equal standing.   "
+},
+{
+  "id": "eg_why_evaluationinner",
+  "level": "2",
+  "url": "s_innerproducts.html#eg_why_evaluationinner",
+  "type": "Example",
+  "number": "7.1.30",
+  "title": "Evaluation inner product distance.",
+  "body": " Evaluation inner product distance   Consider with the evaluation inner product at a fixed choice of inputs . Given two polynomials , the distance between them with respect to this inner product is . We see that with respect to this inner product, the distance between two polynomials is a measure of how much their values at the inputs differ. This inner product may be useful if you are interested in how a polynomial behaves at this finite list of inputs.   "
+},
+{
+  "id": "eg_why_integralinner",
+  "level": "2",
+  "url": "s_innerproducts.html#eg_why_integralinner",
+  "type": "Example",
+  "number": "7.1.31",
+  "title": "Integral inner product and distance.",
+  "body": " Integral inner product and distance   Take with the standard inner product . Here the distance between two functions is defined as , which we can think of as an aggregate measure of the difference of values for all . Thus is a global measure of the similarity between and that takes into account their values over the entire interval .   "
+},
+{
+  "id": "s_innerproducts_ex-1-2",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-1-2",
+  "type": "Exercise",
+  "number": "7.1.5.1",
+  "title": "",
+  "body": "  Find the norm of and the unit vector in the direction of if   ,             "
+},
+{
+  "id": "s_innerproducts_ex-1-3",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-1-3",
+  "type": "Exercise",
+  "number": "7.1.5.2",
+  "title": "",
+  "body": "  Find the angle between the vectors   .           "
+},
+{
+  "id": "s_innerproducts_ex-1-4",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-1-4",
+  "type": "Exercise",
+  "number": "7.1.5.3",
+  "title": "",
+  "body": "  If and are arbitrary polynomials of degree at most 2, then the mapping defines an inner product in . Use this inner product to find , , , and the angle between and for   ,   ,   ,   .                          "
+},
+{
+  "id": "s_innerproducts_ex-1-5",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-1-5",
+  "type": "Exercise",
+  "number": "7.1.5.4",
+  "title": "",
+  "body": "  If and are arbitrary real matrices, then the mapping defines an inner product in . Use this inner product to find , the norms and , and the angle between and for   ,   ,   ,   .                          "
+},
+{
+  "id": "s_innerproducts_ex-1-6",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-1-6",
+  "type": "Exercise",
+  "number": "7.1.5.5",
+  "title": "",
+  "body": "  Use the inner product in the vector space of continuous functions on the domain to find , , , and the angle between and for   ,   ,   ,   .                          "
+},
+{
+  "id": "s_innerproducts_ex-2",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-2",
+  "type": "Exercise",
+  "number": "7.1.5.6",
+  "title": "",
+  "body": " For each of the following operations on , determine whether it defines an inner product on . If it fails to be an inner product, identify which of the three inner product axioms (if any) it does satisfy, and provide explicit counterexamples for any axiom that fails.     .     .     .     The operation in (b) is an inner product. Use that fact that , where we treat as column vectors. This helps to prove axioms (i)-(ii). For axiom (iii), use either a complete the square or quadratic formula argument on the expression .  "
+},
+{
+  "id": "s_innerproducts_ex-3",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-3",
+  "type": "Exercise",
+  "number": "7.1.5.7",
+  "title": "",
+  "body": " We work within the inner product space given by together with the evaluation at 0, 1, 2 inner product.  Let . Give a parametric description of the set .  "
+},
+{
+  "id": "s_innerproducts_ex-4",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-4",
+  "type": "Exercise",
+  "number": "7.1.5.8",
+  "title": "",
+  "body": " We work in the inner product space given by together with the integral inner product.   Let . Compute and .    Show that if is an odd function (i.e., for all ) and is an even function ( for all ), then . Hint : use the area interpretation of the integral and properties of even\/odd functions.     "
+},
+{
+  "id": "s_innerproducts_ex-5-3",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-5-3",
+  "type": "Exercise",
+  "number": "7.1.5.9",
+  "title": "",
+  "body": "  with the standard dot product;   "
+},
+{
+  "id": "s_innerproducts_ex-5-4",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-5-4",
+  "type": "Exercise",
+  "number": "7.1.5.10",
+  "title": "",
+  "body": "  with the dot product with weights ;   "
+},
+{
+  "id": "s_innerproducts_ex-5-5",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-5-5",
+  "type": "Exercise",
+  "number": "7.1.5.11",
+  "title": "",
+  "body": "  with the integral inner product;   "
+},
+{
+  "id": "s_innerproducts_ex-5-6",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-5-6",
+  "type": "Exercise",
+  "number": "7.1.5.12",
+  "title": "",
+  "body": "  with evaluation at inner product;   "
+},
+{
+  "id": "s_innerproducts_ex-6",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-6",
+  "type": "Exercise",
+  "number": "7.1.5.13",
+  "title": "",
+  "body": " Let be an inner product space. Prove that for all .  "
+},
+{
+  "id": "s_innerproducts_ex-7",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-7",
+  "type": "Exercise",
+  "number": "7.1.5.14",
+  "title": "",
+  "body": " Let and be nonzero vectors of the inner product space , and let be the angle between them. Prove the following equivalence: . Your proof should be a chain of equivalences with each step justified.   The equality is true if and only if it is true after squaring both sides. (Why?) Use the definition and expand the inner product.  "
+},
+{
+  "id": "s_innerproducts_ex-8",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-8",
+  "type": "Exercise",
+  "number": "7.1.5.15",
+  "title": "",
+  "body": " Let be an inner product space. Suppose vectors satisfy and . Using the Cauchy-Schwarz inequality ( ) find the maximum and minimum possible values of , and give explicit examples where those values occur.  "
+},
+{
+  "id": "ex_norm_props",
+  "level": "2",
+  "url": "s_innerproducts.html#ex_norm_props",
+  "type": "Exercise",
+  "number": "7.1.5.16",
+  "title": "",
+  "body": " Prove statements (1) and (3) of .  "
+},
+{
+  "id": "s_innerproducts_ex-10",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-10",
+  "type": "Exercise",
+  "number": "7.1.5.17",
+  "title": "",
+  "body": " Prove each inequality below using the Cauchy-Schwarz inequality ( ) applied to a judicious choice of inner product space, and possibly a judicious choice of vector in said inner product space.   For all  .    For all , .    For all  .     "
+},
+{
+  "id": "ex_isometries",
+  "level": "2",
+  "url": "s_innerproducts.html#ex_isometries",
+  "type": "Exercise",
+  "number": "7.1.5.18",
+  "title": "Isometries of inner product spaces.",
+  "body": "Isometries of inner product spaces  Let be an inner product space. An isometry of is a function that preserves distance: i.e., . In this exercise we will show that any isometry that maps to is a linear transformation. This is a very useful fact. For example, it implies the linearity of many geometric transformations we have considered: rotation about the origin in , reflection through a line in , .  In what follows assume that is an isometry of satisfying .    Prove that : i.e., preserves norms.    Prove : i.e., preserves inner products. Hint: first prove that .    To prove is linear it is enough to show for all , . To do so, use the above parts to show that .    "
+},
+{
+  "id": "s_orthogonality",
+  "level": "1",
+  "url": "s_orthogonality.html",
+  "type": "Section",
+  "number": "7.2",
+  "title": "Orthogonal bases",
+  "body": " Orthogonal bases   Orthogonal vectors and sets   Orthogonality  orthogonal vectors  orthogonal sets  orthonormal basis   Let be an inner product space. Vectors are orthogonal if .  Let be a set of nonzero vectors.   The set is orthogonal if for all . We say that the elements of are pairwise orthogonal in this case.    The set is orthonormal if it is both orthogonal and satisfies for all : , consists of pairwise orthogonal unit vectors.        Orthogonal implies linearly independent   Let be an inner product space. If is orthogonal, then is linearly independent.    Given any distinct elements , we have . This proves that is linearly independent.      Show that the set is orthogonal with respect to the dot product. Explain why it follows that is a basis of .    A simple computation shows for all , showing that is orthogonal. implies is linearly independent. Since , it follows from that is a basis.      Let with integral inner product , and let , where the element is understood as the constant function for all . Show that is orthogonal and hence linearly independent.    First observe that for all . (Note: since , the set is not orthonormal. ) Next, using the trigonometric identities it follows that .      Orthogonal bases  Given an inner product space we will see that working with orthogonal sets of vectors is extremely convenient computationally speaking. In particular, when picking basis of , we will look for one consisting of orthogonal vectors. Not surprisingly, this is called an orthogonal basis .   Orthogonal and orthonormal bases  orthogonal basis  orthonormal basis   Let be an inner product space. An orthogonal basis (resp., orthonormal basis ) of is a basis that is orthogonal (resp., orthonormal) as a set.    We will see in precisely why working with orthogonal or orthonormal bases is so convenient. Before we do so, however, we would like some guarantee that we can actually find an orthogonal basis. The Gram-Schmidt procedure comes to our rescue in this regard, at least in the finite-dimensional case, as it provides a method of converting an arbitrary basis into an orthogonal one.   Gram-Schmidt procedure  Gram-Schmidt procedure   Let be an inner product space of dimension , and let be a basis for . We can convert into an orthogonal basis , and further to an orthonormal basis , as follows:   Set .    Orthogonalize  Proceeding in succession for each , replace with the vector defined as . The resulting set is an orthogonal basis of .    Normalize  For each let . The set is an orthonormal basis of .        Existence of orthonormal bases   Let be an inner product space of dimension .    There is an orthonormal basis for . In fact, any basis of can be converted to an orthonormal basis using the Gram-Schmidt procedure .    If is an orthogonal set, then there is an orthogonal basis containing : , any orthogonal set can be extended to an orthogonal basis.        See and its proof.    The orthogonal set is linearly independent by . Let be the distinct elements of . (We must have since is linearly independent.) By we can extend to a basis . It is easy to see that when we apply the Gram-Schmidt procedure to , the first vectors are left unchanged, as they are already pairwise orthogonal. Thus Gram-Schmidt returns an orthogonal basis of the form , as desired.      Now let's see the computational virtue of working with orthogonal bases.   Calculating with orthogonal bases   Let be an inner product space of dimension and let    Let be an orthogonal basis of . For any we have , where for all .  If is orthonormal , so that for all , then the inner product formula reduces to the simpler .    Generalized Pythagorean theorem  Let be an orthonormal basis of . Given , we have .        Consider the inner product space with the dot product.   Verify that is an orthonormal basis of .    Let . Find the scalars such that .    Verify that .         Easily verified.    Using we compute .    Computing directly yields . Using the generalized Pythagorean theorem we have , as desired.      As the previous example and begin to make clear, orthogonal bases, and especially orthonormal bases make our life easier computationally speaking. This observation is worthy of a mantra.   Orthogonal basis mantra   Working with an orthogonal basis is nice; working with an orthonormal basis is even nicer.      Coordinate vectors and matrix representations  Let be an inner product space. By an orthogonal (resp., orthonormal ) ordered basis of , we mean an ordered basis for which the underlying set is orthogonal (resp., orthonormal). It should come as little surprise that as a consequence of , computing coordinate vectors and matrix representations with respect to orthogonal bases is especially easy.  For example, if is an orthogonal basis with respect to some inner product , then by we have , and thus, using definition , we have . We have thus proved the following theorem.   Coordinate vectors for orthogonal bases   Let be an inner product space and let be an ordered basis.   Orthogonal basis  If is orthogonal, then for all we have .    Orthonormal basis  If is orthonormal, then for all we have .        Orthogonal bases   Let and . Find a general formula for . Note: is orthogonal with respect to the weighted dot product .    Applying the inner product formula to and the dot product with weights , for any we compute . Let's check our formula with . The formula yields , and indeed we see that .    Similarly, the computations involved in change of basis matrices are significantly easier when at least one of the bases involved is orthogonal. This is a direct consequence of the fact that the change of basis matrix formula involves computing coordinate vectors; and this is easy to do when the basis in question is orthogonal, thanks to the inner product formula .  Things get even easier if both bases and involved are in fact orthonormal . As we show below, it turns out in this case that the inverse of the change of basis matrix is just its transpose: . It follows from that when both bases are orthonormal, we can obtain one change of basis matrix from the other simply by computing the transpose. An invertible matrix whose inverse is equal to its transpose is called an elementary matrix . We develop some general theory about this special family of matrices (interesting in its own right) before treating change of basis matrices.   Orthogonal matrices   An invertible matrix is orthogonal if .     Since for an invertible matrix we have it follows immediately from that .     Let . Check for yourself that . Thus is an orthogonal matrix.  Now observe that the columns of are orthonormal with respect to the dot product: . This is not a coincidence!     Orthogonal matrices   Let be an matrix. The following statements are equivalent.    The matrix is orthogonal.    The columns of form an orthonormal basis of with respect to the dot product.    The rows of form an orthonormal basis of with respect to the dot product.      Let and be the -th row and column of , respectively, for each . From we see that . We use here that rows of are the columns of , and the columns of are the rows of . From it follows easily that , and . This proves and . The result follows.     It is somewhat unfortunate that the property of being an orthogonal matrix is equivalent to your rows or columns forming an orthonormal basis. You ask: Why not simply call such matrices orthonormal matrices? My answer: tradition!    Orthonormal change of basis   Let be a finite dimensional inner product space, and suppose and are orthonormal bases of .    The matrices and are orthogonal.    We have .        Let . By definition, the columns of are the coordinate vectors , . By , these coordinate vectors form an orthonormal subset of ; since there are of them, they form an orthonormal basis. From it follows that is orthogonal. Lastly, from it follows that is also orthogonal.    Since is orthogonal, we have .       Orthonormal change of basis:   Let be the standard ordered basis of . The ordered basis is orthonormal with respect to the dot product. Compute the change of basis matrix .    Since is the standard ordered basis, we can easily compute . Since and are both orthonormal bases (with respect to the dot product), we have . .    Orthonormal change of basis: polynomials   Consider the vector space with inner product . The ordered bases are both orthonormal with respect to this inner product. Compute and .    Since is orthonormal, we use to compute . Thus and by  .       WeBWork Exercises    Let be an orthonormal basis for an inner product space . If   is so that , is orthogonal to , and , find the possible values for , , and .   ,  ,                   Solution: One checks by direct computation that  , ,  must hold.         Let Use the Gram-Schmidt process to determine an orthonormal basis for the subspace of spanned by and .   ,          Let Use the Gram-Schmidt process to determine an orthonormal basis for the subspace of spanned by , , and .   , ,          Let Find an orthonormal basis of the image of .   ,          Let Find an orthonormal basis of the kernel of .   ,          The vectors are pairwise orthogonal with respect to the dot product, as is easily verified. For each below, find the scalars such that .               (Your answer will be expressed in terms of , and . )      Coordinate vectors: orthogonal basis   In each exercise an inner product space and orthogonal ordered basis is given. Use to compute the requested coordinate vector.     with dot product; . Compute .     with dot product with weights ; . Compute .     with integral inner product ; . Compute . (Yes, can indeed be written as a linear combination of . In this exercise you will discover what the corresponding identity is using inner products!)     Orthonormal change of basis   In each exercise an inner product space is given along with two orthonormal ordered bases and . Compute and using .     with the dot product, ,      with the dot product, ,      Gram-Schmidt procedure   Use the Gram-Schmidt procedure to convert the given basis to a basis that is orthogonal with respect to the given inner product.     with the weighted dot product . .     with the integral inner product . .     with the evaluation inner product . .     Consider the inner product space together with the dot product. .    Show that is a subspace of by finding a matrix for which .    Use (a) and an appropriate fundamental space algorithm to find a basis for .    Use Gram-Schmidt to convert your basis in (b) to an orthgonal basis of .     Extending orthogonal bases  Consider the inner product space given by together with the dot product. Construct an orthogonal basis of containing following the steps below.    Produce a vector orthogonal to by inspection.    Produce a vector orthogonal to and by setting up an appropriate matrix equation of the form and finding a nontrivial solution. (Use .)    Produce a vector orthogonal to by setting up an appropriate matrix equation of the form and finding a nontrivial solution. (Use .)     Extending orthogonal bases  Consider the inner product space given by together with the dot product. Let be the plane with defining equation . Compute an orthogonal basis of , and then extend this to an orthogonal basis of .  You do not have to use Gram-Schmidt here, but can proceed using a combination of inspection, your geometric understanding of , and\/or along similar lines of .   Let be an inner produce space. Prove: if , then . This result can be thought of as the Pythagorean theorem for general inner product spaces .    Let be an inner product space, and suppose is an orthonormal basis of . Suppose satisfy .    Prove: .    Prove: .     Orthonormal coordinate vectors  Let be an inner product space, and suppose is an orthonormal ordered basis of .    Prove that for all . In other words we can compute the inner product of vectors by computing the dot product of their coordinate vectors with respect to the orthonormal basis .    Prove that a set is orthogonal (resp. orthonormal) with respect to if and only if is orthogonal (resp. orthonormal) with respect to the dot product.     Determinant of orthogonal matrices  Prove: if is an orthogonal matrix, then .   Orthogonal matrices  In this exercise we will prove that a matrix is orthogonal if and only it is a rotation matrix or a reflection matrix.  Let be a matrix.    Prove that if is orthogonal and , then is a rotation matrix: , there is a such that . See .    Prove that if is orthogonal and , then is a reflection matrix: , there is a such that . See .    Prove that is an orthogonal matrix if and only if is a rotation matrix or is a reflection matrix. You may use the result of .      "
+},
+{
+  "id": "ss_orthogonal-2",
+  "level": "2",
+  "url": "s_orthogonality.html#ss_orthogonal-2",
+  "type": "Definition",
+  "number": "7.2.1",
+  "title": "Orthogonality.",
+  "body": " Orthogonality  orthogonal vectors  orthogonal sets  orthonormal basis   Let be an inner product space. Vectors are orthogonal if .  Let be a set of nonzero vectors.   The set is orthogonal if for all . We say that the elements of are pairwise orthogonal in this case.    The set is orthonormal if it is both orthogonal and satisfies for all : , consists of pairwise orthogonal unit vectors.      "
+},
+{
+  "id": "th_orthogonal",
+  "level": "2",
+  "url": "s_orthogonality.html#th_orthogonal",
+  "type": "Theorem",
+  "number": "7.2.2",
+  "title": "Orthogonal implies linearly independent.",
+  "body": " Orthogonal implies linearly independent   Let be an inner product space. If is orthogonal, then is linearly independent.    Given any distinct elements , we have . This proves that is linearly independent.   "
+},
+{
+  "id": "ss_orthogonal-4",
+  "level": "2",
+  "url": "s_orthogonality.html#ss_orthogonal-4",
+  "type": "Example",
+  "number": "7.2.3",
+  "title": "",
+  "body": "  Show that the set is orthogonal with respect to the dot product. Explain why it follows that is a basis of .    A simple computation shows for all , showing that is orthogonal. implies is linearly independent. Since , it follows from that is a basis.   "
+},
+{
+  "id": "eg_orthogonal_functions",
+  "level": "2",
+  "url": "s_orthogonality.html#eg_orthogonal_functions",
+  "type": "Example",
+  "number": "7.2.4",
+  "title": "",
+  "body": "  Let with integral inner product , and let , where the element is understood as the constant function for all . Show that is orthogonal and hence linearly independent.    First observe that for all . (Note: since , the set is not orthonormal. ) Next, using the trigonometric identities it follows that .   "
+},
+{
+  "id": "d_orthogonal_basis",
+  "level": "2",
+  "url": "s_orthogonality.html#d_orthogonal_basis",
+  "type": "Definition",
+  "number": "7.2.5",
+  "title": "Orthogonal and orthonormal bases.",
+  "body": " Orthogonal and orthonormal bases  orthogonal basis  orthonormal basis   Let be an inner product space. An orthogonal basis (resp., orthonormal basis ) of is a basis that is orthogonal (resp., orthonormal) as a set.   "
+},
+{
+  "id": "proc_gram-schmidt",
+  "level": "2",
+  "url": "s_orthogonality.html#proc_gram-schmidt",
+  "type": "Procedure",
+  "number": "7.2.6",
+  "title": "Gram-Schmidt procedure.",
+  "body": " Gram-Schmidt procedure  Gram-Schmidt procedure   Let be an inner product space of dimension , and let be a basis for . We can convert into an orthogonal basis , and further to an orthonormal basis , as follows:   Set .    Orthogonalize  Proceeding in succession for each , replace with the vector defined as . The resulting set is an orthogonal basis of .    Normalize  For each let . The set is an orthonormal basis of .      "
+},
+{
+  "id": "cor_orthonormal_existence",
+  "level": "2",
+  "url": "s_orthogonality.html#cor_orthonormal_existence",
+  "type": "Corollary",
+  "number": "7.2.7",
+  "title": "Existence of orthonormal bases.",
+  "body": " Existence of orthonormal bases   Let be an inner product space of dimension .    There is an orthonormal basis for . In fact, any basis of can be converted to an orthonormal basis using the Gram-Schmidt procedure .    If is an orthogonal set, then there is an orthogonal basis containing : , any orthogonal set can be extended to an orthogonal basis.        See and its proof.    The orthogonal set is linearly independent by . Let be the distinct elements of . (We must have since is linearly independent.) By we can extend to a basis . It is easy to see that when we apply the Gram-Schmidt procedure to , the first vectors are left unchanged, as they are already pairwise orthogonal. Thus Gram-Schmidt returns an orthogonal basis of the form , as desired.     "
+},
+{
+  "id": "th_orthogonal_basis_formula",
+  "level": "2",
+  "url": "s_orthogonality.html#th_orthogonal_basis_formula",
+  "type": "Theorem",
+  "number": "7.2.8",
+  "title": "Calculating with orthogonal bases.",
+  "body": " Calculating with orthogonal bases   Let be an inner product space of dimension and let    Let be an orthogonal basis of . For any we have , where for all .  If is orthonormal , so that for all , then the inner product formula reduces to the simpler .    Generalized Pythagorean theorem  Let be an orthonormal basis of . Given , we have .     "
+},
+{
+  "id": "s_orthogonality-3-9",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonality-3-9",
+  "type": "Example",
+  "number": "7.2.9",
+  "title": "",
+  "body": "  Consider the inner product space with the dot product.   Verify that is an orthonormal basis of .    Let . Find the scalars such that .    Verify that .         Easily verified.    Using we compute .    Computing directly yields . Using the generalized Pythagorean theorem we have , as desired.     "
+},
+{
+  "id": "mantra_orthogonal_bases",
+  "level": "2",
+  "url": "s_orthogonality.html#mantra_orthogonal_bases",
+  "type": "Mantra",
+  "number": "7.2.10",
+  "title": "Orthogonal basis mantra.",
+  "body": " Orthogonal basis mantra   Working with an orthogonal basis is nice; working with an orthonormal basis is even nicer.   "
+},
+{
+  "id": "th_coordinates_orthogonal",
+  "level": "2",
+  "url": "s_orthogonality.html#th_coordinates_orthogonal",
+  "type": "Theorem",
+  "number": "7.2.11",
+  "title": "Coordinate vectors for orthogonal bases.",
+  "body": " Coordinate vectors for orthogonal bases   Let be an inner product space and let be an ordered basis.   Orthogonal basis  If is orthogonal, then for all we have .    Orthonormal basis  If is orthonormal, then for all we have .      "
+},
+{
+  "id": "ss_orthogonal_change_of_basis-5",
+  "level": "2",
+  "url": "s_orthogonality.html#ss_orthogonal_change_of_basis-5",
+  "type": "Example",
+  "number": "7.2.12",
+  "title": "Orthogonal bases.",
+  "body": " Orthogonal bases   Let and . Find a general formula for . Note: is orthogonal with respect to the weighted dot product .    Applying the inner product formula to and the dot product with weights , for any we compute . Let's check our formula with . The formula yields , and indeed we see that .   "
+},
+{
+  "id": "d_orthogonal_matrix",
+  "level": "2",
+  "url": "s_orthogonality.html#d_orthogonal_matrix",
+  "type": "Definition",
+  "number": "7.2.13",
+  "title": "Orthogonal matrices.",
+  "body": " Orthogonal matrices   An invertible matrix is orthogonal if .   "
+},
+{
+  "id": "rm_orthogonal_matrices",
+  "level": "2",
+  "url": "s_orthogonality.html#rm_orthogonal_matrices",
+  "type": "Remark",
+  "number": "7.2.14",
+  "title": "",
+  "body": " Since for an invertible matrix we have it follows immediately from that .  "
+},
+{
+  "id": "ss_orthogonal_change_of_basis-10",
+  "level": "2",
+  "url": "s_orthogonality.html#ss_orthogonal_change_of_basis-10",
+  "type": "Example",
+  "number": "7.2.15",
+  "title": "",
+  "body": "  Let . Check for yourself that . Thus is an orthogonal matrix.  Now observe that the columns of are orthonormal with respect to the dot product: . This is not a coincidence!   "
+},
+{
+  "id": "th_orthogonal_matrices",
+  "level": "2",
+  "url": "s_orthogonality.html#th_orthogonal_matrices",
+  "type": "Theorem",
+  "number": "7.2.16",
+  "title": "Orthogonal matrices.",
+  "body": " Orthogonal matrices   Let be an matrix. The following statements are equivalent.    The matrix is orthogonal.    The columns of form an orthonormal basis of with respect to the dot product.    The rows of form an orthonormal basis of with respect to the dot product.      Let and be the -th row and column of , respectively, for each . From we see that . We use here that rows of are the columns of , and the columns of are the rows of . From it follows easily that , and . This proves and . The result follows.   "
+},
+{
+  "id": "rm_orthogonal_matrices_misnomer",
+  "level": "2",
+  "url": "s_orthogonality.html#rm_orthogonal_matrices_misnomer",
+  "type": "Remark",
+  "number": "7.2.17",
+  "title": "",
+  "body": " It is somewhat unfortunate that the property of being an orthogonal matrix is equivalent to your rows or columns forming an orthonormal basis. You ask: Why not simply call such matrices orthonormal matrices? My answer: tradition!  "
+},
+{
+  "id": "th_changebasis_orthonormal",
+  "level": "2",
+  "url": "s_orthogonality.html#th_changebasis_orthonormal",
+  "type": "Theorem",
+  "number": "7.2.18",
+  "title": "Orthonormal change of basis.",
+  "body": " Orthonormal change of basis   Let be a finite dimensional inner product space, and suppose and are orthonormal bases of .    The matrices and are orthogonal.    We have .        Let . By definition, the columns of are the coordinate vectors , . By , these coordinate vectors form an orthonormal subset of ; since there are of them, they form an orthonormal basis. From it follows that is orthogonal. Lastly, from it follows that is also orthogonal.    Since is orthogonal, we have .     "
+},
+{
+  "id": "eg_change_basis_matrix_ortho",
+  "level": "2",
+  "url": "s_orthogonality.html#eg_change_basis_matrix_ortho",
+  "type": "Example",
+  "number": "7.2.19",
+  "title": "Orthonormal change of basis: <span class=\"process-math\">\\(\\R^n\\)<\/span>.",
+  "body": " Orthonormal change of basis:   Let be the standard ordered basis of . The ordered basis is orthonormal with respect to the dot product. Compute the change of basis matrix .    Since is the standard ordered basis, we can easily compute . Since and are both orthonormal bases (with respect to the dot product), we have . .  "
+},
+{
+  "id": "eg_change_basis_orthogonal_poly",
+  "level": "2",
+  "url": "s_orthogonality.html#eg_change_basis_orthogonal_poly",
+  "type": "Example",
+  "number": "7.2.20",
+  "title": "Orthonormal change of basis: polynomials.",
+  "body": " Orthonormal change of basis: polynomials   Consider the vector space with inner product . The ordered bases are both orthonormal with respect to this inner product. Compute and .    Since is orthonormal, we use to compute . Thus and by  .   "
+},
+{
+  "id": "s_orthogonal_bases_ex-1-2",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-1-2",
+  "type": "Exercise",
+  "number": "7.2.4.1",
+  "title": "",
+  "body": "  Let be an orthonormal basis for an inner product space . If   is so that , is orthogonal to , and , find the possible values for , , and .   ,  ,                   Solution: One checks by direct computation that  , ,  must hold.      "
+},
+{
+  "id": "s_orthogonal_bases_ex-1-3",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-1-3",
+  "type": "Exercise",
+  "number": "7.2.4.2",
+  "title": "",
+  "body": "  Let Use the Gram-Schmidt process to determine an orthonormal basis for the subspace of spanned by and .   ,       "
+},
+{
+  "id": "s_orthogonal_bases_ex-1-4",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-1-4",
+  "type": "Exercise",
+  "number": "7.2.4.3",
+  "title": "",
+  "body": "  Let Use the Gram-Schmidt process to determine an orthonormal basis for the subspace of spanned by , , and .   , ,       "
+},
+{
+  "id": "s_orthogonal_bases_ex-1-5",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-1-5",
+  "type": "Exercise",
+  "number": "7.2.4.4",
+  "title": "",
+  "body": "  Let Find an orthonormal basis of the image of .   ,       "
+},
+{
+  "id": "s_orthogonal_bases_ex-1-6",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-1-6",
+  "type": "Exercise",
+  "number": "7.2.4.5",
+  "title": "",
+  "body": "  Let Find an orthonormal basis of the kernel of .   ,       "
+},
+{
+  "id": "s_orthogonal_bases_ex-2",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-2",
+  "type": "Exercise",
+  "number": "7.2.4.6",
+  "title": "",
+  "body": " The vectors are pairwise orthogonal with respect to the dot product, as is easily verified. For each below, find the scalars such that .               (Your answer will be expressed in terms of , and . )    "
+},
+{
+  "id": "s_orthogonal_bases_ex-3-3",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-3-3",
+  "type": "Exercise",
+  "number": "7.2.4.7",
+  "title": "",
+  "body": "  with dot product; . Compute .  "
+},
+{
+  "id": "s_orthogonal_bases_ex-3-4",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-3-4",
+  "type": "Exercise",
+  "number": "7.2.4.8",
+  "title": "",
+  "body": "  with dot product with weights ; . Compute .  "
+},
+{
+  "id": "s_orthogonal_bases_ex-3-5",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-3-5",
+  "type": "Exercise",
+  "number": "7.2.4.9",
+  "title": "",
+  "body": "  with integral inner product ; . Compute . (Yes, can indeed be written as a linear combination of . In this exercise you will discover what the corresponding identity is using inner products!)  "
+},
+{
+  "id": "s_orthogonal_bases_ex-4-3",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-4-3",
+  "type": "Exercise",
+  "number": "7.2.4.10",
+  "title": "",
+  "body": "  with the dot product, ,   "
+},
+{
+  "id": "s_orthogonal_bases_ex-4-4",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-4-4",
+  "type": "Exercise",
+  "number": "7.2.4.11",
+  "title": "",
+  "body": "  with the dot product, ,   "
+},
+{
+  "id": "s_orthogonal_bases_ex-5-3",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-5-3",
+  "type": "Exercise",
+  "number": "7.2.4.12",
+  "title": "",
+  "body": "  with the weighted dot product . .  "
+},
+{
+  "id": "s_orthogonal_bases_ex-5-4",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-5-4",
+  "type": "Exercise",
+  "number": "7.2.4.13",
+  "title": "",
+  "body": "  with the integral inner product . .  "
+},
+{
+  "id": "s_orthogonal_bases_ex-5-5",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-5-5",
+  "type": "Exercise",
+  "number": "7.2.4.14",
+  "title": "",
+  "body": "  with the evaluation inner product . .  "
+},
+{
+  "id": "s_orthogonal_bases_ex-6",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-6",
+  "type": "Exercise",
+  "number": "7.2.4.15",
+  "title": "",
+  "body": " Consider the inner product space together with the dot product. .    Show that is a subspace of by finding a matrix for which .    Use (a) and an appropriate fundamental space algorithm to find a basis for .    Use Gram-Schmidt to convert your basis in (b) to an orthgonal basis of .    "
+},
+{
+  "id": "ex_extend_orthogonal",
+  "level": "2",
+  "url": "s_orthogonality.html#ex_extend_orthogonal",
+  "type": "Exercise",
+  "number": "7.2.4.16",
+  "title": "Extending orthogonal bases.",
+  "body": "Extending orthogonal bases  Consider the inner product space given by together with the dot product. Construct an orthogonal basis of containing following the steps below.    Produce a vector orthogonal to by inspection.    Produce a vector orthogonal to and by setting up an appropriate matrix equation of the form and finding a nontrivial solution. (Use .)    Produce a vector orthogonal to by setting up an appropriate matrix equation of the form and finding a nontrivial solution. (Use .)    "
+},
+{
+  "id": "s_orthogonal_bases_ex-8",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-8",
+  "type": "Exercise",
+  "number": "7.2.4.17",
+  "title": "Extending orthogonal bases.",
+  "body": "Extending orthogonal bases  Consider the inner product space given by together with the dot product. Let be the plane with defining equation . Compute an orthogonal basis of , and then extend this to an orthogonal basis of .  You do not have to use Gram-Schmidt here, but can proceed using a combination of inspection, your geometric understanding of , and\/or along similar lines of . "
+},
+{
+  "id": "ex_ortho_pythag",
+  "level": "2",
+  "url": "s_orthogonality.html#ex_ortho_pythag",
+  "type": "Exercise",
+  "number": "7.2.4.18",
+  "title": "",
+  "body": " Let be an inner produce space. Prove: if , then . This result can be thought of as the Pythagorean theorem for general inner product spaces .  "
+},
+{
+  "id": "s_orthogonal_bases_ex-10",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-10",
+  "type": "Exercise",
+  "number": "7.2.4.19",
+  "title": "",
+  "body": " Let be an inner product space, and suppose is an orthonormal basis of . Suppose satisfy .    Prove: .    Prove: .    "
+},
+{
+  "id": "ex_coordinates_orthonormal",
+  "level": "2",
+  "url": "s_orthogonality.html#ex_coordinates_orthonormal",
+  "type": "Exercise",
+  "number": "7.2.4.20",
+  "title": "Orthonormal coordinate vectors.",
+  "body": "Orthonormal coordinate vectors  Let be an inner product space, and suppose is an orthonormal ordered basis of .    Prove that for all . In other words we can compute the inner product of vectors by computing the dot product of their coordinate vectors with respect to the orthonormal basis .    Prove that a set is orthogonal (resp. orthonormal) with respect to if and only if is orthogonal (resp. orthonormal) with respect to the dot product.    "
+},
+{
+  "id": "ex_ortho_matrix_det",
+  "level": "2",
+  "url": "s_orthogonality.html#ex_ortho_matrix_det",
+  "type": "Exercise",
+  "number": "7.2.4.21",
+  "title": "Determinant of orthogonal matrices.",
+  "body": "Determinant of orthogonal matrices  Prove: if is an orthogonal matrix, then .  "
+},
+{
+  "id": "ex_ortho_matrix_rotation_reflection",
+  "level": "2",
+  "url": "s_orthogonality.html#ex_ortho_matrix_rotation_reflection",
+  "type": "Exercise",
+  "number": "7.2.4.22",
+  "title": "Orthogonal <span class=\"process-math\">\\(2\\times 2\\)<\/span> matrices.",
+  "body": "Orthogonal matrices  In this exercise we will prove that a matrix is orthogonal if and only it is a rotation matrix or a reflection matrix.  Let be a matrix.    Prove that if is orthogonal and , then is a rotation matrix: , there is a such that . See .    Prove that if is orthogonal and , then is a reflection matrix: , there is a such that . See .    Prove that is an orthogonal matrix if and only if is a rotation matrix or is a reflection matrix. You may use the result of .    "
+},
+{
+  "id": "s_orthogonal_projection",
+  "level": "1",
+  "url": "s_orthogonal_projection.html",
+  "type": "Section",
+  "number": "7.3",
+  "title": "Orthogonal projection",
+  "body": " Orthogonal projection   A trick we learn early on in physics-- specifically, in dynamics problems in -- is to pick a convenient axis and then decompose any relevant vectors (force, acceleration, velocity, position, ) into a sum of two components: one that points along the chosen axis, and one that points perpendicularly to it. As we will see in this section, this technique can be vastly generalized. Namely, instead of we can take any inner product space ; and instead of a chosen axis in , we can choose any finite-dimensional subspace ; then any can be decomposed in the form where and is a vector orthogonal to , in a sense we will make precise below. Just as in our toy physics example, this manner of decomposing vectors helps simplify computations in problems where the subspace chosen is of central importance.    Orthogonal complement   We begin by making sense of what it means for a vector to be orthogonal to a subspace.    Orthogonal complement  orthogonal complement (of a subspace)    the orthogonal complement of    . Let be an inner product vector space, and let be a subspace.  A vector is orthogonal to if it is orthogonal to every element of : , if for all .  The orthogonal complement of , denoted , is the set of all elements of orthogonal to : , .     Computing  According to , to verify that a vector lies in , we must show that for all . The for all quantifier here can potentially make this an onerous task: there are in principle infinitely many to check! In the special case where has a finite spanning set, so that for some vectors , deciding whether reduces to checking whether for all . In other words, we have . The forward implication of this equivalence is clear: if is orthogonal to all elements of , then clearly it is orthogonal to each . The reverse implication is left as an exercise. (See .)  We illustrate this computational technique in the next examples.     Consider the inner product space together with the dot product. Let : the line with equation . Compute and identify it as a familiar geometric object in .    According to , since , we have . Letting , we see that if and only if , if and only if . Thus is the line with equation . Observe that the lines and are indeed perpendicular to one another. (Graph them!)      Consider the inner product space together with the dot product. Let be the plane with equation . Compute and identify this as a familiar geometric object in .    First, solving for , we see that . Next, according to we have . It follows that is the set of vectors satisfying the linear system Solving this system using Gaussian elimination we conclude that , which we recognize as the line passing through the origin with direction vector . This is none other than the normal line to the plane passing through the origin.     Orthogonal complement   Let be an inner product vector space, and let be a subspace.   The orthogonal complement is a subspace of .    We have .    If then .       The proof is left as an exercise. (See .)      Consider the inner product space with the dot product. Let , the line passing through the origin with direction vector . The orthogonal complement is the set of vectors orthogonal to . Using the definition of dot product, this is the set of solutions to the equation , which we recognize as the plane passing through the origin with normal vector . Note that we have as predicted in .    The notion of orthogonal complement gives us a more conceptual way of understanding the relationship between the various fundamental spaces of a matrix.   Fundamental spaces and orthogonal complements   Let be , and consider and as inner product spaces with respect to the dot product. Then:    , and thus .     , and thus .         Using the dot product method of matrix multiplication, we see that a vector if and only if for each row of , if and only if for all (see ), if and only if . This shows .  We can use to conclude . Alternatively, and more directly, the argument above shows that , proving . Next, by the rank-nullity theorem we have ; and by we have . It follows that . Since and , we conclude by that .    This follows from (1) and the fact that .        Understanding the orthogonal relationship between and allows us in many cases to quickly determine\/visualize the one from the other. As an example, consider . Looking at the columns, we see easily that , which implies that . Since is an element of and , we must have , a line. By orthogonality, we conclude that , which is the plane with normal vector passing through the origin.      Orthogonal Projection   Orthogonal projection theorem   Let be an inner product space, and let be a finite-dimensional subspace.   Orthogonal decomposition  For all there are vectors and satisfying . Furthermore, the pair is unique in the following sense: if we have for some and , then and . Accordingly, the vector equation is called the orthogonal decomposition of with respect to ; and the vector is called the orthogonal projection of onto , denoted .    Orthogonal projection formula  Choose any orthogonal basis of . We have .    Distance to  The orthogonal projection is the element of that is closest to in the following sense: for all we have , or equivalently, . Accordingly, we define the distance  between and to be .       Let . We first show that the vectors and satisfy the conditions in . It is clear that the defined in is an element of , since it is a linear combination of the . Furthermore, we see easily that our choice satisfies . It remains only to show that . Since is a basis of , it suffices to show that for all . We compute: , as desired.  Having shown that a decomposition of of the form exists, we now show it is unique in the sense specified. Suppose we have , where and . Rearranging, we see that . We now claim that , in which case and , as desired. To see why the claim is true, consider the vector . Since , and , we have . On the other hand, since , and , we have . Thus . Since ( ), we conclude , as claimed.  At this point we have proved both (1) and (2), and it remains only to show that holds for all . To this end we compute: . This shows . Taking square-roots now proves the desired inequality.     Orthogonal projection formula  The formula is very convenient for computing an orthogonal projection , but mark well this important detail: to apply the formula we must first provide an orthogonal basis of . Thus unless one is provided, our first step in an orthogonal projection computation is to produce an orthogonal basis of . In some simple cases ( , when is 1- or 2-dimensional) this can be done by inspection. Otherwise, we use the Gram-Schmidt procedure.   Next we consider the operation of orthogonally projecting a vector onto a line (in or ) or a plane in .   Projection onto a line   Let be a fixed nonzero vector in , where or . The set of all scalar multiples of defines a line in passing through the origin: we call the direction vector of this line. Given a point there is a unique point such that the vector is orthogonal to : , there is a unique such that . The point is called the orthogonal projection of onto the line . We define orthogonal projection onto to be the function that maps a point to its orthogonal projection onto .     Orthogonal projection onto a line   Fix a nonzero vector , where or , and let be the line obtained by taking all scalar multiples of . The orthogonal projection function is a linear transformation. In fact, we have where is the matrix described below for each case ( and ).   Case:  Assume . We have , where .    Case:  Assume . We have , where .       We prove the matrix formula in the case . (The case is exactly similar.) Let . In multivariable calculus we learn that given a point with position vector , its orthogonal projection onto is the point whose position vector is . This proves that , where , as desired.     Orthogonal projection onto line   Let be orthogonal projection onto the line passing through the origin with direction vector . Find the matrix such that . Use to compute the orthogonal projection of onto .    Using the formula for in , where , we see that and hence for any we have . In particular, we have . Let's check that this truly is the orthogonal projection of onto . Letting , we have , which is indeed orthogonal to : . The formula really works! In case you need more convincing, here is a Sage Cell that computes the projections and produces a diagram.   Orthogonal projection onto a line  Orthogonal projection onto the line passing through the origin with direction vector   Orthogonal projection onto a line        Orthogonal projection onto a plane   Let be a nonzero vector in , and let be the plane passing through the origin with normal vector : , is the plane with equation . Given a point , there is a unique point such that is orthogonal to . We call the orthogonal projection of onto . We define orthogonal projection onto to be the function that maps a point to its orthogonal projection in .     Orthogonal projection onto a plane   Let be a nonzero vector of , and let be the plane passing through the origin with normal vector . The orthogonal projection map is a linear transformation. In fact, we have where .    Let be the line passing through the origin with direction vector . Given any , let be the point with coordinates . The orthogonal projection of onto satisfies . Let be the point of with position vector satisfying so that . Since , the point lies in the plane . Furthermore, we have . Since is the orthogonal projection of onto , we have by definition, which means is a scalar multiple of . Since is a normal vector to , we conclude that is orthogonal to . We have shown that lies in and that is orthogonal to . We conclude that is the orthogonal projection of onto . Thus, using we have . Since , where by , we have . We conclude that where , as desired.     Visualizing orthogonal projection  In the course of the proof of we discovered an illuminating relationship between orthogonal projection onto a line and orthogonal projection onto the plane orthogonal to this line. In more detail, let be a nonzero vector, the line passing through the origin with as a direction vector, and the plane passing through the origin with normal vector . From our argument in the proof of we see that , or . Equation indicates how we can derive the orthogonal projection onto from the orthogonal projection onto (and conversely). Equation shows how every vector can be decomposed as a sum of two orthogonal vectors: one pointing parallel to and the other pointing parallel to .  The GeoGebra interactive below helps visualize these two orthogonal projections, understood as operations on .   Drag the point to change the normal vector , and hence also the plane .    Drag the point to change the input of the transformations and .    In keeping with our dual interpretation of vectors in , all the relevant vectors ( , , ) are rendered here both as points and the corresponding position vectors of these points.      Orthogonal projection onto plane and normal line   Orthogonal projection onto plane and normal line. Made with GeoGebra .      Consider the inner product space with the dot product. Let be the plane with equation . Compute for each below.                     According to our first step is to produce an orthogonal basis of . We do so by inspection. Since , we simply need to find two solutions to that are orthogonal to one another: , and . Thus we choose as our orthogonal basis, and our computations become a matter of applying , which in this case becomes . Now compute: . The last two computations might give you pause. Why do we have and ? The answer is that is already an element of , so it stands to reason that its projection is itself; and is already orthogonal to (it is a scalar multiple of ), so it stands to reason that its projection is equal to . See for a rigorous proof of these claims.     Video example: orthogonal projection in function space   Video: orthogonal projection in function space      Complement of a complement   Let be an inner product space, and let be a finite-dimensional subspace. Then .     Clearly . For the other direction, take . Using the orthogonal projection theorem , we can write with and . We will show .  Since we have . Then we have   Thus . It follows that , and hence .    Orthgonal projection is linear   Let be an inner product space, and let be a finite-dimensional subspace.    The function is a linear transformation.    We have and .          We must show that for all and . We pick an orthogonal basis of and compute, using formula : .    By definition we have for all , and thus . For the other direction, if , then ( ), and thus . This proves .  The fact that follows from the equivalence stated in (b) of .        Orthogonal projection in and   For this subsection we will always work within Euclidean space: , with the dot product. In applications we often want to compute the projection of a point onto a line (in or ) or plane (in ). According to the operation of projecting onto any subspace is in fact a linear transformation . By we have , where . Lastly, gives us an easy formula for computing for all , once we have selected an orthogonal basis for . As a result we can easily derive matrix formulas for projection onto any subspace of any Euclidean space . We illustrate this with some examples in and below.    Projection onto a line   Any line in passing through the origin can be described as , for some . The set is trivially an orthogonal basis of . Using , we have . It follows that , where .      Consider the line .    Find the matrix such that .    Use your matrix formula from (a) to compute , , and .    Compute and .        Using the general formula described in , we have .    Now compute . The last two computations, and , should come as no surprise, since and . (See .)    We have . Again, the second computation should come as no surprise. Since is itself an element of , it stands to reason that its distance to is equal to zero.       Projection onto planes in   Any plane passing through the origin can be described as . Equivalently, is the set of all satisfying : , , where . Consider the orthogonal decomposition with respect to : . Since and , we see that this is also an orthogonal decomposition with respect to ! Using the matrix formula for from , we have . We conclude that , where .      Consider the plane .    Find the matrix such that .    Use your matrix formula from (a) to compute and .    Compute and .        Using the general formula described in , we have .    Now compute .    We have .         Trigonometric polynomial approximation  Consider the inner product space consisting of along with the integral inner product . In we saw that the set is orthogonal with respect to this inner product. Thus is an orthogonal basis of . We call the space of trigonometric polynomials of degree at most .  Since is an orthogonal basis of , given an arbitrary function , its orthogonal projection is given by , where . Here we are using , as well as the inner product formulas and from .  What is the relationship between and ? tells us that is the best trigonometric polynomial approximation of of degree at most in the following sense: given any any other trigonometric polynomial , we have . Unpacking the definition of norm in this inner product space, we conclude that for all .  Thus, given a continuous function on , linear algebra shows us how to find its best trigonometric polynomial approximation of the form . However, linear algebra does not tell us just how good this approximation is. This question, among others, is tackled by another mathematical theory: Fourier analysis . There we learn that the trigonometric polynomial approximations get arbitrarily close to as we let increase. More precisely, letting be the orthogonal projection of onto the space of trigonometric polynomials of degree at most , we have .    Least-squares solution to linear systems  In statistics we often wish to approximate a scatter plot of points , , with a line that best fits the data. Finding this line amounts to finding the appropriate slope and -intercept : , in this setup, the points are given, and and are the unknowns we wish to find. For the line to perfectly fit the data, we would want . In other words would be a solution to the matrix equation , where . Of course in most situations the provided points do not lie on a line, and thus there is no solution to the given matrix equation . When this is the case we can use the theory of orthogonal projection to find what is called a least-squares solution, which we now describe in detail.  The least-squares method applies to any matrix equation , where and are given, and is treated as an unknown vector. Recall that . When , and hence does not have a solution, the least-squares method proceeds by replacing with the element of closest to it: that is, with its orthogonal projection onto . Let , where orthogonal projection is taken with respect to the dot product on , and consider the adjusted matrix equation . By definition of , we have , and thus there is a solution to . We call a least-squares solution to . Observe that does not necessarily satisfy ; rather, it satisfies . What makes this a least-squares solution is that is the element of closest to . With respect to the dot product, this means that a least-squares solution minimizes the quantity , among all .   Best fitting line   Suppose we wish to find a line that best fits (in the least-square sense) the following data points: . Following the discussion above, we seek a solution to the matrix equation , where . Using Gaussian elimination, we see easily that this equation has no solution: equivalently, . Accordingly, we compute and find a solution to . Conveniently, the set is already an orthogonal basis of , allowing us to use : . Lastly, solving yields , and we conclude the line is the one that best fits the data in the least-squares sense.     Visualizing least-squares    helps us give a graphical interpretation of how the line best approximates the points .  Least-squares visualization  Least-squares visualization   Let be the given -values of the points, and let be the orthogonal projection of onto . In the graph the values denote the vertical difference between the data points, and our fitting line. The projection makes the error as small as possible. This means if I draw any other line and compute the corresponding differences at the -values -3, 1 and 2, then     To compute a least-squares solution to we must first compute the orthogonal projection of onto ; and this in turn requires first producing an orthogonal basis of , which may require using the Gram-Schmidt procedure. The following result bypasses these potentially onerous steps by characterizing a least-squares solution to as a solution to the matrix equation .   Least-squares matrix formula   Given an matrix and column vector , a vector is a least-squares solution to if and only if . In other words, we can find a least-squares solution by solving the matrix equation directly.    Let , and let . The key observation is that a vector satisfies if and only if is an orthogonal decomposition of with respect to ; and this is true if and only if . Thus we have .      Consider again the matrix equation from . According to the least-squares solution can be found by solving the equation for . We compute and solve just as before.       WeBWork Exercises    Compute the orthogonal projection of onto the line through and the origin.   .         Let and . Write as the sum of two orthogonal vectors, in and orthogonal to .   ,  .         (a) Find the distance from the point to the plane . Use sqrt() to enter square roots.  Distance:  (b) Find the equation of the plane that passes through the points , , and . Write your answer in terms of the variables , , .  Answer:             Solution: (a) The idea is to find a convenient point lying in the given plane. For example, let us pick , and let be the vector from to . Then the distance from to the plane is the absolute value of the scalar projection of onto the normal vector   So, we get that the distance is .  (b) To find an equation of the plane in question, we can work with the point and the normal vector given by the cross product of the vector from to , and the vector from to . It turns out that   So, an equation of the plane is .         Find bases of the kernel and image of the orthogonal projection onto the plane in .  A basis for the kernel is    A basis for the image is  ,          Let Use the Gram-Schmidt process to determine an orthonormal basis for the subspace of spanned by , , and .   , ,          Find the least-squares solution of the system           By using the method of least squares, find the best line through the points:  , , .  Step 1. The general equation of a line is . Plugging the data points into this formula gives a matrix equation .      Step 2. The matrix equation has no solution, so instead we use the normal equation       Step 3. Solving the normal equation gives the answer    which corresponds to the formula    Analysis. Compute the predicted values: .    Compute the error vector: .    Compute the total error: .                     By using the method of least squares, find the best parabola through the points:  , , ,  Step 1. The general equation of a parabola is . Plugging the data points into this formula gives a matrix equation .      Step 2. The matrix equation has no solution, so instead we use the normal equation       Step 3. Solving the normal equation gives the answer    which corresponds to the formula                 In each exercise below you are given an inner product space , a subspace where is orthogonal, and a vector . Compute .    with the dot product; ;      with dot product with weights ; ;      with the integral inner product; ; for all      Let be the plane passing through the origin with normal vector . Find the orthogonal projection of onto with respect to the dot product.    Recall that the trace of a square matrix is the sum of its diagonal entries. Let with inner product . (You may take for granted that this operation is indeed an inner product on .) Define .    Compute an orthogonal basis for . You can do this either by inspection (the space is manageable), or by starting with any basis of and applying the Gram-Schmidt procedure.    Compute , where .      Let with the integral inner product, and let . Find the function of the form that best approximates  in terms of this inner product: find the the of this form that minimizes .   The set is orthogonal with respect to the given inner product.    Let be an inner product space, let , and let . Prove: . In other words, to check whether an element is in , it suffices to check that it is orthogonal to each element of its spanning set .    Consider the inner product space together with the dot product. Let Provide orthogonal bases for and .    Prove statements (1) and (2) of .   Dimension of  Prove statement (3) of : if is an inner product space of dimension , and is a subspace of , then .   By there is an orthogonal basis of , and furthermore, we can extend to an orthogonal basis of all of . Show the form a basis for .    Prove following the suggestion in the text.    Let an inner product space, and let be a finite-dimensional subspace. Prove the following statements:     if and only if ;     if and only if .      We consider the problem of fitting a collection of data points with a quadratic curve of the form . Thus we are given some collection of points , and we seek parameters for which the graph of  best fits the points in some way.    Show, using linear algebra, that if we are given any three points , where the -coordinates are all distinct, then there is a unique choice of such that the corresponding quadratic function agrees precisely with the data. In other words, given just about any three points in the plane, there is a unique quadratic curve connecting them.    Now suppose we are given the four data points .    Use the least-squares method described in the lecture notes to come up with a quadratic function that best fits the data.    Graph the function you found, along with the points . (You may want to use technology.) Use your graph to explain precisely in what sense  best fits the data.        "
+},
+{
+  "id": "d_orthogonal_complement",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#d_orthogonal_complement",
+  "type": "Definition",
+  "number": "7.3.1",
+  "title": "Orthogonal complement.",
+  "body": " Orthogonal complement  orthogonal complement (of a subspace)    the orthogonal complement of    . Let be an inner product vector space, and let be a subspace.  A vector is orthogonal to if it is orthogonal to every element of : , if for all .  The orthogonal complement of , denoted , is the set of all elements of orthogonal to : , .   "
+},
+{
+  "id": "rm_computing_ortho_comp",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#rm_computing_ortho_comp",
+  "type": "Remark",
+  "number": "7.3.2",
+  "title": "Computing <span class=\"process-math\">\\(W^\\perp\\)<\/span>.",
+  "body": " Computing  According to , to verify that a vector lies in , we must show that for all . The for all quantifier here can potentially make this an onerous task: there are in principle infinitely many to check! In the special case where has a finite spanning set, so that for some vectors , deciding whether reduces to checking whether for all . In other words, we have . The forward implication of this equivalence is clear: if is orthogonal to all elements of , then clearly it is orthogonal to each . The reverse implication is left as an exercise. (See .)  We illustrate this computational technique in the next examples.  "
+},
+{
+  "id": "eg_ortho_comp_line",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#eg_ortho_comp_line",
+  "type": "Example",
+  "number": "7.3.3",
+  "title": "",
+  "body": "  Consider the inner product space together with the dot product. Let : the line with equation . Compute and identify it as a familiar geometric object in .    According to , since , we have . Letting , we see that if and only if , if and only if . Thus is the line with equation . Observe that the lines and are indeed perpendicular to one another. (Graph them!)   "
+},
+{
+  "id": "eg_ortho_comp_plane",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#eg_ortho_comp_plane",
+  "type": "Example",
+  "number": "7.3.4",
+  "title": "",
+  "body": "  Consider the inner product space together with the dot product. Let be the plane with equation . Compute and identify this as a familiar geometric object in .    First, solving for , we see that . Next, according to we have . It follows that is the set of vectors satisfying the linear system Solving this system using Gaussian elimination we conclude that , which we recognize as the line passing through the origin with direction vector . This is none other than the normal line to the plane passing through the origin.   "
+},
+{
+  "id": "th_orthogonal_complement",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#th_orthogonal_complement",
+  "type": "Theorem",
+  "number": "7.3.5",
+  "title": "Orthogonal complement.",
+  "body": " Orthogonal complement   Let be an inner product vector space, and let be a subspace.   The orthogonal complement is a subspace of .    We have .    If then .       The proof is left as an exercise. (See .)   "
+},
+{
+  "id": "ss_ortho_complement-8",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#ss_ortho_complement-8",
+  "type": "Example",
+  "number": "7.3.6",
+  "title": "",
+  "body": "  Consider the inner product space with the dot product. Let , the line passing through the origin with direction vector . The orthogonal complement is the set of vectors orthogonal to . Using the definition of dot product, this is the set of solutions to the equation , which we recognize as the plane passing through the origin with normal vector . Note that we have as predicted in .   "
+},
+{
+  "id": "th_row_null_comp",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#th_row_null_comp",
+  "type": "Theorem",
+  "number": "7.3.7",
+  "title": "Fundamental spaces and orthogonal complements.",
+  "body": " Fundamental spaces and orthogonal complements   Let be , and consider and as inner product spaces with respect to the dot product. Then:    , and thus .     , and thus .         Using the dot product method of matrix multiplication, we see that a vector if and only if for each row of , if and only if for all (see ), if and only if . This shows .  We can use to conclude . Alternatively, and more directly, the argument above shows that , proving . Next, by the rank-nullity theorem we have ; and by we have . It follows that . Since and , we conclude by that .    This follows from (1) and the fact that .     "
+},
+{
+  "id": "ss_ortho_complement-11",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#ss_ortho_complement-11",
+  "type": "Example",
+  "number": "7.3.8",
+  "title": "",
+  "body": "  Understanding the orthogonal relationship between and allows us in many cases to quickly determine\/visualize the one from the other. As an example, consider . Looking at the columns, we see easily that , which implies that . Since is an element of and , we must have , a line. By orthogonality, we conclude that , which is the plane with normal vector passing through the origin.   "
+},
+{
+  "id": "th_orthogonal_projection",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#th_orthogonal_projection",
+  "type": "Theorem",
+  "number": "7.3.9",
+  "title": "Orthogonal projection theorem.",
+  "body": " Orthogonal projection theorem   Let be an inner product space, and let be a finite-dimensional subspace.   Orthogonal decomposition  For all there are vectors and satisfying . Furthermore, the pair is unique in the following sense: if we have for some and , then and . Accordingly, the vector equation is called the orthogonal decomposition of with respect to ; and the vector is called the orthogonal projection of onto , denoted .    Orthogonal projection formula  Choose any orthogonal basis of . We have .    Distance to  The orthogonal projection is the element of that is closest to in the following sense: for all we have , or equivalently, . Accordingly, we define the distance  between and to be .       Let . We first show that the vectors and satisfy the conditions in . It is clear that the defined in is an element of , since it is a linear combination of the . Furthermore, we see easily that our choice satisfies . It remains only to show that . Since is a basis of , it suffices to show that for all . We compute: , as desired.  Having shown that a decomposition of of the form exists, we now show it is unique in the sense specified. Suppose we have , where and . Rearranging, we see that . We now claim that , in which case and , as desired. To see why the claim is true, consider the vector . Since , and , we have . On the other hand, since , and , we have . Thus . Since ( ), we conclude , as claimed.  At this point we have proved both (1) and (2), and it remains only to show that holds for all . To this end we compute: . This shows . Taking square-roots now proves the desired inequality.   "
+},
+{
+  "id": "rm_ortho_proj_formula",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#rm_ortho_proj_formula",
+  "type": "Remark",
+  "number": "7.3.10",
+  "title": "Orthogonal projection formula.",
+  "body": " Orthogonal projection formula  The formula is very convenient for computing an orthogonal projection , but mark well this important detail: to apply the formula we must first provide an orthogonal basis of . Thus unless one is provided, our first step in an orthogonal projection computation is to produce an orthogonal basis of . In some simple cases ( , when is 1- or 2-dimensional) this can be done by inspection. Otherwise, we use the Gram-Schmidt procedure.  "
+},
+{
+  "id": "d_projection_onto_line",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#d_projection_onto_line",
+  "type": "Definition",
+  "number": "7.3.11",
+  "title": "Projection onto a line.",
+  "body": " Projection onto a line   Let be a fixed nonzero vector in , where or . The set of all scalar multiples of defines a line in passing through the origin: we call the direction vector of this line. Given a point there is a unique point such that the vector is orthogonal to : , there is a unique such that . The point is called the orthogonal projection of onto the line . We define orthogonal projection onto to be the function that maps a point to its orthogonal projection onto .   "
+},
+{
+  "id": "th_proj_line_linear",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#th_proj_line_linear",
+  "type": "Theorem",
+  "number": "7.3.12",
+  "title": "Orthogonal projection onto a line.",
+  "body": " Orthogonal projection onto a line   Fix a nonzero vector , where or , and let be the line obtained by taking all scalar multiples of . The orthogonal projection function is a linear transformation. In fact, we have where is the matrix described below for each case ( and ).   Case:  Assume . We have , where .    Case:  Assume . We have , where .       We prove the matrix formula in the case . (The case is exactly similar.) Let . In multivariable calculus we learn that given a point with position vector , its orthogonal projection onto is the point whose position vector is . This proves that , where , as desired.   "
+},
+{
+  "id": "eg_projection_line_specific",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#eg_projection_line_specific",
+  "type": "Example",
+  "number": "7.3.13",
+  "title": "Orthogonal projection onto line.",
+  "body": " Orthogonal projection onto line   Let be orthogonal projection onto the line passing through the origin with direction vector . Find the matrix such that . Use to compute the orthogonal projection of onto .    Using the formula for in , where , we see that and hence for any we have . In particular, we have . Let's check that this truly is the orthogonal projection of onto . Letting , we have , which is indeed orthogonal to : . The formula really works! In case you need more convincing, here is a Sage Cell that computes the projections and produces a diagram.   Orthogonal projection onto a line  Orthogonal projection onto the line passing through the origin with direction vector   Orthogonal projection onto a line      "
+},
+{
+  "id": "d_ortho_proj_plane",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#d_ortho_proj_plane",
+  "type": "Definition",
+  "number": "7.3.15",
+  "title": "Orthogonal projection onto a plane.",
+  "body": " Orthogonal projection onto a plane   Let be a nonzero vector in , and let be the plane passing through the origin with normal vector : , is the plane with equation . Given a point , there is a unique point such that is orthogonal to . We call the orthogonal projection of onto . We define orthogonal projection onto to be the function that maps a point to its orthogonal projection in .   "
+},
+{
+  "id": "th_ortho_proj_plane_linear",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#th_ortho_proj_plane_linear",
+  "type": "Theorem",
+  "number": "7.3.16",
+  "title": "Orthogonal projection onto a plane.",
+  "body": " Orthogonal projection onto a plane   Let be a nonzero vector of , and let be the plane passing through the origin with normal vector . The orthogonal projection map is a linear transformation. In fact, we have where .    Let be the line passing through the origin with direction vector . Given any , let be the point with coordinates . The orthogonal projection of onto satisfies . Let be the point of with position vector satisfying so that . Since , the point lies in the plane . Furthermore, we have . Since is the orthogonal projection of onto , we have by definition, which means is a scalar multiple of . Since is a normal vector to , we conclude that is orthogonal to . We have shown that lies in and that is orthogonal to . We conclude that is the orthogonal projection of onto . Thus, using we have . Since , where by , we have . We conclude that where , as desired.   "
+},
+{
+  "id": "eg_visualizing_ortho_projs",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#eg_visualizing_ortho_projs",
+  "type": "Example",
+  "number": "7.3.17",
+  "title": "Visualizing orthogonal projection.",
+  "body": " Visualizing orthogonal projection  In the course of the proof of we discovered an illuminating relationship between orthogonal projection onto a line and orthogonal projection onto the plane orthogonal to this line. In more detail, let be a nonzero vector, the line passing through the origin with as a direction vector, and the plane passing through the origin with normal vector . From our argument in the proof of we see that , or . Equation indicates how we can derive the orthogonal projection onto from the orthogonal projection onto (and conversely). Equation shows how every vector can be decomposed as a sum of two orthogonal vectors: one pointing parallel to and the other pointing parallel to .  The GeoGebra interactive below helps visualize these two orthogonal projections, understood as operations on .   Drag the point to change the normal vector , and hence also the plane .    Drag the point to change the input of the transformations and .    In keeping with our dual interpretation of vectors in , all the relevant vectors ( , , ) are rendered here both as points and the corresponding position vectors of these points.      Orthogonal projection onto plane and normal line   Orthogonal projection onto plane and normal line. Made with GeoGebra .   "
+},
+{
+  "id": "s_orthogonal_projection-4-11",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection-4-11",
+  "type": "Example",
+  "number": "7.3.19",
+  "title": "",
+  "body": "  Consider the inner product space with the dot product. Let be the plane with equation . Compute for each below.                     According to our first step is to produce an orthogonal basis of . We do so by inspection. Since , we simply need to find two solutions to that are orthogonal to one another: , and . Thus we choose as our orthogonal basis, and our computations become a matter of applying , which in this case becomes . Now compute: . The last two computations might give you pause. Why do we have and ? The answer is that is already an element of , so it stands to reason that its projection is itself; and is already orthogonal to (it is a scalar multiple of ), so it stands to reason that its projection is equal to . See for a rigorous proof of these claims.   "
+},
+{
+  "id": "ss_vid_eg_orthoproj_functions",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#ss_vid_eg_orthoproj_functions",
+  "type": "Example",
+  "number": "7.3.20",
+  "title": "Video example: orthogonal projection in function space.",
+  "body": " Video example: orthogonal projection in function space   Video: orthogonal projection in function space    "
+},
+{
+  "id": "cor_orthocomp_selfdual",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#cor_orthocomp_selfdual",
+  "type": "Corollary",
+  "number": "7.3.22",
+  "title": "Complement of a complement.",
+  "body": " Complement of a complement   Let be an inner product space, and let be a finite-dimensional subspace. Then .   "
+},
+{
+  "id": "s_orthogonal_projection-4-14",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection-4-14",
+  "type": "Proof",
+  "number": "7.3.2.1",
+  "title": "",
+  "body": " Clearly . For the other direction, take . Using the orthogonal projection theorem , we can write with and . We will show .  Since we have . Then we have   Thus . It follows that , and hence .  "
+},
+{
+  "id": "cor_orthoproj_linear",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#cor_orthoproj_linear",
+  "type": "Corollary",
+  "number": "7.3.23",
+  "title": "Orthgonal projection is linear.",
+  "body": " Orthgonal projection is linear   Let be an inner product space, and let be a finite-dimensional subspace.    The function is a linear transformation.    We have and .     "
+},
+{
+  "id": "s_orthogonal_projection-4-16",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection-4-16",
+  "type": "Proof",
+  "number": "7.3.2.2",
+  "title": "",
+  "body": "    We must show that for all and . We pick an orthogonal basis of and compute, using formula : .    By definition we have for all , and thus . For the other direction, if , then ( ), and thus . This proves .  The fact that follows from the equivalence stated in (b) of .     "
+},
+{
+  "id": "eg_projection_line",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#eg_projection_line",
+  "type": "Example",
+  "number": "7.3.24",
+  "title": "Projection onto a line <span class=\"process-math\">\\(\\ell\\subseteq \\R^3\\)<\/span>.",
+  "body": " Projection onto a line   Any line in passing through the origin can be described as , for some . The set is trivially an orthogonal basis of . Using , we have . It follows that , where .   "
+},
+{
+  "id": "s_orthogonal_projection-5-4",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection-5-4",
+  "type": "Example",
+  "number": "7.3.25",
+  "title": "",
+  "body": "  Consider the line .    Find the matrix such that .    Use your matrix formula from (a) to compute , , and .    Compute and .        Using the general formula described in , we have .    Now compute . The last two computations, and , should come as no surprise, since and . (See .)    We have . Again, the second computation should come as no surprise. Since is itself an element of , it stands to reason that its distance to is equal to zero.     "
+},
+{
+  "id": "eg_projection_plane",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#eg_projection_plane",
+  "type": "Example",
+  "number": "7.3.26",
+  "title": "Projection onto planes in <span class=\"process-math\">\\(\\R^3\\)<\/span>.",
+  "body": " Projection onto planes in   Any plane passing through the origin can be described as . Equivalently, is the set of all satisfying : , , where . Consider the orthogonal decomposition with respect to : . Since and , we see that this is also an orthogonal decomposition with respect to ! Using the matrix formula for from , we have . We conclude that , where .   "
+},
+{
+  "id": "s_orthogonal_projection-5-6",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection-5-6",
+  "type": "Example",
+  "number": "7.3.27",
+  "title": "",
+  "body": "  Consider the plane .    Find the matrix such that .    Use your matrix formula from (a) to compute and .    Compute and .        Using the general formula described in , we have .    Now compute .    We have .     "
+},
+{
+  "id": "s_orthogonal_projection-6-2",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection-6-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "trigonometric polynomials of degree at most "
+},
+{
+  "id": "s_orthogonal_projection-7-3",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection-7-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "least-squares "
+},
+{
+  "id": "eg_least-squares",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#eg_least-squares",
+  "type": "Example",
+  "number": "7.3.28",
+  "title": "Best fitting line.",
+  "body": " Best fitting line   Suppose we wish to find a line that best fits (in the least-square sense) the following data points: . Following the discussion above, we seek a solution to the matrix equation , where . Using Gaussian elimination, we see easily that this equation has no solution: equivalently, . Accordingly, we compute and find a solution to . Conveniently, the set is already an orthogonal basis of , allowing us to use : . Lastly, solving yields , and we conclude the line is the one that best fits the data in the least-squares sense.   "
+},
+{
+  "id": "rm_least-squares",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#rm_least-squares",
+  "type": "Remark",
+  "number": "7.3.29",
+  "title": "Visualizing least-squares.",
+  "body": " Visualizing least-squares    helps us give a graphical interpretation of how the line best approximates the points .  Least-squares visualization  Least-squares visualization   Let be the given -values of the points, and let be the orthogonal projection of onto . In the graph the values denote the vertical difference between the data points, and our fitting line. The projection makes the error as small as possible. This means if I draw any other line and compute the corresponding differences at the -values -3, 1 and 2, then    "
+},
+{
+  "id": "th_leastsquares",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#th_leastsquares",
+  "type": "Theorem",
+  "number": "7.3.31",
+  "title": "Least-squares matrix formula.",
+  "body": " Least-squares matrix formula   Given an matrix and column vector , a vector is a least-squares solution to if and only if . In other words, we can find a least-squares solution by solving the matrix equation directly.    Let , and let . The key observation is that a vector satisfies if and only if is an orthogonal decomposition of with respect to ; and this is true if and only if . Thus we have .   "
+},
+{
+  "id": "s_orthogonal_projection-7-8",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection-7-8",
+  "type": "Example",
+  "number": "7.3.32",
+  "title": "",
+  "body": "  Consider again the matrix equation from . According to the least-squares solution can be found by solving the equation for . We compute and solve just as before.   "
+},
+{
+  "id": "s_orthogonal_projection_ex-1-2",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-1-2",
+  "type": "Exercise",
+  "number": "7.3.6.1",
+  "title": "",
+  "body": "  Compute the orthogonal projection of onto the line through and the origin.   .      "
+},
+{
+  "id": "s_orthogonal_projection_ex-1-3",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-1-3",
+  "type": "Exercise",
+  "number": "7.3.6.2",
+  "title": "",
+  "body": "  Let and . Write as the sum of two orthogonal vectors, in and orthogonal to .   ,  .      "
+},
+{
+  "id": "s_orthogonal_projection_ex-1-4",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-1-4",
+  "type": "Exercise",
+  "number": "7.3.6.3",
+  "title": "",
+  "body": "  (a) Find the distance from the point to the plane . Use sqrt() to enter square roots.  Distance:  (b) Find the equation of the plane that passes through the points , , and . Write your answer in terms of the variables , , .  Answer:             Solution: (a) The idea is to find a convenient point lying in the given plane. For example, let us pick , and let be the vector from to . Then the distance from to the plane is the absolute value of the scalar projection of onto the normal vector   So, we get that the distance is .  (b) To find an equation of the plane in question, we can work with the point and the normal vector given by the cross product of the vector from to , and the vector from to . It turns out that   So, an equation of the plane is .      "
+},
+{
+  "id": "s_orthogonal_projection_ex-1-5",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-1-5",
+  "type": "Exercise",
+  "number": "7.3.6.4",
+  "title": "",
+  "body": "  Find bases of the kernel and image of the orthogonal projection onto the plane in .  A basis for the kernel is    A basis for the image is  ,       "
+},
+{
+  "id": "s_orthogonal_projection_ex-1-6",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-1-6",
+  "type": "Exercise",
+  "number": "7.3.6.5",
+  "title": "",
+  "body": "  Let Use the Gram-Schmidt process to determine an orthonormal basis for the subspace of spanned by , , and .   , ,       "
+},
+{
+  "id": "s_orthogonal_projection_ex-1-7",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-1-7",
+  "type": "Exercise",
+  "number": "7.3.6.6",
+  "title": "",
+  "body": "  Find the least-squares solution of the system        "
+},
+{
+  "id": "s_orthogonal_projection_ex-1-8",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-1-8",
+  "type": "Exercise",
+  "number": "7.3.6.7",
+  "title": "",
+  "body": "  By using the method of least squares, find the best line through the points:  , , .  Step 1. The general equation of a line is . Plugging the data points into this formula gives a matrix equation .      Step 2. The matrix equation has no solution, so instead we use the normal equation       Step 3. Solving the normal equation gives the answer    which corresponds to the formula    Analysis. Compute the predicted values: .    Compute the error vector: .    Compute the total error: .                  "
+},
+{
+  "id": "s_orthogonal_projection_ex-1-9",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-1-9",
+  "type": "Exercise",
+  "number": "7.3.6.8",
+  "title": "",
+  "body": "  By using the method of least squares, find the best parabola through the points:  , , ,  Step 1. The general equation of a parabola is . Plugging the data points into this formula gives a matrix equation .      Step 2. The matrix equation has no solution, so instead we use the normal equation       Step 3. Solving the normal equation gives the answer    which corresponds to the formula             "
+},
+{
+  "id": "s_orthogonal_projection_ex-2-3",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-2-3",
+  "type": "Exercise",
+  "number": "7.3.6.9",
+  "title": "",
+  "body": "  with the dot product; ;   "
+},
+{
+  "id": "s_orthogonal_projection_ex-2-4",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-2-4",
+  "type": "Exercise",
+  "number": "7.3.6.10",
+  "title": "",
+  "body": "  with dot product with weights ; ;   "
+},
+{
+  "id": "s_orthogonal_projection_ex-2-5",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-2-5",
+  "type": "Exercise",
+  "number": "7.3.6.11",
+  "title": "",
+  "body": "  with the integral inner product; ; for all   "
+},
+{
+  "id": "s_orthogonal_projection_ex-3",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-3",
+  "type": "Exercise",
+  "number": "7.3.6.12",
+  "title": "",
+  "body": " Let be the plane passing through the origin with normal vector . Find the orthogonal projection of onto with respect to the dot product.  "
+},
+{
+  "id": "s_orthogonal_projection_ex-4",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-4",
+  "type": "Exercise",
+  "number": "7.3.6.13",
+  "title": "",
+  "body": " Recall that the trace of a square matrix is the sum of its diagonal entries. Let with inner product . (You may take for granted that this operation is indeed an inner product on .) Define .    Compute an orthogonal basis for . You can do this either by inspection (the space is manageable), or by starting with any basis of and applying the Gram-Schmidt procedure.    Compute , where .    "
+},
+{
+  "id": "s_orthogonal_projection_ex-5",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-5",
+  "type": "Exercise",
+  "number": "7.3.6.14",
+  "title": "",
+  "body": " Let with the integral inner product, and let . Find the function of the form that best approximates  in terms of this inner product: find the the of this form that minimizes .   The set is orthogonal with respect to the given inner product.  "
+},
+{
+  "id": "ex_ortho_comp",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#ex_ortho_comp",
+  "type": "Exercise",
+  "number": "7.3.6.15",
+  "title": "",
+  "body": " Let be an inner product space, let , and let . Prove: . In other words, to check whether an element is in , it suffices to check that it is orthogonal to each element of its spanning set .  "
+},
+{
+  "id": "s_orthogonal_projection_ex-7",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-7",
+  "type": "Exercise",
+  "number": "7.3.6.16",
+  "title": "",
+  "body": " Consider the inner product space together with the dot product. Let Provide orthogonal bases for and .  "
+},
+{
+  "id": "ex_orthocomp_subspace",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#ex_orthocomp_subspace",
+  "type": "Exercise",
+  "number": "7.3.6.17",
+  "title": "",
+  "body": " Prove statements (1) and (2) of .  "
+},
+{
+  "id": "ex_orthocomp_dim",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#ex_orthocomp_dim",
+  "type": "Exercise",
+  "number": "7.3.6.18",
+  "title": "Dimension of <span class=\"process-math\">\\(W^\\perp\\)<\/span>.",
+  "body": "Dimension of  Prove statement (3) of : if is an inner product space of dimension , and is a subspace of , then .   By there is an orthogonal basis of , and furthermore, we can extend to an orthogonal basis of all of . Show the form a basis for .  "
+},
+{
+  "id": "s_orthogonal_projection_ex-10",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-10",
+  "type": "Exercise",
+  "number": "7.3.6.19",
+  "title": "",
+  "body": " Prove following the suggestion in the text.  "
+},
+{
+  "id": "ex_orthoproj_props",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#ex_orthoproj_props",
+  "type": "Exercise",
+  "number": "7.3.6.20",
+  "title": "",
+  "body": " Let an inner product space, and let be a finite-dimensional subspace. Prove the following statements:     if and only if ;     if and only if .    "
+},
+{
+  "id": "s_orthogonal_projection_ex-12",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-12",
+  "type": "Exercise",
+  "number": "7.3.6.21",
+  "title": "",
+  "body": " We consider the problem of fitting a collection of data points with a quadratic curve of the form . Thus we are given some collection of points , and we seek parameters for which the graph of  best fits the points in some way.    Show, using linear algebra, that if we are given any three points , where the -coordinates are all distinct, then there is a unique choice of such that the corresponding quadratic function agrees precisely with the data. In other words, given just about any three points in the plane, there is a unique quadratic curve connecting them.    Now suppose we are given the four data points .    Use the least-squares method described in the lecture notes to come up with a quadratic function that best fits the data.    Graph the function you found, along with the points . (You may want to use technology.) Use your graph to explain precisely in what sense  best fits the data.      "
+},
+{
+  "id": "s_spectral_theorem",
+  "level": "1",
+  "url": "s_spectral_theorem.html",
+  "type": "Section",
+  "number": "7.4",
+  "title": "The spectral theorem",
+  "body": " The spectral theorem   Among the many takeaways from is the simple fact that not all matrices are diagonalizable. In principle gives a complete answer to the question of diagonalizability in terms of eigenspaces. However, you should not be mislead by the artificially simple examples treated in . In practice even the determination (or approximation) of the distinct eigenvalues of an matrix poses a very challenging computational problem as gets large. As such the general question of whether a matrix is diagonalizable remains an intractable one. This makes all the more welcoming the main result of this section: all symmetric matrices are diagonalizable! This surprising fact is a consequence of the spectral theorem for self-adjoint operators : a result which itself fits into a larger suite of spectral theorems that treat the diagonalizability of various families of linear transformations of inner product spaces (both finite and infinite dimensional).    Self-adjoint operators  Though we are mainly interested in the diagonalizability of symmetric matrices, our arguments are made more elegant by abstracting somewhat to the realm of linear transformations of inner product spaces. In this setting the appropriate analogue of a symmetric matrix is a self-adjoint linear transformation.   Self-adjoint operators   Let be a finite-dimensional inner product space. A linear transformation is called a self-adjoint operator if for all .    The next theorem makes explicit the connection between self-adjoint operators and symmetric matrices.   Self-adjoint operators and symmetry   Let be a finite-dimensional inner product space, let be a linear transformation, and let be an orthonormal ordered basis of . The following statements are equivalent.     is self-adjoint.     is symmetric.      Let . We have . Furthermore, since is orthonormal, the -th entry of is computed as ( ). Thus , where It follows that . The last equality in this chain of equivalences states that satisfies property for all elements of . Not surprisingly, this is equivalent to satisfying the property for all elements in . (See .) We conclude that is symmetric if and only if is self-adjoint.     Self-adjoint operators and symmetry   Let . The following statements are equivalent.     is symmetric.     is self-adjoint with respect to the dot product.     for all .      Since , where is the standard ordered basis of , and since is orthonormal with respect to the dot product, it follows from that statements (1) and (2) are equivalent. Statements (2) and (3) are equivalent since by definition for all .    The next result, impressive in its own right, is also key to the induction argument we will use to prove . A proper proof would require a careful treatment of complex vector spaces: a topic which lies just outside the scope of this text. The proof sketch we provide can easily be upgraded to a complete argument simply by justifying a few statements about and its standard inner product.   Eigenvalues of self-adjoint operators   Let be a finite-dimensional inner product space. If is self adjoint, then all roots of its characteristic polynomial are real: i.e., we have , where for all .    Proof sketch of  Pick an orthonormal ordered basis of , and let . By , is symmetric. To prove that all roots of the characteristic polynomial are real, we make a slight detour into complex vector spaces. The set of all complex -tuples, together with the operations and where , forms what is called a vector space over . This means that satisfies the strengthened axioms of obtained by replacing every mention of a scalar with a scalar . Additionally, the vector space has the structure of a complex inner product defined as , where denotes the complex conjugate of for each . Essentially all of our theory of real vector spaces can be transported to complex vector spaces, including definitions and results about eigenvectors and inner products. The rest of this argument makes use of this principle by citing without proof some of these properties, and this is why it has been downgraded to a proof sketch .  We now return to and its characteristic polynomial . Recall that we want to show that all roots of are real. Let be a root of . The complex theory of eigenvectors implies that there is a nonzero vector satisfying . On the one hand, we have using properties of our complex inner product. On the other hand, since it is easy to see that extends to our complex inner product: , for all . Thus . (In the last equality we use the fact that our complex inner product satisfies for any and vectors .) It follows that . Since , we have (another property of our complex inner product), and thus . Since a complex number satisfies if and only if if and only if is real, we conclude that is a real number, as claimed.     Eigenvalues of self-adjoint operators   If is a self-adjoint operator on a finite-dimensional inner product space , then has an eigenvalue: , there is a and nonzero such that .    The corollary follows from and the fact that the eigenvalues of are the real roots of its characteristic polynomial ( ).    From and it follows that the characterisitic polynomial of any symmetric matrix must factor as a product of linear terms over , as illustrated by the next two examples.   Symmetric matrices   Verify that the characteristic polynomial of any symmetric matrix factors into linear terms over .    Given a symmetric matrix , we have . Using the quadratic formula and some algebra, we see that the roots of are given by where (using the quadratic formula) . Since , we see that both these roots are real. Thus , where .     Symmetric matrix   Verify that the characteristic polynomial of the symmetric matrix factors into linear terms over .    The characteristic polynomial of is . We can use the quadratic equation to solve for , yielding . We conclude that or , and thus or . It follows that .      The spectral theorem for self-adjoint operators   Our version of the spectral theorem concerns self-adjoint linear transformations on a finite-dimensional inner product space. It tells us two remarkable things: (a) every such linear transformation has an eigenbasis (and hence is diagonalizable); and furthermore, (b) the eigenbasis can be chosen to be orthogonal, or even orthonormal.    Spectral theorem for self-adjoint operators   Let be a finite-dimensional vector space, and let be a linear transformation. The following statements are equivalent.     is self-adjoint.     is diagonalizable and eigenvectors with distinct eigenvalues are orthogonal.     has an orthogonal eigenbasis.     has an orthonormal eigenbasis.      We will prove the cycle of implications .   Implication:  Assume is self adjoint. First we show that eigenvectors with distinct eigenvalues are orthogonal. To this end, suppose we have and , where . Using the definition of self-adjoint, we have . We now prove by induction on that if is self-adjoint, then is diagonalizable. The base case is trivial. Assume the result is true of any -dimensional inner product space, and suppose . By there is a nonzero with . Let . Since , we have . The following two facts are crucial for the rest of the argument and are left as an exercise ( ).   For all we have , and thus by restricting to we get a linear transformation .    The restriction is self-adjoint, considered as a linear transformation of the inner product space . Here the inner product on the subspace is inherited from by restriction.   Now since and is self-adjoint, we may assume by induction that has an eigenbasis . We claim that is an eigenbasis of . Since by definition for all , we see that the vectors are also eigenvectors of , and thus that consists of eigenvectors. To show is a basis it is enought to prove linear independence, since . Suppose we have for scalars . Taking the inner product with , we have : . It follows that we have , and thus for all , since is linearly independent. Having proved that is an eigenbasis, we conclude that is diagonalizable.    Implication:  Let be the distinct eigenvalues of . Since is assumed to be diagonalizable, following we can create an eigenbasis by picking bases of each eigenspace and combining them. We can always choose these bases so that each is orthogonal. When we do so, the assembled will be orthogonal as a whole. Indeed given any two elements of , if both vectors are elements of for some , then they are orthogonal by design ; furthermore, if is an element of basis and is an element of basis with , then they are eigenvectors with distinct eigenvalues, and hence orthogonal by assumption !    Implication:  This is easy to see since an orthonormal eigenbasis can be obtained from an orthogonal eigenbasis by scaling each element by the reciprocal of its norm.    Implication:  Assume is an orthonormal eigenbasis of . Since is an eigenbasis, is a diagonal matrix, and hence symmetric. Since is orthonormal with respect to the dot product, we conclude from that is self-adjoint.     An operator that admits an orthogonal (and hence an orthonormal) eigenbasis is called orthogonally diagonalizable .   diagonalizable orthogonally  orthogonally diagonalizable  Orthogonally diagonalizable   Let be a finite-dimensional inner product space. A linear transformation is orthogonally diagonalizable if there exists an orthogonal (equivalently, an orthonormal) eigenbasis of .    This new language affords us a more succinct articulation of : to be self-adjoint is to be orthogonally diagonalizable. Think of this as a sort of diagonalizable+ condition.   Self-adjoint mantra   To be self-adjoint on a finite-dimensional inner product space is to be diagonalizable+ . In more detail: .    As an immediate consequence of , we have the following result about symmetric matrices.   Spectral theorem for symmetric matrices   Let be an matrix. The following statements are equivalent.     is symmetric.     is diagonalizable and eigenvectors with distinct eigenvalues are orthogonal with respect to the dot product.     is orthogonally diagonalizable.    There exists an orthogonal matrix  and diagonal matrix such that .      By we have symmetric if and only if is self-adjoint with respect to the dot product. Statements (1)-(3) are seen to be equivalent by applying to (with respect to the dot product). Let be the standard basis of . We see that (4) is equivalent to (3) by observing that is an orthonormal eigenbasis of if and only if the matrix obtained by placing the elements of as columns is orthogonal and diagonalizes .    The process of finding matrices and satisfying is called orthogonal diagonalization . A close look at the proof of gives rise to the following orthogonal diagonalization method for matrices.   Orthogonal diagonalization   Let be a symmetric matrix. To orthogonally diagonalize proceed as follows.    Let be the distinct eigenvalues of . For each , compute an orthonormal ordered basis of .    Let be the ordered basis obtained by concatenating the orthonormal bases computed in (1). This is an orthonormal basis of eigenvectors. It follows that the matrix is orthogonal ( , ), and the matrix is diagonal.       Orthogonal diagonalization   The symmetric matrix has characteristic polynomial . Find an orthogonal matrix and diagonal matrix such that .    First we factor . Looking at the constant term we see that the only possible integer roots of are . It is easily verified that , and polynomial division yields the factorization . Further factorization of gives us .  Next we compute orthonormal bases of the eigenspaces and , yielding . Assembling these bases elements into the orthogonal matrix , we conclude that , where .    Observe that the two eigenspaces and of the matrix in are orthogonal to one another, as predicted by the spectral theorem. Indeed, is the line passing through the origin with direction vector , and is its orthogonal complement, the plane passing through the origin with normal vector . depicts the orthogonal configuration of the eigenspaces of this example. This is an excellent illustration of what makes the diagonalizability of symmetric matrices (and self-adjoint operators) special. Keep it in mind!   Eigenspaces of a symmetric matrix are orthogonal   Eigenspaces of a symmetric matrix are orthogonal   Do not overlook the reverse implication of equivalence . As the next example illustrates, we can show an operator is self-adjoint by examining the geometry of its eigenspaces.   Orthogonal projections are self-adjoint   Let be a finite-dimensional inner product space, let be a subpsace of , and let be orthogonal projection onto . Prove that is self-adjoint.    By it suffices to show that is orthogonally diagonalizable. According to we have . Equivalently, and are the 1- and 0-eigenspaces of , respectively. Since we conclude that is diagonalizable. Since clearly and are orthogonal, we conclude that is in fact othogonally diagonalizable, hence self-adjoint.       WeBWork Exercises    Let . Find an orthogonal matrix with rational entries and a diagonal matrix such that .   ,           Orthogonally diagonalize the given symmetric matrix following : find a diagonal matrix and orthogonal matrix satisfying .                                            Let be a finite-dimensional inner product space, let be a linear transformation, and let be an ordered basis of . Prove: is self-adjoint if and only if for all . In other words, to prove is self-adjoint it suffices to show property holds for all elements of a basis of .    Let be a finite-dimensional inner product space, let be a self-adjoint operator, and let be a subspace of .    Prove: if , then .    By (a), restricting to defines a linear transformation . Prove that is self-adjoint. Here the inner product on the subspace is inherited from by restriction.      Assume is symmetric and orthogonal. Prove that the characteristic polynomial of factors as for some nonnegative integers . In particular, the eigenvalues of are among and .     Let be a conic curve defined by a quadratic equation of the form where are fixed constants. You may have learned that can be rotated to a conic with a standard equation of the form . In the following exercises we will see why this is true.    Find a symmetric matrix satisfying the following property: satisfies if and only if . (Here we conflate the matrix with the scalar .)    Show that there is a rotation matrix satisfying , where for some .   See .    Show that satisfies if and only if satisfies .    Explain why we can conclude that there is a rotation that maps the conic with equation to the conic with standard equation  .    Let be the conic curve with equation .    Find an angle and constants such that the rotation maps to a conic with defining equation .    First graph , and then graph using the result of (a). What type of conics (parabolas, ellipses, hyperbolas) are and ?       "
+},
+{
+  "id": "d_self-adjoint",
+  "level": "2",
+  "url": "s_spectral_theorem.html#d_self-adjoint",
+  "type": "Definition",
+  "number": "7.4.1",
+  "title": "Self-adjoint operators.",
+  "body": " Self-adjoint operators   Let be a finite-dimensional inner product space. A linear transformation is called a self-adjoint operator if for all .   "
+},
+{
+  "id": "th_self-adjoint_symmetric",
+  "level": "2",
+  "url": "s_spectral_theorem.html#th_self-adjoint_symmetric",
+  "type": "Theorem",
+  "number": "7.4.2",
+  "title": "Self-adjoint operators and symmetry.",
+  "body": " Self-adjoint operators and symmetry   Let be a finite-dimensional inner product space, let be a linear transformation, and let be an orthonormal ordered basis of . The following statements are equivalent.     is self-adjoint.     is symmetric.      Let . We have . Furthermore, since is orthonormal, the -th entry of is computed as ( ). Thus , where It follows that . The last equality in this chain of equivalences states that satisfies property for all elements of . Not surprisingly, this is equivalent to satisfying the property for all elements in . (See .) We conclude that is symmetric if and only if is self-adjoint.   "
+},
+{
+  "id": "cor_self-adjoint_symmetric",
+  "level": "2",
+  "url": "s_spectral_theorem.html#cor_self-adjoint_symmetric",
+  "type": "Corollary",
+  "number": "7.4.3",
+  "title": "Self-adjoint operators and symmetry.",
+  "body": " Self-adjoint operators and symmetry   Let . The following statements are equivalent.     is symmetric.     is self-adjoint with respect to the dot product.     for all .      Since , where is the standard ordered basis of , and since is orthonormal with respect to the dot product, it follows from that statements (1) and (2) are equivalent. Statements (2) and (3) are equivalent since by definition for all .   "
+},
+{
+  "id": "th_self-adjoint_eigenvalue",
+  "level": "2",
+  "url": "s_spectral_theorem.html#th_self-adjoint_eigenvalue",
+  "type": "Theorem",
+  "number": "7.4.4",
+  "title": "Eigenvalues of self-adjoint operators.",
+  "body": " Eigenvalues of self-adjoint operators   Let be a finite-dimensional inner product space. If is self adjoint, then all roots of its characteristic polynomial are real: i.e., we have , where for all .    Proof sketch of  Pick an orthonormal ordered basis of , and let . By , is symmetric. To prove that all roots of the characteristic polynomial are real, we make a slight detour into complex vector spaces. The set of all complex -tuples, together with the operations and where , forms what is called a vector space over . This means that satisfies the strengthened axioms of obtained by replacing every mention of a scalar with a scalar . Additionally, the vector space has the structure of a complex inner product defined as , where denotes the complex conjugate of for each . Essentially all of our theory of real vector spaces can be transported to complex vector spaces, including definitions and results about eigenvectors and inner products. The rest of this argument makes use of this principle by citing without proof some of these properties, and this is why it has been downgraded to a proof sketch .  We now return to and its characteristic polynomial . Recall that we want to show that all roots of are real. Let be a root of . The complex theory of eigenvectors implies that there is a nonzero vector satisfying . On the one hand, we have using properties of our complex inner product. On the other hand, since it is easy to see that extends to our complex inner product: , for all . Thus . (In the last equality we use the fact that our complex inner product satisfies for any and vectors .) It follows that . Since , we have (another property of our complex inner product), and thus . Since a complex number satisfies if and only if if and only if is real, we conclude that is a real number, as claimed.   "
+},
+{
+  "id": "cor_self-adjoint_eigenvalue",
+  "level": "2",
+  "url": "s_spectral_theorem.html#cor_self-adjoint_eigenvalue",
+  "type": "Corollary",
+  "number": "7.4.5",
+  "title": "Eigenvalues of self-adjoint operators.",
+  "body": " Eigenvalues of self-adjoint operators   If is a self-adjoint operator on a finite-dimensional inner product space , then has an eigenvalue: , there is a and nonzero such that .    The corollary follows from and the fact that the eigenvalues of are the real roots of its characteristic polynomial ( ).   "
+},
+{
+  "id": "eg_symmetric_matrix",
+  "level": "2",
+  "url": "s_spectral_theorem.html#eg_symmetric_matrix",
+  "type": "Example",
+  "number": "7.4.6",
+  "title": "Symmetric <span class=\"process-math\">\\(2\\times 2\\)<\/span> matrices.",
+  "body": " Symmetric matrices   Verify that the characteristic polynomial of any symmetric matrix factors into linear terms over .    Given a symmetric matrix , we have . Using the quadratic formula and some algebra, we see that the roots of are given by where (using the quadratic formula) . Since , we see that both these roots are real. Thus , where .   "
+},
+{
+  "id": "ss_self-adjoint-12",
+  "level": "2",
+  "url": "s_spectral_theorem.html#ss_self-adjoint-12",
+  "type": "Example",
+  "number": "7.4.7",
+  "title": "Symmetric <span class=\"process-math\">\\(4\\times 4\\)<\/span> matrix.",
+  "body": " Symmetric matrix   Verify that the characteristic polynomial of the symmetric matrix factors into linear terms over .    The characteristic polynomial of is . We can use the quadratic equation to solve for , yielding . We conclude that or , and thus or . It follows that .   "
+},
+{
+  "id": "th_spectral",
+  "level": "2",
+  "url": "s_spectral_theorem.html#th_spectral",
+  "type": "Theorem",
+  "number": "7.4.8",
+  "title": "Spectral theorem for self-adjoint operators.",
+  "body": " Spectral theorem for self-adjoint operators   Let be a finite-dimensional vector space, and let be a linear transformation. The following statements are equivalent.     is self-adjoint.     is diagonalizable and eigenvectors with distinct eigenvalues are orthogonal.     has an orthogonal eigenbasis.     has an orthonormal eigenbasis.      We will prove the cycle of implications .   Implication:  Assume is self adjoint. First we show that eigenvectors with distinct eigenvalues are orthogonal. To this end, suppose we have and , where . Using the definition of self-adjoint, we have . We now prove by induction on that if is self-adjoint, then is diagonalizable. The base case is trivial. Assume the result is true of any -dimensional inner product space, and suppose . By there is a nonzero with . Let . Since , we have . The following two facts are crucial for the rest of the argument and are left as an exercise ( ).   For all we have , and thus by restricting to we get a linear transformation .    The restriction is self-adjoint, considered as a linear transformation of the inner product space . Here the inner product on the subspace is inherited from by restriction.   Now since and is self-adjoint, we may assume by induction that has an eigenbasis . We claim that is an eigenbasis of . Since by definition for all , we see that the vectors are also eigenvectors of , and thus that consists of eigenvectors. To show is a basis it is enought to prove linear independence, since . Suppose we have for scalars . Taking the inner product with , we have : . It follows that we have , and thus for all , since is linearly independent. Having proved that is an eigenbasis, we conclude that is diagonalizable.    Implication:  Let be the distinct eigenvalues of . Since is assumed to be diagonalizable, following we can create an eigenbasis by picking bases of each eigenspace and combining them. We can always choose these bases so that each is orthogonal. When we do so, the assembled will be orthogonal as a whole. Indeed given any two elements of , if both vectors are elements of for some , then they are orthogonal by design ; furthermore, if is an element of basis and is an element of basis with , then they are eigenvectors with distinct eigenvalues, and hence orthogonal by assumption !    Implication:  This is easy to see since an orthonormal eigenbasis can be obtained from an orthogonal eigenbasis by scaling each element by the reciprocal of its norm.    Implication:  Assume is an orthonormal eigenbasis of . Since is an eigenbasis, is a diagonal matrix, and hence symmetric. Since is orthonormal with respect to the dot product, we conclude from that is self-adjoint.    "
+},
+{
+  "id": "d_orthogonally_diagable",
+  "level": "2",
+  "url": "s_spectral_theorem.html#d_orthogonally_diagable",
+  "type": "Definition",
+  "number": "7.4.9",
+  "title": "Orthogonally diagonalizable.",
+  "body": " diagonalizable orthogonally  orthogonally diagonalizable  Orthogonally diagonalizable   Let be a finite-dimensional inner product space. A linear transformation is orthogonally diagonalizable if there exists an orthogonal (equivalently, an orthonormal) eigenbasis of .   "
+},
+{
+  "id": "mantra_self-adjoint",
+  "level": "2",
+  "url": "s_spectral_theorem.html#mantra_self-adjoint",
+  "type": "Mantra",
+  "number": "7.4.10",
+  "title": "Self-adjoint mantra.",
+  "body": " Self-adjoint mantra   To be self-adjoint on a finite-dimensional inner product space is to be diagonalizable+ . In more detail: .   "
+},
+{
+  "id": "cor_spectral",
+  "level": "2",
+  "url": "s_spectral_theorem.html#cor_spectral",
+  "type": "Corollary",
+  "number": "7.4.11",
+  "title": "Spectral theorem for symmetric matrices.",
+  "body": " Spectral theorem for symmetric matrices   Let be an matrix. The following statements are equivalent.     is symmetric.     is diagonalizable and eigenvectors with distinct eigenvalues are orthogonal with respect to the dot product.     is orthogonally diagonalizable.    There exists an orthogonal matrix  and diagonal matrix such that .      By we have symmetric if and only if is self-adjoint with respect to the dot product. Statements (1)-(3) are seen to be equivalent by applying to (with respect to the dot product). Let be the standard basis of . We see that (4) is equivalent to (3) by observing that is an orthonormal eigenbasis of if and only if the matrix obtained by placing the elements of as columns is orthogonal and diagonalizes .   "
+},
+{
+  "id": "proc_ortho_diag",
+  "level": "2",
+  "url": "s_spectral_theorem.html#proc_ortho_diag",
+  "type": "Procedure",
+  "number": "7.4.12",
+  "title": "Orthogonal diagonalization.",
+  "body": " Orthogonal diagonalization   Let be a symmetric matrix. To orthogonally diagonalize proceed as follows.    Let be the distinct eigenvalues of . For each , compute an orthonormal ordered basis of .    Let be the ordered basis obtained by concatenating the orthonormal bases computed in (1). This is an orthonormal basis of eigenvectors. It follows that the matrix is orthogonal ( , ), and the matrix is diagonal.     "
+},
+{
+  "id": "eg_ortho_diag",
+  "level": "2",
+  "url": "s_spectral_theorem.html#eg_ortho_diag",
+  "type": "Example",
+  "number": "7.4.13",
+  "title": "Orthogonal diagonalization.",
+  "body": " Orthogonal diagonalization   The symmetric matrix has characteristic polynomial . Find an orthogonal matrix and diagonal matrix such that .    First we factor . Looking at the constant term we see that the only possible integer roots of are . It is easily verified that , and polynomial division yields the factorization . Further factorization of gives us .  Next we compute orthonormal bases of the eigenspaces and , yielding . Assembling these bases elements into the orthogonal matrix , we conclude that , where .   "
+},
+{
+  "id": "fig_ortho_diag",
+  "level": "2",
+  "url": "s_spectral_theorem.html#fig_ortho_diag",
+  "type": "Figure",
+  "number": "7.4.14",
+  "title": "Eigenspaces of a symmetric matrix are orthogonal",
+  "body": " Eigenspaces of a symmetric matrix are orthogonal   Eigenspaces of a symmetric matrix are orthogonal  "
+},
+{
+  "id": "eg_ortho_proj_selfadjoint",
+  "level": "2",
+  "url": "s_spectral_theorem.html#eg_ortho_proj_selfadjoint",
+  "type": "Example",
+  "number": "7.4.15",
+  "title": "Orthogonal projections are self-adjoint.",
+  "body": " Orthogonal projections are self-adjoint   Let be a finite-dimensional inner product space, let be a subpsace of , and let be orthogonal projection onto . Prove that is self-adjoint.    By it suffices to show that is orthogonally diagonalizable. According to we have . Equivalently, and are the 1- and 0-eigenspaces of , respectively. Since we conclude that is diagonalizable. Since clearly and are orthogonal, we conclude that is in fact othogonally diagonalizable, hence self-adjoint.   "
+},
+{
+  "id": "s_spectral_theorem_ex-1-2",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-1-2",
+  "type": "Exercise",
+  "number": "7.4.3.1",
+  "title": "",
+  "body": "  Let . Find an orthogonal matrix with rational entries and a diagonal matrix such that .   ,       "
+},
+{
+  "id": "s_spectral_theorem_ex-2-2",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-2-2",
+  "type": "Exercise",
+  "number": "7.4.3.2",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_spectral_theorem_ex-2-3",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-2-3",
+  "type": "Exercise",
+  "number": "7.4.3.3",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_spectral_theorem_ex-2-4",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-2-4",
+  "type": "Exercise",
+  "number": "7.4.3.4",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_spectral_theorem_ex-2-5",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-2-5",
+  "type": "Exercise",
+  "number": "7.4.3.5",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_spectral_theorem_ex-2-6",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-2-6",
+  "type": "Exercise",
+  "number": "7.4.3.6",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_spectral_theorem_ex-2-7",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-2-7",
+  "type": "Exercise",
+  "number": "7.4.3.7",
+  "title": "",
+  "body": "   "
+},
+{
+  "id": "s_spectral_theorem_ex-2-8",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-2-8",
+  "type": "Exercise",
+  "number": "7.4.3.8",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "s_spectral_theorem_ex-2-9",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-2-9",
+  "type": "Exercise",
+  "number": "7.4.3.9",
+  "title": "",
+  "body": "    "
+},
+{
+  "id": "ex_self-adjoint_symmetric",
+  "level": "2",
+  "url": "s_spectral_theorem.html#ex_self-adjoint_symmetric",
+  "type": "Exercise",
+  "number": "7.4.3.10",
+  "title": "",
+  "body": " Let be a finite-dimensional inner product space, let be a linear transformation, and let be an ordered basis of . Prove: is self-adjoint if and only if for all . In other words, to prove is self-adjoint it suffices to show property holds for all elements of a basis of .  "
+},
+{
+  "id": "ex_selfadjoint_complement",
+  "level": "2",
+  "url": "s_spectral_theorem.html#ex_selfadjoint_complement",
+  "type": "Exercise",
+  "number": "7.4.3.11",
+  "title": "",
+  "body": " Let be a finite-dimensional inner product space, let be a self-adjoint operator, and let be a subspace of .    Prove: if , then .    By (a), restricting to defines a linear transformation . Prove that is self-adjoint. Here the inner product on the subspace is inherited from by restriction.    "
+},
+{
+  "id": "s_spectral_theorem_ex-5",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-5",
+  "type": "Exercise",
+  "number": "7.4.3.12",
+  "title": "",
+  "body": " Assume is symmetric and orthogonal. Prove that the characteristic polynomial of factors as for some nonnegative integers . In particular, the eigenvalues of are among and .  "
+},
+{
+  "id": "s_spectral_theorem_ex-6-2",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-6-2",
+  "type": "Exercise",
+  "number": "7.4.3.13",
+  "title": "",
+  "body": " Find a symmetric matrix satisfying the following property: satisfies if and only if . (Here we conflate the matrix with the scalar .)  "
+},
+{
+  "id": "s_spectral_theorem_ex-6-3",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-6-3",
+  "type": "Exercise",
+  "number": "7.4.3.14",
+  "title": "",
+  "body": " Show that there is a rotation matrix satisfying , where for some .   See .  "
+},
+{
+  "id": "s_spectral_theorem_ex-6-4",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-6-4",
+  "type": "Exercise",
+  "number": "7.4.3.15",
+  "title": "",
+  "body": " Show that satisfies if and only if satisfies .  "
+},
+{
+  "id": "s_spectral_theorem_ex-6-5",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-6-5",
+  "type": "Exercise",
+  "number": "7.4.3.16",
+  "title": "",
+  "body": " Explain why we can conclude that there is a rotation that maps the conic with equation to the conic with standard equation  .  "
+},
+{
+  "id": "s_spectral_theorem_ex-6-6",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-6-6",
+  "type": "Exercise",
+  "number": "7.4.3.17",
+  "title": "",
+  "body": " Let be the conic curve with equation .    Find an angle and constants such that the rotation maps to a conic with defining equation .    First graph , and then graph using the result of (a). What type of conics (parabolas, ellipses, hyperbolas) are and ?    "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
@@ -8308,9 +9937,9 @@ var ptx_lunr_docs = [
   "body": " Mantras and fiats   "
 },
 {
-  "id": "euc_vec_spaces-10-10",
+  "id": "euc_vec_spaces-11-10",
   "level": "1",
-  "url": "euc_vec_spaces-10-10.html",
+  "url": "euc_vec_spaces-11-10.html",
   "type": "Index",
   "number": "",
   "title": "Index",
