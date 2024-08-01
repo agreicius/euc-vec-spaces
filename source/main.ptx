@@ -17,7 +17,7 @@
     <xi:include href="./c_vectorspace.ptx"/>
     <xi:include href="./c_lin_trans.ptx" />
     <xi:include href="./c_eigenvectors.ptx"/>
-    <!-- <xi:include href="./c_innerproductspaces.ptx"/> -->
+    <xi:include href="./c_innerproductspaces.ptx"/>
     <backmatter>
       <title>Backmatter</title>
       <appendix xml:id="appendix-notation">

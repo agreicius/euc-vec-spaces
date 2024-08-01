@@ -41,18 +41,16 @@
   </definition>
       <remark xml:id="rm_computing_ortho_comp">
         <title>Computing <m>W^\perp</m></title>
-    <statement>
-      <p>
-        According to <xref ref="d_orthogonal_complement"/>, to verify that a vector <m>\boldv</m> lies in <m>W^\perp</m>, we must show that <m>\langle \boldv, \boldw\rangle=0</m> for all <m>\boldw\in W</m>. The <q>for all</q> quantifier here can potentially make this an onerous task: there are in principle infinitely many <m>\boldw</m> to check! In the special case where <m>W</m> has a finite spanning set, so that <m> W=\Span \{\boldw_1, \boldw_2,\dots, \boldw_r\}</m> for some vectors <m>\boldw_i</m>, deciding whether <m>\boldv\in W^\perp</m> reduces to checking whether <m>\langle \boldv, \boldw_i\rangle=0</m> for all <m>1\leq i\leq r</m>. In other words, we have
-        <me>
-          \boldv\in W^\perp\iff \langle \boldv, \boldw_i\rangle=0 \text{ for all } 1\leq i\leq r
-        </me>.
-        The forward implication of this equivalence is clear: if <m>\boldv</m> is orthogonal to all elements of <m>W</m>, then clearly it is orthogonal to each <m>\boldw_i</m>. The reverse implication is left as an exercise. (See <xref ref="ex_ortho_comp"/>.)
-      </p>
-      <p>
-        We illustrate this computational technique in the next examples.
-      </p>
-    </statement>
+    <p>
+      According to <xref ref="d_orthogonal_complement"/>, to verify that a vector <m>\boldv</m> lies in <m>W^\perp</m>, we must show that <m>\langle \boldv, \boldw\rangle=0</m> for all <m>\boldw\in W</m>. The <q>for all</q> quantifier here can potentially make this an onerous task: there are in principle infinitely many <m>\boldw</m> to check! In the special case where <m>W</m> has a finite spanning set, so that <m> W=\Span \{\boldw_1, \boldw_2,\dots, \boldw_r\}</m> for some vectors <m>\boldw_i</m>, deciding whether <m>\boldv\in W^\perp</m> reduces to checking whether <m>\langle \boldv, \boldw_i\rangle=0</m> for all <m>1\leq i\leq r</m>. In other words, we have
+      <me>
+        \boldv\in W^\perp\iff \langle \boldv, \boldw_i\rangle=0 \text{ for all } 1\leq i\leq r
+      </me>.
+      The forward implication of this equivalence is clear: if <m>\boldv</m> is orthogonal to all elements of <m>W</m>, then clearly it is orthogonal to each <m>\boldw_i</m>. The reverse implication is left as an exercise. (See <xref ref="ex_ortho_comp"/>.)
+    </p>
+    <p>
+      We illustrate this computational technique in the next examples.
+    </p>
   </remark>
 
   <example xml:id="eg_ortho_comp_line">
@@ -225,7 +223,7 @@
           Let <m>(V,\langle \ , \rangle)</m> be an inner product space,
           and let <m>W\subseteq V</m> be a
           finite-dimensional subspace.
-        </p>
+        
           <ol>
             <li>
               <title>Orthogonal decomposition</title>
@@ -263,6 +261,7 @@
               </p>
             </li>
           </ol>
+        </p>
       </statement>
       <proof>
         <p>
@@ -314,14 +313,12 @@
     </theorem>
       <remark xml:id="rm_ortho_proj_formula">
         <title>Orthogonal projection formula</title>
-    <statement>
-      <p>
-        The formula <xref ref="eq_ortho_proj_formula"/> is very convenient for computing an orthogonal projection <m>\proj{\boldv}{W}</m>, but mark well this important detail: to apply the formula we must first provide an <em>orthogonal</em> basis of <m>W</m>. Thus unless one is provided, our first step in an orthogonal projection computation is to produce an orthogonal basis of <m>W</m>. In some simple cases (<eg />, when <m>W</m> is 1- or 2-dimensional) this can be done by inspection. Otherwise, we use the Gram-Schmidt procedure.
-      </p>
-    </statement>
+    <p>
+      The formula <xref ref="eq_ortho_proj_formula"/> is very convenient for computing an orthogonal projection <m>\proj{\boldv}{W}</m>, but mark well this important detail: to apply the formula we must first provide an <em>orthogonal</em> basis of <m>W</m>. Thus unless one is provided, our first step in an orthogonal projection computation is to produce an orthogonal basis of <m>W</m>. In some simple cases (<eg />, when <m>W</m> is 1- or 2-dimensional) this can be done by inspection. Otherwise, we use the Gram-Schmidt procedure.
+    </p>
   </remark>
   <p>
-    Next we consider the operation of orthogonally projecting a vector onto a line (in <m>\R^2</m> or <m>\R^3</m>) or a plane in <m>\R^3</m>. See <xref ref="eg_lines_planes_review"/> for a refresher on lines and planes in <m>\R^2</m> and <m>\R^3</m>. 
+    Next we consider the operation of orthogonally projecting a vector onto a line (in <m>\R^2</m> or <m>\R^3</m>) or a plane in <m>\R^3</m>. 
          </p>
    
          <definition xml:id="d_projection_onto_line">
@@ -509,7 +506,7 @@
                  <mrow> \amp = 0 \amp (\text{def. of } R=\proj{P}{\ell})</mrow>
                </md>,
                the point <m>Q</m> lies in the plane <m>W</m>.
-               (See <xref ref="eg_lines_planes_review"/>.) Furthermore, we have
+                Furthermore, we have
                <md>
                  <mrow>\overrightarrow{QP} \amp =\overrightarrow{OP}-\overrightarrow{OQ}</mrow>
                  <mrow> \amp = \overrightarrow{OR} \amp <xref ref="eq_vec_diff"/>
@@ -594,7 +591,7 @@
              <caption>Orthogonal projection onto plane and normal line. Made with <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url>. </caption>
            </figure>
          </example>
-       </subsection>
+       
   <example>
     <statement>
       <p>
@@ -636,14 +633,13 @@
     </solution>
   </example>
 
-<paragraphs xml:id="ss_vid_eg_orthoproj_functions">
+<example xml:id="ss_vid_eg_orthoproj_functions">
   <title>Video example: orthogonal projection in function space</title>
   <figure xml:id="fig_vid_orthoproj_functions">
-    <title>Video: orthogonal projection in function space</title>
   <caption>Video: orthogonal projection in function space</caption>
   <video xml:id="vid_orthoproj_functions" youtube="xWuzNdExSEk" />
   </figure>
-</paragraphs>
+</example>
   <corollary xml:id="cor_orthocomp_selfdual">
   <title>Complement of a complement</title>
     <statement>
@@ -708,7 +704,8 @@
     </statement>
   </corollary>
   <proof>
-      <ol>
+     <p>
+       <ol>
         <li>
           <p>
             We must show that <m>\proj{c\boldv+d\boldw}{W}=c\,\proj{\boldv}{W}+d\,\proj{\boldw}{W}</m> for all
@@ -732,6 +729,7 @@
           </p>
         </li>
       </ol>
+    </p>
   </proof>
 </subsection>
 
@@ -1053,7 +1051,7 @@ The last two computations, <m>\proj{(-2,-4,-2)}{\ell}=(-2,-4,-2)</m> and <m>\pro
       <men xml:id="eq_least-squares_orig">\underset{m\times n}{A}\, \underset{n\times 1}{\boldx}=\underset{m\times 1}{\boldy}</men>,
       where <m>A</m> and <m>\boldy</m> are given, and <m>\boldx</m> is treated as an unknown vector. Recall that
       <md>
-        <mrow>A\boldx=\boldy \text{ has a solution } \amp\iff \boldy\in \CS A \amp (<xref ref="th_fundspaces_matrixtransform"/>) </mrow>
+        <mrow>A\boldx=\boldy \text{ has a solution } \amp\iff \boldy\in \CS A \amp (<xref ref="th_col_space"/>) </mrow>
       </md>.
       When <m>\boldy\notin \CS A</m>, and hence <xref ref="eq_least-squares_orig"/> does not have a solution, the least-squares method proceeds by replacing <m>\boldy</m> with the element of <m>W=\CS A</m> closest to it: that is, with its <em>orthogonal projection</em> onto <m>W</m>.  Let <m>\hat{\boldy}=\proj{\boldy}{W}</m>, where orthogonal projection is taken with respect to the dot product on <m>\R^m</m>, and consider the adjusted matrix equation
       <men xml:id="eq_least-squares_new">
@@ -1168,5 +1166,5 @@ The last two computations, <m>\proj{(-2,-4,-2)}{\ell}=(-2,-4,-2)</m> and <m>\pro
 
 </subsection>
 
-  <xi:include href="./s_orthogonal_projection_ex.ptx"/>
+<xi:include href="./s_orthogonal_projection_ex.ptx"/>
 </section>

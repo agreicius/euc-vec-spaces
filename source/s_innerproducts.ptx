@@ -32,55 +32,7 @@
   </introduction>
   <subsection xml:id="ss_inner_products">
     <title>Inner products</title>
-  <definition xml:id="d_innerproduct">
-    <title>Inner product</title>
-    <statement>
-      <p>
-        Let <m>V</m> be a vector space.
-        An <term>inner product</term> on <m>V</m> is an operation that takes as input a pair of vectors <m>\boldv, \boldw\in V</m> and outputs a scalar <m>\langle \boldv, \boldw \rangle \in \R</m>. Using function notation:
-        <md>
-        <mrow>\langle \ , \rangle \colon \amp V\times V\rightarrow \R</mrow>
-        <mrow>(\boldv_1,\boldv_2)\amp \mapsto \langle \boldv_1,\boldv_2\rangle</mrow>
-        </md>.
-        Furthermore, this operation must satisfy the following axioms.
-        <ol marker="i">
-          <li>
-            <title>Symmetry</title>
-            <p>
-            For all <m>\boldv, \boldw\in V</m> we have
-            <me>
-              \langle \boldv, \boldw \rangle =\langle \boldw, \boldv \rangle
-            </me>.
-            </p>
-          </li>
-          <li>
-            <title>Linearity</title>
-            <p>
-              For all <m>\boldv, \boldw, \boldu\in V</m> and <m>c, d\in \R</m> we have :
-              <me>
-                \langle c\boldv+d\boldw, \boldu \rangle =c \langle \boldv, \boldu \rangle +d \langle \boldw, \boldu \rangle
-              </me>.
-              It follows by (i) (symmetry) that
-              <me>
-                \langle \boldu, c\boldv+d\boldw \rangle =c \langle \boldu, \boldv \rangle +d \langle \boldu, \boldw \rangle
-              </me>.
-            </p>
-          </li>
-          <li>
-            <title>Positive definiteness</title>
-            <p>
-              For all <m>\boldv\in V</m> we have
-              <md>
-                <mrow> \langle \boldv, \boldv \rangle \amp\geq 0,\text{ and} \amp (\text{positivity})</mrow>
-                <mrow> \langle \boldv, \boldv \rangle \amp=0 \text{ if and only if } \boldv=\boldzero \amp (\text{definiteness}) </mrow>
-              </md>.
-            </p>
-          </li>
-        </ol>
-        An <term>inner product space</term> is a pair <m>(V, \langle , \rangle )</m>, where <m>V</m> is a vector space, and <m>\langle , \rangle </m> is a choice of inner product on <m>V</m>.
-      </p>
-    </statement>
-  </definition>
+  
 
     <remark xml:id="rm_innerproduct_algebra">
     <title>Inner products of linear combinations</title>
