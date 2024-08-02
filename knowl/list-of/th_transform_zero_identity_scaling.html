@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Elementary linear transformation proofsZero, identity, and scaling transformations</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> be vector spaces.</div>
+<ol class="decimal" id="th_transform_zero_identity_scaling-3-1-3">
+<li><div class="para">The zero transformation <span class="process-math">\(T_0\colon V\rightarrow W\)</span> is a linear transformation.</div></li>
+<li>
+<div class="para">Let <span class="process-math">\(c\in \R\)</span> be a fixed scalar. The scaling transformation <span class="process-math">\(T\colon V\rightarrow V\text{,}\)</span> defined as <span class="process-math">\(T(\boldv)=c\boldv\)</span> for all <span class="process-math">\(\boldv\in V\text{,}\)</span> is a linear transformation.</div>
+<div class="para">Since the identity transformation <span class="process-math">\(\id_V\colon V\rightarrow V\)</span> is a scaling transformation with scaling value <span class="process-math">\(1\)</span> (<span class="process-math">\(\id_V(\boldv)=1\boldv\)</span>), it follows that <span class="process-math">\(\id_V\)</span> is a linear transformation.</div>
+</li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal" id="th_transform_zero_identity_scaling-4-1-1">
+<li><div class="para logical">
+<div class="para">Let <span class="process-math">\(T_0\colon V\rightarrow W\)</span> be the zero function: i.e., <span class="process-math">\(T(\boldv)=\boldzero\)</span> for all <span class="process-math">\(\boldv\in V\text{.}\)</span> We verify each defining property separately.</div>
+<ol class="lower-roman" id="th_transform_zero_identity_scaling-4-1-1-1-1-5">
+<li><div class="para logical">
+<div class="para">Given <span class="process-math">\(\boldv, \boldw\in V\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+T_0(\boldv_1+\boldv_2)\amp =\boldzero_W  \amp (\text{by def.}) \\
+\amp =\boldzero_W+\boldzero_W \\
+\amp = T_0(\boldv_1)+T_0(\boldv_2) \amp (\text{by def.})\text{.}
+\end{align*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Given <span class="process-math">\(c\in \R\)</span> and <span class="process-math">\(\boldv\in V\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_vectorspace_props.html">
+\begin{align*}
+T_0(c\boldv) \amp = \boldzero_W \amp (\text{def. of } T_0)\\
+\amp = c\boldzero_W \amp (\knowl{./knowl/xref/th_vectorspace_props.html}{\text{1.1.9}}
+) \\
+\amp = cT_0(\boldv) \amp (\text{def. of } T_0)\text{.}
+\end{align*}
+</div>
+</div></li>
+</ol>
+<div class="para">This proves that <span class="process-math">\(T_0\colon V\rightarrow W\)</span> is a linear transformation.</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Fix a scalar <span class="process-math">\(c\in \R\)</span> and let <span class="process-math">\(T\colon V\rightarrow V\)</span> be the scaling transformation defined as <span class="process-math">\(T(\boldv)=c\boldv\)</span> for all <span class="process-math">\(\boldv\in V\text{.}\)</span>
+</div>
+<ol class="lower-roman" id="th_transform_zero_identity_scaling-4-1-1-2-1-5">
+<li><div class="para logical">
+<div class="para">Given <span class="process-math">\(\boldv, \boldw\in V\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+T(\boldv_1+\boldv_2)\amp =c(\boldv_1+\boldv_2)  \amp (\text{def. of } T)\\
+\amp = c\boldv_1+c\boldv_2 \amp (\text{vec. props.})\\
+\amp = cT(\boldv_1)+cT(\boldv_2) \amp (\text{def. of } T)\text{.}
+\end{align*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Given <span class="process-math">\(d\in \R\)</span> and <span class="process-math">\(\boldv\in V\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+T(d\boldv) \amp = c(d\boldv) \amp (\text{def. of } T)\\
+\amp = (cd)\boldv \amp (\text{vec. props.}) \\
+\amp = (dc)\boldv \amp (\text{real mult. is comm.})\\
+\amp = d(c\boldv) \amp (\text{vec. props.})\\
+\amp = dT(\boldv) \amp (\text{def. of } T)\text{.}
+\end{align*}
+</div>
+</div></li>
+</ol>
+<div class="para">This proves that <span class="process-math">\(T\colon V\rightarrow V\)</span> is a linear transformation.</div>
+</div></li>
+</ol></div></article></details><span class="incontext"><a class="internal" href="s_transformation.html#th_transform_zero_identity_scaling">in-context</a></span>
+</body>
+</html>
