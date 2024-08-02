@@ -151,6 +151,17 @@
         </p>
       </solution>
     </example>
+    <example xml:id="eg_eigenvectors_scaling">
+      <title>Scaling transformations</title>
+      <statement><p>
+        Let <m>V</m> be a vector space, let <m>c\in \R</m> be a fixed scalar, and let <m>T\colon V\rightarrow V</m> be the scaling transformation defined as <m>T(\boldv)=c\boldv</m> for all <m>\boldv\in V</m>. Find all eigenvectors and eigenvalues of <m>T</m>. 
+      </p></statement>
+      <solution>
+        <p>
+          Since <m>T(\boldv)=c\boldv</m> for all <m>\boldv</m>, we see that all nonzero vectors of <m>V</m> are eigenvectors with eigenvalue <m>c</m>. It follows that <m>c</m> is the only eigenvalue of <m>T</m>. 
+        </p>
+      </solution>
+    </example>
     <example xml:id="eg_eigenvector_adhoc_reflection">
       <title>Reflection</title>
       <statement>
@@ -367,6 +378,7 @@
     </p>
   </statement>
 </definition>
+
 <p>
   We nearly have a complete method for computing the eigenvalues and eigenvectors of a square matrix <m>A</m>. The last step is to identify the values of <m>\lambda</m> for which <m>\lambda I-A</m> is not invertible. By the <xref ref="th_invertibility_supersized" text="custom">invertibility theorem</xref>, the matrix <m>\lambda I-A</m> is not invertible if and only if <m>\det (\lambda I-A)=0</m>. Thus the eigenvalues of <m>A</m> are precisely the <em>zeros</em> of the function <m>p(t)=\det(tI-A)</m>. We have proved the following corollary.
 </p>
@@ -474,6 +486,9 @@ We will show below that <m>p(t)=\det(tI-A)</m> is indeed a polynomial (<xref ref
   </statement>
 </algorithm>
 <example xml:id="eg_eigenspaces_A">
+  <title>Compute eigenspaces</title>
+  
+  
   <statement>
     <p>
     Let <m>A=\begin{amatrix}[rr]1\amp 2\\ 1\amp 2 \end{amatrix}</m>.
@@ -508,8 +523,7 @@ We will show below that <m>p(t)=\det(tI-A)</m> is indeed a polynomial (<xref ref
       <mrow>  \amp =\NS\begin{amatrix}[rr]-1\amp -2\\ -1\amp -2 \end{amatrix}</mrow>
       <mrow>  \amp =\Span\{(2,-1)\}</mrow>
     </md>.
-    Thus all <m>0</m>-eigenvectors of <m>A</m> are of the form <m>c(2,-1)</m>, where <m>c\ne 0</m>.
-
+    Thus <m>B=\{(2,-1)\}</m> is a basis for <m>W_0</m>.
     </p>
     </case>
     <case>
@@ -521,13 +535,14 @@ We will show below that <m>p(t)=\det(tI-A)</m> is indeed a polynomial (<xref ref
       <mrow>  \amp =\NS\begin{amatrix}[rr]2\amp -2\\ -1\amp 1 \end{amatrix}</mrow>
       <mrow>  \amp =\Span\{(1,1)\}</mrow>
     </md>.
-    Thus all <m>3</m>-eigenvectors of <m>A</m> are of the form <m>c(1,1)</m>, where <m>c\ne 0</m>.
+    Thus <m>B'=\{(1,1)\}</m> is a basis for <m>W_3</m>. 
     </p>
     </case>
   </solution>
 </example>
 
 <example xml:id="eg_eigenspaces_B">
+  <title>Compute eigenspaces</title>
   <statement>
     <p>
     Let
@@ -566,9 +581,9 @@ We will show below that <m>p(t)=\det(tI-A)</m> is indeed a polynomial (<xref ref
      <md>
        <mrow>W_0 \amp = \NS(0I-A)</mrow>
        <mrow> \amp = \NS \begin{amatrix}[rrr]-2\amp 1\amp 1\\ 1\amp -2\amp 1\\ 1\amp 1\amp -2 \end{amatrix}  </mrow>
-       <mrow>  \amp = \Span\{(1,1,1)</mrow>
+       <mrow>  \amp = \Span\{(1,1,1) \amp <xref ref="proc_fund_spaces"/> </mrow>
      </md>.
-     (We have skipped the Gaussian elimination steps involved in computing a basis for <m>\NS(-A)</m>.)
+     Thus <m>B=\{(1,1,1)\}</m> is a basis for <m>W_0</m>. 
      </p>
      </case>
      <case>
@@ -578,11 +593,125 @@ We will show below that <m>p(t)=\det(tI-A)</m> is indeed a polynomial (<xref ref
      <md>
        <mrow>W_3 \amp = \NS(3I-A)</mrow>
        <mrow> \amp= \NS \begin{amatrix}[rrr]1\amp 1\amp 1\\ 1\amp 1\amp 1\\ 1\amp 1\amp 1 \end{amatrix} </mrow>
-       <mrow>  \amp = \Span\{ (1,-1,0),(1,0,-1)\}</mrow>
+       <mrow>  \amp = \Span\{ (1,-1,0),(1,0,-1)\} \amp <xref ref="proc_fund_spaces"/></mrow>
      </md>.
+     Thus <m>B'=\{(1,-1,0),(1,0,-1)\}</m> is a basis for <m>W_3</m>. 
      </p>
      </case>
-    We conclude that the <m>0</m>-eigenvectors of <m>A</m> are the nonzero scalar multiples of <m>(1,1,1)</m>, and that the <m>3</m>-eigenvectors are all nonzero vectors of the form <m>\boldx=c_1(1,-1,0)+c_2(1,0,-1)</m>.
+  </solution>
+</example>
+<remark xml:id="rm_eigenspaces">
+  <title>Eigenspaces as packets of eigenvectors</title>
+  <p>
+    It is important to realize that if <m>\lambda</m> is an eigenvalue of <m>A</m>, then there is not just one <m>\lambda</m>-eigenvector, but rather an entire subspace <m>W_\lambda</m> of eigenvectors: that is, each of the infinitely many nonzero elements of <m>W_\lambda</m> is an eigenvector with eigenvalue <m>\lambda</m>. Thus every matrix has associated to it various <q>packets</q> of eigenvectors <m>W_{\lambda_1},W_{\lambda_2},\dots, W_{\lambda_r}</m> of varying size, as measured by <m>\dim W_{\lambda_i}</m>. 
+  </p>
+  <p>
+    For example the matrix <m>A</m> of <xref ref="eg_eigenspaces_B"/> has two packets of eigenvectors associated to it: the 0-eigenvectors form the 1-dimensional packet <m>W_0</m>, and the 3-eigenvectors form the 2-dimensional packet <m>W_3</m>.   
+  </p>
+  
+</remark>
+<p>
+  Our next example illustrates that the characteristic polynomial of a matrix may not factor completely into linear terms. 
+</p>
+<example xml:base="eg_eigenspaces_4by4">
+  <title>Compute eigenspaces</title>
+  <statement>
+    <p>
+      The characteristic polynomial of 
+      <me>
+        A=\begin{amatrix}[rrrr]
+        3 \amp -1 \amp -1 \amp -1 \\
+-5 \amp 2 \amp 2 \amp 3 \\
+6 \amp -1 \amp -2 \amp -3 \\
+1 \amp -1 \amp 0 \amp 0
+        \end{amatrix}
+      </me>
+      is <m>p(x)=t^{4} - 3 t^{3} + 3 t^{2} - 3 t + 2</m>.
+      <ol>
+        <li>
+          <p>
+            Find all eigenvalues of <m>A</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            For each eigenvalue <m>\lambda</m> compute a basis for the eigenspace <m>W_\lambda</m>. 
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <p>
+            To find the eigenvalues of <m>A</m> we must factor the polynomial <m>p(t)</m>. We first look for integer roots that divide the constant term <m>2</m>. We see that <m>p(1)=0</m>, and thus that <m>(t-1)</m> is a factor of <m>p(t)</m>. Using polynomial long division, we see that 
+            <me>p(t)=(t-1)(t^3 - 2t^2 + t - 2)</me>. Continuing this process with the cubic polynomial, we factor
+            <me>
+              t^3 - 2t^2 + t - 2=(t-2)(t^2+1)
+            </me>.
+            Since <m>t^2+1</m> is irreducible over <m>\R</m>, we have our factorization 
+            <me>
+              p(t)=(t-1)(t-2)(t^2+1)
+            </me>, 
+            and we see that the eigenvalues of <m>A</m> are <m>\lambda=1</m> and <m>\lambda=2</m>.  
+          </p>
+        </li>
+        <li>
+          <case>
+            <title>Basis of <m>W_1</m></title>
+            <p>
+            We have 
+            <md>
+              <mrow>W_1 \amp =\NS (I-A)</mrow>
+              <mrow> \amp = \NS \begin{amatrix}[rrrr]
+                -2 \amp 1 \amp 1 \amp 1 \\
+                5 \amp -1 \amp -2 \amp -3 \\
+                -6 \amp 1 \amp 3 \amp 3 \\
+                -1 \amp 1 \amp 0 \amp 1
+              \end{amatrix}
+              </mrow>
+              <mrow> \amp = \NS \begin{amatrix}[rrrr]
+                1 \amp -\frac{1}{2} \amp -\frac{1}{2} \amp -\frac{1}{2} \\
+  0 \amp 1 \amp \frac{1}{3} \amp -\frac{1}{3} \\
+  0 \amp 0 \amp 1 \amp -1 \\
+  0 \amp 0 \amp 0 \amp 0
+              \end{amatrix}
+              </mrow>
+              <mrow> \amp =\Span\{(1,0,1,1)\}</mrow>
+            </md>.
+            We conclude that <m>B=\{(1,0,1,1)\}</m> is a basis of <m>W_1</m>. 
+            </p>
+            </case>
+          <case>
+          <title>Basis of <m>W_2</m></title>
+          <p>
+          We have 
+          <md>
+            <mrow>W_1 \amp =\NS (2-A)</mrow>
+            <mrow> \amp = \NS \begin{amatrix}[rrrr]
+              -1 \amp 1 \amp 1 \amp 1 \\
+5 \amp 0 \amp -2 \amp -3 \\
+-6 \amp 1 \amp 4 \amp 3 \\
+-1 \amp 1 \amp 0 \amp 2
+            \end{amatrix}
+            </mrow>
+            <mrow> \amp = \NS \begin{amatrix}[rrrr]
+              1 \amp -1 \amp -1 \amp -1 \\
+0 \amp 1 \amp \frac{3}{5} \amp \frac{2}{5} \\
+0 \amp 0 \amp 1 \amp -1 \\
+0 \amp 0 \amp 0 \amp 0
+            \end{amatrix}
+            </mrow>
+            <mrow> \amp = \Span\{(1,-1,1,1)\}</mrow>
+          </md>.
+          We conclude that <m>B'=\{(1,-1,1,1)\}</m> is a basis of <m>W_2</m>. 
+          </p>
+          </case>
+        </li>
+      </ol>
+    </p>
   </solution>
 </example>
 <p>
