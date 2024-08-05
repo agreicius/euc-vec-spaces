@@ -8278,122 +8278,14 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.1",
   "title": "Inner product spaces",
-  "body": " Inner product spaces   An inner product is an additional layer of structure we can define on a vector space . It takes a pair of elements and returns a scalar . As with the vector addition and scalar multiplication, we define inner products axiomatically, taking as our model the dot product on and . Our definition ( ) simply promulgates a few important properties enjoyed by the dot product that may be familiar to you from studying calculus.  The addition of an inner product enriches the structure of a vector space considerably, and gives rise to a number of additional useful analytic tools. We highlight a few below.   Distance and angle  A notion of distance and angle between two vectors can be defined relative to a given inner product. These provide a numeric measurement of how close (distance) or closely oriented (angle) two vectors in our space are.    Orthogonality  Two vectors are orthogonal , relative to a given inner product, if . Orthogonality leads further to a general notion of orthogonal projection onto a subspace .    Orthogonal bases  An orthogonal basis of a vector space , relative to a given inner product, is one whose elements are pairwise orthogonal. As we will see there are many computational advantages of working with an orthogonal basis.       Inner products   Inner products of linear combinations   We will have many opportunities to expand out an inner product of two linear combinations of vectors. Using axioms (i) and (ii) in series, this process resembles the procedure for multiplying two polynomials. For example, we have . Note how in the last step we are able to group the cross terms , using the symmetry axiom.  More generally, given linear combinations , the same reasoning shows that . In particular, we have .    We now present a series of important examples of inner products defined on our various inner product spaces. Each is presented as a theorem, as we must prove that the proposed operation satisfies the axios of an inner product. The first example, the weighted dot product is itself a vast generalization of the familiar dot product operations defined on and .   Weighted dot product   Let . Let be any list of real numbers. Define an operation on as follows: given , let . This operation is an inner product if and only if for all .  We call this inner product a weighted dot product on , or more specifically, the dot product with weights . In the special case where for all we call this the (standard) dot product and write instead of .    First we show that axioms (i) and (ii) are satsified for any choice of . Let , the diagonal matrix whose -th diagonal entry is . Then for all we have . Here we treat as column vectors, and we treat the resulting matrix as a scalar. Axioms (i)-(ii) now follow from various matrix properties. For linearity, for example, we have . Symmetry requires a little more trickery: . Note that as is just a matrix.  Lastly, we show that axiom (iii) is satisfied if and only if for all . To this end consider the formula . If , then since for all , we have for any , and if and only if for all if and only if .  For the other direction suppose for some . Let , the -th element of the standard basis of . Then : a counterexample to the definiteness property of axiom (iii).     Euclidean -space  Weighted Euclidean space  (Weighted) Euclidean space   Fix a positive integer . Euclidean -space is the inner product space with underlying vector space and inner product given by the dot product. More generally, a weighted Eulidean space is an inner product space of the form , where is a weighted dot product.     Dot product on   Let . Then , and .     Weighted dot product   The dot product with weights on is defined as . Let and . We have , and .     Why the weights must be positive   Consider the operation on defined as where . This operation satisfies axioms (i) and (ii) of . (See proof of .) However, it fails both the positivity and definiteness properties of axiom (iii): .      It is worth highlighting the observation in the proof of that a dot product with weights can be expressed as a matrix product: , where is the diagonal matrix whose -th diagonal entry is . Here are treated as column vectors, and we identify the resulting matrix with a scalar.  In particular for the standard dot product this matrix formula reduces to . Conversely, the dot product gives another way to formulate general matrix multiplication. as the next theorem articulates.     Dot product and matrix multiplication     Given -tuples and , we have , where in the last equality and are treated as column vectors.    Let be an matrix, and let be a matrix. Let be the -th row of , and let be the -th column of . For all , we have , where and are considered as -tuples. In other words, the -th entry of is the dot product of the -th row of and the -th column of .        See and the proof of .    Let and . Then , since and .    Next we introduce an important family of inner products defined on polynomials spaces called evaluation inner products . These are useful when we wish to compare polynomials by how they behave at a specified list of inputs.   Evaluation inner products on   Let , and let be any list of distinct real numbers. For any define . This defines an inner product on called an evaluation inner product , or more precisely, evaluation at the inputs .    That axioms (i)-(ii) are satisfied is left as an exercise. For axiom (iii), note that , and we have equality if and only if . Since a nonzero polynomial of degree or less has at most  distinct roots, we conclude that , the zero polynomial.     Evaluation at   Let , and let be the evaluation at inner product. Compute and     Let , . We have and .    Our last example defines an integral inner product on the space of continuous functions on an interval . This inner product plays an important role in Fourier analysis, which studies the approximation of arbibitrary continuous functions with linear combinations of certain trigonometric funtions.   Integral inner product   Fix an interval , and let , the space of all continuous functions on . For any define . This defines an inner product on called the integral inner product .    First observe that the integral defining the inner product always exists since the product is a continuous function on the closed interval .  Axioms (i)-(ii) follow directly from the definition and various properties of the integral. This is left as an exercise. As for (iii), we have , since for all . (This is a property of integration.) Furthermore, since is continuous and , we have if and only if for all (a property of integrals of continuous functions) if and only if for all if and only if , the zero function.     Integral inner product   Let , equipped with integral inner product. Let , . Compute and .    We have and .      Norm and distance  As mentioned above, once an inner product is established, we can define further notions like norm (or length), distance, and angle in terms of the given inner product. When the inner product in question is the standard dot product on or , then these are precisely the familiar notions you may have met in multivariable calculus. Things get really interesting when we treat a more exotic inner product space. For example, consider : the integral inner product on ( ) gives rise to useful notions of the length of a function , as well as the distance or angle between two functions .   Norm (or length) of a vector  norm of a vector    norm of    Let be an inner product space. Given we define its norm (or length ), denoted as . A unit vector is a vector of length one: , a vector satisfying .     Norm with respect to dot product   Consider with the standard dot product. Compute .    We have .     Norm with respect to weighted dot product   Consider equipped with the dot product with weights . Compute .    We have .     Norm with respect to integral inner product   Consider equipped with the integral inner product. Compute , where     We have .     Unit vectors   Given any , the vector is a unit vector. To verify this, let and compute .     Unit vectors   For each inner product space and compute the associated unit vector     with dot product,      with dot product with weights ,      with integral inner product,        The norms of the vectors in each case were computed in . We simply scale to compute the corresponding unit vectors.                     Next, we define the distance between two vectors in an inner product space as the length of their vector difference.   distance between two vectors    the distance between and   Distance between vectors   Let be an inner product space. The distance between , denoted , is defined as .      For each inner product space , compute the distance between the given vectors.     with the dot product, ,      with the evaluation at inner product, ,      with the integral inner product, ,         We have .    We have     We have        Basic properties of norm and distance   Let be an inner product space.    For all we have , and equality holds if and only if .    For all and we have .    For all we have , and equality holds if and only if .      We prove (2) and leave the rest as an exercise ( ).  Given and we have .      Cauchy-Schwarz inequality, triangle inequalities, and angles between vectors  The famous Cauchy-Schwarz inequality has a knack of cropping up all over the world of science: from properties of covariance in statistics, to the Heisenberg uncertainty principle of quantum mechanics. More directly pertinent to our discussion, the Cauchy-Schwarz inequality implies the triangle inequalities ( ) and ensures that our notion of the angle between two nonzero vectors ( ) is well-defined.   Cauchy-Schwarz inequality   Let be an inner product space. For all we have , and equality holds if and only if for some .     Fix vectors and . For any we have by positivity , where . Since for all the quadratic polynomial has at most one root. Using the quadratic formula we conclude that we must have , since otherwise would have two distinct roots. It follows that , or equivalently . Taking square-roots yields the desired inequality.  The same reasoning shows that the Cauchy-Schwarz inequality is an actual equality if and only if for some if and only if if and only if for some (by positivity).   The following triangle inequalities are more or less direct consequences of the Cauchy-Schwarz inequality.   Triangle Inequalities   Let be an inner product space.   For all we have .    For all we have        This is an elementary exercise of unpacking the definitions of norm and distance in terms of the inner product, and then applying the Cauchy-Schwarz inequality appropriately. The proof is left as an exercise.    Let be an inner product space. For any nonzero vectors , the Cauchy-Schwarz inequality tells us that , or equivalently, . It follows that there is a unique real number satisfying . We call the angle between and .   Angle between vectors  angle between vectors   Let be an inner product space. Given nonzero vectors , the angle between and is defined to be the unique satisfying . Equivalently, we have .      Our definition of the angle between two vectors may remind you of the dot product angle formula for vectors in : . Interestingly, whereas is typically treated as a theorem , derived from properties of the dot product and the law of cosines, in a general inner product space the equation is understood as the definition of the angle between two vectors.      Consider along with the dot product. Verify that our definition of the angle between and is consistent with our planar geometry notion of angle.    According to , is the unique element of satisfying . We recognize as the familiar angle , as expected.      Consider with the weighted dot product Compute the angle between and with respect to this inner product    First compute By definition is the unique value in satisfying . We see that is not one of our familiar angles from the unit circle ( , , ) and so express in terms of the function: .      Consider with the integral inner product. Compute the angle between and with respect to this inner product.    First compute It follows that , and hence that .      Choosing your inner product  Why, given a fixed vector space , would we prefer one inner product definition to another? One way of understanding a particular choice of inner product is to ask what its corresponding notion of distance measures.   Weighted dot product distance   Consider with a choice of weighted dot product where are fixed positive constants. With respect to this inner product the distance between two vectors and is . Thus is an aggregate measure of the difference between the corresponding entries of and , as weighted by our choice of the constants .  Imagine that each element of is a data point collected by measuring different properties of a sample : , is the measured value of property on for all . Given samples and with corresponding measurement vectors and , the weighted distance is then a quantitative way of saying how close the two samples are to one another. The choice of weights allows us to adjust the relative influence of a given property in determining this closeness. For example, the standard dot product ( for all ) yields a notion of distance that gives each property equal standing.     Evaluation inner product distance   Consider with the evaluation inner product at a fixed choice of inputs . Given two polynomials , the distance between them with respect to this inner product is . We see that with respect to this inner product, the distance between two polynomials is a measure of how much their values at the inputs differ. This inner product may be useful if you are interested in how a polynomial behaves at this finite list of inputs.     Integral inner product and distance   Take with the standard inner product . Here the distance between two functions is defined as , which we can think of as an aggregate measure of the difference of values for all . Thus is a global measure of the similarity between and that takes into account their values over the entire interval .       WeBWork Exercises    Find the norm of and the unit vector in the direction of if   ,                Find the angle between the vectors   .              If and are arbitrary polynomials of degree at most 2, then the mapping defines an inner product in . Use this inner product to find , , , and the angle between and for   ,   ,   ,   .                             If and are arbitrary real matrices, then the mapping defines an inner product in . Use this inner product to find , the norms and , and the angle between and for   ,   ,   ,   .                             Use the inner product in the vector space of continuous functions on the domain to find , , , and the angle between and for   ,   ,   ,   .                             For each of the following operations on , determine whether it defines an inner product on . If it fails to be an inner product, identify which of the three inner product axioms (if any) it does satisfy, and provide explicit counterexamples for any axiom that fails.     .     .     .     The operation in (b) is an inner product. Use that fact that , where we treat as column vectors. This helps to prove axioms (i)-(ii). For axiom (iii), use either a complete the square or quadratic formula argument on the expression .    We work within the inner product space given by together with the evaluation at 0, 1, 2 inner product.  Let . Give a parametric description of the set .    We work in the inner product space given by together with the integral inner product.   Let . Compute and .    Show that if is an odd function (i.e., for all ) and is an even function ( for all ), then . Hint : use the area interpretation of the integral and properties of even\/odd functions.        Compute the angle between the given vectors with respect to the given inner product. The exercises are designed to be done by hand: , do not express your answer in terms of .    with the standard dot product;      with the dot product with weights ;      with the integral inner product;      with evaluation at inner product;      Let be an inner product space. Prove that for all .    Let and be nonzero vectors of the inner product space , and let be the angle between them. Prove the following equivalence: . Your proof should be a chain of equivalences with each step justified.   The equality is true if and only if it is true after squaring both sides. (Why?) Use the definition and expand the inner product.    Let be an inner product space. Suppose vectors satisfy and . Using the Cauchy-Schwarz inequality ( ) find the maximum and minimum possible values of , and give explicit examples where those values occur.    Prove statements (1) and (3) of .    Prove each inequality below using the Cauchy-Schwarz inequality ( ) applied to a judicious choice of inner product space, and possibly a judicious choice of vector in said inner product space.   For all  .    For all , .    For all  .      Isometries of inner product spaces  Let be an inner product space. An isometry of is a function that preserves distance: i.e., . In this exercise we will show that any isometry that maps to is a linear transformation. This is a very useful fact. For example, it implies the linearity of many geometric transformations we have considered: rotation about the origin in , reflection through a line in , .  In what follows assume that is an isometry of satisfying .    Prove that : i.e., preserves norms.    Prove : i.e., preserves inner products. Hint: first prove that .    To prove is linear it is enough to show for all , . To do so, use the above parts to show that .      "
-},
-{
-  "id": "rm_innerproduct_algebra",
-  "level": "2",
-  "url": "s_innerproducts.html#rm_innerproduct_algebra",
-  "type": "Remark",
-  "number": "7.1.1",
-  "title": "Inner products of linear combinations.",
-  "body": " Inner products of linear combinations   We will have many opportunities to expand out an inner product of two linear combinations of vectors. Using axioms (i) and (ii) in series, this process resembles the procedure for multiplying two polynomials. For example, we have . Note how in the last step we are able to group the cross terms , using the symmetry axiom.  More generally, given linear combinations , the same reasoning shows that . In particular, we have .   "
-},
-{
-  "id": "th_weighted_dotproduct",
-  "level": "2",
-  "url": "s_innerproducts.html#th_weighted_dotproduct",
-  "type": "Theorem",
-  "number": "7.1.2",
-  "title": "Weighted dot product.",
-  "body": " Weighted dot product   Let . Let be any list of real numbers. Define an operation on as follows: given , let . This operation is an inner product if and only if for all .  We call this inner product a weighted dot product on , or more specifically, the dot product with weights . In the special case where for all we call this the (standard) dot product and write instead of .    First we show that axioms (i) and (ii) are satsified for any choice of . Let , the diagonal matrix whose -th diagonal entry is . Then for all we have . Here we treat as column vectors, and we treat the resulting matrix as a scalar. Axioms (i)-(ii) now follow from various matrix properties. For linearity, for example, we have . Symmetry requires a little more trickery: . Note that as is just a matrix.  Lastly, we show that axiom (iii) is satisfied if and only if for all . To this end consider the formula . If , then since for all , we have for any , and if and only if for all if and only if .  For the other direction suppose for some . Let , the -th element of the standard basis of . Then : a counterexample to the definiteness property of axiom (iii).   "
-},
-{
-  "id": "d_euclidean_space",
-  "level": "2",
-  "url": "s_innerproducts.html#d_euclidean_space",
-  "type": "Definition",
-  "number": "7.1.3",
-  "title": "(Weighted) Euclidean space.",
-  "body": " Euclidean -space  Weighted Euclidean space  (Weighted) Euclidean space   Fix a positive integer . Euclidean -space is the inner product space with underlying vector space and inner product given by the dot product. More generally, a weighted Eulidean space is an inner product space of the form , where is a weighted dot product.   "
-},
-{
-  "id": "ss_inner_products-6",
-  "level": "2",
-  "url": "s_innerproducts.html#ss_inner_products-6",
-  "type": "Example",
-  "number": "7.1.4",
-  "title": "Dot product on <span class=\"process-math\">\\(\\R^4\\)<\/span>.",
-  "body": " Dot product on   Let . Then , and .   "
-},
-{
-  "id": "ss_inner_products-7",
-  "level": "2",
-  "url": "s_innerproducts.html#ss_inner_products-7",
-  "type": "Example",
-  "number": "7.1.5",
-  "title": "Weighted dot product.",
-  "body": " Weighted dot product   The dot product with weights on is defined as . Let and . We have , and .   "
-},
-{
-  "id": "ss_inner_products-8",
-  "level": "2",
-  "url": "s_innerproducts.html#ss_inner_products-8",
-  "type": "Example",
-  "number": "7.1.6",
-  "title": "Why the weights must be positive.",
-  "body": " Why the weights must be positive   Consider the operation on defined as where . This operation satisfies axioms (i) and (ii) of . (See proof of .) However, it fails both the positivity and definiteness properties of axiom (iii): .   "
-},
-{
-  "id": "rm_dotproduct",
-  "level": "2",
-  "url": "s_innerproducts.html#rm_dotproduct",
-  "type": "Remark",
-  "number": "7.1.7",
-  "title": "",
-  "body": "  It is worth highlighting the observation in the proof of that a dot product with weights can be expressed as a matrix product: , where is the diagonal matrix whose -th diagonal entry is . Here are treated as column vectors, and we identify the resulting matrix with a scalar.  In particular for the standard dot product this matrix formula reduces to . Conversely, the dot product gives another way to formulate general matrix multiplication. as the next theorem articulates.   "
-},
-{
-  "id": "th_dotproduct_method",
-  "level": "2",
-  "url": "s_innerproducts.html#th_dotproduct_method",
-  "type": "Theorem",
-  "number": "7.1.8",
-  "title": "Dot product and matrix multiplication.",
-  "body": " Dot product and matrix multiplication     Given -tuples and , we have , where in the last equality and are treated as column vectors.    Let be an matrix, and let be a matrix. Let be the -th row of , and let be the -th column of . For all , we have , where and are considered as -tuples. In other words, the -th entry of is the dot product of the -th row of and the -th column of .        See and the proof of .    Let and . Then , since and .   "
-},
-{
-  "id": "th_evaluation_innerproduct",
-  "level": "2",
-  "url": "s_innerproducts.html#th_evaluation_innerproduct",
-  "type": "Theorem",
-  "number": "7.1.9",
-  "title": "Evaluation inner products on <span class=\"process-math\">\\(P_n\\)<\/span>.",
-  "body": " Evaluation inner products on   Let , and let be any list of distinct real numbers. For any define . This defines an inner product on called an evaluation inner product , or more precisely, evaluation at the inputs .    That axioms (i)-(ii) are satisfied is left as an exercise. For axiom (iii), note that , and we have equality if and only if . Since a nonzero polynomial of degree or less has at most  distinct roots, we conclude that , the zero polynomial.   "
-},
-{
-  "id": "ss_inner_products-13",
-  "level": "2",
-  "url": "s_innerproducts.html#ss_inner_products-13",
-  "type": "Example",
-  "number": "7.1.10",
-  "title": "Evaluation at <span class=\"process-math\">\\(-1, 0, 1\\)<\/span>.",
-  "body": " Evaluation at   Let , and let be the evaluation at inner product. Compute and     Let , . We have and .   "
-},
-{
-  "id": "th_integral_innerproduct",
-  "level": "2",
-  "url": "s_innerproducts.html#th_integral_innerproduct",
-  "type": "Theorem",
-  "number": "7.1.11",
-  "title": "Integral inner product.",
-  "body": " Integral inner product   Fix an interval , and let , the space of all continuous functions on . For any define . This defines an inner product on called the integral inner product .    First observe that the integral defining the inner product always exists since the product is a continuous function on the closed interval .  Axioms (i)-(ii) follow directly from the definition and various properties of the integral. This is left as an exercise. As for (iii), we have , since for all . (This is a property of integration.) Furthermore, since is continuous and , we have if and only if for all (a property of integrals of continuous functions) if and only if for all if and only if , the zero function.   "
-},
-{
-  "id": "ss_inner_products-16",
-  "level": "2",
-  "url": "s_innerproducts.html#ss_inner_products-16",
-  "type": "Example",
-  "number": "7.1.12",
-  "title": "Integral inner product.",
-  "body": " Integral inner product   Let , equipped with integral inner product. Let , . Compute and .    We have and .   "
+  "body": " Inner product spaces   At last we return to that additional layer that can added atop a vector space structure: the inner product .    Norm and distance  As mentioned above, once an inner product is established, we can define further notions like norm (or length), distance, and angle in terms of the given inner product. When the inner product in question is the standard dot product on or , then these are precisely the familiar notions you may have met in multivariable calculus. Things get really interesting when we treat a more exotic inner product space. For example, consider : the integral inner product on ( ) gives rise to useful notions of the length of a function , as well as the distance or angle between two functions .   Norm (or length) of a vector  norm of a vector    norm of    Let be an inner product space. Given we define its norm (or length ), denoted as . A unit vector is a vector of length one: , a vector satisfying .     Norm with respect to dot product   Consider with the standard dot product. Compute .    We have .     Norm with respect to weighted dot product   Consider equipped with the dot product with weights . Compute .    We have .      Unit vectors   Given any , the vector is a unit vector. To verify this, let and compute .     Unit vectors   For each inner product space and compute the associated unit vector     with dot product,      with dot product with weights ,         The norms of the vectors in each case were computed in earlier examples. We simply scale to compute the corresponding unit vectors.             Next, we define the distance between two vectors in an inner product space as the length of their vector difference.   distance between two vectors    the distance between and   Distance between vectors   Let be an inner product space. The distance between , denoted , is defined as .      For each inner product space , compute the distance between the given vectors.     with the dot product, ,          We have .        Basic properties of norm and distance   Let be an inner product space.    For all we have , and equality holds if and only if .    For all and we have .    For all we have , and equality holds if and only if .      We prove (2) and leave the rest as an exercise ( ).  Given and we have .      Cauchy-Schwarz inequality, triangle inequalities, and angles between vectors  The famous Cauchy-Schwarz inequality has a knack of cropping up all over the world of science: from properties of covariance in statistics, to the Heisenberg uncertainty principle of quantum mechanics. More directly pertinent to our discussion, the Cauchy-Schwarz inequality implies the triangle inequalities ( ) and ensures that our notion of the angle between two nonzero vectors ( ) is well-defined.   Cauchy-Schwarz inequality   Let be an inner product space. For all we have , and equality holds if and only if for some .     Fix vectors and . For any we have by positivity , where . Since for all the quadratic polynomial has at most one root. Using the quadratic formula we conclude that we must have , since otherwise would have two distinct roots. It follows that , or equivalently . Taking square-roots yields the desired inequality.  The same reasoning shows that the Cauchy-Schwarz inequality is an actual equality if and only if for some if and only if if and only if for some (by positivity).   The following triangle inequalities are more or less direct consequences of the Cauchy-Schwarz inequality.   Triangle Inequalities   Let be an inner product space.   For all we have .    For all we have        This is an elementary exercise of unpacking the definitions of norm and distance in terms of the inner product, and then applying the Cauchy-Schwarz inequality appropriately. The proof is left as an exercise.    Let be an inner product space. For any nonzero vectors , the Cauchy-Schwarz inequality tells us that , or equivalently, . It follows that there is a unique real number satisfying . We call the angle between and .   Angle between vectors  angle between vectors   Let be an inner product space. Given nonzero vectors , the angle between and is defined to be the unique satisfying . Equivalently, we have .      Our definition of the angle between two vectors may remind you of the dot product angle formula for vectors in : . Interestingly, whereas is typically treated as a theorem , derived from properties of the dot product and the law of cosines, in a general inner product space the equation is understood as the definition of the angle between two vectors.      Consider along with the dot product. Verify that our definition of the angle between and is consistent with our planar geometry notion of angle.    According to , is the unique element of satisfying . We recognize as the familiar angle , as expected.      Consider with the weighted dot product Compute the angle between and with respect to this inner product    First compute By definition is the unique value in satisfying . We see that is not one of our familiar angles from the unit circle ( , , ) and so express in terms of the function: .      Consider with the integral inner product. Compute the angle between and with respect to this inner product.    First compute It follows that , and hence that .      Choosing your inner product  Why, given a fixed vector space , would we prefer one inner product definition to another? One way of understanding a particular choice of inner product is to ask what its corresponding notion of distance measures.   Weighted dot product distance   Consider with a choice of weighted dot product where are fixed positive constants. With respect to this inner product the distance between two vectors and is . Thus is an aggregate measure of the difference between the corresponding entries of and , as weighted by our choice of the constants .  Imagine that each element of is a data point collected by measuring different properties of a sample : , is the measured value of property on for all . Given samples and with corresponding measurement vectors and , the weighted distance is then a quantitative way of saying how close the two samples are to one another. The choice of weights allows us to adjust the relative influence of a given property in determining this closeness. For example, the standard dot product ( for all ) yields a notion of distance that gives each property equal standing.     Evaluation inner product distance   Consider with the evaluation inner product at a fixed choice of inputs . Given two polynomials , the distance between them with respect to this inner product is . We see that with respect to this inner product, the distance between two polynomials is a measure of how much their values at the inputs differ. This inner product may be useful if you are interested in how a polynomial behaves at this finite list of inputs.     Integral inner product and distance   Take with the standard inner product . Here the distance between two functions is defined as , which we can think of as an aggregate measure of the difference of values for all . Thus is a global measure of the similarity between and that takes into account their values over the entire interval .       WeBWork Exercises    Find the norm of and the unit vector in the direction of if   ,                Find the angle between the vectors   .              If and are arbitrary polynomials of degree at most 2, then the mapping defines an inner product in . Use this inner product to find , , , and the angle between and for   ,   ,   ,   .                             If and are arbitrary real matrices, then the mapping defines an inner product in . Use this inner product to find , the norms and , and the angle between and for   ,   ,   ,   .                             Use the inner product in the vector space of continuous functions on the domain to find , , , and the angle between and for   ,   ,   ,   .                             For each of the following operations on , determine whether it defines an inner product on . If it fails to be an inner product, identify which of the three inner product axioms (if any) it does satisfy, and provide explicit counterexamples for any axiom that fails.     .     .     .     The operation in (b) is an inner product. Use that fact that , where we treat as column vectors. This helps to prove axioms (i)-(ii). For axiom (iii), use either a complete the square or quadratic formula argument on the expression .    We work within the inner product space given by together with the evaluation at 0, 1, 2 inner product.  Let . Give a parametric description of the set .    We work in the inner product space given by together with the integral inner product.   Let . Compute and .    Show that if is an odd function (i.e., for all ) and is an even function ( for all ), then . Hint : use the area interpretation of the integral and properties of even\/odd functions.        Compute the angle between the given vectors with respect to the given inner product. The exercises are designed to be done by hand: , do not express your answer in terms of .    with the standard dot product;      with the dot product with weights ;      with the integral inner product;      with evaluation at inner product;      Let be an inner product space. Prove that for all .    Let and be nonzero vectors of the inner product space , and let be the angle between them. Prove the following equivalence: . Your proof should be a chain of equivalences with each step justified.   The equality is true if and only if it is true after squaring both sides. (Why?) Use the definition and expand the inner product.    Let be an inner product space. Suppose vectors satisfy and . Using the Cauchy-Schwarz inequality ( ) find the maximum and minimum possible values of , and give explicit examples where those values occur.    Prove statements (1) and (3) of .    Prove each inequality below using the Cauchy-Schwarz inequality ( ) applied to a judicious choice of inner product space, and possibly a judicious choice of vector in said inner product space.   For all  .    For all , .    For all  .      Isometries of inner product spaces  Let be an inner product space. An isometry of is a function that preserves distance: i.e., . In this exercise we will show that any isometry that maps to is a linear transformation. This is a very useful fact. For example, it implies the linearity of many geometric transformations we have considered: rotation about the origin in , reflection through a line in , .  In what follows assume that is an isometry of satisfying .    Prove that : i.e., preserves norms.    Prove : i.e., preserves inner products. Hint: first prove that .    To prove is linear it is enough to show for all , . To do so, use the above parts to show that .      "
 },
 {
   "id": "d_norm",
   "level": "2",
   "url": "s_innerproducts.html#d_norm",
   "type": "Definition",
-  "number": "7.1.13",
+  "number": "7.1.1",
   "title": "Norm (or length) of a vector.",
   "body": " Norm (or length) of a vector  norm of a vector    norm of    Let be an inner product space. Given we define its norm (or length ), denoted as . A unit vector is a vector of length one: , a vector satisfying .   "
 },
@@ -8402,7 +8294,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#eg_norm_dot",
   "type": "Example",
-  "number": "7.1.14",
+  "number": "7.1.2",
   "title": "Norm with respect to dot product.",
   "body": " Norm with respect to dot product   Consider with the standard dot product. Compute .    We have .   "
 },
@@ -8411,25 +8303,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#eg_norm_weighteddot",
   "type": "Example",
-  "number": "7.1.15",
+  "number": "7.1.3",
   "title": "Norm with respect to weighted dot product.",
   "body": " Norm with respect to weighted dot product   Consider equipped with the dot product with weights . Compute .    We have .   "
-},
-{
-  "id": "eg_norm_integral",
-  "level": "2",
-  "url": "s_innerproducts.html#eg_norm_integral",
-  "type": "Example",
-  "number": "7.1.16",
-  "title": "Norm with respect to integral inner product.",
-  "body": " Norm with respect to integral inner product   Consider equipped with the integral inner product. Compute , where     We have .   "
 },
 {
   "id": "rm_unit_vectors",
   "level": "2",
   "url": "s_innerproducts.html#rm_unit_vectors",
   "type": "Remark",
-  "number": "7.1.17",
+  "number": "7.1.4",
   "title": "Unit vectors.",
   "body": " Unit vectors   Given any , the vector is a unit vector. To verify this, let and compute .   "
 },
@@ -8438,16 +8321,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#eg_unit_vectors",
   "type": "Example",
-  "number": "7.1.18",
+  "number": "7.1.5",
   "title": "Unit vectors.",
-  "body": " Unit vectors   For each inner product space and compute the associated unit vector     with dot product,      with dot product with weights ,      with integral inner product,        The norms of the vectors in each case were computed in . We simply scale to compute the corresponding unit vectors.                    "
+  "body": " Unit vectors   For each inner product space and compute the associated unit vector     with dot product,      with dot product with weights ,         The norms of the vectors in each case were computed in earlier examples. We simply scale to compute the corresponding unit vectors.            "
 },
 {
   "id": "d_distance",
   "level": "2",
   "url": "s_innerproducts.html#d_distance",
   "type": "Definition",
-  "number": "7.1.19",
+  "number": "7.1.6",
   "title": "Distance between vectors.",
   "body": " distance between two vectors    the distance between and   Distance between vectors   Let be an inner product space. The distance between , denoted , is defined as .   "
 },
@@ -8456,16 +8339,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#eg_distance",
   "type": "Example",
-  "number": "7.1.20",
+  "number": "7.1.7",
   "title": "",
-  "body": "  For each inner product space , compute the distance between the given vectors.     with the dot product, ,      with the evaluation at inner product, ,      with the integral inner product, ,         We have .    We have     We have      "
+  "body": "  For each inner product space , compute the distance between the given vectors.     with the dot product, ,          We have .      "
 },
 {
   "id": "th_norm_basic_props",
   "level": "2",
   "url": "s_innerproducts.html#th_norm_basic_props",
   "type": "Theorem",
-  "number": "7.1.21",
+  "number": "7.1.8",
   "title": "Basic properties of norm and distance.",
   "body": " Basic properties of norm and distance   Let be an inner product space.    For all we have , and equality holds if and only if .    For all and we have .    For all we have , and equality holds if and only if .      We prove (2) and leave the rest as an exercise ( ).  Given and we have .   "
 },
@@ -8474,16 +8357,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#th_Cauchy-Schwarz",
   "type": "Theorem",
-  "number": "7.1.22",
+  "number": "7.1.9",
   "title": "Cauchy-Schwarz inequality.",
   "body": " Cauchy-Schwarz inequality   Let be an inner product space. For all we have , and equality holds if and only if for some .   "
 },
 {
-  "id": "s_innerproducts-5-4",
+  "id": "s_innerproducts-4-4",
   "level": "2",
-  "url": "s_innerproducts.html#s_innerproducts-5-4",
+  "url": "s_innerproducts.html#s_innerproducts-4-4",
   "type": "Proof",
-  "number": "7.1.3.1",
+  "number": "7.1.2.1",
   "title": "",
   "body": " Fix vectors and . For any we have by positivity , where . Since for all the quadratic polynomial has at most one root. Using the quadratic formula we conclude that we must have , since otherwise would have two distinct roots. It follows that , or equivalently . Taking square-roots yields the desired inequality.  The same reasoning shows that the Cauchy-Schwarz inequality is an actual equality if and only if for some if and only if if and only if for some (by positivity).  "
 },
@@ -8492,7 +8375,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#th_triangle_inequalities",
   "type": "Theorem",
-  "number": "7.1.23",
+  "number": "7.1.10",
   "title": "Triangle Inequalities.",
   "body": " Triangle Inequalities   Let be an inner product space.   For all we have .    For all we have        This is an elementary exercise of unpacking the definitions of norm and distance in terms of the inner product, and then applying the Cauchy-Schwarz inequality appropriately. The proof is left as an exercise.   "
 },
@@ -8501,7 +8384,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#d_angle",
   "type": "Definition",
-  "number": "7.1.24",
+  "number": "7.1.11",
   "title": "Angle between vectors.",
   "body": " Angle between vectors  angle between vectors   Let be an inner product space. Given nonzero vectors , the angle between and is defined to be the unique satisfying . Equivalently, we have .   "
 },
@@ -8510,7 +8393,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#rm_general_angles",
   "type": "Remark",
-  "number": "7.1.25",
+  "number": "7.1.12",
   "title": "",
   "body": "  Our definition of the angle between two vectors may remind you of the dot product angle formula for vectors in : . Interestingly, whereas is typically treated as a theorem , derived from properties of the dot product and the law of cosines, in a general inner product space the equation is understood as the definition of the angle between two vectors.   "
 },
@@ -8519,7 +8402,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#eg_angle_dotproduct",
   "type": "Example",
-  "number": "7.1.26",
+  "number": "7.1.13",
   "title": "",
   "body": "  Consider along with the dot product. Verify that our definition of the angle between and is consistent with our planar geometry notion of angle.    According to , is the unique element of satisfying . We recognize as the familiar angle , as expected.   "
 },
@@ -8528,7 +8411,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#eg_angle_weighted",
   "type": "Example",
-  "number": "7.1.27",
+  "number": "7.1.14",
   "title": "",
   "body": "  Consider with the weighted dot product Compute the angle between and with respect to this inner product    First compute By definition is the unique value in satisfying . We see that is not one of our familiar angles from the unit circle ( , , ) and so express in terms of the function: .   "
 },
@@ -8537,7 +8420,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#eg_angle_function",
   "type": "Example",
-  "number": "7.1.28",
+  "number": "7.1.15",
   "title": "",
   "body": "  Consider with the integral inner product. Compute the angle between and with respect to this inner product.    First compute It follows that , and hence that .   "
 },
@@ -8546,7 +8429,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#eg_why_weightedproduct",
   "type": "Example",
-  "number": "7.1.29",
+  "number": "7.1.16",
   "title": "Weighted dot product distance.",
   "body": " Weighted dot product distance   Consider with a choice of weighted dot product where are fixed positive constants. With respect to this inner product the distance between two vectors and is . Thus is an aggregate measure of the difference between the corresponding entries of and , as weighted by our choice of the constants .  Imagine that each element of is a data point collected by measuring different properties of a sample : , is the measured value of property on for all . Given samples and with corresponding measurement vectors and , the weighted distance is then a quantitative way of saying how close the two samples are to one another. The choice of weights allows us to adjust the relative influence of a given property in determining this closeness. For example, the standard dot product ( for all ) yields a notion of distance that gives each property equal standing.   "
 },
@@ -8555,7 +8438,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#eg_why_evaluationinner",
   "type": "Example",
-  "number": "7.1.30",
+  "number": "7.1.17",
   "title": "Evaluation inner product distance.",
   "body": " Evaluation inner product distance   Consider with the evaluation inner product at a fixed choice of inputs . Given two polynomials , the distance between them with respect to this inner product is . We see that with respect to this inner product, the distance between two polynomials is a measure of how much their values at the inputs differ. This inner product may be useful if you are interested in how a polynomial behaves at this finite list of inputs.   "
 },
@@ -8564,7 +8447,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#eg_why_integralinner",
   "type": "Example",
-  "number": "7.1.31",
+  "number": "7.1.18",
   "title": "Integral inner product and distance.",
   "body": " Integral inner product and distance   Take with the standard inner product . Here the distance between two functions is defined as , which we can think of as an aggregate measure of the difference of values for all . Thus is a global measure of the similarity between and that takes into account their values over the entire interval .   "
 },
@@ -8573,7 +8456,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#s_innerproducts_ex-1-2",
   "type": "Exercise",
-  "number": "7.1.5.1",
+  "number": "7.1.4.1",
   "title": "",
   "body": "  Find the norm of and the unit vector in the direction of if   ,             "
 },
@@ -8582,7 +8465,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#s_innerproducts_ex-1-3",
   "type": "Exercise",
-  "number": "7.1.5.2",
+  "number": "7.1.4.2",
   "title": "",
   "body": "  Find the angle between the vectors   .           "
 },
@@ -8591,7 +8474,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#s_innerproducts_ex-1-4",
   "type": "Exercise",
-  "number": "7.1.5.3",
+  "number": "7.1.4.3",
   "title": "",
   "body": "  If and are arbitrary polynomials of degree at most 2, then the mapping defines an inner product in . Use this inner product to find , , , and the angle between and for   ,   ,   ,   .                          "
 },
@@ -8600,7 +8483,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#s_innerproducts_ex-1-5",
   "type": "Exercise",
-  "number": "7.1.5.4",
+  "number": "7.1.4.4",
   "title": "",
   "body": "  If and are arbitrary real matrices, then the mapping defines an inner product in . Use this inner product to find , the norms and , and the angle between and for   ,   ,   ,   .                          "
 },
@@ -8609,7 +8492,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#s_innerproducts_ex-1-6",
   "type": "Exercise",
-  "number": "7.1.5.5",
+  "number": "7.1.4.5",
   "title": "",
   "body": "  Use the inner product in the vector space of continuous functions on the domain to find , , , and the angle between and for   ,   ,   ,   .                          "
 },
@@ -8618,7 +8501,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#s_innerproducts_ex-2",
   "type": "Exercise",
-  "number": "7.1.5.6",
+  "number": "7.1.4.6",
   "title": "",
   "body": " For each of the following operations on , determine whether it defines an inner product on . If it fails to be an inner product, identify which of the three inner product axioms (if any) it does satisfy, and provide explicit counterexamples for any axiom that fails.     .     .     .     The operation in (b) is an inner product. Use that fact that , where we treat as column vectors. This helps to prove axioms (i)-(ii). For axiom (iii), use either a complete the square or quadratic formula argument on the expression .  "
 },
@@ -8627,7 +8510,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#s_innerproducts_ex-3",
   "type": "Exercise",
-  "number": "7.1.5.7",
+  "number": "7.1.4.7",
   "title": "",
   "body": " We work within the inner product space given by together with the evaluation at 0, 1, 2 inner product.  Let . Give a parametric description of the set .  "
 },
@@ -8636,7 +8519,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#s_innerproducts_ex-4",
   "type": "Exercise",
-  "number": "7.1.5.8",
+  "number": "7.1.4.8",
   "title": "",
   "body": " We work in the inner product space given by together with the integral inner product.   Let . Compute and .    Show that if is an odd function (i.e., for all ) and is an even function ( for all ), then . Hint : use the area interpretation of the integral and properties of even\/odd functions.     "
 },
@@ -8645,7 +8528,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#s_innerproducts_ex-5-3",
   "type": "Exercise",
-  "number": "7.1.5.9",
+  "number": "7.1.4.9",
   "title": "",
   "body": "  with the standard dot product;   "
 },
@@ -8654,7 +8537,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#s_innerproducts_ex-5-4",
   "type": "Exercise",
-  "number": "7.1.5.10",
+  "number": "7.1.4.10",
   "title": "",
   "body": "  with the dot product with weights ;   "
 },
@@ -8663,7 +8546,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#s_innerproducts_ex-5-5",
   "type": "Exercise",
-  "number": "7.1.5.11",
+  "number": "7.1.4.11",
   "title": "",
   "body": "  with the integral inner product;   "
 },
@@ -8672,7 +8555,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#s_innerproducts_ex-5-6",
   "type": "Exercise",
-  "number": "7.1.5.12",
+  "number": "7.1.4.12",
   "title": "",
   "body": "  with evaluation at inner product;   "
 },
@@ -8681,7 +8564,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#s_innerproducts_ex-6",
   "type": "Exercise",
-  "number": "7.1.5.13",
+  "number": "7.1.4.13",
   "title": "",
   "body": " Let be an inner product space. Prove that for all .  "
 },
@@ -8690,7 +8573,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#s_innerproducts_ex-7",
   "type": "Exercise",
-  "number": "7.1.5.14",
+  "number": "7.1.4.14",
   "title": "",
   "body": " Let and be nonzero vectors of the inner product space , and let be the angle between them. Prove the following equivalence: . Your proof should be a chain of equivalences with each step justified.   The equality is true if and only if it is true after squaring both sides. (Why?) Use the definition and expand the inner product.  "
 },
@@ -8699,7 +8582,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#s_innerproducts_ex-8",
   "type": "Exercise",
-  "number": "7.1.5.15",
+  "number": "7.1.4.15",
   "title": "",
   "body": " Let be an inner product space. Suppose vectors satisfy and . Using the Cauchy-Schwarz inequality ( ) find the maximum and minimum possible values of , and give explicit examples where those values occur.  "
 },
@@ -8708,7 +8591,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#ex_norm_props",
   "type": "Exercise",
-  "number": "7.1.5.16",
+  "number": "7.1.4.16",
   "title": "",
   "body": " Prove statements (1) and (3) of .  "
 },
@@ -8717,7 +8600,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#s_innerproducts_ex-10",
   "type": "Exercise",
-  "number": "7.1.5.17",
+  "number": "7.1.4.17",
   "title": "",
   "body": " Prove each inequality below using the Cauchy-Schwarz inequality ( ) applied to a judicious choice of inner product space, and possibly a judicious choice of vector in said inner product space.   For all  .    For all , .    For all  .     "
 },
@@ -8726,7 +8609,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_innerproducts.html#ex_isometries",
   "type": "Exercise",
-  "number": "7.1.5.18",
+  "number": "7.1.4.18",
   "title": "Isometries of inner product spaces.",
   "body": "Isometries of inner product spaces  Let be an inner product space. An isometry of is a function that preserves distance: i.e., . In this exercise we will show that any isometry that maps to is a linear transformation. This is a very useful fact. For example, it implies the linearity of many geometric transformations we have considered: rotation about the origin in , reflection through a line in , .  In what follows assume that is an isometry of satisfying .    Prove that : i.e., preserves norms.    Prove : i.e., preserves inner products. Hint: first prove that .    To prove is linear it is enough to show for all , . To do so, use the above parts to show that .    "
 },
@@ -8737,7 +8620,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.2",
   "title": "Orthogonal bases",
-  "body": " Orthogonal bases   Orthogonal vectors and sets   Orthogonality  orthogonal vectors  orthogonal sets  orthonormal basis   Let be an inner product space. Vectors are orthogonal if .  Let be a set of nonzero vectors.   The set is orthogonal if for all . We say that the elements of are pairwise orthogonal in this case.    The set is orthonormal if it is both orthogonal and satisfies for all : , consists of pairwise orthogonal unit vectors.        Orthogonal implies linearly independent   Let be an inner product space. If is orthogonal, then is linearly independent.    Given any distinct elements , we have . This proves that is linearly independent.      Show that the set is orthogonal with respect to the dot product. Explain why it follows that is a basis of .    A simple computation shows for all , showing that is orthogonal. implies is linearly independent. Since , it follows from that is a basis.      Let with integral inner product , and let , where the element is understood as the constant function for all . Show that is orthogonal and hence linearly independent.    First observe that for all . (Note: since , the set is not orthonormal. ) Next, using the trigonometric identities it follows that .      Orthogonal bases  Given an inner product space we will see that working with orthogonal sets of vectors is extremely convenient computationally speaking. In particular, when picking basis of , we will look for one consisting of orthogonal vectors. Not surprisingly, this is called an orthogonal basis .   Orthogonal and orthonormal bases  orthogonal basis  orthonormal basis   Let be an inner product space. An orthogonal basis (resp., orthonormal basis ) of is a basis that is orthogonal (resp., orthonormal) as a set.    We will see in precisely why working with orthogonal or orthonormal bases is so convenient. Before we do so, however, we would like some guarantee that we can actually find an orthogonal basis. The Gram-Schmidt procedure comes to our rescue in this regard, at least in the finite-dimensional case, as it provides a method of converting an arbitrary basis into an orthogonal one.   Gram-Schmidt procedure  Gram-Schmidt procedure   Let be an inner product space of dimension , and let be a basis for . We can convert into an orthogonal basis , and further to an orthonormal basis , as follows:   Set .    Orthogonalize  Proceeding in succession for each , replace with the vector defined as . The resulting set is an orthogonal basis of .    Normalize  For each let . The set is an orthonormal basis of .        Existence of orthonormal bases   Let be an inner product space of dimension .    There is an orthonormal basis for . In fact, any basis of can be converted to an orthonormal basis using the Gram-Schmidt procedure .    If is an orthogonal set, then there is an orthogonal basis containing : , any orthogonal set can be extended to an orthogonal basis.        See and its proof.    The orthogonal set is linearly independent by . Let be the distinct elements of . (We must have since is linearly independent.) By we can extend to a basis . It is easy to see that when we apply the Gram-Schmidt procedure to , the first vectors are left unchanged, as they are already pairwise orthogonal. Thus Gram-Schmidt returns an orthogonal basis of the form , as desired.      Now let's see the computational virtue of working with orthogonal bases.   Calculating with orthogonal bases   Let be an inner product space of dimension and let    Let be an orthogonal basis of . For any we have , where for all .  If is orthonormal , so that for all , then the inner product formula reduces to the simpler .    Generalized Pythagorean theorem  Let be an orthonormal basis of . Given , we have .        Consider the inner product space with the dot product.   Verify that is an orthonormal basis of .    Let . Find the scalars such that .    Verify that .         Easily verified.    Using we compute .    Computing directly yields . Using the generalized Pythagorean theorem we have , as desired.      As the previous example and begin to make clear, orthogonal bases, and especially orthonormal bases make our life easier computationally speaking. This observation is worthy of a mantra.   Orthogonal basis mantra   Working with an orthogonal basis is nice; working with an orthonormal basis is even nicer.      Coordinate vectors and matrix representations  Let be an inner product space. By an orthogonal (resp., orthonormal ) ordered basis of , we mean an ordered basis for which the underlying set is orthogonal (resp., orthonormal). It should come as little surprise that as a consequence of , computing coordinate vectors and matrix representations with respect to orthogonal bases is especially easy.  For example, if is an orthogonal basis with respect to some inner product , then by we have , and thus, using definition , we have . We have thus proved the following theorem.   Coordinate vectors for orthogonal bases   Let be an inner product space and let be an ordered basis.   Orthogonal basis  If is orthogonal, then for all we have .    Orthonormal basis  If is orthonormal, then for all we have .        Orthogonal bases   Let and . Find a general formula for . Note: is orthogonal with respect to the weighted dot product .    Applying the inner product formula to and the dot product with weights , for any we compute . Let's check our formula with . The formula yields , and indeed we see that .    Similarly, the computations involved in change of basis matrices are significantly easier when at least one of the bases involved is orthogonal. This is a direct consequence of the fact that the change of basis matrix formula involves computing coordinate vectors; and this is easy to do when the basis in question is orthogonal, thanks to the inner product formula .  Things get even easier if both bases and involved are in fact orthonormal . As we show below, it turns out in this case that the inverse of the change of basis matrix is just its transpose: . It follows from that when both bases are orthonormal, we can obtain one change of basis matrix from the other simply by computing the transpose. An invertible matrix whose inverse is equal to its transpose is called an elementary matrix . We develop some general theory about this special family of matrices (interesting in its own right) before treating change of basis matrices.   Orthogonal matrices   An invertible matrix is orthogonal if .     Since for an invertible matrix we have it follows immediately from that .     Let . Check for yourself that . Thus is an orthogonal matrix.  Now observe that the columns of are orthonormal with respect to the dot product: . This is not a coincidence!     Orthogonal matrices   Let be an matrix. The following statements are equivalent.    The matrix is orthogonal.    The columns of form an orthonormal basis of with respect to the dot product.    The rows of form an orthonormal basis of with respect to the dot product.      Let and be the -th row and column of , respectively, for each . From we see that . We use here that rows of are the columns of , and the columns of are the rows of . From it follows easily that , and . This proves and . The result follows.     It is somewhat unfortunate that the property of being an orthogonal matrix is equivalent to your rows or columns forming an orthonormal basis. You ask: Why not simply call such matrices orthonormal matrices? My answer: tradition!    Orthonormal change of basis   Let be a finite dimensional inner product space, and suppose and are orthonormal bases of .    The matrices and are orthogonal.    We have .        Let . By definition, the columns of are the coordinate vectors , . By , these coordinate vectors form an orthonormal subset of ; since there are of them, they form an orthonormal basis. From it follows that is orthogonal. Lastly, from it follows that is also orthogonal.    Since is orthogonal, we have .       Orthonormal change of basis:   Let be the standard ordered basis of . The ordered basis is orthonormal with respect to the dot product. Compute the change of basis matrix .    Since is the standard ordered basis, we can easily compute . Since and are both orthonormal bases (with respect to the dot product), we have . .    Orthonormal change of basis: polynomials   Consider the vector space with inner product . The ordered bases are both orthonormal with respect to this inner product. Compute and .    Since is orthonormal, we use to compute . Thus and by  .       WeBWork Exercises    Let be an orthonormal basis for an inner product space . If   is so that , is orthogonal to , and , find the possible values for , , and .   ,  ,                   Solution: One checks by direct computation that  , ,  must hold.         Let Use the Gram-Schmidt process to determine an orthonormal basis for the subspace of spanned by and .   ,          Let Use the Gram-Schmidt process to determine an orthonormal basis for the subspace of spanned by , , and .   , ,          Let Find an orthonormal basis of the image of .   ,          Let Find an orthonormal basis of the kernel of .   ,          The vectors are pairwise orthogonal with respect to the dot product, as is easily verified. For each below, find the scalars such that .               (Your answer will be expressed in terms of , and . )      Coordinate vectors: orthogonal basis   In each exercise an inner product space and orthogonal ordered basis is given. Use to compute the requested coordinate vector.     with dot product; . Compute .     with dot product with weights ; . Compute .     with integral inner product ; . Compute . (Yes, can indeed be written as a linear combination of . In this exercise you will discover what the corresponding identity is using inner products!)     Orthonormal change of basis   In each exercise an inner product space is given along with two orthonormal ordered bases and . Compute and using .     with the dot product, ,      with the dot product, ,      Gram-Schmidt procedure   Use the Gram-Schmidt procedure to convert the given basis to a basis that is orthogonal with respect to the given inner product.     with the weighted dot product . .     with the integral inner product . .     with the evaluation inner product . .     Consider the inner product space together with the dot product. .    Show that is a subspace of by finding a matrix for which .    Use (a) and an appropriate fundamental space algorithm to find a basis for .    Use Gram-Schmidt to convert your basis in (b) to an orthgonal basis of .     Extending orthogonal bases  Consider the inner product space given by together with the dot product. Construct an orthogonal basis of containing following the steps below.    Produce a vector orthogonal to by inspection.    Produce a vector orthogonal to and by setting up an appropriate matrix equation of the form and finding a nontrivial solution. (Use .)    Produce a vector orthogonal to by setting up an appropriate matrix equation of the form and finding a nontrivial solution. (Use .)     Extending orthogonal bases  Consider the inner product space given by together with the dot product. Let be the plane with defining equation . Compute an orthogonal basis of , and then extend this to an orthogonal basis of .  You do not have to use Gram-Schmidt here, but can proceed using a combination of inspection, your geometric understanding of , and\/or along similar lines of .   Let be an inner produce space. Prove: if , then . This result can be thought of as the Pythagorean theorem for general inner product spaces .    Let be an inner product space, and suppose is an orthonormal basis of . Suppose satisfy .    Prove: .    Prove: .     Orthonormal coordinate vectors  Let be an inner product space, and suppose is an orthonormal ordered basis of .    Prove that for all . In other words we can compute the inner product of vectors by computing the dot product of their coordinate vectors with respect to the orthonormal basis .    Prove that a set is orthogonal (resp. orthonormal) with respect to if and only if is orthogonal (resp. orthonormal) with respect to the dot product.     Determinant of orthogonal matrices  Prove: if is an orthogonal matrix, then .   Orthogonal matrices  In this exercise we will prove that a matrix is orthogonal if and only it is a rotation matrix or a reflection matrix.  Let be a matrix.    Prove that if is orthogonal and , then is a rotation matrix: , there is a such that . See .    Prove that if is orthogonal and , then is a reflection matrix: , there is a such that . See .    Prove that is an orthogonal matrix if and only if is a rotation matrix or is a reflection matrix. You may use the result of .      "
+  "body": " Orthogonal bases   Orthogonal vectors and sets   Orthogonality  orthogonal vectors  orthogonal sets  orthonormal basis   Let be an inner product space. Vectors are orthogonal if .  Let be a set of nonzero vectors.   The set is orthogonal if for all . We say that the elements of are pairwise orthogonal in this case.    The set is orthonormal if it is both orthogonal and satisfies for all : , consists of pairwise orthogonal unit vectors.        Orthogonal implies linearly independent   Let be an inner product space. If is orthogonal, then is linearly independent.    Given any distinct elements , we have . This proves that is linearly independent.      Show that the set is orthogonal with respect to the dot product. Explain why it follows that is a basis of .    A simple computation shows for all , showing that is orthogonal. implies is linearly independent. Since , it follows from that is a basis.      Let with integral inner product , and let , where the element is understood as the constant function for all . Show that is orthogonal and hence linearly independent.    First observe that for all . (Note: since , the set is not orthonormal. ) Next, using the trigonometric identities it follows that .      Orthogonal bases  Given an inner product space we will see that working with orthogonal sets of vectors is extremely convenient computationally speaking. In particular, when picking basis of , we will look for one consisting of orthogonal vectors. Not surprisingly, this is called an orthogonal basis .   Orthogonal and orthonormal bases  orthogonal basis  orthonormal basis   Let be an inner product space. An orthogonal basis (resp., orthonormal basis ) of is a basis that is orthogonal (resp., orthonormal) as a set.    We will see in precisely why working with orthogonal or orthonormal bases is so convenient. Before we do so, however, we would like some guarantee that we can actually find an orthogonal basis. The Gram-Schmidt procedure comes to our rescue in this regard, at least in the finite-dimensional case, as it provides a method of converting an arbitrary basis into an orthogonal one.   Gram-Schmidt procedure  Gram-Schmidt procedure   Let be an inner product space of dimension , and let be a basis for . We can convert into an orthogonal basis , and further to an orthonormal basis , as follows:   Set .    Orthogonalize  Proceeding in succession for each , replace with the vector defined as . The resulting set is an orthogonal basis of .    Normalize  For each let . The set is an orthonormal basis of .        Existence of orthonormal bases   Let be an inner product space of dimension .    There is an orthonormal basis for . In fact, any basis of can be converted to an orthonormal basis using the Gram-Schmidt procedure .    If is an orthogonal set, then there is an orthogonal basis containing : , any orthogonal set can be extended to an orthogonal basis.        See and its proof.    The orthogonal set is linearly independent by . Let be the distinct elements of . (We must have since is linearly independent.) By we can extend to a basis . It is easy to see that when we apply the Gram-Schmidt procedure to , the first vectors are left unchanged, as they are already pairwise orthogonal. Thus Gram-Schmidt returns an orthogonal basis of the form , as desired.      Now let's see the computational virtue of working with orthogonal bases.   Calculating with orthogonal bases   Let be an inner product space of dimension and let    Let be an orthogonal basis of . For any we have , where for all .  If is orthonormal , so that for all , then the inner product formula reduces to the simpler .    Generalized Pythagorean theorem  Let be an orthonormal basis of . Given , we have .        Consider the inner product space with the dot product.   Verify that is an orthonormal basis of .    Let . Find the scalars such that .    Verify that .         Easily verified.    Using we compute .    Computing directly yields . Using the generalized Pythagorean theorem we have , as desired.      As the previous example and begin to make clear, orthogonal bases, and especially orthonormal bases make our life easier computationally speaking. This observation is worthy of a mantra.   Orthogonal basis mantra   Working with an orthogonal basis is nice; working with an orthonormal basis is even nicer.      Coordinate vectors and matrix representations  Let be an inner product space. By an orthogonal (resp., orthonormal ) ordered basis of , we mean an ordered basis for which the underlying set is orthogonal (resp., orthonormal). It should come as little surprise that as a consequence of , computing coordinate vectors and matrix representations with respect to orthogonal bases is especially easy.  For example, if is an orthogonal basis with respect to some inner product , then by we have , and thus, using definition , we have . We have thus proved the following theorem.   Coordinate vectors for orthogonal bases   Let be an inner product space and let be an ordered basis.   Orthogonal basis  If is orthogonal, then for all we have .    Orthonormal basis  If is orthonormal, then for all we have .        Orthogonal bases   Let and . Find a general formula for . Note: is orthogonal with respect to the weighted dot product .    Applying the inner product formula to and the dot product with weights , for any we compute . Let's check our formula with . The formula yields , and indeed we see that .    Similarly, the computations involved in change of basis matrices are significantly easier when at least one of the bases involved is orthogonal. This is a direct consequence of the fact that the change of basis matrix formula involves computing coordinate vectors; and this is easy to do when the basis in question is orthogonal, thanks to the inner product formula .  Things get even easier if both bases and involved are in fact orthonormal . As we show below, it turns out in this case that the inverse of the change of basis matrix is just its transpose: . It follows from that when both bases are orthonormal, we can obtain one change of basis matrix from the other simply by computing the transpose. An invertible matrix whose inverse is equal to its transpose is called an elementary matrix . We develop some general theory about this special family of matrices (interesting in its own right) before treating change of basis matrices.   Orthogonal matrices   An invertible matrix is orthogonal if .     Since for an invertible matrix we have it follows immediately from that .     Let . Check for yourself that . Thus is an orthogonal matrix.  Now observe that the columns of are orthonormal with respect to the dot product: . This is not a coincidence!     Orthogonal matrices   Let be an matrix. The following statements are equivalent.    The matrix is orthogonal.    The columns of form an orthonormal basis of with respect to the dot product.    The rows of form an orthonormal basis of with respect to the dot product.      Let and be the -th row and column of , respectively, for each . From we see that . We use here that rows of are the columns of , and the columns of are the rows of . From it follows easily that , and . This proves and . The result follows.     It is somewhat unfortunate that the property of being an orthogonal matrix is equivalent to your rows or columns forming an orthonormal basis. You ask: Why not simply call such matrices orthonormal matrices? My answer: tradition!    Orthonormal change of basis   Let be a finite dimensional inner product space, and suppose and are orthonormal bases of .    The matrices and are orthogonal.    We have .        Let . By definition, the columns of are the coordinate vectors , . By , these coordinate vectors form an orthonormal subset of ; since there are of them, they form an orthonormal basis. From it follows that is orthogonal. Lastly, from it follows that is also orthogonal.    Since is orthogonal, we have .       Orthonormal change of basis:   Let be the standard ordered basis of . The ordered basis is orthonormal with respect to the dot product. Compute the change of basis matrix .    Since is the standard ordered basis, we can easily compute . Since and are both orthonormal bases (with respect to the dot product), we have . .    Orthonormal change of basis: polynomials   Consider the vector space with inner product . The ordered bases are both orthonormal with respect to this inner product. Compute and .    Since is orthonormal, we use to compute . Thus and by  .       WeBWork Exercises    Let be an orthonormal basis for an inner product space . If   is so that , is orthogonal to , and , find the possible values for , , and .   ,  ,                   Solution: One checks by direct computation that  , ,  must hold.         Let Use the Gram-Schmidt process to determine an orthonormal basis for the subspace of spanned by and .   ,          Let Use the Gram-Schmidt process to determine an orthonormal basis for the subspace of spanned by , , and .   , ,          Let Find an orthonormal basis of the image of .   ,          Let Find an orthonormal basis of the kernel of .   ,          The vectors are pairwise orthogonal with respect to the dot product, as is easily verified. For each below, find the scalars such that .               (Your answer will be expressed in terms of , and . )      Coordinate vectors: orthogonal basis   In each exercise an inner product space and orthogonal ordered basis is given. Use to compute the requested coordinate vector.     with dot product; . Compute .     with dot product with weights ; . Compute .     with integral inner product ; . Compute . (Yes, can indeed be written as a linear combination of . In this exercise you will discover what the corresponding identity is using inner products!)     Orthonormal change of basis   In each exercise an inner product space is given along with two orthonormal ordered bases and . Compute and using .     with the dot product, ,      with the dot product, ,      Gram-Schmidt procedure   Use the Gram-Schmidt procedure to convert the given basis to a basis that is orthogonal with respect to the given inner product.     with the weighted dot product . .     with the integral inner product . .     with the evaluation inner product . .     Consider the inner product space together with the dot product. .    Show that is a subspace of by finding a matrix for which .    Use (a) and an appropriate fundamental space algorithm to find a basis for .    Use Gram-Schmidt to convert your basis in (b) to an orthgonal basis of .     Extending orthogonal bases  Consider the inner product space given by together with the dot product. Construct an orthogonal basis of containing following the steps below.    Produce a vector orthogonal to by inspection.    Produce a vector orthogonal to and by setting up an appropriate matrix equation of the form and finding a nontrivial solution.    Produce a vector orthogonal to by setting up an appropriate matrix equation of the form and finding a nontrivial solution.     Extending orthogonal bases  Consider the inner product space given by together with the dot product. Let be the plane with defining equation . Compute an orthogonal basis of , and then extend this to an orthogonal basis of .  You do not have to use Gram-Schmidt here, but can proceed using a combination of inspection, your geometric understanding of , and\/or along similar lines of .   Let be an inner produce space. Prove: if , then . This result can be thought of as the Pythagorean theorem for general inner product spaces .    Let be an inner product space, and suppose is an orthonormal basis of . Suppose satisfy .    Prove: .    Prove: .     Orthonormal coordinate vectors  Let be an inner product space, and suppose is an orthonormal ordered basis of .    Prove that for all . In other words we can compute the inner product of vectors by computing the dot product of their coordinate vectors with respect to the orthonormal basis .    Prove that a set is orthogonal (resp. orthonormal) with respect to if and only if is orthogonal (resp. orthonormal) with respect to the dot product.     Determinant of orthogonal matrices  Prove: if is an orthogonal matrix, then .   Orthogonal matrices  In this exercise we will prove that a matrix is orthogonal if and only it is a rotation matrix or a reflection matrix.  Let be a matrix.    Prove that if is orthogonal and , then is a rotation matrix: , there is a such that . See .    Prove that if is orthogonal and , then is a reflection matrix: , there is a such that . See .    Prove that is an orthogonal matrix if and only if is a rotation matrix or is a reflection matrix. You may use the result of .      "
 },
 {
   "id": "ss_orthogonal-2",
@@ -9061,7 +8944,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "7.2.4.16",
   "title": "Extending orthogonal bases.",
-  "body": "Extending orthogonal bases  Consider the inner product space given by together with the dot product. Construct an orthogonal basis of containing following the steps below.    Produce a vector orthogonal to by inspection.    Produce a vector orthogonal to and by setting up an appropriate matrix equation of the form and finding a nontrivial solution. (Use .)    Produce a vector orthogonal to by setting up an appropriate matrix equation of the form and finding a nontrivial solution. (Use .)    "
+  "body": "Extending orthogonal bases  Consider the inner product space given by together with the dot product. Construct an orthogonal basis of containing following the steps below.    Produce a vector orthogonal to by inspection.    Produce a vector orthogonal to and by setting up an appropriate matrix equation of the form and finding a nontrivial solution.    Produce a vector orthogonal to by setting up an appropriate matrix equation of the form and finding a nontrivial solution.    "
 },
 {
   "id": "s_orthogonal_bases_ex-8",
