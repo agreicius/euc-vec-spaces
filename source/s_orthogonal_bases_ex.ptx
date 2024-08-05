@@ -199,12 +199,12 @@
       </li>
       <li>
         <p>
-          Produce a vector <m>\boldv_3</m> orthogonal to <m>\boldv_1</m> and <m>\boldv_2</m> by setting up an appropriate matrix equation of the form <m>A\boldx=\boldzero</m> and finding a nontrivial solution. (Use <xref ref="th_dotproduct_method"/>.)
+          Produce a vector <m>\boldv_3</m> orthogonal to <m>\boldv_1</m> and <m>\boldv_2</m> by setting up an appropriate matrix equation of the form <m>A\boldx=\boldzero</m> and finding a nontrivial solution. 
         </p>
       </li>
       <li>
         <p>
-          Produce a vector <m>\boldv_4</m> orthogonal to <m>\boldv_1, \boldv_2, \boldv_3</m> by setting up an appropriate matrix equation of the form <m>B\boldx=\boldzero</m> and finding a nontrivial solution. (Use <xref ref="th_dotproduct_method"/>.)
+          Produce a vector <m>\boldv_4</m> orthogonal to <m>\boldv_1, \boldv_2, \boldv_3</m> by setting up an appropriate matrix equation of the form <m>B\boldx=\boldzero</m> and finding a nontrivial solution. 
         </p>
       </li>
     </ol>

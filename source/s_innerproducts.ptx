@@ -2,359 +2,10 @@
   <title>Inner product spaces</title>
   <introduction>
     <p>
-      An <em>inner product</em> is an additional layer of structure we can define on a vector space <m>V</m>. It takes a pair of elements <m>\boldv, \boldw\in V</m> and returns a scalar
-      <m>\langle \boldv,\boldw \rangle\in \R</m>.
-      As with the vector addition and scalar multiplication, we define inner products axiomatically, taking as our model the dot product on <m>\R^2</m> and <m>\R^3</m>. Our definition (<xref ref="d_innerproduct" text="global"/>) simply promulgates a few important properties enjoyed by the dot product that may be familiar to you from studying calculus.
-    </p>
-    <p>
-      The addition of an inner product enriches the structure of a vector space considerably, and gives rise to a number of additional useful analytic tools. We highlight a few below.
-      <dl>
-        <li>
-          <title>Distance and angle</title>
-          <p>
-            A notion of <em>distance</em> and <em>angle</em> between two vectors can be defined relative to a given inner product. These provide a numeric measurement of how <q>close</q> (distance) or <q>closely oriented</q> (angle) two vectors in our space are.
-          </p>
-        </li>
-        <li>
-          <title>Orthogonality</title>
-          <p>
-          Two vectors <m>\boldv, \boldw\in V</m> are <em>orthogonal</em>, relative to a given inner product, if <m>\langle \boldv, \boldw\rangle=0</m>. Orthogonality leads further to a general notion of <em>orthogonal projection</em> onto a subspace <m>W\subseteq V</m>.
-          </p>
-        </li>
-        <li>
-          <title>Orthogonal bases</title>
-          <p>
-          An <em>orthogonal basis</em> of a vector space <m>V</m>, relative to a given inner product, is one whose elements are pairwise orthogonal. As we will see there are many computational advantages of working with an orthogonal basis.
-          </p>
-        </li>
-      </dl>
+     At last we return to that additional layer that can added atop a vector space structure: the <xref ref="d_innerproduct" text="custom">inner product</xref>. 
     </p>
   </introduction>
-  <subsection xml:id="ss_inner_products">
-    <title>Inner products</title>
-  
-
-    <remark xml:id="rm_innerproduct_algebra">
-    <title>Inner products of linear combinations</title>
-    <statement>
-      <p>
-      We will have many opportunities to <q>expand out</q> an inner product of two linear combinations of vectors. Using axioms (i) and (ii) in series, this process resembles the procedure for multiplying two polynomials. For example, we have
-      <md>
-        <mrow>\langle c\boldv+d\boldw, e\boldv+f\boldw\rangle
-        \amp = c \langle \boldv,  e\boldv+f\boldw \rangle +d \langle \boldw, e\boldv+f\boldw \rangle \amp (<xref ref="d_innerproduct" text="global"/>, \text{(ii)})</mrow>
-        <mrow> \amp=ce \langle \boldv, \boldv\rangle+cf\langle \boldv,\boldw \rangle +de \langle \boldw, \boldv\rangle+df\langle \boldw, \boldw\rangle \amp (<xref ref="d_innerproduct" text="global"/>, \text{(ii)}) </mrow>
-        <mrow>  \amp = ce\langle \boldv, \boldv\rangle +(cf+de)\langle \boldv, \boldw\rangle +df\langle \boldw, \boldw\rangle
-        \amp (<xref ref="d_innerproduct" text="global"/>, \text{(i)})</mrow>
-      </md>.
-      Note how in the last step we are able to group the <q>cross terms</q>, <m>\langle \boldv, \boldw\rangle=\langle \boldw, \boldv\rangle</m> using the symmetry axiom.
-    </p>
-      <p>
-        More generally, given linear combinations
-      <md>
-        <mrow>
-        \boldv \amp = c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\sum_{i=1}^n c_i\boldv_i </mrow>
-        <mrow> \boldw \amp =d_1\boldv_1+d_2\boldv_2+\cdots +d_n\boldv_n=\sum_{i=1}^nd_i\boldv_i </mrow>
-      </md>,
-      the same reasoning shows that
-      <md>
-        <mrow>\langle \boldv, \boldw \rangle   \amp=
-        c_1d_1 \langle \boldv_1, \boldv_1  \rangle+c_2d_2 \langle \boldv_2, \boldv_2 \rangle +\cdots+c_nd_n \langle \boldv_n, \boldv_n \rangle +\underset{\text{cross terms}}{\underbrace{(c_1d_2+c_2d_1)\langle \boldv_1,\boldv_2  \rangle +\cdots}}  </mrow>
-        <mrow> \amp= \sum_{i=1}^nc_id_i \langle \boldv_i, \boldv_i \rangle +\underset{\text{cross terms}}{\underbrace{\sum_{1\leq i\lt j\leq n}(c_{i}d_j+c_jd_i)\langle \boldv_i, \boldv_j \rangle}}  </mrow>
-      </md>.
-      In particular, we have
-      <me>
-        \langle \boldv, \boldv\rangle =\sum_{i=1}^nc_i^2 \langle \boldv_i, \boldv_i \rangle +\sum_{1\leq i\lt j\leq n}2c_ic_j \langle \boldv_i, \boldv_j \rangle
-      </me>.
-      </p>
-    </statement>
-  </remark>
-
-  <p>
-    We now present a series of important examples of inner products defined on our various inner product spaces. Each is presented as a theorem, as we must prove that the proposed operation satisfies the axios of an inner product. The first example, the <em>weighted dot product</em> is itself a vast generalization of the familiar dot product operations defined on <m>\R^2</m> and <m>\R^3</m>.
-  </p>
-  <theorem xml:id="th_weighted_dotproduct">
-    <title>Weighted dot product</title>
-    <statement>
-      <p>
-      Let <m>V=\R^n</m>. Let <m>k_1, k_2, \dots , k_n</m> be any list of real numbers. Define an operation on <m>\R^n</m> as follows: given <m>\boldx=(x_1,x_2,\dots, x_n), \boldy=(y_1, y_2, \dots, y_n)\in\R^n</m>, let
-      <me>
-        \langle \boldx, \boldy \rangle=k_1x_1y_1+k_2x_2y_2+\cdots k_nx_ny_n=\sum_{i=1}^nk_ix_iy_i
-      </me>.
-      This operation is an inner product if and only if <m>k_i>0</m> for all <m>i</m>.
-      </p>
-      <p>
-      We call this inner product a <term>weighted dot product</term> on <m>\R^n</m>, or more specifically, the <term>dot product with weights <m>k_1, k_2,\dots, k_n</m></term>.
-      In the special case where <m>k_i=1</m> for all <m>i</m> we call this the <term>(standard) dot product</term> and write <m>\boldx\cdot \boldy</m> instead of <m> \langle \boldx, \boldy \rangle </m>.
-      </p>
-    </statement>
-    <proof>
-      <p>
-       First we show that axioms (i) and (ii) are satsified for <em>any</em> choice of <m>k_i</m>. Let
-       <me>
-         K=\begin{amatrix}[rrrr]k_1\amp 0\amp \dots \amp 0 \\ 0\amp k_2\amp 0\amp \dots \\ \vdots \\ 0\amp \dots\amp 0\amp k_n \end{amatrix}
-       </me>,
-       the diagonal matrix whose <m>i</m>-th diagonal entry is <m>k_i</m>. Then for all <m>\boldx=(x_1,x_2,\dots, x_n), \boldy=(y_1,y_2,\dots, y_n)\in \R^n</m> we have
-       <me>
-         \langle \boldx, \boldy  \rangle=\boldx^TK\boldy=\begin{amatrix}[cccc]x_1\amp x_2\amp \dots\amp x_n \end{amatrix} K\begin{bmatrix}y_1\\ y_2\\ \vdots \\ y_n\end{bmatrix}
-       </me>.
-        Here we treat <m>\boldx, \boldy</m> as column vectors, and we treat the resulting <m>1\times 1</m> matrix <m>\boldx^T K\boldy</m> as a scalar. Axioms (i)-(ii) now follow from various matrix properties. For linearity, for example, we have
-       <md>
-         <mrow> \langle c\boldx_1+d\boldx_2, \boldy \rangle \amp = (c\boldx_1+d\boldx_2)^TK\boldy</mrow>
-         <mrow> \amp =(c\boldx_1^T+d\boldx_2^T)K\boldy \amp (<xref ref="th_trans_props" text="global"/>)</mrow>
-         <mrow>  \amp =c\boldx_1^TK\boldy+d\boldx_2^TK\boldy </mrow>
-         <mrow>  \amp =c \langle \boldx_1, \boldy \rangle +d \langle \boldx_2,\boldy  \rangle </mrow>
-       </md>.
-       Symmetry requires a little more trickery:
-       <md>
-         <mrow> \langle \boldy, \boldx  \rangle   \amp = \boldy^TK\boldx </mrow>
-         <mrow> \amp = \boldy^TK^T\boldx \amp (K^T=K) </mrow>
-         <mrow>  \amp = (\boldx^T K\boldy)^T \amp (<xref ref="th_trans_props"/>)</mrow>
-         <mrow> \amp =\boldx^T K \boldy \amp </mrow>
-         <mrow>  \amp = \langle \boldx, \boldy \rangle </mrow>
-       </md>.
-       Note that <m>(\boldx^T K\boldy)^T=\boldx^T K\boldy</m> as <m>\boldx^T K\boldy</m> is just a <m>1\times 1</m> matrix.
-      </p>
-      <p>
-      Lastly, we show that axiom (iii) is satisfied if and only if <m>k_i>0</m> for all <m>i</m>. To this end consider the formula
-      <me>
-        \langle \boldx, \boldx \rangle=k_1x_1^2+k_2x_2^2+\cdots k_nx_n^2
-      </me>.
-      If <m>k_i>0</m>, then since <m>x_i^2\geq 0</m> for all <m>i</m>, we have <m>\langle \boldx, \boldx \rangle\geq 0</m> for any <m>\boldx</m>, and <m>\langle \boldx, \boldx \rangle=0</m> if and only if <m>x_i=0</m> for all <m>i</m> if and only if <m>\boldx=\boldzero</m>.
-      </p>
-      <p>
-        For the other direction suppose <m>k_i\leq 0</m> for some <m>i</m>. Let <m>\boldx=\bolde_i</m>, the  <m>i</m>-th element of the standard basis of <m>\R^n</m>. Then <m>\langle \boldx, \boldx \rangle=k_i\leq 0</m>: a counterexample to the definiteness property of axiom (iii).
-      </p>
-
-    </proof>
-  </theorem>
-<definition xml:id="d_euclidean_space">
-  <idx><h>Euclidean <m>n</m>-space</h></idx>
-  <idx><h>Weighted Euclidean space</h></idx>
-  <title>(Weighted) Euclidean space</title>
-  <statement>
-    <p>
-    Fix a positive integer <m>n</m>. <term>Euclidean <m>n</m>-space</term> is the inner product space with underlying vector space <m>\R^n</m> and inner product given by the dot product. More generally, a <term>weighted Eulidean space</term> is an inner product space of the form <m>(\R^n,\langle\, , \rangle)</m>, where <m>\langle\, , \rangle</m> is a weighted dot product.
-    </p>
-  </statement>
-</definition>
-
-<example>
-  <title>Dot product on <m>\R^4</m></title>
-  <statement>
-    <p>
-    Let <m>\boldx=(-1,2,0,1), \boldy=(1,2,1,1)</m>. Then
-    <me>
-      \boldx\cdot \boldy=-1+4+0+1=4
-    </me>,
-    and
-    <me>
-      \boldx\cdot\boldx=1+4+0+1=6
-    </me>.
-
-
-    </p>
-  </statement>
-</example>
-<example>
-<title>Weighted dot product</title>
-  <statement>
-    <p>
-    The dot product with weights <m>2, 1, 3</m> on <m>\R^3</m> is defined as
-    <me>
-      \langle \boldx, \boldy  \rangle= 2x_1y_1+x_2y_2+3x_3y_3
-    </me>.
-    Let <m>\boldx=(-1,-1,-1)</m> and <m>\boldy=(1,0,1)</m>. We have
-    <me>
-      \langle \boldx, \boldy \rangle =2(-1)+0-3=-5
-    </me>,
-    and
-    <me>
-      \langle \boldx, \boldx \rangle =2(-1)^2+1(-1)^2+3(-1)^2=2+1+3=6
-    </me>.
-
-
-    </p>
-  </statement>
-</example>
-<example>
-  <title>Why the weights must be positive</title>
-  <statement>
-    <p>
-    Consider the operation on <m>\R^2</m> defined as
-    <me>
-      \langle \boldx, \boldy \rangle =(-1)x_1y_1+2x_2y_2
-    </me>
-    where <m>\boldx=(x_1,x_2), \boldy=(y_1,y_2)</m>. This operation satisfies axioms (i) and (ii) of <xref ref="d_innerproduct"/>. (See proof of <xref ref="th_weighted_dotproduct"/>.) However, it fails both the positivity and definiteness properties of axiom (iii):
-    <md>
-      <mrow>\langle (3,1), (3,1) \rangle \amp =-9+2=-7\lt 0</mrow>
-      <mrow> \langle (1,1/\sqrt{2}), (1,1/\sqrt{2})\rangle \amp=-1+2/2=0 </mrow>
-    </md>.
-    </p>
-  </statement>
-</example>
-<remark xml:id="rm_dotproduct">
-<statement>
-  <p>
-    It is worth highlighting the observation in the proof of <xref ref="th_weighted_dotproduct"/> that a dot product with weights <m>k_1, k_2, \dots, k_n</m> can be expressed as a matrix product:
-    <me>
-      \langle \boldx, \boldy \rangle=\sum_{i=1}^nk_ix_iy_i=\boldx^TK\boldy
-    </me>,
-  where <m>K</m> is the diagonal <m>n\times n</m> matrix whose <m>i</m>-th diagonal entry is <m>k_i</m>. Here <m>\boldx, \boldy</m> are treated as column vectors, and we identify the resulting <m>1\times 1</m> matrix <m>\boldx^T K \boldy</m> with a scalar.
-  </p>
-  <p>
-    In particular for the standard dot product this matrix formula reduces to
-    <me>
-      \boldx\cdot \boldy=\boldx^T I \boldy=\boldx^T\boldy
-    </me>.
-    Conversely, the dot product gives another way to formulate general matrix multiplication.  as the next theorem articulates.
-  </p>
-</statement>
-</remark>
-<theorem xml:id="th_dotproduct_method">
-<title>Dot product and matrix multiplication</title>
-<statement>
-<ol>
-  <li>
-    <p>
-      Given <m>n</m>-tuples <m>\boldx=(x_1,x_2,\dots, x_n)</m> and <m>\boldy=(y_1,y_2,\dots, y_n)</m>, we have
-      <md>
-        <mrow>\boldx\cdot \boldy \amp = \begin{bmatrix} x_1 \amp x_2\amp \dots \amp x_n\end{bmatrix}
-        \begin{bmatrix}
-          y_1\\ y_2\\ \vdots \\ y_n
-        \end{bmatrix}  </mrow>
-        <mrow> \amp=\boldx^T\boldy </mrow>
-      </md>,
-      where in the last equality <m>\boldx</m> and <m>\boldy</m> are treated as column vectors.
-    </p>
-  </li>
-  <li>
-    <p>
-      Let <m>A</m> be an <m>m\times n</m> matrix, and let <m>B</m> be a <m>n\times r</m> matrix. Let <m>\boldr_i\in \R^n</m> be the <m>i</m>-th row of <m>A</m>, and let <m>\boldc_j\in \R^n</m> be the <m>j</m>-th column of <m>B</m>. For all <m>1\leq i\leq m, 1\leq j\leq n</m>, we have
-      <me>
-        (AB)_{ij}=\boldr_i\cdot \boldc_j
-      </me>,
-      where <m>\boldr_i</m> and <m>\boldc_j</m> are considered as <m>n</m>-tuples.
-      In other words, the <m>ij</m>-th entry of <m>AB</m> is the dot product of the <m>i</m>-th row of <m>A</m> and the <m>j</m>-th column of <m>B</m>.
-    </p>
-  </li>
-</ol>
-
-</statement>
-<proof>
-  <ol>
-    <li>
-      <p>
-        See <xref ref="rm_dotproduct"/> and the proof of <xref ref="th_weighted_dotproduct"/>.
-      </p>
-    </li>
-  </ol>
-<p>
-  Let <m>A=[a_{ij}]_{m\times n}</m> and <m>B=[b_{ij}]_{n\times r}</m>. Then
-  <me>
-    (AB)_{ij}=\sum_{k=1}^na_{ik}b_{kj}=\boldr_i\cdot \boldc_j
-  </me>,
-  since
-  <m>\boldr_i=(a_{i1}, a_{i2}, \dots, a_{in})</m> and <m>\boldc_j=(b_{j1}, b_{2j},\dots, b_{nj})</m>.
-</p>
-</proof>
-</theorem>
-<p>
-  Next we introduce an important family of inner products defined on polynomials spaces called <em>evaluation inner products</em>. These are useful when we wish to compare polynomials by how they behave at a specified list of inputs.
-</p>
-<theorem xml:id="th_evaluation_innerproduct">
-  <title>Evaluation inner products on <m>P_n</m></title>
-  <statement>
-    <p>
-    Let <m>V=P_n</m>, and let <m>c_0, c_1, \dots, c_n</m> be any list of <m>n+1</m> distinct real numbers. For any <m>p(x), q(x)\in P_n</m> define
-    <me>
-      \langle p(x), q(x) \rangle =p(c_0)q(c_0)+p(c_1)q(c_1)+\cdots +p(c_n)q(c_n)
-    </me>.
-    This defines an inner product on <m>P_n</m> called an <term>evaluation inner product</term>, or more precisely, <term>evaluation at the inputs <m>c_0, c_1, \dots, c_n</m></term>.
-    </p>
-  </statement>
-  <proof>
-    <p>
-      That axioms (i)-(ii) are satisfied is left as an exercise. For axiom (iii), note that
-      <me>
-        \langle p(x), p(x) \rangle =p(c_0)^2+p(c_1)^2+\cdots +p(c_n)^2\geq 0
-      </me>,
-      and we have equality if and only if <m>p(c_0)=p(c_1)=\dots p(c_n)=0</m>. Since a nonzero polynomial of degree <m>n</m> or less has <em>at most</em> <m>n</m> distinct roots, we conclude that <m>p(x)=\boldzero</m>, the zero polynomial.
-    </p>
-  </proof>
-
-</theorem>
-<example>
-  <title>Evaluation at <m>-1, 0, 1</m></title>
-  <statement>
-    <p>
-    Let <m>V=P_2</m>, and let <m>\langle p(x),q(x)  \rangle </m> be the evaluation at <m>-1, 0, 1</m> inner product. Compute <m>\langle x^2-1,x^2+2x+1  \rangle </m> and <m>\langle x^2-1, x^2-1  \rangle. </m>
-    </p>
-  </statement>
-  <solution>
-    <p>
-    Let <m>p(x)=x^2-1</m>, <m>q(x)=x^2+2x+1</m>. We have
-    <me>
-      \langle p(x), q(x)  \rangle=p(-1)q(-1)+p(0)q(0)+p(1)q(1)=0+(-1)1+0=-1
-    </me>
-    and
-    <me>
-      \langle p(x), p(x) \rangle =p(-1)^2+p(0)^2+p(1)^2=0+(-1)^2+0=1
-    </me>.
-    </p>
-  </solution>
-</example>
-<p>
-  Our last example defines an <em>integral inner product</em> on the space <m>C([a,b])</m> of continuous functions on an interval <m>[a,b]</m>. This inner product plays an important role in Fourier analysis, which studies the approximation of arbibitrary continuous functions with linear combinations of certain trigonometric funtions.
-</p>
-<theorem xml:id="th_integral_innerproduct">
-  <title>Integral inner product</title>
-
-
-  <statement>
-    <p>
-    Fix an interval <m>[a,b]</m>, and let <m>V=C([a,b])</m>, the space of all continuous functions on <m>[a,b]</m>. For any <m>f,g\in C([a,b])</m> define
-    <me>
-      \langle f,g \rangle=\int_a^bf(x)g(x)\ dx
-    </me>.
-    This defines an inner product on <m>C([a,b])</m> called the <term>integral inner product</term>.
-    </p>
-  </statement>
-  <proof>
-    <p>
-      First observe that the integral defining the inner product always exists since the product <m>fg</m> is a continuous function on the closed interval <m>[a,b]</m>.
-    </p>
-    <p>
-      Axioms (i)-(ii) follow directly from the definition and various properties of the integral. This is left as an exercise. As for (iii), we have
-      <me>
-        \langle f, f   \rangle=\int_{a}^b f^2(x) \ dx \geq 0
-      </me>,
-      since <m>f^2(x)\geq 0</m> for all <m>x\in [a,b]</m>. (This is a property of integration.) Furthermore, since <m>f^2</m> is continuous and <m>f^2(x)\geq 0</m>, we have
-      <me>\langle f, f \rangle=\int_a^b f^2(x) \ dx=0 </me>
-      if and only if <m>f^2(x)=0</m> for all <m>x\in [a,b]</m> (a property of integrals of <em>continuous</em> functions) if and only if <m>f(x)=0</m> for all <m>x\in [a,b]</m> if and only if <m>f=\boldzero</m>, the zero function.
-    </p>
-  </proof>
-</theorem>
-<example>
-  <title>Integral inner product</title>
-  <statement>
-    <p>
-    Let <m>V=C([0,1])</m>, equipped with integral inner product. Let  <m>f(x)=x</m>, <m>g(x)=e^x</m>. Compute <m>\langle f,g  \rangle </m> and <m>\langle f,f  \rangle </m>.
-    </p>
-  </statement>
-  <solution>
-    <p>
-    We have
-    <me>
-      \langle f,g  \rangle=\int_0^1xe^x\ dx=(xe^x\Bigr\vert_0^1-\int_0^1 e^x\ dx)=e-(e-1)=1
-    </me>
-    and
-    <me>
-      \langle f, f \rangle=\int_0^1 x^2 \ dx=\frac{1}{3}
-    </me>.
-    </p>
-  </solution>
-</example>
-</subsection>
+    
   <subsection xml:id="ss_norm_distance">
     <title>Norm and distance</title>
     <p>
@@ -413,7 +64,7 @@
         </p>
       </solution>
     </example>
-    <example xml:id="eg_norm_integral">
+    <!-- <example xml:id="eg_norm_integral">
       <title>Norm with respect to integral inner product</title>
       <statement>
         <p>
@@ -431,7 +82,7 @@
           </md>.
         </p>
       </solution>
-    </example>
+    </example> -->
 
       <remark xml:id="rm_unit_vectors">
       <title>Unit vectors</title>
@@ -465,17 +116,17 @@
                 <m>V=\R^3</m> with dot product with weights <m>1,2,3</m>, <m>\boldv=(3,1,-2)</m>
               </p>
             </li>
-            <li>
+            <!-- <li>
               <p>
                 <m>V=C([0,1])</m> with integral inner product, <m>\boldv=e^x</m>
               </p>
-            </li>
+            </li> -->
           </ol>
         </p>
       </statement>
       <solution>
         <p>
-          The norms of the vectors in each case were computed in <xref first="eg_norm_dot" last="eg_norm_integral"/>. We simply scale to compute the corresponding unit vectors.
+          The norms of the vectors in each case were computed in earlier examples. We simply scale to compute the corresponding unit vectors.
         </p>
         <ol>
           <li>
@@ -483,16 +134,16 @@
               <m>\boldu=\frac{1}{\sqrt{7}}(1,-1,2,1)=(\sqrt{7}/7,-\sqrt{7}/7,2\sqrt{7}/7,\sqrt{7}/7)</m>
             </p>
           </li>
-          <li>
+          <!-- <li>
             <p>
               <m>\boldu=\frac{1}{\sqrt{23}}(3,1,-2)=(3\sqrt{23}/23,\sqrt{23}/23,-2\sqrt{23}/23)</m>
             </p>
-          </li>
-          <li>
+          </li> -->
+          <!-- <li>
             <p>
               <m>\boldu=\frac{1}{\sqrt{(e^2-1)/2}}e^x=\frac{\sqrt{2(e^2-1)}}{e^2-1}e^x</m>
             </p>
-          </li>
+          </li> -->
         </ol>
       </solution>
     </example>
@@ -526,7 +177,7 @@
               <m>V=\R^3</m> with the dot product, <m>\boldx=(x_1,x_2,x_3)</m>, <m>\boldy=(y_1,y_2,y_3)</m>
             </p>
           </li>
-          <li>
+          <!-- <li>
             <p>
               <m>V=P_2</m> with the evaluation at <m>1,-1,0</m> inner product, <m>p_1(x)=x^2+1</m>, <m>p_2(x)=x+2</m>
             </p>
@@ -535,7 +186,7 @@
             <p>
               <m>V=C([-\pi,\pi])</m> with the integral inner product, <m>f(x)=\sin x+x</m>, <m>g(x)=x</m>
             </p>
-          </li>
+          </li> -->
         </ol>
       </statement>
       <solution>
@@ -551,7 +202,7 @@
               </md>.
             </p>
           </li>
-          <li>
+          <!-- <li>
             <p>
               We have
               <md>
@@ -573,7 +224,7 @@
                 <mrow>  \amp = \sqrt{\pi} </mrow>
               </md>
             </p>
-          </li>
+          </li> -->
         </ol>
       </solution>
     </example>
@@ -802,7 +453,7 @@
         </p>
       </solution>
     </example>
-    <example xml:id="eg_angle_function">
+    <!-- <example xml:id="eg_angle_function">
       <statement>
         <p>
           Consider <m>V=C([-\pi, \pi])</m> with the integral inner product. Compute the angle <m>\theta</m> between <m>f(x)=\sin x</m> and <m>g(x)=\sin 2x</m> with respect to this inner product.
@@ -825,7 +476,7 @@
 
         </p>
       </solution>
-    </example>
+    </example> -->
   </subsection>
   <subsection>
     <title>Choosing your inner product</title>
@@ -853,7 +504,7 @@
         </p>
       </statement>
     </example>
-    <example xml:id="eg_why_evaluationinner">
+    <!-- <example xml:id="eg_why_evaluationinner">
       <title>Evaluation inner product distance</title>
       <statement>
         <p>
@@ -881,7 +532,7 @@
             which we can think of as an aggregate measure of the difference of values <m>f(x)-g(x)</m> for all <m>x\in [a,b]</m>. Thus <m>d(f,g)</m> is a global measure of the similarity between <m>f</m> and <m>g</m> that takes into account their values over the entire interval <m>[a,b]</m>.
           </p>
         </statement>
-      </example>
+      </example> -->
   </subsection>
   <xi:include href="./s_innerproducts_ex.ptx"/>
 </section>
