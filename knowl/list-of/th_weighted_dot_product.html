@@ -12,10 +12,12 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Weighted dot product.</span>
+<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.2.6</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Weighted dot product.</span>
 </h3>
-<div class="para">Let <span class="process-math">\(k_1, k_2, \dots , k_n\)</span> be a list of positive real numbers. The weighted dot product on <span class="process-math">\(\R^n\)</span> with weights <span class="process-math">\((k_1,k_2,\dots, k_n)\)</span> is an inner product. In particular, the dot product is an inner product.</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">We verify each axiom in turn. Throughout we assume <span class="process-math">\(\boldx=(x_1,x_2,\dots, x_n)\text{,}\)</span> <span class="process-math">\(\boldy=(y_1,y_2,\dots, y_n)\text{,}\)</span> and <span class="process-math">\(\boldw=(w_1,w_2,\dots, w_n)\)</span> are arbitrary elements of <span class="process-math">\(\R^n\text{.}\)</span>
-</div> <article class="case"><h4 class="heading">Axiom i.</h4> <div class="para logical">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Let <span class="process-math">\(k_1, k_2, \dots , k_n\)</span> be a list of positive real numbers. The weighted dot product on <span class="process-math">\(\R^n\)</span> with weights <span class="process-math">\((k_1,k_2,\dots, k_n)\)</span> is an inner product. In particular, the dot product is an inner product.</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">We verify each axiom in turn. Throughout we assume <span class="process-math">\(\boldx=(x_1,x_2,\dots, x_n)\text{,}\)</span> <span class="process-math">\(\boldy=(y_1,y_2,\dots, y_n)\text{,}\)</span> and <span class="process-math">\(\boldw=(w_1,w_2,\dots, w_n)\)</span> are arbitrary elements of <span class="process-math">\(\R^n\text{.}\)</span>
+</div>
+<article class="case"><h4 class="heading">Axiom i.</h4>
+<div class="para logical">
 <div class="para">We have</div>
 <div class="displaymath process-math">
 \begin{align*}
@@ -24,7 +26,8 @@
 \amp = \angvec{\boldy,\boldx} \amp \text{(def.)}\text{.}
 \end{align*}
 </div>
-</div></article> <article class="case"><h4 class="heading">Axiom ii.</h4> <div class="para logical">
+</div></article><article class="case"><h4 class="heading">Axiom ii.</h4>
+<div class="para logical">
 <div class="para">Given scalars <span class="process-math">\(c,d\in \R\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -40,7 +43,8 @@ c\boldx+d\boldy=(cx_1+dy_1,cx_2+dy_2,\dots, cx_n+dy_n)\text{,}
 \amp = c\angvec{\boldx,\boldw}+d\angvec{\boldy,\boldw}\text{.}
 \end{align*}
 </div>
-</div></article> <article class="case"><h4 class="heading">Axiom iii.</h4> <div class="para logical">
+</div></article><article class="case"><h4 class="heading">Axiom iii.</h4>
+<div class="para logical">
 <div class="para">We have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -49,7 +53,8 @@ c\boldx+d\boldy=(cx_1+dy_1,cx_2+dy_2,\dots, cx_n+dy_n)\text{,}
 </div>
 <div class="para">Since <span class="process-math">\(k_i&gt; 0\)</span> and <span class="process-math">\(x_i^2\geq 0\)</span> for all <span class="process-math">\(i\)</span> (squares of real numbers are nonnegative), we have <span class="process-math">\(\langle \boldx, \boldx \rangle\geq 0\)</span> for any <span class="process-math">\(\boldx\text{.}\)</span>
 </div>
-</div> <div class="para logical">
+</div>
+<div class="para logical">
 <div class="para">We now show that <span class="process-math">\(\angvec{\boldx,\boldx}=0\)</span> if and only if <span class="process-math">\(\boldx=\boldzero=(0,0,\dots, 0)\text{.}\)</span> The reverse implication is clear: if <span class="process-math">\(x_i=0\)</span> for all <span class="process-math">\(i\text{,}\)</span> then <span class="process-math">\(\sum_{i=1}^nk_ix_i^2=\sum_{i=1}^n 0=0\text{.}\)</span> We prove the forward implication by showing that its contrapositive is true: i.e., if <span class="process-math">\(\boldx\ne \boldzero\text{,}\)</span> then <span class="process-math">\(\angvec{\boldx,\boldx} \ne 0\text{.}\)</span> If <span class="process-math">\(\boldx\ne \boldzero\text{,}\)</span> then we have <span class="process-math">\(x_{i_0}\ne 0\)</span> for some <span class="process-math">\(1\leq i_0\leq n\text{,}\)</span> in which case <span class="process-math">\(k_{i_0}x_{i_0}^2 &gt; 0\text{.}\)</span> But then</div>
 <div class="displaymath process-math">
 \begin{align*}

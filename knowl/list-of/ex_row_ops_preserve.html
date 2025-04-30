@@ -12,11 +12,11 @@
 </head>
 <body class="ignore-math">
 <article class="exercise exercise-like"><h5 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">Row operations preserve solutions.</span>
+<span class="type">Exercise</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">7<span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span></span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Row operations preserve solutions.</span>
 </h5>
-<div class="para logical">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
 <div class="para">We made the claim that each of our three row operations</div>
-<ol class="lower-alpha" id="ex_row_ops_preserve-2-1-1">
+<ol class="lower-alpha lower-alpha-level-1" id="ex_row_ops_preserve-2-1-1">
 <li><div class="para">scalar multiplication (<span class="process-math">\(e_i\mapsto c\cdot e_i\)</span> for <span class="process-math">\(c\ne 0\)</span>),</div></li>
 <li><div class="para">swap (<span class="process-math">\(e_i\leftrightarrow e_j\)</span>),</div></li>
 <li><div class="para">addition (<span class="process-math">\(e_i\mapsto e_i+c\cdot e_j\)</span> for some <span class="process-math">\(c\)</span>)</div></li>
@@ -30,10 +30,14 @@
 <div class="para">Now consider each type of row operation separately, write down the new system <span class="process-math">\(L'\)</span> you get by applying this row operation, and prove that an <span class="process-math">\(n\)</span>-tuple <span class="process-math">\(s=(s_1,s_2,\dots ,s_n)\)</span> is a solution to the original system <span class="process-math">\(L\)</span> if and only if it is a solution to the new system <span class="process-math">\(L'\text{.}\)</span>
 </div>
 </div>
-<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="solutions"><details xmlns:xlink="http://www.w3.org/1999/xlink" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para">Let <span class="process-math">\(L\)</span> be the original system with equations <span class="process-math">\(e_1,e_2,\dots ,e_m\text{.}\)</span> For each specified row operation, we will call the resulting new system <span class="process-math">\(L'\)</span> and its equations <span class="process-math">\(e'_1,e'_2,\dots , e'_m\text{.}\)</span>
-</div> <article class="case"><h6 class="heading">Row swap.</h6> <div class="para">In this case systems <span class="process-math">\(L\)</span> and <span class="process-math">\(L'\)</span> have exactly the same equations, just written in a different order. Thus the <span class="process-math">\(n\)</span>-tuple <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(L\)</span> if and only if it satisfies each of the equations <span class="process-math">\(e_i\text{,}\)</span> if and only if it satisfies each of the equations <span class="process-math">\(e'_i\text{,}\)</span> since these are the same equations! It follows that <span class="process-math">\(s\)</span> is a solution of <span class="process-math">\(L\)</span> if and only if it is a solution to <span class="process-math">\(L'\text{.}\)</span>
-</div></article> <article class="case"><h6 class="heading">Scalar multiplication.</h6> <div class="para">In this case <span class="process-math">\(e_j=e'_j\)</span> for all <span class="process-math">\(j\ne i\text{,}\)</span> and <span class="process-math">\(e'_i=c\cdot e_i\)</span> for some <span class="process-math">\(c\ne 0\text{.}\)</span> Since only the <span class="process-math">\(i\)</span>-th equation has changed, it suffices to show that <span class="process-math">\(s\)</span> is a solution to <span class="process-math">\(e_i\)</span> if and only if <span class="process-math">\(s\)</span> is a solution to <span class="process-math">\(c\cdot e_i\text{.}\)</span> Let’s prove each direction of this if and only if separately.</div> <div class="para logical">
+</div>
+<article class="case"><h6 class="heading">Row swap.</h6>
+<div class="para">In this case systems <span class="process-math">\(L\)</span> and <span class="process-math">\(L'\)</span> have exactly the same equations, just written in a different order. Thus the <span class="process-math">\(n\)</span>-tuple <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(L\)</span> if and only if it satisfies each of the equations <span class="process-math">\(e_i\text{,}\)</span> if and only if it satisfies each of the equations <span class="process-math">\(e'_i\text{,}\)</span> since these are the same equations! It follows that <span class="process-math">\(s\)</span> is a solution of <span class="process-math">\(L\)</span> if and only if it is a solution to <span class="process-math">\(L'\text{.}\)</span>
+</div></article><article class="case"><h6 class="heading">Scalar multiplication.</h6>
+<div class="para">In this case <span class="process-math">\(e_j=e'_j\)</span> for all <span class="process-math">\(j\ne i\text{,}\)</span> and <span class="process-math">\(e'_i=c\cdot e_i\)</span> for some <span class="process-math">\(c\ne 0\text{.}\)</span> Since only the <span class="process-math">\(i\)</span>-th equation has changed, it suffices to show that <span class="process-math">\(s\)</span> is a solution to <span class="process-math">\(e_i\)</span> if and only if <span class="process-math">\(s\)</span> is a solution to <span class="process-math">\(c\cdot e_i\text{.}\)</span> Let’s prove each direction of this if and only if separately.</div>
+<div class="para logical">
 <div class="para">If <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(e_1\text{,}\)</span> then <span class="process-math">\(a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i\text{.}\)</span> Multiplying both sides by <span class="process-math">\(c\)</span> we see that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -42,7 +46,8 @@ ca_{i1}s_1+ca_{i2}s_2+\cdots +ca_{in}s_n=cb_i,
 </div>
 <div class="para">and hence that <span class="process-math">\(s\)</span> is also a solution of <span class="process-math">\(c\,e_i=e_i'\text{.}\)</span>
 </div>
-</div> <div class="para logical">
+</div>
+<div class="para logical">
 <div class="para">For the other direction, if <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(c e_i=e_i'\text{,}\)</span> then</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -57,7 +62,8 @@ a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i
 </div>
 <div class="para">and hence that <span class="process-math">\(s\)</span> is a solution to <span class="process-math">\(e_i\text{.}\)</span>
 </div>
-</div></article> <article class="case"><h6 class="heading">Row addition.</h6> <div class="para logical">
+</div></article><article class="case"><h6 class="heading">Row addition.</h6>
+<div class="para logical">
 <div class="para">The only equation of <span class="process-math">\(L'\)</span> that differs from <span class="process-math">\(L\)</span> is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/solveeqn.html">
 \begin{equation*}

@@ -12,16 +12,16 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.4.15</span><span class="period">.</span><span class="space"> </span><span class="title">Contracting and expanding to bases.</span>
+<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">4.4.15</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Contracting and expanding to bases.</span>
 </h4>
-<div class="para">Let <span class="process-math">\(V\)</span> be a vector space of dimension <span class="process-math">\(n\text{,}\)</span> and let <span class="process-math">\(S\subseteq V\)</span> be a finite subset.</div> <ol class="decimal" id="th_basis_contract_expand-2-2">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Let <span class="process-math">\(V\)</span> be a vector space of dimension <span class="process-math">\(n\text{,}\)</span> and let <span class="process-math">\(S\subseteq V\)</span> be a finite subset.</div> <ol class="decimal" id="th_basis_contract_expand-2-2">
 <li>
-<span class="heading"><span class="title">Contract to basis.</span></span><div class="para">If <span class="process-math">\(S\)</span> spans <span class="process-math">\(V\text{,}\)</span> then there is a subset of <span class="process-math">\(S\)</span> that is a basis of <span class="process-math">\(V\text{:}\)</span> i.e., we can <em class="emphasis">contract</em> a spanning set to a basis.</div>
+<span class="heading"><span class="title">Contract to basis.</span></span><div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">If <span class="process-math">\(S\)</span> spans <span class="process-math">\(V\text{,}\)</span> then there is a subset of <span class="process-math">\(S\)</span> that is a basis of <span class="process-math">\(V\text{:}\)</span> i.e., we can <em class="emphasis">contract</em> a spanning set to a basis.</div>
 </li>
 <li>
-<span class="heading"><span class="title">Extend to basis.</span></span><div class="para">If <span class="process-math">\(S\)</span> is linearly independent, then <span class="process-math">\(S\)</span> is contained in a basis of <span class="process-math">\(V\text{:}\)</span> i.e., we can <em class="emphasis">extend</em> a linearly independent set to a basis.</div>
+<span class="heading"><span class="title">Extend to basis.</span></span><div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">If <span class="process-math">\(S\)</span> is linearly independent, then <span class="process-math">\(S\)</span> is contained in a basis of <span class="process-math">\(V\text{:}\)</span> i.e., we can <em class="emphasis">extend</em> a linearly independent set to a basis.</div>
 </li>
-</ol></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+</ol></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
 <div class="para">Let <span class="process-math">\(S=\{\boldv_1, \boldv_2, \dots , \boldv_r\}\text{.}\)</span>
 </div>
 <ol class="decimal" id="th_basis_contract_expand-3-1-2">
@@ -48,7 +48,7 @@ S=S_0\subseteq S_1\dots \subseteq S_k
 </li>
 </ul>
 <div class="para">Some observations:</div>
-<ol class="lower-roman" id="th_basis_contract_expand-3-1-2-2-1-5">
+<ol class="lower-roman ol-marker-1" id="th_basis_contract_expand-3-1-2-2-1-5">
 <li><div class="para">Each <span class="process-math">\(S_i\)</span> is linearly independent. This can be shown by induction, the crucial point being that if <span class="process-math">\(S_i\)</span> is linearly independent, and if <span class="process-math">\(\boldv\notin \Span S_i\text{,}\)</span> then <span class="process-math">\(S_{i+1}=S_i\cup \{\boldv_0\}\)</span> is linearly independent. The proof is left as an exercise.</div></li>
 <li><div class="para">The procedure must halt. Why? Since <span class="process-math">\(\dim V=n\text{,}\)</span> and since each <span class="process-math">\(S_i\)</span> is linearly independent, we must have <span class="process-math">\(\val{S_i}\leq n\)</span> for all <span class="process-math">\(i\)</span> by <a href="s_dimension.html#th_basis_dimension" class="xref" data-knowl="./knowl/xref/th_basis_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.11: Basis bounds">Theorem 4.4.11</a>. Since <span class="process-math">\(\val{S_i}&lt; \val{S_{i+1}}\)</span> and <span class="process-math">\(\val{S_{i}}\leq n\text{,}\)</span> the procedure must halt in at most <span class="process-math">\(n\)</span> steps.</div></li>
 </ol>

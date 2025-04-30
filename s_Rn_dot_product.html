@@ -5,16 +5,20 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Inner product structure of \R^n</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Euclidean vector spaces">
-<meta property="book:author" content="Aaron Greicius">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -86,1055 +90,51 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="_static/pretext/js/pretext-webwork/2.17/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
-<style>
-#d_function_equality-3-1-4 { counter-set: d_function_equality-3-1-4 0; }
-#d_function_equality-3-1-4 > li::marker { content: ""counter(d_function_equality-3-1-4,lower-roman)""; }
-#d_function_equality-3-1-4 > li { counter-increment: d_function_equality-3-1-4; }
-#extracted-webwork-4-1-1-2-1 { counter-set: extracted-webwork-4-1-1-2-1 0; }
-#extracted-webwork-4-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-4-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-4-1-1-2-1 > li { counter-increment: extracted-webwork-4-1-1-2-1; }
-#extracted-webwork-7-1-1-2-1 { counter-set: extracted-webwork-7-1-1-2-1 0; }
-#extracted-webwork-7-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-7-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-7-1-1-2-1 > li { counter-increment: extracted-webwork-7-1-1-2-1; }
-#extracted-webwork-8-1-1-2-1 { counter-set: extracted-webwork-8-1-1-2-1 0; }
-#extracted-webwork-8-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-8-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-8-1-1-2-1 > li { counter-increment: extracted-webwork-8-1-1-2-1; }
-#extracted-webwork-9-1-1-2-1 { counter-set: extracted-webwork-9-1-1-2-1 0; }
-#extracted-webwork-9-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-9-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-9-1-1-2-1 > li { counter-increment: extracted-webwork-9-1-1-2-1; }
-#extracted-webwork-11-1-1-2-1 { counter-set: extracted-webwork-11-1-1-2-1 0; }
-#extracted-webwork-11-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-11-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-11-1-1-2-1 > li { counter-increment: extracted-webwork-11-1-1-2-1; }
-#extracted-webwork-11-1-1-3-1 { counter-set: extracted-webwork-11-1-1-3-1 0; }
-#extracted-webwork-11-1-1-3-1 > li::marker { content: ""counter(extracted-webwork-11-1-1-3-1,upper-alpha)"."; }
-#extracted-webwork-11-1-1-3-1 > li { counter-increment: extracted-webwork-11-1-1-3-1; }
-#sss_function_equality-2-4 { counter-set: sss_function_equality-2-4 0; }
-#sss_function_equality-2-4 > li::marker { content: ""counter(sss_function_equality-2-4,lower-roman)""; }
-#sss_function_equality-2-4 > li { counter-increment: sss_function_equality-2-4; }
-#d_complex_arithmetic-4-2 { counter-set: d_complex_arithmetic-4-2 0; }
-#d_complex_arithmetic-4-2 > li::marker { content: ""counter(d_complex_arithmetic-4-2,decimal)"."; }
-#d_complex_arithmetic-4-2 > li { counter-increment: d_complex_arithmetic-4-2; }
-#th_complex_arithmetic_basic-2-1 { counter-set: th_complex_arithmetic_basic-2-1 0; }
-#th_complex_arithmetic_basic-2-1 > li::marker { content: ""counter(th_complex_arithmetic_basic-2-1,decimal)"."; }
-#th_complex_arithmetic_basic-2-1 > li { counter-increment: th_complex_arithmetic_basic-2-1; }
-#th_complex_conjugation_modulus-2-2 { counter-set: th_complex_conjugation_modulus-2-2 0; }
-#th_complex_conjugation_modulus-2-2 > li::marker { content: ""counter(th_complex_conjugation_modulus-2-2,decimal)"."; }
-#th_complex_conjugation_modulus-2-2 > li { counter-increment: th_complex_conjugation_modulus-2-2; }
-#th_poly_basic-2-1-2 { counter-set: th_poly_basic-2-1-2 0; }
-#th_poly_basic-2-1-2 > li::marker { content: ""counter(th_poly_basic-2-1-2,decimal)"."; }
-#th_poly_basic-2-1-2 > li { counter-increment: th_poly_basic-2-1-2; }
-#cor_poly_equality-2-1-7 { counter-set: cor_poly_equality-2-1-7 0; }
-#cor_poly_equality-2-1-7 > li::marker { content: ""counter(cor_poly_equality-2-1-7,decimal)"."; }
-#cor_poly_equality-2-1-7 > li { counter-increment: cor_poly_equality-2-1-7; }
-#th_poly_degree-2-2 { counter-set: th_poly_degree-2-2 0; }
-#th_poly_degree-2-2 > li::marker { content: ""counter(th_poly_degree-2-2,decimal)"."; }
-#th_poly_degree-2-2 > li { counter-increment: th_poly_degree-2-2; }
-#d_vector_space-6-1-7 { counter-set: d_vector_space-6-1-7 0; }
-#d_vector_space-6-1-7 > li::marker { content: ""counter(d_vector_space-6-1-7,lower-roman)""; }
-#d_vector_space-6-1-7 > li { counter-increment: d_vector_space-6-1-7; }
-#proc_vector_space-2-1-1 { counter-set: proc_vector_space-2-1-1 0; }
-#proc_vector_space-2-1-1 > li::marker { content: ""counter(proc_vector_space-2-1-1,decimal)"."; }
-#proc_vector_space-2-1-1 > li { counter-increment: proc_vector_space-2-1-1; }
-#th_Rn_vector_space-1-1-2 { counter-set: th_Rn_vector_space-1-1-2 0; }
-#th_Rn_vector_space-1-1-2 > li::marker { content: ""counter(th_Rn_vector_space-1-1-2,decimal)"."; }
-#th_Rn_vector_space-1-1-2 > li { counter-increment: th_Rn_vector_space-1-1-2; }
-#th_vectorspace_props-2-1-2 { counter-set: th_vectorspace_props-2-1-2 0; }
-#th_vectorspace_props-2-1-2 > li::marker { content: ""counter(th_vectorspace_props-2-1-2,decimal)"."; }
-#th_vectorspace_props-2-1-2 > li { counter-increment: th_vectorspace_props-2-1-2; }
-#s_Rn_ex-3-1-1-2 { counter-set: s_Rn_ex-3-1-1-2 0; }
-#s_Rn_ex-3-1-1-2 > li::marker { content: "("counter(s_Rn_ex-3-1-1-2,lower-alpha)")"; }
-#s_Rn_ex-3-1-1-2 > li { counter-increment: s_Rn_ex-3-1-1-2; }
-#d_innerproduct-2-1-7 { counter-set: d_innerproduct-2-1-7 0; }
-#d_innerproduct-2-1-7 > li::marker { content: ""counter(d_innerproduct-2-1-7,lower-roman)""; }
-#d_innerproduct-2-1-7 > li { counter-increment: d_innerproduct-2-1-7; }
-#ss_linear_equations-3-2-1-1 { counter-set: ss_linear_equations-3-2-1-1 0; }
-#ss_linear_equations-3-2-1-1 > li::marker { content: ""counter(ss_linear_equations-3-2-1-1,decimal)"."; }
-#ss_linear_equations-3-2-1-1 > li { counter-increment: ss_linear_equations-3-2-1-1; }
-#s_systems_eg_2eqns2varss-2-1-1 { counter-set: s_systems_eg_2eqns2varss-2-1-1 0; }
-#s_systems_eg_2eqns2varss-2-1-1 > li::marker { content: ""counter(s_systems_eg_2eqns2varss-2-1-1,decimal)"."; }
-#s_systems_eg_2eqns2varss-2-1-1 > li { counter-increment: s_systems_eg_2eqns2varss-2-1-1; }
-#s_systems_eg_2eqns2varss-3-1-1 { counter-set: s_systems_eg_2eqns2varss-3-1-1 0; }
-#s_systems_eg_2eqns2varss-3-1-1 > li::marker { content: ""counter(s_systems_eg_2eqns2varss-3-1-1,decimal)"."; }
-#s_systems_eg_2eqns2varss-3-1-1 > li { counter-increment: s_systems_eg_2eqns2varss-3-1-1; }
-#ss_linear_equations-15-5 { counter-set: ss_linear_equations-15-5 0; }
-#ss_linear_equations-15-5 > li::marker { content: ""counter(ss_linear_equations-15-5,decimal)"."; }
-#ss_linear_equations-15-5 > li { counter-increment: ss_linear_equations-15-5; }
-#eg_system_of_lines-3-1-3 { counter-set: eg_system_of_lines-3-1-3 0; }
-#eg_system_of_lines-3-1-3 > li::marker { content: ""counter(eg_system_of_lines-3-1-3,decimal)"."; }
-#eg_system_of_lines-3-1-3 > li { counter-increment: eg_system_of_lines-3-1-3; }
-#pars--2-4 { counter-set: pars--2-4 0; }
-#pars--2-4 > li::marker { content: ""counter(pars--2-4,decimal)"."; }
-#pars--2-4 > li { counter-increment: pars--2-4; }
-#extracted-webwork-18-1-1-2-1 { counter-set: extracted-webwork-18-1-1-2-1 0; }
-#extracted-webwork-18-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-18-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-18-1-1-2-1 > li { counter-increment: extracted-webwork-18-1-1-2-1; }
-#extracted-webwork-21-1-1-2-1 { counter-set: extracted-webwork-21-1-1-2-1 0; }
-#extracted-webwork-21-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-21-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-21-1-1-2-1 > li { counter-increment: extracted-webwork-21-1-1-2-1; }
-#extracted-webwork-22-1-1-2-1 { counter-set: extracted-webwork-22-1-1-2-1 0; }
-#extracted-webwork-22-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-22-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-22-1-1-2-1 > li { counter-increment: extracted-webwork-22-1-1-2-1; }
-#ex_solving_sys_geom-2-1-3 { counter-set: ex_solving_sys_geom-2-1-3 0; }
-#ex_solving_sys_geom-2-1-3 > li::marker { content: "("counter(ex_solving_sys_geom-2-1-3,lower-alpha)")"; }
-#ex_solving_sys_geom-2-1-3 > li { counter-increment: ex_solving_sys_geom-2-1-3; }
-#ex_solving_sys_geom-3-7-4 { counter-set: ex_solving_sys_geom-3-7-4 0; }
-#ex_solving_sys_geom-3-7-4 > li::marker { content: "("counter(ex_solving_sys_geom-3-7-4,lower-alpha)")"; }
-#ex_solving_sys_geom-3-7-4 > li { counter-increment: ex_solving_sys_geom-3-7-4; }
-#ex_row_ops_preserve-2-1-1 { counter-set: ex_row_ops_preserve-2-1-1 0; }
-#ex_row_ops_preserve-2-1-1 > li::marker { content: "("counter(ex_row_ops_preserve-2-1-1,lower-alpha)")"; }
-#ex_row_ops_preserve-2-1-1 > li { counter-increment: ex_row_ops_preserve-2-1-1; }
-#ex_solving_nonlinear_system-2-2 { counter-set: ex_solving_nonlinear_system-2-2 0; }
-#ex_solving_nonlinear_system-2-2 > li::marker { content: "("counter(ex_solving_nonlinear_system-2-2,lower-alpha)")"; }
-#ex_solving_nonlinear_system-2-2 > li { counter-increment: ex_solving_nonlinear_system-2-2; }
-#ex_solving_nonlinear_system-2-2-1-1-3 { counter-set: ex_solving_nonlinear_system-2-2-1-1-3 0; }
-#ex_solving_nonlinear_system-2-2-1-1-3 > li::marker { content: ""counter(ex_solving_nonlinear_system-2-2-1-1-3,lower-roman)"."; }
-#ex_solving_nonlinear_system-2-2-1-1-3 > li { counter-increment: ex_solving_nonlinear_system-2-2-1-1-3; }
-#ex_solving_nonlinear_system-2-2-2-2 { counter-set: ex_solving_nonlinear_system-2-2-2-2 0; }
-#ex_solving_nonlinear_system-2-2-2-2 > li::marker { content: ""counter(ex_solving_nonlinear_system-2-2-2-2,lower-roman)"."; }
-#ex_solving_nonlinear_system-2-2-2-2 > li { counter-increment: ex_solving_nonlinear_system-2-2-2-2; }
-#s_systems_ex-2-5-2-2 { counter-set: s_systems_ex-2-5-2-2 0; }
-#s_systems_ex-2-5-2-2 > li::marker { content: "("counter(s_systems_ex-2-5-2-2,lower-alpha)")"; }
-#s_systems_ex-2-5-2-2 > li { counter-increment: s_systems_ex-2-5-2-2; }
-#s_ge-2-2-1 { counter-set: s_ge-2-2-1 0; }
-#s_ge-2-2-1 > li::marker { content: ""counter(s_ge-2-2-1,decimal)"."; }
-#s_ge-2-2-1 > li { counter-increment: s_ge-2-2-1; }
-#ss_ge_row_echelon-8-3 { counter-set: ss_ge_row_echelon-8-3 0; }
-#ss_ge_row_echelon-8-3 > li::marker { content: ""counter(ss_ge_row_echelon-8-3,decimal)"."; }
-#ss_ge_row_echelon-8-3 > li { counter-increment: ss_ge_row_echelon-8-3; }
-#ss_ge_row_echelon-9-2-2 { counter-set: ss_ge_row_echelon-9-2-2 0; }
-#ss_ge_row_echelon-9-2-2 > li::marker { content: ""counter(ss_ge_row_echelon-9-2-2,decimal)"."; }
-#ss_ge_row_echelon-9-2-2 > li { counter-increment: ss_ge_row_echelon-9-2-2; }
-#ss_ge_row_echelon-9-3-1 { counter-set: ss_ge_row_echelon-9-3-1 0; }
-#ss_ge_row_echelon-9-3-1 > li::marker { content: ""counter(ss_ge_row_echelon-9-3-1,decimal)"."; }
-#ss_ge_row_echelon-9-3-1 > li { counter-increment: ss_ge_row_echelon-9-3-1; }
-#th_matrixforms-2-1 { counter-set: th_matrixforms-2-1 0; }
-#th_matrixforms-2-1 > li::marker { content: ""counter(th_matrixforms-2-1,decimal)"."; }
-#th_matrixforms-2-1 > li { counter-increment: th_matrixforms-2-1; }
-#extracted-webwork-28-1-1-2-1 { counter-set: extracted-webwork-28-1-1-2-1 0; }
-#extracted-webwork-28-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-28-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-28-1-1-2-1 > li { counter-increment: extracted-webwork-28-1-1-2-1; }
-#s_solving_ex-2-3-1-2 { counter-set: s_solving_ex-2-3-1-2 0; }
-#s_solving_ex-2-3-1-2 > li::marker { content: "("counter(s_solving_ex-2-3-1-2,lower-alpha)")"; }
-#s_solving_ex-2-3-1-2 > li { counter-increment: s_solving_ex-2-3-1-2; }
-#s_solving_ex-2-5-1-2 { counter-set: s_solving_ex-2-5-1-2 0; }
-#s_solving_ex-2-5-1-2 > li::marker { content: "("counter(s_solving_ex-2-5-1-2,lower-alpha)")"; }
-#s_solving_ex-2-5-1-2 > li { counter-increment: s_solving_ex-2-5-1-2; }
-#s_solving_ex-2-6-1-1-2 { counter-set: s_solving_ex-2-6-1-1-2 0; }
-#s_solving_ex-2-6-1-1-2 > li::marker { content: "("counter(s_solving_ex-2-6-1-1-2,lower-alpha)")"; }
-#s_solving_ex-2-6-1-1-2 > li { counter-increment: s_solving_ex-2-6-1-1-2; }
-#d_matrix_equality-2-1-6 { counter-set: d_matrix_equality-2-1-6 0; }
-#d_matrix_equality-2-1-6 > li::marker { content: ""counter(d_matrix_equality-2-1-6,decimal)"."; }
-#d_matrix_equality-2-1-6 > li { counter-increment: d_matrix_equality-2-1-6; }
-#th_matrix_vector_space-2-1-3 { counter-set: th_matrix_vector_space-2-1-3 0; }
-#th_matrix_vector_space-2-1-3 > li::marker { content: ""counter(th_matrix_vector_space-2-1-3,decimal)"."; }
-#th_matrix_vector_space-2-1-3 > li { counter-increment: th_matrix_vector_space-2-1-3; }
-#s_matrix_ex_product-3-1-1 { counter-set: s_matrix_ex_product-3-1-1 0; }
-#s_matrix_ex_product-3-1-1 > li::marker { content: "("counter(s_matrix_ex_product-3-1-1,lower-alpha)")"; }
-#s_matrix_ex_product-3-1-1 > li { counter-increment: s_matrix_ex_product-3-1-1; }
-#extracted-webwork-29-1-1-2-1 { counter-set: extracted-webwork-29-1-1-2-1 0; }
-#extracted-webwork-29-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-29-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-29-1-1-2-1 > li { counter-increment: extracted-webwork-29-1-1-2-1; }
-#s_matrix_ex-2-2-1-2 { counter-set: s_matrix_ex-2-2-1-2 0; }
-#s_matrix_ex-2-2-1-2 > li::marker { content: "("counter(s_matrix_ex-2-2-1-2,lower-alpha)")"; }
-#s_matrix_ex-2-2-1-2 > li { counter-increment: s_matrix_ex-2-2-1-2; }
-#s_matrix_ex-2-3-1-1-3 { counter-set: s_matrix_ex-2-3-1-1-3 0; }
-#s_matrix_ex-2-3-1-1-3 > li::marker { content: "("counter(s_matrix_ex-2-3-1-1-3,lower-alpha)")"; }
-#s_matrix_ex-2-3-1-1-3 > li { counter-increment: s_matrix_ex-2-3-1-1-3; }
-#s_matrix_ex-2-4-1-1-2 { counter-set: s_matrix_ex-2-4-1-1-2 0; }
-#s_matrix_ex-2-4-1-1-2 > li::marker { content: "("counter(s_matrix_ex-2-4-1-1-2,lower-alpha)")"; }
-#s_matrix_ex-2-4-1-1-2 > li { counter-increment: s_matrix_ex-2-4-1-1-2; }
-#s_matrix_ex-2-4-2-1-1 { counter-set: s_matrix_ex-2-4-2-1-1 0; }
-#s_matrix_ex-2-4-2-1-1 > li::marker { content: "("counter(s_matrix_ex-2-4-2-1-1,lower-alpha)")"; }
-#s_matrix_ex-2-4-2-1-1 > li { counter-increment: s_matrix_ex-2-4-2-1-1; }
-#th_matrix_alg_props-2-1-2 { counter-set: th_matrix_alg_props-2-1-2 0; }
-#th_matrix_alg_props-2-1-2 > li::marker { content: ""counter(th_matrix_alg_props-2-1-2,decimal)"."; }
-#th_matrix_alg_props-2-1-2 > li { counter-increment: th_matrix_alg_props-2-1-2; }
-#th_matrix_abnormalities-2-1-1 { counter-set: th_matrix_abnormalities-2-1-1 0; }
-#th_matrix_abnormalities-2-1-1 > li::marker { content: ""counter(th_matrix_abnormalities-2-1-1,decimal)"."; }
-#th_matrix_abnormalities-2-1-1 > li { counter-increment: th_matrix_abnormalities-2-1-1; }
-#ss_cancellation-8-2 { counter-set: ss_cancellation-8-2 0; }
-#ss_cancellation-8-2 > li::marker { content: ""counter(ss_cancellation-8-2,decimal)"."; }
-#ss_cancellation-8-2 > li { counter-increment: ss_cancellation-8-2; }
-#th_matrix_cancel-2-1 { counter-set: th_matrix_cancel-2-1 0; }
-#th_matrix_cancel-2-1 > li::marker { content: ""counter(th_matrix_cancel-2-1,decimal)"."; }
-#th_matrix_cancel-2-1 > li { counter-increment: th_matrix_cancel-2-1; }
-#ss_cancellation-11-2 { counter-set: ss_cancellation-11-2 0; }
-#ss_cancellation-11-2 > li::marker { content: ""counter(ss_cancellation-11-2,decimal)"."; }
-#ss_cancellation-11-2 > li { counter-increment: ss_cancellation-11-2; }
-#th_trans_props-2-1-2 { counter-set: th_trans_props-2-1-2 0; }
-#th_trans_props-2-1-2 > li::marker { content: ""counter(th_trans_props-2-1-2,decimal)"."; }
-#th_trans_props-2-1-2 > li { counter-increment: th_trans_props-2-1-2; }
-#extracted-webwork-34-1-1-2-1 { counter-set: extracted-webwork-34-1-1-2-1 0; }
-#extracted-webwork-34-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-34-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-34-1-1-2-1 > li { counter-increment: extracted-webwork-34-1-1-2-1; }
-#s_matrix_algebra_ex-2-2-1-2 { counter-set: s_matrix_algebra_ex-2-2-1-2 0; }
-#s_matrix_algebra_ex-2-2-1-2 > li::marker { content: "("counter(s_matrix_algebra_ex-2-2-1-2,lower-alpha)")"; }
-#s_matrix_algebra_ex-2-2-1-2 > li { counter-increment: s_matrix_algebra_ex-2-2-1-2; }
-#s_matrix_algebra_ex-2-4-1-2 { counter-set: s_matrix_algebra_ex-2-4-1-2 0; }
-#s_matrix_algebra_ex-2-4-1-2 > li::marker { content: "("counter(s_matrix_algebra_ex-2-4-1-2,lower-alpha)")"; }
-#s_matrix_algebra_ex-2-4-1-2 > li { counter-increment: s_matrix_algebra_ex-2-4-1-2; }
-#s_matrix_algebra_ex-2-5-1-2 { counter-set: s_matrix_algebra_ex-2-5-1-2 0; }
-#s_matrix_algebra_ex-2-5-1-2 > li::marker { content: "("counter(s_matrix_algebra_ex-2-5-1-2,lower-alpha)")"; }
-#s_matrix_algebra_ex-2-5-1-2 > li { counter-increment: s_matrix_algebra_ex-2-5-1-2; }
-#th_inverse_cancel-2-1-3 { counter-set: th_inverse_cancel-2-1-3 0; }
-#th_inverse_cancel-2-1-3 > li::marker { content: ""counter(th_inverse_cancel-2-1-3,decimal)"."; }
-#th_inverse_cancel-2-1-3 > li { counter-increment: th_inverse_cancel-2-1-3; }
-#th_inverse_cancel-3-1-1 { counter-set: th_inverse_cancel-3-1-1 0; }
-#th_inverse_cancel-3-1-1 > li::marker { content: ""counter(th_inverse_cancel-3-1-1,decimal)"."; }
-#th_inverse_cancel-3-1-1 > li { counter-increment: th_inverse_cancel-3-1-1; }
-#cor_solving_invertible-2-1-3 { counter-set: cor_solving_invertible-2-1-3 0; }
-#cor_solving_invertible-2-1-3 > li::marker { content: ""counter(cor_solving_invertible-2-1-3,decimal)"."; }
-#cor_solving_invertible-2-1-3 > li { counter-increment: cor_solving_invertible-2-1-3; }
-#cor_solving_invertible-3-1-1 { counter-set: cor_solving_invertible-3-1-1 0; }
-#cor_solving_invertible-3-1-1 > li::marker { content: ""counter(cor_solving_invertible-3-1-1,decimal)"."; }
-#cor_solving_invertible-3-1-1 > li { counter-increment: cor_solving_invertible-3-1-1; }
-#eg_invertible_matrices-2-1-1 { counter-set: eg_invertible_matrices-2-1-1 0; }
-#eg_invertible_matrices-2-1-1 > li::marker { content: ""counter(eg_invertible_matrices-2-1-1,decimal)"."; }
-#eg_invertible_matrices-2-1-1 > li { counter-increment: eg_invertible_matrices-2-1-1; }
-#subsec--22-3-2 { counter-set: subsec--22-3-2 0; }
-#subsec--22-3-2 > li::marker { content: ""counter(subsec--22-3-2,decimal)"."; }
-#subsec--22-3-2 > li { counter-increment: subsec--22-3-2; }
-#th_power_rules-2-1-4 { counter-set: th_power_rules-2-1-4 0; }
-#th_power_rules-2-1-4 > li::marker { content: ""counter(th_power_rules-2-1-4,decimal)"."; }
-#th_power_rules-2-1-4 > li { counter-increment: th_power_rules-2-1-4; }
-#extracted-webwork-39-1-1-2-1 { counter-set: extracted-webwork-39-1-1-2-1 0; }
-#extracted-webwork-39-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-39-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-39-1-1-2-1 > li { counter-increment: extracted-webwork-39-1-1-2-1; }
-#s_invertible_matrices_ex-2-2-1-2 { counter-set: s_invertible_matrices_ex-2-2-1-2 0; }
-#s_invertible_matrices_ex-2-2-1-2 > li::marker { content: "("counter(s_invertible_matrices_ex-2-2-1-2,lower-alpha)")"; }
-#s_invertible_matrices_ex-2-2-1-2 > li { counter-increment: s_invertible_matrices_ex-2-2-1-2; }
-#s_invertible_matrices_ex-2-3-1-2 { counter-set: s_invertible_matrices_ex-2-3-1-2 0; }
-#s_invertible_matrices_ex-2-3-1-2 > li::marker { content: "("counter(s_invertible_matrices_ex-2-3-1-2,lower-alpha)")"; }
-#s_invertible_matrices_ex-2-3-1-2 > li { counter-increment: s_invertible_matrices_ex-2-3-1-2; }
-#s_invertible_matrices_ex-2-5-1-2 { counter-set: s_invertible_matrices_ex-2-5-1-2 0; }
-#s_invertible_matrices_ex-2-5-1-2 > li::marker { content: "("counter(s_invertible_matrices_ex-2-5-1-2,lower-alpha)")"; }
-#s_invertible_matrices_ex-2-5-1-2 > li { counter-increment: s_invertible_matrices_ex-2-5-1-2; }
-#s_invertible_matrices_ex-2-6-1-2 { counter-set: s_invertible_matrices_ex-2-6-1-2 0; }
-#s_invertible_matrices_ex-2-6-1-2 > li::marker { content: "("counter(s_invertible_matrices_ex-2-6-1-2,lower-alpha)")"; }
-#s_invertible_matrices_ex-2-6-1-2 > li { counter-increment: s_invertible_matrices_ex-2-6-1-2; }
-#s_invertible_matrices_ex-2-9-1-2 { counter-set: s_invertible_matrices_ex-2-9-1-2 0; }
-#s_invertible_matrices_ex-2-9-1-2 > li::marker { content: "("counter(s_invertible_matrices_ex-2-9-1-2,lower-alpha)")"; }
-#s_invertible_matrices_ex-2-9-1-2 > li { counter-increment: s_invertible_matrices_ex-2-9-1-2; }
-#th_invertibility-2-1-3 { counter-set: th_invertibility-2-1-3 0; }
-#th_invertibility-2-1-3 > li::marker { content: ""counter(th_invertibility-2-1-3,decimal)"."; }
-#th_invertibility-2-1-3 > li { counter-increment: th_invertibility-2-1-3; }
-#d_diagonal_triangular-6-1-3 { counter-set: d_diagonal_triangular-6-1-3 0; }
-#d_diagonal_triangular-6-1-3 > li::marker { content: ""counter(d_diagonal_triangular-6-1-3,decimal)"."; }
-#d_diagonal_triangular-6-1-3 > li { counter-increment: d_diagonal_triangular-6-1-3; }
-#th_invertibility_algorithm-2-1-4 { counter-set: th_invertibility_algorithm-2-1-4 0; }
-#th_invertibility_algorithm-2-1-4 > li::marker { content: ""counter(th_invertibility_algorithm-2-1-4,decimal)"."; }
-#th_invertibility_algorithm-2-1-4 > li { counter-increment: th_invertibility_algorithm-2-1-4; }
-#th_elem_matrices_alg-2-1-4 { counter-set: th_elem_matrices_alg-2-1-4 0; }
-#th_elem_matrices_alg-2-1-4 > li::marker { content: ""counter(th_elem_matrices_alg-2-1-4,decimal)"."; }
-#th_elem_matrices_alg-2-1-4 > li { counter-increment: th_elem_matrices_alg-2-1-4; }
-#cor_left-right_inverse-2-1-4 { counter-set: cor_left-right_inverse-2-1-4 0; }
-#cor_left-right_inverse-2-1-4 > li::marker { content: ""counter(cor_left-right_inverse-2-1-4,decimal)"."; }
-#cor_left-right_inverse-2-1-4 > li { counter-increment: cor_left-right_inverse-2-1-4; }
-#cor_row_equivalence_invertibility-2-1-4 { counter-set: cor_row_equivalence_invertibility-2-1-4 0; }
-#cor_row_equivalence_invertibility-2-1-4 > li::marker { content: ""counter(cor_row_equivalence_invertibility-2-1-4,decimal)"."; }
-#cor_row_equivalence_invertibility-2-1-4 > li { counter-increment: cor_row_equivalence_invertibility-2-1-4; }
-#rm_row_equivalence_props-2-8 { counter-set: rm_row_equivalence_props-2-8 0; }
-#rm_row_equivalence_props-2-8 > li::marker { content: ""counter(rm_row_equivalence_props-2-8,lower-roman)""; }
-#rm_row_equivalence_props-2-8 > li { counter-increment: rm_row_equivalence_props-2-8; }
-#th_det_zero_repeated_row-2-1-3 { counter-set: th_det_zero_repeated_row-2-1-3 0; }
-#th_det_zero_repeated_row-2-1-3 > li::marker { content: ""counter(th_det_zero_repeated_row-2-1-3,decimal)"."; }
-#th_det_zero_repeated_row-2-1-3 > li { counter-increment: th_det_zero_repeated_row-2-1-3; }
-#th_det_row_ops-2-1-4 { counter-set: th_det_row_ops-2-1-4 0; }
-#th_det_row_ops-2-1-4 > li::marker { content: ""counter(th_det_row_ops-2-1-4,decimal)"."; }
-#th_det_row_ops-2-1-4 > li { counter-increment: th_det_row_ops-2-1-4; }
-#ss_det_row_ops-9-2-1-3 { counter-set: ss_det_row_ops-9-2-1-3 0; }
-#ss_det_row_ops-9-2-1-3 > li::marker { content: ""counter(ss_det_row_ops-9-2-1-3,decimal)"."; }
-#ss_det_row_ops-9-2-1-3 > li { counter-increment: ss_det_row_ops-9-2-1-3; }
-#th_invertibility_expanded-2-1-3 { counter-set: th_invertibility_expanded-2-1-3 0; }
-#th_invertibility_expanded-2-1-3 > li::marker { content: ""counter(th_invertibility_expanded-2-1-3,decimal)"."; }
-#th_invertibility_expanded-2-1-3 > li { counter-increment: th_invertibility_expanded-2-1-3; }
-#s_det_ex-2-2-1-1-2 { counter-set: s_det_ex-2-2-1-1-2 0; }
-#s_det_ex-2-2-1-1-2 > li::marker { content: "("counter(s_det_ex-2-2-1-1-2,lower-alpha)")"; }
-#s_det_ex-2-2-1-1-2 > li { counter-increment: s_det_ex-2-2-1-1-2; }
-#s_det_ex-2-8-1-1-4 { counter-set: s_det_ex-2-8-1-1-4 0; }
-#s_det_ex-2-8-1-1-4 > li::marker { content: "("counter(s_det_ex-2-8-1-1-4,lower-alpha)")"; }
-#s_det_ex-2-8-1-1-4 > li { counter-increment: s_det_ex-2-8-1-1-4; }
-#s_det_ex-2-9-1-2 { counter-set: s_det_ex-2-9-1-2 0; }
-#s_det_ex-2-9-1-2 > li::marker { content: "("counter(s_det_ex-2-9-1-2,lower-alpha)")"; }
-#s_det_ex-2-9-1-2 > li { counter-increment: s_det_ex-2-9-1-2; }
-#d_subspace-4-1-5 { counter-set: d_subspace-4-1-5 0; }
-#d_subspace-4-1-5 > li::marker { content: ""counter(d_subspace-4-1-5,lower-roman)""; }
-#d_subspace-4-1-5 > li { counter-increment: d_subspace-4-1-5; }
-#ss_subspace-3-2-1-2 { counter-set: ss_subspace-3-2-1-2 0; }
-#ss_subspace-3-2-1-2 > li::marker { content: ""counter(ss_subspace-3-2-1-2,lower-roman)""; }
-#ss_subspace-3-2-1-2 > li { counter-increment: ss_subspace-3-2-1-2; }
-#ss_subspace-4-2-1-1 { counter-set: ss_subspace-4-2-1-1 0; }
-#ss_subspace-4-2-1-1 > li::marker { content: ""counter(ss_subspace-4-2-1-1,lower-roman)""; }
-#ss_subspace-4-2-1-1 > li { counter-increment: ss_subspace-4-2-1-1; }
-#proc_twostep_proof-2-1-4 { counter-set: proc_twostep_proof-2-1-4 0; }
-#proc_twostep_proof-2-1-4 > li::marker { content: ""counter(proc_twostep_proof-2-1-4,lower-roman)""; }
-#proc_twostep_proof-2-1-4 > li { counter-increment: proc_twostep_proof-2-1-4; }
-#th_subspace_vectorspace-2-1-3 { counter-set: th_subspace_vectorspace-2-1-3 0; }
-#th_subspace_vectorspace-2-1-3 > li::marker { content: ""counter(th_subspace_vectorspace-2-1-3,decimal)"."; }
-#th_subspace_vectorspace-2-1-3 > li { counter-increment: th_subspace_vectorspace-2-1-3; }
-#eg_subspace_alt-2-1-4 { counter-set: eg_subspace_alt-2-1-4 0; }
-#eg_subspace_alt-2-1-4 > li::marker { content: ""counter(eg_subspace_alt-2-1-4,decimal)"."; }
-#eg_subspace_alt-2-1-4 > li { counter-increment: eg_subspace_alt-2-1-4; }
-#eg_subspace_alt-3-1-1 { counter-set: eg_subspace_alt-3-1-1 0; }
-#eg_subspace_alt-3-1-1 > li::marker { content: ""counter(eg_subspace_alt-3-1-1,decimal)"."; }
-#eg_subspace_alt-3-1-1 > li { counter-increment: eg_subspace_alt-3-1-1; }
-#th_nullspace_linsys-2-1-5 { counter-set: th_nullspace_linsys-2-1-5 0; }
-#th_nullspace_linsys-2-1-5 > li::marker { content: ""counter(th_nullspace_linsys-2-1-5,decimal)"."; }
-#th_nullspace_linsys-2-1-5 > li { counter-increment: th_nullspace_linsys-2-1-5; }
-#th_nullspace_linsys-3-1-1 { counter-set: th_nullspace_linsys-3-1-1 0; }
-#th_nullspace_linsys-3-1-1 > li::marker { content: ""counter(th_nullspace_linsys-3-1-1,decimal)"."; }
-#th_nullspace_linsys-3-1-1 > li { counter-increment: th_nullspace_linsys-3-1-1; }
-#cor_matrix_equations-2-1-4 { counter-set: cor_matrix_equations-2-1-4 0; }
-#cor_matrix_equations-2-1-4 > li::marker { content: ""counter(cor_matrix_equations-2-1-4,decimal)"."; }
-#cor_matrix_equations-2-1-4 > li { counter-increment: cor_matrix_equations-2-1-4; }
-#d_tracezero_symmetric_skewsymmetric-5-1-2 { counter-set: d_tracezero_symmetric_skewsymmetric-5-1-2 0; }
-#d_tracezero_symmetric_skewsymmetric-5-1-2 > li::marker { content: ""counter(d_tracezero_symmetric_skewsymmetric-5-1-2,decimal)"."; }
-#d_tracezero_symmetric_skewsymmetric-5-1-2 > li { counter-increment: d_tracezero_symmetric_skewsymmetric-5-1-2; }
-#th_matrix_subspaces-2-1-3 { counter-set: th_matrix_subspaces-2-1-3 0; }
-#th_matrix_subspaces-2-1-3 > li::marker { content: ""counter(th_matrix_subspaces-2-1-3,decimal)"."; }
-#th_matrix_subspaces-2-1-3 > li { counter-increment: th_matrix_subspaces-2-1-3; }
-#s_subspace_ex-6-2-1-4 { counter-set: s_subspace_ex-6-2-1-4 0; }
-#s_subspace_ex-6-2-1-4 > li::marker { content: "("counter(s_subspace_ex-6-2-1-4,lower-alpha)")"; }
-#s_subspace_ex-6-2-1-4 > li { counter-increment: s_subspace_ex-6-2-1-4; }
-#rm_span-1-1-3 { counter-set: rm_span-1-1-3 0; }
-#rm_span-1-1-3 > li::marker { content: ""counter(rm_span-1-1-3,decimal)"."; }
-#rm_span-1-1-3 > li { counter-increment: rm_span-1-1-3; }
-#eg_span_2space-2-2 { counter-set: eg_span_2space-2-2 0; }
-#eg_span_2space-2-2 > li::marker { content: ""counter(eg_span_2space-2-2,decimal)"."; }
-#eg_span_2space-2-2 > li { counter-increment: eg_span_2space-2-2; }
-#eg_span_2space-3-1-1 { counter-set: eg_span_2space-3-1-1 0; }
-#eg_span_2space-3-1-1 > li::marker { content: ""counter(eg_span_2space-3-1-1,decimal)"."; }
-#eg_span_2space-3-1-1 > li { counter-increment: eg_span_2space-3-1-1; }
-#th_span-2-1-3 { counter-set: th_span-2-1-3 0; }
-#th_span-2-1-3 > li::marker { content: ""counter(th_span-2-1-3,decimal)"."; }
-#th_span-2-1-3 > li { counter-increment: th_span-2-1-3; }
-#th_span-3-2-2-2 { counter-set: th_span-3-2-2-2 0; }
-#th_span-3-2-2-2 > li::marker { content: ""counter(th_span-3-2-2-2,decimal)"."; }
-#th_span-3-2-2-2 > li { counter-increment: th_span-3-2-2-2; }
-#s_span_independence-3-13-2-1-5 { counter-set: s_span_independence-3-13-2-1-5 0; }
-#s_span_independence-3-13-2-1-5 > li::marker { content: ""counter(s_span_independence-3-13-2-1-5,decimal)"."; }
-#s_span_independence-3-13-2-1-5 > li { counter-increment: s_span_independence-3-13-2-1-5; }
-#s_span_independence-3-13-3-1-1 { counter-set: s_span_independence-3-13-3-1-1 0; }
-#s_span_independence-3-13-3-1-1 > li::marker { content: ""counter(s_span_independence-3-13-3-1-1,decimal)"."; }
-#s_span_independence-3-13-3-1-1 > li { counter-increment: s_span_independence-3-13-3-1-1; }
-#th_lin_ind_finite-2-1-4 { counter-set: th_lin_ind_finite-2-1-4 0; }
-#th_lin_ind_finite-2-1-4 > li::marker { content: ""counter(th_lin_ind_finite-2-1-4,decimal)"."; }
-#th_lin_ind_finite-2-1-4 > li { counter-increment: th_lin_ind_finite-2-1-4; }
-#eg_independence_basic_examples-2-1-3 { counter-set: eg_independence_basic_examples-2-1-3 0; }
-#eg_independence_basic_examples-2-1-3 > li::marker { content: ""counter(eg_independence_basic_examples-2-1-3,decimal)"."; }
-#eg_independence_basic_examples-2-1-3 > li { counter-increment: eg_independence_basic_examples-2-1-3; }
-#proc_linear_independence-2-1-4 { counter-set: proc_linear_independence-2-1-4 0; }
-#proc_linear_independence-2-1-4 > li::marker { content: ""counter(proc_linear_independence-2-1-4,decimal)"."; }
-#proc_linear_independence-2-1-4 > li { counter-increment: proc_linear_independence-2-1-4; }
-#ex_linear_independence-2-1-4 { counter-set: ex_linear_independence-2-1-4 0; }
-#ex_linear_independence-2-1-4 > li::marker { content: ""counter(ex_linear_independence-2-1-4,decimal)"."; }
-#ex_linear_independence-2-1-4 > li { counter-increment: ex_linear_independence-2-1-4; }
-#ex_linear_independence-3-1 { counter-set: ex_linear_independence-3-1 0; }
-#ex_linear_independence-3-1 > li::marker { content: ""counter(ex_linear_independence-3-1,decimal)"."; }
-#ex_linear_independence-3-1 > li { counter-increment: ex_linear_independence-3-1; }
-#th_invertibility_3-2-1-3 { counter-set: th_invertibility_3-2-1-3 0; }
-#th_invertibility_3-2-1-3 > li::marker { content: ""counter(th_invertibility_3-2-1-3,decimal)"."; }
-#th_invertibility_3-2-1-3 > li { counter-increment: th_invertibility_3-2-1-3; }
-#s_span_independence_ex-4-1-2 { counter-set: s_span_independence_ex-4-1-2 0; }
-#s_span_independence_ex-4-1-2 > li::marker { content: "("counter(s_span_independence_ex-4-1-2,lower-alpha)")"; }
-#s_span_independence_ex-4-1-2 > li { counter-increment: s_span_independence_ex-4-1-2; }
-#ex_span_independence_inveribility-2-3 { counter-set: ex_span_independence_inveribility-2-3 0; }
-#ex_span_independence_inveribility-2-3 > li::marker { content: "("counter(ex_span_independence_inveribility-2-3,lower-alpha)")"; }
-#ex_span_independence_inveribility-2-3 > li { counter-increment: ex_span_independence_inveribility-2-3; }
-#s_basis-2-2-1 { counter-set: s_basis-2-2-1 0; }
-#s_basis-2-2-1 > li::marker { content: ""counter(s_basis-2-2-1,decimal)"."; }
-#s_basis-2-2-1 > li { counter-increment: s_basis-2-2-1; }
-#d_basis-3-1-4 { counter-set: d_basis-3-1-4 0; }
-#d_basis-3-1-4 > li::marker { content: ""counter(d_basis-3-1-4,lower-roman)""; }
-#d_basis-3-1-4 > li { counter-increment: d_basis-3-1-4; }
-#ss_bases-5-2-1-5 { counter-set: ss_bases-5-2-1-5 0; }
-#ss_bases-5-2-1-5 > li::marker { content: ""counter(ss_bases-5-2-1-5,decimal)"."; }
-#ss_bases-5-2-1-5 > li { counter-increment: ss_bases-5-2-1-5; }
-#ss_bases-5-3-2 { counter-set: ss_bases-5-3-2 0; }
-#ss_bases-5-3-2 > li::marker { content: ""counter(ss_bases-5-3-2,decimal)"."; }
-#ss_bases-5-3-2 > li { counter-increment: ss_bases-5-3-2; }
-#th_basis_equivalence-2-2 { counter-set: th_basis_equivalence-2-2 0; }
-#th_basis_equivalence-2-2 > li::marker { content: ""counter(th_basis_equivalence-2-2,decimal)"."; }
-#th_basis_equivalence-2-2 > li { counter-increment: th_basis_equivalence-2-2; }
-#proc_basis_onestep-2-1-5 { counter-set: proc_basis_onestep-2-1-5 0; }
-#proc_basis_onestep-2-1-5 > li::marker { content: ""counter(proc_basis_onestep-2-1-5,decimal)"."; }
-#proc_basis_onestep-2-1-5 > li { counter-increment: proc_basis_onestep-2-1-5; }
-#proc_provide_basis-2-1-4 { counter-set: proc_provide_basis-2-1-4 0; }
-#proc_provide_basis-2-1-4 > li::marker { content: ""counter(proc_provide_basis-2-1-4,decimal)"."; }
-#proc_provide_basis-2-1-4 > li { counter-increment: proc_provide_basis-2-1-4; }
-#eg_byinspection_basis-3-1-2 { counter-set: eg_byinspection_basis-3-1-2 0; }
-#eg_byinspection_basis-3-1-2 > li::marker { content: ""counter(eg_byinspection_basis-3-1-2,decimal)"."; }
-#eg_byinspection_basis-3-1-2 > li { counter-increment: eg_byinspection_basis-3-1-2; }
-#s_basis_ex-2-3-1-2 { counter-set: s_basis_ex-2-3-1-2 0; }
-#s_basis_ex-2-3-1-2 > li::marker { content: "("counter(s_basis_ex-2-3-1-2,lower-alpha)")"; }
-#s_basis_ex-2-3-1-2 > li { counter-increment: s_basis_ex-2-3-1-2; }
-#s_basis_ex-2-4-1-2 { counter-set: s_basis_ex-2-4-1-2 0; }
-#s_basis_ex-2-4-1-2 > li::marker { content: "("counter(s_basis_ex-2-4-1-2,lower-alpha)")"; }
-#s_basis_ex-2-4-1-2 > li { counter-increment: s_basis_ex-2-4-1-2; }
-#s_basis_ex-5-1-2 { counter-set: s_basis_ex-5-1-2 0; }
-#s_basis_ex-5-1-2 > li::marker { content: "("counter(s_basis_ex-5-1-2,lower-alpha)")"; }
-#s_basis_ex-5-1-2 > li { counter-increment: s_basis_ex-5-1-2; }
-#ex_basis_matrix_families-2-2 { counter-set: ex_basis_matrix_families-2-2 0; }
-#ex_basis_matrix_families-2-2 > li::marker { content: "("counter(ex_basis_matrix_families-2-2,lower-alpha)")"; }
-#ex_basis_matrix_families-2-2 > li { counter-increment: ex_basis_matrix_families-2-2; }
-#th_basis_dimension-2-2 { counter-set: th_basis_dimension-2-2 0; }
-#th_basis_dimension-2-2 > li::marker { content: ""counter(th_basis_dimension-2-2,decimal)"."; }
-#th_basis_dimension-2-2 > li { counter-increment: th_basis_dimension-2-2; }
-#th_basis_dimension-3-1-1 { counter-set: th_basis_dimension-3-1-1 0; }
-#th_basis_dimension-3-1-1 > li::marker { content: ""counter(th_basis_dimension-3-1-1,decimal)"."; }
-#th_basis_dimension-3-1-1 > li { counter-increment: th_basis_dimension-3-1-1; }
-#proc_dimension-2-1-2 { counter-set: proc_dimension-2-1-2 0; }
-#proc_dimension-2-1-2 > li::marker { content: ""counter(proc_dimension-2-1-2,decimal)"."; }
-#proc_dimension-2-1-2 > li { counter-increment: proc_dimension-2-1-2; }
-#th_basis_contract_expand-2-2 { counter-set: th_basis_contract_expand-2-2 0; }
-#th_basis_contract_expand-2-2 > li::marker { content: ""counter(th_basis_contract_expand-2-2,decimal)"."; }
-#th_basis_contract_expand-2-2 > li { counter-increment: th_basis_contract_expand-2-2; }
-#th_basis_contract_expand-3-1-2 { counter-set: th_basis_contract_expand-3-1-2 0; }
-#th_basis_contract_expand-3-1-2 > li::marker { content: ""counter(th_basis_contract_expand-3-1-2,decimal)"."; }
-#th_basis_contract_expand-3-1-2 > li { counter-increment: th_basis_contract_expand-3-1-2; }
-#th_basis_contract_expand-3-1-2-2-1-5 { counter-set: th_basis_contract_expand-3-1-2-2-1-5 0; }
-#th_basis_contract_expand-3-1-2-2-1-5 > li::marker { content: ""counter(th_basis_contract_expand-3-1-2-2-1-5,lower-roman)""; }
-#th_basis_contract_expand-3-1-2-2-1-5 > li { counter-increment: th_basis_contract_expand-3-1-2-2-1-5; }
-#cor_street_smarts-2-2 { counter-set: cor_street_smarts-2-2 0; }
-#cor_street_smarts-2-2 > li::marker { content: ""counter(cor_street_smarts-2-2,decimal)"."; }
-#cor_street_smarts-2-2 > li { counter-increment: cor_street_smarts-2-2; }
-#cor_street_smarts-2-2-3-1-2 { counter-set: cor_street_smarts-2-2-3-1-2 0; }
-#cor_street_smarts-2-2-3-1-2 > li::marker { content: ""counter(cor_street_smarts-2-2-3-1-2,lower-roman)""; }
-#cor_street_smarts-2-2-3-1-2 > li { counter-increment: cor_street_smarts-2-2-3-1-2; }
-#cor_dimension_subspace-2-2 { counter-set: cor_dimension_subspace-2-2 0; }
-#cor_dimension_subspace-2-2 > li::marker { content: ""counter(cor_dimension_subspace-2-2,decimal)"."; }
-#cor_dimension_subspace-2-2 > li { counter-increment: cor_dimension_subspace-2-2; }
-#cor_dimension_subspace-3-1-1 { counter-set: cor_dimension_subspace-3-1-1 0; }
-#cor_dimension_subspace-3-1-1 > li::marker { content: ""counter(cor_dimension_subspace-3-1-1,decimal)"."; }
-#cor_dimension_subspace-3-1-1 > li { counter-increment: cor_dimension_subspace-3-1-1; }
-#th_dimension_compendium-2-1-3 { counter-set: th_dimension_compendium-2-1-3 0; }
-#th_dimension_compendium-2-1-3 > li::marker { content: ""counter(th_dimension_compendium-2-1-3,decimal)"."; }
-#th_dimension_compendium-2-1-3 > li { counter-increment: th_dimension_compendium-2-1-3; }
-#th_dimension_compendium-2-1-3-6-2-2 { counter-set: th_dimension_compendium-2-1-3-6-2-2 0; }
-#th_dimension_compendium-2-1-3-6-2-2 > li::marker { content: "("counter(th_dimension_compendium-2-1-3-6-2-2,lower-alpha)")"; }
-#th_dimension_compendium-2-1-3-6-2-2 > li { counter-increment: th_dimension_compendium-2-1-3-6-2-2; }
-#extracted-webwork-58-1-1-2-1 { counter-set: extracted-webwork-58-1-1-2-1 0; }
-#extracted-webwork-58-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-58-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-58-1-1-2-1 > li { counter-increment: extracted-webwork-58-1-1-2-1; }
-#extracted-webwork-60-1-1-2-1 { counter-set: extracted-webwork-60-1-1-2-1 0; }
-#extracted-webwork-60-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-60-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-60-1-1-2-1 > li { counter-increment: extracted-webwork-60-1-1-2-1; }
-#s_dimension_ex-3-1-2 { counter-set: s_dimension_ex-3-1-2 0; }
-#s_dimension_ex-3-1-2 > li::marker { content: "("counter(s_dimension_ex-3-1-2,lower-alpha)")"; }
-#s_dimension_ex-3-1-2 > li { counter-increment: s_dimension_ex-3-1-2; }
-#s_dimension_ex-7-1-1-6 { counter-set: s_dimension_ex-7-1-1-6 0; }
-#s_dimension_ex-7-1-1-6 > li::marker { content: "("counter(s_dimension_ex-7-1-1-6,lower-alpha)")"; }
-#s_dimension_ex-7-1-1-6 > li { counter-increment: s_dimension_ex-7-1-1-6; }
-#ex_dimension_matrix_families-2-2 { counter-set: ex_dimension_matrix_families-2-2 0; }
-#ex_dimension_matrix_families-2-2 > li::marker { content: "("counter(ex_dimension_matrix_families-2-2,lower-alpha)")"; }
-#ex_dimension_matrix_families-2-2 > li { counter-increment: ex_dimension_matrix_families-2-2; }
-#th_col_space-2-1-4 { counter-set: th_col_space-2-1-4 0; }
-#th_col_space-2-1-4 > li::marker { content: ""counter(th_col_space-2-1-4,decimal)"."; }
-#th_col_space-2-1-4 > li { counter-increment: th_col_space-2-1-4; }
-#th_fundspaces_rowreduce-2-1-7 { counter-set: th_fundspaces_rowreduce-2-1-7 0; }
-#th_fundspaces_rowreduce-2-1-7 > li::marker { content: ""counter(th_fundspaces_rowreduce-2-1-7,decimal)"."; }
-#th_fundspaces_rowreduce-2-1-7 > li { counter-increment: th_fundspaces_rowreduce-2-1-7; }
-#th_fundspaces_rowreduce-3-1-8 { counter-set: th_fundspaces_rowreduce-3-1-8 0; }
-#th_fundspaces_rowreduce-3-1-8 > li::marker { content: ""counter(th_fundspaces_rowreduce-3-1-8,decimal)"."; }
-#th_fundspaces_rowreduce-3-1-8 > li { counter-increment: th_fundspaces_rowreduce-3-1-8; }
-#proc_fund_spaces-2-1-3 { counter-set: proc_fund_spaces-2-1-3 0; }
-#proc_fund_spaces-2-1-3 > li::marker { content: ""counter(proc_fund_spaces-2-1-3,decimal)"."; }
-#proc_fund_spaces-2-1-3 > li { counter-increment: proc_fund_spaces-2-1-3; }
-#th_rank_nullity_matrix-2-1-3 { counter-set: th_rank_nullity_matrix-2-1-3 0; }
-#th_rank_nullity_matrix-2-1-3 > li::marker { content: ""counter(th_rank_nullity_matrix-2-1-3,decimal)"."; }
-#th_rank_nullity_matrix-2-1-3 > li { counter-increment: th_rank_nullity_matrix-2-1-3; }
-#proc_contract_extend-2-2-1-3 { counter-set: proc_contract_extend-2-2-1-3 0; }
-#proc_contract_extend-2-2-1-3 > li::marker { content: ""counter(proc_contract_extend-2-2-1-3,decimal)"."; }
-#proc_contract_extend-2-2-1-3 > li { counter-increment: proc_contract_extend-2-2-1-3; }
-#proc_contract_extend-2-2-2-3 { counter-set: proc_contract_extend-2-2-2-3 0; }
-#proc_contract_extend-2-2-2-3 > li::marker { content: ""counter(proc_contract_extend-2-2-2-3,decimal)"."; }
-#proc_contract_extend-2-2-2-3 > li { counter-increment: proc_contract_extend-2-2-2-3; }
-#th_invertibility_supersized-2-1-3 { counter-set: th_invertibility_supersized-2-1-3 0; }
-#th_invertibility_supersized-2-1-3 > li::marker { content: ""counter(th_invertibility_supersized-2-1-3,decimal)"."; }
-#th_invertibility_supersized-2-1-3 > li { counter-increment: th_invertibility_supersized-2-1-3; }
-#extracted-webwork-63-1-1-2-1 { counter-set: extracted-webwork-63-1-1-2-1 0; }
-#extracted-webwork-63-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-63-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-63-1-1-2-1 > li { counter-increment: extracted-webwork-63-1-1-2-1; }
-#extracted-webwork-64-1-1-2-1 { counter-set: extracted-webwork-64-1-1-2-1 0; }
-#extracted-webwork-64-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-64-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-64-1-1-2-1 > li { counter-increment: extracted-webwork-64-1-1-2-1; }
-#s_rank_nullity_ex-2-1-2 { counter-set: s_rank_nullity_ex-2-1-2 0; }
-#s_rank_nullity_ex-2-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-2-1-2,lower-alpha)")"; }
-#s_rank_nullity_ex-2-1-2 > li { counter-increment: s_rank_nullity_ex-2-1-2; }
-#s_rank_nullity_ex-3-1-2 { counter-set: s_rank_nullity_ex-3-1-2 0; }
-#s_rank_nullity_ex-3-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-3-1-2,lower-alpha)")"; }
-#s_rank_nullity_ex-3-1-2 > li { counter-increment: s_rank_nullity_ex-3-1-2; }
-#s_rank_nullity_ex-4-1-2 { counter-set: s_rank_nullity_ex-4-1-2 0; }
-#s_rank_nullity_ex-4-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-4-1-2,lower-alpha)")"; }
-#s_rank_nullity_ex-4-1-2 > li { counter-increment: s_rank_nullity_ex-4-1-2; }
-#s_rank_nullity_ex-4-2-1 { counter-set: s_rank_nullity_ex-4-2-1 0; }
-#s_rank_nullity_ex-4-2-1 > li::marker { content: "("counter(s_rank_nullity_ex-4-2-1,lower-alpha)")"; }
-#s_rank_nullity_ex-4-2-1 > li { counter-increment: s_rank_nullity_ex-4-2-1; }
-#s_rank_nullity_ex-5-1-2 { counter-set: s_rank_nullity_ex-5-1-2 0; }
-#s_rank_nullity_ex-5-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-5-1-2,lower-alpha)")"; }
-#s_rank_nullity_ex-5-1-2 > li { counter-increment: s_rank_nullity_ex-5-1-2; }
-#s_rank_nullity_ex-6-1-2 { counter-set: s_rank_nullity_ex-6-1-2 0; }
-#s_rank_nullity_ex-6-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-6-1-2,lower-alpha)")"; }
-#s_rank_nullity_ex-6-1-2 > li { counter-increment: s_rank_nullity_ex-6-1-2; }
-#s_rank_nullity_ex-10-1-2 { counter-set: s_rank_nullity_ex-10-1-2 0; }
-#s_rank_nullity_ex-10-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-10-1-2,lower-alpha)")"; }
-#s_rank_nullity_ex-10-1-2 > li { counter-increment: s_rank_nullity_ex-10-1-2; }
-#ex_invertibility_supersized-2-2 { counter-set: ex_invertibility_supersized-2-2 0; }
-#ex_invertibility_supersized-2-2 > li::marker { content: "("counter(ex_invertibility_supersized-2-2,lower-alpha)")"; }
-#ex_invertibility_supersized-2-2 > li { counter-increment: ex_invertibility_supersized-2-2; }
-#d_linear_transform-2-1-6 { counter-set: d_linear_transform-2-1-6 0; }
-#d_linear_transform-2-1-6 > li::marker { content: ""counter(d_linear_transform-2-1-6,lower-roman)""; }
-#d_linear_transform-2-1-6 > li { counter-increment: d_linear_transform-2-1-6; }
-#eg_nonlinear-2-1-3 { counter-set: eg_nonlinear-2-1-3 0; }
-#eg_nonlinear-2-1-3 > li::marker { content: ""counter(eg_nonlinear-2-1-3,decimal)"."; }
-#eg_nonlinear-2-1-3 > li { counter-increment: eg_nonlinear-2-1-3; }
-#eg_nonlinear-3-1-1 { counter-set: eg_nonlinear-3-1-1 0; }
-#eg_nonlinear-3-1-1 > li::marker { content: ""counter(eg_nonlinear-3-1-1,decimal)"."; }
-#eg_nonlinear-3-1-1 > li { counter-increment: eg_nonlinear-3-1-1; }
-#th_transform_zero_identity_scaling-3-1-3 { counter-set: th_transform_zero_identity_scaling-3-1-3 0; }
-#th_transform_zero_identity_scaling-3-1-3 > li::marker { content: ""counter(th_transform_zero_identity_scaling-3-1-3,decimal)"."; }
-#th_transform_zero_identity_scaling-3-1-3 > li { counter-increment: th_transform_zero_identity_scaling-3-1-3; }
-#th_transform_zero_identity_scaling-4-1-1 { counter-set: th_transform_zero_identity_scaling-4-1-1 0; }
-#th_transform_zero_identity_scaling-4-1-1 > li::marker { content: ""counter(th_transform_zero_identity_scaling-4-1-1,decimal)"."; }
-#th_transform_zero_identity_scaling-4-1-1 > li { counter-increment: th_transform_zero_identity_scaling-4-1-1; }
-#th_transform_zero_identity_scaling-4-1-1-1-1-5 { counter-set: th_transform_zero_identity_scaling-4-1-1-1-1-5 0; }
-#th_transform_zero_identity_scaling-4-1-1-1-1-5 > li::marker { content: ""counter(th_transform_zero_identity_scaling-4-1-1-1-1-5,lower-roman)""; }
-#th_transform_zero_identity_scaling-4-1-1-1-1-5 > li { counter-increment: th_transform_zero_identity_scaling-4-1-1-1-1-5; }
-#th_transform_zero_identity_scaling-4-1-1-2-1-5 { counter-set: th_transform_zero_identity_scaling-4-1-1-2-1-5 0; }
-#th_transform_zero_identity_scaling-4-1-1-2-1-5 > li::marker { content: ""counter(th_transform_zero_identity_scaling-4-1-1-2-1-5,lower-roman)""; }
-#th_transform_zero_identity_scaling-4-1-1-2-1-5 > li { counter-increment: th_transform_zero_identity_scaling-4-1-1-2-1-5; }
-#th_transform_basic_props-2-1-6 { counter-set: th_transform_basic_props-2-1-6 0; }
-#th_transform_basic_props-2-1-6 > li::marker { content: ""counter(th_transform_basic_props-2-1-6,decimal)"."; }
-#th_transform_basic_props-2-1-6 > li { counter-increment: th_transform_basic_props-2-1-6; }
-#th_transform_basic_props-3-1-1 { counter-set: th_transform_basic_props-3-1-1 0; }
-#th_transform_basic_props-3-1-1 > li::marker { content: ""counter(th_transform_basic_props-3-1-1,decimal)"."; }
-#th_transform_basic_props-3-1-1 > li { counter-increment: th_transform_basic_props-3-1-1; }
-#th_lin_matrix_operations-2-1-3 { counter-set: th_lin_matrix_operations-2-1-3 0; }
-#th_lin_matrix_operations-2-1-3 > li::marker { content: ""counter(th_lin_matrix_operations-2-1-3,decimal)"."; }
-#th_lin_matrix_operations-2-1-3 > li { counter-increment: th_lin_matrix_operations-2-1-3; }
-#th_bases_transformations-2-1-7 { counter-set: th_bases_transformations-2-1-7 0; }
-#th_bases_transformations-2-1-7 > li::marker { content: ""counter(th_bases_transformations-2-1-7,decimal)"."; }
-#th_bases_transformations-2-1-7 > li { counter-increment: th_bases_transformations-2-1-7; }
-#rm_bases_transformations-2-1-2 { counter-set: rm_bases_transformations-2-1-2 0; }
-#rm_bases_transformations-2-1-2 > li::marker { content: ""counter(rm_bases_transformations-2-1-2,decimal)"."; }
-#rm_bases_transformations-2-1-2 > li { counter-increment: rm_bases_transformations-2-1-2; }
-#eg_bases_transformations-2-1-4 { counter-set: eg_bases_transformations-2-1-4 0; }
-#eg_bases_transformations-2-1-4 > li::marker { content: ""counter(eg_bases_transformations-2-1-4,decimal)"."; }
-#eg_bases_transformations-2-1-4 > li { counter-increment: eg_bases_transformations-2-1-4; }
-#eg_bases_transformations-3-1-3 { counter-set: eg_bases_transformations-3-1-3 0; }
-#eg_bases_transformations-3-1-3 > li::marker { content: ""counter(eg_bases_transformations-3-1-3,decimal)"."; }
-#eg_bases_transformations-3-1-3 > li { counter-increment: eg_bases_transformations-3-1-3; }
-#th_matrix_transform-2-1-3 { counter-set: th_matrix_transform-2-1-3 0; }
-#th_matrix_transform-2-1-3 > li::marker { content: ""counter(th_matrix_transform-2-1-3,decimal)"."; }
-#th_matrix_transform-2-1-3 > li { counter-increment: th_matrix_transform-2-1-3; }
-#th_matrix_transform-3-1 { counter-set: th_matrix_transform-3-1 0; }
-#th_matrix_transform-3-1 > li::marker { content: ""counter(th_matrix_transform-3-1,decimal)"."; }
-#th_matrix_transform-3-1 > li { counter-increment: th_matrix_transform-3-1; }
-#eg_standard_matrix-2-2 { counter-set: eg_standard_matrix-2-2 0; }
-#eg_standard_matrix-2-2 > li::marker { content: ""counter(eg_standard_matrix-2-2,decimal)"."; }
-#eg_standard_matrix-2-2 > li { counter-increment: eg_standard_matrix-2-2; }
-#ex_transformation_add_scale-2-2 { counter-set: ex_transformation_add_scale-2-2 0; }
-#ex_transformation_add_scale-2-2 > li::marker { content: "("counter(ex_transformation_add_scale-2-2,lower-alpha)")"; }
-#ex_transformation_add_scale-2-2 > li { counter-increment: ex_transformation_add_scale-2-2; }
-#ex_span_independence_transform-2-3 { counter-set: ex_span_independence_transform-2-3 0; }
-#ex_span_independence_transform-2-3 > li::marker { content: "("counter(ex_span_independence_transform-2-3,lower-alpha)")"; }
-#ex_span_independence_transform-2-3 > li { counter-increment: ex_span_independence_transform-2-3; }
-#ex_transformation_reflection-2-1-9 { counter-set: ex_transformation_reflection-2-1-9 0; }
-#ex_transformation_reflection-2-1-9 > li::marker { content: "("counter(ex_transformation_reflection-2-1-9,lower-alpha)")"; }
-#ex_transformation_reflection-2-1-9 > li { counter-increment: ex_transformation_reflection-2-1-9; }
-#ex_transformation_composition_rotations_reflections-2-2 { counter-set: ex_transformation_composition_rotations_reflections-2-2 0; }
-#ex_transformation_composition_rotations_reflections-2-2 > li::marker { content: "("counter(ex_transformation_composition_rotations_reflections-2-2,lower-alpha)")"; }
-#ex_transformation_composition_rotations_reflections-2-2 > li { counter-increment: ex_transformation_composition_rotations_reflections-2-2; }
-#d_nullspace_image-6-1-2 { counter-set: d_nullspace_image-6-1-2 0; }
-#d_nullspace_image-6-1-2 > li::marker { content: ""counter(d_nullspace_image-6-1-2,decimal)"."; }
-#d_nullspace_image-6-1-2 > li { counter-increment: d_nullspace_image-6-1-2; }
-#th_nullspace_image-3-1-3 { counter-set: th_nullspace_image-3-1-3 0; }
-#th_nullspace_image-3-1-3 > li::marker { content: ""counter(th_nullspace_image-3-1-3,decimal)"."; }
-#th_nullspace_image-3-1-3 > li { counter-increment: th_nullspace_image-3-1-3; }
-#th_nullspace_image-3-2-3 { counter-set: th_nullspace_image-3-2-3 0; }
-#th_nullspace_image-3-2-3 > li::marker { content: ""counter(th_nullspace_image-3-2-3,decimal)"."; }
-#th_nullspace_image-3-2-3 > li { counter-increment: th_nullspace_image-3-2-3; }
-#eg_nullspace_image_transposition-1-2 { counter-set: eg_nullspace_image_transposition-1-2 0; }
-#eg_nullspace_image_transposition-1-2 > li::marker { content: ""counter(eg_nullspace_image_transposition-1-2,decimal)"."; }
-#eg_nullspace_image_transposition-1-2 > li { counter-increment: eg_nullspace_image_transposition-1-2; }
-#eg_nullspace_image_transposition-2-1-1 { counter-set: eg_nullspace_image_transposition-2-1-1 0; }
-#eg_nullspace_image_transposition-2-1-1 > li::marker { content: ""counter(eg_nullspace_image_transposition-2-1-1,decimal)"."; }
-#eg_nullspace_image_transposition-2-1-1 > li { counter-increment: eg_nullspace_image_transposition-2-1-1; }
-#th_injective_surjective-2-2 { counter-set: th_injective_surjective-2-2 0; }
-#th_injective_surjective-2-2 > li::marker { content: ""counter(th_injective_surjective-2-2,decimal)"."; }
-#th_injective_surjective-2-2 > li { counter-increment: th_injective_surjective-2-2; }
-#cor_injective_surjective-2-1-3 { counter-set: cor_injective_surjective-2-1-3 0; }
-#cor_injective_surjective-2-1-3 > li::marker { content: ""counter(cor_injective_surjective-2-1-3,decimal)"."; }
-#cor_injective_surjective-2-1-3 > li { counter-increment: cor_injective_surjective-2-1-3; }
-#rm_isom-2-6 { counter-set: rm_isom-2-6 0; }
-#rm_isom-2-6 > li::marker { content: ""counter(rm_isom-2-6,decimal)"."; }
-#rm_isom-2-6 > li { counter-increment: rm_isom-2-6; }
-#th_isom_null_im-2-1-2 { counter-set: th_isom_null_im-2-1-2 0; }
-#th_isom_null_im-2-1-2 > li::marker { content: ""counter(th_isom_null_im-2-1-2,decimal)"."; }
-#th_isom_null_im-2-1-2 > li { counter-increment: th_isom_null_im-2-1-2; }
-#th_isomorphism_preserves-2-1-2 { counter-set: th_isomorphism_preserves-2-1-2 0; }
-#th_isomorphism_preserves-2-1-2 > li::marker { content: ""counter(th_isomorphism_preserves-2-1-2,decimal)"."; }
-#th_isomorphism_preserves-2-1-2 > li { counter-increment: th_isomorphism_preserves-2-1-2; }
-#th_isomorphisms_finite_dim-1-1-3 { counter-set: th_isomorphisms_finite_dim-1-1-3 0; }
-#th_isomorphisms_finite_dim-1-1-3 > li::marker { content: ""counter(th_isomorphisms_finite_dim-1-1-3,decimal)"."; }
-#th_isomorphisms_finite_dim-1-1-3 > li { counter-increment: th_isomorphisms_finite_dim-1-1-3; }
-#th_isomorphisms_finite_dim-1-1-3-2-1-4 { counter-set: th_isomorphisms_finite_dim-1-1-3-2-1-4 0; }
-#th_isomorphisms_finite_dim-1-1-3-2-1-4 > li::marker { content: "("counter(th_isomorphisms_finite_dim-1-1-3-2-1-4,lower-alpha)")"; }
-#th_isomorphisms_finite_dim-1-1-3-2-1-4 > li { counter-increment: th_isomorphisms_finite_dim-1-1-3-2-1-4; }
-#th_isomorphisms_finite_dim-2-1-1 { counter-set: th_isomorphisms_finite_dim-2-1-1 0; }
-#th_isomorphisms_finite_dim-2-1-1 > li::marker { content: ""counter(th_isomorphisms_finite_dim-2-1-1,decimal)"."; }
-#th_isomorphisms_finite_dim-2-1-1 > li { counter-increment: th_isomorphisms_finite_dim-2-1-1; }
-#th_invertibility_with_isom-2-1-3 { counter-set: th_invertibility_with_isom-2-1-3 0; }
-#th_invertibility_with_isom-2-1-3 > li::marker { content: ""counter(th_invertibility_with_isom-2-1-3,decimal)"."; }
-#th_invertibility_with_isom-2-1-3 > li { counter-increment: th_invertibility_with_isom-2-1-3; }
-#extracted-webwork-70-1-1-3-1 { counter-set: extracted-webwork-70-1-1-3-1 0; }
-#extracted-webwork-70-1-1-3-1 > li::marker { content: "("counter(extracted-webwork-70-1-1-3-1,lower-alpha)")"; }
-#extracted-webwork-70-1-1-3-1 > li { counter-increment: extracted-webwork-70-1-1-3-1; }
-#extracted-webwork-72-1-1-2-1 { counter-set: extracted-webwork-72-1-1-2-1 0; }
-#extracted-webwork-72-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-72-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-72-1-1-2-1 > li { counter-increment: extracted-webwork-72-1-1-2-1; }
-#extracted-webwork-73-1-1-3-1 { counter-set: extracted-webwork-73-1-1-3-1 0; }
-#extracted-webwork-73-1-1-3-1 > li::marker { content: "("counter(extracted-webwork-73-1-1-3-1,lower-alpha)")"; }
-#extracted-webwork-73-1-1-3-1 > li { counter-increment: extracted-webwork-73-1-1-3-1; }
-#extracted-webwork-74-1-1-2-1 { counter-set: extracted-webwork-74-1-1-2-1 0; }
-#extracted-webwork-74-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-74-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-74-1-1-2-1 > li { counter-increment: extracted-webwork-74-1-1-2-1; }
-#extracted-webwork-75-1-1-2-1 { counter-set: extracted-webwork-75-1-1-2-1 0; }
-#extracted-webwork-75-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-75-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-75-1-1-2-1 > li { counter-increment: extracted-webwork-75-1-1-2-1; }
-#extracted-webwork-75-1-1-2-2 { counter-set: extracted-webwork-75-1-1-2-2 0; }
-#extracted-webwork-75-1-1-2-2 > li::marker { content: ""counter(extracted-webwork-75-1-1-2-2,upper-alpha)"."; }
-#extracted-webwork-75-1-1-2-2 > li { counter-increment: extracted-webwork-75-1-1-2-2; }
-#extracted-webwork-76-1-1-2-1 { counter-set: extracted-webwork-76-1-1-2-1 0; }
-#extracted-webwork-76-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-76-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-76-1-1-2-1 > li { counter-increment: extracted-webwork-76-1-1-2-1; }
-#extracted-webwork-76-1-1-2-2 { counter-set: extracted-webwork-76-1-1-2-2 0; }
-#extracted-webwork-76-1-1-2-2 > li::marker { content: ""counter(extracted-webwork-76-1-1-2-2,upper-alpha)"."; }
-#extracted-webwork-76-1-1-2-2 > li { counter-increment: extracted-webwork-76-1-1-2-2; }
-#extracted-webwork-77-1-1-3-1 { counter-set: extracted-webwork-77-1-1-3-1 0; }
-#extracted-webwork-77-1-1-3-1 > li::marker { content: "("counter(extracted-webwork-77-1-1-3-1,lower-alpha)")"; }
-#extracted-webwork-77-1-1-3-1 > li { counter-increment: extracted-webwork-77-1-1-3-1; }
-#extracted-webwork-77-1-1-3-2 { counter-set: extracted-webwork-77-1-1-3-2 0; }
-#extracted-webwork-77-1-1-3-2 > li::marker { content: ""counter(extracted-webwork-77-1-1-3-2,upper-alpha)"."; }
-#extracted-webwork-77-1-1-3-2 > li { counter-increment: extracted-webwork-77-1-1-3-2; }
-#extracted-webwork-78-1-1-3-1 { counter-set: extracted-webwork-78-1-1-3-1 0; }
-#extracted-webwork-78-1-1-3-1 > li::marker { content: "("counter(extracted-webwork-78-1-1-3-1,lower-alpha)")"; }
-#extracted-webwork-78-1-1-3-1 > li { counter-increment: extracted-webwork-78-1-1-3-1; }
-#extracted-webwork-78-1-1-3-2 { counter-set: extracted-webwork-78-1-1-3-2 0; }
-#extracted-webwork-78-1-1-3-2 > li::marker { content: ""counter(extracted-webwork-78-1-1-3-2,upper-alpha)"."; }
-#extracted-webwork-78-1-1-3-2 > li { counter-increment: extracted-webwork-78-1-1-3-2; }
-#extracted-webwork-79-1-1-2-1 { counter-set: extracted-webwork-79-1-1-2-1 0; }
-#extracted-webwork-79-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-79-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-79-1-1-2-1 > li { counter-increment: extracted-webwork-79-1-1-2-1; }
-#extracted-webwork-79-1-1-2-2 { counter-set: extracted-webwork-79-1-1-2-2 0; }
-#extracted-webwork-79-1-1-2-2 > li::marker { content: ""counter(extracted-webwork-79-1-1-2-2,upper-alpha)"."; }
-#extracted-webwork-79-1-1-2-2 > li { counter-increment: extracted-webwork-79-1-1-2-2; }
-#extracted-webwork-80-1-1-3-1 { counter-set: extracted-webwork-80-1-1-3-1 0; }
-#extracted-webwork-80-1-1-3-1 > li::marker { content: "("counter(extracted-webwork-80-1-1-3-1,lower-alpha)")"; }
-#extracted-webwork-80-1-1-3-1 > li { counter-increment: extracted-webwork-80-1-1-3-1; }
-#extracted-webwork-80-1-1-3-2 { counter-set: extracted-webwork-80-1-1-3-2 0; }
-#extracted-webwork-80-1-1-3-2 > li::marker { content: ""counter(extracted-webwork-80-1-1-3-2,upper-alpha)"."; }
-#extracted-webwork-80-1-1-3-2 > li { counter-increment: extracted-webwork-80-1-1-3-2; }
-#s_coordinatevectors-2-1-12 { counter-set: s_coordinatevectors-2-1-12 0; }
-#s_coordinatevectors-2-1-12 > li::marker { content: ""counter(s_coordinatevectors-2-1-12,decimal)"."; }
-#s_coordinatevectors-2-1-12 > li { counter-increment: s_coordinatevectors-2-1-12; }
-#proc_coor_vec-2-1-5 { counter-set: proc_coor_vec-2-1-5 0; }
-#proc_coor_vec-2-1-5 > li::marker { content: ""counter(proc_coor_vec-2-1-5,decimal)"."; }
-#proc_coor_vec-2-1-5 > li { counter-increment: proc_coor_vec-2-1-5; }
-#eg_coordinatevector_standard-2-2 { counter-set: eg_coordinatevector_standard-2-2 0; }
-#eg_coordinatevector_standard-2-2 > li::marker { content: ""counter(eg_coordinatevector_standard-2-2,decimal)"."; }
-#eg_coordinatevector_standard-2-2 > li { counter-increment: eg_coordinatevector_standard-2-2; }
-#ss_coordinate_vectors-10-2-2 { counter-set: ss_coordinate_vectors-10-2-2 0; }
-#ss_coordinate_vectors-10-2-2 > li::marker { content: ""counter(ss_coordinate_vectors-10-2-2,decimal)"."; }
-#ss_coordinate_vectors-10-2-2 > li { counter-increment: ss_coordinate_vectors-10-2-2; }
-#ss_coordinate_vectors-11-2-2 { counter-set: ss_coordinate_vectors-11-2-2 0; }
-#ss_coordinate_vectors-11-2-2 > li::marker { content: ""counter(ss_coordinate_vectors-11-2-2,decimal)"."; }
-#ss_coordinate_vectors-11-2-2 > li { counter-increment: ss_coordinate_vectors-11-2-2; }
-#ss_coordinate_vectors-11-3-1 { counter-set: ss_coordinate_vectors-11-3-1 0; }
-#ss_coordinate_vectors-11-3-1 > li::marker { content: ""counter(ss_coordinate_vectors-11-3-1,decimal)"."; }
-#ss_coordinate_vectors-11-3-1 > li { counter-increment: ss_coordinate_vectors-11-3-1; }
-#proc_contract_extend_general-2-2-1-3 { counter-set: proc_contract_extend_general-2-2-1-3 0; }
-#proc_contract_extend_general-2-2-1-3 > li::marker { content: ""counter(proc_contract_extend_general-2-2-1-3,decimal)"."; }
-#proc_contract_extend_general-2-2-1-3 > li { counter-increment: proc_contract_extend_general-2-2-1-3; }
-#proc_contract_extend_general-2-2-2-3 { counter-set: proc_contract_extend_general-2-2-2-3 0; }
-#proc_contract_extend_general-2-2-2-3 > li::marker { content: ""counter(proc_contract_extend_general-2-2-2-3,decimal)"."; }
-#proc_contract_extend_general-2-2-2-3 > li { counter-increment: proc_contract_extend_general-2-2-2-3; }
-#s_coordinatevectors_ex-4-1-2 { counter-set: s_coordinatevectors_ex-4-1-2 0; }
-#s_coordinatevectors_ex-4-1-2 > li::marker { content: "("counter(s_coordinatevectors_ex-4-1-2,lower-alpha)")"; }
-#s_coordinatevectors_ex-4-1-2 > li { counter-increment: s_coordinatevectors_ex-4-1-2; }
-#s_coordinatevectors_ex-5-1-2 { counter-set: s_coordinatevectors_ex-5-1-2 0; }
-#s_coordinatevectors_ex-5-1-2 > li::marker { content: "("counter(s_coordinatevectors_ex-5-1-2,lower-alpha)")"; }
-#s_coordinatevectors_ex-5-1-2 > li { counter-increment: s_coordinatevectors_ex-5-1-2; }
-#s_coordinatevectors_ex-6-1-2 { counter-set: s_coordinatevectors_ex-6-1-2 0; }
-#s_coordinatevectors_ex-6-1-2 > li::marker { content: "("counter(s_coordinatevectors_ex-6-1-2,lower-alpha)")"; }
-#s_coordinatevectors_ex-6-1-2 > li { counter-increment: s_coordinatevectors_ex-6-1-2; }
-#s_coordinatevectors_ex-8-1-1-2 { counter-set: s_coordinatevectors_ex-8-1-1-2 0; }
-#s_coordinatevectors_ex-8-1-1-2 > li::marker { content: "("counter(s_coordinatevectors_ex-8-1-1-2,lower-alpha)")"; }
-#s_coordinatevectors_ex-8-1-1-2 > li { counter-increment: s_coordinatevectors_ex-8-1-1-2; }
-#s_matrixreps-2-1-7 { counter-set: s_matrixreps-2-1-7 0; }
-#s_matrixreps-2-1-7 > li::marker { content: ""counter(s_matrixreps-2-1-7,decimal)"."; }
-#s_matrixreps-2-1-7 > li { counter-increment: s_matrixreps-2-1-7; }
-#eg_matrixreps_different_bases-2-2 { counter-set: eg_matrixreps_different_bases-2-2 0; }
-#eg_matrixreps_different_bases-2-2 > li::marker { content: ""counter(eg_matrixreps_different_bases-2-2,decimal)"."; }
-#eg_matrixreps_different_bases-2-2 > li { counter-increment: eg_matrixreps_different_bases-2-2; }
-#eg_matrixreps_different_bases-3-1 { counter-set: eg_matrixreps_different_bases-3-1 0; }
-#eg_matrixreps_different_bases-3-1 > li::marker { content: ""counter(eg_matrixreps_different_bases-3-1,decimal)"."; }
-#eg_matrixreps_different_bases-3-1 > li { counter-increment: eg_matrixreps_different_bases-3-1; }
-#th_matrixrep-2-1-7 { counter-set: th_matrixrep-2-1-7 0; }
-#th_matrixrep-2-1-7 > li::marker { content: ""counter(th_matrixrep-2-1-7,decimal)"."; }
-#th_matrixrep-2-1-7 > li { counter-increment: th_matrixrep-2-1-7; }
-#th_matrixrep-3-2 { counter-set: th_matrixrep-3-2 0; }
-#th_matrixrep-3-2 > li::marker { content: ""counter(th_matrixrep-3-2,decimal)"."; }
-#th_matrixrep-3-2 > li { counter-increment: th_matrixrep-3-2; }
-#th_matrixreps_model-2-2 { counter-set: th_matrixreps_model-2-2 0; }
-#th_matrixreps_model-2-2 > li::marker { content: ""counter(th_matrixreps_model-2-2,decimal)"."; }
-#th_matrixreps_model-2-2 > li { counter-increment: th_matrixreps_model-2-2; }
-#eg_matrixreps_sym_skewsym-2-1-2 { counter-set: eg_matrixreps_sym_skewsym-2-1-2 0; }
-#eg_matrixreps_sym_skewsym-2-1-2 > li::marker { content: ""counter(eg_matrixreps_sym_skewsym-2-1-2,decimal)"."; }
-#eg_matrixreps_sym_skewsym-2-1-2 > li { counter-increment: eg_matrixreps_sym_skewsym-2-1-2; }
-#extracted-webwork-87-1-1-2-1 { counter-set: extracted-webwork-87-1-1-2-1 0; }
-#extracted-webwork-87-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-87-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-87-1-1-2-1 > li { counter-increment: extracted-webwork-87-1-1-2-1; }
-#extracted-webwork-87-1-1-3-1 { counter-set: extracted-webwork-87-1-1-3-1 0; }
-#extracted-webwork-87-1-1-3-1 > li::marker { content: ""counter(extracted-webwork-87-1-1-3-1,upper-alpha)"."; }
-#extracted-webwork-87-1-1-3-1 > li { counter-increment: extracted-webwork-87-1-1-3-1; }
-#s_matrixreps_ex-4-1-2 { counter-set: s_matrixreps_ex-4-1-2 0; }
-#s_matrixreps_ex-4-1-2 > li::marker { content: "("counter(s_matrixreps_ex-4-1-2,lower-alpha)")"; }
-#s_matrixreps_ex-4-1-2 > li { counter-increment: s_matrixreps_ex-4-1-2; }
-#s_matrixreps_ex-5-1-2 { counter-set: s_matrixreps_ex-5-1-2 0; }
-#s_matrixreps_ex-5-1-2 > li::marker { content: "("counter(s_matrixreps_ex-5-1-2,lower-alpha)")"; }
-#s_matrixreps_ex-5-1-2 > li { counter-increment: s_matrixreps_ex-5-1-2; }
-#s_matrixreps_ex-6-1-2 { counter-set: s_matrixreps_ex-6-1-2 0; }
-#s_matrixreps_ex-6-1-2 > li::marker { content: "("counter(s_matrixreps_ex-6-1-2,lower-alpha)")"; }
-#s_matrixreps_ex-6-1-2 > li { counter-increment: s_matrixreps_ex-6-1-2; }
-#s_matrixreps_ex-7-1-2 { counter-set: s_matrixreps_ex-7-1-2 0; }
-#s_matrixreps_ex-7-1-2 > li::marker { content: "("counter(s_matrixreps_ex-7-1-2,lower-alpha)")"; }
-#s_matrixreps_ex-7-1-2 > li { counter-increment: s_matrixreps_ex-7-1-2; }
-#s_matrixreps_ex-8-1-2 { counter-set: s_matrixreps_ex-8-1-2 0; }
-#s_matrixreps_ex-8-1-2 > li::marker { content: "("counter(s_matrixreps_ex-8-1-2,lower-alpha)")"; }
-#s_matrixreps_ex-8-1-2 > li { counter-increment: s_matrixreps_ex-8-1-2; }
-#s_changeofbasis-2-1-5 { counter-set: s_changeofbasis-2-1-5 0; }
-#s_changeofbasis-2-1-5 > li::marker { content: ""counter(s_changeofbasis-2-1-5,decimal)"."; }
-#s_changeofbasis-2-1-5 > li { counter-increment: s_changeofbasis-2-1-5; }
-#th_change_of_basis_coordinates-2-1-5 { counter-set: th_change_of_basis_coordinates-2-1-5 0; }
-#th_change_of_basis_coordinates-2-1-5 > li::marker { content: ""counter(th_change_of_basis_coordinates-2-1-5,decimal)"."; }
-#th_change_of_basis_coordinates-2-1-5 > li { counter-increment: th_change_of_basis_coordinates-2-1-5; }
-#th_change_of_basis_coordinates-3-1 { counter-set: th_change_of_basis_coordinates-3-1 0; }
-#th_change_of_basis_coordinates-3-1 > li::marker { content: ""counter(th_change_of_basis_coordinates-3-1,decimal)"."; }
-#th_change_of_basis_coordinates-3-1 > li { counter-increment: th_change_of_basis_coordinates-3-1; }
-#ss_change_of_basis-5-2-1-4 { counter-set: ss_change_of_basis-5-2-1-4 0; }
-#ss_change_of_basis-5-2-1-4 > li::marker { content: ""counter(ss_change_of_basis-5-2-1-4,decimal)"."; }
-#ss_change_of_basis-5-2-1-4 > li { counter-increment: ss_change_of_basis-5-2-1-4; }
-#ss_change_of_basis-5-3-1-1 { counter-set: ss_change_of_basis-5-3-1-1 0; }
-#ss_change_of_basis-5-3-1-1 > li::marker { content: ""counter(ss_change_of_basis-5-3-1-1,decimal)"."; }
-#ss_change_of_basis-5-3-1-1 > li { counter-increment: ss_change_of_basis-5-3-1-1; }
-#ss_change_of_basis-6-2-1-4 { counter-set: ss_change_of_basis-6-2-1-4 0; }
-#ss_change_of_basis-6-2-1-4 > li::marker { content: ""counter(ss_change_of_basis-6-2-1-4,decimal)"."; }
-#ss_change_of_basis-6-2-1-4 > li { counter-increment: ss_change_of_basis-6-2-1-4; }
-#ss_change_of_basis-6-3-1-1 { counter-set: ss_change_of_basis-6-3-1-1 0; }
-#ss_change_of_basis-6-3-1-1 > li::marker { content: ""counter(ss_change_of_basis-6-3-1-1,decimal)"."; }
-#ss_change_of_basis-6-3-1-1 > li { counter-increment: ss_change_of_basis-6-3-1-1; }
-#th_change_of_basis_properties-2-1-4 { counter-set: th_change_of_basis_properties-2-1-4 0; }
-#th_change_of_basis_properties-2-1-4 > li::marker { content: ""counter(th_change_of_basis_properties-2-1-4,decimal)"."; }
-#th_change_of_basis_properties-2-1-4 > li { counter-increment: th_change_of_basis_properties-2-1-4; }
-#th_change_of_basis_properties-3-1 { counter-set: th_change_of_basis_properties-3-1 0; }
-#th_change_of_basis_properties-3-1 > li::marker { content: ""counter(th_change_of_basis_properties-3-1,decimal)"."; }
-#th_change_of_basis_properties-3-1 > li { counter-increment: th_change_of_basis_properties-3-1; }
-#proc_changebasis_tips-2-2 { counter-set: proc_changebasis_tips-2-2 0; }
-#proc_changebasis_tips-2-2 > li::marker { content: ""counter(proc_changebasis_tips-2-2,decimal)"."; }
-#proc_changebasis_tips-2-2 > li { counter-increment: proc_changebasis_tips-2-2; }
-#rm_change_of_basis_transformations-2-1-1 { counter-set: rm_change_of_basis_transformations-2-1-1 0; }
-#rm_change_of_basis_transformations-2-1-1 > li::marker { content: ""counter(rm_change_of_basis_transformations-2-1-1,decimal)"."; }
-#rm_change_of_basis_transformations-2-1-1 > li { counter-increment: rm_change_of_basis_transformations-2-1-1; }
-#s_changeofbasis-4-5-2-1-2 { counter-set: s_changeofbasis-4-5-2-1-2 0; }
-#s_changeofbasis-4-5-2-1-2 > li::marker { content: ""counter(s_changeofbasis-4-5-2-1-2,decimal)"."; }
-#s_changeofbasis-4-5-2-1-2 > li { counter-increment: s_changeofbasis-4-5-2-1-2; }
-#s_changeofbasis-4-5-3-1 { counter-set: s_changeofbasis-4-5-3-1 0; }
-#s_changeofbasis-4-5-3-1 > li::marker { content: ""counter(s_changeofbasis-4-5-3-1,decimal)"."; }
-#s_changeofbasis-4-5-3-1 > li { counter-increment: s_changeofbasis-4-5-3-1; }
-#proc_standard_matrix_via_change_of_basis-2-2 { counter-set: proc_standard_matrix_via_change_of_basis-2-2 0; }
-#proc_standard_matrix_via_change_of_basis-2-2 > li::marker { content: ""counter(proc_standard_matrix_via_change_of_basis-2-2,decimal)"."; }
-#proc_standard_matrix_via_change_of_basis-2-2 > li { counter-increment: proc_standard_matrix_via_change_of_basis-2-2; }
-#eg_changebasis_reflection-2-1-5 { counter-set: eg_changebasis_reflection-2-1-5 0; }
-#eg_changebasis_reflection-2-1-5 > li::marker { content: ""counter(eg_changebasis_reflection-2-1-5,decimal)"."; }
-#eg_changebasis_reflection-2-1-5 > li { counter-increment: eg_changebasis_reflection-2-1-5; }
-#eg_changebasis_reflection-3-1-1 { counter-set: eg_changebasis_reflection-3-1-1 0; }
-#eg_changebasis_reflection-3-1-1 > li::marker { content: ""counter(eg_changebasis_reflection-3-1-1,decimal)"."; }
-#eg_changebasis_reflection-3-1-1 > li { counter-increment: eg_changebasis_reflection-3-1-1; }
-#s_changeofbasis_ex-3-1-2 { counter-set: s_changeofbasis_ex-3-1-2 0; }
-#s_changeofbasis_ex-3-1-2 > li::marker { content: "("counter(s_changeofbasis_ex-3-1-2,lower-alpha)")"; }
-#s_changeofbasis_ex-3-1-2 > li { counter-increment: s_changeofbasis_ex-3-1-2; }
-#s_changeofbasis_ex-4-1-2 { counter-set: s_changeofbasis_ex-4-1-2 0; }
-#s_changeofbasis_ex-4-1-2 > li::marker { content: "("counter(s_changeofbasis_ex-4-1-2,lower-alpha)")"; }
-#s_changeofbasis_ex-4-1-2 > li { counter-increment: s_changeofbasis_ex-4-1-2; }
-#s_changeofbasis_ex-7-1-1-5 { counter-set: s_changeofbasis_ex-7-1-1-5 0; }
-#s_changeofbasis_ex-7-1-1-5 > li::marker { content: "("counter(s_changeofbasis_ex-7-1-1-5,lower-alpha)")"; }
-#s_changeofbasis_ex-7-1-1-5 > li { counter-increment: s_changeofbasis_ex-7-1-1-5; }
-#ex_changebasis_three_bases-1-2 { counter-set: ex_changebasis_three_bases-1-2 0; }
-#ex_changebasis_three_bases-1-2 > li::marker { content: "("counter(ex_changebasis_three_bases-1-2,lower-alpha)")"; }
-#ex_changebasis_three_bases-1-2 > li { counter-increment: ex_changebasis_three_bases-1-2; }
-#s_changeofbasis_ex-9-2-2 { counter-set: s_changeofbasis_ex-9-2-2 0; }
-#s_changeofbasis_ex-9-2-2 > li::marker { content: "("counter(s_changeofbasis_ex-9-2-2,lower-alpha)")"; }
-#s_changeofbasis_ex-9-2-2 > li { counter-increment: s_changeofbasis_ex-9-2-2; }
-#s_changeofbasis_ex-10-1-2 { counter-set: s_changeofbasis_ex-10-1-2 0; }
-#s_changeofbasis_ex-10-1-2 > li::marker { content: "("counter(s_changeofbasis_ex-10-1-2,lower-alpha)")"; }
-#s_changeofbasis_ex-10-1-2 > li { counter-increment: s_changeofbasis_ex-10-1-2; }
-#s_changeofbasis_ex-11-1-2 { counter-set: s_changeofbasis_ex-11-1-2 0; }
-#s_changeofbasis_ex-11-1-2 > li::marker { content: "("counter(s_changeofbasis_ex-11-1-2,lower-alpha)")"; }
-#s_changeofbasis_ex-11-1-2 > li { counter-increment: s_changeofbasis_ex-11-1-2; }
-#s_changeofbasis_ex-12-2-2 { counter-set: s_changeofbasis_ex-12-2-2 0; }
-#s_changeofbasis_ex-12-2-2 > li::marker { content: "("counter(s_changeofbasis_ex-12-2-2,lower-alpha)")"; }
-#s_changeofbasis_ex-12-2-2 > li { counter-increment: s_changeofbasis_ex-12-2-2; }
-#th_eigenvectors_transformation_matrixrep-2-2 { counter-set: th_eigenvectors_transformation_matrixrep-2-2 0; }
-#th_eigenvectors_transformation_matrixrep-2-2 > li::marker { content: ""counter(th_eigenvectors_transformation_matrixrep-2-2,decimal)"."; }
-#th_eigenvectors_transformation_matrixrep-2-2 > li { counter-increment: th_eigenvectors_transformation_matrixrep-2-2; }
-#th_eigenvectors_matrices-2-1-4 { counter-set: th_eigenvectors_matrices-2-1-4 0; }
-#th_eigenvectors_matrices-2-1-4 > li::marker { content: ""counter(th_eigenvectors_matrices-2-1-4,decimal)"."; }
-#th_eigenvectors_matrices-2-1-4 > li { counter-increment: th_eigenvectors_matrices-2-1-4; }
-#cor_eigenvalues-2-2 { counter-set: cor_eigenvalues-2-2 0; }
-#cor_eigenvalues-2-2 > li::marker { content: ""counter(cor_eigenvalues-2-2,decimal)"."; }
-#cor_eigenvalues-2-2 > li { counter-increment: cor_eigenvalues-2-2; }
-#proc_eigenspaces_matrix-2-2 { counter-set: proc_eigenspaces_matrix-2-2 0; }
-#proc_eigenspaces_matrix-2-2 > li::marker { content: ""counter(proc_eigenspaces_matrix-2-2,decimal)"."; }
-#proc_eigenspaces_matrix-2-2 > li { counter-increment: proc_eigenspaces_matrix-2-2; }
-#eg_eigenspaces_A-2-1-2 { counter-set: eg_eigenspaces_A-2-1-2 0; }
-#eg_eigenspaces_A-2-1-2 > li::marker { content: ""counter(eg_eigenspaces_A-2-1-2,decimal)"."; }
-#eg_eigenspaces_A-2-1-2 > li { counter-increment: eg_eigenspaces_A-2-1-2; }
-#eg_eigenspaces_B-2-2 { counter-set: eg_eigenspaces_B-2-2 0; }
-#eg_eigenspaces_B-2-2 > li::marker { content: ""counter(eg_eigenspaces_B-2-2,decimal)"."; }
-#eg_eigenspaces_B-2-2 > li { counter-increment: eg_eigenspaces_B-2-2; }
-#s_eigenvectors-4-19-2-1-3 { counter-set: s_eigenvectors-4-19-2-1-3 0; }
-#s_eigenvectors-4-19-2-1-3 > li::marker { content: ""counter(s_eigenvectors-4-19-2-1-3,decimal)"."; }
-#s_eigenvectors-4-19-2-1-3 > li { counter-increment: s_eigenvectors-4-19-2-1-3; }
-#s_eigenvectors-4-19-3-1-1 { counter-set: s_eigenvectors-4-19-3-1-1 0; }
-#s_eigenvectors-4-19-3-1-1 > li::marker { content: ""counter(s_eigenvectors-4-19-3-1-1,decimal)"."; }
-#s_eigenvectors-4-19-3-1-1 > li { counter-increment: s_eigenvectors-4-19-3-1-1; }
-#cor_eigenvalue_invertible-2-1-3 { counter-set: cor_eigenvalue_invertible-2-1-3 0; }
-#cor_eigenvalue_invertible-2-1-3 > li::marker { content: ""counter(cor_eigenvalue_invertible-2-1-3,decimal)"."; }
-#cor_eigenvalue_invertible-2-1-3 > li { counter-increment: cor_eigenvalue_invertible-2-1-3; }
-#cor_eigenvalue_invertible-3-1 { counter-set: cor_eigenvalue_invertible-3-1 0; }
-#cor_eigenvalue_invertible-3-1 > li::marker { content: ""counter(cor_eigenvalue_invertible-3-1,decimal)"."; }
-#cor_eigenvalue_invertible-3-1 > li { counter-increment: cor_eigenvalue_invertible-3-1; }
-#proc_eigenspaces_transformation-2-2 { counter-set: proc_eigenspaces_transformation-2-2 0; }
-#proc_eigenspaces_transformation-2-2 > li::marker { content: ""counter(proc_eigenspaces_transformation-2-2,decimal)"."; }
-#proc_eigenspaces_transformation-2-2 > li { counter-increment: proc_eigenspaces_transformation-2-2; }
-#eg_eigenvector_systematic_transposition-2-2 { counter-set: eg_eigenvector_systematic_transposition-2-2 0; }
-#eg_eigenvector_systematic_transposition-2-2 > li::marker { content: ""counter(eg_eigenvector_systematic_transposition-2-2,decimal)"."; }
-#eg_eigenvector_systematic_transposition-2-2 > li { counter-increment: eg_eigenvector_systematic_transposition-2-2; }
-#th_characteristic_polynomial-2-2 { counter-set: th_characteristic_polynomial-2-2 0; }
-#th_characteristic_polynomial-2-2 > li::marker { content: ""counter(th_characteristic_polynomial-2-2,decimal)"."; }
-#th_characteristic_polynomial-2-2 > li { counter-increment: th_characteristic_polynomial-2-2; }
-#th_invertibility_with_eigenvalue-2-1-3 { counter-set: th_invertibility_with_eigenvalue-2-1-3 0; }
-#th_invertibility_with_eigenvalue-2-1-3 > li::marker { content: ""counter(th_invertibility_with_eigenvalue-2-1-3,decimal)"."; }
-#th_invertibility_with_eigenvalue-2-1-3 > li { counter-increment: th_invertibility_with_eigenvalue-2-1-3; }
-#s_eigenvectors_ex-2-11-1-1-6 { counter-set: s_eigenvectors_ex-2-11-1-1-6 0; }
-#s_eigenvectors_ex-2-11-1-1-6 > li::marker { content: "("counter(s_eigenvectors_ex-2-11-1-1-6,lower-alpha)")"; }
-#s_eigenvectors_ex-2-11-1-1-6 > li { counter-increment: s_eigenvectors_ex-2-11-1-1-6; }
-#s_eigenvectors_ex-2-14-1-1-3 { counter-set: s_eigenvectors_ex-2-14-1-1-3 0; }
-#s_eigenvectors_ex-2-14-1-1-3 > li::marker { content: "("counter(s_eigenvectors_ex-2-14-1-1-3,lower-alpha)")"; }
-#s_eigenvectors_ex-2-14-1-1-3 > li { counter-increment: s_eigenvectors_ex-2-14-1-1-3; }
-#s_eigenvectors_ex-2-16-1-1-3 { counter-set: s_eigenvectors_ex-2-16-1-1-3 0; }
-#s_eigenvectors_ex-2-16-1-1-3 > li::marker { content: "("counter(s_eigenvectors_ex-2-16-1-1-3,lower-alpha)")"; }
-#s_eigenvectors_ex-2-16-1-1-3 > li { counter-increment: s_eigenvectors_ex-2-16-1-1-3; }
-#th_diagonalizability_eigenbasis-2-2 { counter-set: th_diagonalizability_eigenbasis-2-2 0; }
-#th_diagonalizability_eigenbasis-2-2 > li::marker { content: ""counter(th_diagonalizability_eigenbasis-2-2,decimal)"."; }
-#th_diagonalizability_eigenbasis-2-2 > li { counter-increment: th_diagonalizability_eigenbasis-2-2; }
-#proc_diagonalize-2-2 { counter-set: proc_diagonalize-2-2 0; }
-#proc_diagonalize-2-2 > li::marker { content: ""counter(proc_diagonalize-2-2,decimal)"."; }
-#proc_diagonalize-2-2 > li { counter-increment: proc_diagonalize-2-2; }
-#proc_diagonalize_matrixtransform-2-2 { counter-set: proc_diagonalize_matrixtransform-2-2 0; }
-#proc_diagonalize_matrixtransform-2-2 > li::marker { content: ""counter(proc_diagonalize_matrixtransform-2-2,decimal)"."; }
-#proc_diagonalize_matrixtransform-2-2 > li { counter-increment: proc_diagonalize_matrixtransform-2-2; }
-#th_similarity-2-1-6 { counter-set: th_similarity-2-1-6 0; }
-#th_similarity-2-1-6 > li::marker { content: ""counter(th_similarity-2-1-6,decimal)"."; }
-#th_similarity-2-1-6 > li { counter-increment: th_similarity-2-1-6; }
-#th_conjugation-2-1-3 { counter-set: th_conjugation-2-1-3 0; }
-#th_conjugation-2-1-3 > li::marker { content: ""counter(th_conjugation-2-1-3,decimal)"."; }
-#th_conjugation-2-1-3 > li { counter-increment: th_conjugation-2-1-3; }
-#cor_alg_geom_mult-2-1-8 { counter-set: cor_alg_geom_mult-2-1-8 0; }
-#cor_alg_geom_mult-2-1-8 > li::marker { content: ""counter(cor_alg_geom_mult-2-1-8,decimal)"."; }
-#cor_alg_geom_mult-2-1-8 > li { counter-increment: cor_alg_geom_mult-2-1-8; }
-#s_diagonalization_ex-6-1-2 { counter-set: s_diagonalization_ex-6-1-2 0; }
-#s_diagonalization_ex-6-1-2 > li::marker { content: "("counter(s_diagonalization_ex-6-1-2,lower-alpha)")"; }
-#s_diagonalization_ex-6-1-2 > li { counter-increment: s_diagonalization_ex-6-1-2; }
-#ex_diagonalization-1-1-8 { counter-set: ex_diagonalization-1-1-8 0; }
-#ex_diagonalization-1-1-8 > li::marker { content: "("counter(ex_diagonalization-1-1-8,lower-alpha)")"; }
-#ex_diagonalization-1-1-8 > li { counter-increment: ex_diagonalization-1-1-8; }
-#eg_unit_vectors-2-1-4 { counter-set: eg_unit_vectors-2-1-4 0; }
-#eg_unit_vectors-2-1-4 > li::marker { content: ""counter(eg_unit_vectors-2-1-4,decimal)"."; }
-#eg_unit_vectors-2-1-4 > li { counter-increment: eg_unit_vectors-2-1-4; }
-#eg_unit_vectors-3-2 { counter-set: eg_unit_vectors-3-2 0; }
-#eg_unit_vectors-3-2 > li::marker { content: ""counter(eg_unit_vectors-3-2,decimal)"."; }
-#eg_unit_vectors-3-2 > li { counter-increment: eg_unit_vectors-3-2; }
-#eg_distance-1-2 { counter-set: eg_distance-1-2 0; }
-#eg_distance-1-2 > li::marker { content: ""counter(eg_distance-1-2,decimal)"."; }
-#eg_distance-1-2 > li { counter-increment: eg_distance-1-2; }
-#eg_distance-2-1 { counter-set: eg_distance-2-1 0; }
-#eg_distance-2-1 > li::marker { content: ""counter(eg_distance-2-1,decimal)"."; }
-#eg_distance-2-1 > li { counter-increment: eg_distance-2-1; }
-#th_norm_basic_props-2-2 { counter-set: th_norm_basic_props-2-2 0; }
-#th_norm_basic_props-2-2 > li::marker { content: ""counter(th_norm_basic_props-2-2,decimal)"."; }
-#th_norm_basic_props-2-2 > li { counter-increment: th_norm_basic_props-2-2; }
-#th_triangle_inequalities-2-1-2 { counter-set: th_triangle_inequalities-2-1-2 0; }
-#th_triangle_inequalities-2-1-2 > li::marker { content: ""counter(th_triangle_inequalities-2-1-2,decimal)"."; }
-#th_triangle_inequalities-2-1-2 > li { counter-increment: th_triangle_inequalities-2-1-2; }
-#s_innerproducts_ex-2-1-2 { counter-set: s_innerproducts_ex-2-1-2 0; }
-#s_innerproducts_ex-2-1-2 > li::marker { content: "("counter(s_innerproducts_ex-2-1-2,lower-alpha)")"; }
-#s_innerproducts_ex-2-1-2 > li { counter-increment: s_innerproducts_ex-2-1-2; }
-#s_innerproducts_ex-4-1-1-2 { counter-set: s_innerproducts_ex-4-1-1-2 0; }
-#s_innerproducts_ex-4-1-1-2 > li::marker { content: "("counter(s_innerproducts_ex-4-1-1-2,lower-alpha)")"; }
-#s_innerproducts_ex-4-1-1-2 > li { counter-increment: s_innerproducts_ex-4-1-1-2; }
-#s_innerproducts_ex-10-1-1-2 { counter-set: s_innerproducts_ex-10-1-1-2 0; }
-#s_innerproducts_ex-10-1-1-2 > li::marker { content: "("counter(s_innerproducts_ex-10-1-1-2,lower-alpha)")"; }
-#s_innerproducts_ex-10-1-1-2 > li { counter-increment: s_innerproducts_ex-10-1-1-2; }
-#ex_isometries-2-3 { counter-set: ex_isometries-2-3 0; }
-#ex_isometries-2-3 > li::marker { content: "("counter(ex_isometries-2-3,lower-alpha)")"; }
-#ex_isometries-2-3 > li { counter-increment: ex_isometries-2-3; }
-#proc_gram-schmidt-3-1-8 { counter-set: proc_gram-schmidt-3-1-8 0; }
-#proc_gram-schmidt-3-1-8 > li::marker { content: ""counter(proc_gram-schmidt-3-1-8,decimal)"."; }
-#proc_gram-schmidt-3-1-8 > li { counter-increment: proc_gram-schmidt-3-1-8; }
-#cor_orthonormal_existence-2-2 { counter-set: cor_orthonormal_existence-2-2 0; }
-#cor_orthonormal_existence-2-2 > li::marker { content: ""counter(cor_orthonormal_existence-2-2,decimal)"."; }
-#cor_orthonormal_existence-2-2 > li { counter-increment: cor_orthonormal_existence-2-2; }
-#cor_orthonormal_existence-3-1 { counter-set: cor_orthonormal_existence-3-1 0; }
-#cor_orthonormal_existence-3-1 > li::marker { content: ""counter(cor_orthonormal_existence-3-1,decimal)"."; }
-#cor_orthonormal_existence-3-1 > li { counter-increment: cor_orthonormal_existence-3-1; }
-#th_orthogonal_basis_formula-2-2 { counter-set: th_orthogonal_basis_formula-2-2 0; }
-#th_orthogonal_basis_formula-2-2 > li::marker { content: ""counter(th_orthogonal_basis_formula-2-2,decimal)"."; }
-#th_orthogonal_basis_formula-2-2 > li { counter-increment: th_orthogonal_basis_formula-2-2; }
-#s_orthogonality-3-9-1-1-2 { counter-set: s_orthogonality-3-9-1-1-2 0; }
-#s_orthogonality-3-9-1-1-2 > li::marker { content: ""counter(s_orthogonality-3-9-1-1-2,decimal)"."; }
-#s_orthogonality-3-9-1-1-2 > li { counter-increment: s_orthogonality-3-9-1-1-2; }
-#s_orthogonality-3-9-2-1 { counter-set: s_orthogonality-3-9-2-1 0; }
-#s_orthogonality-3-9-2-1 > li::marker { content: ""counter(s_orthogonality-3-9-2-1,decimal)"."; }
-#s_orthogonality-3-9-2-1 > li { counter-increment: s_orthogonality-3-9-2-1; }
-#th_coordinates_orthogonal-2-1-3 { counter-set: th_coordinates_orthogonal-2-1-3 0; }
-#th_coordinates_orthogonal-2-1-3 > li::marker { content: ""counter(th_coordinates_orthogonal-2-1-3,decimal)"."; }
-#th_coordinates_orthogonal-2-1-3 > li { counter-increment: th_coordinates_orthogonal-2-1-3; }
-#th_orthogonal_matrices-2-2 { counter-set: th_orthogonal_matrices-2-2 0; }
-#th_orthogonal_matrices-2-2 > li::marker { content: ""counter(th_orthogonal_matrices-2-2,decimal)"."; }
-#th_orthogonal_matrices-2-2 > li { counter-increment: th_orthogonal_matrices-2-2; }
-#th_changebasis_orthonormal-2-2 { counter-set: th_changebasis_orthonormal-2-2 0; }
-#th_changebasis_orthonormal-2-2 > li::marker { content: ""counter(th_changebasis_orthonormal-2-2,decimal)"."; }
-#th_changebasis_orthonormal-2-2 > li { counter-increment: th_changebasis_orthonormal-2-2; }
-#th_changebasis_orthonormal-3-1 { counter-set: th_changebasis_orthonormal-3-1 0; }
-#th_changebasis_orthonormal-3-1 > li::marker { content: ""counter(th_changebasis_orthonormal-3-1,decimal)"."; }
-#th_changebasis_orthonormal-3-1 > li { counter-increment: th_changebasis_orthonormal-3-1; }
-#s_orthogonal_bases_ex-2-1-2 { counter-set: s_orthogonal_bases_ex-2-1-2 0; }
-#s_orthogonal_bases_ex-2-1-2 > li::marker { content: "("counter(s_orthogonal_bases_ex-2-1-2,lower-alpha)")"; }
-#s_orthogonal_bases_ex-2-1-2 > li { counter-increment: s_orthogonal_bases_ex-2-1-2; }
-#s_orthogonal_bases_ex-6-1-2 { counter-set: s_orthogonal_bases_ex-6-1-2 0; }
-#s_orthogonal_bases_ex-6-1-2 > li::marker { content: "("counter(s_orthogonal_bases_ex-6-1-2,lower-alpha)")"; }
-#s_orthogonal_bases_ex-6-1-2 > li { counter-increment: s_orthogonal_bases_ex-6-1-2; }
-#ex_extend_orthogonal-2-2 { counter-set: ex_extend_orthogonal-2-2 0; }
-#ex_extend_orthogonal-2-2 > li::marker { content: "("counter(ex_extend_orthogonal-2-2,lower-alpha)")"; }
-#ex_extend_orthogonal-2-2 > li { counter-increment: ex_extend_orthogonal-2-2; }
-#s_orthogonal_bases_ex-10-1-2 { counter-set: s_orthogonal_bases_ex-10-1-2 0; }
-#s_orthogonal_bases_ex-10-1-2 > li::marker { content: "("counter(s_orthogonal_bases_ex-10-1-2,lower-alpha)")"; }
-#s_orthogonal_bases_ex-10-1-2 > li { counter-increment: s_orthogonal_bases_ex-10-1-2; }
-#ex_coordinates_orthonormal-2-2 { counter-set: ex_coordinates_orthonormal-2-2 0; }
-#ex_coordinates_orthonormal-2-2 > li::marker { content: "("counter(ex_coordinates_orthonormal-2-2,lower-alpha)")"; }
-#ex_coordinates_orthonormal-2-2 > li { counter-increment: ex_coordinates_orthonormal-2-2; }
-#ex_ortho_matrix_rotation_reflection-2-3 { counter-set: ex_ortho_matrix_rotation_reflection-2-3 0; }
-#ex_ortho_matrix_rotation_reflection-2-3 > li::marker { content: "("counter(ex_ortho_matrix_rotation_reflection-2-3,lower-alpha)")"; }
-#ex_ortho_matrix_rotation_reflection-2-3 > li { counter-increment: ex_ortho_matrix_rotation_reflection-2-3; }
-#th_orthogonal_complement-2-1-3 { counter-set: th_orthogonal_complement-2-1-3 0; }
-#th_orthogonal_complement-2-1-3 > li::marker { content: ""counter(th_orthogonal_complement-2-1-3,decimal)"."; }
-#th_orthogonal_complement-2-1-3 > li { counter-increment: th_orthogonal_complement-2-1-3; }
-#th_row_null_comp-2-1-5 { counter-set: th_row_null_comp-2-1-5 0; }
-#th_row_null_comp-2-1-5 > li::marker { content: ""counter(th_row_null_comp-2-1-5,decimal)"."; }
-#th_row_null_comp-2-1-5 > li { counter-increment: th_row_null_comp-2-1-5; }
-#th_row_null_comp-3-1 { counter-set: th_row_null_comp-3-1 0; }
-#th_row_null_comp-3-1 > li::marker { content: ""counter(th_row_null_comp-3-1,decimal)"."; }
-#th_row_null_comp-3-1 > li { counter-increment: th_row_null_comp-3-1; }
-#th_orthogonal_projection-2-1-3 { counter-set: th_orthogonal_projection-2-1-3 0; }
-#th_orthogonal_projection-2-1-3 > li::marker { content: ""counter(th_orthogonal_projection-2-1-3,decimal)"."; }
-#th_orthogonal_projection-2-1-3 > li { counter-increment: th_orthogonal_projection-2-1-3; }
-#s_orthogonal_projection-4-11-1-1-6 { counter-set: s_orthogonal_projection-4-11-1-1-6 0; }
-#s_orthogonal_projection-4-11-1-1-6 > li::marker { content: ""counter(s_orthogonal_projection-4-11-1-1-6,decimal)"."; }
-#s_orthogonal_projection-4-11-1-1-6 > li { counter-increment: s_orthogonal_projection-4-11-1-1-6; }
-#cor_orthoproj_linear-2-2 { counter-set: cor_orthoproj_linear-2-2 0; }
-#cor_orthoproj_linear-2-2 > li::marker { content: ""counter(cor_orthoproj_linear-2-2,decimal)"."; }
-#cor_orthoproj_linear-2-2 > li { counter-increment: cor_orthoproj_linear-2-2; }
-#s_orthogonal_projection-4-16-1-1 { counter-set: s_orthogonal_projection-4-16-1-1 0; }
-#s_orthogonal_projection-4-16-1-1 > li::marker { content: ""counter(s_orthogonal_projection-4-16-1-1,decimal)"."; }
-#s_orthogonal_projection-4-16-1-1 > li { counter-increment: s_orthogonal_projection-4-16-1-1; }
-#s_orthogonal_projection-5-4-1-2 { counter-set: s_orthogonal_projection-5-4-1-2 0; }
-#s_orthogonal_projection-5-4-1-2 > li::marker { content: ""counter(s_orthogonal_projection-5-4-1-2,decimal)"."; }
-#s_orthogonal_projection-5-4-1-2 > li { counter-increment: s_orthogonal_projection-5-4-1-2; }
-#s_orthogonal_projection-5-4-2-1 { counter-set: s_orthogonal_projection-5-4-2-1 0; }
-#s_orthogonal_projection-5-4-2-1 > li::marker { content: ""counter(s_orthogonal_projection-5-4-2-1,decimal)"."; }
-#s_orthogonal_projection-5-4-2-1 > li { counter-increment: s_orthogonal_projection-5-4-2-1; }
-#s_orthogonal_projection-5-6-1-2 { counter-set: s_orthogonal_projection-5-6-1-2 0; }
-#s_orthogonal_projection-5-6-1-2 > li::marker { content: ""counter(s_orthogonal_projection-5-6-1-2,decimal)"."; }
-#s_orthogonal_projection-5-6-1-2 > li { counter-increment: s_orthogonal_projection-5-6-1-2; }
-#s_orthogonal_projection-5-6-2-1 { counter-set: s_orthogonal_projection-5-6-2-1 0; }
-#s_orthogonal_projection-5-6-2-1 > li::marker { content: ""counter(s_orthogonal_projection-5-6-2-1,decimal)"."; }
-#s_orthogonal_projection-5-6-2-1 > li { counter-increment: s_orthogonal_projection-5-6-2-1; }
-#s_orthogonal_projection_ex-4-1-2 { counter-set: s_orthogonal_projection_ex-4-1-2 0; }
-#s_orthogonal_projection_ex-4-1-2 > li::marker { content: "("counter(s_orthogonal_projection_ex-4-1-2,lower-alpha)")"; }
-#s_orthogonal_projection_ex-4-1-2 > li { counter-increment: s_orthogonal_projection_ex-4-1-2; }
-#ex_orthoproj_props-1-2 { counter-set: ex_orthoproj_props-1-2 0; }
-#ex_orthoproj_props-1-2 > li::marker { content: "("counter(ex_orthoproj_props-1-2,lower-alpha)")"; }
-#ex_orthoproj_props-1-2 > li { counter-increment: ex_orthoproj_props-1-2; }
-#s_orthogonal_projection_ex-12-1-2 { counter-set: s_orthogonal_projection_ex-12-1-2 0; }
-#s_orthogonal_projection_ex-12-1-2 > li::marker { content: "("counter(s_orthogonal_projection_ex-12-1-2,lower-alpha)")"; }
-#s_orthogonal_projection_ex-12-1-2 > li { counter-increment: s_orthogonal_projection_ex-12-1-2; }
-#s_orthogonal_projection_ex-12-1-2-2-2 { counter-set: s_orthogonal_projection_ex-12-1-2-2-2 0; }
-#s_orthogonal_projection_ex-12-1-2-2-2 > li::marker { content: ""counter(s_orthogonal_projection_ex-12-1-2-2-2,lower-roman)"."; }
-#s_orthogonal_projection_ex-12-1-2-2-2 > li { counter-increment: s_orthogonal_projection_ex-12-1-2-2-2; }
-#th_self-adjoint_symmetric-2-2 { counter-set: th_self-adjoint_symmetric-2-2 0; }
-#th_self-adjoint_symmetric-2-2 > li::marker { content: ""counter(th_self-adjoint_symmetric-2-2,decimal)"."; }
-#th_self-adjoint_symmetric-2-2 > li { counter-increment: th_self-adjoint_symmetric-2-2; }
-#cor_self-adjoint_symmetric-2-2 { counter-set: cor_self-adjoint_symmetric-2-2 0; }
-#cor_self-adjoint_symmetric-2-2 > li::marker { content: ""counter(cor_self-adjoint_symmetric-2-2,decimal)"."; }
-#cor_self-adjoint_symmetric-2-2 > li { counter-increment: cor_self-adjoint_symmetric-2-2; }
-#th_spectral-2-2 { counter-set: th_spectral-2-2 0; }
-#th_spectral-2-2 > li::marker { content: ""counter(th_spectral-2-2,decimal)"."; }
-#th_spectral-2-2 > li { counter-increment: th_spectral-2-2; }
-#th_spectral-3-2-2-19 { counter-set: th_spectral-3-2-2-19 0; }
-#th_spectral-3-2-2-19 > li::marker { content: ""counter(th_spectral-3-2-2-19,decimal)"."; }
-#th_spectral-3-2-2-19 > li { counter-increment: th_spectral-3-2-2-19; }
-#cor_spectral-2-2 { counter-set: cor_spectral-2-2 0; }
-#cor_spectral-2-2 > li::marker { content: ""counter(cor_spectral-2-2,decimal)"."; }
-#cor_spectral-2-2 > li { counter-increment: cor_spectral-2-2; }
-#proc_ortho_diag-2-2 { counter-set: proc_ortho_diag-2-2 0; }
-#proc_ortho_diag-2-2 > li::marker { content: ""counter(proc_ortho_diag-2-2,decimal)"."; }
-#proc_ortho_diag-2-2 > li { counter-increment: proc_ortho_diag-2-2; }
-#ex_selfadjoint_complement-1-2 { counter-set: ex_selfadjoint_complement-1-2 0; }
-#ex_selfadjoint_complement-1-2 > li::marker { content: "("counter(ex_selfadjoint_complement-1-2,lower-alpha)")"; }
-#ex_selfadjoint_complement-1-2 > li { counter-increment: ex_selfadjoint_complement-1-2; }
-#s_spectral_theorem_ex-6-6-1-2 { counter-set: s_spectral_theorem_ex-6-6-1-2 0; }
-#s_spectral_theorem_ex-6-6-1-2 > li::marker { content: "("counter(s_spectral_theorem_ex-6-6-1-2,lower-alpha)")"; }
-#s_spectral_theorem_ex-6-6-1-2 > li { counter-increment: s_spectral_theorem_ex-6-6-1-2; }
-</style>
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Euclidean vector spaces">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Aaron Greicius">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.5.16';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.a0c870bab402ccbf.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.97de40e034b535c5.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/pretext-webwork/2.17/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
 </head>
 <body id="euclideanvectorspaces" class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="euc_vec_spaces.html"><span class="title">Euclidean vector spaces</span></a></h1>
 <p class="byline">Aaron Greicius</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="euc_vec_spaces-11-10.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="euc_vec_spaces-11-10.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -1145,7 +145,8 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_Rn.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_Rn.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="c_linear_systems.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_Rn.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_Rn.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="c_linear_systems.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
 \newcommand{\Q}{{\mathbb Q}}
 \newcommand{\R}{{\mathbb R}}
 \newcommand{\C}{{\mathbb C}}
@@ -1355,12 +356,12 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -1724,7 +725,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_Rn_dot_product"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="s_Rn_dot_product"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.2</span><span class="space"> </span><span class="title">Inner product structure of <span class="process-math">\(\R^n\)</span></span>
 </h2>
 <div class="para logical" id="s_Rn_dot_product-2">
@@ -1741,7 +742,8 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </div>
 <article class="definition definition-like" id="d_dot_product"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Dot product.</span>
-</h3> <div class="para logical" id="d_dot_product-2-1">
+</h3>
+<div class="para logical" id="d_dot_product-2-1">
 <div class="para">Given <span class="process-math">\(n\)</span>-vectors <span class="process-math">\(\boldx=(x_1,x_2,\dots, x_n)\)</span> and <span class="process-math">\(\boldy=(y_1,y_2,\dots, y_n)\)</span> we define their <dfn class="terminology">dot product</dfn> <span class="process-math">\(\boldx\cdot\boldy\)</span> as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1777,7 +779,8 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </div></article><div class="para" id="s_Rn_dot_product-5">As mentioned above, the dot product is just one example of a more general notion called an inner product, which is an additional operation defined on a vector space.</div>
 <article class="definition definition-like" id="d_innerproduct"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Inner product.</span>
-</h3> <div class="para logical" id="d_innerproduct-2-1">
+</h3>
+<div class="para logical" id="d_innerproduct-2-1">
 <div class="para">Let <span class="process-math">\(V\)</span> be a vector space. An <dfn class="terminology">inner product</dfn> on <span class="process-math">\(V\)</span> is an operation that takes as input a pair of vectors <span class="process-math">\(\boldv, \boldw\in V\)</span> and outputs a scalar <span class="process-math">\(\langle \boldv, \boldw \rangle \in \R\text{.}\)</span> Using function notation:</div>
 <div class="displaymath process-math" id="d_innerproduct-2-1-6">
 \begin{align*}
@@ -1786,7 +789,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 \end{align*}
 </div>
 <div class="para">Furthermore, this operation must satisfy the following axioms.</div>
-<ol class="lower-roman" id="d_innerproduct-2-1-7">
+<ol class="lower-roman ol-marker-1" id="d_innerproduct-2-1-7">
 <li id="d_inner_i">
 <span class="heading"><span class="title">Symmetry.</span></span><div class="para logical" id="d_inner_i-2">
 <div class="para">For all <span class="process-math">\(\boldv, \boldw\in V\)</span> we have</div>
@@ -1830,7 +833,8 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </div></article><div class="para" id="s_Rn_dot_product-7">Although we will almost exclusively work with the dot product in this treatment of linear algebra, it is worth considering a natural family of inner products on <span class="process-math">\(\R^n\)</span> that the dot product fits nicely into: namely, <em class="emphasis">weighted dot products</em>. These examples of inner products are especially important in data science.</div>
 <article class="definition definition-like" id="d_weighted_dot_product"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Weighted dot product.</span>
-</h3> <div class="para logical" id="d_weighted_dot_product-2-1">
+</h3>
+<div class="para logical" id="d_weighted_dot_product-2-1">
 <div class="para">Let <span class="process-math">\(k_1, k_2, \dots , k_n\)</span> be a list of positive real numbers: i.e., <span class="process-math">\(k_i&gt; 0\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span> The <dfn class="terminology">weighted dot product</dfn> with weights <span class="process-math">\((k_1,k_2,\dots, k_n)\)</span> is the operation</div>
 <div class="displaymath process-math" id="d_weighted_dot_product-2-1-7">
 \begin{align*}
@@ -1873,7 +877,9 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Weighted dot product.</span>
 </h3>
 <div class="para" id="th_weighted_dot_product-2-1">Let <span class="process-math">\(k_1, k_2, \dots , k_n\)</span> be a list of positive real numbers. The weighted dot product on <span class="process-math">\(\R^n\)</span> with weights <span class="process-math">\((k_1,k_2,\dots, k_n)\)</span> is an inner product. In particular, the dot product is an inner product.</div></article><details id="th_weighted_dot_product-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_weighted_dot_product-3-1">We verify each axiom in turn. Throughout we assume <span class="process-math">\(\boldx=(x_1,x_2,\dots, x_n)\text{,}\)</span> <span class="process-math">\(\boldy=(y_1,y_2,\dots, y_n)\text{,}\)</span> and <span class="process-math">\(\boldw=(w_1,w_2,\dots, w_n)\)</span> are arbitrary elements of <span class="process-math">\(\R^n\text{.}\)</span>
-</div> <article class="case" id="th_weighted_dot_product-3-2"><h4 class="heading">Axiom i.</h4> <div class="para logical" id="th_weighted_dot_product-3-2-2">
+</div>
+<article class="case" id="th_weighted_dot_product-3-2"><h4 class="heading">Axiom i.</h4>
+<div class="para logical" id="th_weighted_dot_product-3-2-2">
 <div class="para">We have</div>
 <div class="displaymath process-math" id="th_weighted_dot_product-3-2-2-1">
 \begin{align*}
@@ -1882,7 +888,8 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 \amp = \angvec{\boldy,\boldx} \amp \text{(def.)}\text{.}
 \end{align*}
 </div>
-</div></article> <article class="case" id="th_weighted_dot_product-3-3"><h4 class="heading">Axiom ii.</h4> <div class="para logical" id="th_weighted_dot_product-3-3-2">
+</div></article><article class="case" id="th_weighted_dot_product-3-3"><h4 class="heading">Axiom ii.</h4>
+<div class="para logical" id="th_weighted_dot_product-3-3-2">
 <div class="para">Given scalars <span class="process-math">\(c,d\in \R\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1898,7 +905,8 @@ c\boldx+d\boldy=(cx_1+dy_1,cx_2+dy_2,\dots, cx_n+dy_n)\text{,}
 \amp = c\angvec{\boldx,\boldw}+d\angvec{\boldy,\boldw}\text{.}
 \end{align*}
 </div>
-</div></article> <article class="case" id="th_weighted_dot_product-3-4"><h4 class="heading">Axiom iii.</h4> <div class="para logical" id="th_weighted_dot_product-3-4-2">
+</div></article><article class="case" id="th_weighted_dot_product-3-4"><h4 class="heading">Axiom iii.</h4>
+<div class="para logical" id="th_weighted_dot_product-3-4-2">
 <div class="para">We have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1907,7 +915,8 @@ c\boldx+d\boldy=(cx_1+dy_1,cx_2+dy_2,\dots, cx_n+dy_n)\text{,}
 </div>
 <div class="para">Since <span class="process-math">\(k_i&gt; 0\)</span> and <span class="process-math">\(x_i^2\geq 0\)</span> for all <span class="process-math">\(i\)</span> (squares of real numbers are nonnegative), we have <span class="process-math">\(\langle \boldx, \boldx \rangle\geq 0\)</span> for any <span class="process-math">\(\boldx\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="th_weighted_dot_product-3-4-3">
+</div>
+<div class="para logical" id="th_weighted_dot_product-3-4-3">
 <div class="para">We now show that <span class="process-math">\(\angvec{\boldx,\boldx}=0\)</span> if and only if <span class="process-math">\(\boldx=\boldzero=(0,0,\dots, 0)\text{.}\)</span> The reverse implication is clear: if <span class="process-math">\(x_i=0\)</span> for all <span class="process-math">\(i\text{,}\)</span> then <span class="process-math">\(\sum_{i=1}^nk_ix_i^2=\sum_{i=1}^n 0=0\text{.}\)</span> We prove the forward implication by showing that its contrapositive is true: i.e., if <span class="process-math">\(\boldx\ne \boldzero\text{,}\)</span> then <span class="process-math">\(\angvec{\boldx,\boldx} \ne 0\text{.}\)</span> If <span class="process-math">\(\boldx\ne \boldzero\text{,}\)</span> then we have <span class="process-math">\(x_{i_0}\ne 0\)</span> for some <span class="process-math">\(1\leq i_0\leq n\text{,}\)</span> in which case <span class="process-math">\(k_{i_0}x_{i_0}^2 &gt; 0\text{.}\)</span> But then</div>
 <div class="displaymath process-math" id="th_weighted_dot_product-3-4-3-13">
 \begin{align*}
@@ -1963,11 +972,11 @@ A=\begin{bmatrix}2\amp 1\\ 1\amp 2 \end{bmatrix}\text{.}
 <div class="para">More on this topic later!</div>
 </div></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_Rn.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="c_linear_systems.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_Rn.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="c_linear_systems.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

@@ -5,16 +5,20 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Systems of linear equations</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Euclidean vector spaces">
-<meta property="book:author" content="Aaron Greicius">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -86,1055 +90,51 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="_static/pretext/js/pretext-webwork/2.17/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
-<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
-<style>
-#d_function_equality-3-1-4 { counter-set: d_function_equality-3-1-4 0; }
-#d_function_equality-3-1-4 > li::marker { content: ""counter(d_function_equality-3-1-4,lower-roman)""; }
-#d_function_equality-3-1-4 > li { counter-increment: d_function_equality-3-1-4; }
-#extracted-webwork-4-1-1-2-1 { counter-set: extracted-webwork-4-1-1-2-1 0; }
-#extracted-webwork-4-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-4-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-4-1-1-2-1 > li { counter-increment: extracted-webwork-4-1-1-2-1; }
-#extracted-webwork-7-1-1-2-1 { counter-set: extracted-webwork-7-1-1-2-1 0; }
-#extracted-webwork-7-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-7-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-7-1-1-2-1 > li { counter-increment: extracted-webwork-7-1-1-2-1; }
-#extracted-webwork-8-1-1-2-1 { counter-set: extracted-webwork-8-1-1-2-1 0; }
-#extracted-webwork-8-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-8-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-8-1-1-2-1 > li { counter-increment: extracted-webwork-8-1-1-2-1; }
-#extracted-webwork-9-1-1-2-1 { counter-set: extracted-webwork-9-1-1-2-1 0; }
-#extracted-webwork-9-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-9-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-9-1-1-2-1 > li { counter-increment: extracted-webwork-9-1-1-2-1; }
-#extracted-webwork-11-1-1-2-1 { counter-set: extracted-webwork-11-1-1-2-1 0; }
-#extracted-webwork-11-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-11-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-11-1-1-2-1 > li { counter-increment: extracted-webwork-11-1-1-2-1; }
-#extracted-webwork-11-1-1-3-1 { counter-set: extracted-webwork-11-1-1-3-1 0; }
-#extracted-webwork-11-1-1-3-1 > li::marker { content: ""counter(extracted-webwork-11-1-1-3-1,upper-alpha)"."; }
-#extracted-webwork-11-1-1-3-1 > li { counter-increment: extracted-webwork-11-1-1-3-1; }
-#sss_function_equality-2-4 { counter-set: sss_function_equality-2-4 0; }
-#sss_function_equality-2-4 > li::marker { content: ""counter(sss_function_equality-2-4,lower-roman)""; }
-#sss_function_equality-2-4 > li { counter-increment: sss_function_equality-2-4; }
-#d_complex_arithmetic-4-2 { counter-set: d_complex_arithmetic-4-2 0; }
-#d_complex_arithmetic-4-2 > li::marker { content: ""counter(d_complex_arithmetic-4-2,decimal)"."; }
-#d_complex_arithmetic-4-2 > li { counter-increment: d_complex_arithmetic-4-2; }
-#th_complex_arithmetic_basic-2-1 { counter-set: th_complex_arithmetic_basic-2-1 0; }
-#th_complex_arithmetic_basic-2-1 > li::marker { content: ""counter(th_complex_arithmetic_basic-2-1,decimal)"."; }
-#th_complex_arithmetic_basic-2-1 > li { counter-increment: th_complex_arithmetic_basic-2-1; }
-#th_complex_conjugation_modulus-2-2 { counter-set: th_complex_conjugation_modulus-2-2 0; }
-#th_complex_conjugation_modulus-2-2 > li::marker { content: ""counter(th_complex_conjugation_modulus-2-2,decimal)"."; }
-#th_complex_conjugation_modulus-2-2 > li { counter-increment: th_complex_conjugation_modulus-2-2; }
-#th_poly_basic-2-1-2 { counter-set: th_poly_basic-2-1-2 0; }
-#th_poly_basic-2-1-2 > li::marker { content: ""counter(th_poly_basic-2-1-2,decimal)"."; }
-#th_poly_basic-2-1-2 > li { counter-increment: th_poly_basic-2-1-2; }
-#cor_poly_equality-2-1-7 { counter-set: cor_poly_equality-2-1-7 0; }
-#cor_poly_equality-2-1-7 > li::marker { content: ""counter(cor_poly_equality-2-1-7,decimal)"."; }
-#cor_poly_equality-2-1-7 > li { counter-increment: cor_poly_equality-2-1-7; }
-#th_poly_degree-2-2 { counter-set: th_poly_degree-2-2 0; }
-#th_poly_degree-2-2 > li::marker { content: ""counter(th_poly_degree-2-2,decimal)"."; }
-#th_poly_degree-2-2 > li { counter-increment: th_poly_degree-2-2; }
-#d_vector_space-6-1-7 { counter-set: d_vector_space-6-1-7 0; }
-#d_vector_space-6-1-7 > li::marker { content: ""counter(d_vector_space-6-1-7,lower-roman)""; }
-#d_vector_space-6-1-7 > li { counter-increment: d_vector_space-6-1-7; }
-#proc_vector_space-2-1-1 { counter-set: proc_vector_space-2-1-1 0; }
-#proc_vector_space-2-1-1 > li::marker { content: ""counter(proc_vector_space-2-1-1,decimal)"."; }
-#proc_vector_space-2-1-1 > li { counter-increment: proc_vector_space-2-1-1; }
-#th_Rn_vector_space-1-1-2 { counter-set: th_Rn_vector_space-1-1-2 0; }
-#th_Rn_vector_space-1-1-2 > li::marker { content: ""counter(th_Rn_vector_space-1-1-2,decimal)"."; }
-#th_Rn_vector_space-1-1-2 > li { counter-increment: th_Rn_vector_space-1-1-2; }
-#th_vectorspace_props-2-1-2 { counter-set: th_vectorspace_props-2-1-2 0; }
-#th_vectorspace_props-2-1-2 > li::marker { content: ""counter(th_vectorspace_props-2-1-2,decimal)"."; }
-#th_vectorspace_props-2-1-2 > li { counter-increment: th_vectorspace_props-2-1-2; }
-#s_Rn_ex-3-1-1-2 { counter-set: s_Rn_ex-3-1-1-2 0; }
-#s_Rn_ex-3-1-1-2 > li::marker { content: "("counter(s_Rn_ex-3-1-1-2,lower-alpha)")"; }
-#s_Rn_ex-3-1-1-2 > li { counter-increment: s_Rn_ex-3-1-1-2; }
-#d_innerproduct-2-1-7 { counter-set: d_innerproduct-2-1-7 0; }
-#d_innerproduct-2-1-7 > li::marker { content: ""counter(d_innerproduct-2-1-7,lower-roman)""; }
-#d_innerproduct-2-1-7 > li { counter-increment: d_innerproduct-2-1-7; }
-#ss_linear_equations-3-2-1-1 { counter-set: ss_linear_equations-3-2-1-1 0; }
-#ss_linear_equations-3-2-1-1 > li::marker { content: ""counter(ss_linear_equations-3-2-1-1,decimal)"."; }
-#ss_linear_equations-3-2-1-1 > li { counter-increment: ss_linear_equations-3-2-1-1; }
-#s_systems_eg_2eqns2varss-2-1-1 { counter-set: s_systems_eg_2eqns2varss-2-1-1 0; }
-#s_systems_eg_2eqns2varss-2-1-1 > li::marker { content: ""counter(s_systems_eg_2eqns2varss-2-1-1,decimal)"."; }
-#s_systems_eg_2eqns2varss-2-1-1 > li { counter-increment: s_systems_eg_2eqns2varss-2-1-1; }
-#s_systems_eg_2eqns2varss-3-1-1 { counter-set: s_systems_eg_2eqns2varss-3-1-1 0; }
-#s_systems_eg_2eqns2varss-3-1-1 > li::marker { content: ""counter(s_systems_eg_2eqns2varss-3-1-1,decimal)"."; }
-#s_systems_eg_2eqns2varss-3-1-1 > li { counter-increment: s_systems_eg_2eqns2varss-3-1-1; }
-#ss_linear_equations-15-5 { counter-set: ss_linear_equations-15-5 0; }
-#ss_linear_equations-15-5 > li::marker { content: ""counter(ss_linear_equations-15-5,decimal)"."; }
-#ss_linear_equations-15-5 > li { counter-increment: ss_linear_equations-15-5; }
-#eg_system_of_lines-3-1-3 { counter-set: eg_system_of_lines-3-1-3 0; }
-#eg_system_of_lines-3-1-3 > li::marker { content: ""counter(eg_system_of_lines-3-1-3,decimal)"."; }
-#eg_system_of_lines-3-1-3 > li { counter-increment: eg_system_of_lines-3-1-3; }
-#pars--2-4 { counter-set: pars--2-4 0; }
-#pars--2-4 > li::marker { content: ""counter(pars--2-4,decimal)"."; }
-#pars--2-4 > li { counter-increment: pars--2-4; }
-#extracted-webwork-18-1-1-2-1 { counter-set: extracted-webwork-18-1-1-2-1 0; }
-#extracted-webwork-18-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-18-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-18-1-1-2-1 > li { counter-increment: extracted-webwork-18-1-1-2-1; }
-#extracted-webwork-21-1-1-2-1 { counter-set: extracted-webwork-21-1-1-2-1 0; }
-#extracted-webwork-21-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-21-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-21-1-1-2-1 > li { counter-increment: extracted-webwork-21-1-1-2-1; }
-#extracted-webwork-22-1-1-2-1 { counter-set: extracted-webwork-22-1-1-2-1 0; }
-#extracted-webwork-22-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-22-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-22-1-1-2-1 > li { counter-increment: extracted-webwork-22-1-1-2-1; }
-#ex_solving_sys_geom-2-1-3 { counter-set: ex_solving_sys_geom-2-1-3 0; }
-#ex_solving_sys_geom-2-1-3 > li::marker { content: "("counter(ex_solving_sys_geom-2-1-3,lower-alpha)")"; }
-#ex_solving_sys_geom-2-1-3 > li { counter-increment: ex_solving_sys_geom-2-1-3; }
-#ex_solving_sys_geom-3-7-4 { counter-set: ex_solving_sys_geom-3-7-4 0; }
-#ex_solving_sys_geom-3-7-4 > li::marker { content: "("counter(ex_solving_sys_geom-3-7-4,lower-alpha)")"; }
-#ex_solving_sys_geom-3-7-4 > li { counter-increment: ex_solving_sys_geom-3-7-4; }
-#ex_row_ops_preserve-2-1-1 { counter-set: ex_row_ops_preserve-2-1-1 0; }
-#ex_row_ops_preserve-2-1-1 > li::marker { content: "("counter(ex_row_ops_preserve-2-1-1,lower-alpha)")"; }
-#ex_row_ops_preserve-2-1-1 > li { counter-increment: ex_row_ops_preserve-2-1-1; }
-#ex_solving_nonlinear_system-2-2 { counter-set: ex_solving_nonlinear_system-2-2 0; }
-#ex_solving_nonlinear_system-2-2 > li::marker { content: "("counter(ex_solving_nonlinear_system-2-2,lower-alpha)")"; }
-#ex_solving_nonlinear_system-2-2 > li { counter-increment: ex_solving_nonlinear_system-2-2; }
-#ex_solving_nonlinear_system-2-2-1-1-3 { counter-set: ex_solving_nonlinear_system-2-2-1-1-3 0; }
-#ex_solving_nonlinear_system-2-2-1-1-3 > li::marker { content: ""counter(ex_solving_nonlinear_system-2-2-1-1-3,lower-roman)"."; }
-#ex_solving_nonlinear_system-2-2-1-1-3 > li { counter-increment: ex_solving_nonlinear_system-2-2-1-1-3; }
-#ex_solving_nonlinear_system-2-2-2-2 { counter-set: ex_solving_nonlinear_system-2-2-2-2 0; }
-#ex_solving_nonlinear_system-2-2-2-2 > li::marker { content: ""counter(ex_solving_nonlinear_system-2-2-2-2,lower-roman)"."; }
-#ex_solving_nonlinear_system-2-2-2-2 > li { counter-increment: ex_solving_nonlinear_system-2-2-2-2; }
-#s_systems_ex-2-5-2-2 { counter-set: s_systems_ex-2-5-2-2 0; }
-#s_systems_ex-2-5-2-2 > li::marker { content: "("counter(s_systems_ex-2-5-2-2,lower-alpha)")"; }
-#s_systems_ex-2-5-2-2 > li { counter-increment: s_systems_ex-2-5-2-2; }
-#s_ge-2-2-1 { counter-set: s_ge-2-2-1 0; }
-#s_ge-2-2-1 > li::marker { content: ""counter(s_ge-2-2-1,decimal)"."; }
-#s_ge-2-2-1 > li { counter-increment: s_ge-2-2-1; }
-#ss_ge_row_echelon-8-3 { counter-set: ss_ge_row_echelon-8-3 0; }
-#ss_ge_row_echelon-8-3 > li::marker { content: ""counter(ss_ge_row_echelon-8-3,decimal)"."; }
-#ss_ge_row_echelon-8-3 > li { counter-increment: ss_ge_row_echelon-8-3; }
-#ss_ge_row_echelon-9-2-2 { counter-set: ss_ge_row_echelon-9-2-2 0; }
-#ss_ge_row_echelon-9-2-2 > li::marker { content: ""counter(ss_ge_row_echelon-9-2-2,decimal)"."; }
-#ss_ge_row_echelon-9-2-2 > li { counter-increment: ss_ge_row_echelon-9-2-2; }
-#ss_ge_row_echelon-9-3-1 { counter-set: ss_ge_row_echelon-9-3-1 0; }
-#ss_ge_row_echelon-9-3-1 > li::marker { content: ""counter(ss_ge_row_echelon-9-3-1,decimal)"."; }
-#ss_ge_row_echelon-9-3-1 > li { counter-increment: ss_ge_row_echelon-9-3-1; }
-#th_matrixforms-2-1 { counter-set: th_matrixforms-2-1 0; }
-#th_matrixforms-2-1 > li::marker { content: ""counter(th_matrixforms-2-1,decimal)"."; }
-#th_matrixforms-2-1 > li { counter-increment: th_matrixforms-2-1; }
-#extracted-webwork-28-1-1-2-1 { counter-set: extracted-webwork-28-1-1-2-1 0; }
-#extracted-webwork-28-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-28-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-28-1-1-2-1 > li { counter-increment: extracted-webwork-28-1-1-2-1; }
-#s_solving_ex-2-3-1-2 { counter-set: s_solving_ex-2-3-1-2 0; }
-#s_solving_ex-2-3-1-2 > li::marker { content: "("counter(s_solving_ex-2-3-1-2,lower-alpha)")"; }
-#s_solving_ex-2-3-1-2 > li { counter-increment: s_solving_ex-2-3-1-2; }
-#s_solving_ex-2-5-1-2 { counter-set: s_solving_ex-2-5-1-2 0; }
-#s_solving_ex-2-5-1-2 > li::marker { content: "("counter(s_solving_ex-2-5-1-2,lower-alpha)")"; }
-#s_solving_ex-2-5-1-2 > li { counter-increment: s_solving_ex-2-5-1-2; }
-#s_solving_ex-2-6-1-1-2 { counter-set: s_solving_ex-2-6-1-1-2 0; }
-#s_solving_ex-2-6-1-1-2 > li::marker { content: "("counter(s_solving_ex-2-6-1-1-2,lower-alpha)")"; }
-#s_solving_ex-2-6-1-1-2 > li { counter-increment: s_solving_ex-2-6-1-1-2; }
-#d_matrix_equality-2-1-6 { counter-set: d_matrix_equality-2-1-6 0; }
-#d_matrix_equality-2-1-6 > li::marker { content: ""counter(d_matrix_equality-2-1-6,decimal)"."; }
-#d_matrix_equality-2-1-6 > li { counter-increment: d_matrix_equality-2-1-6; }
-#th_matrix_vector_space-2-1-3 { counter-set: th_matrix_vector_space-2-1-3 0; }
-#th_matrix_vector_space-2-1-3 > li::marker { content: ""counter(th_matrix_vector_space-2-1-3,decimal)"."; }
-#th_matrix_vector_space-2-1-3 > li { counter-increment: th_matrix_vector_space-2-1-3; }
-#s_matrix_ex_product-3-1-1 { counter-set: s_matrix_ex_product-3-1-1 0; }
-#s_matrix_ex_product-3-1-1 > li::marker { content: "("counter(s_matrix_ex_product-3-1-1,lower-alpha)")"; }
-#s_matrix_ex_product-3-1-1 > li { counter-increment: s_matrix_ex_product-3-1-1; }
-#extracted-webwork-29-1-1-2-1 { counter-set: extracted-webwork-29-1-1-2-1 0; }
-#extracted-webwork-29-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-29-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-29-1-1-2-1 > li { counter-increment: extracted-webwork-29-1-1-2-1; }
-#s_matrix_ex-2-2-1-2 { counter-set: s_matrix_ex-2-2-1-2 0; }
-#s_matrix_ex-2-2-1-2 > li::marker { content: "("counter(s_matrix_ex-2-2-1-2,lower-alpha)")"; }
-#s_matrix_ex-2-2-1-2 > li { counter-increment: s_matrix_ex-2-2-1-2; }
-#s_matrix_ex-2-3-1-1-3 { counter-set: s_matrix_ex-2-3-1-1-3 0; }
-#s_matrix_ex-2-3-1-1-3 > li::marker { content: "("counter(s_matrix_ex-2-3-1-1-3,lower-alpha)")"; }
-#s_matrix_ex-2-3-1-1-3 > li { counter-increment: s_matrix_ex-2-3-1-1-3; }
-#s_matrix_ex-2-4-1-1-2 { counter-set: s_matrix_ex-2-4-1-1-2 0; }
-#s_matrix_ex-2-4-1-1-2 > li::marker { content: "("counter(s_matrix_ex-2-4-1-1-2,lower-alpha)")"; }
-#s_matrix_ex-2-4-1-1-2 > li { counter-increment: s_matrix_ex-2-4-1-1-2; }
-#s_matrix_ex-2-4-2-1-1 { counter-set: s_matrix_ex-2-4-2-1-1 0; }
-#s_matrix_ex-2-4-2-1-1 > li::marker { content: "("counter(s_matrix_ex-2-4-2-1-1,lower-alpha)")"; }
-#s_matrix_ex-2-4-2-1-1 > li { counter-increment: s_matrix_ex-2-4-2-1-1; }
-#th_matrix_alg_props-2-1-2 { counter-set: th_matrix_alg_props-2-1-2 0; }
-#th_matrix_alg_props-2-1-2 > li::marker { content: ""counter(th_matrix_alg_props-2-1-2,decimal)"."; }
-#th_matrix_alg_props-2-1-2 > li { counter-increment: th_matrix_alg_props-2-1-2; }
-#th_matrix_abnormalities-2-1-1 { counter-set: th_matrix_abnormalities-2-1-1 0; }
-#th_matrix_abnormalities-2-1-1 > li::marker { content: ""counter(th_matrix_abnormalities-2-1-1,decimal)"."; }
-#th_matrix_abnormalities-2-1-1 > li { counter-increment: th_matrix_abnormalities-2-1-1; }
-#ss_cancellation-8-2 { counter-set: ss_cancellation-8-2 0; }
-#ss_cancellation-8-2 > li::marker { content: ""counter(ss_cancellation-8-2,decimal)"."; }
-#ss_cancellation-8-2 > li { counter-increment: ss_cancellation-8-2; }
-#th_matrix_cancel-2-1 { counter-set: th_matrix_cancel-2-1 0; }
-#th_matrix_cancel-2-1 > li::marker { content: ""counter(th_matrix_cancel-2-1,decimal)"."; }
-#th_matrix_cancel-2-1 > li { counter-increment: th_matrix_cancel-2-1; }
-#ss_cancellation-11-2 { counter-set: ss_cancellation-11-2 0; }
-#ss_cancellation-11-2 > li::marker { content: ""counter(ss_cancellation-11-2,decimal)"."; }
-#ss_cancellation-11-2 > li { counter-increment: ss_cancellation-11-2; }
-#th_trans_props-2-1-2 { counter-set: th_trans_props-2-1-2 0; }
-#th_trans_props-2-1-2 > li::marker { content: ""counter(th_trans_props-2-1-2,decimal)"."; }
-#th_trans_props-2-1-2 > li { counter-increment: th_trans_props-2-1-2; }
-#extracted-webwork-34-1-1-2-1 { counter-set: extracted-webwork-34-1-1-2-1 0; }
-#extracted-webwork-34-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-34-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-34-1-1-2-1 > li { counter-increment: extracted-webwork-34-1-1-2-1; }
-#s_matrix_algebra_ex-2-2-1-2 { counter-set: s_matrix_algebra_ex-2-2-1-2 0; }
-#s_matrix_algebra_ex-2-2-1-2 > li::marker { content: "("counter(s_matrix_algebra_ex-2-2-1-2,lower-alpha)")"; }
-#s_matrix_algebra_ex-2-2-1-2 > li { counter-increment: s_matrix_algebra_ex-2-2-1-2; }
-#s_matrix_algebra_ex-2-4-1-2 { counter-set: s_matrix_algebra_ex-2-4-1-2 0; }
-#s_matrix_algebra_ex-2-4-1-2 > li::marker { content: "("counter(s_matrix_algebra_ex-2-4-1-2,lower-alpha)")"; }
-#s_matrix_algebra_ex-2-4-1-2 > li { counter-increment: s_matrix_algebra_ex-2-4-1-2; }
-#s_matrix_algebra_ex-2-5-1-2 { counter-set: s_matrix_algebra_ex-2-5-1-2 0; }
-#s_matrix_algebra_ex-2-5-1-2 > li::marker { content: "("counter(s_matrix_algebra_ex-2-5-1-2,lower-alpha)")"; }
-#s_matrix_algebra_ex-2-5-1-2 > li { counter-increment: s_matrix_algebra_ex-2-5-1-2; }
-#th_inverse_cancel-2-1-3 { counter-set: th_inverse_cancel-2-1-3 0; }
-#th_inverse_cancel-2-1-3 > li::marker { content: ""counter(th_inverse_cancel-2-1-3,decimal)"."; }
-#th_inverse_cancel-2-1-3 > li { counter-increment: th_inverse_cancel-2-1-3; }
-#th_inverse_cancel-3-1-1 { counter-set: th_inverse_cancel-3-1-1 0; }
-#th_inverse_cancel-3-1-1 > li::marker { content: ""counter(th_inverse_cancel-3-1-1,decimal)"."; }
-#th_inverse_cancel-3-1-1 > li { counter-increment: th_inverse_cancel-3-1-1; }
-#cor_solving_invertible-2-1-3 { counter-set: cor_solving_invertible-2-1-3 0; }
-#cor_solving_invertible-2-1-3 > li::marker { content: ""counter(cor_solving_invertible-2-1-3,decimal)"."; }
-#cor_solving_invertible-2-1-3 > li { counter-increment: cor_solving_invertible-2-1-3; }
-#cor_solving_invertible-3-1-1 { counter-set: cor_solving_invertible-3-1-1 0; }
-#cor_solving_invertible-3-1-1 > li::marker { content: ""counter(cor_solving_invertible-3-1-1,decimal)"."; }
-#cor_solving_invertible-3-1-1 > li { counter-increment: cor_solving_invertible-3-1-1; }
-#eg_invertible_matrices-2-1-1 { counter-set: eg_invertible_matrices-2-1-1 0; }
-#eg_invertible_matrices-2-1-1 > li::marker { content: ""counter(eg_invertible_matrices-2-1-1,decimal)"."; }
-#eg_invertible_matrices-2-1-1 > li { counter-increment: eg_invertible_matrices-2-1-1; }
-#subsec--22-3-2 { counter-set: subsec--22-3-2 0; }
-#subsec--22-3-2 > li::marker { content: ""counter(subsec--22-3-2,decimal)"."; }
-#subsec--22-3-2 > li { counter-increment: subsec--22-3-2; }
-#th_power_rules-2-1-4 { counter-set: th_power_rules-2-1-4 0; }
-#th_power_rules-2-1-4 > li::marker { content: ""counter(th_power_rules-2-1-4,decimal)"."; }
-#th_power_rules-2-1-4 > li { counter-increment: th_power_rules-2-1-4; }
-#extracted-webwork-39-1-1-2-1 { counter-set: extracted-webwork-39-1-1-2-1 0; }
-#extracted-webwork-39-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-39-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-39-1-1-2-1 > li { counter-increment: extracted-webwork-39-1-1-2-1; }
-#s_invertible_matrices_ex-2-2-1-2 { counter-set: s_invertible_matrices_ex-2-2-1-2 0; }
-#s_invertible_matrices_ex-2-2-1-2 > li::marker { content: "("counter(s_invertible_matrices_ex-2-2-1-2,lower-alpha)")"; }
-#s_invertible_matrices_ex-2-2-1-2 > li { counter-increment: s_invertible_matrices_ex-2-2-1-2; }
-#s_invertible_matrices_ex-2-3-1-2 { counter-set: s_invertible_matrices_ex-2-3-1-2 0; }
-#s_invertible_matrices_ex-2-3-1-2 > li::marker { content: "("counter(s_invertible_matrices_ex-2-3-1-2,lower-alpha)")"; }
-#s_invertible_matrices_ex-2-3-1-2 > li { counter-increment: s_invertible_matrices_ex-2-3-1-2; }
-#s_invertible_matrices_ex-2-5-1-2 { counter-set: s_invertible_matrices_ex-2-5-1-2 0; }
-#s_invertible_matrices_ex-2-5-1-2 > li::marker { content: "("counter(s_invertible_matrices_ex-2-5-1-2,lower-alpha)")"; }
-#s_invertible_matrices_ex-2-5-1-2 > li { counter-increment: s_invertible_matrices_ex-2-5-1-2; }
-#s_invertible_matrices_ex-2-6-1-2 { counter-set: s_invertible_matrices_ex-2-6-1-2 0; }
-#s_invertible_matrices_ex-2-6-1-2 > li::marker { content: "("counter(s_invertible_matrices_ex-2-6-1-2,lower-alpha)")"; }
-#s_invertible_matrices_ex-2-6-1-2 > li { counter-increment: s_invertible_matrices_ex-2-6-1-2; }
-#s_invertible_matrices_ex-2-9-1-2 { counter-set: s_invertible_matrices_ex-2-9-1-2 0; }
-#s_invertible_matrices_ex-2-9-1-2 > li::marker { content: "("counter(s_invertible_matrices_ex-2-9-1-2,lower-alpha)")"; }
-#s_invertible_matrices_ex-2-9-1-2 > li { counter-increment: s_invertible_matrices_ex-2-9-1-2; }
-#th_invertibility-2-1-3 { counter-set: th_invertibility-2-1-3 0; }
-#th_invertibility-2-1-3 > li::marker { content: ""counter(th_invertibility-2-1-3,decimal)"."; }
-#th_invertibility-2-1-3 > li { counter-increment: th_invertibility-2-1-3; }
-#d_diagonal_triangular-6-1-3 { counter-set: d_diagonal_triangular-6-1-3 0; }
-#d_diagonal_triangular-6-1-3 > li::marker { content: ""counter(d_diagonal_triangular-6-1-3,decimal)"."; }
-#d_diagonal_triangular-6-1-3 > li { counter-increment: d_diagonal_triangular-6-1-3; }
-#th_invertibility_algorithm-2-1-4 { counter-set: th_invertibility_algorithm-2-1-4 0; }
-#th_invertibility_algorithm-2-1-4 > li::marker { content: ""counter(th_invertibility_algorithm-2-1-4,decimal)"."; }
-#th_invertibility_algorithm-2-1-4 > li { counter-increment: th_invertibility_algorithm-2-1-4; }
-#th_elem_matrices_alg-2-1-4 { counter-set: th_elem_matrices_alg-2-1-4 0; }
-#th_elem_matrices_alg-2-1-4 > li::marker { content: ""counter(th_elem_matrices_alg-2-1-4,decimal)"."; }
-#th_elem_matrices_alg-2-1-4 > li { counter-increment: th_elem_matrices_alg-2-1-4; }
-#cor_left-right_inverse-2-1-4 { counter-set: cor_left-right_inverse-2-1-4 0; }
-#cor_left-right_inverse-2-1-4 > li::marker { content: ""counter(cor_left-right_inverse-2-1-4,decimal)"."; }
-#cor_left-right_inverse-2-1-4 > li { counter-increment: cor_left-right_inverse-2-1-4; }
-#cor_row_equivalence_invertibility-2-1-4 { counter-set: cor_row_equivalence_invertibility-2-1-4 0; }
-#cor_row_equivalence_invertibility-2-1-4 > li::marker { content: ""counter(cor_row_equivalence_invertibility-2-1-4,decimal)"."; }
-#cor_row_equivalence_invertibility-2-1-4 > li { counter-increment: cor_row_equivalence_invertibility-2-1-4; }
-#rm_row_equivalence_props-2-8 { counter-set: rm_row_equivalence_props-2-8 0; }
-#rm_row_equivalence_props-2-8 > li::marker { content: ""counter(rm_row_equivalence_props-2-8,lower-roman)""; }
-#rm_row_equivalence_props-2-8 > li { counter-increment: rm_row_equivalence_props-2-8; }
-#th_det_zero_repeated_row-2-1-3 { counter-set: th_det_zero_repeated_row-2-1-3 0; }
-#th_det_zero_repeated_row-2-1-3 > li::marker { content: ""counter(th_det_zero_repeated_row-2-1-3,decimal)"."; }
-#th_det_zero_repeated_row-2-1-3 > li { counter-increment: th_det_zero_repeated_row-2-1-3; }
-#th_det_row_ops-2-1-4 { counter-set: th_det_row_ops-2-1-4 0; }
-#th_det_row_ops-2-1-4 > li::marker { content: ""counter(th_det_row_ops-2-1-4,decimal)"."; }
-#th_det_row_ops-2-1-4 > li { counter-increment: th_det_row_ops-2-1-4; }
-#ss_det_row_ops-9-2-1-3 { counter-set: ss_det_row_ops-9-2-1-3 0; }
-#ss_det_row_ops-9-2-1-3 > li::marker { content: ""counter(ss_det_row_ops-9-2-1-3,decimal)"."; }
-#ss_det_row_ops-9-2-1-3 > li { counter-increment: ss_det_row_ops-9-2-1-3; }
-#th_invertibility_expanded-2-1-3 { counter-set: th_invertibility_expanded-2-1-3 0; }
-#th_invertibility_expanded-2-1-3 > li::marker { content: ""counter(th_invertibility_expanded-2-1-3,decimal)"."; }
-#th_invertibility_expanded-2-1-3 > li { counter-increment: th_invertibility_expanded-2-1-3; }
-#s_det_ex-2-2-1-1-2 { counter-set: s_det_ex-2-2-1-1-2 0; }
-#s_det_ex-2-2-1-1-2 > li::marker { content: "("counter(s_det_ex-2-2-1-1-2,lower-alpha)")"; }
-#s_det_ex-2-2-1-1-2 > li { counter-increment: s_det_ex-2-2-1-1-2; }
-#s_det_ex-2-8-1-1-4 { counter-set: s_det_ex-2-8-1-1-4 0; }
-#s_det_ex-2-8-1-1-4 > li::marker { content: "("counter(s_det_ex-2-8-1-1-4,lower-alpha)")"; }
-#s_det_ex-2-8-1-1-4 > li { counter-increment: s_det_ex-2-8-1-1-4; }
-#s_det_ex-2-9-1-2 { counter-set: s_det_ex-2-9-1-2 0; }
-#s_det_ex-2-9-1-2 > li::marker { content: "("counter(s_det_ex-2-9-1-2,lower-alpha)")"; }
-#s_det_ex-2-9-1-2 > li { counter-increment: s_det_ex-2-9-1-2; }
-#d_subspace-4-1-5 { counter-set: d_subspace-4-1-5 0; }
-#d_subspace-4-1-5 > li::marker { content: ""counter(d_subspace-4-1-5,lower-roman)""; }
-#d_subspace-4-1-5 > li { counter-increment: d_subspace-4-1-5; }
-#ss_subspace-3-2-1-2 { counter-set: ss_subspace-3-2-1-2 0; }
-#ss_subspace-3-2-1-2 > li::marker { content: ""counter(ss_subspace-3-2-1-2,lower-roman)""; }
-#ss_subspace-3-2-1-2 > li { counter-increment: ss_subspace-3-2-1-2; }
-#ss_subspace-4-2-1-1 { counter-set: ss_subspace-4-2-1-1 0; }
-#ss_subspace-4-2-1-1 > li::marker { content: ""counter(ss_subspace-4-2-1-1,lower-roman)""; }
-#ss_subspace-4-2-1-1 > li { counter-increment: ss_subspace-4-2-1-1; }
-#proc_twostep_proof-2-1-4 { counter-set: proc_twostep_proof-2-1-4 0; }
-#proc_twostep_proof-2-1-4 > li::marker { content: ""counter(proc_twostep_proof-2-1-4,lower-roman)""; }
-#proc_twostep_proof-2-1-4 > li { counter-increment: proc_twostep_proof-2-1-4; }
-#th_subspace_vectorspace-2-1-3 { counter-set: th_subspace_vectorspace-2-1-3 0; }
-#th_subspace_vectorspace-2-1-3 > li::marker { content: ""counter(th_subspace_vectorspace-2-1-3,decimal)"."; }
-#th_subspace_vectorspace-2-1-3 > li { counter-increment: th_subspace_vectorspace-2-1-3; }
-#eg_subspace_alt-2-1-4 { counter-set: eg_subspace_alt-2-1-4 0; }
-#eg_subspace_alt-2-1-4 > li::marker { content: ""counter(eg_subspace_alt-2-1-4,decimal)"."; }
-#eg_subspace_alt-2-1-4 > li { counter-increment: eg_subspace_alt-2-1-4; }
-#eg_subspace_alt-3-1-1 { counter-set: eg_subspace_alt-3-1-1 0; }
-#eg_subspace_alt-3-1-1 > li::marker { content: ""counter(eg_subspace_alt-3-1-1,decimal)"."; }
-#eg_subspace_alt-3-1-1 > li { counter-increment: eg_subspace_alt-3-1-1; }
-#th_nullspace_linsys-2-1-5 { counter-set: th_nullspace_linsys-2-1-5 0; }
-#th_nullspace_linsys-2-1-5 > li::marker { content: ""counter(th_nullspace_linsys-2-1-5,decimal)"."; }
-#th_nullspace_linsys-2-1-5 > li { counter-increment: th_nullspace_linsys-2-1-5; }
-#th_nullspace_linsys-3-1-1 { counter-set: th_nullspace_linsys-3-1-1 0; }
-#th_nullspace_linsys-3-1-1 > li::marker { content: ""counter(th_nullspace_linsys-3-1-1,decimal)"."; }
-#th_nullspace_linsys-3-1-1 > li { counter-increment: th_nullspace_linsys-3-1-1; }
-#cor_matrix_equations-2-1-4 { counter-set: cor_matrix_equations-2-1-4 0; }
-#cor_matrix_equations-2-1-4 > li::marker { content: ""counter(cor_matrix_equations-2-1-4,decimal)"."; }
-#cor_matrix_equations-2-1-4 > li { counter-increment: cor_matrix_equations-2-1-4; }
-#d_tracezero_symmetric_skewsymmetric-5-1-2 { counter-set: d_tracezero_symmetric_skewsymmetric-5-1-2 0; }
-#d_tracezero_symmetric_skewsymmetric-5-1-2 > li::marker { content: ""counter(d_tracezero_symmetric_skewsymmetric-5-1-2,decimal)"."; }
-#d_tracezero_symmetric_skewsymmetric-5-1-2 > li { counter-increment: d_tracezero_symmetric_skewsymmetric-5-1-2; }
-#th_matrix_subspaces-2-1-3 { counter-set: th_matrix_subspaces-2-1-3 0; }
-#th_matrix_subspaces-2-1-3 > li::marker { content: ""counter(th_matrix_subspaces-2-1-3,decimal)"."; }
-#th_matrix_subspaces-2-1-3 > li { counter-increment: th_matrix_subspaces-2-1-3; }
-#s_subspace_ex-6-2-1-4 { counter-set: s_subspace_ex-6-2-1-4 0; }
-#s_subspace_ex-6-2-1-4 > li::marker { content: "("counter(s_subspace_ex-6-2-1-4,lower-alpha)")"; }
-#s_subspace_ex-6-2-1-4 > li { counter-increment: s_subspace_ex-6-2-1-4; }
-#rm_span-1-1-3 { counter-set: rm_span-1-1-3 0; }
-#rm_span-1-1-3 > li::marker { content: ""counter(rm_span-1-1-3,decimal)"."; }
-#rm_span-1-1-3 > li { counter-increment: rm_span-1-1-3; }
-#eg_span_2space-2-2 { counter-set: eg_span_2space-2-2 0; }
-#eg_span_2space-2-2 > li::marker { content: ""counter(eg_span_2space-2-2,decimal)"."; }
-#eg_span_2space-2-2 > li { counter-increment: eg_span_2space-2-2; }
-#eg_span_2space-3-1-1 { counter-set: eg_span_2space-3-1-1 0; }
-#eg_span_2space-3-1-1 > li::marker { content: ""counter(eg_span_2space-3-1-1,decimal)"."; }
-#eg_span_2space-3-1-1 > li { counter-increment: eg_span_2space-3-1-1; }
-#th_span-2-1-3 { counter-set: th_span-2-1-3 0; }
-#th_span-2-1-3 > li::marker { content: ""counter(th_span-2-1-3,decimal)"."; }
-#th_span-2-1-3 > li { counter-increment: th_span-2-1-3; }
-#th_span-3-2-2-2 { counter-set: th_span-3-2-2-2 0; }
-#th_span-3-2-2-2 > li::marker { content: ""counter(th_span-3-2-2-2,decimal)"."; }
-#th_span-3-2-2-2 > li { counter-increment: th_span-3-2-2-2; }
-#s_span_independence-3-13-2-1-5 { counter-set: s_span_independence-3-13-2-1-5 0; }
-#s_span_independence-3-13-2-1-5 > li::marker { content: ""counter(s_span_independence-3-13-2-1-5,decimal)"."; }
-#s_span_independence-3-13-2-1-5 > li { counter-increment: s_span_independence-3-13-2-1-5; }
-#s_span_independence-3-13-3-1-1 { counter-set: s_span_independence-3-13-3-1-1 0; }
-#s_span_independence-3-13-3-1-1 > li::marker { content: ""counter(s_span_independence-3-13-3-1-1,decimal)"."; }
-#s_span_independence-3-13-3-1-1 > li { counter-increment: s_span_independence-3-13-3-1-1; }
-#th_lin_ind_finite-2-1-4 { counter-set: th_lin_ind_finite-2-1-4 0; }
-#th_lin_ind_finite-2-1-4 > li::marker { content: ""counter(th_lin_ind_finite-2-1-4,decimal)"."; }
-#th_lin_ind_finite-2-1-4 > li { counter-increment: th_lin_ind_finite-2-1-4; }
-#eg_independence_basic_examples-2-1-3 { counter-set: eg_independence_basic_examples-2-1-3 0; }
-#eg_independence_basic_examples-2-1-3 > li::marker { content: ""counter(eg_independence_basic_examples-2-1-3,decimal)"."; }
-#eg_independence_basic_examples-2-1-3 > li { counter-increment: eg_independence_basic_examples-2-1-3; }
-#proc_linear_independence-2-1-4 { counter-set: proc_linear_independence-2-1-4 0; }
-#proc_linear_independence-2-1-4 > li::marker { content: ""counter(proc_linear_independence-2-1-4,decimal)"."; }
-#proc_linear_independence-2-1-4 > li { counter-increment: proc_linear_independence-2-1-4; }
-#ex_linear_independence-2-1-4 { counter-set: ex_linear_independence-2-1-4 0; }
-#ex_linear_independence-2-1-4 > li::marker { content: ""counter(ex_linear_independence-2-1-4,decimal)"."; }
-#ex_linear_independence-2-1-4 > li { counter-increment: ex_linear_independence-2-1-4; }
-#ex_linear_independence-3-1 { counter-set: ex_linear_independence-3-1 0; }
-#ex_linear_independence-3-1 > li::marker { content: ""counter(ex_linear_independence-3-1,decimal)"."; }
-#ex_linear_independence-3-1 > li { counter-increment: ex_linear_independence-3-1; }
-#th_invertibility_3-2-1-3 { counter-set: th_invertibility_3-2-1-3 0; }
-#th_invertibility_3-2-1-3 > li::marker { content: ""counter(th_invertibility_3-2-1-3,decimal)"."; }
-#th_invertibility_3-2-1-3 > li { counter-increment: th_invertibility_3-2-1-3; }
-#s_span_independence_ex-4-1-2 { counter-set: s_span_independence_ex-4-1-2 0; }
-#s_span_independence_ex-4-1-2 > li::marker { content: "("counter(s_span_independence_ex-4-1-2,lower-alpha)")"; }
-#s_span_independence_ex-4-1-2 > li { counter-increment: s_span_independence_ex-4-1-2; }
-#ex_span_independence_inveribility-2-3 { counter-set: ex_span_independence_inveribility-2-3 0; }
-#ex_span_independence_inveribility-2-3 > li::marker { content: "("counter(ex_span_independence_inveribility-2-3,lower-alpha)")"; }
-#ex_span_independence_inveribility-2-3 > li { counter-increment: ex_span_independence_inveribility-2-3; }
-#s_basis-2-2-1 { counter-set: s_basis-2-2-1 0; }
-#s_basis-2-2-1 > li::marker { content: ""counter(s_basis-2-2-1,decimal)"."; }
-#s_basis-2-2-1 > li { counter-increment: s_basis-2-2-1; }
-#d_basis-3-1-4 { counter-set: d_basis-3-1-4 0; }
-#d_basis-3-1-4 > li::marker { content: ""counter(d_basis-3-1-4,lower-roman)""; }
-#d_basis-3-1-4 > li { counter-increment: d_basis-3-1-4; }
-#ss_bases-5-2-1-5 { counter-set: ss_bases-5-2-1-5 0; }
-#ss_bases-5-2-1-5 > li::marker { content: ""counter(ss_bases-5-2-1-5,decimal)"."; }
-#ss_bases-5-2-1-5 > li { counter-increment: ss_bases-5-2-1-5; }
-#ss_bases-5-3-2 { counter-set: ss_bases-5-3-2 0; }
-#ss_bases-5-3-2 > li::marker { content: ""counter(ss_bases-5-3-2,decimal)"."; }
-#ss_bases-5-3-2 > li { counter-increment: ss_bases-5-3-2; }
-#th_basis_equivalence-2-2 { counter-set: th_basis_equivalence-2-2 0; }
-#th_basis_equivalence-2-2 > li::marker { content: ""counter(th_basis_equivalence-2-2,decimal)"."; }
-#th_basis_equivalence-2-2 > li { counter-increment: th_basis_equivalence-2-2; }
-#proc_basis_onestep-2-1-5 { counter-set: proc_basis_onestep-2-1-5 0; }
-#proc_basis_onestep-2-1-5 > li::marker { content: ""counter(proc_basis_onestep-2-1-5,decimal)"."; }
-#proc_basis_onestep-2-1-5 > li { counter-increment: proc_basis_onestep-2-1-5; }
-#proc_provide_basis-2-1-4 { counter-set: proc_provide_basis-2-1-4 0; }
-#proc_provide_basis-2-1-4 > li::marker { content: ""counter(proc_provide_basis-2-1-4,decimal)"."; }
-#proc_provide_basis-2-1-4 > li { counter-increment: proc_provide_basis-2-1-4; }
-#eg_byinspection_basis-3-1-2 { counter-set: eg_byinspection_basis-3-1-2 0; }
-#eg_byinspection_basis-3-1-2 > li::marker { content: ""counter(eg_byinspection_basis-3-1-2,decimal)"."; }
-#eg_byinspection_basis-3-1-2 > li { counter-increment: eg_byinspection_basis-3-1-2; }
-#s_basis_ex-2-3-1-2 { counter-set: s_basis_ex-2-3-1-2 0; }
-#s_basis_ex-2-3-1-2 > li::marker { content: "("counter(s_basis_ex-2-3-1-2,lower-alpha)")"; }
-#s_basis_ex-2-3-1-2 > li { counter-increment: s_basis_ex-2-3-1-2; }
-#s_basis_ex-2-4-1-2 { counter-set: s_basis_ex-2-4-1-2 0; }
-#s_basis_ex-2-4-1-2 > li::marker { content: "("counter(s_basis_ex-2-4-1-2,lower-alpha)")"; }
-#s_basis_ex-2-4-1-2 > li { counter-increment: s_basis_ex-2-4-1-2; }
-#s_basis_ex-5-1-2 { counter-set: s_basis_ex-5-1-2 0; }
-#s_basis_ex-5-1-2 > li::marker { content: "("counter(s_basis_ex-5-1-2,lower-alpha)")"; }
-#s_basis_ex-5-1-2 > li { counter-increment: s_basis_ex-5-1-2; }
-#ex_basis_matrix_families-2-2 { counter-set: ex_basis_matrix_families-2-2 0; }
-#ex_basis_matrix_families-2-2 > li::marker { content: "("counter(ex_basis_matrix_families-2-2,lower-alpha)")"; }
-#ex_basis_matrix_families-2-2 > li { counter-increment: ex_basis_matrix_families-2-2; }
-#th_basis_dimension-2-2 { counter-set: th_basis_dimension-2-2 0; }
-#th_basis_dimension-2-2 > li::marker { content: ""counter(th_basis_dimension-2-2,decimal)"."; }
-#th_basis_dimension-2-2 > li { counter-increment: th_basis_dimension-2-2; }
-#th_basis_dimension-3-1-1 { counter-set: th_basis_dimension-3-1-1 0; }
-#th_basis_dimension-3-1-1 > li::marker { content: ""counter(th_basis_dimension-3-1-1,decimal)"."; }
-#th_basis_dimension-3-1-1 > li { counter-increment: th_basis_dimension-3-1-1; }
-#proc_dimension-2-1-2 { counter-set: proc_dimension-2-1-2 0; }
-#proc_dimension-2-1-2 > li::marker { content: ""counter(proc_dimension-2-1-2,decimal)"."; }
-#proc_dimension-2-1-2 > li { counter-increment: proc_dimension-2-1-2; }
-#th_basis_contract_expand-2-2 { counter-set: th_basis_contract_expand-2-2 0; }
-#th_basis_contract_expand-2-2 > li::marker { content: ""counter(th_basis_contract_expand-2-2,decimal)"."; }
-#th_basis_contract_expand-2-2 > li { counter-increment: th_basis_contract_expand-2-2; }
-#th_basis_contract_expand-3-1-2 { counter-set: th_basis_contract_expand-3-1-2 0; }
-#th_basis_contract_expand-3-1-2 > li::marker { content: ""counter(th_basis_contract_expand-3-1-2,decimal)"."; }
-#th_basis_contract_expand-3-1-2 > li { counter-increment: th_basis_contract_expand-3-1-2; }
-#th_basis_contract_expand-3-1-2-2-1-5 { counter-set: th_basis_contract_expand-3-1-2-2-1-5 0; }
-#th_basis_contract_expand-3-1-2-2-1-5 > li::marker { content: ""counter(th_basis_contract_expand-3-1-2-2-1-5,lower-roman)""; }
-#th_basis_contract_expand-3-1-2-2-1-5 > li { counter-increment: th_basis_contract_expand-3-1-2-2-1-5; }
-#cor_street_smarts-2-2 { counter-set: cor_street_smarts-2-2 0; }
-#cor_street_smarts-2-2 > li::marker { content: ""counter(cor_street_smarts-2-2,decimal)"."; }
-#cor_street_smarts-2-2 > li { counter-increment: cor_street_smarts-2-2; }
-#cor_street_smarts-2-2-3-1-2 { counter-set: cor_street_smarts-2-2-3-1-2 0; }
-#cor_street_smarts-2-2-3-1-2 > li::marker { content: ""counter(cor_street_smarts-2-2-3-1-2,lower-roman)""; }
-#cor_street_smarts-2-2-3-1-2 > li { counter-increment: cor_street_smarts-2-2-3-1-2; }
-#cor_dimension_subspace-2-2 { counter-set: cor_dimension_subspace-2-2 0; }
-#cor_dimension_subspace-2-2 > li::marker { content: ""counter(cor_dimension_subspace-2-2,decimal)"."; }
-#cor_dimension_subspace-2-2 > li { counter-increment: cor_dimension_subspace-2-2; }
-#cor_dimension_subspace-3-1-1 { counter-set: cor_dimension_subspace-3-1-1 0; }
-#cor_dimension_subspace-3-1-1 > li::marker { content: ""counter(cor_dimension_subspace-3-1-1,decimal)"."; }
-#cor_dimension_subspace-3-1-1 > li { counter-increment: cor_dimension_subspace-3-1-1; }
-#th_dimension_compendium-2-1-3 { counter-set: th_dimension_compendium-2-1-3 0; }
-#th_dimension_compendium-2-1-3 > li::marker { content: ""counter(th_dimension_compendium-2-1-3,decimal)"."; }
-#th_dimension_compendium-2-1-3 > li { counter-increment: th_dimension_compendium-2-1-3; }
-#th_dimension_compendium-2-1-3-6-2-2 { counter-set: th_dimension_compendium-2-1-3-6-2-2 0; }
-#th_dimension_compendium-2-1-3-6-2-2 > li::marker { content: "("counter(th_dimension_compendium-2-1-3-6-2-2,lower-alpha)")"; }
-#th_dimension_compendium-2-1-3-6-2-2 > li { counter-increment: th_dimension_compendium-2-1-3-6-2-2; }
-#extracted-webwork-58-1-1-2-1 { counter-set: extracted-webwork-58-1-1-2-1 0; }
-#extracted-webwork-58-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-58-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-58-1-1-2-1 > li { counter-increment: extracted-webwork-58-1-1-2-1; }
-#extracted-webwork-60-1-1-2-1 { counter-set: extracted-webwork-60-1-1-2-1 0; }
-#extracted-webwork-60-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-60-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-60-1-1-2-1 > li { counter-increment: extracted-webwork-60-1-1-2-1; }
-#s_dimension_ex-3-1-2 { counter-set: s_dimension_ex-3-1-2 0; }
-#s_dimension_ex-3-1-2 > li::marker { content: "("counter(s_dimension_ex-3-1-2,lower-alpha)")"; }
-#s_dimension_ex-3-1-2 > li { counter-increment: s_dimension_ex-3-1-2; }
-#s_dimension_ex-7-1-1-6 { counter-set: s_dimension_ex-7-1-1-6 0; }
-#s_dimension_ex-7-1-1-6 > li::marker { content: "("counter(s_dimension_ex-7-1-1-6,lower-alpha)")"; }
-#s_dimension_ex-7-1-1-6 > li { counter-increment: s_dimension_ex-7-1-1-6; }
-#ex_dimension_matrix_families-2-2 { counter-set: ex_dimension_matrix_families-2-2 0; }
-#ex_dimension_matrix_families-2-2 > li::marker { content: "("counter(ex_dimension_matrix_families-2-2,lower-alpha)")"; }
-#ex_dimension_matrix_families-2-2 > li { counter-increment: ex_dimension_matrix_families-2-2; }
-#th_col_space-2-1-4 { counter-set: th_col_space-2-1-4 0; }
-#th_col_space-2-1-4 > li::marker { content: ""counter(th_col_space-2-1-4,decimal)"."; }
-#th_col_space-2-1-4 > li { counter-increment: th_col_space-2-1-4; }
-#th_fundspaces_rowreduce-2-1-7 { counter-set: th_fundspaces_rowreduce-2-1-7 0; }
-#th_fundspaces_rowreduce-2-1-7 > li::marker { content: ""counter(th_fundspaces_rowreduce-2-1-7,decimal)"."; }
-#th_fundspaces_rowreduce-2-1-7 > li { counter-increment: th_fundspaces_rowreduce-2-1-7; }
-#th_fundspaces_rowreduce-3-1-8 { counter-set: th_fundspaces_rowreduce-3-1-8 0; }
-#th_fundspaces_rowreduce-3-1-8 > li::marker { content: ""counter(th_fundspaces_rowreduce-3-1-8,decimal)"."; }
-#th_fundspaces_rowreduce-3-1-8 > li { counter-increment: th_fundspaces_rowreduce-3-1-8; }
-#proc_fund_spaces-2-1-3 { counter-set: proc_fund_spaces-2-1-3 0; }
-#proc_fund_spaces-2-1-3 > li::marker { content: ""counter(proc_fund_spaces-2-1-3,decimal)"."; }
-#proc_fund_spaces-2-1-3 > li { counter-increment: proc_fund_spaces-2-1-3; }
-#th_rank_nullity_matrix-2-1-3 { counter-set: th_rank_nullity_matrix-2-1-3 0; }
-#th_rank_nullity_matrix-2-1-3 > li::marker { content: ""counter(th_rank_nullity_matrix-2-1-3,decimal)"."; }
-#th_rank_nullity_matrix-2-1-3 > li { counter-increment: th_rank_nullity_matrix-2-1-3; }
-#proc_contract_extend-2-2-1-3 { counter-set: proc_contract_extend-2-2-1-3 0; }
-#proc_contract_extend-2-2-1-3 > li::marker { content: ""counter(proc_contract_extend-2-2-1-3,decimal)"."; }
-#proc_contract_extend-2-2-1-3 > li { counter-increment: proc_contract_extend-2-2-1-3; }
-#proc_contract_extend-2-2-2-3 { counter-set: proc_contract_extend-2-2-2-3 0; }
-#proc_contract_extend-2-2-2-3 > li::marker { content: ""counter(proc_contract_extend-2-2-2-3,decimal)"."; }
-#proc_contract_extend-2-2-2-3 > li { counter-increment: proc_contract_extend-2-2-2-3; }
-#th_invertibility_supersized-2-1-3 { counter-set: th_invertibility_supersized-2-1-3 0; }
-#th_invertibility_supersized-2-1-3 > li::marker { content: ""counter(th_invertibility_supersized-2-1-3,decimal)"."; }
-#th_invertibility_supersized-2-1-3 > li { counter-increment: th_invertibility_supersized-2-1-3; }
-#extracted-webwork-63-1-1-2-1 { counter-set: extracted-webwork-63-1-1-2-1 0; }
-#extracted-webwork-63-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-63-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-63-1-1-2-1 > li { counter-increment: extracted-webwork-63-1-1-2-1; }
-#extracted-webwork-64-1-1-2-1 { counter-set: extracted-webwork-64-1-1-2-1 0; }
-#extracted-webwork-64-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-64-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-64-1-1-2-1 > li { counter-increment: extracted-webwork-64-1-1-2-1; }
-#s_rank_nullity_ex-2-1-2 { counter-set: s_rank_nullity_ex-2-1-2 0; }
-#s_rank_nullity_ex-2-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-2-1-2,lower-alpha)")"; }
-#s_rank_nullity_ex-2-1-2 > li { counter-increment: s_rank_nullity_ex-2-1-2; }
-#s_rank_nullity_ex-3-1-2 { counter-set: s_rank_nullity_ex-3-1-2 0; }
-#s_rank_nullity_ex-3-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-3-1-2,lower-alpha)")"; }
-#s_rank_nullity_ex-3-1-2 > li { counter-increment: s_rank_nullity_ex-3-1-2; }
-#s_rank_nullity_ex-4-1-2 { counter-set: s_rank_nullity_ex-4-1-2 0; }
-#s_rank_nullity_ex-4-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-4-1-2,lower-alpha)")"; }
-#s_rank_nullity_ex-4-1-2 > li { counter-increment: s_rank_nullity_ex-4-1-2; }
-#s_rank_nullity_ex-4-2-1 { counter-set: s_rank_nullity_ex-4-2-1 0; }
-#s_rank_nullity_ex-4-2-1 > li::marker { content: "("counter(s_rank_nullity_ex-4-2-1,lower-alpha)")"; }
-#s_rank_nullity_ex-4-2-1 > li { counter-increment: s_rank_nullity_ex-4-2-1; }
-#s_rank_nullity_ex-5-1-2 { counter-set: s_rank_nullity_ex-5-1-2 0; }
-#s_rank_nullity_ex-5-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-5-1-2,lower-alpha)")"; }
-#s_rank_nullity_ex-5-1-2 > li { counter-increment: s_rank_nullity_ex-5-1-2; }
-#s_rank_nullity_ex-6-1-2 { counter-set: s_rank_nullity_ex-6-1-2 0; }
-#s_rank_nullity_ex-6-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-6-1-2,lower-alpha)")"; }
-#s_rank_nullity_ex-6-1-2 > li { counter-increment: s_rank_nullity_ex-6-1-2; }
-#s_rank_nullity_ex-10-1-2 { counter-set: s_rank_nullity_ex-10-1-2 0; }
-#s_rank_nullity_ex-10-1-2 > li::marker { content: "("counter(s_rank_nullity_ex-10-1-2,lower-alpha)")"; }
-#s_rank_nullity_ex-10-1-2 > li { counter-increment: s_rank_nullity_ex-10-1-2; }
-#ex_invertibility_supersized-2-2 { counter-set: ex_invertibility_supersized-2-2 0; }
-#ex_invertibility_supersized-2-2 > li::marker { content: "("counter(ex_invertibility_supersized-2-2,lower-alpha)")"; }
-#ex_invertibility_supersized-2-2 > li { counter-increment: ex_invertibility_supersized-2-2; }
-#d_linear_transform-2-1-6 { counter-set: d_linear_transform-2-1-6 0; }
-#d_linear_transform-2-1-6 > li::marker { content: ""counter(d_linear_transform-2-1-6,lower-roman)""; }
-#d_linear_transform-2-1-6 > li { counter-increment: d_linear_transform-2-1-6; }
-#eg_nonlinear-2-1-3 { counter-set: eg_nonlinear-2-1-3 0; }
-#eg_nonlinear-2-1-3 > li::marker { content: ""counter(eg_nonlinear-2-1-3,decimal)"."; }
-#eg_nonlinear-2-1-3 > li { counter-increment: eg_nonlinear-2-1-3; }
-#eg_nonlinear-3-1-1 { counter-set: eg_nonlinear-3-1-1 0; }
-#eg_nonlinear-3-1-1 > li::marker { content: ""counter(eg_nonlinear-3-1-1,decimal)"."; }
-#eg_nonlinear-3-1-1 > li { counter-increment: eg_nonlinear-3-1-1; }
-#th_transform_zero_identity_scaling-3-1-3 { counter-set: th_transform_zero_identity_scaling-3-1-3 0; }
-#th_transform_zero_identity_scaling-3-1-3 > li::marker { content: ""counter(th_transform_zero_identity_scaling-3-1-3,decimal)"."; }
-#th_transform_zero_identity_scaling-3-1-3 > li { counter-increment: th_transform_zero_identity_scaling-3-1-3; }
-#th_transform_zero_identity_scaling-4-1-1 { counter-set: th_transform_zero_identity_scaling-4-1-1 0; }
-#th_transform_zero_identity_scaling-4-1-1 > li::marker { content: ""counter(th_transform_zero_identity_scaling-4-1-1,decimal)"."; }
-#th_transform_zero_identity_scaling-4-1-1 > li { counter-increment: th_transform_zero_identity_scaling-4-1-1; }
-#th_transform_zero_identity_scaling-4-1-1-1-1-5 { counter-set: th_transform_zero_identity_scaling-4-1-1-1-1-5 0; }
-#th_transform_zero_identity_scaling-4-1-1-1-1-5 > li::marker { content: ""counter(th_transform_zero_identity_scaling-4-1-1-1-1-5,lower-roman)""; }
-#th_transform_zero_identity_scaling-4-1-1-1-1-5 > li { counter-increment: th_transform_zero_identity_scaling-4-1-1-1-1-5; }
-#th_transform_zero_identity_scaling-4-1-1-2-1-5 { counter-set: th_transform_zero_identity_scaling-4-1-1-2-1-5 0; }
-#th_transform_zero_identity_scaling-4-1-1-2-1-5 > li::marker { content: ""counter(th_transform_zero_identity_scaling-4-1-1-2-1-5,lower-roman)""; }
-#th_transform_zero_identity_scaling-4-1-1-2-1-5 > li { counter-increment: th_transform_zero_identity_scaling-4-1-1-2-1-5; }
-#th_transform_basic_props-2-1-6 { counter-set: th_transform_basic_props-2-1-6 0; }
-#th_transform_basic_props-2-1-6 > li::marker { content: ""counter(th_transform_basic_props-2-1-6,decimal)"."; }
-#th_transform_basic_props-2-1-6 > li { counter-increment: th_transform_basic_props-2-1-6; }
-#th_transform_basic_props-3-1-1 { counter-set: th_transform_basic_props-3-1-1 0; }
-#th_transform_basic_props-3-1-1 > li::marker { content: ""counter(th_transform_basic_props-3-1-1,decimal)"."; }
-#th_transform_basic_props-3-1-1 > li { counter-increment: th_transform_basic_props-3-1-1; }
-#th_lin_matrix_operations-2-1-3 { counter-set: th_lin_matrix_operations-2-1-3 0; }
-#th_lin_matrix_operations-2-1-3 > li::marker { content: ""counter(th_lin_matrix_operations-2-1-3,decimal)"."; }
-#th_lin_matrix_operations-2-1-3 > li { counter-increment: th_lin_matrix_operations-2-1-3; }
-#th_bases_transformations-2-1-7 { counter-set: th_bases_transformations-2-1-7 0; }
-#th_bases_transformations-2-1-7 > li::marker { content: ""counter(th_bases_transformations-2-1-7,decimal)"."; }
-#th_bases_transformations-2-1-7 > li { counter-increment: th_bases_transformations-2-1-7; }
-#rm_bases_transformations-2-1-2 { counter-set: rm_bases_transformations-2-1-2 0; }
-#rm_bases_transformations-2-1-2 > li::marker { content: ""counter(rm_bases_transformations-2-1-2,decimal)"."; }
-#rm_bases_transformations-2-1-2 > li { counter-increment: rm_bases_transformations-2-1-2; }
-#eg_bases_transformations-2-1-4 { counter-set: eg_bases_transformations-2-1-4 0; }
-#eg_bases_transformations-2-1-4 > li::marker { content: ""counter(eg_bases_transformations-2-1-4,decimal)"."; }
-#eg_bases_transformations-2-1-4 > li { counter-increment: eg_bases_transformations-2-1-4; }
-#eg_bases_transformations-3-1-3 { counter-set: eg_bases_transformations-3-1-3 0; }
-#eg_bases_transformations-3-1-3 > li::marker { content: ""counter(eg_bases_transformations-3-1-3,decimal)"."; }
-#eg_bases_transformations-3-1-3 > li { counter-increment: eg_bases_transformations-3-1-3; }
-#th_matrix_transform-2-1-3 { counter-set: th_matrix_transform-2-1-3 0; }
-#th_matrix_transform-2-1-3 > li::marker { content: ""counter(th_matrix_transform-2-1-3,decimal)"."; }
-#th_matrix_transform-2-1-3 > li { counter-increment: th_matrix_transform-2-1-3; }
-#th_matrix_transform-3-1 { counter-set: th_matrix_transform-3-1 0; }
-#th_matrix_transform-3-1 > li::marker { content: ""counter(th_matrix_transform-3-1,decimal)"."; }
-#th_matrix_transform-3-1 > li { counter-increment: th_matrix_transform-3-1; }
-#eg_standard_matrix-2-2 { counter-set: eg_standard_matrix-2-2 0; }
-#eg_standard_matrix-2-2 > li::marker { content: ""counter(eg_standard_matrix-2-2,decimal)"."; }
-#eg_standard_matrix-2-2 > li { counter-increment: eg_standard_matrix-2-2; }
-#ex_transformation_add_scale-2-2 { counter-set: ex_transformation_add_scale-2-2 0; }
-#ex_transformation_add_scale-2-2 > li::marker { content: "("counter(ex_transformation_add_scale-2-2,lower-alpha)")"; }
-#ex_transformation_add_scale-2-2 > li { counter-increment: ex_transformation_add_scale-2-2; }
-#ex_span_independence_transform-2-3 { counter-set: ex_span_independence_transform-2-3 0; }
-#ex_span_independence_transform-2-3 > li::marker { content: "("counter(ex_span_independence_transform-2-3,lower-alpha)")"; }
-#ex_span_independence_transform-2-3 > li { counter-increment: ex_span_independence_transform-2-3; }
-#ex_transformation_reflection-2-1-9 { counter-set: ex_transformation_reflection-2-1-9 0; }
-#ex_transformation_reflection-2-1-9 > li::marker { content: "("counter(ex_transformation_reflection-2-1-9,lower-alpha)")"; }
-#ex_transformation_reflection-2-1-9 > li { counter-increment: ex_transformation_reflection-2-1-9; }
-#ex_transformation_composition_rotations_reflections-2-2 { counter-set: ex_transformation_composition_rotations_reflections-2-2 0; }
-#ex_transformation_composition_rotations_reflections-2-2 > li::marker { content: "("counter(ex_transformation_composition_rotations_reflections-2-2,lower-alpha)")"; }
-#ex_transformation_composition_rotations_reflections-2-2 > li { counter-increment: ex_transformation_composition_rotations_reflections-2-2; }
-#d_nullspace_image-6-1-2 { counter-set: d_nullspace_image-6-1-2 0; }
-#d_nullspace_image-6-1-2 > li::marker { content: ""counter(d_nullspace_image-6-1-2,decimal)"."; }
-#d_nullspace_image-6-1-2 > li { counter-increment: d_nullspace_image-6-1-2; }
-#th_nullspace_image-3-1-3 { counter-set: th_nullspace_image-3-1-3 0; }
-#th_nullspace_image-3-1-3 > li::marker { content: ""counter(th_nullspace_image-3-1-3,decimal)"."; }
-#th_nullspace_image-3-1-3 > li { counter-increment: th_nullspace_image-3-1-3; }
-#th_nullspace_image-3-2-3 { counter-set: th_nullspace_image-3-2-3 0; }
-#th_nullspace_image-3-2-3 > li::marker { content: ""counter(th_nullspace_image-3-2-3,decimal)"."; }
-#th_nullspace_image-3-2-3 > li { counter-increment: th_nullspace_image-3-2-3; }
-#eg_nullspace_image_transposition-1-2 { counter-set: eg_nullspace_image_transposition-1-2 0; }
-#eg_nullspace_image_transposition-1-2 > li::marker { content: ""counter(eg_nullspace_image_transposition-1-2,decimal)"."; }
-#eg_nullspace_image_transposition-1-2 > li { counter-increment: eg_nullspace_image_transposition-1-2; }
-#eg_nullspace_image_transposition-2-1-1 { counter-set: eg_nullspace_image_transposition-2-1-1 0; }
-#eg_nullspace_image_transposition-2-1-1 > li::marker { content: ""counter(eg_nullspace_image_transposition-2-1-1,decimal)"."; }
-#eg_nullspace_image_transposition-2-1-1 > li { counter-increment: eg_nullspace_image_transposition-2-1-1; }
-#th_injective_surjective-2-2 { counter-set: th_injective_surjective-2-2 0; }
-#th_injective_surjective-2-2 > li::marker { content: ""counter(th_injective_surjective-2-2,decimal)"."; }
-#th_injective_surjective-2-2 > li { counter-increment: th_injective_surjective-2-2; }
-#cor_injective_surjective-2-1-3 { counter-set: cor_injective_surjective-2-1-3 0; }
-#cor_injective_surjective-2-1-3 > li::marker { content: ""counter(cor_injective_surjective-2-1-3,decimal)"."; }
-#cor_injective_surjective-2-1-3 > li { counter-increment: cor_injective_surjective-2-1-3; }
-#rm_isom-2-6 { counter-set: rm_isom-2-6 0; }
-#rm_isom-2-6 > li::marker { content: ""counter(rm_isom-2-6,decimal)"."; }
-#rm_isom-2-6 > li { counter-increment: rm_isom-2-6; }
-#th_isom_null_im-2-1-2 { counter-set: th_isom_null_im-2-1-2 0; }
-#th_isom_null_im-2-1-2 > li::marker { content: ""counter(th_isom_null_im-2-1-2,decimal)"."; }
-#th_isom_null_im-2-1-2 > li { counter-increment: th_isom_null_im-2-1-2; }
-#th_isomorphism_preserves-2-1-2 { counter-set: th_isomorphism_preserves-2-1-2 0; }
-#th_isomorphism_preserves-2-1-2 > li::marker { content: ""counter(th_isomorphism_preserves-2-1-2,decimal)"."; }
-#th_isomorphism_preserves-2-1-2 > li { counter-increment: th_isomorphism_preserves-2-1-2; }
-#th_isomorphisms_finite_dim-1-1-3 { counter-set: th_isomorphisms_finite_dim-1-1-3 0; }
-#th_isomorphisms_finite_dim-1-1-3 > li::marker { content: ""counter(th_isomorphisms_finite_dim-1-1-3,decimal)"."; }
-#th_isomorphisms_finite_dim-1-1-3 > li { counter-increment: th_isomorphisms_finite_dim-1-1-3; }
-#th_isomorphisms_finite_dim-1-1-3-2-1-4 { counter-set: th_isomorphisms_finite_dim-1-1-3-2-1-4 0; }
-#th_isomorphisms_finite_dim-1-1-3-2-1-4 > li::marker { content: "("counter(th_isomorphisms_finite_dim-1-1-3-2-1-4,lower-alpha)")"; }
-#th_isomorphisms_finite_dim-1-1-3-2-1-4 > li { counter-increment: th_isomorphisms_finite_dim-1-1-3-2-1-4; }
-#th_isomorphisms_finite_dim-2-1-1 { counter-set: th_isomorphisms_finite_dim-2-1-1 0; }
-#th_isomorphisms_finite_dim-2-1-1 > li::marker { content: ""counter(th_isomorphisms_finite_dim-2-1-1,decimal)"."; }
-#th_isomorphisms_finite_dim-2-1-1 > li { counter-increment: th_isomorphisms_finite_dim-2-1-1; }
-#th_invertibility_with_isom-2-1-3 { counter-set: th_invertibility_with_isom-2-1-3 0; }
-#th_invertibility_with_isom-2-1-3 > li::marker { content: ""counter(th_invertibility_with_isom-2-1-3,decimal)"."; }
-#th_invertibility_with_isom-2-1-3 > li { counter-increment: th_invertibility_with_isom-2-1-3; }
-#extracted-webwork-70-1-1-3-1 { counter-set: extracted-webwork-70-1-1-3-1 0; }
-#extracted-webwork-70-1-1-3-1 > li::marker { content: "("counter(extracted-webwork-70-1-1-3-1,lower-alpha)")"; }
-#extracted-webwork-70-1-1-3-1 > li { counter-increment: extracted-webwork-70-1-1-3-1; }
-#extracted-webwork-72-1-1-2-1 { counter-set: extracted-webwork-72-1-1-2-1 0; }
-#extracted-webwork-72-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-72-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-72-1-1-2-1 > li { counter-increment: extracted-webwork-72-1-1-2-1; }
-#extracted-webwork-73-1-1-3-1 { counter-set: extracted-webwork-73-1-1-3-1 0; }
-#extracted-webwork-73-1-1-3-1 > li::marker { content: "("counter(extracted-webwork-73-1-1-3-1,lower-alpha)")"; }
-#extracted-webwork-73-1-1-3-1 > li { counter-increment: extracted-webwork-73-1-1-3-1; }
-#extracted-webwork-74-1-1-2-1 { counter-set: extracted-webwork-74-1-1-2-1 0; }
-#extracted-webwork-74-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-74-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-74-1-1-2-1 > li { counter-increment: extracted-webwork-74-1-1-2-1; }
-#extracted-webwork-75-1-1-2-1 { counter-set: extracted-webwork-75-1-1-2-1 0; }
-#extracted-webwork-75-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-75-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-75-1-1-2-1 > li { counter-increment: extracted-webwork-75-1-1-2-1; }
-#extracted-webwork-75-1-1-2-2 { counter-set: extracted-webwork-75-1-1-2-2 0; }
-#extracted-webwork-75-1-1-2-2 > li::marker { content: ""counter(extracted-webwork-75-1-1-2-2,upper-alpha)"."; }
-#extracted-webwork-75-1-1-2-2 > li { counter-increment: extracted-webwork-75-1-1-2-2; }
-#extracted-webwork-76-1-1-2-1 { counter-set: extracted-webwork-76-1-1-2-1 0; }
-#extracted-webwork-76-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-76-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-76-1-1-2-1 > li { counter-increment: extracted-webwork-76-1-1-2-1; }
-#extracted-webwork-76-1-1-2-2 { counter-set: extracted-webwork-76-1-1-2-2 0; }
-#extracted-webwork-76-1-1-2-2 > li::marker { content: ""counter(extracted-webwork-76-1-1-2-2,upper-alpha)"."; }
-#extracted-webwork-76-1-1-2-2 > li { counter-increment: extracted-webwork-76-1-1-2-2; }
-#extracted-webwork-77-1-1-3-1 { counter-set: extracted-webwork-77-1-1-3-1 0; }
-#extracted-webwork-77-1-1-3-1 > li::marker { content: "("counter(extracted-webwork-77-1-1-3-1,lower-alpha)")"; }
-#extracted-webwork-77-1-1-3-1 > li { counter-increment: extracted-webwork-77-1-1-3-1; }
-#extracted-webwork-77-1-1-3-2 { counter-set: extracted-webwork-77-1-1-3-2 0; }
-#extracted-webwork-77-1-1-3-2 > li::marker { content: ""counter(extracted-webwork-77-1-1-3-2,upper-alpha)"."; }
-#extracted-webwork-77-1-1-3-2 > li { counter-increment: extracted-webwork-77-1-1-3-2; }
-#extracted-webwork-78-1-1-3-1 { counter-set: extracted-webwork-78-1-1-3-1 0; }
-#extracted-webwork-78-1-1-3-1 > li::marker { content: "("counter(extracted-webwork-78-1-1-3-1,lower-alpha)")"; }
-#extracted-webwork-78-1-1-3-1 > li { counter-increment: extracted-webwork-78-1-1-3-1; }
-#extracted-webwork-78-1-1-3-2 { counter-set: extracted-webwork-78-1-1-3-2 0; }
-#extracted-webwork-78-1-1-3-2 > li::marker { content: ""counter(extracted-webwork-78-1-1-3-2,upper-alpha)"."; }
-#extracted-webwork-78-1-1-3-2 > li { counter-increment: extracted-webwork-78-1-1-3-2; }
-#extracted-webwork-79-1-1-2-1 { counter-set: extracted-webwork-79-1-1-2-1 0; }
-#extracted-webwork-79-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-79-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-79-1-1-2-1 > li { counter-increment: extracted-webwork-79-1-1-2-1; }
-#extracted-webwork-79-1-1-2-2 { counter-set: extracted-webwork-79-1-1-2-2 0; }
-#extracted-webwork-79-1-1-2-2 > li::marker { content: ""counter(extracted-webwork-79-1-1-2-2,upper-alpha)"."; }
-#extracted-webwork-79-1-1-2-2 > li { counter-increment: extracted-webwork-79-1-1-2-2; }
-#extracted-webwork-80-1-1-3-1 { counter-set: extracted-webwork-80-1-1-3-1 0; }
-#extracted-webwork-80-1-1-3-1 > li::marker { content: "("counter(extracted-webwork-80-1-1-3-1,lower-alpha)")"; }
-#extracted-webwork-80-1-1-3-1 > li { counter-increment: extracted-webwork-80-1-1-3-1; }
-#extracted-webwork-80-1-1-3-2 { counter-set: extracted-webwork-80-1-1-3-2 0; }
-#extracted-webwork-80-1-1-3-2 > li::marker { content: ""counter(extracted-webwork-80-1-1-3-2,upper-alpha)"."; }
-#extracted-webwork-80-1-1-3-2 > li { counter-increment: extracted-webwork-80-1-1-3-2; }
-#s_coordinatevectors-2-1-12 { counter-set: s_coordinatevectors-2-1-12 0; }
-#s_coordinatevectors-2-1-12 > li::marker { content: ""counter(s_coordinatevectors-2-1-12,decimal)"."; }
-#s_coordinatevectors-2-1-12 > li { counter-increment: s_coordinatevectors-2-1-12; }
-#proc_coor_vec-2-1-5 { counter-set: proc_coor_vec-2-1-5 0; }
-#proc_coor_vec-2-1-5 > li::marker { content: ""counter(proc_coor_vec-2-1-5,decimal)"."; }
-#proc_coor_vec-2-1-5 > li { counter-increment: proc_coor_vec-2-1-5; }
-#eg_coordinatevector_standard-2-2 { counter-set: eg_coordinatevector_standard-2-2 0; }
-#eg_coordinatevector_standard-2-2 > li::marker { content: ""counter(eg_coordinatevector_standard-2-2,decimal)"."; }
-#eg_coordinatevector_standard-2-2 > li { counter-increment: eg_coordinatevector_standard-2-2; }
-#ss_coordinate_vectors-10-2-2 { counter-set: ss_coordinate_vectors-10-2-2 0; }
-#ss_coordinate_vectors-10-2-2 > li::marker { content: ""counter(ss_coordinate_vectors-10-2-2,decimal)"."; }
-#ss_coordinate_vectors-10-2-2 > li { counter-increment: ss_coordinate_vectors-10-2-2; }
-#ss_coordinate_vectors-11-2-2 { counter-set: ss_coordinate_vectors-11-2-2 0; }
-#ss_coordinate_vectors-11-2-2 > li::marker { content: ""counter(ss_coordinate_vectors-11-2-2,decimal)"."; }
-#ss_coordinate_vectors-11-2-2 > li { counter-increment: ss_coordinate_vectors-11-2-2; }
-#ss_coordinate_vectors-11-3-1 { counter-set: ss_coordinate_vectors-11-3-1 0; }
-#ss_coordinate_vectors-11-3-1 > li::marker { content: ""counter(ss_coordinate_vectors-11-3-1,decimal)"."; }
-#ss_coordinate_vectors-11-3-1 > li { counter-increment: ss_coordinate_vectors-11-3-1; }
-#proc_contract_extend_general-2-2-1-3 { counter-set: proc_contract_extend_general-2-2-1-3 0; }
-#proc_contract_extend_general-2-2-1-3 > li::marker { content: ""counter(proc_contract_extend_general-2-2-1-3,decimal)"."; }
-#proc_contract_extend_general-2-2-1-3 > li { counter-increment: proc_contract_extend_general-2-2-1-3; }
-#proc_contract_extend_general-2-2-2-3 { counter-set: proc_contract_extend_general-2-2-2-3 0; }
-#proc_contract_extend_general-2-2-2-3 > li::marker { content: ""counter(proc_contract_extend_general-2-2-2-3,decimal)"."; }
-#proc_contract_extend_general-2-2-2-3 > li { counter-increment: proc_contract_extend_general-2-2-2-3; }
-#s_coordinatevectors_ex-4-1-2 { counter-set: s_coordinatevectors_ex-4-1-2 0; }
-#s_coordinatevectors_ex-4-1-2 > li::marker { content: "("counter(s_coordinatevectors_ex-4-1-2,lower-alpha)")"; }
-#s_coordinatevectors_ex-4-1-2 > li { counter-increment: s_coordinatevectors_ex-4-1-2; }
-#s_coordinatevectors_ex-5-1-2 { counter-set: s_coordinatevectors_ex-5-1-2 0; }
-#s_coordinatevectors_ex-5-1-2 > li::marker { content: "("counter(s_coordinatevectors_ex-5-1-2,lower-alpha)")"; }
-#s_coordinatevectors_ex-5-1-2 > li { counter-increment: s_coordinatevectors_ex-5-1-2; }
-#s_coordinatevectors_ex-6-1-2 { counter-set: s_coordinatevectors_ex-6-1-2 0; }
-#s_coordinatevectors_ex-6-1-2 > li::marker { content: "("counter(s_coordinatevectors_ex-6-1-2,lower-alpha)")"; }
-#s_coordinatevectors_ex-6-1-2 > li { counter-increment: s_coordinatevectors_ex-6-1-2; }
-#s_coordinatevectors_ex-8-1-1-2 { counter-set: s_coordinatevectors_ex-8-1-1-2 0; }
-#s_coordinatevectors_ex-8-1-1-2 > li::marker { content: "("counter(s_coordinatevectors_ex-8-1-1-2,lower-alpha)")"; }
-#s_coordinatevectors_ex-8-1-1-2 > li { counter-increment: s_coordinatevectors_ex-8-1-1-2; }
-#s_matrixreps-2-1-7 { counter-set: s_matrixreps-2-1-7 0; }
-#s_matrixreps-2-1-7 > li::marker { content: ""counter(s_matrixreps-2-1-7,decimal)"."; }
-#s_matrixreps-2-1-7 > li { counter-increment: s_matrixreps-2-1-7; }
-#eg_matrixreps_different_bases-2-2 { counter-set: eg_matrixreps_different_bases-2-2 0; }
-#eg_matrixreps_different_bases-2-2 > li::marker { content: ""counter(eg_matrixreps_different_bases-2-2,decimal)"."; }
-#eg_matrixreps_different_bases-2-2 > li { counter-increment: eg_matrixreps_different_bases-2-2; }
-#eg_matrixreps_different_bases-3-1 { counter-set: eg_matrixreps_different_bases-3-1 0; }
-#eg_matrixreps_different_bases-3-1 > li::marker { content: ""counter(eg_matrixreps_different_bases-3-1,decimal)"."; }
-#eg_matrixreps_different_bases-3-1 > li { counter-increment: eg_matrixreps_different_bases-3-1; }
-#th_matrixrep-2-1-7 { counter-set: th_matrixrep-2-1-7 0; }
-#th_matrixrep-2-1-7 > li::marker { content: ""counter(th_matrixrep-2-1-7,decimal)"."; }
-#th_matrixrep-2-1-7 > li { counter-increment: th_matrixrep-2-1-7; }
-#th_matrixrep-3-2 { counter-set: th_matrixrep-3-2 0; }
-#th_matrixrep-3-2 > li::marker { content: ""counter(th_matrixrep-3-2,decimal)"."; }
-#th_matrixrep-3-2 > li { counter-increment: th_matrixrep-3-2; }
-#th_matrixreps_model-2-2 { counter-set: th_matrixreps_model-2-2 0; }
-#th_matrixreps_model-2-2 > li::marker { content: ""counter(th_matrixreps_model-2-2,decimal)"."; }
-#th_matrixreps_model-2-2 > li { counter-increment: th_matrixreps_model-2-2; }
-#eg_matrixreps_sym_skewsym-2-1-2 { counter-set: eg_matrixreps_sym_skewsym-2-1-2 0; }
-#eg_matrixreps_sym_skewsym-2-1-2 > li::marker { content: ""counter(eg_matrixreps_sym_skewsym-2-1-2,decimal)"."; }
-#eg_matrixreps_sym_skewsym-2-1-2 > li { counter-increment: eg_matrixreps_sym_skewsym-2-1-2; }
-#extracted-webwork-87-1-1-2-1 { counter-set: extracted-webwork-87-1-1-2-1 0; }
-#extracted-webwork-87-1-1-2-1 > li::marker { content: "("counter(extracted-webwork-87-1-1-2-1,lower-alpha)")"; }
-#extracted-webwork-87-1-1-2-1 > li { counter-increment: extracted-webwork-87-1-1-2-1; }
-#extracted-webwork-87-1-1-3-1 { counter-set: extracted-webwork-87-1-1-3-1 0; }
-#extracted-webwork-87-1-1-3-1 > li::marker { content: ""counter(extracted-webwork-87-1-1-3-1,upper-alpha)"."; }
-#extracted-webwork-87-1-1-3-1 > li { counter-increment: extracted-webwork-87-1-1-3-1; }
-#s_matrixreps_ex-4-1-2 { counter-set: s_matrixreps_ex-4-1-2 0; }
-#s_matrixreps_ex-4-1-2 > li::marker { content: "("counter(s_matrixreps_ex-4-1-2,lower-alpha)")"; }
-#s_matrixreps_ex-4-1-2 > li { counter-increment: s_matrixreps_ex-4-1-2; }
-#s_matrixreps_ex-5-1-2 { counter-set: s_matrixreps_ex-5-1-2 0; }
-#s_matrixreps_ex-5-1-2 > li::marker { content: "("counter(s_matrixreps_ex-5-1-2,lower-alpha)")"; }
-#s_matrixreps_ex-5-1-2 > li { counter-increment: s_matrixreps_ex-5-1-2; }
-#s_matrixreps_ex-6-1-2 { counter-set: s_matrixreps_ex-6-1-2 0; }
-#s_matrixreps_ex-6-1-2 > li::marker { content: "("counter(s_matrixreps_ex-6-1-2,lower-alpha)")"; }
-#s_matrixreps_ex-6-1-2 > li { counter-increment: s_matrixreps_ex-6-1-2; }
-#s_matrixreps_ex-7-1-2 { counter-set: s_matrixreps_ex-7-1-2 0; }
-#s_matrixreps_ex-7-1-2 > li::marker { content: "("counter(s_matrixreps_ex-7-1-2,lower-alpha)")"; }
-#s_matrixreps_ex-7-1-2 > li { counter-increment: s_matrixreps_ex-7-1-2; }
-#s_matrixreps_ex-8-1-2 { counter-set: s_matrixreps_ex-8-1-2 0; }
-#s_matrixreps_ex-8-1-2 > li::marker { content: "("counter(s_matrixreps_ex-8-1-2,lower-alpha)")"; }
-#s_matrixreps_ex-8-1-2 > li { counter-increment: s_matrixreps_ex-8-1-2; }
-#s_changeofbasis-2-1-5 { counter-set: s_changeofbasis-2-1-5 0; }
-#s_changeofbasis-2-1-5 > li::marker { content: ""counter(s_changeofbasis-2-1-5,decimal)"."; }
-#s_changeofbasis-2-1-5 > li { counter-increment: s_changeofbasis-2-1-5; }
-#th_change_of_basis_coordinates-2-1-5 { counter-set: th_change_of_basis_coordinates-2-1-5 0; }
-#th_change_of_basis_coordinates-2-1-5 > li::marker { content: ""counter(th_change_of_basis_coordinates-2-1-5,decimal)"."; }
-#th_change_of_basis_coordinates-2-1-5 > li { counter-increment: th_change_of_basis_coordinates-2-1-5; }
-#th_change_of_basis_coordinates-3-1 { counter-set: th_change_of_basis_coordinates-3-1 0; }
-#th_change_of_basis_coordinates-3-1 > li::marker { content: ""counter(th_change_of_basis_coordinates-3-1,decimal)"."; }
-#th_change_of_basis_coordinates-3-1 > li { counter-increment: th_change_of_basis_coordinates-3-1; }
-#ss_change_of_basis-5-2-1-4 { counter-set: ss_change_of_basis-5-2-1-4 0; }
-#ss_change_of_basis-5-2-1-4 > li::marker { content: ""counter(ss_change_of_basis-5-2-1-4,decimal)"."; }
-#ss_change_of_basis-5-2-1-4 > li { counter-increment: ss_change_of_basis-5-2-1-4; }
-#ss_change_of_basis-5-3-1-1 { counter-set: ss_change_of_basis-5-3-1-1 0; }
-#ss_change_of_basis-5-3-1-1 > li::marker { content: ""counter(ss_change_of_basis-5-3-1-1,decimal)"."; }
-#ss_change_of_basis-5-3-1-1 > li { counter-increment: ss_change_of_basis-5-3-1-1; }
-#ss_change_of_basis-6-2-1-4 { counter-set: ss_change_of_basis-6-2-1-4 0; }
-#ss_change_of_basis-6-2-1-4 > li::marker { content: ""counter(ss_change_of_basis-6-2-1-4,decimal)"."; }
-#ss_change_of_basis-6-2-1-4 > li { counter-increment: ss_change_of_basis-6-2-1-4; }
-#ss_change_of_basis-6-3-1-1 { counter-set: ss_change_of_basis-6-3-1-1 0; }
-#ss_change_of_basis-6-3-1-1 > li::marker { content: ""counter(ss_change_of_basis-6-3-1-1,decimal)"."; }
-#ss_change_of_basis-6-3-1-1 > li { counter-increment: ss_change_of_basis-6-3-1-1; }
-#th_change_of_basis_properties-2-1-4 { counter-set: th_change_of_basis_properties-2-1-4 0; }
-#th_change_of_basis_properties-2-1-4 > li::marker { content: ""counter(th_change_of_basis_properties-2-1-4,decimal)"."; }
-#th_change_of_basis_properties-2-1-4 > li { counter-increment: th_change_of_basis_properties-2-1-4; }
-#th_change_of_basis_properties-3-1 { counter-set: th_change_of_basis_properties-3-1 0; }
-#th_change_of_basis_properties-3-1 > li::marker { content: ""counter(th_change_of_basis_properties-3-1,decimal)"."; }
-#th_change_of_basis_properties-3-1 > li { counter-increment: th_change_of_basis_properties-3-1; }
-#proc_changebasis_tips-2-2 { counter-set: proc_changebasis_tips-2-2 0; }
-#proc_changebasis_tips-2-2 > li::marker { content: ""counter(proc_changebasis_tips-2-2,decimal)"."; }
-#proc_changebasis_tips-2-2 > li { counter-increment: proc_changebasis_tips-2-2; }
-#rm_change_of_basis_transformations-2-1-1 { counter-set: rm_change_of_basis_transformations-2-1-1 0; }
-#rm_change_of_basis_transformations-2-1-1 > li::marker { content: ""counter(rm_change_of_basis_transformations-2-1-1,decimal)"."; }
-#rm_change_of_basis_transformations-2-1-1 > li { counter-increment: rm_change_of_basis_transformations-2-1-1; }
-#s_changeofbasis-4-5-2-1-2 { counter-set: s_changeofbasis-4-5-2-1-2 0; }
-#s_changeofbasis-4-5-2-1-2 > li::marker { content: ""counter(s_changeofbasis-4-5-2-1-2,decimal)"."; }
-#s_changeofbasis-4-5-2-1-2 > li { counter-increment: s_changeofbasis-4-5-2-1-2; }
-#s_changeofbasis-4-5-3-1 { counter-set: s_changeofbasis-4-5-3-1 0; }
-#s_changeofbasis-4-5-3-1 > li::marker { content: ""counter(s_changeofbasis-4-5-3-1,decimal)"."; }
-#s_changeofbasis-4-5-3-1 > li { counter-increment: s_changeofbasis-4-5-3-1; }
-#proc_standard_matrix_via_change_of_basis-2-2 { counter-set: proc_standard_matrix_via_change_of_basis-2-2 0; }
-#proc_standard_matrix_via_change_of_basis-2-2 > li::marker { content: ""counter(proc_standard_matrix_via_change_of_basis-2-2,decimal)"."; }
-#proc_standard_matrix_via_change_of_basis-2-2 > li { counter-increment: proc_standard_matrix_via_change_of_basis-2-2; }
-#eg_changebasis_reflection-2-1-5 { counter-set: eg_changebasis_reflection-2-1-5 0; }
-#eg_changebasis_reflection-2-1-5 > li::marker { content: ""counter(eg_changebasis_reflection-2-1-5,decimal)"."; }
-#eg_changebasis_reflection-2-1-5 > li { counter-increment: eg_changebasis_reflection-2-1-5; }
-#eg_changebasis_reflection-3-1-1 { counter-set: eg_changebasis_reflection-3-1-1 0; }
-#eg_changebasis_reflection-3-1-1 > li::marker { content: ""counter(eg_changebasis_reflection-3-1-1,decimal)"."; }
-#eg_changebasis_reflection-3-1-1 > li { counter-increment: eg_changebasis_reflection-3-1-1; }
-#s_changeofbasis_ex-3-1-2 { counter-set: s_changeofbasis_ex-3-1-2 0; }
-#s_changeofbasis_ex-3-1-2 > li::marker { content: "("counter(s_changeofbasis_ex-3-1-2,lower-alpha)")"; }
-#s_changeofbasis_ex-3-1-2 > li { counter-increment: s_changeofbasis_ex-3-1-2; }
-#s_changeofbasis_ex-4-1-2 { counter-set: s_changeofbasis_ex-4-1-2 0; }
-#s_changeofbasis_ex-4-1-2 > li::marker { content: "("counter(s_changeofbasis_ex-4-1-2,lower-alpha)")"; }
-#s_changeofbasis_ex-4-1-2 > li { counter-increment: s_changeofbasis_ex-4-1-2; }
-#s_changeofbasis_ex-7-1-1-5 { counter-set: s_changeofbasis_ex-7-1-1-5 0; }
-#s_changeofbasis_ex-7-1-1-5 > li::marker { content: "("counter(s_changeofbasis_ex-7-1-1-5,lower-alpha)")"; }
-#s_changeofbasis_ex-7-1-1-5 > li { counter-increment: s_changeofbasis_ex-7-1-1-5; }
-#ex_changebasis_three_bases-1-2 { counter-set: ex_changebasis_three_bases-1-2 0; }
-#ex_changebasis_three_bases-1-2 > li::marker { content: "("counter(ex_changebasis_three_bases-1-2,lower-alpha)")"; }
-#ex_changebasis_three_bases-1-2 > li { counter-increment: ex_changebasis_three_bases-1-2; }
-#s_changeofbasis_ex-9-2-2 { counter-set: s_changeofbasis_ex-9-2-2 0; }
-#s_changeofbasis_ex-9-2-2 > li::marker { content: "("counter(s_changeofbasis_ex-9-2-2,lower-alpha)")"; }
-#s_changeofbasis_ex-9-2-2 > li { counter-increment: s_changeofbasis_ex-9-2-2; }
-#s_changeofbasis_ex-10-1-2 { counter-set: s_changeofbasis_ex-10-1-2 0; }
-#s_changeofbasis_ex-10-1-2 > li::marker { content: "("counter(s_changeofbasis_ex-10-1-2,lower-alpha)")"; }
-#s_changeofbasis_ex-10-1-2 > li { counter-increment: s_changeofbasis_ex-10-1-2; }
-#s_changeofbasis_ex-11-1-2 { counter-set: s_changeofbasis_ex-11-1-2 0; }
-#s_changeofbasis_ex-11-1-2 > li::marker { content: "("counter(s_changeofbasis_ex-11-1-2,lower-alpha)")"; }
-#s_changeofbasis_ex-11-1-2 > li { counter-increment: s_changeofbasis_ex-11-1-2; }
-#s_changeofbasis_ex-12-2-2 { counter-set: s_changeofbasis_ex-12-2-2 0; }
-#s_changeofbasis_ex-12-2-2 > li::marker { content: "("counter(s_changeofbasis_ex-12-2-2,lower-alpha)")"; }
-#s_changeofbasis_ex-12-2-2 > li { counter-increment: s_changeofbasis_ex-12-2-2; }
-#th_eigenvectors_transformation_matrixrep-2-2 { counter-set: th_eigenvectors_transformation_matrixrep-2-2 0; }
-#th_eigenvectors_transformation_matrixrep-2-2 > li::marker { content: ""counter(th_eigenvectors_transformation_matrixrep-2-2,decimal)"."; }
-#th_eigenvectors_transformation_matrixrep-2-2 > li { counter-increment: th_eigenvectors_transformation_matrixrep-2-2; }
-#th_eigenvectors_matrices-2-1-4 { counter-set: th_eigenvectors_matrices-2-1-4 0; }
-#th_eigenvectors_matrices-2-1-4 > li::marker { content: ""counter(th_eigenvectors_matrices-2-1-4,decimal)"."; }
-#th_eigenvectors_matrices-2-1-4 > li { counter-increment: th_eigenvectors_matrices-2-1-4; }
-#cor_eigenvalues-2-2 { counter-set: cor_eigenvalues-2-2 0; }
-#cor_eigenvalues-2-2 > li::marker { content: ""counter(cor_eigenvalues-2-2,decimal)"."; }
-#cor_eigenvalues-2-2 > li { counter-increment: cor_eigenvalues-2-2; }
-#proc_eigenspaces_matrix-2-2 { counter-set: proc_eigenspaces_matrix-2-2 0; }
-#proc_eigenspaces_matrix-2-2 > li::marker { content: ""counter(proc_eigenspaces_matrix-2-2,decimal)"."; }
-#proc_eigenspaces_matrix-2-2 > li { counter-increment: proc_eigenspaces_matrix-2-2; }
-#eg_eigenspaces_A-2-1-2 { counter-set: eg_eigenspaces_A-2-1-2 0; }
-#eg_eigenspaces_A-2-1-2 > li::marker { content: ""counter(eg_eigenspaces_A-2-1-2,decimal)"."; }
-#eg_eigenspaces_A-2-1-2 > li { counter-increment: eg_eigenspaces_A-2-1-2; }
-#eg_eigenspaces_B-2-2 { counter-set: eg_eigenspaces_B-2-2 0; }
-#eg_eigenspaces_B-2-2 > li::marker { content: ""counter(eg_eigenspaces_B-2-2,decimal)"."; }
-#eg_eigenspaces_B-2-2 > li { counter-increment: eg_eigenspaces_B-2-2; }
-#s_eigenvectors-4-19-2-1-3 { counter-set: s_eigenvectors-4-19-2-1-3 0; }
-#s_eigenvectors-4-19-2-1-3 > li::marker { content: ""counter(s_eigenvectors-4-19-2-1-3,decimal)"."; }
-#s_eigenvectors-4-19-2-1-3 > li { counter-increment: s_eigenvectors-4-19-2-1-3; }
-#s_eigenvectors-4-19-3-1-1 { counter-set: s_eigenvectors-4-19-3-1-1 0; }
-#s_eigenvectors-4-19-3-1-1 > li::marker { content: ""counter(s_eigenvectors-4-19-3-1-1,decimal)"."; }
-#s_eigenvectors-4-19-3-1-1 > li { counter-increment: s_eigenvectors-4-19-3-1-1; }
-#cor_eigenvalue_invertible-2-1-3 { counter-set: cor_eigenvalue_invertible-2-1-3 0; }
-#cor_eigenvalue_invertible-2-1-3 > li::marker { content: ""counter(cor_eigenvalue_invertible-2-1-3,decimal)"."; }
-#cor_eigenvalue_invertible-2-1-3 > li { counter-increment: cor_eigenvalue_invertible-2-1-3; }
-#cor_eigenvalue_invertible-3-1 { counter-set: cor_eigenvalue_invertible-3-1 0; }
-#cor_eigenvalue_invertible-3-1 > li::marker { content: ""counter(cor_eigenvalue_invertible-3-1,decimal)"."; }
-#cor_eigenvalue_invertible-3-1 > li { counter-increment: cor_eigenvalue_invertible-3-1; }
-#proc_eigenspaces_transformation-2-2 { counter-set: proc_eigenspaces_transformation-2-2 0; }
-#proc_eigenspaces_transformation-2-2 > li::marker { content: ""counter(proc_eigenspaces_transformation-2-2,decimal)"."; }
-#proc_eigenspaces_transformation-2-2 > li { counter-increment: proc_eigenspaces_transformation-2-2; }
-#eg_eigenvector_systematic_transposition-2-2 { counter-set: eg_eigenvector_systematic_transposition-2-2 0; }
-#eg_eigenvector_systematic_transposition-2-2 > li::marker { content: ""counter(eg_eigenvector_systematic_transposition-2-2,decimal)"."; }
-#eg_eigenvector_systematic_transposition-2-2 > li { counter-increment: eg_eigenvector_systematic_transposition-2-2; }
-#th_characteristic_polynomial-2-2 { counter-set: th_characteristic_polynomial-2-2 0; }
-#th_characteristic_polynomial-2-2 > li::marker { content: ""counter(th_characteristic_polynomial-2-2,decimal)"."; }
-#th_characteristic_polynomial-2-2 > li { counter-increment: th_characteristic_polynomial-2-2; }
-#th_invertibility_with_eigenvalue-2-1-3 { counter-set: th_invertibility_with_eigenvalue-2-1-3 0; }
-#th_invertibility_with_eigenvalue-2-1-3 > li::marker { content: ""counter(th_invertibility_with_eigenvalue-2-1-3,decimal)"."; }
-#th_invertibility_with_eigenvalue-2-1-3 > li { counter-increment: th_invertibility_with_eigenvalue-2-1-3; }
-#s_eigenvectors_ex-2-11-1-1-6 { counter-set: s_eigenvectors_ex-2-11-1-1-6 0; }
-#s_eigenvectors_ex-2-11-1-1-6 > li::marker { content: "("counter(s_eigenvectors_ex-2-11-1-1-6,lower-alpha)")"; }
-#s_eigenvectors_ex-2-11-1-1-6 > li { counter-increment: s_eigenvectors_ex-2-11-1-1-6; }
-#s_eigenvectors_ex-2-14-1-1-3 { counter-set: s_eigenvectors_ex-2-14-1-1-3 0; }
-#s_eigenvectors_ex-2-14-1-1-3 > li::marker { content: "("counter(s_eigenvectors_ex-2-14-1-1-3,lower-alpha)")"; }
-#s_eigenvectors_ex-2-14-1-1-3 > li { counter-increment: s_eigenvectors_ex-2-14-1-1-3; }
-#s_eigenvectors_ex-2-16-1-1-3 { counter-set: s_eigenvectors_ex-2-16-1-1-3 0; }
-#s_eigenvectors_ex-2-16-1-1-3 > li::marker { content: "("counter(s_eigenvectors_ex-2-16-1-1-3,lower-alpha)")"; }
-#s_eigenvectors_ex-2-16-1-1-3 > li { counter-increment: s_eigenvectors_ex-2-16-1-1-3; }
-#th_diagonalizability_eigenbasis-2-2 { counter-set: th_diagonalizability_eigenbasis-2-2 0; }
-#th_diagonalizability_eigenbasis-2-2 > li::marker { content: ""counter(th_diagonalizability_eigenbasis-2-2,decimal)"."; }
-#th_diagonalizability_eigenbasis-2-2 > li { counter-increment: th_diagonalizability_eigenbasis-2-2; }
-#proc_diagonalize-2-2 { counter-set: proc_diagonalize-2-2 0; }
-#proc_diagonalize-2-2 > li::marker { content: ""counter(proc_diagonalize-2-2,decimal)"."; }
-#proc_diagonalize-2-2 > li { counter-increment: proc_diagonalize-2-2; }
-#proc_diagonalize_matrixtransform-2-2 { counter-set: proc_diagonalize_matrixtransform-2-2 0; }
-#proc_diagonalize_matrixtransform-2-2 > li::marker { content: ""counter(proc_diagonalize_matrixtransform-2-2,decimal)"."; }
-#proc_diagonalize_matrixtransform-2-2 > li { counter-increment: proc_diagonalize_matrixtransform-2-2; }
-#th_similarity-2-1-6 { counter-set: th_similarity-2-1-6 0; }
-#th_similarity-2-1-6 > li::marker { content: ""counter(th_similarity-2-1-6,decimal)"."; }
-#th_similarity-2-1-6 > li { counter-increment: th_similarity-2-1-6; }
-#th_conjugation-2-1-3 { counter-set: th_conjugation-2-1-3 0; }
-#th_conjugation-2-1-3 > li::marker { content: ""counter(th_conjugation-2-1-3,decimal)"."; }
-#th_conjugation-2-1-3 > li { counter-increment: th_conjugation-2-1-3; }
-#cor_alg_geom_mult-2-1-8 { counter-set: cor_alg_geom_mult-2-1-8 0; }
-#cor_alg_geom_mult-2-1-8 > li::marker { content: ""counter(cor_alg_geom_mult-2-1-8,decimal)"."; }
-#cor_alg_geom_mult-2-1-8 > li { counter-increment: cor_alg_geom_mult-2-1-8; }
-#s_diagonalization_ex-6-1-2 { counter-set: s_diagonalization_ex-6-1-2 0; }
-#s_diagonalization_ex-6-1-2 > li::marker { content: "("counter(s_diagonalization_ex-6-1-2,lower-alpha)")"; }
-#s_diagonalization_ex-6-1-2 > li { counter-increment: s_diagonalization_ex-6-1-2; }
-#ex_diagonalization-1-1-8 { counter-set: ex_diagonalization-1-1-8 0; }
-#ex_diagonalization-1-1-8 > li::marker { content: "("counter(ex_diagonalization-1-1-8,lower-alpha)")"; }
-#ex_diagonalization-1-1-8 > li { counter-increment: ex_diagonalization-1-1-8; }
-#eg_unit_vectors-2-1-4 { counter-set: eg_unit_vectors-2-1-4 0; }
-#eg_unit_vectors-2-1-4 > li::marker { content: ""counter(eg_unit_vectors-2-1-4,decimal)"."; }
-#eg_unit_vectors-2-1-4 > li { counter-increment: eg_unit_vectors-2-1-4; }
-#eg_unit_vectors-3-2 { counter-set: eg_unit_vectors-3-2 0; }
-#eg_unit_vectors-3-2 > li::marker { content: ""counter(eg_unit_vectors-3-2,decimal)"."; }
-#eg_unit_vectors-3-2 > li { counter-increment: eg_unit_vectors-3-2; }
-#eg_distance-1-2 { counter-set: eg_distance-1-2 0; }
-#eg_distance-1-2 > li::marker { content: ""counter(eg_distance-1-2,decimal)"."; }
-#eg_distance-1-2 > li { counter-increment: eg_distance-1-2; }
-#eg_distance-2-1 { counter-set: eg_distance-2-1 0; }
-#eg_distance-2-1 > li::marker { content: ""counter(eg_distance-2-1,decimal)"."; }
-#eg_distance-2-1 > li { counter-increment: eg_distance-2-1; }
-#th_norm_basic_props-2-2 { counter-set: th_norm_basic_props-2-2 0; }
-#th_norm_basic_props-2-2 > li::marker { content: ""counter(th_norm_basic_props-2-2,decimal)"."; }
-#th_norm_basic_props-2-2 > li { counter-increment: th_norm_basic_props-2-2; }
-#th_triangle_inequalities-2-1-2 { counter-set: th_triangle_inequalities-2-1-2 0; }
-#th_triangle_inequalities-2-1-2 > li::marker { content: ""counter(th_triangle_inequalities-2-1-2,decimal)"."; }
-#th_triangle_inequalities-2-1-2 > li { counter-increment: th_triangle_inequalities-2-1-2; }
-#s_innerproducts_ex-2-1-2 { counter-set: s_innerproducts_ex-2-1-2 0; }
-#s_innerproducts_ex-2-1-2 > li::marker { content: "("counter(s_innerproducts_ex-2-1-2,lower-alpha)")"; }
-#s_innerproducts_ex-2-1-2 > li { counter-increment: s_innerproducts_ex-2-1-2; }
-#s_innerproducts_ex-4-1-1-2 { counter-set: s_innerproducts_ex-4-1-1-2 0; }
-#s_innerproducts_ex-4-1-1-2 > li::marker { content: "("counter(s_innerproducts_ex-4-1-1-2,lower-alpha)")"; }
-#s_innerproducts_ex-4-1-1-2 > li { counter-increment: s_innerproducts_ex-4-1-1-2; }
-#s_innerproducts_ex-10-1-1-2 { counter-set: s_innerproducts_ex-10-1-1-2 0; }
-#s_innerproducts_ex-10-1-1-2 > li::marker { content: "("counter(s_innerproducts_ex-10-1-1-2,lower-alpha)")"; }
-#s_innerproducts_ex-10-1-1-2 > li { counter-increment: s_innerproducts_ex-10-1-1-2; }
-#ex_isometries-2-3 { counter-set: ex_isometries-2-3 0; }
-#ex_isometries-2-3 > li::marker { content: "("counter(ex_isometries-2-3,lower-alpha)")"; }
-#ex_isometries-2-3 > li { counter-increment: ex_isometries-2-3; }
-#proc_gram-schmidt-3-1-8 { counter-set: proc_gram-schmidt-3-1-8 0; }
-#proc_gram-schmidt-3-1-8 > li::marker { content: ""counter(proc_gram-schmidt-3-1-8,decimal)"."; }
-#proc_gram-schmidt-3-1-8 > li { counter-increment: proc_gram-schmidt-3-1-8; }
-#cor_orthonormal_existence-2-2 { counter-set: cor_orthonormal_existence-2-2 0; }
-#cor_orthonormal_existence-2-2 > li::marker { content: ""counter(cor_orthonormal_existence-2-2,decimal)"."; }
-#cor_orthonormal_existence-2-2 > li { counter-increment: cor_orthonormal_existence-2-2; }
-#cor_orthonormal_existence-3-1 { counter-set: cor_orthonormal_existence-3-1 0; }
-#cor_orthonormal_existence-3-1 > li::marker { content: ""counter(cor_orthonormal_existence-3-1,decimal)"."; }
-#cor_orthonormal_existence-3-1 > li { counter-increment: cor_orthonormal_existence-3-1; }
-#th_orthogonal_basis_formula-2-2 { counter-set: th_orthogonal_basis_formula-2-2 0; }
-#th_orthogonal_basis_formula-2-2 > li::marker { content: ""counter(th_orthogonal_basis_formula-2-2,decimal)"."; }
-#th_orthogonal_basis_formula-2-2 > li { counter-increment: th_orthogonal_basis_formula-2-2; }
-#s_orthogonality-3-9-1-1-2 { counter-set: s_orthogonality-3-9-1-1-2 0; }
-#s_orthogonality-3-9-1-1-2 > li::marker { content: ""counter(s_orthogonality-3-9-1-1-2,decimal)"."; }
-#s_orthogonality-3-9-1-1-2 > li { counter-increment: s_orthogonality-3-9-1-1-2; }
-#s_orthogonality-3-9-2-1 { counter-set: s_orthogonality-3-9-2-1 0; }
-#s_orthogonality-3-9-2-1 > li::marker { content: ""counter(s_orthogonality-3-9-2-1,decimal)"."; }
-#s_orthogonality-3-9-2-1 > li { counter-increment: s_orthogonality-3-9-2-1; }
-#th_coordinates_orthogonal-2-1-3 { counter-set: th_coordinates_orthogonal-2-1-3 0; }
-#th_coordinates_orthogonal-2-1-3 > li::marker { content: ""counter(th_coordinates_orthogonal-2-1-3,decimal)"."; }
-#th_coordinates_orthogonal-2-1-3 > li { counter-increment: th_coordinates_orthogonal-2-1-3; }
-#th_orthogonal_matrices-2-2 { counter-set: th_orthogonal_matrices-2-2 0; }
-#th_orthogonal_matrices-2-2 > li::marker { content: ""counter(th_orthogonal_matrices-2-2,decimal)"."; }
-#th_orthogonal_matrices-2-2 > li { counter-increment: th_orthogonal_matrices-2-2; }
-#th_changebasis_orthonormal-2-2 { counter-set: th_changebasis_orthonormal-2-2 0; }
-#th_changebasis_orthonormal-2-2 > li::marker { content: ""counter(th_changebasis_orthonormal-2-2,decimal)"."; }
-#th_changebasis_orthonormal-2-2 > li { counter-increment: th_changebasis_orthonormal-2-2; }
-#th_changebasis_orthonormal-3-1 { counter-set: th_changebasis_orthonormal-3-1 0; }
-#th_changebasis_orthonormal-3-1 > li::marker { content: ""counter(th_changebasis_orthonormal-3-1,decimal)"."; }
-#th_changebasis_orthonormal-3-1 > li { counter-increment: th_changebasis_orthonormal-3-1; }
-#s_orthogonal_bases_ex-2-1-2 { counter-set: s_orthogonal_bases_ex-2-1-2 0; }
-#s_orthogonal_bases_ex-2-1-2 > li::marker { content: "("counter(s_orthogonal_bases_ex-2-1-2,lower-alpha)")"; }
-#s_orthogonal_bases_ex-2-1-2 > li { counter-increment: s_orthogonal_bases_ex-2-1-2; }
-#s_orthogonal_bases_ex-6-1-2 { counter-set: s_orthogonal_bases_ex-6-1-2 0; }
-#s_orthogonal_bases_ex-6-1-2 > li::marker { content: "("counter(s_orthogonal_bases_ex-6-1-2,lower-alpha)")"; }
-#s_orthogonal_bases_ex-6-1-2 > li { counter-increment: s_orthogonal_bases_ex-6-1-2; }
-#ex_extend_orthogonal-2-2 { counter-set: ex_extend_orthogonal-2-2 0; }
-#ex_extend_orthogonal-2-2 > li::marker { content: "("counter(ex_extend_orthogonal-2-2,lower-alpha)")"; }
-#ex_extend_orthogonal-2-2 > li { counter-increment: ex_extend_orthogonal-2-2; }
-#s_orthogonal_bases_ex-10-1-2 { counter-set: s_orthogonal_bases_ex-10-1-2 0; }
-#s_orthogonal_bases_ex-10-1-2 > li::marker { content: "("counter(s_orthogonal_bases_ex-10-1-2,lower-alpha)")"; }
-#s_orthogonal_bases_ex-10-1-2 > li { counter-increment: s_orthogonal_bases_ex-10-1-2; }
-#ex_coordinates_orthonormal-2-2 { counter-set: ex_coordinates_orthonormal-2-2 0; }
-#ex_coordinates_orthonormal-2-2 > li::marker { content: "("counter(ex_coordinates_orthonormal-2-2,lower-alpha)")"; }
-#ex_coordinates_orthonormal-2-2 > li { counter-increment: ex_coordinates_orthonormal-2-2; }
-#ex_ortho_matrix_rotation_reflection-2-3 { counter-set: ex_ortho_matrix_rotation_reflection-2-3 0; }
-#ex_ortho_matrix_rotation_reflection-2-3 > li::marker { content: "("counter(ex_ortho_matrix_rotation_reflection-2-3,lower-alpha)")"; }
-#ex_ortho_matrix_rotation_reflection-2-3 > li { counter-increment: ex_ortho_matrix_rotation_reflection-2-3; }
-#th_orthogonal_complement-2-1-3 { counter-set: th_orthogonal_complement-2-1-3 0; }
-#th_orthogonal_complement-2-1-3 > li::marker { content: ""counter(th_orthogonal_complement-2-1-3,decimal)"."; }
-#th_orthogonal_complement-2-1-3 > li { counter-increment: th_orthogonal_complement-2-1-3; }
-#th_row_null_comp-2-1-5 { counter-set: th_row_null_comp-2-1-5 0; }
-#th_row_null_comp-2-1-5 > li::marker { content: ""counter(th_row_null_comp-2-1-5,decimal)"."; }
-#th_row_null_comp-2-1-5 > li { counter-increment: th_row_null_comp-2-1-5; }
-#th_row_null_comp-3-1 { counter-set: th_row_null_comp-3-1 0; }
-#th_row_null_comp-3-1 > li::marker { content: ""counter(th_row_null_comp-3-1,decimal)"."; }
-#th_row_null_comp-3-1 > li { counter-increment: th_row_null_comp-3-1; }
-#th_orthogonal_projection-2-1-3 { counter-set: th_orthogonal_projection-2-1-3 0; }
-#th_orthogonal_projection-2-1-3 > li::marker { content: ""counter(th_orthogonal_projection-2-1-3,decimal)"."; }
-#th_orthogonal_projection-2-1-3 > li { counter-increment: th_orthogonal_projection-2-1-3; }
-#s_orthogonal_projection-4-11-1-1-6 { counter-set: s_orthogonal_projection-4-11-1-1-6 0; }
-#s_orthogonal_projection-4-11-1-1-6 > li::marker { content: ""counter(s_orthogonal_projection-4-11-1-1-6,decimal)"."; }
-#s_orthogonal_projection-4-11-1-1-6 > li { counter-increment: s_orthogonal_projection-4-11-1-1-6; }
-#cor_orthoproj_linear-2-2 { counter-set: cor_orthoproj_linear-2-2 0; }
-#cor_orthoproj_linear-2-2 > li::marker { content: ""counter(cor_orthoproj_linear-2-2,decimal)"."; }
-#cor_orthoproj_linear-2-2 > li { counter-increment: cor_orthoproj_linear-2-2; }
-#s_orthogonal_projection-4-16-1-1 { counter-set: s_orthogonal_projection-4-16-1-1 0; }
-#s_orthogonal_projection-4-16-1-1 > li::marker { content: ""counter(s_orthogonal_projection-4-16-1-1,decimal)"."; }
-#s_orthogonal_projection-4-16-1-1 > li { counter-increment: s_orthogonal_projection-4-16-1-1; }
-#s_orthogonal_projection-5-4-1-2 { counter-set: s_orthogonal_projection-5-4-1-2 0; }
-#s_orthogonal_projection-5-4-1-2 > li::marker { content: ""counter(s_orthogonal_projection-5-4-1-2,decimal)"."; }
-#s_orthogonal_projection-5-4-1-2 > li { counter-increment: s_orthogonal_projection-5-4-1-2; }
-#s_orthogonal_projection-5-4-2-1 { counter-set: s_orthogonal_projection-5-4-2-1 0; }
-#s_orthogonal_projection-5-4-2-1 > li::marker { content: ""counter(s_orthogonal_projection-5-4-2-1,decimal)"."; }
-#s_orthogonal_projection-5-4-2-1 > li { counter-increment: s_orthogonal_projection-5-4-2-1; }
-#s_orthogonal_projection-5-6-1-2 { counter-set: s_orthogonal_projection-5-6-1-2 0; }
-#s_orthogonal_projection-5-6-1-2 > li::marker { content: ""counter(s_orthogonal_projection-5-6-1-2,decimal)"."; }
-#s_orthogonal_projection-5-6-1-2 > li { counter-increment: s_orthogonal_projection-5-6-1-2; }
-#s_orthogonal_projection-5-6-2-1 { counter-set: s_orthogonal_projection-5-6-2-1 0; }
-#s_orthogonal_projection-5-6-2-1 > li::marker { content: ""counter(s_orthogonal_projection-5-6-2-1,decimal)"."; }
-#s_orthogonal_projection-5-6-2-1 > li { counter-increment: s_orthogonal_projection-5-6-2-1; }
-#s_orthogonal_projection_ex-4-1-2 { counter-set: s_orthogonal_projection_ex-4-1-2 0; }
-#s_orthogonal_projection_ex-4-1-2 > li::marker { content: "("counter(s_orthogonal_projection_ex-4-1-2,lower-alpha)")"; }
-#s_orthogonal_projection_ex-4-1-2 > li { counter-increment: s_orthogonal_projection_ex-4-1-2; }
-#ex_orthoproj_props-1-2 { counter-set: ex_orthoproj_props-1-2 0; }
-#ex_orthoproj_props-1-2 > li::marker { content: "("counter(ex_orthoproj_props-1-2,lower-alpha)")"; }
-#ex_orthoproj_props-1-2 > li { counter-increment: ex_orthoproj_props-1-2; }
-#s_orthogonal_projection_ex-12-1-2 { counter-set: s_orthogonal_projection_ex-12-1-2 0; }
-#s_orthogonal_projection_ex-12-1-2 > li::marker { content: "("counter(s_orthogonal_projection_ex-12-1-2,lower-alpha)")"; }
-#s_orthogonal_projection_ex-12-1-2 > li { counter-increment: s_orthogonal_projection_ex-12-1-2; }
-#s_orthogonal_projection_ex-12-1-2-2-2 { counter-set: s_orthogonal_projection_ex-12-1-2-2-2 0; }
-#s_orthogonal_projection_ex-12-1-2-2-2 > li::marker { content: ""counter(s_orthogonal_projection_ex-12-1-2-2-2,lower-roman)"."; }
-#s_orthogonal_projection_ex-12-1-2-2-2 > li { counter-increment: s_orthogonal_projection_ex-12-1-2-2-2; }
-#th_self-adjoint_symmetric-2-2 { counter-set: th_self-adjoint_symmetric-2-2 0; }
-#th_self-adjoint_symmetric-2-2 > li::marker { content: ""counter(th_self-adjoint_symmetric-2-2,decimal)"."; }
-#th_self-adjoint_symmetric-2-2 > li { counter-increment: th_self-adjoint_symmetric-2-2; }
-#cor_self-adjoint_symmetric-2-2 { counter-set: cor_self-adjoint_symmetric-2-2 0; }
-#cor_self-adjoint_symmetric-2-2 > li::marker { content: ""counter(cor_self-adjoint_symmetric-2-2,decimal)"."; }
-#cor_self-adjoint_symmetric-2-2 > li { counter-increment: cor_self-adjoint_symmetric-2-2; }
-#th_spectral-2-2 { counter-set: th_spectral-2-2 0; }
-#th_spectral-2-2 > li::marker { content: ""counter(th_spectral-2-2,decimal)"."; }
-#th_spectral-2-2 > li { counter-increment: th_spectral-2-2; }
-#th_spectral-3-2-2-19 { counter-set: th_spectral-3-2-2-19 0; }
-#th_spectral-3-2-2-19 > li::marker { content: ""counter(th_spectral-3-2-2-19,decimal)"."; }
-#th_spectral-3-2-2-19 > li { counter-increment: th_spectral-3-2-2-19; }
-#cor_spectral-2-2 { counter-set: cor_spectral-2-2 0; }
-#cor_spectral-2-2 > li::marker { content: ""counter(cor_spectral-2-2,decimal)"."; }
-#cor_spectral-2-2 > li { counter-increment: cor_spectral-2-2; }
-#proc_ortho_diag-2-2 { counter-set: proc_ortho_diag-2-2 0; }
-#proc_ortho_diag-2-2 > li::marker { content: ""counter(proc_ortho_diag-2-2,decimal)"."; }
-#proc_ortho_diag-2-2 > li { counter-increment: proc_ortho_diag-2-2; }
-#ex_selfadjoint_complement-1-2 { counter-set: ex_selfadjoint_complement-1-2 0; }
-#ex_selfadjoint_complement-1-2 > li::marker { content: "("counter(ex_selfadjoint_complement-1-2,lower-alpha)")"; }
-#ex_selfadjoint_complement-1-2 > li { counter-increment: ex_selfadjoint_complement-1-2; }
-#s_spectral_theorem_ex-6-6-1-2 { counter-set: s_spectral_theorem_ex-6-6-1-2 0; }
-#s_spectral_theorem_ex-6-6-1-2 > li::marker { content: "("counter(s_spectral_theorem_ex-6-6-1-2,lower-alpha)")"; }
-#s_spectral_theorem_ex-6-6-1-2 > li { counter-increment: s_spectral_theorem_ex-6-6-1-2; }
-</style>
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Euclidean vector spaces">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content="Aaron Greicius">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.5.16';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.a0c870bab402ccbf.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.97de40e034b535c5.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/pretext-webwork/2.17/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
 </head>
 <body id="euclideanvectorspaces" class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="euc_vec_spaces.html"><span class="title">Euclidean vector spaces</span></a></h1>
 <p class="byline">Aaron Greicius</p>
-</div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="euc_vec_spaces-11-10.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+</div></div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="euc_vec_spaces-11-10.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -1145,7 +145,8 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="c_linear_systems.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_linear_systems.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_ge.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="c_linear_systems.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_linear_systems.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_ge.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
 \newcommand{\Q}{{\mathbb Q}}
 \newcommand{\R}{{\mathbb R}}
 \newcommand{\C}{{\mathbb C}}
@@ -1355,12 +356,12 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -1462,9 +463,9 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="c_linear_systems.html" class="internal"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="s_systems.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Systems of linear equations</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_systems.html#ss_linear_equations" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Systems of linear equations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_systems.html#ss_row_equivalence" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Row operations</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_systems.html#s_systems_ex" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Exercises</span></a></div></li>
@@ -1724,7 +725,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_systems"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="s_systems"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">2.1</span><span class="space"> </span><span class="title">Systems of linear equations</span>
 </h2>
 <section class="introduction" id="s_systems-2"><div class="para" id="s_systems-2-1">Computing and studying solutions to equations, and <em class="emphasis">systems of equations</em>, unquestionably plays an important role in mathematics; though we hasten to add that this is not all that mathematicians do! In this chapter we will develop an essentially complete theory of a particularly simple family of mathematical equations: namely, <em class="emphasis">linear equations</em>.  This will serve as a somewhat indirect introduction to our study of linear algebra, as lurking below our parametric descriptions of solutions to linear systems lie vector space notions like subspace, span, and linear independence. Furthermore, we will introduce one of the most important computational tools of linear algebra: <a href="s_ge.html#d_GE" class="xref" data-knowl="./knowl/xref/d_GE.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 2.2.11: Gaussian elimination">Gaussian elimination</a>.</div></section><section class="subsection" id="ss_linear_equations"><h3 class="heading hide-type">
@@ -1732,7 +733,8 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 </h3>
 <article class="definition definition-like" id="d_lin-equation"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Linear equations.</span>
-</h4>  <div class="para logical" id="d_lin-equation-3-1">
+</h4>
+<div class="para logical" id="d_lin-equation-3-1">
 <div class="para">A <dfn class="terminology">linear expression</dfn> in the <span class="process-math">\(n\)</span> unknowns (or variables) <span class="process-math">\(x_1,x_2,\dots x_n\)</span> is an expression of the form</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1774,7 +776,8 @@ x+2y+z=3\text{.}
 </ol></div></article><div class="para" id="ss_linear_equations-4">We next provide a precise definition of a solution of a linear equation. This definition will involve <span class="process-math">\(n\)</span>-tuples <span class="process-math">\((s_1,s_2,\dots, s_n)\)</span> of real numbers.</div>
 <article class="definition definition-like" id="d_lin_eq_sol"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Solutions to linear equations.</span>
-</h4> <div class="para logical" id="d_lin_eq_sol-2-1">
+</h4>
+<div class="para logical" id="d_lin_eq_sol-2-1">
 <div class="para">A <dfn class="terminology">solution to a linear equation</dfn>
 </div>
 <div class="displaymath process-math">
@@ -1793,7 +796,8 @@ a_1s_1+a_2s_2+\cdots a_ns_n=b\text{.}
 </div></article><div class="para" id="ss_linear_equations-6">Given a linear equation <a href="s_systems.html#eq_std_form" class="xref" data-knowl="./knowl/xref/eq_std_form.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.1">(2.1.1)</a>, we will be interested in finding and describing the set <span class="process-math">\(S\)</span> of <em class="emphasis">all</em> of its solutions. As you may recall, a (nontrivial) linear equation in two unknowns defines a line in <span class="process-math">\(\R^2\text{,}\)</span> and a (nontrivial) equation in three unknowns defines a plane in <span class="process-math">\(\R^3\text{.}\)</span> These types of subsets (of <span class="process-math">\(\R^2\)</span> and <span class="process-math">\(\R^3\text{,}\)</span> respectively) have distinctive geometric properties that we will elucidate in coming sections. Generalizing this notion to an arbitrary number of unknowns leads to the notion of a <em class="emphasis">hyperplane</em>.</div>
 <article class="definition definition-like" id="d_hyperplane"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Hyperplane.</span>
-</h4> <div class="para logical" id="d_hyperplane-2-1">
+</h4>
+<div class="para logical" id="d_hyperplane-2-1">
 <div class="para">A linear equation</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_hyper.html" id="eq_hyper">
 \begin{equation}
@@ -1814,7 +818,8 @@ S=\{(s_1,s_2,\dots, s_n)\in \R^n\colon a_1s_1+\cdots+a_ns_n=b \}
 </ul>
 </div></article><article class="example example-like" id="eg_vis_lines_R2"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Visualizing lines in <span class="process-math">\(\R^2\)</span>.</span>
-</h4> <div class="para logical" id="eg_vis_lines_R2-2">
+</h4>
+<div class="para logical" id="eg_vis_lines_R2-2">
 <div class="para">Let <span class="process-math">\(\ell\subseteq \R^2\)</span> be a line: i.e., <span class="process-math">\(\ell\)</span> is the solution to some nontrivial linear equation <span class="process-math">\(ax+by=c\text{.}\)</span> Since the equation is nontrivial, we have <span class="process-math">\(a\ne 0\)</span> or <span class="process-math">\(b\ne 0\text{.}\)</span> If <span class="process-math">\(b\ne 0\text{,}\)</span> we may put the equation in the form</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1823,10 +828,13 @@ y=-\frac{a}{b}x+\frac{c}{b}\text{,}
 </div>
 <div class="para">in which case we recognize <span class="process-math">\(m=-a/b\)</span> as the slope of <span class="process-math">\(\ell\)</span> and <span class="process-math">\(c/b\)</span> as the <span class="process-math">\(y\)</span>-intercept. If <span class="process-math">\(b=0\text{,}\)</span> then <span class="process-math">\(a\ne 0\text{,}\)</span> and the equation can be solved as <span class="process-math">\(x=c/a\text{,}\)</span> which we recognize as the vertical line passing through the point <span class="process-math">\((c/a,0)\text{.}\)</span>
 </div>
-</div> <div class="para" id="eg_vis_lines_R2-3">It is easy to see that the equation defining <span class="process-math">\(\ell\)</span> is homogenous if and only if <span class="process-math">\((0,0)\)</span> is a point on <span class="process-math">\(\ell\text{:}\)</span> i.e., <span class="process-math">\(\ell\)</span> is defined by a homogeneous equation if and only if it passes through the origin.</div> <figure class="figure figure-like" id="fig_lines"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/sageplot/im_lines_R2.svg" role="img" class="contained" alt="Lines in R2"></div>
+</div>
+<div class="para" id="eg_vis_lines_R2-3">It is easy to see that the equation defining <span class="process-math">\(\ell\)</span> is homogenous if and only if <span class="process-math">\((0,0)\)</span> is a point on <span class="process-math">\(\ell\text{:}\)</span> i.e., <span class="process-math">\(\ell\)</span> is defined by a homogeneous equation if and only if it passes through the origin.</div>
+<figure class="figure figure-like" id="fig_lines"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/sageplot/im_lines_R2.svg" role="img" class="contained" alt="Lines in R2"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.6<span class="period">.</span></span><span class="space"> </span>Lines in <span class="process-math">\(\R^2\)</span></figcaption></figure></article><article class="example example-like" id="eg_vis_plane"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Visualizing planes in <span class="process-math">\(\R^3\)</span>.</span>
-</h4> <div class="para logical" id="eg_vis_plane-2">
+</h4>
+<div class="para logical" id="eg_vis_plane-2">
 <div class="para">Let <span class="process-math">\(\mathcal{P}\subseteq \R^3\)</span> be a plane defined by the nontrivial equation</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_vis_plane.html ./knowl/xref/eq_vis_plane.html" id="eq_vis_plane">
 \begin{equation}
@@ -1834,12 +842,16 @@ ax+by+cz=d\text{.}\tag{2.1.3}
 \end{equation}
 </div>
 <div class="para">Later we will describe an approach to visualizing <span class="process-math">\(\mathcal{P}\)</span> in terms of its “normal vector” <span class="process-math">\(\boldn=(a,b,c)\text{.}\)</span> For now we recall a more elementary approach. Namely, simply find by inspection three <em class="emphasis">non-colinear</em> points <span class="process-math">\(P,Q,R\)</span> satisfying <a href="s_systems.html#eq_vis_plane" class="xref" data-knowl="./knowl/xref/eq_vis_plane.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.3">(2.1.3)</a>, sketch the triangle in <span class="process-math">\(\R^3\)</span> they define, and then envision <span class="process-math">\(\mathcal{P}\)</span> as the plane in <span class="process-math">\(\R^3\)</span> containing this triangle. In practice we can find three such points by picking arbitrary values for two of the three variables, and solving for the third variable using <a href="s_systems.html#eq_vis_plane" class="xref" data-knowl="./knowl/xref/eq_vis_plane.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.3">(2.1.3)</a>.</div>
-</div> <div class="para" id="eg_vis_plane-3">For example, if <span class="process-math">\(\mathcal{P}\)</span> is the plane with equation <span class="process-math">\(x+y+z=2\text{,}\)</span> we see easily that <span class="process-math">\(P=(2,0,0), Q=(0,2,0), R=(0,0,2)\)</span> lie on <span class="process-math">\(\mathcal{P}\text{,}\)</span> allowing us to produce the graph in <a href="s_systems.html#fig_visualize_plane" class="xref" data-knowl="./knowl/xref/fig_visualize_plane.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.1.8: Using Sage to visualize \mathcal{P}\colon ax+by+cz=d via normal vector \boldn=(a,b,c)">Figure 2.1.8</a>.</div> <div class="para" id="eg_vis_plane-4">As with lines, it is easy to see that the equation <a href="s_systems.html#eq_vis_plane" class="xref" data-knowl="./knowl/xref/eq_vis_plane.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.3">(2.1.3)</a> defining <span class="process-math">\(\mathcal{P}\)</span> is homogeneous if and only if <span class="process-math">\(\mathcal{P}\)</span> passes through the origin <span class="process-math">\((0,0,0)\text{.}\)</span>
-</div> <figure class="figure figure-like" id="fig_visualize_plane"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><iframe width="450" height="450" src="generated/sageplot/im_plane.html"></iframe></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.8<span class="period">.</span></span><span class="space"> </span>Visualizing <span class="process-math">\(\mathcal{P}\colon x+y+z=2\)</span></figcaption></figure> </article><div class="para" id="ss_linear_equations-10">Next we introduce <em class="emphasis">linear systems</em>, which are just collections of linear equations.</div>
+</div>
+<div class="para" id="eg_vis_plane-3">For example, if <span class="process-math">\(\mathcal{P}\)</span> is the plane with equation <span class="process-math">\(x+y+z=2\text{,}\)</span> we see easily that <span class="process-math">\(P=(2,0,0), Q=(0,2,0), R=(0,0,2)\)</span> lie on <span class="process-math">\(\mathcal{P}\text{,}\)</span> allowing us to produce the graph in <a href="s_systems.html#fig_visualize_plane" class="xref" data-knowl="./knowl/xref/fig_visualize_plane.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.1.8: Using Sage to visualize \mathcal{P}\colon ax+by+cz=d via normal vector \boldn=(a,b,c)">Figure 2.1.8</a>.</div>
+<div class="para" id="eg_vis_plane-4">As with lines, it is easy to see that the equation <a href="s_systems.html#eq_vis_plane" class="xref" data-knowl="./knowl/xref/eq_vis_plane.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.3">(2.1.3)</a> defining <span class="process-math">\(\mathcal{P}\)</span> is homogeneous if and only if <span class="process-math">\(\mathcal{P}\)</span> passes through the origin <span class="process-math">\((0,0,0)\text{.}\)</span>
+</div>
+<figure class="figure figure-like" id="fig_visualize_plane"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><iframe width="450" height="450" src="generated/sageplot/im_plane.html"></iframe></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.8<span class="period">.</span></span><span class="space"> </span>Visualizing <span class="process-math">\(\mathcal{P}\colon x+y+z=2\)</span></figcaption></figure></article><div class="para" id="ss_linear_equations-10">Next we introduce <em class="emphasis">linear systems</em>, which are just collections of linear equations.</div>
 <article class="definition definition-like" id="d_lin-sys"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Systems of linear equations.</span>
-</h4>  <div class="para logical" id="d_lin-sys-3-1">
+</h4>
+<div class="para logical" id="d_lin-sys-3-1">
 <div class="para">A <dfn class="terminology">system of linear equations</dfn> (or <dfn class="terminology">linear system</dfn>) is a set of linear equations.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_lin_syst.html" id="eq_lin_syst">
 \begin{equation}
@@ -1865,7 +877,8 @@ s_n)\)</span> <dfn class="terminology">solves the system</dfn> in this case.</di
 </div>
 <article class="remark remark-like" id="ss_linear_equations-13"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Displaying linear systems.</span>
-</h4> <div class="para logical" id="ss_linear_equations-13-2">
+</h4>
+<div class="para logical" id="ss_linear_equations-13-2">
 <div class="para">As indicated in <a href="s_systems.html#eq_lin_syst" class="xref" data-knowl="./knowl/xref/eq_lin_syst.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.4">(2.1.4)</a>, when displaying a system of <span class="process-math">\(m\)</span> equations in the <span class="process-math">\(n\)</span> unknowns <span class="process-math">\(x_1,x_2,\dots x_n\text{,}\)</span> we typically write each individual equation in <em class="emphasis">standard form</em> and align the corresponding terms of each equation into columns. The presence of multiple equations and multiple unknowns necessitates the use of double-indexing for the coefficients appearing in the system. The following breakdown will hopefully help you orient yourself with respect to the double-indexing:</div>
 <ul class="disc" id="ss_linear_equations-13-2-6">
 <li id="ss_linear_equations-13-2-6-1"><div class="para" id="ss_linear_equations-13-2-6-1-1">The <span class="process-math">\(i\)</span> appearing in <span class="process-math">\(a_{ij}\)</span> and <span class="process-math">\(b_i\)</span> indicates the <span class="process-math">\(i\)</span>-th row in our displayed system, or equivalently, the <span class="process-math">\(i\)</span>-th equation.</div></li>
@@ -1958,7 +971,8 @@ a_{m1}x\amp +\amp a_{m2}y\amp =\amp b_m
 <article class="remark remark-like" id="ss_row_equivalence-4"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.13</span><span class="period">.</span>
 </h4>
-<div class="para" id="ss_row_equivalence-4-1">Notice the somewhat funny spacing in <a href="s_systems.html#s_systems_eq_runningexample" class="xref" data-knowl="./knowl/xref/s_systems_eq_runningexample.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.7">(2.1.7)</a>. This is in force in order to align the unknowns in separate columns. In general, when handed a linear system in the wild, your first step should be to write each equation in standard form, and make sure the unknowns are aligned vertically in this manner.</div></article><section class="paragraphs" id="pars-"><h4 class="heading"><span class="title">Some systems are easier to solve than others.</span></h4> <div class="para logical" id="pars--2">
+<div class="para" id="ss_row_equivalence-4-1">Notice the somewhat funny spacing in <a href="s_systems.html#s_systems_eq_runningexample" class="xref" data-knowl="./knowl/xref/s_systems_eq_runningexample.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.7">(2.1.7)</a>. This is in force in order to align the unknowns in separate columns. In general, when handed a linear system in the wild, your first step should be to write each equation in standard form, and make sure the unknowns are aligned vertically in this manner.</div></article><section class="paragraphs" id="pars-"><h4 class="heading"><span class="title">Some systems are easier to solve than others.</span></h4>
+<div class="para logical" id="pars--2">
 <div class="para">Below you find two systems of three equations in three unknowns.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1978,10 +992,13 @@ a_{m1}x\amp +\amp a_{m2}y\amp =\amp b_m
 </ol>
 <div class="para">Our method for solving a more complicated system, like <span class="process-math">\(L\)</span> above, will be to <em class="emphasis">transform</em> it to a simpler system like <span class="process-math">\(L'\text{.}\)</span>
 </div>
-</div> <div class="para" id="pars--3">
-<em class="emphasis">Key point</em>. In order for this method to work, we need to make sure that the transformed system has <em class="emphasis">exactly</em> the same solutions as the original system! To this end we will restrict our permissible transformations to the <em class="emphasis">elementary  operations</em> define below.</div> <article class="definition definition-like" id="d_eqops"><h5 class="heading">
+</div>
+<div class="para" id="pars--3">
+<em class="emphasis">Key point</em>. In order for this method to work, we need to make sure that the transformed system has <em class="emphasis">exactly</em> the same solutions as the original system! To this end we will restrict our permissible transformations to the <em class="emphasis">elementary  operations</em> define below.</div>
+<article class="definition definition-like" id="d_eqops"><h5 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.14</span><span class="period">.</span><span class="space"> </span><span class="title">Elementary operations on linear systems.</span>
-</h5>  <div class="para logical" id="d_eqops-7-1">
+</h5>
+<div class="para logical" id="d_eqops-7-1">
 <div class="para">An <dfn class="terminology">elementary operation</dfn> (or <dfn class="terminology">elementary row operation</dfn>) is one of the three types of operations on linear systems described below.</div>
 <dl class="description-list">
 <dt id="d_eq_scale">Scalar multiplication</dt>
@@ -1995,22 +1012,33 @@ a_{m1}x\amp +\amp a_{m2}y\amp =\amp b_m
 </div></dd>
 </dl>
 <div class="para">The act of transforming a system of equations using elementary operations is called <dfn class="terminology">reduction</dfn> (or <dfn class="terminology">row reduction</dfn>).</div>
-</div></article> <div class="para" id="pars--5">After reducing a linear system <span class="process-math">\(L\)</span> using elementary operations, we are left with a new system <span class="process-math">\(L'\text{.}\)</span> The systems <span class="process-math">\(L\)</span> and <span class="process-math">\(L'\)</span> will generally look very different from one another. Note, however, that the two systems will have the same <em class="emphasis">number</em> of equations, and the same <em class="emphasis">number</em> of variables. More importantly, the two systems will have identical sets of solutions; that is, the set of solutions of the new system <span class="process-math">\(L'\)</span> is identical to the set of solutions to <span class="process-math">\(L\text{!}\)</span>
-</div> <div class="para" id="pars--6">To convince ourselves of this last assertion, it suffices to show that the application of any one of these elementary row operations produces a new system <span class="process-math">\(L'\)</span> with exactly the same set of solutions as <span class="process-math">\(L\text{;}\)</span> if this is so, then performing any finite sequence of elementary row operations must also preserve the set of solutions in this sense. <a href="s_systems.html#s_systems_th_rowops" class="xref" data-knowl="./knowl/xref/s_systems_th_rowops.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.1.16: Row equivalence theorem">Theorem 2.1.16</a> makes this argument official. First we introduce the notion of <em class="emphasis">equivalent linear systems</em>, mainly to spare ourselves from the mouthful that is “obtained by applying a finite sequence of elementary row operations”.</div> <article class="definition definition-like" id="d_rowequivalent"><h5 class="heading">
+</div></article><div class="para" id="pars--5">After reducing a linear system <span class="process-math">\(L\)</span> using elementary operations, we are left with a new system <span class="process-math">\(L'\text{.}\)</span> The systems <span class="process-math">\(L\)</span> and <span class="process-math">\(L'\)</span> will generally look very different from one another. Note, however, that the two systems will have the same <em class="emphasis">number</em> of equations, and the same <em class="emphasis">number</em> of variables. More importantly, the two systems will have identical sets of solutions; that is, the set of solutions of the new system <span class="process-math">\(L'\)</span> is identical to the set of solutions to <span class="process-math">\(L\text{!}\)</span>
+</div>
+<div class="para" id="pars--6">To convince ourselves of this last assertion, it suffices to show that the application of any one of these elementary row operations produces a new system <span class="process-math">\(L'\)</span> with exactly the same set of solutions as <span class="process-math">\(L\text{;}\)</span> if this is so, then performing any finite sequence of elementary row operations must also preserve the set of solutions in this sense. <a href="s_systems.html#s_systems_th_rowops" class="xref" data-knowl="./knowl/xref/s_systems_th_rowops.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.1.16: Row equivalence theorem">Theorem 2.1.16</a> makes this argument official. First we introduce the notion of <em class="emphasis">equivalent linear systems</em>, mainly to spare ourselves from the mouthful that is “obtained by applying a finite sequence of elementary row operations”.</div>
+<article class="definition definition-like" id="d_rowequivalent"><h5 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.15</span><span class="period">.</span><span class="space"> </span><span class="title">Row equivalent linear systems.</span>
-</h5> <div class="para" id="d_rowequivalent-2-1">We say two systems of linear equations are <dfn class="terminology">row equivalent</dfn> if the one can be obtained from the other by a finite sequence of elementary operations.</div></article> <article class="theorem theorem-like" id="s_systems_th_rowops"><h5 class="heading">
+</h5>
+<div class="para" id="d_rowequivalent-2-1">We say two systems of linear equations are <dfn class="terminology">row equivalent</dfn> if the one can be obtained from the other by a finite sequence of elementary operations.</div></article><article class="theorem theorem-like" id="s_systems_th_rowops"><h5 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.1.16</span><span class="period">.</span><span class="space"> </span><span class="title">Row equivalence theorem.</span>
 </h5>
-<div class="para" id="s_systems_th_rowops-2-1">Row equivalent systems of linear equations have identical sets of solutions.</div></article><details id="s_systems_th_rowops-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Proof<span class="period">.</span></span></h5></summary><article class="hiddenproof knowl__content"><div class="para" id="s_systems_th_rowops-3-1">We prove by induction that if system <span class="process-math">\(L'\)</span> is the result of applying <span class="process-math">\(n\)</span> elementary operations to system <span class="process-math">\(L\text{,}\)</span> <span class="process-math">\(n\geq 0\text{,}\)</span> then <span class="process-math">\(L\)</span> and <span class="process-math">\(L'\)</span> have the same set of solutions.</div> <article class="case" id="s_systems_th_rowops-3-2"><h6 class="heading">Base case: <span class="process-math">\(n=0\)</span>.</h6> <div class="para" id="s_systems_th_rowops-3-2-2">In this case <span class="process-math">\(L=L'\)</span> (we have applied no operations) and the statement is obvious.</div></article> <article class="case" id="s_systems_th_rowops-3-3"><h6 class="heading">Induction step.</h6> <div class="para" id="s_systems_th_rowops-3-3-2">Assume that applying a sequence of <span class="process-math">\(n\)</span> elementary operations to a linear system preserves the set of solutions.</div> <div class="para" id="s_systems_th_rowops-3-3-3">Suppose <span class="process-math">\(L'\)</span> is the result of applying <span class="process-math">\(n+1\)</span> elementary operations to the system <span class="process-math">\(L\text{.}\)</span> Let <span class="process-math">\(L''\)</span> be the result of applying the first <span class="process-math">\(n\)</span> of these operations. By the induction hypothesis, systems <span class="process-math">\(L\)</span> and <span class="process-math">\(L''\)</span> have the same set of solutions.</div> <div class="para" id="s_systems_th_rowops-3-3-4">Since the system <span class="process-math">\(L'\)</span> is obtained from <span class="process-math">\(L''\)</span> by applying exactly one elementary operation, it now suffices to show that applying a single row operation does not change the set of solutions to a linear system. This is the result of <a href="s_systems.html#ex_row_ops_preserve" class="xref" data-knowl="./knowl/xref/ex_row_ops_preserve.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 2.1.3.7: Row operations preserve solutions">Exercise 2.1.3.7</a>. (Note that a solution is provided to that exercise.)</div> <div class="para" id="s_systems_th_rowops-3-3-5">We conclude that <span class="process-math">\(L\)</span> and <span class="process-math">\(L'\)</span> have the same set of solutions, as desired.</div></article></article></details></section><article class="example example-like" id="eg_systems_eg_long"><h4 class="heading">
+<div class="para" id="s_systems_th_rowops-2-1">Row equivalent systems of linear equations have identical sets of solutions.</div></article><details id="s_systems_th_rowops-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Proof<span class="period">.</span></span></h5></summary><article class="hiddenproof knowl__content"><div class="para" id="s_systems_th_rowops-3-1">We prove by induction that if system <span class="process-math">\(L'\)</span> is the result of applying <span class="process-math">\(n\)</span> elementary operations to system <span class="process-math">\(L\text{,}\)</span> <span class="process-math">\(n\geq 0\text{,}\)</span> then <span class="process-math">\(L\)</span> and <span class="process-math">\(L'\)</span> have the same set of solutions.</div>
+<article class="case" id="s_systems_th_rowops-3-2"><h6 class="heading">Base case: <span class="process-math">\(n=0\)</span>.</h6>
+<div class="para" id="s_systems_th_rowops-3-2-2">In this case <span class="process-math">\(L=L'\)</span> (we have applied no operations) and the statement is obvious.</div></article><article class="case" id="s_systems_th_rowops-3-3"><h6 class="heading">Induction step.</h6>
+<div class="para" id="s_systems_th_rowops-3-3-2">Assume that applying a sequence of <span class="process-math">\(n\)</span> elementary operations to a linear system preserves the set of solutions.</div>
+<div class="para" id="s_systems_th_rowops-3-3-3">Suppose <span class="process-math">\(L'\)</span> is the result of applying <span class="process-math">\(n+1\)</span> elementary operations to the system <span class="process-math">\(L\text{.}\)</span> Let <span class="process-math">\(L''\)</span> be the result of applying the first <span class="process-math">\(n\)</span> of these operations. By the induction hypothesis, systems <span class="process-math">\(L\)</span> and <span class="process-math">\(L''\)</span> have the same set of solutions.</div>
+<div class="para" id="s_systems_th_rowops-3-3-4">Since the system <span class="process-math">\(L'\)</span> is obtained from <span class="process-math">\(L''\)</span> by applying exactly one elementary operation, it now suffices to show that applying a single row operation does not change the set of solutions to a linear system. This is the result of <a href="s_systems.html#ex_row_ops_preserve" class="xref" data-knowl="./knowl/xref/ex_row_ops_preserve.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 2.1.3.7: Row operations preserve solutions">Exercise 2.1.3.7</a>. (Note that a solution is provided to that exercise.)</div>
+<div class="para" id="s_systems_th_rowops-3-3-5">We conclude that <span class="process-math">\(L\)</span> and <span class="process-math">\(L'\)</span> have the same set of solutions, as desired.</div></article></article></details></section><article class="example example-like" id="eg_systems_eg_long"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.17</span><span class="period">.</span><span class="space"> </span><span class="title">Complete example.</span>
-</h4> <div class="para logical" id="eg_systems_eg_long-2">
+</h4>
+<div class="para logical" id="eg_systems_eg_long-2">
 <div class="para">Consider again the linear system</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{linsys}{3} 2x\amp +\amp 3y\amp +\amp -z\amp =\amp 18\\ x\amp +\amp 2y\amp -\amp 2z\amp =\amp 8\\ -\frac{1}{2}x\amp +\amp -\frac{1}{2}y\amp +\amp \frac{1}{2}z\amp =\amp -3 \end{linsys}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="eg_systems_eg_long-3">
+</div>
+<div class="para logical" id="eg_systems_eg_long-3">
 <div class="para">We transform the system as as follows:</div>
 <div class="displaymath process-math" id="eg_systems_eg_long-3-1">
 \begin{align*}
@@ -2036,7 +1064,8 @@ x\amp +\amp 2y\amp -\amp 2z\amp =\amp 8\\
 \amp \amp \amp \amp z\amp =\amp 2 \end{linsys}
 \end{align*}
 </div>
-</div> <div class="para logical" id="eg_systems_eg_long-4">
+</div>
+<div class="para logical" id="eg_systems_eg_long-4">
 <div class="para">Now put the logic together. Our original linear system <span class="process-math">\(L\)</span> was transformed by a sequence of elementary row operations to a new system <span class="process-math">\(L'\text{:}\)</span>
 </div>
 <div class="displaymath process-math" id="eg_systems_eg_long-4-3">
@@ -2048,10 +1077,15 @@ x\amp +\amp 2y\amp -\amp 2z\amp =\amp 8\\
 \amp \amp \amp \amp z\amp =\amp 2 \end{linsys}
 \end{align*}
 </div>
-</div> <div class="para" id="eg_systems_eg_long-5">We saw already that the second system has exactly one solution, namely the triple <span class="process-math">\((x,y,z)=(4,4,2)\text{.}\)</span>
-</div> <div class="para" id="eg_systems_eg_long-6">Since transforming a system by row operations preserves solutions, the first and second systems have <em class="emphasis">exactly the same solutions</em>.</div> <div class="para" id="eg_systems_eg_long-7">Thus <span class="process-math">\((x,y,z)=(4,4,2)\)</span> is the only solution to the original system!</div></article><article class="remark remark-like" id="s_systems_notation_rowops"><h4 class="heading">
+</div>
+<div class="para" id="eg_systems_eg_long-5">We saw already that the second system has exactly one solution, namely the triple <span class="process-math">\((x,y,z)=(4,4,2)\text{.}\)</span>
+</div>
+<div class="para" id="eg_systems_eg_long-6">Since transforming a system by row operations preserves solutions, the first and second systems have <em class="emphasis">exactly the same solutions</em>.</div>
+<div class="para" id="eg_systems_eg_long-7">Thus <span class="process-math">\((x,y,z)=(4,4,2)\)</span> is the only solution to the original system!</div></article><article class="remark remark-like" id="s_systems_notation_rowops"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.18</span><span class="period">.</span><span class="space"> </span><span class="title">Notation.</span>
-</h4> <div class="para" id="s_systems_notation_rowops-2">As we will see later, keeping track of the exact sequence of row operations is important in some situations. The notation used in the last example is useful for this bookkeeping. Let’s explicate the notation somewhat.</div> <div class="para logical" id="s_systems_notation_rowops-3">
+</h4>
+<div class="para" id="s_systems_notation_rowops-2">As we will see later, keeping track of the exact sequence of row operations is important in some situations. The notation used in the last example is useful for this bookkeeping. Let’s explicate the notation somewhat.</div>
+<div class="para logical" id="s_systems_notation_rowops-3">
 <div class="para">The notation</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -2060,7 +1094,8 @@ L\xrightarrow{c\, e_i}L'
 </div>
 <div class="para">indicates that system <span class="process-math">\(L'\)</span> is obtained from <span class="process-math">\(L\)</span> by replacing equation <span class="process-math">\(e_i\)</span> with <span class="process-math">\(c\, e_i\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="s_systems_notation_rowops-4">
+</div>
+<div class="para logical" id="s_systems_notation_rowops-4">
 <div class="para">The notation</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -2069,7 +1104,8 @@ L\xrightarrow{e_i\leftrightarrow e_j}L'
 </div>
 <div class="para">indicates that system <span class="process-math">\(L'\)</span> is obtained from <span class="process-math">\(L\)</span> by swapping rows <span class="process-math">\(e_i\)</span> and <span class="process-math">\(e_j\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="s_systems_notation_rowops-5">
+</div>
+<div class="para logical" id="s_systems_notation_rowops-5">
 <div class="para">The notation</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -2080,7 +1116,9 @@ L\xrightarrow{e_i+c\,e_j}L'
 </div>
 </div></article><article class="remark remark-like" id="s_systems_rm_oneoperation"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.19</span><span class="period">.</span><span class="space"> </span><span class="title">Mandate.</span>
-</h4> <div class="para" id="s_systems_rm_oneoperation-2">You may be tempted to do multiple operations in a single step during this procedure. Resist this temptation for now until we have a better understanding of things.</div> <div class="para" id="s_systems_rm_oneoperation-3">Furthermore, if later on you do give in to this temptation, make sure that the two (or more row operations) you perform are independent of one another. For example, do not swap <span class="process-math">\(e_2\)</span> with <span class="process-math">\(e_1\)</span> and replace <span class="process-math">\(e_3\)</span> with <span class="process-math">\(e_3-5e_2\)</span> in the same step.</div></article></section><section class="exercises" id="s_systems_ex"><h3 class="heading hide-type">
+</h4>
+<div class="para" id="s_systems_rm_oneoperation-2">You may be tempted to do multiple operations in a single step during this procedure. Resist this temptation for now until we have a better understanding of things.</div>
+<div class="para" id="s_systems_rm_oneoperation-3">Furthermore, if later on you do give in to this temptation, make sure that the two (or more row operations) you perform are independent of one another. For example, do not swap <span class="process-math">\(e_2\)</span> with <span class="process-math">\(e_1\)</span> and replace <span class="process-math">\(e_3\)</span> with <span class="process-math">\(e_3-5e_2\)</span> in the same step.</div></article></section><section class="exercises" id="s_systems_ex"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="subexercises" id="s_systems_ex-1"><h4 class="heading"><span class="title">WeBWork Exercises</span></h4>
@@ -2088,7 +1126,7 @@ L\xrightarrow{e_i+c\,e_j}L'
 <div id="webwork-18" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="18" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/TCNJ/TCNJ_LinearSystems/problem1.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
 <div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-18')">Activate</button></div>
 <div class="problem-contents">
-<div class="para" id="extracted-webwork-18-1-1-1">Determine whether the following system has no solution, an infinite number of solutions or a unique solution.</div> <div class="para logical" id="extracted-webwork-18-1-1-2"><ol class="lower-alpha" id="extracted-webwork-18-1-1-2-1">
+<div class="para" id="extracted-webwork-18-1-1-1">Determine whether the following system has no solution, an infinite number of solutions or a unique solution.</div> <div class="para logical" id="extracted-webwork-18-1-1-2"><ol class="lower-alpha lower-alpha-level-1" id="extracted-webwork-18-1-1-2-1">
 <li id="extracted-webwork-18-1-1-2-1-1"><div class="para" id="extracted-webwork-18-1-1-2-1-1-1"><span class="process-math">\(\displaystyle \left\lbrace\begin{array}{rllrrr}
 -8 x \amp  - 7 y \amp = \amp 3 \cr
 4 x \amp + 4 y \amp = \amp 8 \cr
@@ -2138,7 +1176,7 @@ L\xrightarrow{e_i+c\,e_j}L'
 <div id="webwork-21" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="21" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/TCNJ/TCNJ_LinearSystems/problem3.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
 <div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-21')">Activate</button></div>
 <div class="problem-contents">
-<div class="para" id="extracted-webwork-21-1-1-1">Give a geometric description of the following systems of equations</div> <div class="para logical" id="extracted-webwork-21-1-1-2"><ol class="lower-alpha" id="extracted-webwork-21-1-1-2-1">
+<div class="para" id="extracted-webwork-21-1-1-1">Give a geometric description of the following systems of equations</div> <div class="para logical" id="extracted-webwork-21-1-1-2"><ol class="lower-alpha lower-alpha-level-1" id="extracted-webwork-21-1-1-2-1">
 <li id="extracted-webwork-21-1-1-2-1-1"><div class="para" id="extracted-webwork-21-1-1-2-1-1-1"><span class="process-math">\(\displaystyle \left\lbrace\begin{array}{rrrrrr}\amp  7 \,x\amp +\amp   \, y\amp =\amp 9\\\amp  4 \,x\amp +\amp  3 \, y\amp =\amp 2\\\amp  -23 \, x\amp - \amp 13 \,y\amp =\amp -15\\ \end{array}\right.\)</span></div></li>
 <li id="extracted-webwork-21-1-1-2-1-2"><div class="para" id="extracted-webwork-21-1-1-2-1-2-1"><span class="process-math">\(\displaystyle \left\lbrace\begin{array}{rrrrrr}\amp  -8 \, x\amp +\amp  12 \, y\amp =\amp -4\\\amp  -4 \, x\amp +\amp  6 \, y\amp =\amp -2\\\amp  14 \,x\amp - \amp 21 \,y\amp =\amp 7\\ \end{array}\right.\)</span></div></li>
 <li id="extracted-webwork-21-1-1-2-1-3"><div class="para" id="extracted-webwork-21-1-1-2-1-3-1"><span class="process-math">\(\displaystyle \left\lbrace\begin{array}{rrrrrr}\amp  7 \,x\amp +\amp   \, y\amp =\amp 9\\\amp  4 \,x\amp +\amp  3 \, y\amp =\amp 2\\\amp  -23 \, x\amp - \amp 13 \,y\amp =\amp -17\\ \end{array}\right.\)</span></div></li>
@@ -2148,7 +1186,7 @@ L\xrightarrow{e_i+c\,e_j}L'
 <div id="webwork-22" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="22" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/TCNJ/TCNJ_LinearSystems/problem4.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
 <div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-22')">Activate</button></div>
 <div class="problem-contents">
-<div class="para" id="extracted-webwork-22-1-1-1">Give a geometric description of the following system of equations</div> <div class="para logical" id="extracted-webwork-22-1-1-2"><ol class="lower-alpha" id="extracted-webwork-22-1-1-2-1">
+<div class="para" id="extracted-webwork-22-1-1-1">Give a geometric description of the following system of equations</div> <div class="para logical" id="extracted-webwork-22-1-1-2"><ol class="lower-alpha lower-alpha-level-1" id="extracted-webwork-22-1-1-2-1">
 <li id="extracted-webwork-22-1-1-2-1-1"><div class="para" id="extracted-webwork-22-1-1-2-1-1-1"><span class="process-math">\(\displaystyle \left\lbrace\begin{array}{rrrrrrr}
 2x \amp  + \amp  4y \amp  - \amp  6z \amp  = \amp  -12 \cr
 -3x \amp  - \amp  6y \amp  + \amp  9z \amp  = \amp  18
@@ -2169,7 +1207,7 @@ L\xrightarrow{e_i+c\,e_j}L'
 </h5>
 <div class="para logical" id="ex_solving_sys_geom-2-1">
 <div class="para">In this exercise we will use the geometry of lines in <span class="process-math">\(\R^2\)</span> and planes in <span class="process-math">\(\R^3\)</span> to help analyze solutions to systems of equations in two and three unknowns, respectively.</div>
-<ol class="lower-alpha" id="ex_solving_sys_geom-2-1-3">
+<ol class="lower-alpha lower-alpha-level-1" id="ex_solving_sys_geom-2-1-3">
 <li id="ex_solving_sys_geom-2-1-3-1"><div class="para" id="ex_solving_sys_geom-2-1-3-1-1">Fix <span class="process-math">\(m\gt 1\)</span> and consider a system of <span class="process-math">\(m\)</span> linear equations in the two unknowns <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span> What does a solution <span class="process-math">\((x,y)\)</span> to this <em class="emphasis">system</em> of linear equations correspond to geometrically?</div></li>
 <li id="ex_solving_sys_geom-2-1-3-2"><div class="para" id="ex_solving_sys_geom-2-1-3-2-1">Use your interpretation in (a) to give a <em class="emphasis">geometric</em> argument that a system of <span class="process-math">\(m\)</span> equations in two unknowns will have either (i) zero solutions, (ii) exactly one solution, or (iii) infinitely many solutions.</div></li>
 <li id="ex_solving_sys_geom-2-1-3-3"><div class="para" id="ex_solving_sys_geom-2-1-3-3-1">Use your geometric interpretation to help produce explicit examples of systems in two variables satisfying these three different cases (i)-(iii).</div></li>
@@ -2178,10 +1216,16 @@ L\xrightarrow{e_i+c\,e_j}L'
 </ol>
 </div>
 <div class="solutions"><details id="ex_solving_sys_geom-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="ex_solving_sys_geom-3-1">(a) Geometrically, each equation in the system represents a line <span class="process-math">\(\ell_i\colon a_ix+b_iy=c_i\text{.}\)</span> A solution <span class="process-math">\((x,y)\)</span> to the <span class="process-math">\(i\)</span>-th equation corresponds to a point on <span class="process-math">\(\ell_i\text{.}\)</span> Thus a solution <span class="process-math">\((x,y)\)</span> to the system corresponds to a point lying on <em class="emphasis">all</em> of the lines: i.e., a point of intersection of the lines.</div> <div class="para" id="ex_solving_sys_geom-3-2">(b) First of all to prove the desired “or” statement it suffices to prove that if the number of solutions is greater than 1, then there are infinitely many solutions.</div> <div class="para" id="ex_solving_sys_geom-3-3">Now suppose there is more than one solution. Then there are at least two different solutions: <span class="process-math">\(P_1=(x_1,y_1)\)</span> and <span class="process-math">\(P_2=(x_2,y_2)\text{.}\)</span> Take any of the two lines <span class="process-math">\(\ell_i, \ell_j\text{.}\)</span> By above the intersection of <span class="process-math">\(\ell_i\)</span> and <span class="process-math">\(\ell_j\)</span> contains <span class="process-math">\(P_1\)</span> and <span class="process-math">\(P_2\text{.}\)</span> But two <em class="emphasis">distinct</em> lines intersect in at most one point. It follows that <span class="process-math">\(\ell_i\)</span> and <span class="process-math">\(\ell_j\)</span> must be equal. Since <span class="process-math">\(\ell_i\)</span> and <span class="process-math">\(\ell_j\)</span> were arbitrary, it follows <em class="emphasis">all</em> of the lines <span class="process-math">\(\ell_i\)</span> are in fact the same line <span class="process-math">\(\ell\text{.}\)</span> But this means the common intersection of the lines is <span class="process-math">\(\ell\text{,}\)</span> which has infinitely many points. It follows that the system has infinitely many solutions.</div> <div class="para" id="ex_solving_sys_geom-3-4">(c) We will get 0 solutions if the system includes two different parallel lines: e.g., <span class="process-math">\(\ell_1\colon x+y=5\)</span> and <span class="process-math">\(\ell_2\colon x+y=1\text{.}\)</span>
-</div> <div class="para" id="ex_solving_sys_geom-3-5">We will get exactly one solution when the slopes of each line in the system are distinct.</div> <div class="para" id="ex_solving_sys_geom-3-6">We will get infinitely many solutions when <em class="emphasis">all</em> equations in the system represent the <em class="emphasis">same line</em>. This happens when all equations are multiples of one another.</div> <div class="para logical" id="ex_solving_sys_geom-3-7">
+<div class="para" id="ex_solving_sys_geom-3-1">(a) Geometrically, each equation in the system represents a line <span class="process-math">\(\ell_i\colon a_ix+b_iy=c_i\text{.}\)</span> A solution <span class="process-math">\((x,y)\)</span> to the <span class="process-math">\(i\)</span>-th equation corresponds to a point on <span class="process-math">\(\ell_i\text{.}\)</span> Thus a solution <span class="process-math">\((x,y)\)</span> to the system corresponds to a point lying on <em class="emphasis">all</em> of the lines: i.e., a point of intersection of the lines.</div>
+<div class="para" id="ex_solving_sys_geom-3-2">(b) First of all to prove the desired “or” statement it suffices to prove that if the number of solutions is greater than 1, then there are infinitely many solutions.</div>
+<div class="para" id="ex_solving_sys_geom-3-3">Now suppose there is more than one solution. Then there are at least two different solutions: <span class="process-math">\(P_1=(x_1,y_1)\)</span> and <span class="process-math">\(P_2=(x_2,y_2)\text{.}\)</span> Take any of the two lines <span class="process-math">\(\ell_i, \ell_j\text{.}\)</span> By above the intersection of <span class="process-math">\(\ell_i\)</span> and <span class="process-math">\(\ell_j\)</span> contains <span class="process-math">\(P_1\)</span> and <span class="process-math">\(P_2\text{.}\)</span> But two <em class="emphasis">distinct</em> lines intersect in at most one point. It follows that <span class="process-math">\(\ell_i\)</span> and <span class="process-math">\(\ell_j\)</span> must be equal. Since <span class="process-math">\(\ell_i\)</span> and <span class="process-math">\(\ell_j\)</span> were arbitrary, it follows <em class="emphasis">all</em> of the lines <span class="process-math">\(\ell_i\)</span> are in fact the same line <span class="process-math">\(\ell\text{.}\)</span> But this means the common intersection of the lines is <span class="process-math">\(\ell\text{,}\)</span> which has infinitely many points. It follows that the system has infinitely many solutions.</div>
+<div class="para" id="ex_solving_sys_geom-3-4">(c) We will get 0 solutions if the system includes two different parallel lines: e.g., <span class="process-math">\(\ell_1\colon x+y=5\)</span> and <span class="process-math">\(\ell_2\colon x+y=1\text{.}\)</span>
+</div>
+<div class="para" id="ex_solving_sys_geom-3-5">We will get exactly one solution when the slopes of each line in the system are distinct.</div>
+<div class="para" id="ex_solving_sys_geom-3-6">We will get infinitely many solutions when <em class="emphasis">all</em> equations in the system represent the <em class="emphasis">same line</em>. This happens when all equations are multiples of one another.</div>
+<div class="para logical" id="ex_solving_sys_geom-3-7">
 <div class="para">(d) Now each equation in our system defines a plane <span class="process-math">\(\mathcal{P}_i\colon a_ix+b_iy+c_iz=d_i\text{.}\)</span> A solution <span class="process-math">\((x,y,z)\)</span> to the system corresponds to a point <span class="process-math">\(P=(x,y,z)\)</span> of intersection of the planes. We recall two facts from Euclidean geometry:</div>
-<ol class="lower-alpha" id="ex_solving_sys_geom-3-7-4">
+<ol class="lower-alpha lower-alpha-level-1" id="ex_solving_sys_geom-3-7-4">
 <li id="ex_solving_sys_geom-3-7-4-1">
 <span class="heading"><span class="title">Fact 1.</span></span><div class="para" id="ex_solving_sys_geom-3-7-4-1-2">Given two distinct points, there is a unique line containing both of them.</div>
 </li>
@@ -2189,13 +1233,15 @@ L\xrightarrow{e_i+c\,e_j}L'
 <span class="heading"><span class="title">Fact 2.</span></span><div class="para" id="ex_solving_sys_geom-3-7-4-2-2">Given any number of distinct planes, they either do not intersect, or intersect in a line.</div>
 </li>
 </ol>
-</div> <div class="para" id="ex_solving_sys_geom-3-8">We proceed as in part (b) above: that is show that if there are two distinct solutions to the system, then there are infinitely many solutions. First, for simplicity, we may assume that the equations <span class="process-math">\(\mathcal{P}_i\colon a_ix+b_iy+c_iz=d_i\)</span> define <em class="emphasis">distinct</em> planes; if we have two equations defining the same plane, we can delete one of them and not change the set of solutions to the system.</div> <div class="para" id="ex_solving_sys_geom-3-9">Now suppose <span class="process-math">\(P=(x_1,y_1,z_1)\)</span> and <span class="process-math">\(Q=(x_2,y_2,z_2)\)</span> are two distinct solutions to the system. Let <span class="process-math">\(\ell\)</span> be the unique line containing <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> (Fact 1). I claim that <span class="process-math">\(\ell\)</span> is precisely the set of solutions to the system. To see this, take any two equations in the system <span class="process-math">\(\mathcal{P}_i\colon a_ix+b_iy+c_iz=d_i\)</span> and <span class="process-math">\(\mathcal{P}_j\colon a_jx+b_jy+c_iz=d_j\text{.}\)</span> Since the two corresponding planes are distinct, and intersect in at least the points <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\text{,}\)</span> they must intersect in a line (Fact 2); since this line contains <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\text{,}\)</span> it must be the line <span class="process-math">\(\ell\)</span> (Fact 1). Thus any two planes in the system intersect in the line <span class="process-math">\(\ell\text{.}\)</span> From this it follows that: (a) a point satisfying the system must lie in <span class="process-math">\(\ell\text{;}\)</span> and (b) all points on <span class="process-math">\(\ell\)</span> satisfy the system (since we have shown that <span class="process-math">\(\ell\)</span> lies in all the planes). It follows that <span class="process-math">\(\ell\)</span> is precisely the set of solutions, and hence that there are infinitely many solutions.</div>
+</div>
+<div class="para" id="ex_solving_sys_geom-3-8">We proceed as in part (b) above: that is show that if there are two distinct solutions to the system, then there are infinitely many solutions. First, for simplicity, we may assume that the equations <span class="process-math">\(\mathcal{P}_i\colon a_ix+b_iy+c_iz=d_i\)</span> define <em class="emphasis">distinct</em> planes; if we have two equations defining the same plane, we can delete one of them and not change the set of solutions to the system.</div>
+<div class="para" id="ex_solving_sys_geom-3-9">Now suppose <span class="process-math">\(P=(x_1,y_1,z_1)\)</span> and <span class="process-math">\(Q=(x_2,y_2,z_2)\)</span> are two distinct solutions to the system. Let <span class="process-math">\(\ell\)</span> be the unique line containing <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> (Fact 1). I claim that <span class="process-math">\(\ell\)</span> is precisely the set of solutions to the system. To see this, take any two equations in the system <span class="process-math">\(\mathcal{P}_i\colon a_ix+b_iy+c_iz=d_i\)</span> and <span class="process-math">\(\mathcal{P}_j\colon a_jx+b_jy+c_iz=d_j\text{.}\)</span> Since the two corresponding planes are distinct, and intersect in at least the points <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\text{,}\)</span> they must intersect in a line (Fact 2); since this line contains <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\text{,}\)</span> it must be the line <span class="process-math">\(\ell\)</span> (Fact 1). Thus any two planes in the system intersect in the line <span class="process-math">\(\ell\text{.}\)</span> From this it follows that: (a) a point satisfying the system must lie in <span class="process-math">\(\ell\text{;}\)</span> and (b) all points on <span class="process-math">\(\ell\)</span> satisfy the system (since we have shown that <span class="process-math">\(\ell\)</span> lies in all the planes). It follows that <span class="process-math">\(\ell\)</span> is precisely the set of solutions, and hence that there are infinitely many solutions.</div>
 </div></details></div></article><article class="exercise exercise-like" id="ex_row_ops_preserve"><h5 class="heading">
 <span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">Row operations preserve solutions.</span>
 </h5>
 <div class="para logical" id="ex_row_ops_preserve-2-1">
 <div class="para">We made the claim that each of our three row operations</div>
-<ol class="lower-alpha" id="ex_row_ops_preserve-2-1-1">
+<ol class="lower-alpha lower-alpha-level-1" id="ex_row_ops_preserve-2-1-1">
 <li id="ex_row_ops_preserve-2-1-1-1"><div class="para" id="ex_row_ops_preserve-2-1-1-1-1">scalar multiplication (<span class="process-math">\(e_i\mapsto c\cdot e_i\)</span> for <span class="process-math">\(c\ne 0\)</span>),</div></li>
 <li id="ex_row_ops_preserve-2-1-1-2"><div class="para" id="ex_row_ops_preserve-2-1-1-2-1">swap (<span class="process-math">\(e_i\leftrightarrow e_j\)</span>),</div></li>
 <li id="ex_row_ops_preserve-2-1-1-3"><div class="para" id="ex_row_ops_preserve-2-1-1-3-1">addition (<span class="process-math">\(e_i\mapsto e_i+c\cdot e_j\)</span> for some <span class="process-math">\(c\)</span>)</div></li>
@@ -2211,8 +1257,12 @@ L\xrightarrow{e_i+c\,e_j}L'
 </div>
 <div class="solutions"><details id="ex_row_ops_preserve-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para" id="ex_row_ops_preserve-3-1">Let <span class="process-math">\(L\)</span> be the original system with equations <span class="process-math">\(e_1,e_2,\dots ,e_m\text{.}\)</span> For each specified row operation, we will call the resulting new system <span class="process-math">\(L'\)</span> and its equations <span class="process-math">\(e'_1,e'_2,\dots , e'_m\text{.}\)</span>
-</div> <article class="case" id="ex_row_ops_preserve-3-2"><h6 class="heading">Row swap.</h6> <div class="para" id="ex_row_ops_preserve-3-2-2">In this case systems <span class="process-math">\(L\)</span> and <span class="process-math">\(L'\)</span> have exactly the same equations, just written in a different order. Thus the <span class="process-math">\(n\)</span>-tuple <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(L\)</span> if and only if it satisfies each of the equations <span class="process-math">\(e_i\text{,}\)</span> if and only if it satisfies each of the equations <span class="process-math">\(e'_i\text{,}\)</span> since these are the same equations! It follows that <span class="process-math">\(s\)</span> is a solution of <span class="process-math">\(L\)</span> if and only if it is a solution to <span class="process-math">\(L'\text{.}\)</span>
-</div></article> <article class="case" id="ex_row_ops_preserve-3-3"><h6 class="heading">Scalar multiplication.</h6> <div class="para" id="ex_row_ops_preserve-3-3-2">In this case <span class="process-math">\(e_j=e'_j\)</span> for all <span class="process-math">\(j\ne i\text{,}\)</span> and <span class="process-math">\(e'_i=c\cdot e_i\)</span> for some <span class="process-math">\(c\ne 0\text{.}\)</span> Since only the <span class="process-math">\(i\)</span>-th equation has changed, it suffices to show that <span class="process-math">\(s\)</span> is a solution to <span class="process-math">\(e_i\)</span> if and only if <span class="process-math">\(s\)</span> is a solution to <span class="process-math">\(c\cdot e_i\text{.}\)</span> Let’s prove each direction of this if and only if separately.</div> <div class="para logical" id="ex_row_ops_preserve-3-3-3">
+</div>
+<article class="case" id="ex_row_ops_preserve-3-2"><h6 class="heading">Row swap.</h6>
+<div class="para" id="ex_row_ops_preserve-3-2-2">In this case systems <span class="process-math">\(L\)</span> and <span class="process-math">\(L'\)</span> have exactly the same equations, just written in a different order. Thus the <span class="process-math">\(n\)</span>-tuple <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(L\)</span> if and only if it satisfies each of the equations <span class="process-math">\(e_i\text{,}\)</span> if and only if it satisfies each of the equations <span class="process-math">\(e'_i\text{,}\)</span> since these are the same equations! It follows that <span class="process-math">\(s\)</span> is a solution of <span class="process-math">\(L\)</span> if and only if it is a solution to <span class="process-math">\(L'\text{.}\)</span>
+</div></article><article class="case" id="ex_row_ops_preserve-3-3"><h6 class="heading">Scalar multiplication.</h6>
+<div class="para" id="ex_row_ops_preserve-3-3-2">In this case <span class="process-math">\(e_j=e'_j\)</span> for all <span class="process-math">\(j\ne i\text{,}\)</span> and <span class="process-math">\(e'_i=c\cdot e_i\)</span> for some <span class="process-math">\(c\ne 0\text{.}\)</span> Since only the <span class="process-math">\(i\)</span>-th equation has changed, it suffices to show that <span class="process-math">\(s\)</span> is a solution to <span class="process-math">\(e_i\)</span> if and only if <span class="process-math">\(s\)</span> is a solution to <span class="process-math">\(c\cdot e_i\text{.}\)</span> Let’s prove each direction of this if and only if separately.</div>
+<div class="para logical" id="ex_row_ops_preserve-3-3-3">
 <div class="para">If <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(e_1\text{,}\)</span> then <span class="process-math">\(a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i\text{.}\)</span> Multiplying both sides by <span class="process-math">\(c\)</span> we see that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -2221,7 +1271,8 @@ ca_{i1}s_1+ca_{i2}s_2+\cdots +ca_{in}s_n=cb_i,
 </div>
 <div class="para">and hence that <span class="process-math">\(s\)</span> is also a solution of <span class="process-math">\(c\,e_i=e_i'\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="ex_row_ops_preserve-3-3-4">
+</div>
+<div class="para logical" id="ex_row_ops_preserve-3-3-4">
 <div class="para">For the other direction, if <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(c e_i=e_i'\text{,}\)</span> then</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -2236,7 +1287,8 @@ a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i
 </div>
 <div class="para">and hence that <span class="process-math">\(s\)</span> is a solution to <span class="process-math">\(e_i\text{.}\)</span>
 </div>
-</div></article> <article class="case" id="ex_row_ops_preserve-3-4"><h6 class="heading">Row addition.</h6> <div class="para logical" id="ex_row_ops_preserve-3-4-2">
+</div></article><article class="case" id="ex_row_ops_preserve-3-4"><h6 class="heading">Row addition.</h6>
+<div class="para logical" id="ex_row_ops_preserve-3-4-2">
 <div class="para">The only equation of <span class="process-math">\(L'\)</span> that differs from <span class="process-math">\(L\)</span> is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/solveeqn.html">
 \begin{equation*}
@@ -2285,7 +1337,7 @@ a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i\text{.}
 </div></article>
 </div></details></div></article><article class="exercise exercise-like" id="ex_solving_nonlinear_system"><h5 class="heading">
 <span class="codenumber">8<span class="period">.</span></span><span class="space"> </span><span class="title">Nonlinear systems.</span>
-</h5>A <em class="emphasis">nonlinear</em> system of equations is a collection of equations, at least one of which is nonlinear. Our definition of a solution to a linear system generalizes easily to any system of equations. <ol class="lower-alpha" id="ex_solving_nonlinear_system-2-2">
+</h5>A <em class="emphasis">nonlinear</em> system of equations is a collection of equations, at least one of which is nonlinear. Our definition of a solution to a linear system generalizes easily to any system of equations. <ol class="lower-alpha lower-alpha-level-1" id="ex_solving_nonlinear_system-2-2">
 <li id="ex_solving_nonlinear_system-2-2-1"><div class="para logical" id="ex_solving_nonlinear_system-2-2-1-1">
 <div class="para">Consider the following nonlinear system in the unknowns <span class="process-math">\(x, y\text{:}\)</span>
 </div>
@@ -2338,18 +1390,18 @@ F(x_1,x_2,\dots, x_n)=G(x_1,x_2,\dots, x_n)\tag{2.1.10}
 \end{equation}
 </div>
 <div class="para">be the equation obtained by squaring both sides of the <a href="s_systems.html#eq_general_equation" class="xref" data-knowl="./knowl/xref/eq_general_equation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.10">(2.1.10)</a>, let <span class="process-math">\(S_1\)</span> be the set of solutions to <a href="s_systems.html#eq_general_equation" class="xref" data-knowl="./knowl/xref/eq_general_equation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.10">(2.1.10)</a>, and let <span class="process-math">\(S_2\)</span> be the set of solutions to <a href="s_systems.html#eq_general_equation_squared" class="xref" data-knowl="./knowl/xref/eq_general_equation_squared.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.11">(2.1.11)</a>.</div>
-</div> <ol class="lower-alpha" id="s_systems_ex-2-5-2-2">
+</div> <ol class="lower-alpha lower-alpha-level-1" id="s_systems_ex-2-5-2-2">
 <li id="s_systems_ex-2-5-2-2-1"><div class="para" id="s_systems_ex-2-5-2-2-1-1">Show that <span class="process-math">\(S_1\subseteq S_2\text{.}\)</span>
 </div></li>
 <li id="s_systems_ex-2-5-2-2-2"><div class="para" id="s_systems_ex-2-5-2-2-2-1">Given an explicit example of an equation of the form <a href="s_systems.html#eq_general_equation" class="xref" data-knowl="./knowl/xref/eq_general_equation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.10">(2.1.10)</a> in two variables for which <span class="process-math">\(S_2\not\subseteq S_1\text{.}\)</span>
 </div></li>
 </ol></article></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="c_linear_systems.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_ge.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="c_linear_systems.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_ge.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

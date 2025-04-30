@@ -14,56 +14,24 @@
 <article class="example example-like"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.2</span><span class="period">.</span>
 </h4>
-<div class="para logical">
-<div class="para">The function</div>
-<div class="displaymath process-math">
-\begin{align*}
-T\colon \R^3 \amp \rightarrow M_{22}\\
-(x,y,z) \amp \mapsto \begin{bmatrix}
-x+y+z\amp x-z\\
-x+2y\amp y-z
-\end{bmatrix}
-\end{align*}
-</div>
-<div class="para">is linear, <span class="process-math">\([T]_{B}^{B'}\text{,}\)</span> where <span class="process-math">\(B\)</span> and <span class="process-math">\(B'\)</span> are the standard bases for <span class="process-math">\(\R^3\)</span> and <span class="process-math">\(M_{22}\text{,}\)</span> respectively.</div>
-</div>
+<div class="para">Consider the linear transformation <span class="process-math">\(T\colon P_{3}\rightarrow P_{2}\)</span> defined as <span class="process-math">\(T(p(x))=p'(x)\text{.}\)</span> Compute <span class="process-math">\(A=[T]_{B}^{B'}\text{,}\)</span> where <span class="process-math">\(B\)</span> and <span class="process-math">\(B'\)</span> are the standard bases for <span class="process-math">\(P_3\)</span> and <span class="process-math">\(P_2\text{,}\)</span> respectively.</div>
 <div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
-<div class="para">We have <span class="process-math">\(B=(\bolde_1,\bolde_2, \bolde_3)\)</span> and <span class="process-math">\(B'=(E_{11},E_{12},E_{21},E_{22})\text{.}\)</span> By definition, we have</div>
-<div class="displaymath process-math">
+<div class="para">We have <span class="process-math">\(B=(x^3, x^2, x, 1)\)</span> and <span class="process-math">\(B'=(x^2, x, 1)\text{.}\)</span> Denote by <span class="process-math">\(\boldc_j\)</span> the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A\text{.}\)</span> We use <a href="s_matrixreps.html#eq_matrixrep_formula" class="xref" data-knowl="./knowl/xref/eq_matrixrep_formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.4.1">(5.4.1)</a> to compute:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_matrixrep_formula.html">
 \begin{align*}
-[T]_{B}^{B'} \amp =\begin{bmatrix}
-\vert \amp \vert \amp \vert \\
-[T(bolde_1)]_{B'} \amp [T(\bolde_2)]_{B'}\amp [T(\bolde_3)]_{B'}  \text{.}
+\boldc_1\amp =[T(x^3)]_{B'}=[3x^2]_{B'}=\begin{bmatrix} 3\\
+0\\
+0 \end{bmatrix} \amp \boldc_2\amp =[T(x^2)]_{B'}=[2x]_{B'}=\begin{bmatrix} 0\\
+2\\
+0 \end{bmatrix}\\
+\boldc_3\amp =[T(x)]_{B'}=[1]_{B'}=\begin{bmatrix} 0\\
+0\\
+1 \end{bmatrix} \amp \boldc_4\amp =[T(1)]_{B'}=[0]_{B'}=\begin{bmatrix} 0\\
+0\\
+0 \end{bmatrix}\text{.}
 \end{align*}
 </div>
-<div class="para">We first compute <span class="process-math">\(T(\bolde_i)\)</span> for each <span class="process-math">\(1\leq i\leq 3\text{:}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{align*}
-T(\bolde_1) \amp = T(1,0,0)=\begin{bmatrix}1\amp 1\\ 1 \amp 0\end{bmatrix}\\
-T(\bolde_2) \amp = T(0,1,0)=\begin{bmatrix}1\amp 0 \\ 2 \amp 1 \end{bmatrix}\\
-T(\bolde_3) \amp = T(0,0,1)=\begin{bmatrix}1\amp -1 \\ 0 \amp -1 \text{.}
-\end{align*}
-</div>
-<div class="para">To finish our computation, we must compute <span class="process-math">\([T(\bolde_i)]_{B'}\)</span> for each <span class="process-math">\(1\leq i\leq 3\text{.}\)</span> Since <span class="process-math">\(B'\)</span> is the standard basis of <span class="process-math">\(M_{22}\text{,}\)</span> this is not difficult: in general we have</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\left[ \begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}\right]_{B'}=(a,b,c,d)\text{.}
-\end{equation*}
-</div>
-<div class="para">Thus</div>
-<div class="displaymath process-math">
-\begin{align*}
-[T(\bolde_1)]_{B'} \amp = (1,1,1,0)\\
-[T(\bolde_2)]_{B'} \amp = (1,0,2,1)\\
-[T(\bolde_3)]_{B'} \amp = (1,-1,0,-1)
-\end{align*}
-</div>
-<div class="para">and</div>
-<div class="displaymath process-math">
-\begin{equation*}
-A=\begin{amatrix}[rrr] 1\amp 1\ amp 1\\ 1\amp 0\amp -1\\ 1\amp 2\amp 0\\ 0\amp 1\amp -1\end{amatrix}\text{.}
-\end{equation*}
+<div class="para">Thus <span class="process-math">\(A=\begin{bmatrix}3\amp 0\amp 0\amp 0\\ 0\amp 2\amp 0\amp 0\\ 0\amp 0\amp 1\amp 0 \end{bmatrix}\text{.}\)</span>
 </div>
 </div></div></details></div></article><span class="incontext"><a class="internal" href="s_matrixreps.html#eg_matrixreps_derivative">in-context</a></span>
 </body>

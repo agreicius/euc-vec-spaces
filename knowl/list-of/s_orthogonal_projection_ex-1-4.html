@@ -12,9 +12,9 @@
 </head>
 <body class="ignore-math">
 <article class="exercise exercise-like"><h5 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span>
+<span class="type">Exercise</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">3<span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span></span>
 </h5>
-<div id="webwork-122" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="122" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/Mizzou/Matrix_Theory/HW_5/prob_3.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" id="webwork-122" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="122" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/Mizzou/Matrix_Theory/HW_5/prob_3.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
 <div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-122')">Activate</button></div>
 <div class="problem-contents">
 <div class="para">(a) Find the distance from the point <span class="process-math">\(P_0 = (4,6,3)\)</span> to the plane <span class="process-math">\(-4 x + 2 y + 3 z = -1\text{.}\)</span> Use <em class="alert">sqrt()</em> to enter square roots.</div> <div class="para">Distance:<span class="fillin underline" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span>
@@ -24,16 +24,21 @@
 <div class="solutions">
 <details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para"><span class="process-math">\(1.11417\)</span></div></div></details><details class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space"> </span><span class="codenumber">2</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><div class="para"><span class="process-math">\(18z-\left(15x+5y\right) = 32\)</span></div></div></details><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para">
-<em class="alert">Solution:</em> (a) The idea is to find a convenient point lying in the given plane. For example, let us pick <span class="process-math">\(P_1 = (1,0,1)\text{,}\)</span> and let <span class="process-math">\(\mathbf{v}\)</span> be the vector from <span class="process-math">\(P_1\)</span> to <span class="process-math">\(P_0\text{.}\)</span> Then the distance from <span class="process-math">\(P_0\)</span> to the plane is the absolute value of the scalar projection of <span class="process-math">\(\mathbf{v}\)</span> onto the normal vector</div> <div class="para logical"><div class="displaymath process-math">
+<em class="alert">Solution:</em> (a) The idea is to find a convenient point lying in the given plane. For example, let us pick <span class="process-math">\(P_1 = (1,0,1)\text{,}\)</span> and let <span class="process-math">\(\mathbf{v}\)</span> be the vector from <span class="process-math">\(P_1\)</span> to <span class="process-math">\(P_0\text{.}\)</span> Then the distance from <span class="process-math">\(P_0\)</span> to the plane is the absolute value of the scalar projection of <span class="process-math">\(\mathbf{v}\)</span> onto the normal vector</div>
+<div class="para logical"><div class="displaymath process-math">
 \begin{equation*}
 \mathbf{N} = \left[ \begin{array}{c} -4 \amp  2 \amp  3 \end{array}\right]
 \end{equation*}
-</div></div> <div class="para">So, we get that the distance is <span class="process-math">\(\frac{6}{\sqrt{29}}\text{.}\)</span>
-</div> <div class="para">(b) To find an equation of the plane in question, we can work with the point <span class="process-math">\(P\)</span> and the normal vector <span class="process-math">\(\mathbf{N}\)</span> given by the cross product of the vector from <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\text{,}\)</span> and the vector from <span class="process-math">\(P\)</span> to <span class="process-math">\(R\text{.}\)</span> It turns out that</div> <div class="para logical"><div class="displaymath process-math">
+</div></div>
+<div class="para">So, we get that the distance is <span class="process-math">\(\frac{6}{\sqrt{29}}\text{.}\)</span>
+</div>
+<div class="para">(b) To find an equation of the plane in question, we can work with the point <span class="process-math">\(P\)</span> and the normal vector <span class="process-math">\(\mathbf{N}\)</span> given by the cross product of the vector from <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\text{,}\)</span> and the vector from <span class="process-math">\(P\)</span> to <span class="process-math">\(R\text{.}\)</span> It turns out that</div>
+<div class="para logical"><div class="displaymath process-math">
 \begin{equation*}
 \mathbf{N} = \left[ \begin{array}{c} -15 \amp  -5 \amp  18 \end{array}\right]
 \end{equation*}
-</div></div> <div class="para">So, an equation of the plane is <span class="process-math">\(-15 x - 5 y+18 z= 32\text{.}\)</span>
+</div></div>
+<div class="para">So, an equation of the plane is <span class="process-math">\(-15 x - 5 y+18 z= 32\text{.}\)</span>
 </div>
 </div></details>
 </div>

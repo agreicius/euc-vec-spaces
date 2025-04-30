@@ -12,9 +12,9 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.1.7</span><span class="period">.</span>
+<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">1.1.7</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span>
 </h4>
-<div class="para logical">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
 <div class="para">Fix a positive integer <span class="process-math">\(n\text{.}\)</span>
 </div>
 <ol class="decimal" id="th_Rn_vector_space-1-1-2">
@@ -36,7 +36,9 @@
 </div>
 </div></li>
 </ol>
-</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">The statement itself of the theorem has already taken care of some of the steps of <a href="s_Rn.html#proc_vector_space" class="xref" data-knowl="./knowl/xref/proc_vector_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 1.1.6: Verifying vector space axioms">Procedure 1.1.6</a>: it has identified the underlying set <span class="process-math">\(\R^n\)</span> and proposed vector operations (steps (1)-(2)), and it has identified the zero vector and the rule for computing vector inverses (steps (3)-(4)). It remains to show that the proposed zero vectors and vector inverses satisfy the identities of <a href="s_Rn.html#eq_d_zero_vector" class="xref" data-knowl="./knowl/xref/eq_d_zero_vector.html" data-reveal-label="Reveal" data-close-label="Close" title="Item iii: Zero vector">Axioms iii–iv</a>, and that Axioms (i)-(ii) and (v)-(viii) are satisfied.  We first consider <a href="s_Rn.html#eq_d_zero_vector" class="xref" data-knowl="./knowl/xref/eq_d_zero_vector.html" data-reveal-label="Reveal" data-close-label="Close" title="Item iii: Zero vector">Axioms iii–iv</a>.</div> <article class="case"><h5 class="heading">Axiom iii.</h5> <div class="para logical">
+</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">The statement itself of the theorem has already taken care of some of the steps of <a href="s_Rn.html#proc_vector_space" class="xref" data-knowl="./knowl/xref/proc_vector_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 1.1.6: Verifying vector space axioms">Procedure 1.1.6</a>: it has identified the underlying set <span class="process-math">\(\R^n\)</span> and proposed vector operations (steps (1)-(2)), and it has identified the zero vector and the rule for computing vector inverses (steps (3)-(4)). It remains to show that the proposed zero vectors and vector inverses satisfy the identities of <a href="s_Rn.html#eq_d_zero_vector" class="xref" data-knowl="./knowl/xref/eq_d_zero_vector.html" data-reveal-label="Reveal" data-close-label="Close" title="Item iii: Zero vector">Axioms iii–iv</a>, and that Axioms (i)-(ii) and (v)-(viii) are satisfied.  We first consider <a href="s_Rn.html#eq_d_zero_vector" class="xref" data-knowl="./knowl/xref/eq_d_zero_vector.html" data-reveal-label="Reveal" data-close-label="Close" title="Item iii: Zero vector">Axioms iii–iv</a>.</div>
+<article class="case"><h5 class="heading">Axiom iii.</h5>
+<div class="para logical">
 <div class="para">We claim that <span class="process-math">\((0,0,\dots, 0)\)</span> satisfies the identity of <a href="s_Rn.html#eq_d_zero_vector" class="xref" data-knowl="./knowl/xref/eq_d_zero_vector.html" data-reveal-label="Reveal" data-close-label="Close" title="Item iii: Zero vector">Axiom iii</a>, and thus that <span class="process-math">\(\boldzero=(0,0,\dots, 0)\text{.}\)</span> Indeed, for all <span class="process-math">\(\boldx\in \R^n\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_d_zero_vector.html">
 \begin{align*}
@@ -46,7 +48,8 @@
 \end{align*}
 </div>
 <div class="para">as desired.</div>
-</div></article> <article class="case"><h5 class="heading">Axiom iv.</h5> <div class="para logical">
+</div></article><article class="case"><h5 class="heading">Axiom iv.</h5>
+<div class="para logical">
 <div class="para">We claim that given any <span class="process-math">\(\boldx=(x_1,x_2,\dots, x_n)\text{,}\)</span> the vector <span class="process-math">\((-x_1,-x_2,\dots, -x_n)\)</span> satisfies the identity of <a href="s_Rn.html#eq_d_vec_inverse" class="xref" data-knowl="./knowl/xref/eq_d_vec_inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Item iv: Vector inverses">Axiom iv</a>, and thus that <span class="process-math">\(-\boldx=(-x_1,-x_2,\dots, -x_n)\text{.}\)</span> Indeed, we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_d_vec_inverse.html">
 \begin{align*}
@@ -56,8 +59,10 @@
 \end{align*}
 </div>
 <div class="para">as desired.</div>
-</div></article> <div class="para">As for the remaining axioms, we will verify Axioms ii and vi, and leave the rest as an  exercise. As you see below, the desired identities here all boil down to a familiar property of real number arithmetic: e.g., commutativity of real number addition, real number distributivity, etc. In what follows, <span class="process-math">\(\boldx=(x_1,x_2,\dots, x_n), \boldy=(y_1,y_2,\dots, y_n), \boldz=(z_1,z_2,\dots, z_n)\)</span> will denote arbitrary elements of <span class="process-math">\(\R^n\text{,}\)</span> and  <span class="process-math">\(c,d\)</span> will denote arbitrary elements of <span class="process-math">\(\R\text{.}\)</span>
-</div> <article class="case"><h5 class="heading">Axiom ii.</h5> <div class="para logical">
+</div></article><div class="para">As for the remaining axioms, we will verify Axioms ii and vi, and leave the rest as an  exercise. As you see below, the desired identities here all boil down to a familiar property of real number arithmetic: e.g., commutativity of real number addition, real number distributivity, etc. In what follows, <span class="process-math">\(\boldx=(x_1,x_2,\dots, x_n), \boldy=(y_1,y_2,\dots, y_n), \boldz=(z_1,z_2,\dots, z_n)\)</span> will denote arbitrary elements of <span class="process-math">\(\R^n\text{,}\)</span> and  <span class="process-math">\(c,d\)</span> will denote arbitrary elements of <span class="process-math">\(\R\text{.}\)</span>
+</div>
+<article class="case"><h5 class="heading">Axiom ii.</h5>
+<div class="para logical">
 <div class="para">We have</div>
 <div class="displaymath process-math">
 \begin{align*}
@@ -67,7 +72,8 @@
 \amp =\boldx+(\boldy+\boldz) \text{.}
 \end{align*}
 </div>
-</div></article> <article class="case"><h5 class="heading">Axiom vi.</h5> <div class="para logical">
+</div></article><article class="case"><h5 class="heading">Axiom vi.</h5>
+<div class="para logical">
 <div class="para">For all <span class="process-math">\(c,d\in \R\)</span> and <span class="process-math">\(\boldx\in \R^n\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{align*}

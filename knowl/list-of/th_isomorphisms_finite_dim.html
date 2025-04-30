@@ -12,9 +12,9 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.2.22</span><span class="period">.</span>
+<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">5.2.22</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span>
 </h4>
-<div class="para logical">
+<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
 <div class="para">Let <span class="process-math">\(V\)</span> be a vector space of finite dimension <span class="process-math">\(n\text{.}\)</span>
 </div>
 <ol class="decimal" id="th_isomorphisms_finite_dim-1-1-3">
@@ -22,7 +22,7 @@
 </div></li>
 <li><div class="para logical">
 <div class="para">Assume <span class="process-math">\(W\)</span> is a vector space satisfying <span class="process-math">\(\dim V=\dim W=n\text{,}\)</span> and let <span class="process-math">\(T\colon V\rightarrow W\)</span> be a linear transformation. The following are equivalent.</div>
-<ol class="lower-alpha" id="th_isomorphisms_finite_dim-1-1-3-2-1-4">
+<ol class="lower-alpha lower-alpha-level-1" id="th_isomorphisms_finite_dim-1-1-3-2-1-4">
 <li><div class="para">
 <span class="process-math">\(T\colon V\rightarrow W\)</span> is an isomorphism.</div></li>
 <li><div class="para">
@@ -32,7 +32,7 @@
 </ol>
 </div></li>
 </ol>
-</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal" id="th_isomorphisms_finite_dim-2-1-1">
+</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal" id="th_isomorphisms_finite_dim-2-1-1">
 <li>
 <div class="para">We prove both implications separately.</div>
 <div class="para">If <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> are isomorphic, then there is an isomorphism <span class="process-math">\(T\colon V\rightarrow W\text{.}\)</span> It follows from <a href="s_nullspace_image_isom.html#th_isomorphism_preserves" class="xref" data-knowl="./knowl/xref/th_isomorphism_preserves.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.20: Properties preserved by isomorphisms">Theorem 5.2.20</a> that <span class="process-math">\(\dim V=\dim W\text{.}\)</span>
@@ -69,8 +69,10 @@ T'\circ T(\boldv_i) \amp = T'(\boldw_i) \amp (\text{def. of } T)\\
 </li>
 <li>
 <div class="para">Assume that <span class="process-math">\(T\colon V\rightarrow W\)</span> and that <span class="process-math">\(\dim V=\dim W=n\text{.}\)</span> We will establish the cycle of implications (a)<span class="process-math">\(\implies\)</span>(b)<span class="process-math">\(\implies\)</span>(c)<span class="process-math">\(\implies\)</span>(a).</div>
-<article class="case"><h5 class="heading">(a)<span class="process-math">\(\implies \)</span>(b).</h5> <div class="para">By <a href="s_nullspace_image_isom.html#th_isom_null_im" class="xref" data-knowl="./knowl/xref/th_isom_null_im.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.18: Isomorphism equivalence">Theorem 5.2.18</a>, if <span class="process-math">\(T\)</span> is an isomorphism, then <span class="process-math">\(\NS T=\{\boldzero\}\text{.}\)</span>
-</div></article><article class="case"><h5 class="heading">(b)<span class="process-math">\(\implies\)</span>(c).</h5> <div class="para logical">
+<article class="case"><h5 class="heading">(a)<span class="process-math">\(\implies \)</span>(b).</h5>
+<div class="para">By <a href="s_nullspace_image_isom.html#th_isom_null_im" class="xref" data-knowl="./knowl/xref/th_isom_null_im.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.18: Isomorphism equivalence">Theorem 5.2.18</a>, if <span class="process-math">\(T\)</span> is an isomorphism, then <span class="process-math">\(\NS T=\{\boldzero\}\text{.}\)</span>
+</div></article><article class="case"><h5 class="heading">(b)<span class="process-math">\(\implies\)</span>(c).</h5>
+<div class="para logical">
 <div class="para">Using the rank-nullity theorem, if <span class="process-math">\(\NS T=\{\boldzero\}\text{,}\)</span> then</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_dimension_subspace.html">
 \begin{align*}
@@ -81,7 +83,8 @@ T'\circ T(\boldv_i) \amp = T'(\boldw_i) \amp (\text{def. of } T)\\
 </div>
 <div class="para">Since <span class="process-math">\(\im T\subseteq W\)</span> and <span class="process-math">\(\dim \im T=\dim W=n\text{,}\)</span> we conclude using <a href="s_dimension.html#cor_dimension_subspace" class="xref" data-knowl="./knowl/xref/cor_dimension_subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.4.17: Dimension of subspaces">Corollary 4.4.17</a> that <span class="process-math">\(\im T=W\text{.}\)</span>
 </div>
-</div></article><article class="case"><h5 class="heading">(c)<span class="process-math">\(\implies\)</span>(a).</h5> <div class="para logical">
+</div></article><article class="case"><h5 class="heading">(c)<span class="process-math">\(\implies\)</span>(a).</h5>
+<div class="para logical">
 <div class="para">Assume <span class="process-math">\(\im T=W\text{.}\)</span> Again, using the rank-nullity theorem, we see that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_isom_null_im.html">
 \begin{align*}
