@@ -461,7 +461,7 @@
 
 
 <p>
-  Before connecting change of basis matrices with matrix representations of linear transformations, it is worth gathering some the different techniques for computing change of basis matrices we have discussed so far.
+  Before connecting change of basis matrices with matrix representations of linear transformations, it is worth gathering some of the different techniques for computing change of basis matrices we have discussed so far.
 </p>
 <algorithm xml:id="proc_changebasis_tips">
 <title>Change of basis computational tips</title>
