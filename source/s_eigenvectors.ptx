@@ -581,9 +581,9 @@ We will show below that <m>p(t)=\det(tI-A)</m> is indeed a polynomial (<xref ref
      <md>
        <mrow>W_0 \amp = \NS(0I-A)</mrow>
        <mrow> \amp = \NS \begin{amatrix}[rrr]-2\amp 1\amp 1\\ 1\amp -2\amp 1\\ 1\amp 1\amp -2 \end{amatrix}  </mrow>
-       <mrow>  \amp = \Span\{(1,1,1) \amp <xref ref="proc_fund_spaces"/> </mrow>
+       <mrow>  \amp = \Span((1,1,1)) \amp <xref ref="proc_fund_spaces"/> </mrow>
      </md>.
-     Thus <m>B=\{(1,1,1)\}</m> is a basis for <m>W_0</m>. 
+     Thus <m>B=((1,1,1))</m> is a basis for <m>W_0</m>. 
      </p>
      </case>
      <case>
@@ -593,9 +593,9 @@ We will show below that <m>p(t)=\det(tI-A)</m> is indeed a polynomial (<xref ref
      <md>
        <mrow>W_3 \amp = \NS(3I-A)</mrow>
        <mrow> \amp= \NS \begin{amatrix}[rrr]1\amp 1\amp 1\\ 1\amp 1\amp 1\\ 1\amp 1\amp 1 \end{amatrix} </mrow>
-       <mrow>  \amp = \Span\{ (1,-1,0),(1,0,-1)\} \amp <xref ref="proc_fund_spaces"/></mrow>
+       <mrow>  \amp = \Span( (1,-1,0),(1,0,-1)) \amp <xref ref="proc_fund_spaces"/></mrow>
      </md>.
-     Thus <m>B'=\{(1,-1,0),(1,0,-1)\}</m> is a basis for <m>W_3</m>. 
+     Thus <m>B'=((1,-1,0),(1,0,-1))</m> is a basis for <m>W_3</m>. 
      </p>
      </case>
   </solution>
