@@ -689,7 +689,7 @@ We will show below that <m>p(t)=\det(tI-A)</m> is indeed a polynomial (<xref ref
           <p>
           We have 
           <md>
-            <mrow>W_1 \amp =\NS (2-A)</mrow>
+            <mrow>W_2 \amp =\NS (2-A)</mrow>
             <mrow> \amp = \NS \begin{amatrix}[rrrr]
               -1 \amp 1 \amp 1 \amp 1 \\
 5 \amp 0 \amp -2 \amp -3 \\
