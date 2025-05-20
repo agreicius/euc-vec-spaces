@@ -1092,7 +1092,7 @@ The last two computations, <m>\proj{(-2,-4,-2)}{\ell}=(-2,-4,-2)</m> and <m>\pro
        <figure xml:id="fig_leastsquares">
          <title>Least-squares visualization</title>
           <caption>Least-squares visualization</caption>
-           <image xml:id="im_leastsquares" width="100%" source="images/im_leastsquares" />
+           <image xml:id="im_leastsquares" width="100%" source="images/im_leastsquares.png" />
        </figure>
         Let <m>\boldy=(1,2,3)=(y_1,y_2,y_3)</m> be the given <m>y</m>-values of the points,
         and let <m>\hat{\boldy}=(y_1',y_2',y_3')</m> be the orthogonal projection of <m>\boldy</m> onto <m>\CS A</m>.

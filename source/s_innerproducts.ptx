@@ -9,7 +9,7 @@
   <subsection xml:id="ss_norm_distance">
     <title>Norm and distance</title>
     <p>
-      As mentioned above, once an inner product is established, we can define further notions like norm (or length), distance, and angle in terms of the given inner product.  When the inner product in question is the standard dot product on <m>\R^2</m> or <m>\R^3</m>, then these are precisely the familiar notions you may have met in multivariable calculus. Things get really interesting when we treat a more exotic inner product space. For example, consider <m>V=C([a,b])</m>: the integral inner product on <m>V</m> (<xref ref="th_integral_innerproduct"/>) gives rise to useful notions of the length of a function <m>f\in C([a,b])</m>, as well as the distance or angle between two functions <m>f,g\in C([a,b])</m>.
+      As mentioned above, once an inner product is established, we can define further notions like norm (or length), distance, and angle in terms of the given inner product.  When the inner product in question is the standard dot product on <m>\R^2</m> or <m>\R^3</m>, then these are precisely the familiar notions you may have met in multivariable calculus. Things get really interesting when we treat a more exotic inner product space. For example, consider <m>C([a,b])</m>. The <em>integral inner product</em> <me>\angvec{f,g}=\int_a^b f(x)g(x)\, dx</me> gives rise to useful notions of the length of a function <m>f\in C([a,b])</m>, as well as the distance or angle between two functions <m>f,g\in C([a,b])</m>.
     </p>
     <definition xml:id="d_norm">
       <title>Norm (or length) of a vector</title>
