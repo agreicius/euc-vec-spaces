@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -25,25 +32,29 @@ sagecell.makeSagecell({
 </head>
 <body class="ignore-math">
 <article class="project project-like"><h4 class="heading">
-<span class="type">Sage example</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">2.3.1</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Solving linear systems.</span>
+<span class="type">Sage example</span><span class="space"> </span><span class="codenumber">3</span><span class="period">.</span><span class="space"> </span><span class="title">Solving linear systems.</span>
 </h4>
-<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Sage has a number of means of solving systems of equations, both linear and nonlinear. In the cell below we compute the set of solutions to this section’s working example. Note that the three equations are entered as a list.</div>
+<div class="para">Sage has a number of means of solving systems of equations, both linear and nonlinear. In the cell below we compute the set of solutions to this section’s working example. Note that the three equations are entered as a list.<div class="autopermalink" data-description="Paragraph"><a href="#sage_solve_system-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <div id="sage_solve_system-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">l=var('x y z w u')
 solve([-2*z+7*u == 12,2*x+4*y-10*z+6*w+12*u==28, 2*x+4*y-5*z+6*w-5*u == -1], x,y,z,w,u)
 </script></div>
-<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Notice that the algorithm used here does not seem to follow the method we describe: the unknowns <span class="process-math">\(x\)</span> and <span class="process-math">\(w\)</span> are set as free parameters <code class="code-inline tex2jax_ignore">r1</code> and <code class="code-inline tex2jax_ignore">r2</code>, and the rest of the unknowns are expressed in terms of these.  The <code class="code-inline tex2jax_ignore">solve</code> routine in Sage allows for an additional option that selects a specific algorithm for solving the system. In the next cell, we specify the <code class="code-inline tex2jax_ignore">sympy</code> algorithm and get an answer more in line with our example.</div>
+<div class="para">Notice that the algorithm used here does not seem to follow the method we describe: the unknowns <span class="process-math">\(x\)</span> and <span class="process-math">\(w\)</span> are set as free parameters <code class="code-inline tex2jax_ignore">r1</code> and <code class="code-inline tex2jax_ignore">r2</code>, and the rest of the unknowns are expressed in terms of these.  The <code class="code-inline tex2jax_ignore">solve</code> routine in Sage allows for an additional option that selects a specific algorithm for solving the system. In the next cell, we specify the <code class="code-inline tex2jax_ignore">sympy</code> algorithm and get an answer more in line with our example.<div class="autopermalink" data-description="Paragraph"><a href="#sage_solve_system-4" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <div id="sage_solve_system-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">l=var('x y z w u')
 solve([-2*z+7*u == 12,2*x+4*y-10*z+6*w+12*u==28, 2*x+4*y-5*z+6*w-5*u == -1],
 x,y,z,w,u, algorithm='sympy')
 </script></div>
-<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Now all unknowns are expressed in terms of the second and fourth unknowns <span class="process-math">\(y\)</span> and <span class="process-math">\(w\text{,}\)</span> which are treated as free variables, just as in our computed example.</div>
-<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Lastly, we can take a matrix approach with Sage to solve the system. Below we create the augmented matrix associated to our starting system and then reduce the system to reduced row echelon form using the <code class="code-inline tex2jax_ignore">rref</code> method. From there it is a simple matter of assigning parameter names and using back-substitution, as described in <a href="s_solving.html#proc_solveSystem" class="xref" data-knowl="./knowl/xref/proc_solveSystem.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 2.3.6: Solving linear systems">Procedure 2.3.6</a>. We will elaborate this method further in <a href="s_subspace.html#sage_solve_matrix_eqn" class="xref" data-knowl="./knowl/xref/sage_solve_matrix_eqn.html" data-reveal-label="Reveal" data-close-label="Close" title="Sage example 4.1.1: Solving matrix equations">Sage example 4.1.1</a>
+<div class="para">Now all unknowns are expressed in terms of the second and fourth unknowns <span class="process-math">\(y\)</span> and <span class="process-math">\(w\text{,}\)</span> which are treated as free variables, just as in our computed example.<div class="autopermalink" data-description="Paragraph"><a href="#sage_solve_system-6" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">Lastly, we can take a matrix approach with Sage to solve the system. Below we create the augmented matrix associated to our starting system and then reduce the system to reduced row echelon form using the <code class="code-inline tex2jax_ignore">rref</code> method. From there it is a simple matter of assigning parameter names and using back-substitution, as described in <a href="s_solving.html#proc_solveSystem" class="xref" data-knowl="./knowl/xref/proc_solveSystem.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 2.3.6: Solving linear systems">Procedure 2.3.6</a>. We will elaborate this method further in <a href="s_subspace.html#sage_solve_matrix_eqn" class="xref" data-knowl="./knowl/xref/sage_solve_matrix_eqn.html" data-reveal-label="Reveal" data-close-label="Close" title="Sage example 10: Solving matrix equations">Sage example 10</a><div class="autopermalink" data-description="Paragraph"><a href="#sage_solve_system-7" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <div id="sage_solve_system-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=Matrix([[0,0,-2,0,7],[2,4,-10,6,12],[2,4,-5,6,-5]])
 b=vector([12,28,-1])
 B=A.augment(b)
 show(B)
 show(B.rref())
-</script></div></article><span class="incontext"><a class="internal" href="s_solving.html#sage_solve_system">in-context</a></span>
+</script></div>
+<div class="autopermalink" data-description="Sage example 3: Solving linear systems"><a href="#sage_solve_system" title="Copy permalink for Sage example 3: Solving linear systems">🔗</a></div></article><span class="incontext"><a class="internal" href="s_solving.html#sage_solve_system">in-context</a></span>
 </body>
 </html>

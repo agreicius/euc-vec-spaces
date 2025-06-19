@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,14 +19,19 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">6.1.30</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Invertibility theorem.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.1.30</span><span class="period">.</span><span class="space"> </span><span class="title">Invertibility theorem.</span>
 </h4>
-<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para logical">
 <div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix. The following statements are equivalent.</div>
 <ol class="decimal cols2" id="th_invertibility_with_eigenvalue-2-1-3">
-<li><div class="para">
-<span class="process-math">\(A\)</span> is invertible.</div></li>
-<li><div class="para logical">
+<li>
+<div class="para">
+<span class="process-math">\(A\)</span> is invertible.<div class="autopermalink" data-description="Paragraph"><a href="#inv6_statement_def-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#inv6_statement_def" title="Copy permalink for Item 1">🔗</a></div>
+</li>
+<li>
+<div class="para logical">
 <div class="para">The matrix equation</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -28,8 +40,12 @@ A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}
 </div>
 <div class="para">has a <em class="emphasis">unique solution</em> for any <span class="process-math">\(\boldb\in \R^n\text{.}\)</span>
 </div>
-</div></li>
-<li><div class="para logical">
+<div class="autopermalink" data-description="Paragraph"><a href="#inv6_statement_unique_sol-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#inv6_statement_unique_sol" title="Copy permalink for Item 2">🔗</a></div>
+</li>
+<li>
+<div class="para logical">
 <div class="para">The matrix equation</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -38,8 +54,12 @@ A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}
 </div>
 <div class="para">has a solution for any <span class="process-math">\(\boldb\in \R^n\text{.}\)</span>
 </div>
-</div></li>
-<li><div class="para logical">
+<div class="autopermalink" data-description="Paragraph"><a href="#inv6_statement_exists_sol-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#inv6_statement_exists_sol" title="Copy permalink for Item 3">🔗</a></div>
+</li>
+<li>
+<div class="para logical">
 <div class="para">The matrix equation</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -48,24 +68,82 @@ A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}
 </div>
 <div class="para">has a unique solution: namely, <span class="process-math">\(\boldx=\boldzero_{n\times 1}\text{.}\)</span>
 </div>
-</div></li>
-<li><div class="para">
-<span class="process-math">\(A\)</span> is row equivalent to <span class="process-math">\(I_n\text{,}\)</span> the <span class="process-math">\(n\times n\)</span> identity matrix.</div></li>
-<li><div class="para">
-<span class="process-math">\(A\)</span> is a product of elementary matrices.</div></li>
-<li><div class="para"><span class="process-math">\(\det A\ne 0\text{.}\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle \NS A=\{\boldzero\}\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle \nullity A=0\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle \rank A=n\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle \RS A=\R^n\)</span></div></li>
-<li><div class="para"><span class="process-math">\(\displaystyle \CS A=\R^n\)</span></div></li>
-<li><div class="para">Any of the following equivalent conditions about the set <span class="process-math">\(S\)</span> of columns of <span class="process-math">\(A\)</span> hold: <span class="process-math">\(S\)</span> is a basis of <span class="process-math">\(\R^n\text{;}\)</span> <span class="process-math">\(S\)</span> spans <span class="process-math">\(\R^n\text{;}\)</span> <span class="process-math">\(S\)</span> is linearly independent.</div></li>
-<li><div class="para">Any of the following equivalent conditions about the set <span class="process-math">\(S\)</span> of rows of <span class="process-math">\(A\)</span> hold: <span class="process-math">\(S\)</span> is a basis of <span class="process-math">\(\R^n\text{;}\)</span> <span class="process-math">\(S\)</span> spans <span class="process-math">\(\R^n\text{;}\)</span> <span class="process-math">\(S\)</span> is linearly independent.</div></li>
-<li><div class="para">The matrix transformationn <span class="process-math">\(T_A\colon \R^n\rightarrow \R^n\)</span> is an isomorphism.</div></li>
-<li><div class="para">
-<span class="process-math">\(0\)</span> is not an eigenvalue of <span class="process-math">\(A\text{.}\)</span>
-</div></li>
+<div class="autopermalink" data-description="Paragraph"><a href="#inv6_statement_trivial_sol-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#inv6_statement_trivial_sol" title="Copy permalink for Item 4">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(A\)</span> is row equivalent to <span class="process-math">\(I_n\text{,}\)</span> the <span class="process-math">\(n\times n\)</span> identity matrix.<div class="autopermalink" data-description="Paragraph"><a href="#inv6_statement_row_equiv-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5"><a href="#inv6_statement_row_equiv" title="Copy permalink for Item 5">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(A\)</span> is a product of elementary matrices.<div class="autopermalink" data-description="Paragraph"><a href="#inv6_statement_prod_elems-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 6"><a href="#inv6_statement_prod_elems" title="Copy permalink for Item 6">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(\det A\ne 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#inv6_statement_det-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7"><a href="#inv6_statement_det" title="Copy permalink for Item 7">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(\displaystyle \NS A=\{\boldzero\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#inv6_statement_nullspace-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 8"><a href="#inv6_statement_nullspace" title="Copy permalink for Item 8">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(\displaystyle \nullity A=0\)</span><div class="autopermalink" data-description="Paragraph"><a href="#inv6_statement_nullity-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 9"><a href="#inv6_statement_nullity" title="Copy permalink for Item 9">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(\displaystyle \rank A=n\)</span><div class="autopermalink" data-description="Paragraph"><a href="#inv6_statement_rank-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 10"><a href="#inv6_statement_rank" title="Copy permalink for Item 10">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(\displaystyle \RS A=\R^n\)</span><div class="autopermalink" data-description="Paragraph"><a href="#inv6_statement_rowspace-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 11"><a href="#inv6_statement_rowspace" title="Copy permalink for Item 11">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(\displaystyle \CS A=\R^n\)</span><div class="autopermalink" data-description="Paragraph"><a href="#inv6_statement_colspace-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 12"><a href="#inv6_statement_colspace" title="Copy permalink for Item 12">🔗</a></div>
+</li>
+<li>
+<div class="para">Any of the following equivalent conditions about the set <span class="process-math">\(S\)</span> of columns of <span class="process-math">\(A\)</span> hold: <span class="process-math">\(S\)</span> is a basis of <span class="process-math">\(\R^n\text{;}\)</span> <span class="process-math">\(S\)</span> spans <span class="process-math">\(\R^n\text{;}\)</span> <span class="process-math">\(S\)</span> is linearly independent.<div class="autopermalink" data-description="Paragraph"><a href="#inv6_statement_cols-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 13"><a href="#inv6_statement_cols" title="Copy permalink for Item 13">🔗</a></div>
+</li>
+<li>
+<div class="para">Any of the following equivalent conditions about the set <span class="process-math">\(S\)</span> of rows of <span class="process-math">\(A\)</span> hold: <span class="process-math">\(S\)</span> is a basis of <span class="process-math">\(\R^n\text{;}\)</span> <span class="process-math">\(S\)</span> spans <span class="process-math">\(\R^n\text{;}\)</span> <span class="process-math">\(S\)</span> is linearly independent.<div class="autopermalink" data-description="Paragraph"><a href="#inv6_statement_rows-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 14"><a href="#inv6_statement_rows" title="Copy permalink for Item 14">🔗</a></div>
+</li>
+<li>
+<div class="para">The matrix transformationn <span class="process-math">\(T_A\colon \R^n\rightarrow \R^n\)</span> is an isomorphism.<div class="autopermalink" data-description="Paragraph"><a href="#inv6_isom-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 15"><a href="#inv6_isom" title="Copy permalink for Item 15">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(0\)</span> is not an eigenvalue of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#inv7_eigenvalue-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 16"><a href="#inv7_eigenvalue" title="Copy permalink for Item 16">🔗</a></div>
+</li>
 </ol>
-</div></article><span class="incontext"><a class="internal" href="s_eigenvectors.html#th_invertibility_with_eigenvalue">in-context</a></span>
+<div class="autopermalink" data-description="Paragraph"><a href="#th_invertibility_with_eigenvalue-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 6.1.30: Invertibility theorem"><a href="#th_invertibility_with_eigenvalue" title="Copy permalink for Theorem 6.1.30: Invertibility theorem">🔗</a></div></article><span class="incontext"><a class="internal" href="s_eigenvectors.html#th_invertibility_with_eigenvalue">in-context</a></span>
 </body>
 </html>

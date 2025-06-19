@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,21 +19,35 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">7.2.16</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Orthogonal matrices.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.16</span><span class="period">.</span><span class="space"> </span><span class="title">Orthogonal matrices.</span>
 </h4>
-<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix. The following statements are equivalent.</div> <ol class="decimal" id="th_orthogonal_matrices-2-2">
-<li><div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">The matrix <span class="process-math">\(A\)</span> is orthogonal.</div></li>
-<li><div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">The columns of <span class="process-math">\(A\)</span> form an orthonormal basis of <span class="process-math">\(\R^n\)</span> with respect to the dot product.</div></li>
-<li><div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">The rows of <span class="process-math">\(A\)</span> form an orthonormal basis of <span class="process-math">\(\R^n\)</span> with respect to the dot product.</div></li>
-</ol></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix. The following statements are equivalent.<div class="autopermalink" data-description="Paragraph"><a href="#th_orthogonal_matrices-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <ol class="decimal" id="th_orthogonal_matrices-2-2">
+<li>
+<div class="para">The matrix <span class="process-math">\(A\)</span> is orthogonal.<div class="autopermalink" data-description="Paragraph"><a href="#th_orthogonal_matrices-2-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#th_orthogonal_matrices-2-2-1" title="Copy permalink for Item 1">🔗</a></div>
+</li>
+<li>
+<div class="para">The columns of <span class="process-math">\(A\)</span> form an orthonormal basis of <span class="process-math">\(\R^n\)</span> with respect to the dot product.<div class="autopermalink" data-description="Paragraph"><a href="#th_orthogonal_matrices-2-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#th_orthogonal_matrices-2-2-2" title="Copy permalink for Item 2">🔗</a></div>
+</li>
+<li>
+<div class="para">The rows of <span class="process-math">\(A\)</span> form an orthonormal basis of <span class="process-math">\(\R^n\)</span> with respect to the dot product.<div class="autopermalink" data-description="Paragraph"><a href="#th_orthogonal_matrices-2-2-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#th_orthogonal_matrices-2-2-3" title="Copy permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Theorem 7.2.16: Orthogonal matrices"><a href="#th_orthogonal_matrices" title="Copy permalink for Theorem 7.2.16: Orthogonal matrices">🔗</a></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
 <div class="para">Let <span class="process-math">\(\boldr_i\)</span> and <span class="process-math">\(\boldc_i\)</span> be the <span class="process-math">\(i\)</span>-th row and column of <span class="process-math">\(A\text{,}\)</span> respectively, for each <span class="process-math">\(1\leq i\leq n\text{.}\)</span> From <a href="s_matrix.html#th_matrix_mult_dot_product" class="xref" data-knowl="./knowl/xref/th_matrix_mult_dot_product.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.25: Dot product and matrix multiplication">Theorem 3.1.25</a> we see that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_matrix_mult_dot_product.html ">
 \begin{align}
-A^TA \amp=[\boldc_i\cdot \boldc_j]_{1\leq i,j\leq n} \tag{7.2.5}\\
-AA^T \amp=[\boldr_i\cdot \boldr_j]_{1\leq i,j\leq n} \text{.}\tag{7.2.6}
+A^TA \amp=[\boldc_i\cdot \boldc_j]_{1\leq i,j\leq n} \tag{7.7}\\
+AA^T \amp=[\boldr_i\cdot \boldr_j]_{1\leq i,j\leq n} \text{.}\tag{7.8}
 \end{align}
 </div>
-<div class="para">We use here that rows of <span class="process-math">\(A^T\)</span> are the columns of <span class="process-math">\(A\text{,}\)</span> and the columns of <span class="process-math">\(A^T\)</span> are the rows of <span class="process-math">\(A\text{.}\)</span> From <a href="s_orthogonality.html#th_orthogonal_matrices-3-1-7" class="xref" data-knowl="./knowl/xref/eq_orthogonal_matrixleft.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.2.5">(7.2.5)–(7.2.6)</a> it follows easily that</div>
+<div class="para">We use here that rows of <span class="process-math">\(A^T\)</span> are the columns of <span class="process-math">\(A\text{,}\)</span> and the columns of <span class="process-math">\(A^T\)</span> are the rows of <span class="process-math">\(A\text{.}\)</span> From <a href="s_orthogonality.html#th_orthogonal_matrices-3-1-7" class="xref" data-knowl="./knowl/xref/eq_orthogonal_matrixleft.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.7">(7.7)–(7.8)</a> it follows easily that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_matrix_mult_dot_product.html ">
 \begin{align*}
 A^{-1}=A^T \amp \iff A^TA=I \\
@@ -45,6 +66,8 @@ A^{-1}=A^T \amp \iff AA^T=I \\
 \end{align*}
 </div>
 <div class="para">This proves <span class="process-math">\((1)\iff (2)\)</span> and <span class="process-math">\((1)\iff (3)\text{.}\)</span> The result follows.</div>
-</div></article></details><span class="incontext"><a class="internal" href="s_orthogonality.html#th_orthogonal_matrices">in-context</a></span>
+<div class="autopermalink" data-description="Paragraph"><a href="#th_orthogonal_matrices-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 7.2.16.1"><a href="#th_orthogonal_matrices-3" title="Copy permalink for Proof 7.2.16.1">🔗</a></div></article></details><span class="incontext"><a class="internal" href="s_orthogonality.html#th_orthogonal_matrices">in-context</a></span>
 </body>
 </html>

@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,16 +19,18 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">7.3.16</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Orthogonal projection onto a plane.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.3.16</span><span class="period">.</span><span class="space"> </span><span class="title">Orthogonal projection onto a plane.</span>
 </h4>
-<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para logical">
 <div class="para">Let <span class="process-math">\(\boldn=(a,b,c)\)</span> be a nonzero vector of <span class="process-math">\(\R^3\text{,}\)</span> and let <span class="process-math">\(W\)</span> be the plane passing through the origin with normal vector <span class="process-math">\(\boldn\text{.}\)</span> The orthogonal projection map <span class="process-math">\(\operatorname{proj}_W\colon \R^3\rightarrow \R^3\)</span> is a linear transformation. In fact, we have <span class="process-math">\(\operatorname{proj}_W=T_A\)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation}
-A=\frac{1}{a^2+b^2+c^2}\begin{amatrix}[rrr] b^2+c^2\amp -ab \amp -ac \\ -ab \amp a^2+c^2 \amp -bc \\ -ac \amp -bc \amp a^2+b^2 \end{amatrix}\text{.}\tag{7.3.7}
+A=\frac{1}{a^2+b^2+c^2}\begin{amatrix}[rrr] b^2+c^2\amp -ab \amp -ac \\ -ab \amp a^2+c^2 \amp -bc \\ -ac \amp -bc \amp a^2+b^2 \end{amatrix}\text{.}\tag{7.15}
 \end{equation}
 </div>
-</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="autopermalink" data-description="Paragraph"><a href="#th_ortho_proj_plane_linear-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 7.3.16: Orthogonal projection onto a plane"><a href="#th_ortho_proj_plane_linear" title="Copy permalink for Theorem 7.3.16: Orthogonal projection onto a plane">🔗</a></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
 <div class="para">Let <span class="process-math">\(\ell\)</span> be the line passing through the origin with direction vector <span class="process-math">\(\boldn\text{.}\)</span> Given any <span class="process-math">\(\boldx=(x,y,z)\in \R^3\text{,}\)</span> let <span class="process-math">\(P\)</span> be the point with coordinates <span class="process-math">\((x,y,z)\text{.}\)</span> The orthogonal projection <span class="process-math">\(R=\proj{P}{\ell}\)</span> of <span class="process-math">\(P\)</span> onto <span class="process-math">\(\ell\)</span> satisfies</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_vec_formula.html ./knowl/xref/eq_vec_diff.html ./knowl/xref/eq_vec_formula.html ./knowl/xref/th_proj_line_linear.html">
 \begin{equation*}
@@ -31,21 +40,21 @@ A=\frac{1}{a^2+b^2+c^2}\begin{amatrix}[rrr] b^2+c^2\amp -ab \amp -ac \\ -ab \amp
 <div class="para">Let <span class="process-math">\(Q\)</span> be the point of <span class="process-math">\(\R^3\)</span> with position vector <span class="process-math">\(\overrightarrow{OQ}\)</span> satisfying</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_vec_formula.html ./knowl/xref/eq_vec_diff.html ./knowl/xref/eq_vec_formula.html ./knowl/xref/th_proj_line_linear.html">
 \begin{align}
-\overrightarrow{OQ}\amp = \overrightarrow{RP} \tag{7.3.8}\\
-\amp=\overrightarrow{OP}-\overrightarrow{OR}\tag{7.3.9}\\
-\amp=(x,y,z)-\proj{P}{\ell} \tag{7.3.10}
+\overrightarrow{OQ}\amp = \overrightarrow{RP} \tag{7.16}\\
+\amp=\overrightarrow{OP}-\overrightarrow{OR}\tag{7.17}\\
+\amp=(x,y,z)-\proj{P}{\ell} \tag{7.18}
 \end{align}
 </div>
 <div class="para">so that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_vec_formula.html ./knowl/xref/eq_vec_diff.html ./knowl/xref/eq_vec_formula.html ./knowl/xref/th_proj_line_linear.html">
 \begin{equation}
-\overrightarrow{OP}=\overrightarrow{OQ}+\overrightarrow{OR}\text{.}\tag{7.3.11}
+\overrightarrow{OP}=\overrightarrow{OQ}+\overrightarrow{OR}\text{.}\tag{7.19}
 \end{equation}
 </div>
 <div class="para">Since</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_vec_formula.html ./knowl/xref/eq_vec_diff.html ./knowl/xref/eq_vec_formula.html ./knowl/xref/th_proj_line_linear.html">
 \begin{align*}
-\overrightarrow{OQ}\cdot \boldn\amp = \overrightarrow{RP}\cdot \boldn \amp \knowl{./knowl/xref/eq_vec_formula.html}{\text{(7.3.10)}}\\
+\overrightarrow{OQ}\cdot \boldn\amp = \overrightarrow{RP}\cdot \boldn \amp \knowl{./knowl/xref/eq_vec_formula.html}{\text{(7.18)}}\\
 \amp = 0 \amp (\text{def. of } R=\proj{P}{\ell})\text{,}
 \end{align*}
 </div>
@@ -53,10 +62,10 @@ A=\frac{1}{a^2+b^2+c^2}\begin{amatrix}[rrr] b^2+c^2\amp -ab \amp -ac \\ -ab \amp
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_vec_formula.html ./knowl/xref/eq_vec_diff.html ./knowl/xref/eq_vec_formula.html ./knowl/xref/th_proj_line_linear.html">
 \begin{align*}
 \overrightarrow{QP} \amp =\overrightarrow{OP}-\overrightarrow{OQ}\\
-\amp = \overrightarrow{OR} \amp \knowl{./knowl/xref/eq_vec_diff.html}{\text{(7.3.9)}}\text{.}
+\amp = \overrightarrow{OR} \amp \knowl{./knowl/xref/eq_vec_diff.html}{\text{(7.17)}}\text{.}
 \end{align*}
 </div>
-<div class="para">Since <span class="process-math">\(R\)</span> is the orthogonal projection of <span class="process-math">\(P\)</span> onto <span class="process-math">\(\ell\text{,}\)</span> we have <span class="process-math">\(R\in \ell\)</span> by definition, which means <span class="process-math">\(\overrightarrow{OR}\)</span> is a scalar multiple of <span class="process-math">\(\boldn\text{.}\)</span> Since <span class="process-math">\(\boldn\)</span> is a normal vector to <span class="process-math">\(W\text{,}\)</span> we conclude that <span class="process-math">\(\overrightarrow{QP}=\overrightarrow{OR}\)</span> is orthogonal to <span class="process-math">\(W\text{.}\)</span> We have shown that <span class="process-math">\(Q\)</span>  lies in <span class="process-math">\(W\)</span> and that <span class="process-math">\(\overrightarrow{QP}\)</span> is orthogonal to <span class="process-math">\(W\text{.}\)</span> We conclude that <span class="process-math">\(Q\)</span> is the orthogonal projection of <span class="process-math">\(P\)</span> onto <span class="process-math">\(W\text{.}\)</span> Thus, using <a href="s_orthogonal_projection.html#th_ortho_proj_plane_linear-3-1-13" class="xref" data-knowl="./knowl/xref/eq_vec_formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.3.10">(7.3.10)</a> we have</div>
+<div class="para">Since <span class="process-math">\(R\)</span> is the orthogonal projection of <span class="process-math">\(P\)</span> onto <span class="process-math">\(\ell\text{,}\)</span> we have <span class="process-math">\(R\in \ell\)</span> by definition, which means <span class="process-math">\(\overrightarrow{OR}\)</span> is a scalar multiple of <span class="process-math">\(\boldn\text{.}\)</span> Since <span class="process-math">\(\boldn\)</span> is a normal vector to <span class="process-math">\(W\text{,}\)</span> we conclude that <span class="process-math">\(\overrightarrow{QP}=\overrightarrow{OR}\)</span> is orthogonal to <span class="process-math">\(W\text{.}\)</span> We have shown that <span class="process-math">\(Q\)</span>  lies in <span class="process-math">\(W\)</span> and that <span class="process-math">\(\overrightarrow{QP}\)</span> is orthogonal to <span class="process-math">\(W\text{.}\)</span> We conclude that <span class="process-math">\(Q\)</span> is the orthogonal projection of <span class="process-math">\(P\)</span> onto <span class="process-math">\(W\text{.}\)</span> Thus, using <a href="s_orthogonal_projection.html#th_ortho_proj_plane_linear-3-1-13" class="xref" data-knowl="./knowl/xref/eq_vec_formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.18">(7.18)</a> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_vec_formula.html ./knowl/xref/eq_vec_diff.html ./knowl/xref/eq_vec_formula.html ./knowl/xref/th_proj_line_linear.html">
 \begin{equation*}
 \proj{\boldx}{W}=\boldx-\proj{\boldx}{\ell}\text{.}
@@ -84,6 +93,8 @@ A=\frac{1}{a^2+b^2+c^2}\begin{amatrix}[rrr] b^2+c^2\amp -ab \amp -ac \\ -ab \amp
 \end{equation*}
 </div>
 <div class="para">as desired.</div>
-</div></article></details><span class="incontext"><a class="internal" href="s_orthogonal_projection.html#th_ortho_proj_plane_linear">in-context</a></span>
+<div class="autopermalink" data-description="Paragraph"><a href="#th_ortho_proj_plane_linear-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 7.3.16.1"><a href="#th_ortho_proj_plane_linear-3" title="Copy permalink for Proof 7.3.16.1">🔗</a></div></article></details><span class="incontext"><a class="internal" href="s_orthogonal_projection.html#th_ortho_proj_plane_linear">in-context</a></span>
 </body>
 </html>

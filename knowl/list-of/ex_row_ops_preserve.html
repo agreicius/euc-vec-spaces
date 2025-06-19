@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,14 +19,26 @@
 </head>
 <body class="ignore-math">
 <article class="exercise exercise-like"><h5 class="heading">
-<span class="type">Exercise</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">7<span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span></span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Row operations preserve solutions.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">Row operations preserve solutions.</span>
 </h5>
-<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para logical">
 <div class="para">We made the claim that each of our three row operations</div>
 <ol class="lower-alpha lower-alpha-level-1" id="ex_row_ops_preserve-2-1-1">
-<li><div class="para">scalar multiplication (<span class="process-math">\(e_i\mapsto c\cdot e_i\)</span> for <span class="process-math">\(c\ne 0\)</span>),</div></li>
-<li><div class="para">swap (<span class="process-math">\(e_i\leftrightarrow e_j\)</span>),</div></li>
-<li><div class="para">addition (<span class="process-math">\(e_i\mapsto e_i+c\cdot e_j\)</span> for some <span class="process-math">\(c\)</span>)</div></li>
+<li>
+<div class="para">scalar multiplication (<span class="process-math">\(e_i\mapsto c\cdot e_i\)</span> for <span class="process-math">\(c\ne 0\)</span>),<div class="autopermalink" data-description="Paragraph"><a href="#ex_row_ops_preserve-2-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.1.3.7.a"><a href="#ex_row_ops_preserve-2-1-1-1" title="Copy permalink for Item 2.1.3.7.a">🔗</a></div>
+</li>
+<li>
+<div class="para">swap (<span class="process-math">\(e_i\leftrightarrow e_j\)</span>),<div class="autopermalink" data-description="Paragraph"><a href="#ex_row_ops_preserve-2-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.1.3.7.b"><a href="#ex_row_ops_preserve-2-1-1-2" title="Copy permalink for Item 2.1.3.7.b">🔗</a></div>
+</li>
+<li>
+<div class="para">addition (<span class="process-math">\(e_i\mapsto e_i+c\cdot e_j\)</span> for some <span class="process-math">\(c\)</span>)<div class="autopermalink" data-description="Paragraph"><a href="#ex_row_ops_preserve-2-1-1-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.1.3.7.c"><a href="#ex_row_ops_preserve-2-1-1-3" title="Copy permalink for Item 2.1.3.7.c">🔗</a></div>
+</li>
 </ol>
 <div class="para">do not change the set of solutions of a linear system. To prove this claim, let <span class="process-math">\(L\)</span> be a general linear system</div>
 <div class="displaymath process-math">
@@ -29,14 +48,17 @@
 </div>
 <div class="para">Now consider each type of row operation separately, write down the new system <span class="process-math">\(L'\)</span> you get by applying this row operation, and prove that an <span class="process-math">\(n\)</span>-tuple <span class="process-math">\(s=(s_1,s_2,\dots ,s_n)\)</span> is a solution to the original system <span class="process-math">\(L\)</span> if and only if it is a solution to the new system <span class="process-math">\(L'\text{.}\)</span>
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex_row_ops_preserve-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details xmlns:xlink="http://www.w3.org/1999/xlink" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para">Let <span class="process-math">\(L\)</span> be the original system with equations <span class="process-math">\(e_1,e_2,\dots ,e_m\text{.}\)</span> For each specified row operation, we will call the resulting new system <span class="process-math">\(L'\)</span> and its equations <span class="process-math">\(e'_1,e'_2,\dots , e'_m\text{.}\)</span>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para">Let <span class="process-math">\(L\)</span> be the original system with equations <span class="process-math">\(e_1,e_2,\dots ,e_m\text{.}\)</span> For each specified row operation, we will call the resulting new system <span class="process-math">\(L'\)</span> and its equations <span class="process-math">\(e'_1,e'_2,\dots , e'_m\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_row_ops_preserve-3-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <article class="case"><h6 class="heading">Row swap.</h6>
-<div class="para">In this case systems <span class="process-math">\(L\)</span> and <span class="process-math">\(L'\)</span> have exactly the same equations, just written in a different order. Thus the <span class="process-math">\(n\)</span>-tuple <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(L\)</span> if and only if it satisfies each of the equations <span class="process-math">\(e_i\text{,}\)</span> if and only if it satisfies each of the equations <span class="process-math">\(e'_i\text{,}\)</span> since these are the same equations! It follows that <span class="process-math">\(s\)</span> is a solution of <span class="process-math">\(L\)</span> if and only if it is a solution to <span class="process-math">\(L'\text{.}\)</span>
-</div></article><article class="case"><h6 class="heading">Scalar multiplication.</h6>
-<div class="para">In this case <span class="process-math">\(e_j=e'_j\)</span> for all <span class="process-math">\(j\ne i\text{,}\)</span> and <span class="process-math">\(e'_i=c\cdot e_i\)</span> for some <span class="process-math">\(c\ne 0\text{.}\)</span> Since only the <span class="process-math">\(i\)</span>-th equation has changed, it suffices to show that <span class="process-math">\(s\)</span> is a solution to <span class="process-math">\(e_i\)</span> if and only if <span class="process-math">\(s\)</span> is a solution to <span class="process-math">\(c\cdot e_i\text{.}\)</span> Let’s prove each direction of this if and only if separately.</div>
+<div class="para">In this case systems <span class="process-math">\(L\)</span> and <span class="process-math">\(L'\)</span> have exactly the same equations, just written in a different order. Thus the <span class="process-math">\(n\)</span>-tuple <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(L\)</span> if and only if it satisfies each of the equations <span class="process-math">\(e_i\text{,}\)</span> if and only if it satisfies each of the equations <span class="process-math">\(e'_i\text{,}\)</span> since these are the same equations! It follows that <span class="process-math">\(s\)</span> is a solution of <span class="process-math">\(L\)</span> if and only if it is a solution to <span class="process-math">\(L'\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_row_ops_preserve-3-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Case: Row swap"><a href="#ex_row_ops_preserve-3-2" title="Copy permalink for Case: Row swap">🔗</a></div></article><article class="case"><h6 class="heading">Scalar multiplication.</h6>
+<div class="para">In this case <span class="process-math">\(e_j=e'_j\)</span> for all <span class="process-math">\(j\ne i\text{,}\)</span> and <span class="process-math">\(e'_i=c\cdot e_i\)</span> for some <span class="process-math">\(c\ne 0\text{.}\)</span> Since only the <span class="process-math">\(i\)</span>-th equation has changed, it suffices to show that <span class="process-math">\(s\)</span> is a solution to <span class="process-math">\(e_i\)</span> if and only if <span class="process-math">\(s\)</span> is a solution to <span class="process-math">\(c\cdot e_i\text{.}\)</span> Let’s prove each direction of this if and only if separately.<div class="autopermalink" data-description="Paragraph"><a href="#ex_row_ops_preserve-3-3-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para logical">
 <div class="para">If <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(e_1\text{,}\)</span> then <span class="process-math">\(a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i\text{.}\)</span> Multiplying both sides by <span class="process-math">\(c\)</span> we see that</div>
 <div class="displaymath process-math">
@@ -46,6 +68,7 @@ ca_{i1}s_1+ca_{i2}s_2+\cdots +ca_{in}s_n=cb_i,
 </div>
 <div class="para">and hence that <span class="process-math">\(s\)</span> is also a solution of <span class="process-math">\(c\,e_i=e_i'\text{.}\)</span>
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex_row_ops_preserve-3-3-3" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical">
 <div class="para">For the other direction, if <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(c e_i=e_i'\text{,}\)</span> then</div>
@@ -62,7 +85,9 @@ a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i
 </div>
 <div class="para">and hence that <span class="process-math">\(s\)</span> is a solution to <span class="process-math">\(e_i\text{.}\)</span>
 </div>
-</div></article><article class="case"><h6 class="heading">Row addition.</h6>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex_row_ops_preserve-3-3-4" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Case: Scalar multiplication"><a href="#ex_row_ops_preserve-3-3" title="Copy permalink for Case: Scalar multiplication">🔗</a></div></article><article class="case"><h6 class="heading">Row addition.</h6>
 <div class="para logical">
 <div class="para">The only equation of <span class="process-math">\(L'\)</span> that differs from <span class="process-math">\(L\)</span> is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/solveeqn.html">
@@ -86,7 +111,7 @@ a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n)\a
 s_n)\)</span> satisfies <span class="process-math">\(L'\text{.}\)</span> Since <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(e_j'=e_j\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/solveeqn.html">
 \begin{equation}
-a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n =b_j\tag{2.1.8}
+a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n =b_j\tag{2.8}
 \end{equation}
 </div>
 <div class="para">Since <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(e_i'\text{,}\)</span> we have</div>
@@ -95,7 +120,7 @@ a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n =b_j\tag{2.1.8}
 a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n)=b_i+cb_j
 \end{equation*}
 </div>
-<div class="para">Substituting <a href="s_systems.html#solveeqn" class="xref" data-knowl="./knowl/xref/solveeqn.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.8">(2.1.8)</a> into the equation above we get</div>
+<div class="para">Substituting <a href="s_systems.html#solveeqn" class="xref" data-knowl="./knowl/xref/solveeqn.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.8">(2.8)</a> into the equation above we get</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/solveeqn.html">
 \begin{equation*}
 a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(b_j)=b_i+cb_j\text{,}
@@ -109,7 +134,10 @@ a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i\text{.}
 </div>
 <div class="para">This shows that <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(e_i\text{.}\)</span> It follows that <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(L\text{.}\)</span>
 </div>
-</div></article>
-</div></details></div></article><span class="incontext"><a class="internal" href="s_systems.html#ex_row_ops_preserve">in-context</a></span>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex_row_ops_preserve-3-4-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Case: Row addition"><a href="#ex_row_ops_preserve-3-4" title="Copy permalink for Case: Row addition">🔗</a></div></article><div class="autopermalink" data-description="Solution 2.1.3.7.1"><a href="#ex_row_ops_preserve-3" title="Copy permalink for Solution 2.1.3.7.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Exercise 2.1.3.7: Row operations preserve solutions"><a href="#ex_row_ops_preserve" title="Copy permalink for Exercise 2.1.3.7: Row operations preserve solutions">🔗</a></div></article><span class="incontext"><a class="internal" href="s_systems.html#ex_row_ops_preserve">in-context</a></span>
 </body>
 </html>

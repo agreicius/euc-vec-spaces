@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -25,27 +32,33 @@ sagecell.makeSagecell({
 </head>
 <body class="ignore-math">
 <article class="project project-like"><h4 class="heading">
-<span class="type">Sage example</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">3.1.1</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Matrix entries, rows, and columns.</span>
+<span class="type">Sage example</span><span class="space"> </span><span class="codenumber">4</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix entries, rows, and columns.</span>
 </h4>
-<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Sage syntax for accessing specific entries of a matrix is similar in spirit to our matrix entry notation. However, as with all things Python, we always count from 0. Thus if <code class="code-inline tex2jax_ignore">A</code> is assigned to a matrix in Sage, <code class="code-inline tex2jax_ignore">A[i,j]</code> is its <span class="process-math">\((i+1),(j+1)\)</span>-th entry.</div>
+<div class="para">Sage syntax for accessing specific entries of a matrix is similar in spirit to our matrix entry notation. However, as with all things Python, we always count from 0. Thus if <code class="code-inline tex2jax_ignore">A</code> is assigned to a matrix in Sage, <code class="code-inline tex2jax_ignore">A[i,j]</code> is its <span class="process-math">\((i+1),(j+1)\)</span>-th entry.<div class="autopermalink" data-description="Paragraph"><a href="#sage_matrix_entries_rows_cols-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <div id="sage_matrix_entries_rows_cols-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=Matrix([[1,2,3,4],[5,6,7,8],[9,10,11,12]])
 show(A[0,1])
 show(A[1,2])
 show(A[2,3])
 </script></div>
-<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Prescribed subsets of matrix entries are obtained via <em class="emphasis">slicing</em> methods: for example, <code class="code-inline tex2jax_ignore">A[a:b, c:d]</code> returns the collection of entries <span class="process-math">\([A]_{ij}\)</span> with <span class="process-math">\(a+1\leq i\lt b+1\)</span> and <span class="process-math">\(c+1\leq j\lt d\text{,}\)</span> arranged as a matrix.</div>
+<div class="para">Prescribed subsets of matrix entries are obtained via <em class="emphasis">slicing</em> methods: for example, <code class="code-inline tex2jax_ignore">A[a:b, c:d]</code> returns the collection of entries <span class="process-math">\([A]_{ij}\)</span> with <span class="process-math">\(a+1\leq i\lt b+1\)</span> and <span class="process-math">\(c+1\leq j\lt d\text{,}\)</span> arranged as a matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sage_matrix_entries_rows_cols-4" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <div id="sage_matrix_entries_rows_cols-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A[0:2,1:5]
 </script></div>
-<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Leaving the left or right side of <code class="code-inline tex2jax_ignore">:</code> blank in this notation removes the corresponding restriction bound (left or right) from the index in question. Thus <code class="code-inline tex2jax_ignore">A[2, :]</code> returns the third row of <span class="process-math">\(A\text{,}\)</span> and <code class="code-inline tex2jax_ignore">A[1:, 3]</code> returns the portion of the fourth column of <span class="process-math">\(A\)</span> beginning with its second entry.</div>
+<div class="para">Leaving the left or right side of <code class="code-inline tex2jax_ignore">:</code> blank in this notation removes the corresponding restriction bound (left or right) from the index in question. Thus <code class="code-inline tex2jax_ignore">A[2, :]</code> returns the third row of <span class="process-math">\(A\text{,}\)</span> and <code class="code-inline tex2jax_ignore">A[1:, 3]</code> returns the portion of the fourth column of <span class="process-math">\(A\)</span> beginning with its second entry.<div class="autopermalink" data-description="Paragraph"><a href="#sage_matrix_entries_rows_cols-6" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <div id="sage_matrix_entries_rows_cols-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">show(A[2, :])
 show(A[1:, 3])
 </script></div>
-<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Alternatively, we can obtain a list of all rows or columns of <span class="process-math">\(A\)</span> using the the methods <code class="code-inline tex2jax_ignore">rows()</code> and <code class="code-inline tex2jax_ignore">columns()</code>.</div>
+<div class="para">Alternatively, we can obtain a list of all rows or columns of <span class="process-math">\(A\)</span> using the the methods <code class="code-inline tex2jax_ignore">rows()</code> and <code class="code-inline tex2jax_ignore">columns()</code>.<div class="autopermalink" data-description="Paragraph"><a href="#sage_matrix_entries_rows_cols-8" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <div id="sage_matrix_entries_rows_cols-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">show(A.columns())
 show(A.rows())
 </script></div>
-<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">Use the empty cell below to try out some of these commands.</div>
+<div class="para">Use the empty cell below to try out some of these commands.<div class="autopermalink" data-description="Paragraph"><a href="#sage_matrix_entries_rows_cols-10" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <div id="sage_matrix_entries_rows_cols-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
-</script></div></article><span class="incontext"><a class="internal" href="s_matrix.html#sage_matrix_entries_rows_cols">in-context</a></span>
+</script></div>
+<div class="autopermalink" data-description="Sage example 4: Matrix entries, rows, and columns"><a href="#sage_matrix_entries_rows_cols" title="Copy permalink for Sage example 4: Matrix entries, rows, and columns">🔗</a></div></article><span class="incontext"><a class="internal" href="s_matrix.html#sage_matrix_entries_rows_cols">in-context</a></span>
 </body>
 </html>

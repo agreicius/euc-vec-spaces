@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,19 +19,31 @@
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h4 class="heading">
-<span class="type">Example</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">5.2.11</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Rank-nullity application.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.11</span><span class="period">.</span><span class="space"> </span><span class="title">Rank-nullity application.</span>
 </h4>
-<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para logical">
 <div class="para">Let <span class="process-math">\(F\colon M_{nn}\rightarrow M_{nn}\)</span> be defined as <span class="process-math">\(F(A)=A^T-A\)</span> as in <a href="s_nullspace_image_isom.html#eg_nullspace_image_transposition" class="xref" data-knowl="./knowl/xref/eg_nullspace_image_transposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.2.4">Example 5.2.4</a>. Prove that <span class="process-math">\(\im F\)</span> is the subspace <span class="process-math">\(W\)</span> of all skew-symmetric matrices following the steps below.</div>
 <ul class="disc" id="eg_rank_nullity_skew_sym-2-1-6">
-<li><div class="para">Compute <span class="process-math">\(\NS F\text{.}\)</span>
-</div></li>
-<li><div class="para">Show that <span class="process-math">\(\im F\subseteq W \text{.}\)</span>
-</div></li>
-<li><div class="para">Use the rank-nullity theorem and a dimension argument.</div></li>
-</ul>
+<li>
+<div class="para">Compute <span class="process-math">\(\NS F\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eg_rank_nullity_skew_sym-2-1-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details xmlns:xlink="http://www.w3.org/1999/xlink" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="autopermalink" data-description="Item"><a href="#eg_rank_nullity_skew_sym-2-1-6-1" title="Copy permalink for Item">🔗</a></div>
+</li>
+<li>
+<div class="para">Show that <span class="process-math">\(\im F\subseteq W \text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eg_rank_nullity_skew_sym-2-1-6-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#eg_rank_nullity_skew_sym-2-1-6-2" title="Copy permalink for Item">🔗</a></div>
+</li>
+<li>
+<div class="para">Use the rank-nullity theorem and a dimension argument.<div class="autopermalink" data-description="Paragraph"><a href="#eg_rank_nullity_skew_sym-2-1-6-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#eg_rank_nullity_skew_sym-2-1-6-3" title="Copy permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_rank_nullity_skew_sym-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical">
 <div class="para">We compute</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_nullspace_image_transposition.html ./knowl/xref/cor_dimension_subspace.html">
 \begin{align*}
@@ -48,6 +67,10 @@
 \end{align*}
 </div>
 <div class="para">As we showed in <a href="s_nullspace_image_isom.html#eg_nullspace_image_transposition" class="xref" data-knowl="./knowl/xref/eg_nullspace_image_transposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.2.4">Example 5.2.4</a>, any matrix <span class="process-math">\(B=F(A)\in \im F\)</span> satisfies <span class="process-math">\(B^T=-B\text{:}\)</span> i.e., <span class="process-math">\(\im F\subseteq W\text{,}\)</span> where <span class="process-math">\(W\)</span> is the subspace of all skew-symmetric <span class="process-math">\(n\times n\)</span> matrices. Similarly to the space of symmetric matrices, we can show that <span class="process-math">\(\dim W=\frac{n(n-1)}{2}\text{:}\)</span> intuitively, a skew-symmetric matrix is determined by the <span class="process-math">\(n(n-1)/2\)</span> entries strictly above the diagonal (the diagonal entries must be equal to zero). Since <span class="process-math">\(\im F\subseteq W\)</span> and <span class="process-math">\(\dim \im F=\dim W=\frac{n(n-1)}{2}\text{,}\)</span> we conclude that <span class="process-math">\(\im F=W\text{,}\)</span> by <a href="s_dimension.html#cor_dimension_subspace" class="xref" data-knowl="./knowl/xref/cor_dimension_subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.4.17: Dimension of subspaces">Corollary 4.4.17</a>. This proves that <span class="process-math">\(\im F\)</span> is the space of all skew-symmetric matrices.</div>
-</div></div></details></div></article><span class="incontext"><a class="internal" href="s_nullspace_image_isom.html#eg_rank_nullity_skew_sym">in-context</a></span>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_rank_nullity_skew_sym-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 5.2.11.1"><a href="#eg_rank_nullity_skew_sym-3" title="Copy permalink for Solution 5.2.11.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 5.2.11: Rank-nullity application"><a href="#eg_rank_nullity_skew_sym" title="Copy permalink for Example 5.2.11: Rank-nullity application">🔗</a></div></article><span class="incontext"><a class="internal" href="s_nullspace_image_isom.html#eg_rank_nullity_skew_sym">in-context</a></span>
 </body>
 </html>

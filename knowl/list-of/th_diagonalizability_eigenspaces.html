@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,16 +19,18 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">6.2.12</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Diagonalizability: dimension of eigenspaces.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.2.12</span><span class="period">.</span><span class="space"> </span><span class="title">Diagonalizability: dimension of eigenspaces.</span>
 </h4>
-<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
+<div class="para logical">
 <div class="para">Let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation, where <span class="process-math">\(\dim V=n\text{.}\)</span> Let <span class="process-math">\(\lambda_1, \lambda_2, \dots, \lambda_r\)</span> be the distinct eigenvalues of <span class="process-math">\(T\text{,}\)</span> and for each <span class="process-math">\(1\leq i\leq r\text{,}\)</span> let <span class="process-math">\(W_{\lambda_i}\)</span> be the <span class="process-math">\(\lambda_i\)</span>-eigenspace. We have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 T \text{ is diagonalizable } \iff \sum_{i=1}^r\dim W_{\lambda_i}=n\text{.}
 \end{equation*}
 </div>
-</div></article><details xmlns:xlink="http://www.w3.org/1999/xlink" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_diagonalizability_eigenbasis.html ./knowl/xref/th_diagonalizability_eigenbasis.html ./knowl/xref/cor_independent_eigenspaces.html ./knowl/xref/cor_independent_eigenspaces.html">
+<div class="autopermalink" data-description="Paragraph"><a href="#th_diagonalizability_eigenspaces-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 6.2.12: Diagonalizability: dimension of eigenspaces"><a href="#th_diagonalizability_eigenspaces" title="Copy permalink for Theorem 6.2.12: Diagonalizability: dimension of eigenspaces">🔗</a></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_diagonalizability_eigenbasis.html ./knowl/xref/th_diagonalizability_eigenbasis.html ./knowl/xref/cor_independent_eigenspaces.html ./knowl/xref/cor_independent_eigenspaces.html">
 \begin{equation*}
 T \text{ is diagonalizable} \iff T \text{ has an eigenbasis } B\text{,}
 \end{equation*}
@@ -80,7 +89,9 @@ n=n_1+n_2+\cdots+n_r\text{.}
 \end{equation*}
 </div>
 <div class="para">showing that <span class="process-math">\(\boldv\in \Span S_{\lambda_i}\text{,}\)</span> as desired.</div>
-</div></article></details><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="title">Proof: <span class="process-math">\(\sum_{i=1}^r\dim W_{\lambda_i}=n\implies T\)</span> is diagonalizable.</span></h5></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="autopermalink" data-description="Paragraph"><a href="#th_diagonalizability_eigenspaces-3-3-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 6.2.12.1.1: Proof: T diagonalizable \implies \sum_{i=1}^r\dim W_{\lambda_i}=n"><a href="#th_diagonalizability_eigenspaces-3-3" title="Copy permalink for Proof 6.2.12.1.1: Proof: T diagonalizable \implies \sum_{i=1}^r\dim W_{\lambda_i}=n">🔗</a></div></article></details><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="title">Proof: <span class="process-math">\(\sum_{i=1}^r\dim W_{\lambda_i}=n\implies T\)</span> is diagonalizable.</span></h5></summary><article class="hiddenproof knowl__content"><div class="para logical">
 <div class="para">Let <span class="process-math">\(n_i=\dim W_{\lambda_i}\)</span>  for all <span class="process-math">\(1\leq i\leq r\)</span> . We assume that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_independent_eigenspaces.html">
 \begin{equation*}
@@ -133,6 +144,8 @@ S_{\lambda_i}=\{\boldv_{\lambda_i, 1}, \boldv_{\lambda_i,2},\dots, \boldv_{\lamb
 \end{equation*}
 </div>
 <div class="para">is linearly independent for each <span class="process-math">\(i\text{,}\)</span> we must have <span class="process-math">\(c_{i,j}=0\)</span> for all <span class="process-math">\(1\leq i\leq r\)</span> and <span class="process-math">\(1\leq j\leq n_i\text{.}\)</span> This proves that <span class="process-math">\(B\)</span> is linearly independent, hence a basis.</div>
-</div></article></details></article></details><span class="incontext"><a class="internal" href="s_diagonalization.html#th_diagonalizability_eigenspaces">in-context</a></span>
+<div class="autopermalink" data-description="Paragraph"><a href="#th_diagonalizability_eigenspaces-3-4-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 6.2.12.1.2: Proof: \sum_{i=1}^r\dim W_{\lambda_i}=n\implies T is diagonalizable"><a href="#th_diagonalizability_eigenspaces-3-4" title="Copy permalink for Proof 6.2.12.1.2: Proof: \sum_{i=1}^r\dim W_{\lambda_i}=n\implies T is diagonalizable">🔗</a></div></article></details><div class="autopermalink" data-description="Proof 6.2.12.1"><a href="#th_diagonalizability_eigenspaces-3" title="Copy permalink for Proof 6.2.12.1">🔗</a></div></article></details><span class="incontext"><a class="internal" href="s_diagonalization.html#th_diagonalizability_eigenspaces">in-context</a></span>
 </body>
 </html>

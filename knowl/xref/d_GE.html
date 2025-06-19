@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,19 +19,28 @@
 </head>
 <body class="ignore-math">
 <article class="algorithm theorem-like"><h4 class="heading">
-<span class="type">Procedure</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="codenumber">2.2.11</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="period">.</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="space"> </span><span class="title">Gaussian elimination.</span>
+<span class="type">Procedure</span><span class="space"> </span><span class="codenumber">2.2.11</span><span class="period">.</span><span class="space"> </span><span class="title">Gaussian elimination.</span>
 </h4>
-<div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">
-<dfn class="terminology">Gaussian elimination</dfn> is the algorithm described below. It takes as an input a matrix <span class="process-math">\(A\)</span> and returns as an output a row equivalent matrix <span class="process-math">\(B\)</span> in row echelon form.</div> <dl xmlns:xlink="http://www.w3.org/1999/xlink" class="description-list">
-<dt>Step 1</dt>
-<dd><div class="para">Find the leftmost nonzero column and perform a row swap to move the row with this nonzero entry to the top of the matrix.</div></dd>
-<dt>Step 2</dt>
-<dd><div class="para">Scale the new top row to produce a leading one in the row. Call this new row <span class="process-math">\(r\text{.}\)</span>
+<div class="para">
+<dfn class="terminology">Gaussian elimination</dfn> is the algorithm described below. It takes as an input a matrix <span class="process-math">\(A\)</span> and returns as an output a row equivalent matrix <span class="process-math">\(B\)</span> in row echelon form.<div class="autopermalink" data-description="Paragraph"><a href="#d_GE-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <dl class="description-list">
+<dt>Step 1<div class="autopermalink" data-description="Item: Step 1"><a href="#d_GE-3-2-1" title="Copy permalink for Item: Step 1">🔗</a></div>
+</dt>
+<dd><div class="para">Find the leftmost nonzero column and perform a row swap to move the row with this nonzero entry to the top of the matrix.<div class="autopermalink" data-description="Paragraph"><a href="#d_GE-3-2-1-2" title="Copy permalink for Paragraph">🔗</a></div>
 </div></dd>
-<dt>Step 3</dt>
-<dd><div class="para">For each row <span class="process-math">\(r_i\)</span> below <span class="process-math">\(r\)</span> perform a row operation of the form <span class="process-math">\(r_i+c\,r\)</span> to replace all entries below the leading one of <span class="process-math">\(r\)</span> with zeros.</div></dd>
-<dt>Step 4</dt>
-<dd><div class="para">Begin again with Step 1 applied to the matrix consisting of all rows below <span class="process-math">\(r\text{.}\)</span> Continue until the matrix is in row echelon form.</div></dd>
-</dl></article><span class="incontext"><a class="internal" href="s_ge.html#d_GE">in-context</a></span>
+<dt>Step 2<div class="autopermalink" data-description="Item: Step 2"><a href="#d_GE-3-2-2" title="Copy permalink for Item: Step 2">🔗</a></div>
+</dt>
+<dd><div class="para">Scale the new top row to produce a leading one in the row. Call this new row <span class="process-math">\(r\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#d_GE-3-2-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div></dd>
+<dt>Step 3<div class="autopermalink" data-description="Item: Step 3"><a href="#d_GE-3-2-3" title="Copy permalink for Item: Step 3">🔗</a></div>
+</dt>
+<dd><div class="para">For each row <span class="process-math">\(r_i\)</span> below <span class="process-math">\(r\)</span> perform a row operation of the form <span class="process-math">\(r_i+c\,r\)</span> to replace all entries below the leading one of <span class="process-math">\(r\)</span> with zeros.<div class="autopermalink" data-description="Paragraph"><a href="#d_GE-3-2-3-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div></dd>
+<dt>Step 4<div class="autopermalink" data-description="Item: Step 4"><a href="#d_GE-3-2-4" title="Copy permalink for Item: Step 4">🔗</a></div>
+</dt>
+<dd><div class="para">Begin again with Step 1 applied to the matrix consisting of all rows below <span class="process-math">\(r\text{.}\)</span> Continue until the matrix is in row echelon form.<div class="autopermalink" data-description="Paragraph"><a href="#d_GE-3-2-4-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div></dd>
+</dl>
+<div class="autopermalink" data-description="Procedure 2.2.11: Gaussian elimination"><a href="#d_GE" title="Copy permalink for Procedure 2.2.11: Gaussian elimination">🔗</a></div></article><span class="incontext"><a class="internal" href="s_ge.html#d_GE">in-context</a></span>
 </body>
 </html>
