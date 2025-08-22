@@ -119,16 +119,16 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.8.1';
+eBookConfig.runestone_version = '7.9.8';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.242116c5bc6b6581.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/pretext-webwork/2.17/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/prefix-runtime.b215b0da62d655bd.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.28cc3c4821792be5.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8141ae22fd347e48.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/pretext-webwork/2.20/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body id="euclideanvectorspaces" class="pretext book ignore-math">
@@ -730,20 +730,20 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_basis"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">4.3</span><span class="space"> </span><span class="title">Bases</span>
 </h2>
-<section class="introduction" id="s_basis-2"><div class="para" id="s_basis-2-1">Now that we have the notions of span and linear independence in place, we simply combine them to define a <em class="emphasis">basis</em> of a vector space. In the spirit of <a href="s_span_independence.html" class="internal" title="Section 4.2: Span and linear independence">Section 4.2</a>, a basis of a vector space <span class="process-math">\(V\)</span> should be understood as a <em class="emphasis">minimal</em> spanning set.<div class="autopermalink" data-description="Paragraph"><a href="#s_basis-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<section class="introduction" id="s_basis-2"><div class="para" id="s_basis-2-1">Now that we have the notions of span and linear independence in place, we simply combine them to define a <em class="emphasis">basis</em> of a vector space. In the spirit of <a href="s_span_independence.html" class="internal" title="Section 4.2: Span and linear independence">Section 4.2</a>, a basis of a vector space <span class="process-math">\(V\)</span> should be understood as a <em class="emphasis">minimal</em> spanning set.<div class="autopermalink" data-description="Paragraph"><a href="#s_basis-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="s_basis-2-2">
 <div class="para">This section includes a number of theoretical results. There are two in particular that are worth highlighting, especially in regard to computational techniques for abstract vector spaces:</div>
 <ol class="decimal" id="s_basis-2-2-1">
 <li id="s_basis-2-2-1-1">
-<div class="para" id="s_basis-2-2-1-1-1">If <span class="process-math">\(B\)</span> is a basis of <span class="process-math">\(V\)</span> containing exactly <span class="process-math">\(n\)</span> elements, then any other basis <span class="process-math">\(B'\)</span> also contains exactly <span class="process-math">\(n\)</span> elements. (<a href="s_dimension.html#th_basis_dimension" class="xref" data-knowl="./knowl/xref/th_basis_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.11: Basis bounds">Theorem 4.4.11</a>)<div class="autopermalink" data-description="Paragraph"><a href="#s_basis-2-2-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="s_basis-2-2-1-1-1">If <span class="process-math">\(B\)</span> is a basis of <span class="process-math">\(V\)</span> containing exactly <span class="process-math">\(n\)</span> elements, then any other basis <span class="process-math">\(B'\)</span> also contains exactly <span class="process-math">\(n\)</span> elements. (<a href="s_dimension.html#th_basis_dimension" class="xref" data-knowl="./knowl/xref/th_basis_dimension.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.11: Basis bounds">Theorem 4.4.11</a>)<div class="autopermalink" data-description="Paragraph"><a href="#s_basis-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1"><a href="#s_basis-2-2-1-1" title="Copy permalink for Item 1">🔗</a></div>
+<div class="autopermalink" data-description="Item 1"><a href="#s_basis-2-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
 <li id="s_basis-2-2-1-2">
-<div class="para" id="s_basis-2-2-1-2-1">If <span class="process-math">\(B\)</span> is a basis for <span class="process-math">\(V\text{,}\)</span> then every element of <span class="process-math">\(V\)</span> can be written as a linear combination of elements of <span class="process-math">\(B\)</span> in a <em class="emphasis">unique way</em>. (<a href="s_basis.html#th_basis_equivalence" class="xref" data-knowl="./knowl/xref/th_basis_equivalence.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.4: Basis equivalence">Theorem 4.3.4</a>)<div class="autopermalink" data-description="Paragraph"><a href="#s_basis-2-2-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="s_basis-2-2-1-2-1">If <span class="process-math">\(B\)</span> is a basis for <span class="process-math">\(V\text{,}\)</span> then every element of <span class="process-math">\(V\)</span> can be written as a linear combination of elements of <span class="process-math">\(B\)</span> in a <em class="emphasis">unique way</em>. (<a href="s_basis.html#th_basis_equivalence" class="xref" data-knowl="./knowl/xref/th_basis_equivalence.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.4: Basis equivalence">Theorem 4.3.4</a>)<div class="autopermalink" data-description="Paragraph"><a href="#s_basis-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 2"><a href="#s_basis-2-2-1-2" title="Copy permalink for Item 2">🔗</a></div>
+<div class="autopermalink" data-description="Item 2"><a href="#s_basis-2-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
 </ol>
 <div class="para">The first result allows us to define the <em class="emphasis">dimension</em> of a vector space as the number of elements in any given basis. The second result allows us to take any <span class="process-math">\(n\)</span>-dimensional vector space <span class="process-math">\(V\)</span> with chosen basis <span class="process-math">\(B=\{\boldv_1, \boldv_2, \dots, \boldv_n\}\)</span> and effectively identify vectors <span class="process-math">\(\boldv\in V\)</span> with the sequence <span class="process-math">\((c_1,c_2,\dots, c_n)\in \R^n\text{,}\)</span> where</div>
@@ -753,7 +753,7 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 \end{equation*}
 </div>
 <div class="para">This observation has the following consequence: given any <span class="process-math">\(n\)</span>-dimensional vector space <span class="process-math">\(V\text{,}\)</span> no matter how exotic, once we choose a basis <span class="process-math">\(B\)</span> of <span class="process-math">\(V\text{,}\)</span> we can reduce any and all linear algebraic questions or computations about <span class="process-math">\(V\)</span> to a corresponding question in <span class="process-math">\(\R^n\text{.}\)</span> We will elaborate this idea further in <a href="s_coordinatevectors.html" class="internal" title="Section 5.3: Coordinate vectors">Section 5.3</a>.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#s_basis-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#s_basis-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></section><section class="subsection" id="ss_bases"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="space"> </span><span class="title">Bases of vector spaces</span>
 </h3>
@@ -765,44 +765,44 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <ol class="lower-roman ol-marker-1" id="d_basis-3-1-4">
 <li id="d_basis-3-1-4-1">
 <div class="para" id="d_basis-3-1-4-1-1">
-<span class="process-math">\(B\)</span> spans <span class="process-math">\(V\text{,}\)</span> and<div class="autopermalink" data-description="Paragraph"><a href="#d_basis-3-1-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(B\)</span> spans <span class="process-math">\(V\text{,}\)</span> and<div class="autopermalink" data-description="Paragraph"><a href="#d_basis-3-1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item i"><a href="#d_basis-3-1-4-1" title="Copy permalink for Item i">🔗</a></div>
+<div class="autopermalink" data-description="Item i"><a href="#d_basis-3-1-4-1" title="Copy heading and permalink for Item i" aria-label="Copy heading and permalink for Item i">🔗</a></div>
 </li>
 <li id="d_basis-3-1-4-2">
 <div class="para" id="d_basis-3-1-4-2-1">
-<span class="process-math">\(B\)</span> is linearly independent.<div class="autopermalink" data-description="Paragraph"><a href="#d_basis-3-1-4-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(B\)</span> is linearly independent.<div class="autopermalink" data-description="Paragraph"><a href="#d_basis-3-1-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item ii"><a href="#d_basis-3-1-4-2" title="Copy permalink for Item ii">🔗</a></div>
+<div class="autopermalink" data-description="Item ii"><a href="#d_basis-3-1-4-2" title="Copy heading and permalink for Item ii" aria-label="Copy heading and permalink for Item ii">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#d_basis-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#d_basis-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 4.3.1: Basis"><a href="#d_basis" title="Copy permalink for Definition 4.3.1: Basis">🔗</a></div></article><article class="remark remark-like" id="rm_standard_bases"><h4 class="heading">
+<div class="autopermalink" data-description="Definition 4.3.1: Basis"><a href="#d_basis" title="Copy heading and permalink for Definition 4.3.1: Basis" aria-label="Copy heading and permalink for Definition 4.3.1: Basis">🔗</a></div></article><article class="remark remark-like" id="rm_standard_bases"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Some standard bases.</span>
 </h4>
 <div class="para logical" id="rm_standard_bases-2">
 <div class="para">The examples of standard spanning sets in <a href="s_span_independence.html#rm_spanning_sets" class="xref" data-knowl="./knowl/xref/rm_spanning_sets.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 4.2.8: Some standard spanning sets">Remark 4.2.8</a> are easily seen to be linearly independent, and hence are in fact bases. We list them again here, using the same notation, and refer to these as <em class="emphasis">standard bases</em> for the given spaces.</div>
 <ul class="disc" id="rm_standard_bases-2-3">
 <li id="rm_standard_bases-2-3-1">
-<span class="heading"><span class="title">Zero space.</span></span><div class="para" id="rm_standard_bases-2-3-1-2">Let <span class="process-math">\(V=\{\boldzero\}\text{.}\)</span> The empty <span class="process-math">\(B=\emptyset=\{ \}\)</span> is a basis for <span class="process-math">\(V\text{.}\)</span> Note that <span class="process-math">\(B=\emptyset\)</span> spans <span class="process-math">\(V\)</span> by definition (<a href="s_span_independence.html#d_span" class="xref" data-knowl="./knowl/xref/d_span.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 4.2.1: Span">Definition 4.2.1</a>), and it satisfies the defining implication of linear independence (<a href="s_span_independence.html#d_linear_independence" class="xref" data-knowl="./knowl/xref/d_linear_independence.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 4.2.10: Linear independence">Definition 4.2.10</a>) trivially.<div class="autopermalink" data-description="Paragraph"><a href="#rm_standard_bases-2-3-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="heading"><span class="title">Zero space.</span></span><div class="para" id="rm_standard_bases-2-3-1-2">Let <span class="process-math">\(V=\{\boldzero\}\text{.}\)</span> The empty <span class="process-math">\(B=\emptyset=\{ \}\)</span> is a basis for <span class="process-math">\(V\text{.}\)</span> Note that <span class="process-math">\(B=\emptyset\)</span> spans <span class="process-math">\(V\)</span> by definition (<a href="s_span_independence.html#d_span" class="xref" data-knowl="./knowl/xref/d_span.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 4.2.1: Span">Definition 4.2.1</a>), and it satisfies the defining implication of linear independence (<a href="s_span_independence.html#d_linear_independence" class="xref" data-knowl="./knowl/xref/d_linear_independence.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 4.2.10: Linear independence">Definition 4.2.10</a>) trivially.<div class="autopermalink" data-description="Paragraph"><a href="#rm_standard_bases-2-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item: Zero space"><a href="#rm_standard_bases-2-3-1" title="Copy permalink for Item: Zero space">🔗</a></div>
+<div class="autopermalink" data-description="Item: Zero space"><a href="#rm_standard_bases-2-3-1" title="Copy heading and permalink for Item: Zero space" aria-label="Copy heading and permalink for Item: Zero space">🔗</a></div>
 </li>
 <li id="rm_standard_bases-2-3-2">
-<span class="heading"><span class="title">Tuples.</span></span><div class="para" id="rm_standard_bases-2-3-2-2">Let <span class="process-math">\(V=\R^n\text{.}\)</span> The set <span class="process-math">\(B=\{\bolde_1, \bolde_2,\dots, \bolde_n\}\)</span> is the standard basis of <span class="process-math">\(\R^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#rm_standard_bases-2-3-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="heading"><span class="title">Tuples.</span></span><div class="para" id="rm_standard_bases-2-3-2-2">Let <span class="process-math">\(V=\R^n\text{.}\)</span> The set <span class="process-math">\(B=\{\bolde_1, \bolde_2,\dots, \bolde_n\}\)</span> is the standard basis of <span class="process-math">\(\R^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#rm_standard_bases-2-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item: Tuples"><a href="#rm_standard_bases-2-3-2" title="Copy permalink for Item: Tuples">🔗</a></div>
+<div class="autopermalink" data-description="Item: Tuples"><a href="#rm_standard_bases-2-3-2" title="Copy heading and permalink for Item: Tuples" aria-label="Copy heading and permalink for Item: Tuples">🔗</a></div>
 </li>
 <li id="rm_standard_bases-2-3-3">
-<span class="heading"><span class="title">Matrices.</span></span><div class="para" id="rm_standard_bases-2-3-3-2">Let <span class="process-math">\(V=M_{mn}\text{.}\)</span> The set <span class="process-math">\(B=\{E_{ij}\colon 1\leq i\leq m, 1\leq j\leq n\}\)</span> is the standard basis of <span class="process-math">\(M_{mn}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#rm_standard_bases-2-3-3-2" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="heading"><span class="title">Matrices.</span></span><div class="para" id="rm_standard_bases-2-3-3-2">Let <span class="process-math">\(V=M_{mn}\text{.}\)</span> The set <span class="process-math">\(B=\{E_{ij}\colon 1\leq i\leq m, 1\leq j\leq n\}\)</span> is the standard basis of <span class="process-math">\(M_{mn}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#rm_standard_bases-2-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item: Matrices"><a href="#rm_standard_bases-2-3-3" title="Copy permalink for Item: Matrices">🔗</a></div>
+<div class="autopermalink" data-description="Item: Matrices"><a href="#rm_standard_bases-2-3-3" title="Copy heading and permalink for Item: Matrices" aria-label="Copy heading and permalink for Item: Matrices">🔗</a></div>
 </li>
 </ul>
-<div class="autopermalink" data-description="Paragraph"><a href="#rm_standard_bases-2" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#rm_standard_bases-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 4.3.2: Some standard bases"><a href="#rm_standard_bases" title="Copy permalink for Remark 4.3.2: Some standard bases">🔗</a></div></article><div class="para" id="ss_bases-4">Just as with spanning sets, bases are not in general unique: in fact, for any nonzero vector space there are infinitely many different bases.<div class="autopermalink" data-description="Paragraph"><a href="#ss_bases-4" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Remark 4.3.2: Some standard bases"><a href="#rm_standard_bases" title="Copy heading and permalink for Remark 4.3.2: Some standard bases" aria-label="Copy heading and permalink for Remark 4.3.2: Some standard bases">🔗</a></div></article><div class="para" id="ss_bases-4">Just as with spanning sets, bases are not in general unique: in fact, for any nonzero vector space there are infinitely many different bases.<div class="autopermalink" data-description="Paragraph"><a href="#ss_bases-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="example example-like" id="ss_bases-5"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Some nonstandard bases.</span>
@@ -813,9 +813,9 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 <ol class="decimal" id="ss_bases-5-2-1-5">
 <li id="ss_bases-5-2-1-5-1">
 <div class="para" id="ss_bases-5-2-1-5-1-1">
-<span class="process-math">\(V=\R^2\text{,}\)</span> <span class="process-math">\(B=\{(1,1), (1,-1)\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ss_bases-5-2-1-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(V=\R^2\text{,}\)</span> <span class="process-math">\(B=\{(1,1), (1,-1)\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ss_bases-5-2-1-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1"><a href="#ss_bases-5-2-1-5-1" title="Copy permalink for Item 1">🔗</a></div>
+<div class="autopermalink" data-description="Item 1"><a href="#ss_bases-5-2-1-5-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
 <li id="ss_bases-5-2-1-5-2">
 <div class="para logical" id="ss_bases-5-2-1-5-2-1">
@@ -825,15 +825,15 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 B=\left\{ A_1=\begin{bmatrix}0\amp 1\\ 1\amp 1 \end{bmatrix} , A_2=\begin{bmatrix}1\amp 0\\ 1\amp 1 \end{bmatrix} , A_3=\begin{bmatrix}1\amp 1\\ 0\amp 1 \end{bmatrix} , A_4=\begin{bmatrix}1\amp 1\\ 1\amp 0 \end{bmatrix} \right\}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ss_bases-5-2-1-5-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ss_bases-5-2-1-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 2"><a href="#ss_bases-5-2-1-5-2" title="Copy permalink for Item 2">🔗</a></div>
+<div class="autopermalink" data-description="Item 2"><a href="#ss_bases-5-2-1-5-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#ss_bases-5-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ss_bases-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="ss_bases-5-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="ss_bases-5-3-1">Each verification amounts to showing, using the techniques from <a href="s_span_independence.html" class="internal" title="Section 4.2: Span and linear independence">Section 4.2</a>, that the given <span class="process-math">\(B\)</span> spans the given <span class="process-math">\(V\)</span> and is linearly independent.<div class="autopermalink" data-description="Paragraph"><a href="#ss_bases-5-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="ss_bases-5-3-1">Each verification amounts to showing, using the techniques from <a href="s_span_independence.html" class="internal" title="Section 4.2: Span and linear independence">Section 4.2</a>, that the given <span class="process-math">\(B\)</span> spans the given <span class="process-math">\(V\)</span> and is linearly independent.<div class="autopermalink" data-description="Paragraph"><a href="#ss_bases-5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <ol class="decimal" id="ss_bases-5-3-2">
 <li id="ss_bases-5-3-2-1">
@@ -845,9 +845,9 @@ a(1,1)+b(1,-1)=(c,d)
 \end{equation*}
 </div>
 <div class="para">for some <span class="process-math">\(a,b\in \R\text{.}\)</span> Indeed we may take <span class="process-math">\(a=\frac{1}{2}(c+d)\)</span> and <span class="process-math">\(b=\frac{1}{2}(c-d)\text{.}\)</span> (These formulas were obtained by solving the corresponding system of two equations in the unknowns <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{.}\)</span>)</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ss_bases-5-3-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ss_bases-5-3-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1"><a href="#ss_bases-5-3-2-1" title="Copy permalink for Item 1">🔗</a></div>
+<div class="autopermalink" data-description="Item 1"><a href="#ss_bases-5-3-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
 <li id="ss_bases-5-3-2-2">
 <div class="para logical" id="ss_bases-5-3-2-2-1">
@@ -898,7 +898,7 @@ a\amp b\\ c\amp d
 \end{equation*}
 </div>
 <div class="para">Since there is no leading one in the last column, we see that the corresponding system is consistent, and thus <span class="process-math">\(A\in \Span B\text{,}\)</span> as desired.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ss_bases-5-3-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ss_bases-5-3-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ss_bases-5-3-2-2-2">
 <div class="para">Turning to linear independence of <span class="process-math">\(B\text{,}\)</span> we now endeavor to show that the only solution to</div>
@@ -938,25 +938,25 @@ c_1A_1+c_2A_2+c_3A_3+c_4A_4=\boldzero\implies c_1=c_2=c_3=c_4=0\text{,}
 \end{equation*}
 </div>
 <div class="para">as desired.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#ss_bases-5-3-2-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ss_bases-5-3-2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 2"><a href="#ss_bases-5-3-2-2" title="Copy permalink for Item 2">🔗</a></div>
+<div class="autopermalink" data-description="Item 2"><a href="#ss_bases-5-3-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Solution 4.3.3.1"><a href="#ss_bases-5-3" title="Copy permalink for Solution 4.3.3.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.3.3.1"><a href="#ss_bases-5-3" title="Copy heading and permalink for Solution 4.3.3.1" aria-label="Copy heading and permalink for Solution 4.3.3.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.3.3: Some nonstandard bases"><a href="#ss_bases-5" title="Copy permalink for Example 4.3.3: Some nonstandard bases">🔗</a></div></article><div class="para" id="ss_bases-6">Proceeding directly from the definition, to show a set <span class="process-math">\(B\)</span> is a basis of <span class="process-math">\(V\)</span> we have to do two steps: (i) show <span class="process-math">\(\Span B= V\text{;}\)</span> (ii) show that <span class="process-math">\(B\)</span> is linearly independent. The following theorem gives rise to a convenient one-step technique for proving a finite set <span class="process-math">\(B\)</span> is a basis: show that every element of <span class="process-math">\(V\)</span> can be written as a linear combination of elements of <span class="process-math">\(B\)</span> in a <em class="emphasis">unique way</em>.<div class="autopermalink" data-description="Paragraph"><a href="#ss_bases-6" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Example 4.3.3: Some nonstandard bases"><a href="#ss_bases-5" title="Copy heading and permalink for Example 4.3.3: Some nonstandard bases" aria-label="Copy heading and permalink for Example 4.3.3: Some nonstandard bases">🔗</a></div></article><div class="para" id="ss_bases-6">Proceeding directly from the definition, to show a set <span class="process-math">\(B\)</span> is a basis of <span class="process-math">\(V\)</span> we have to do two steps: (i) show <span class="process-math">\(\Span B= V\text{;}\)</span> (ii) show that <span class="process-math">\(B\)</span> is linearly independent. The following theorem gives rise to a convenient one-step technique for proving a finite set <span class="process-math">\(B\)</span> is a basis: show that every element of <span class="process-math">\(V\)</span> can be written as a linear combination of elements of <span class="process-math">\(B\)</span> in a <em class="emphasis">unique way</em>.<div class="autopermalink" data-description="Paragraph"><a href="#ss_bases-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="th_basis_equivalence"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Basis equivalence.</span>
 </h4>
-<div class="para" id="th_basis_equivalence-2-1">Let <span class="process-math">\(V\)</span> be a vector space, and let <span class="process-math">\(B=\{\boldv_1,\boldv_2,\dots, \boldv_n\}\subseteq V\text{,}\)</span> where the <span class="process-math">\(\boldv_i\)</span> are distinct. The following statements are equivalent.<div class="autopermalink" data-description="Paragraph"><a href="#th_basis_equivalence-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="th_basis_equivalence-2-1">Let <span class="process-math">\(V\)</span> be a vector space, and let <span class="process-math">\(B=\{\boldv_1,\boldv_2,\dots, \boldv_n\}\subseteq V\text{,}\)</span> where the <span class="process-math">\(\boldv_i\)</span> are distinct. The following statements are equivalent.<div class="autopermalink" data-description="Paragraph"><a href="#th_basis_equivalence-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <ol class="decimal" id="th_basis_equivalence-2-2">
 <li id="th_basis_equivalence-2-2-1">
 <div class="para" id="th_basis_equivalence-2-2-1-1">
-<span class="process-math">\(B\)</span> is a basis of <span class="process-math">\(V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#th_basis_equivalence-2-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(B\)</span> is a basis of <span class="process-math">\(V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#th_basis_equivalence-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1"><a href="#th_basis_equivalence-2-2-1" title="Copy permalink for Item 1">🔗</a></div>
+<div class="autopermalink" data-description="Item 1"><a href="#th_basis_equivalence-2-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
 <li id="th_basis_equivalence-2-2-2">
 <div class="para logical" id="th_basis_equivalence-2-2-2-1">
@@ -966,12 +966,12 @@ c_1A_1+c_2A_2+c_3A_3+c_4A_4=\boldzero\implies c_1=c_2=c_3=c_4=0\text{,}
 \boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#th_basis_equivalence-2-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#th_basis_equivalence-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 2"><a href="#th_basis_equivalence-2-2-2" title="Copy permalink for Item 2">🔗</a></div>
+<div class="autopermalink" data-description="Item 2"><a href="#th_basis_equivalence-2-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Theorem 4.3.4: Basis equivalence"><a href="#th_basis_equivalence" title="Copy permalink for Theorem 4.3.4: Basis equivalence">🔗</a></div></article><details id="th_basis_equivalence-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><article class="case" id="th_basis_equivalence-3-1"><h5 class="heading">Implication: <span class="process-math">\((1)\implies (2)\)</span>.</h5>
+<div class="autopermalink" data-description="Theorem 4.3.4: Basis equivalence"><a href="#th_basis_equivalence" title="Copy heading and permalink for Theorem 4.3.4: Basis equivalence" aria-label="Copy heading and permalink for Theorem 4.3.4: Basis equivalence">🔗</a></div></article><details id="th_basis_equivalence-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><article class="case" id="th_basis_equivalence-3-1"><h5 class="heading">Implication: <span class="process-math">\((1)\implies (2)\)</span>.</h5>
 <div class="para logical" id="th_basis_equivalence-3-1-2">
 <div class="para">Suppose <span class="process-math">\(B\)</span> is a basis. By definition, <span class="process-math">\(B\)</span> spans <span class="process-math">\(V\text{,}\)</span> and so every element of <span class="process-math">\(V\)</span> can be written as a linear combination of elements of <span class="process-math">\(B\text{.}\)</span> It remains to show that this linear combination is unique in the sense described. This follows from the fact that <span class="process-math">\(B\)</span> is linearly independent. Indeed, if</div>
 <div class="displaymath process-math">
@@ -987,9 +987,9 @@ c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_r=d_1\boldv_1+d_2\boldv_2+\cdots +d_r\
 </div>
 <div class="para">Since <span class="process-math">\(B\)</span> is linearly independent and since the <span class="process-math">\(\boldv_i\)</span> are distinct, we must have <span class="process-math">\(c_i-d_j=0\text{,}\)</span> and hence <span class="process-math">\(c_i=d_i\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#th_basis_equivalence-3-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#th_basis_equivalence-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Case: Implication: (1)\implies (2)"><a href="#th_basis_equivalence-3-1" title="Copy permalink for Case: Implication: (1)\implies (2)">🔗</a></div></article><article class="case" id="th_basis_equivalence-3-2"><h5 class="heading">Implication: <span class="process-math">\((2)\implies (1)\)</span>.</h5>
+<div class="autopermalink" data-description="Case: Implication: (1)\implies (2)"><a href="#th_basis_equivalence-3-1" title="Copy heading and permalink for Case: Implication: (1)\implies (2)" aria-label="Copy heading and permalink for Case: Implication: (1)\implies (2)">🔗</a></div></article><article class="case" id="th_basis_equivalence-3-2"><h5 class="heading">Implication: <span class="process-math">\((2)\implies (1)\)</span>.</h5>
 <div class="para logical" id="th_basis_equivalence-3-2-2">
 <div class="para">If <span class="process-math">\(B\)</span> satisfies (2), then clearly it spans <span class="process-math">\(V\text{.}\)</span> The uniqueness of linear combinations of elements of <span class="process-math">\(B\)</span> now easily implies <span class="process-math">\(B\)</span> is linearly independent:</div>
 <div class="displaymath process-math" id="th_basis_equivalence-3-2-2-5">
@@ -1001,10 +1001,10 @@ c_1\boldv_1+c_2\boldv_2+\cdots c_r\boldv_n=0\boldv_1+0\boldv_2+\cdots 0\boldv_n\
 </div>
 <div class="para">where the last step uses the fact that <span class="process-math">\(\boldzero=0\boldv_1+\cdots +0\boldv_n\)</span> is the unique expression of <span class="process-math">\(\boldzero\)</span> as a linear combination of the elements of <span class="process-math">\(B\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#th_basis_equivalence-3-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#th_basis_equivalence-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Case: Implication: (2)\implies (1)"><a href="#th_basis_equivalence-3-2" title="Copy permalink for Case: Implication: (2)\implies (1)">🔗</a></div></article><div class="autopermalink" data-description="Proof 4.3.4.1"><a href="#th_basis_equivalence-3" title="Copy permalink for Proof 4.3.4.1">🔗</a></div></article></details><div class="para" id="ss_bases-8">
-<a href="s_basis.html#th_basis_equivalence" class="xref" data-knowl="./knowl/xref/th_basis_equivalence.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.4: Basis equivalence">Theorem 4.3.4</a> yields the following one-step technique for proving a set is a basis.<div class="autopermalink" data-description="Paragraph"><a href="#ss_bases-8" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Case: Implication: (2)\implies (1)"><a href="#th_basis_equivalence-3-2" title="Copy heading and permalink for Case: Implication: (2)\implies (1)" aria-label="Copy heading and permalink for Case: Implication: (2)\implies (1)">🔗</a></div></article><div class="autopermalink" data-description="Proof 4.3.4.1"><a href="#th_basis_equivalence-3" title="Copy heading and permalink for Proof 4.3.4.1" aria-label="Copy heading and permalink for Proof 4.3.4.1">🔗</a></div></article></details><div class="para" id="ss_bases-8">
+<a href="s_basis.html#th_basis_equivalence" class="xref" data-knowl="./knowl/xref/th_basis_equivalence.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.4: Basis equivalence">Theorem 4.3.4</a> yields the following one-step technique for proving a set is a basis.<div class="autopermalink" data-description="Paragraph"><a href="#ss_bases-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="algorithm theorem-like" id="proc_basis_onestep"><h4 class="heading">
 <span class="type">Procedure</span><span class="space"> </span><span class="codenumber">4.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">One-step technique for bases.</span>
@@ -1021,24 +1021,24 @@ c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldv\text{,}\tag{4.9}
 \end{equation}
 </div>
 <div class="para">where <span class="process-math">\(\boldv\)</span> is an arbitrary element of the vector space <span class="process-math">\(V\text{.}\)</span> (Typically you will give some parametric description of <span class="process-math">\(\boldv\)</span> in terms of a finite list of unknowns.)</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#proc_basis_onestep-2-1-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#proc_basis_onestep-2-1-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1"><a href="#proc_basis_onestep-2-1-5-1" title="Copy permalink for Item 1">🔗</a></div>
+<div class="autopermalink" data-description="Item 1"><a href="#proc_basis_onestep-2-1-5-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
 <li id="proc_basis_onestep-2-1-5-2">
-<div class="para" id="proc_basis_onestep-2-1-5-2-1">Translate the vector equation <a href="s_basis.html#eq_onestep_basis" class="xref" data-knowl="./knowl/xref/eq_onestep_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.9">(4.9)</a> into an equivalent linear system of equations in the unknowns <span class="process-math">\(c_1,c_2,\dots, c_n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#proc_basis_onestep-2-1-5-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="proc_basis_onestep-2-1-5-2-1">Translate the vector equation <a href="s_basis.html#eq_onestep_basis" class="xref" data-knowl="./knowl/xref/eq_onestep_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.9">(4.9)</a> into an equivalent linear system of equations in the unknowns <span class="process-math">\(c_1,c_2,\dots, c_n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#proc_basis_onestep-2-1-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 2"><a href="#proc_basis_onestep-2-1-5-2" title="Copy permalink for Item 2">🔗</a></div>
+<div class="autopermalink" data-description="Item 2"><a href="#proc_basis_onestep-2-1-5-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
 <li id="proc_basis_onestep-2-1-5-3">
-<div class="para" id="proc_basis_onestep-2-1-5-3-1">If the system in (2) has a <em class="emphasis">unique</em> solution no matter what <span class="process-math">\(\boldv\)</span> is chosen, then <span class="process-math">\(B\)</span> is a basis. If there is a choice of <span class="process-math">\(\boldv\)</span> for which either the system in (2) has no solution (i.e., is inconsistent) or has infinitely many solutions, then <span class="process-math">\(B\)</span> is not a basis.<div class="autopermalink" data-description="Paragraph"><a href="#proc_basis_onestep-2-1-5-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="proc_basis_onestep-2-1-5-3-1">If the system in (2) has a <em class="emphasis">unique</em> solution no matter what <span class="process-math">\(\boldv\)</span> is chosen, then <span class="process-math">\(B\)</span> is a basis. If there is a choice of <span class="process-math">\(\boldv\)</span> for which either the system in (2) has no solution (i.e., is inconsistent) or has infinitely many solutions, then <span class="process-math">\(B\)</span> is not a basis.<div class="autopermalink" data-description="Paragraph"><a href="#proc_basis_onestep-2-1-5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 3"><a href="#proc_basis_onestep-2-1-5-3" title="Copy permalink for Item 3">🔗</a></div>
+<div class="autopermalink" data-description="Item 3"><a href="#proc_basis_onestep-2-1-5-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#proc_basis_onestep-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#proc_basis_onestep-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Procedure 4.3.5: One-step technique for bases"><a href="#proc_basis_onestep" title="Copy permalink for Procedure 4.3.5: One-step technique for bases">🔗</a></div></article><article class="example example-like" id="eg_basis_onestep_R3"><h4 class="heading">
+<div class="autopermalink" data-description="Procedure 4.3.5: One-step technique for bases"><a href="#proc_basis_onestep" title="Copy heading and permalink for Procedure 4.3.5: One-step technique for bases" aria-label="Copy heading and permalink for Procedure 4.3.5: One-step technique for bases">🔗</a></div></article><article class="example example-like" id="eg_basis_onestep_R3"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">One-step technique for <span class="process-math">\(\R^3\)</span>.</span>
 </h4>
 <div class="para logical" id="eg_basis_onestep_R3-2-1">
@@ -1050,7 +1050,7 @@ S=\{\boldv_1=(1,1,-3), \boldv_2=(1,0,-1), \boldv_3=(-1,1,-1), \boldv_4=(1,2,1)\}
 </div>
 <div class="para">is a basis of <span class="process-math">\(\R^3\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#eg_basis_onestep_R3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_basis_onestep_R3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="eg_basis_onestep_R3-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="eg_basis_onestep_R3-3-1">
@@ -1086,7 +1086,7 @@ S=\{\boldv_1=(1,1,-3), \boldv_2=(1,0,-1), \boldv_3=(-1,1,-1), \boldv_4=(1,2,1)\}
 \end{equation*}
 </div>
 <div class="para">Since the third column of <span class="process-math">\(U\)</span> does not have a leading one, we conclude that the corresponding system has a free variable, and hence that for any given <span class="process-math">\((a,b,c)\in \R^3\)</span> the equation <a href="s_basis.html#eq_basis_onestep_R3" class="xref" data-knowl="./knowl/xref/eq_basis_onestep_R3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.10">(4.10)</a> has <em class="emphasis">either</em> no solutions (inconsistent) <em class="emphasis">or</em> infinitely many solutions. In particular, it is not true that there is always a <em class="emphasis">unique</em> solution. Thus <span class="process-math">\(S\)</span> is not a basis according to the one-step technique.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#eg_basis_onestep_R3-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_basis_onestep_R3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="eg_basis_onestep_R3-3-2">
 <div class="para">In fact, our Gaussian elimination analysis tells us exactly how <span class="process-math">\(S\)</span> fails to be a basis. Since the last column of <span class="process-math">\(U\)</span> does not have a leading one, the corresponding system is always consistent: i.e., there is always at least one solution <span class="process-math">\(\boldx=(c_1,c_2,c_3,c_4)\)</span> to <a href="s_basis.html#eq_basis_onestep_R3" class="xref" data-knowl="./knowl/xref/eq_basis_onestep_R3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.10">(4.10)</a> for each <span class="process-math">\((a,b,c)\in \R^3\text{.}\)</span> This tells us that <span class="process-math">\(S\)</span> is a spanning set of <span class="process-math">\(\R^3\text{.}\)</span> On the other hand, the existence of the free variable tells us that for <span class="process-math">\((a,b,c)=(0,0,0)=\boldzero\text{,}\)</span> we will have infinitely many choices <span class="process-math">\(c_1,c_2,c_3,c_4\)</span> satisfying</div>
@@ -1096,19 +1096,19 @@ c_1\boldv_1+c_2\boldv_2+c_3\boldv_3+c_4\boldv_4=\boldzero\text{.}
 \end{equation*}
 </div>
 <div class="para">This shows that <span class="process-math">\(S\)</span> is <em class="emphasis">not</em> linearly independent.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#eg_basis_onestep_R3-3-2" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_basis_onestep_R3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 4.3.6.1"><a href="#eg_basis_onestep_R3-3" title="Copy permalink for Solution 4.3.6.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.3.6.1"><a href="#eg_basis_onestep_R3-3" title="Copy heading and permalink for Solution 4.3.6.1" aria-label="Copy heading and permalink for Solution 4.3.6.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.3.6: One-step technique for \R^3"><a href="#eg_basis_onestep_R3" title="Copy permalink for Example 4.3.6: One-step technique for \R^3">🔗</a></div></article><article class="example example-like" id="vid_eg_basis"><h4 class="heading">
+<div class="autopermalink" data-description="Example 4.3.6: One-step technique for \R^3"><a href="#eg_basis_onestep_R3" title="Copy heading and permalink for Example 4.3.6: One-step technique for \R^3" aria-label="Copy heading and permalink for Example 4.3.6: One-step technique for \R^3">🔗</a></div></article><article class="example example-like" id="vid_eg_basis"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Video example: deciding if a set is a basis (<span class="process-math">\(\R^n\)</span>).</span>
 </h4>
 <figure class="figure figure-like" id="fig_vid_basis"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/WL2DfblK1BI?&amp;modestbranding=1&amp;rel=0" id="vid_basis"></iframe></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.8<span class="period">.</span></span><span class="space"> </span>Video: deciding if a set is a basis (<span class="process-math">\(\R^n\)</span>)<div class="autopermalink" data-description="Figure 4.3.8"><a href="#fig_vid_basis" title="Copy permalink for Figure 4.3.8">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Example 4.3.7: Video example: deciding if a set is a basis (\R^n)"><a href="#vid_eg_basis" title="Copy permalink for Example 4.3.7: Video example: deciding if a set is a basis (\R^n)">🔗</a></div></article><article class="example example-like" id="vid_eg_basis_exotic"><h4 class="heading">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.8<span class="period">.</span></span><span class="space"> </span>Video: deciding if a set is a basis (<span class="process-math">\(\R^n\)</span>)<div class="autopermalink" data-description="Figure 4.3.8"><a href="#fig_vid_basis" title="Copy heading and permalink for Figure 4.3.8" aria-label="Copy heading and permalink for Figure 4.3.8">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Example 4.3.7: Video example: deciding if a set is a basis (\R^n)"><a href="#vid_eg_basis" title="Copy heading and permalink for Example 4.3.7: Video example: deciding if a set is a basis (\R^n)" aria-label="Copy heading and permalink for Example 4.3.7: Video example: deciding if a set is a basis (\R^n)">🔗</a></div></article><article class="example example-like" id="vid_eg_basis_exotic"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Video example: deciding if a set is a basis (<span class="process-math">\(M_{nn}\)</span>).</span>
 </h4>
 <figure class="figure figure-like" id="fig_vid_basis_exotic"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/JvPn5X93lGw?&amp;modestbranding=1&amp;rel=0" id="vid_basis_exotic"></iframe></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.10<span class="period">.</span></span><span class="space"> </span>Video: deciding if a set is a basis<div class="autopermalink" data-description="Figure 4.3.10"><a href="#fig_vid_basis_exotic" title="Copy permalink for Figure 4.3.10">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Example 4.3.9: Video example: deciding if a set is a basis (M_{nn})"><a href="#vid_eg_basis_exotic" title="Copy permalink for Example 4.3.9: Video example: deciding if a set is a basis (M_{nn})">🔗</a></div></article><div class="para" id="ss_bases-13">Besides deciding whether a given set is a basis, we will often want to come up with a basis of a given space on our own. The following “by inspection” technique often comes in handy in cases where the elements of the vector space can be described in a simple parametric manner.<div class="autopermalink" data-description="Paragraph"><a href="#ss_bases-13" title="Copy permalink for Paragraph">🔗</a></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.10<span class="period">.</span></span><span class="space"> </span>Video: deciding if a set is a basis<div class="autopermalink" data-description="Figure 4.3.10"><a href="#fig_vid_basis_exotic" title="Copy heading and permalink for Figure 4.3.10" aria-label="Copy heading and permalink for Figure 4.3.10">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Example 4.3.9: Video example: deciding if a set is a basis (M_{nn})"><a href="#vid_eg_basis_exotic" title="Copy heading and permalink for Example 4.3.9: Video example: deciding if a set is a basis (M_{nn})" aria-label="Copy heading and permalink for Example 4.3.9: Video example: deciding if a set is a basis (M_{nn})">🔗</a></div></article><div class="para" id="ss_bases-13">Besides deciding whether a given set is a basis, we will often want to come up with a basis of a given space on our own. The following “by inspection” technique often comes in handy in cases where the elements of the vector space can be described in a simple parametric manner.<div class="autopermalink" data-description="Paragraph"><a href="#ss_bases-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="algorithm theorem-like" id="proc_provide_basis"><h4 class="heading">
 <span class="type">Procedure</span><span class="space"> </span><span class="codenumber">4.3.11</span><span class="period">.</span><span class="space"> </span><span class="title">By-inspection basis technique.</span>
@@ -1117,24 +1117,24 @@ c_1\boldv_1+c_2\boldv_2+c_3\boldv_3+c_4\boldv_4=\boldzero\text{.}
 <div class="para">To produce a basis <span class="process-math">\(B\)</span> of a vector space <span class="process-math">\(V\)</span> “by inspection”, proceed as follows.</div>
 <ol class="decimal" id="proc_provide_basis-2-1-4">
 <li id="proc_provide_basis-2-1-4-1">
-<span class="heading"><span class="title">Parametric description.</span></span><div class="para" id="proc_provide_basis-2-1-4-1-2">Give a simple parametric description of the general element of <span class="process-math">\(V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#proc_provide_basis-2-1-4-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="heading"><span class="title">Parametric description.</span></span><div class="para" id="proc_provide_basis-2-1-4-1-2">Give a simple parametric description of the general element of <span class="process-math">\(V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#proc_provide_basis-2-1-4-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1: Parametric description"><a href="#proc_provide_basis-2-1-4-1" title="Copy permalink for Item 1: Parametric description">🔗</a></div>
+<div class="autopermalink" data-description="Item 1: Parametric description"><a href="#proc_provide_basis-2-1-4-1" title="Copy heading and permalink for Item 1: Parametric description" aria-label="Copy heading and permalink for Item 1: Parametric description">🔗</a></div>
 </li>
 <li id="proc_provide_basis-2-1-4-2">
-<span class="heading"><span class="title">Spanning set.</span></span><div class="para" id="proc_provide_basis-2-1-4-2-2">If your parametric description is simple enough, you should be able to extract from it a natural spanning set <span class="process-math">\(B\)</span> of <span class="process-math">\(V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#proc_provide_basis-2-1-4-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="heading"><span class="title">Spanning set.</span></span><div class="para" id="proc_provide_basis-2-1-4-2-2">If your parametric description is simple enough, you should be able to extract from it a natural spanning set <span class="process-math">\(B\)</span> of <span class="process-math">\(V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#proc_provide_basis-2-1-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 2: Spanning set"><a href="#proc_provide_basis-2-1-4-2" title="Copy permalink for Item 2: Spanning set">🔗</a></div>
+<div class="autopermalink" data-description="Item 2: Spanning set"><a href="#proc_provide_basis-2-1-4-2" title="Copy heading and permalink for Item 2: Spanning set" aria-label="Copy heading and permalink for Item 2: Spanning set">🔗</a></div>
 </li>
 <li id="proc_provide_basis-2-1-4-3">
-<span class="heading"><span class="title">Linear independence.</span></span><div class="para" id="proc_provide_basis-2-1-4-3-2">If your parametric description is free of redundancies, then <span class="process-math">\(B\)</span> will likely be linearly independent. Verify this using <a href="s_span_independence.html#proc_linear_independence" class="xref" data-knowl="./knowl/xref/proc_linear_independence.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.2.15: Linear independence of a finite set">Procedure 4.2.15</a>.<div class="autopermalink" data-description="Paragraph"><a href="#proc_provide_basis-2-1-4-3-2" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="heading"><span class="title">Linear independence.</span></span><div class="para" id="proc_provide_basis-2-1-4-3-2">If your parametric description is free of redundancies, then <span class="process-math">\(B\)</span> will likely be linearly independent. Verify this using <a href="s_span_independence.html#proc_linear_independence" class="xref" data-knowl="./knowl/xref/proc_linear_independence.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.2.15: Linear independence of a finite set">Procedure 4.2.15</a>.<div class="autopermalink" data-description="Paragraph"><a href="#proc_provide_basis-2-1-4-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 3: Linear independence"><a href="#proc_provide_basis-2-1-4-3" title="Copy permalink for Item 3: Linear independence">🔗</a></div>
+<div class="autopermalink" data-description="Item 3: Linear independence"><a href="#proc_provide_basis-2-1-4-3" title="Copy heading and permalink for Item 3: Linear independence" aria-label="Copy heading and permalink for Item 3: Linear independence">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#proc_provide_basis-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#proc_provide_basis-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Procedure 4.3.11: By-inspection basis technique"><a href="#proc_provide_basis" title="Copy permalink for Procedure 4.3.11: By-inspection basis technique">🔗</a></div></article><article class="example example-like" id="eg_byinspection_R5"><h4 class="heading">
+<div class="autopermalink" data-description="Procedure 4.3.11: By-inspection basis technique"><a href="#proc_provide_basis" title="Copy heading and permalink for Procedure 4.3.11: By-inspection basis technique" aria-label="Copy heading and permalink for Procedure 4.3.11: By-inspection basis technique">🔗</a></div></article><article class="example example-like" id="eg_byinspection_R5"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.12</span><span class="period">.</span><span class="space"> </span><span class="title">By-inspection basis technique.</span>
 </h4>
 <div class="para logical" id="eg_byinspection_R5-2-1">
@@ -1144,7 +1144,7 @@ c_1\boldv_1+c_2\boldv_2+c_3\boldv_3+c_4\boldv_4=\boldzero\text{.}
 W=\{(x_1,x_2,x_3,x_4,x_5)\in \R^5\colon x_1+x_2=x_4-x_5=0\}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#eg_byinspection_R5-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_byinspection_R5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="eg_byinspection_R5-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="eg_byinspection_R5-3-1">
@@ -1168,14 +1168,14 @@ c_1\boldx_1+c_2\boldx_2+c_3\boldx_3=\boldzero \amp\implies (c_1,-c_1,c_2,c_3,c_3
 \end{align*}
 </div>
 <div class="para">for any scalars <span class="process-math">\(c_1,c_2,c_3\in \R\text{.}\)</span> Thus <span class="process-math">\(B\)</span> is linearly independent. We conclude <span class="process-math">\(B\)</span> is a basis.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#eg_byinspection_R5-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_byinspection_R5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 4.3.12.1"><a href="#eg_byinspection_R5-3" title="Copy permalink for Solution 4.3.12.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.3.12.1"><a href="#eg_byinspection_R5-3" title="Copy heading and permalink for Solution 4.3.12.1" aria-label="Copy heading and permalink for Solution 4.3.12.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.3.12: By-inspection basis technique"><a href="#eg_byinspection_R5" title="Copy permalink for Example 4.3.12: By-inspection basis technique">🔗</a></div></article><article class="example example-like" id="eg_byinspection_basis"><h4 class="heading">
+<div class="autopermalink" data-description="Example 4.3.12: By-inspection basis technique"><a href="#eg_byinspection_R5" title="Copy heading and permalink for Example 4.3.12: By-inspection basis technique" aria-label="Copy heading and permalink for Example 4.3.12: By-inspection basis technique">🔗</a></div></article><article class="example example-like" id="eg_byinspection_basis"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.3.13</span><span class="period">.</span><span class="space"> </span><span class="title">By-inspection basis technique.</span>
 </h4>
-<div class="para" id="eg_byinspection_basis-2-1">Let <span class="process-math">\(W\subseteq M_{22}\)</span> be the subspace of all symmetric matrices. Use <a href="s_basis.html#proc_provide_basis" class="xref" data-knowl="./knowl/xref/proc_provide_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.3.11: By-inspection basis technique">Procedure 4.3.11</a> to compute a basis of <span class="process-math">\(W\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eg_byinspection_basis-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="eg_byinspection_basis-2-1">Let <span class="process-math">\(W\subseteq M_{22}\)</span> be the subspace of all symmetric matrices. Use <a href="s_basis.html#proc_provide_basis" class="xref" data-knowl="./knowl/xref/proc_provide_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.3.11: By-inspection basis technique">Procedure 4.3.11</a> to compute a basis of <span class="process-math">\(W\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eg_byinspection_basis-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="eg_byinspection_basis-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="eg_byinspection_basis-3-1">
@@ -1191,9 +1191,9 @@ a\amp b\\ b\amp c
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#eg_byinspection_basis-3-1-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_byinspection_basis-3-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1"><a href="#eg_byinspection_basis-3-1-2-1" title="Copy permalink for Item 1">🔗</a></div>
+<div class="autopermalink" data-description="Item 1"><a href="#eg_byinspection_basis-3-1-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
 <li id="eg_byinspection_basis-3-1-2-2">
 <div class="para logical" id="eg_byinspection_basis-3-1-2-2-1">
@@ -1233,9 +1233,9 @@ A_1=
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#eg_byinspection_basis-3-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_byinspection_basis-3-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 2"><a href="#eg_byinspection_basis-3-1-2-2" title="Copy permalink for Item 2">🔗</a></div>
+<div class="autopermalink" data-description="Item 2"><a href="#eg_byinspection_basis-3-1-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
 <li id="eg_byinspection_basis-3-1-2-3">
 <div class="para logical" id="eg_byinspection_basis-3-1-2-3-1">
@@ -1251,18 +1251,18 @@ a\amp b\\ b\amp c
 \end{align*}
 </div>
 <div class="para">This proves <span class="process-math">\(B\)</span> is linearly independent.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#eg_byinspection_basis-3-1-2-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_byinspection_basis-3-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 3"><a href="#eg_byinspection_basis-3-1-2-3" title="Copy permalink for Item 3">🔗</a></div>
+<div class="autopermalink" data-description="Item 3"><a href="#eg_byinspection_basis-3-1-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
 </li>
 </ol>
 <div class="para">Since <span class="process-math">\(B\)</span> is a linearly independent spanning set of <span class="process-math">\(W\text{,}\)</span> it is a basis of <span class="process-math">\(W\text{.}\)</span>
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#eg_byinspection_basis-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_byinspection_basis-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 4.3.13.1"><a href="#eg_byinspection_basis-3" title="Copy permalink for Solution 4.3.13.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 4.3.13.1"><a href="#eg_byinspection_basis-3" title="Copy heading and permalink for Solution 4.3.13.1" aria-label="Copy heading and permalink for Solution 4.3.13.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Example 4.3.13: By-inspection basis technique"><a href="#eg_byinspection_basis" title="Copy permalink for Example 4.3.13: By-inspection basis technique">🔗</a></div></article><div class="autopermalink" data-description="Subsection 4.3.1: Bases of vector spaces"><a href="#ss_bases" title="Copy permalink for Subsection 4.3.1: Bases of vector spaces">🔗</a></div></section><section class="exercises" id="s_basis_ex"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Example 4.3.13: By-inspection basis technique"><a href="#eg_byinspection_basis" title="Copy heading and permalink for Example 4.3.13: By-inspection basis technique" aria-label="Copy heading and permalink for Example 4.3.13: By-inspection basis technique">🔗</a></div></article><div class="autopermalink" data-description="Subsection 4.3.1: Bases of vector spaces"><a href="#ss_bases" title="Copy heading and permalink for Subsection 4.3.1: Bases of vector spaces" aria-label="Copy heading and permalink for Subsection 4.3.1: Bases of vector spaces">🔗</a></div></section><section class="exercises" id="s_basis_ex"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="subexercises" id="s_basis_ex-1"><h4 class="heading"><span class="title">WeBWork Exercises</span></h4>
@@ -1270,47 +1270,47 @@ a\amp b\\ b\amp c
 <div id="webwork-56" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="56" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/NAU/setLinearAlgebra/basisTrace0.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
 <div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-56')">Activate</button></div>
 <div class="problem-contents">
-<div class="para" id="extracted-webwork-56-1-1-1">Find a basis for the vector space <span class="process-math">\(\lbrace A\in {\mathbb R}^{2\times 2} \mid \text{tr}(A)=0\rbrace\)</span> of <span class="process-math">\(2\times 2\)</span> matrices with trace 0.<div class="autopermalink" data-description="Paragraph"><a href="#extracted-webwork-56-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="extracted-webwork-56-1-1-1">Find a basis for the vector space <span class="process-math">\(\lbrace A\in {\mathbb R}^{2\times 2} \mid \text{tr}(A)=0\rbrace\)</span> of <span class="process-math">\(2\times 2\)</span> matrices with trace 0.<div class="autopermalink" data-description="Paragraph"><a href="#extracted-webwork-56-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="extracted-webwork-56-1-1-2">
-<span class="process-math">\(B = \lbrace\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> (2 <span class="times-sign">×</span> 2 array), <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> (2 <span class="times-sign">×</span> 2 array), <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> (2 <span class="times-sign">×</span> 2 array) <span class="process-math">\(\rbrace\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-webwork-56-1-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(B = \lbrace\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> (2 <span class="times-sign">×</span> 2 array), <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> (2 <span class="times-sign">×</span> 2 array), <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> (2 <span class="times-sign">×</span> 2 array) <span class="process-math">\(\rbrace\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-webwork-56-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </div>
 </div>
-<div class="autopermalink" data-description="Exercise 4.3.2.1"><a href="#s_basis_ex-1-2" title="Copy permalink for Exercise 4.3.2.1">🔗</a></div></article><article class="exercise exercise-like" id="s_basis_ex-1-3"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
+<div class="autopermalink" data-description="Exercise 4.3.2.1"><a href="#s_basis_ex-1-2" title="Copy heading and permalink for Exercise 4.3.2.1" aria-label="Copy heading and permalink for Exercise 4.3.2.1">🔗</a></div></article><article class="exercise exercise-like" id="s_basis_ex-1-3"><h5 class="heading"><span class="codenumber">2<span class="period">.</span></span></h5>
 <div id="webwork-57" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="57" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-sourceFilePath="Library/NAU/setLinearAlgebra/basisHalfMagic.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
 <div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-57')">Activate</button></div>
 <div class="problem-contents">
-<div class="para" id="extracted-webwork-57-1-1-1">A square matrix is half-magic if the sum of the numbers in each row and column is the same. Find a basis <span class="process-math">\(B\)</span> for the vector space of <span class="process-math">\(2\times 2\)</span> half-magic squares.<div class="autopermalink" data-description="Paragraph"><a href="#extracted-webwork-57-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="extracted-webwork-57-1-1-1">A square matrix is half-magic if the sum of the numbers in each row and column is the same. Find a basis <span class="process-math">\(B\)</span> for the vector space of <span class="process-math">\(2\times 2\)</span> half-magic squares.<div class="autopermalink" data-description="Paragraph"><a href="#extracted-webwork-57-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="extracted-webwork-57-1-1-2">
-<span class="process-math">\(B = \lbrace\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> (2 <span class="times-sign">×</span> 2 array), <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> (2 <span class="times-sign">×</span> 2 array) <span class="process-math">\(\rbrace\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-webwork-57-1-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(B = \lbrace\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> (2 <span class="times-sign">×</span> 2 array), <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> (2 <span class="times-sign">×</span> 2 array) <span class="process-math">\(\rbrace\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-webwork-57-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </div>
 </div>
-<div class="autopermalink" data-description="Exercise 4.3.2.2"><a href="#s_basis_ex-1-3" title="Copy permalink for Exercise 4.3.2.2">🔗</a></div></article><div class="autopermalink" data-description="Subexercises: WeBWork Exercises"><a href="#s_basis_ex-1" title="Copy permalink for Subexercises: WeBWork Exercises">🔗</a></div></article><div class="exercisegroup" id="s_basis_ex-2">
+<div class="autopermalink" data-description="Exercise 4.3.2.2"><a href="#s_basis_ex-1-3" title="Copy heading and permalink for Exercise 4.3.2.2" aria-label="Copy heading and permalink for Exercise 4.3.2.2">🔗</a></div></article><div class="autopermalink" data-description="Subexercises: WeBWork Exercises"><a href="#s_basis_ex-1" title="Copy heading and permalink for Subexercises: WeBWork Exercises" aria-label="Copy heading and permalink for Subexercises: WeBWork Exercises">🔗</a></div></article><div class="exercisegroup" id="s_basis_ex-2">
 <h4 class="heading"><span class="title">One-step basis technique.</span></h4>
-<div class="introduction" id="s_basis_ex-2-2"><div class="para" id="s_basis_ex-2-2-1">For each vector space <span class="process-math">\(V\)</span> and subset <span class="process-math">\(S\text{,}\)</span> use the one-step technique (<a href="s_basis.html#proc_basis_onestep" class="xref" data-knowl="./knowl/xref/proc_basis_onestep.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.3.5: One-step technique for bases">Procedure 4.3.5</a>) to decide whether <span class="process-math">\(S\)</span> is a basis for <span class="process-math">\(V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="introduction" id="s_basis_ex-2-2"><div class="para" id="s_basis_ex-2-2-1">For each vector space <span class="process-math">\(V\)</span> and subset <span class="process-math">\(S\text{,}\)</span> use the one-step technique (<a href="s_basis.html#proc_basis_onestep" class="xref" data-knowl="./knowl/xref/proc_basis_onestep.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.3.5: One-step technique for bases">Procedure 4.3.5</a>) to decide whether <span class="process-math">\(S\)</span> is a basis for <span class="process-math">\(V\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></div>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="s_basis_ex-2-3"><h5 class="heading"><span class="codenumber">3<span class="period">.</span></span></h5>
 <div class="para" id="s_basis_ex-2-3-1-1">
-<span class="process-math">\(V=\R^3\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-2-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(V=\R^3\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-2-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <ol class="lower-alpha lower-alpha-level-1" id="s_basis_ex-2-3-1-2">
 <li id="s_basis_ex-2-3-1-2-1">
 <div class="para" id="s_basis_ex-2-3-1-2-1-1">
-<span class="process-math">\(\displaystyle S=\{(1,1,2),(1,-1,-4), (3,-1,0) \}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-2-3-1-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\displaystyle S=\{(1,1,2),(1,-1,-4), (3,-1,0) \}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-2-3-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.3.2.3.a"><a href="#s_basis_ex-2-3-1-2-1" title="Copy permalink for Item 4.3.2.3.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.3.2.3.a"><a href="#s_basis_ex-2-3-1-2-1" title="Copy heading and permalink for Item 4.3.2.3.a" aria-label="Copy heading and permalink for Item 4.3.2.3.a">🔗</a></div>
 </li>
 <li id="s_basis_ex-2-3-1-2-2">
 <div class="para" id="s_basis_ex-2-3-1-2-2-1">
-<span class="process-math">\(\displaystyle S=\{(1,1,2),(1,-1,-4), (1,-3,1) \}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-2-3-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\displaystyle S=\{(1,1,2),(1,-1,-4), (1,-3,1) \}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-2-3-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.3.2.3.b"><a href="#s_basis_ex-2-3-1-2-2" title="Copy permalink for Item 4.3.2.3.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.3.2.3.b"><a href="#s_basis_ex-2-3-1-2-2" title="Copy heading and permalink for Item 4.3.2.3.b" aria-label="Copy heading and permalink for Item 4.3.2.3.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Exercise 4.3.2.3"><a href="#s_basis_ex-2-3" title="Copy permalink for Exercise 4.3.2.3">🔗</a></div></article><article class="exercise exercise-like" id="s_basis_ex-2-4"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
+<div class="autopermalink" data-description="Exercise 4.3.2.3"><a href="#s_basis_ex-2-3" title="Copy heading and permalink for Exercise 4.3.2.3" aria-label="Copy heading and permalink for Exercise 4.3.2.3">🔗</a></div></article><article class="exercise exercise-like" id="s_basis_ex-2-4"><h5 class="heading"><span class="codenumber">4<span class="period">.</span></span></h5>
 <div class="para" id="s_basis_ex-2-4-1-1">
-<span class="process-math">\(V=M_{22}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-2-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(V=M_{22}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-2-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <ol class="lower-alpha lower-alpha-level-1" id="s_basis_ex-2-4-1-2">
 <li id="s_basis_ex-2-4-1-2-1">
 <div class="para logical" id="s_basis_ex-2-4-1-2-1-1">
@@ -1321,9 +1321,9 @@ a\amp b\\ b\amp c
 A_1=\begin{bmatrix}1\amp 1\\ 1\amp 1 \end{bmatrix},  \ A_2=\begin{bmatrix}1\amp -1\\ 0\amp 0 \end{bmatrix}, \ A_3=\begin{bmatrix}0\amp -1\\ 1\amp 0 \end{bmatrix},  \ A_4=\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-2-4-1-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-2-4-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.3.2.4.a"><a href="#s_basis_ex-2-4-1-2-1" title="Copy permalink for Item 4.3.2.4.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.3.2.4.a"><a href="#s_basis_ex-2-4-1-2-1" title="Copy heading and permalink for Item 4.3.2.4.a" aria-label="Copy heading and permalink for Item 4.3.2.4.a">🔗</a></div>
 </li>
 <li id="s_basis_ex-2-4-1-2-2">
 <div class="para logical" id="s_basis_ex-2-4-1-2-2-1">
@@ -1334,58 +1334,58 @@ A_1=\begin{bmatrix}1\amp 1\\ 1\amp 1 \end{bmatrix},  \ A_2=\begin{bmatrix}1\amp 
 A_1=\begin{bmatrix}1\amp 1\\ 1\amp 1 \end{bmatrix},  \ A_2=\begin{bmatrix}1\amp -1\\ -1\amp 0 \end{bmatrix}, \ A_3=\begin{bmatrix}0\amp 1\\ 1\amp 0 \end{bmatrix},  \ A_4=\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-2-4-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-2-4-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.3.2.4.b"><a href="#s_basis_ex-2-4-1-2-2" title="Copy permalink for Item 4.3.2.4.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.3.2.4.b"><a href="#s_basis_ex-2-4-1-2-2" title="Copy heading and permalink for Item 4.3.2.4.b" aria-label="Copy heading and permalink for Item 4.3.2.4.b">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Exercise 4.3.2.4"><a href="#s_basis_ex-2-4" title="Copy permalink for Exercise 4.3.2.4">🔗</a></div></article>
+<div class="autopermalink" data-description="Exercise 4.3.2.4"><a href="#s_basis_ex-2-4" title="Copy heading and permalink for Exercise 4.3.2.4" aria-label="Copy heading and permalink for Exercise 4.3.2.4">🔗</a></div></article>
 </div>
-<div class="autopermalink" data-description="Exercise Group 4.3.2.3–4: One-step basis technique"><a href="#s_basis_ex-2" title="Copy permalink for Exercise Group 4.3.2.3–4: One-step basis technique">🔗</a></div>
+<div class="autopermalink" data-description="Exercise Group 4.3.2.3–4: One-step basis technique"><a href="#s_basis_ex-2" title="Copy heading and permalink for Exercise Group 4.3.2.3–4: One-step basis technique" aria-label="Copy heading and permalink for Exercise Group 4.3.2.3–4: One-step basis technique">🔗</a></div>
 </div>
 <div class="exercisegroup" id="s_basis_ex-3">
 <h4 class="heading"><span class="title">By-inspection basis technique.</span></h4>
 <div class="introduction" id="s_basis_ex-3-2">
-<div class="para" id="s_basis_ex-3-2-1">For each given <span class="process-math">\(V\)</span> and subspace <span class="process-math">\(W\subseteq V\text{,}\)</span> provide a basis for <span class="process-math">\(W\)</span> using the “by inspection” technique <a href="s_basis.html#proc_provide_basis" class="xref" data-knowl="./knowl/xref/proc_provide_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.3.11: By-inspection basis technique">Procedure 4.3.11</a>. In more detail:<div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="s_basis_ex-3-2-1">For each given <span class="process-math">\(V\)</span> and subspace <span class="process-math">\(W\subseteq V\text{,}\)</span> provide a basis for <span class="process-math">\(W\)</span> using the “by inspection” technique <a href="s_basis.html#proc_provide_basis" class="xref" data-knowl="./knowl/xref/proc_provide_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.3.11: By-inspection basis technique">Procedure 4.3.11</a>. In more detail:<div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <ul class="disc" id="s_basis_ex-3-2-2">
 <li id="s_basis_ex-3-2-2-1">
-<div class="para" id="s_basis_ex-3-2-2-1-1">Give a simple parametric description of the elements of <span class="process-math">\(W\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-3-2-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="s_basis_ex-3-2-2-1-1">Give a simple parametric description of the elements of <span class="process-math">\(W\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-3-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#s_basis_ex-3-2-2-1" title="Copy permalink for Item">🔗</a></div>
+<div class="autopermalink" data-description="Item"><a href="#s_basis_ex-3-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="s_basis_ex-3-2-2-2">
-<div class="para" id="s_basis_ex-3-2-2-2-1">If your parametric description is simple enough, you should be able to find an obvious spanning set <span class="process-math">\(S\)</span> of <span class="process-math">\(W\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-3-2-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="s_basis_ex-3-2-2-2-1">If your parametric description is simple enough, you should be able to find an obvious spanning set <span class="process-math">\(S\)</span> of <span class="process-math">\(W\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-3-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#s_basis_ex-3-2-2-2" title="Copy permalink for Item">🔗</a></div>
+<div class="autopermalink" data-description="Item"><a href="#s_basis_ex-3-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="s_basis_ex-3-2-2-3">
-<div class="para" id="s_basis_ex-3-2-2-3-1">Argue that your spanning set is linearly independent.<div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-3-2-2-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="s_basis_ex-3-2-2-3-1">Argue that your spanning set is linearly independent.<div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-3-2-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#s_basis_ex-3-2-2-3" title="Copy permalink for Item">🔗</a></div>
+<div class="autopermalink" data-description="Item"><a href="#s_basis_ex-3-2-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 </ul>
 </div>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="s_basis_ex-3-3"><h5 class="heading"><span class="codenumber">5<span class="period">.</span></span></h5>
 <div class="para" id="s_basis_ex-3-3-1-1">
-<span class="process-math">\(V=\R^3\text{,}\)</span> <span class="process-math">\(W=\{x,y,z)\colon x+2y-z=0\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-3-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(V=\R^3\text{,}\)</span> <span class="process-math">\(W=\{x,y,z)\colon x+2y-z=0\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-3-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 4.3.2.5"><a href="#s_basis_ex-3-3" title="Copy permalink for Exercise 4.3.2.5">🔗</a></div></article><article class="exercise exercise-like" id="s_basis_ex-3-4"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
+<div class="autopermalink" data-description="Exercise 4.3.2.5"><a href="#s_basis_ex-3-3" title="Copy heading and permalink for Exercise 4.3.2.5" aria-label="Copy heading and permalink for Exercise 4.3.2.5">🔗</a></div></article><article class="exercise exercise-like" id="s_basis_ex-3-4"><h5 class="heading"><span class="codenumber">6<span class="period">.</span></span></h5>
 <div class="para" id="s_basis_ex-3-4-1-1">
-<span class="process-math">\(V=\R^4\text{,}\)</span> <span class="process-math">\(W=\{(x,y,z,w)\colon x+y=z+w\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-3-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(V=\R^4\text{,}\)</span> <span class="process-math">\(W=\{(x,y,z,w)\colon x+y=z+w\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-3-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 4.3.2.6"><a href="#s_basis_ex-3-4" title="Copy permalink for Exercise 4.3.2.6">🔗</a></div></article><article class="exercise exercise-like" id="s_basis_ex-3-5"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
+<div class="autopermalink" data-description="Exercise 4.3.2.6"><a href="#s_basis_ex-3-4" title="Copy heading and permalink for Exercise 4.3.2.6" aria-label="Copy heading and permalink for Exercise 4.3.2.6">🔗</a></div></article><article class="exercise exercise-like" id="s_basis_ex-3-5"><h5 class="heading"><span class="codenumber">7<span class="period">.</span></span></h5>
 <div class="para" id="s_basis_ex-3-5-1-1">
-<span class="process-math">\(V=M_{33}\text{,}\)</span> <span class="process-math">\(W=\{A\in M_{33}\colon A^T=A\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-3-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(V=M_{33}\text{,}\)</span> <span class="process-math">\(W=\{A\in M_{33}\colon A^T=A\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-3-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 4.3.2.7"><a href="#s_basis_ex-3-5" title="Copy permalink for Exercise 4.3.2.7">🔗</a></div></article><article class="exercise exercise-like" id="s_basis_ex-3-6"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
+<div class="autopermalink" data-description="Exercise 4.3.2.7"><a href="#s_basis_ex-3-5" title="Copy heading and permalink for Exercise 4.3.2.7" aria-label="Copy heading and permalink for Exercise 4.3.2.7">🔗</a></div></article><article class="exercise exercise-like" id="s_basis_ex-3-6"><h5 class="heading"><span class="codenumber">8<span class="period">.</span></span></h5>
 <div class="para" id="s_basis_ex-3-6-1-1">
-<span class="process-math">\(V=M_{23}\text{,}\)</span> <span class="process-math">\(W\)</span> is set of all matrices whose rows and columns all sum to zero<div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-3-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(V=M_{23}\text{,}\)</span> <span class="process-math">\(W\)</span> is set of all matrices whose rows and columns all sum to zero<div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-3-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 4.3.2.8"><a href="#s_basis_ex-3-6" title="Copy permalink for Exercise 4.3.2.8">🔗</a></div></article>
+<div class="autopermalink" data-description="Exercise 4.3.2.8"><a href="#s_basis_ex-3-6" title="Copy heading and permalink for Exercise 4.3.2.8" aria-label="Copy heading and permalink for Exercise 4.3.2.8">🔗</a></div></article>
 </div>
-<div class="autopermalink" data-description="Exercise Group 4.3.2.5–8: By-inspection basis technique"><a href="#s_basis_ex-3" title="Copy permalink for Exercise Group 4.3.2.5–8: By-inspection basis technique">🔗</a></div>
+<div class="autopermalink" data-description="Exercise Group 4.3.2.5–8: By-inspection basis technique"><a href="#s_basis_ex-3" title="Copy heading and permalink for Exercise Group 4.3.2.5–8: By-inspection basis technique" aria-label="Copy heading and permalink for Exercise Group 4.3.2.5–8: By-inspection basis technique">🔗</a></div>
 </div>
 <article class="exercise exercise-like" id="s_basis_ex-4"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
 <div class="para logical" id="s_basis_ex-4-1-1">
@@ -1396,59 +1396,59 @@ A_1=\begin{bmatrix}1\amp 1\\ 1\amp 1 \end{bmatrix},  \ A_2=\begin{bmatrix}1\amp 
 \end{equation*}
 </div>
 <div class="para">Prove that <span class="process-math">\(B'\)</span> is a basis.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 4.3.2.9"><a href="#s_basis_ex-4" title="Copy permalink for Exercise 4.3.2.9">🔗</a></div></article><article class="exercise exercise-like" id="s_basis_ex-5"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
-<div class="para" id="s_basis_ex-5-1-1">Let <span class="process-math">\(S=\{\boldv_1, \boldv_2, \dots, \boldv_k\}\)</span> be a set of <span class="process-math">\(k\)</span> distinct elements of <span class="process-math">\(\R^n\text{,}\)</span> let <span class="process-math">\(A\)</span> be an invertible <span class="process-math">\(n\times n\)</span> matrix, and let <span class="process-math">\(S'=\{A\boldv_1, A\boldv_2,\dots, A\boldv_k\}\text{.}\)</span> Prove that <span class="process-math">\(S\)</span> is a basis of <span class="process-math">\(\R^n\)</span> if and only if <span class="process-math">\(S'\)</span> is a basis of <span class="process-math">\(\R^n\)</span> as follows.<div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Exercise 4.3.2.9"><a href="#s_basis_ex-4" title="Copy heading and permalink for Exercise 4.3.2.9" aria-label="Copy heading and permalink for Exercise 4.3.2.9">🔗</a></div></article><article class="exercise exercise-like" id="s_basis_ex-5"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="para" id="s_basis_ex-5-1-1">Let <span class="process-math">\(S=\{\boldv_1, \boldv_2, \dots, \boldv_k\}\)</span> be a set of <span class="process-math">\(k\)</span> distinct elements of <span class="process-math">\(\R^n\text{,}\)</span> let <span class="process-math">\(A\)</span> be an invertible <span class="process-math">\(n\times n\)</span> matrix, and let <span class="process-math">\(S'=\{A\boldv_1, A\boldv_2,\dots, A\boldv_k\}\text{.}\)</span> Prove that <span class="process-math">\(S\)</span> is a basis of <span class="process-math">\(\R^n\)</span> if and only if <span class="process-math">\(S'\)</span> is a basis of <span class="process-math">\(\R^n\)</span> as follows.<div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <ol class="lower-alpha lower-alpha-level-1" id="s_basis_ex-5-1-2">
 <li id="s_basis_ex-5-1-2-1">
-<div class="para" id="s_basis_ex-5-1-2-1-1">Prove that <span class="process-math">\(A\boldv_i\ne A\boldv_j\)</span> for all <span class="process-math">\(i\ne j\text{:}\)</span> i.e., <span class="process-math">\(S'\)</span> contains <span class="process-math">\(k\)</span> distinct elements.<div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-5-1-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="s_basis_ex-5-1-2-1-1">Prove that <span class="process-math">\(A\boldv_i\ne A\boldv_j\)</span> for all <span class="process-math">\(i\ne j\text{:}\)</span> i.e., <span class="process-math">\(S'\)</span> contains <span class="process-math">\(k\)</span> distinct elements.<div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-5-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.3.2.10.a"><a href="#s_basis_ex-5-1-2-1" title="Copy permalink for Item 4.3.2.10.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.3.2.10.a"><a href="#s_basis_ex-5-1-2-1" title="Copy heading and permalink for Item 4.3.2.10.a" aria-label="Copy heading and permalink for Item 4.3.2.10.a">🔗</a></div>
 </li>
 <li id="s_basis_ex-5-1-2-2">
-<div class="para" id="s_basis_ex-5-1-2-2-1">Prove that if <span class="process-math">\(\{\boldv_1, \boldv_2, \dots, \boldv_k\}\)</span> is a basis of <span class="process-math">\(\R^n\text{,}\)</span> then <span class="process-math">\(\{A\boldv_1, A\boldv_2,\dots, A\boldv_k\}\)</span> is also a basis for any invertible <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-5-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="s_basis_ex-5-1-2-2-1">Prove that if <span class="process-math">\(\{\boldv_1, \boldv_2, \dots, \boldv_k\}\)</span> is a basis of <span class="process-math">\(\R^n\text{,}\)</span> then <span class="process-math">\(\{A\boldv_1, A\boldv_2,\dots, A\boldv_k\}\)</span> is also a basis for any invertible <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-5-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.3.2.10.b"><a href="#s_basis_ex-5-1-2-2" title="Copy permalink for Item 4.3.2.10.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.3.2.10.b"><a href="#s_basis_ex-5-1-2-2" title="Copy heading and permalink for Item 4.3.2.10.b" aria-label="Copy heading and permalink for Item 4.3.2.10.b">🔗</a></div>
 </li>
 <li id="s_basis_ex-5-1-2-3">
-<div class="para" id="s_basis_ex-5-1-2-3-1">Now prove that if <span class="process-math">\(\{A\boldv_1, A\boldv_2,\dots, A\boldv_k\}\)</span> is a basis of <span class="process-math">\(\R^n\)</span> for the invertible matrix <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(\{\boldv_1, \boldv_2, \dots, \boldv_k\}\)</span> is a basis of <span class="process-math">\(\R^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-5-1-2-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="s_basis_ex-5-1-2-3-1">Now prove that if <span class="process-math">\(\{A\boldv_1, A\boldv_2,\dots, A\boldv_k\}\)</span> is a basis of <span class="process-math">\(\R^n\)</span> for the invertible matrix <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(\{\boldv_1, \boldv_2, \dots, \boldv_k\}\)</span> is a basis of <span class="process-math">\(\R^n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-5-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="s_basis_ex-5-1-2-3-2">Hint: in (b) you showed that if you start with <em class="emphasis">any</em> basis and apply <em class="emphasis">any</em> invertible matrix to the elements of this basis, then you end up with another basis; think of a useful choice of matrix for the present situation.<div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-5-1-2-3-2" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="s_basis_ex-5-1-2-3-2">Hint: in (b) you showed that if you start with <em class="emphasis">any</em> basis and apply <em class="emphasis">any</em> invertible matrix to the elements of this basis, then you end up with another basis; think of a useful choice of matrix for the present situation.<div class="autopermalink" data-description="Paragraph"><a href="#s_basis_ex-5-1-2-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.3.2.10.c"><a href="#s_basis_ex-5-1-2-3" title="Copy permalink for Item 4.3.2.10.c">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.3.2.10.c"><a href="#s_basis_ex-5-1-2-3" title="Copy heading and permalink for Item 4.3.2.10.c" aria-label="Copy heading and permalink for Item 4.3.2.10.c">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Exercise 4.3.2.10"><a href="#s_basis_ex-5" title="Copy permalink for Exercise 4.3.2.10">🔗</a></div></article><article class="exercise exercise-like" id="ex_basis_matrix_families"><h4 class="heading">
+<div class="autopermalink" data-description="Exercise 4.3.2.10"><a href="#s_basis_ex-5" title="Copy heading and permalink for Exercise 4.3.2.10" aria-label="Copy heading and permalink for Exercise 4.3.2.10">🔗</a></div></article><article class="exercise exercise-like" id="ex_basis_matrix_families"><h4 class="heading">
 <span class="codenumber">11<span class="period">.</span></span><span class="space"> </span><span class="title">Bases for important matrix subspaces.</span>
 </h4>
-<div class="para" id="ex_basis_matrix_families-2-1">Let <span class="process-math">\(V=M_{nn}\text{.}\)</span> For each of the following subspaces <span class="process-math">\(W\subset M_{nn}\text{,}\)</span> give a basis <span class="process-math">\(B\)</span> of <span class="process-math">\(W\text{.}\)</span> You must explicitly describe the elements of your basis as linear combinations of the elements <span class="process-math">\(E_{ij}\)</span> of the standard basis for <span class="process-math">\(M_{nn}\text{.}\)</span> No justification needed, as long as your proposed basis is simple enough.<div class="autopermalink" data-description="Paragraph"><a href="#ex_basis_matrix_families-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex_basis_matrix_families-2-1">Let <span class="process-math">\(V=M_{nn}\text{.}\)</span> For each of the following subspaces <span class="process-math">\(W\subset M_{nn}\text{,}\)</span> give a basis <span class="process-math">\(B\)</span> of <span class="process-math">\(W\text{.}\)</span> You must explicitly describe the elements of your basis as linear combinations of the elements <span class="process-math">\(E_{ij}\)</span> of the standard basis for <span class="process-math">\(M_{nn}\text{.}\)</span> No justification needed, as long as your proposed basis is simple enough.<div class="autopermalink" data-description="Paragraph"><a href="#ex_basis_matrix_families-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <ol class="lower-alpha lower-alpha-level-1" id="ex_basis_matrix_families-2-2">
 <li id="ex_basis_matrix_families-2-2-1">
 <span class="heading"><span class="title">Upper triangular matrices.</span></span><div class="para" id="ex_basis_matrix_families-2-2-1-2">
-<span class="process-math">\(\displaystyle W=\{A\in M_{nn}\colon A \text{ is upper triangular}\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_basis_matrix_families-2-2-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\displaystyle W=\{A\in M_{nn}\colon A \text{ is upper triangular}\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_basis_matrix_families-2-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.3.2.11.a: Upper triangular matrices"><a href="#ex_basis_matrix_families-2-2-1" title="Copy permalink for Item 4.3.2.11.a: Upper triangular matrices">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.3.2.11.a: Upper triangular matrices"><a href="#ex_basis_matrix_families-2-2-1" title="Copy heading and permalink for Item 4.3.2.11.a: Upper triangular matrices" aria-label="Copy heading and permalink for Item 4.3.2.11.a: Upper triangular matrices">🔗</a></div>
 </li>
 <li id="ex_basis_matrix_families-2-2-2">
 <span class="heading"><span class="title">Symmetric matrices.</span></span><div class="para" id="ex_basis_matrix_families-2-2-2-2">
-<span class="process-math">\(\displaystyle W=\{A\in M_{nn}\colon A^T=A\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_basis_matrix_families-2-2-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\displaystyle W=\{A\in M_{nn}\colon A^T=A\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_basis_matrix_families-2-2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.3.2.11.b: Symmetric matrices"><a href="#ex_basis_matrix_families-2-2-2" title="Copy permalink for Item 4.3.2.11.b: Symmetric matrices">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.3.2.11.b: Symmetric matrices"><a href="#ex_basis_matrix_families-2-2-2" title="Copy heading and permalink for Item 4.3.2.11.b: Symmetric matrices" aria-label="Copy heading and permalink for Item 4.3.2.11.b: Symmetric matrices">🔗</a></div>
 </li>
 <li id="ex_basis_matrix_families-2-2-3">
 <span class="heading"><span class="title">Skew-symmetric matrices.</span></span><div class="para" id="ex_basis_matrix_families-2-2-3-2">
-<span class="process-math">\(\displaystyle W=\{A\in M_{nn}\colon A^T=-A\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_basis_matrix_families-2-2-3-2" title="Copy permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\displaystyle W=\{A\in M_{nn}\colon A^T=-A\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_basis_matrix_families-2-2-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 4.3.2.11.c: Skew-symmetric matrices"><a href="#ex_basis_matrix_families-2-2-3" title="Copy permalink for Item 4.3.2.11.c: Skew-symmetric matrices">🔗</a></div>
+<div class="autopermalink" data-description="Item 4.3.2.11.c: Skew-symmetric matrices"><a href="#ex_basis_matrix_families-2-2-3" title="Copy heading and permalink for Item 4.3.2.11.c: Skew-symmetric matrices" aria-label="Copy heading and permalink for Item 4.3.2.11.c: Skew-symmetric matrices">🔗</a></div>
 </li>
 </ol>
 <div class="solutions"><details id="ex_basis_matrix_families-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content">
-<div class="para" id="ex_basis_matrix_families-3-1">It might help to look at the <span class="process-math">\(n=2\)</span> and <span class="process-math">\(n=3\)</span> cases to get an idea of what these bases should be.<div class="autopermalink" data-description="Paragraph"><a href="#ex_basis_matrix_families-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex_basis_matrix_families-3-1">It might help to look at the <span class="process-math">\(n=2\)</span> and <span class="process-math">\(n=3\)</span> cases to get an idea of what these bases should be.<div class="autopermalink" data-description="Paragraph"><a href="#ex_basis_matrix_families-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Hint 4.3.2.11.1"><a href="#ex_basis_matrix_families-3" title="Copy permalink for Hint 4.3.2.11.1">🔗</a></div>
+<div class="autopermalink" data-description="Hint 4.3.2.11.1"><a href="#ex_basis_matrix_families-3" title="Copy heading and permalink for Hint 4.3.2.11.1" aria-label="Copy heading and permalink for Hint 4.3.2.11.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Exercise 4.3.2.11: Bases for important matrix subspaces"><a href="#ex_basis_matrix_families" title="Copy permalink for Exercise 4.3.2.11: Bases for important matrix subspaces">🔗</a></div></article><div class="autopermalink" data-description="Exercises 4.3.2"><a href="#s_basis_ex" title="Copy permalink for Exercises 4.3.2">🔗</a></div></section><div class="autopermalink" data-description="Section 4.3: Bases"><a href="#s_basis" title="Copy permalink for Section 4.3: Bases">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Exercise 4.3.2.11: Bases for important matrix subspaces"><a href="#ex_basis_matrix_families" title="Copy heading and permalink for Exercise 4.3.2.11: Bases for important matrix subspaces" aria-label="Copy heading and permalink for Exercise 4.3.2.11: Bases for important matrix subspaces">🔗</a></div></article><div class="autopermalink" data-description="Exercises 4.3.2"><a href="#s_basis_ex" title="Copy heading and permalink for Exercises 4.3.2" aria-label="Copy heading and permalink for Exercises 4.3.2">🔗</a></div></section><div class="autopermalink" data-description="Section 4.3: Bases"><a href="#s_basis" title="Copy heading and permalink for Section 4.3: Bases" aria-label="Copy heading and permalink for Section 4.3: Bases">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="s_span_independence.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_dimension.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
