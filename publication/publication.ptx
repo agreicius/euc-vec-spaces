@@ -209,5 +209,7 @@
     <!-- The cover tag can have a @front attribute to specify a cover image. -->
       <!-- <cover front="cover.jpg"> -->
   </epub>
-    
+  
+  <webwork server="https://webwork-ptx.aimath.org" /> 
+
 </publication>
